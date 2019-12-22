@@ -1,7 +1,8 @@
 import java.awt.Component;
+import java.awt.Graphics;
 import java.awt.Image;
-import com.awt.Point;
-import com.awt.Shape;
+import java.awt.Point;
+import java.awt.Shape;
 import java.awt.image.BufferedImage;
 import java.awt.image.DataBufferInt;
 import java.awt.image.DirectColorModel;
