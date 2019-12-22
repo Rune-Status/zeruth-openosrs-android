@@ -94,7 +94,9 @@ java.awt.event.MouseWheelListener;
 ### RasterProvider:  
 java.awt.Component;  
 java.awt.Graphics;  
-java.awt.Image;  
+java.awt.Image;
+java.awt.Point;
+java.awt.Shape;
 java.awt.image.BufferedImage;  
 java.awt.image.DataBufferInt;  
 java.awt.image.DirectColorModel;  
