@@ -1,7 +1,19 @@
 # osrs-android-port
-Android Studio project with the intentions of replicating necessary java.awt usage and removing unnecessary native features in the android environment.
+WIP Android Studio project based on the OSRS Refactor. 
 
-## Broken Functionality:
+## Building
+Download and open Android Studio and import this project.  
+Setup a Gradle configuration by pointing to the app dir like so:  
+https://i.imgur.com/BOB2m3h.png  
+You can also setup an emulated device or run on your own phone.  
+  
+  That being said, This project is still in it's infancy. don't expect a working build without some serious work.  
+
+## Broken Functionality:  
+OSRS relies heavily on AWT (Swing). Most of the work getting this port together will be porting from AWT.  
+All other native features such as Keyboard/Mouse/Sound support should simply be disabled for now... Graphics should be our priority.  
+
+Note: This is a full list.  
 
 ### ArchiveDiskAction:  
 java.awt.Component;  
