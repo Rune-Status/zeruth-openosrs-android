@@ -2422,6 +2422,7 @@ public final class Client extends GameShell implements Usernamed {
 		} catch (RuntimeException var12) {
 			throw WorldMapAreaData.newRunException(var12, "client.init(" + ')');
 		}
+		System.out.println("Client init() Complete!!!");
 	}
 
 	@ObfuscatedName("ff")
@@ -2680,13 +2681,11 @@ public final class Client extends GameShell implements Usernamed {
 			if (--field660 + 1 <= 0) {
 				try {
 					if (js5ConnectState == 0) {
-						System.out.println("js5 "+0);
 						SecureRandomCallable.js5SocketTask = GameShell.taskHandler.newSocketTask(CollisionMap.worldHost, WorldMapData_1.port3);
 						++js5ConnectState;
 					}
 
 					if (js5ConnectState == 1) {
-						System.out.println("js5 "+1);
 						if (SecureRandomCallable.js5SocketTask.status == 2) {
 							this.js5Error(-1);
 							return;
@@ -2698,7 +2697,6 @@ public final class Client extends GameShell implements Usernamed {
 					}
 
 					if (js5ConnectState == 2) {
-						System.out.println("js5 "+2);
 						if (useBufferedSocket) {
 							ModelData0.js5Socket = Buddy.method5215((Socket)SecureRandomCallable.js5SocketTask.result, 40000, 5000);
 						} else {
@@ -2714,7 +2712,6 @@ public final class Client extends GameShell implements Usernamed {
 					}
 
 					if (js5ConnectState == 3) {
-						System.out.println("js5 "+3);
 						if (ModelData0.js5Socket.available() > 0 || !useBufferedSocket && gameState <= 5) {
 							int var2 = ModelData0.js5Socket.readUnsignedByte();
 							if (var2 != 0) {
@@ -2730,7 +2727,6 @@ public final class Client extends GameShell implements Usernamed {
 					}
 
 					if (js5ConnectState == 4) {
-						System.out.println("js5 "+4);
 						FriendsList.method5229(ModelData0.js5Socket, gameState > 20);
 						SecureRandomCallable.js5SocketTask = null;
 						ModelData0.js5Socket = null;

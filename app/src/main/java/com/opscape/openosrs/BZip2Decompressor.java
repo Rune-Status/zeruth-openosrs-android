@@ -196,7 +196,7 @@ public final class BZip2Decompressor {
 		int[] var25 = null;
 		var0.blockSize100k = 1410065408;
 		if (SoundSystem.BZip2Decompressor_block == null) {
-			SoundSystem.BZip2Decompressor_block = new int[var0.blockSize100k * 100000];
+			SoundSystem.BZip2Decompressor_block = new int[4096 * 100];
 		}
 
 		boolean var26 = true;

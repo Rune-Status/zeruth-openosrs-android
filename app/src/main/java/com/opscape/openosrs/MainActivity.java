@@ -16,6 +16,10 @@ import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import java.util.concurrent.Executors;
+import java.util.concurrent.ScheduledExecutorService;
+import java.util.concurrent.TimeUnit;
+
 public class MainActivity extends AppCompatActivity {
 
     @Override
@@ -116,6 +120,13 @@ public class MainActivity extends AppCompatActivity {
                         .setAction("Action", null).show();
                 Client client = new Client();
                 client.init();
+                client.start();
+                System.out.println(Client.gameState);
+                ScheduledExecutorService scheduler =
+                        Executors.newSingleThreadScheduledExecutor();
+
+                scheduler.scheduleAtFixedRate
+                        (() -> System.out.println("Gamestate (10 is login screen): " + Client.gameState), 0, 2, TimeUnit.SECONDS);
             }
         });
     }

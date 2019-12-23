@@ -72,6 +72,6 @@ public class Paramaters {
 
     public static String getHost()
     {
-        return "http://oldschool9.runescape.com";
+        return "oldschool9.runescape.com";
     }
 }

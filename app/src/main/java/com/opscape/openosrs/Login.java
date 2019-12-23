@@ -9,7 +9,7 @@ import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
 @ObfuscatedName("cs")
-@Implements("com.opscape.openosrs.Login")
+@Implements("com.opscape.openosrs.Login") //GameState
 public class Login {
 	@ObfuscatedName("i")
 	static boolean field1173;

@@ -163,6 +163,7 @@ public class TaskHandler implements Runnable {
 			} catch (ThreadDeath var6) {
 				throw var6;
 			} catch (Throwable var7) {
+				var7.printStackTrace();
 				var1.status = 2;
 			}
 		}
