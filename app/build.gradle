@@ -1,12 +1,14 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 29
+    compileSdkVersion 28
     buildToolsVersion "29.0.2"
     defaultConfig {
         applicationId "com.opscape.openosrs"
         minSdkVersion 26
-        targetSdkVersion 29
+        //We target 28 for easier access to External Storage
+        //noinspection ExpiredTargetSdkVersion
+        targetSdkVersion 28
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
@@ -23,8 +25,16 @@ android {
     }
 }
 
+repositories {
+    maven { url "https://maven.andob.info/repository/open_source" }
+}
+
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation 'com.github.librepdf:openpdf:1.3.24'
+    implementation 'ro.andob.androidawt:androidawt:1.0.4'
+    implementation 'org.bouncycastle:bcprov-jdk15on:1.52'
+    implementation 'org.json:json:20220320'
     implementation 'androidx.appcompat:appcompat:1.0.2'
     implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
     implementation 'com.google.android.material:material:1.0.0'
