@@ -12,7 +12,7 @@ Partial touch support (coords are off still)
 ## Building  
 
 Setup a virtual android device or use your own to launch the ```app``` module  
-(require api 28)
+(requirea api 28)
 
 ## Running  
   
