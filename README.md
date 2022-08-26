@@ -1,126 +1,31 @@
 # osrs-android-port
-WIP Android Studio project based on the OSRS Refactor. 
+Android Studio project with the intentions of replicating necessary java.awt usage in the android environment.
+  
+Current features:  
+  
+2D rendering  
+Logging in (if you don't have authenticator)  
+Reflection checks  
+Partial touch support (coords are off still)  
 
-## Building
-Download and open Android Studio and import this project.  
-Setup a Gradle configuration by pointing to the app dir like so:  
-https://i.imgur.com/BOB2m3h.png  
-You can also setup an emulated device or run on your own phone.  
-  
-  That being said, This project is still in it's infancy. don't expect a working build without some serious work.  
 
-## Broken Functionality:  
-OSRS relies heavily on AWT (Swing). Most of the work getting this port together will be porting from AWT.  
-All other native features such as Keyboard/Mouse/Sound support should simply be disabled for now... Graphics should be our priority.  
+## Building  
 
-Note: This is a full list.  
+Setup a virtual android device or use your own to launch the ```app``` module  
+(require api 28)
 
-### ArchiveDiskAction:  
-java.awt.Component;  
+## Running  
   
-### Canvas:  
-java.awt.Component;  
-java.awt.Graphics;  
+Download https://drive.google.com/file/d/1dO2MDPgnji4miunefqYw_yRlojTymERv/view?usp=sharing and place ```jagexcache``` in STORAGE/Downloads  
+This contains the 207.4 cache and classes for reflection checks  
   
-### class3:  
-java.applet.Applet;  
+Due to the lack of keyboard support, The client will automatically login using supplied username and password in MainActivity  
+As mentioned, touch points are way off so you will have to experiment with the top left of the view to get past welcome screen  
   
-### class13:  
-java.awt.Desktop;  
-java.awt.Desktop.Action;  
+## Why tho  
   
-### class46:  
-java.applet.Applet;  
-netscape.javascript.JSObject;  
+This is specifically targeting RSPS work, but will be maintained for the live game as long as possible  
   
-### class48:  
-javax.imageio.ImageIO;  
+## Contributing  
   
-### class50:  
-java.applet.Applet;  
-  
-### class189:  
-java.applet.Applet;  
-  
-### DesktopPlatformInfoProvider:  
-->RunException  
-  
-### DevicePcmPlayer:  
-javax.sound.sampled.AudioFormat;  
-javax.sound.sampled.AudioSystem;  
-javax.sound.sampled.LineUnavailableException;  
-javax.sound.sampled.SourceDataLine;  
-javax.sound.sampled.DataLine.Info;  
-  
-### GameShell:  
-java.applet.Applet;  
-java.awt.Color;  
-java.awt.Container;  
-java.awt.EventQueue;  
-java.awt.Frame;  
-java.awt.Graphics;  
-java.awt.Insets;  
-java.awt.LayoutManager;  
-java.awt.Rectangle;  
-java.awt.Toolkit;  
-java.awt.datatransfer.Clipboard;  
-java.awt.datatransfer.ClipboardOwner;  
-java.awt.datatransfer.StringSelection;  
-java.awt.event.ActionEvent;  
-java.awt.event.FocusEvent;  
-java.awt.event.FocusListener;  
-java.awt.event.WindowEvent;  
-java.awt.event.WindowListener;  
-java.awt.image.ImageObserver;  
-  
-### GrandExchangeEvent:  
-java.applet.Applet;  
-netscape.javascript.JSObject;  
-  
-### GrandExchangeOfferTotalQuantityComparator:  
-java.awt.Component;  
-java.awt.image.BufferedImage;  
-java.awt.image.PixelGrabber;  
-  
-### Interpreter:  
-java.lang.management.GarbageCollectorMXBean;  
-  
-### KeyHandler:  
-java.awt.event.FocusEvent;  
-java.awt.event.FocusListener;  
-java.awt.event.KeyEvent;  
-java.awt.event.KeyListener;  
-  
-### MouseHandler:  
-java.awt.event.FocusEvent;  
-java.awt.event.FocusListener;  
-java.awt.event.MouseEvent;  
-java.awt.event.MouseListener;  
-java.awt.event.MouseMotionListener;  
-  
-### MouseWheelHandler:  
-java.awt.Component;  
-java.awt.event.MouseWheelEvent;  
-java.awt.event.MouseWheelListener;
-  
-### RasterProvider:  
-java.awt.Component;  
-java.awt.Graphics;  
-java.awt.Image;
-java.awt.Point;
-java.awt.Shape;
-java.awt.image.BufferedImage;  
-java.awt.image.DataBufferInt;  
-java.awt.image.DirectColorModel;  
-java.awt.image.Raster;  
-java.awt.image.WritableRaster;  
-  
-### RunException:  
-java.applet.Applet;  
-  
-### WorldMapSectionType:  
-java.lang.management.GarbageCollectorMXBean;  
-java.lang.management.ManagementFactory;  
-  
-### WorldMapSprite:  
-java.awt.FontMetrics;  
+Please do.
