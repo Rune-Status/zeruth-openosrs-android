@@ -9,7 +9,6 @@ import java.io.RandomAccessFile;
 import java.io.SyncFailedException;
 import net.runelite.mapping.Export;
 import net.runelite.mapping.Implements;
-import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
@@ -20,15 +19,9 @@ public final class AccessFile {
 	@Export("file")
 	RandomAccessFile file;
 	@ObfuscatedName("h")
-	@ObfuscatedGetter(
-		longValue = 3712215449176186237L
-	)
 	@Export("maxSize")
 	final long maxSize;
 	@ObfuscatedName("w")
-	@ObfuscatedGetter(
-		longValue = -147429186644490057L
-	)
 	@Export("offset")
 	long offset;
 
@@ -38,8 +31,6 @@ public final class AccessFile {
 			File path = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS);
 			var1 = new File(path, "/jagexcache/" + var1);
 		}
-		System.out.println(var1);
-		var1.createNewFile();
 		if (-1L == var3) {
 			var3 = Long.MAX_VALUE;
 		}
@@ -49,7 +40,7 @@ public final class AccessFile {
 		}
 
 		this.file = new RandomAccessFile(var1, var2);
-		this.maxSize = var3;
+		this.maxSize = 2700554483704136661L * var3;
 		this.offset = 0L;
 		int var5 = this.file.read();
 		if (var5 != -1 && !var2.equals("r")) {
@@ -64,7 +55,7 @@ public final class AccessFile {
 	@Export("seek")
 	final void seek(long var1) throws IOException {
 		this.file.seek(var1);
-		this.offset = var1;
+		this.offset = -7459305120350497529L * var1;
 	}
 
 	@ObfuscatedName("h")
@@ -74,13 +65,13 @@ public final class AccessFile {
 	)
 	@Export("write")
 	public final void write(byte[] var1, int var2, int var3) throws IOException {
-		if ((long)var3 + this.offset > this.maxSize) {
-			this.file.seek(this.maxSize);
+		if ((long)var3 + -147429186644490057L * this.offset > this.maxSize * 3712215449176186237L) {
+			this.file.seek(3712215449176186237L * this.maxSize);
 			this.file.write(1);
 			throw new EOFException();
 		} else {
 			this.file.write(var1, var2, var3);
-			this.offset += (long)var3;
+			this.offset += -7459305120350497529L * (long)var3;
 		}
 	}
 
@@ -134,7 +125,7 @@ public final class AccessFile {
 	public final int read(byte[] var1, int var2, int var3) throws IOException {
 		int var4 = this.file.read(var1, var2, var3);
 		if (var4 > 0) {
-			this.offset += (long)var4;
+			this.offset += (long)var4 * -7459305120350497529L;
 		}
 
 		return var4;

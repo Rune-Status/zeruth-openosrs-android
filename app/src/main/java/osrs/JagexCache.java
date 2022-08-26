@@ -2,7 +2,6 @@ package osrs;
 
 import net.runelite.mapping.Export;
 import net.runelite.mapping.Implements;
-import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
@@ -28,9 +27,6 @@ public class JagexCache {
 	@Export("JagexCache_idx255File")
 	public static BufferedFile JagexCache_idx255File;
 	@ObfuscatedName("fa")
-	@ObfuscatedGetter(
-		intValue = 137253805
-	)
 	static int field1728;
 
 	static {
@@ -45,7 +41,7 @@ public class JagexCache {
 		garbageValue = "1451347763"
 	)
 	static final void method3205(String var0, int var1) {
-		PacketBufferNode var2 = DevicePcmPlayerProvider.getPacketBufferNode(ClientPacket.field2972, Client.packetWriter.isaacCipher);
+		PacketBufferNode var2 = DevicePcmPlayerProvider.method354(ClientPacket.field2972, Client.packetWriter.field1338);
 		var2.packetBuffer.writeByte(class309.stringCp1252NullTerminatedByteSize(var0) + 1);
 		var2.packetBuffer.method7878(var1);
 		var2.packetBuffer.writeStringCp1252NullTerminated(var0);

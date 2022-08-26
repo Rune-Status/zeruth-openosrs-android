@@ -2,7 +2,6 @@ package osrs;
 
 import net.runelite.mapping.Export;
 import net.runelite.mapping.Implements;
-import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
@@ -16,15 +15,9 @@ public class World {
 	@Export("World_worlds")
 	static World[] World_worlds;
 	@ObfuscatedName("q")
-	@ObfuscatedGetter(
-		intValue = -898146975
-	)
 	@Export("World_count")
 	static int World_count;
 	@ObfuscatedName("i")
-	@ObfuscatedGetter(
-		intValue = -68555585
-	)
 	@Export("World_listCount")
 	static int World_listCount;
 	@ObfuscatedName("k")
@@ -34,41 +27,19 @@ public class World {
 	@Export("World_sortOption1")
 	static int[] World_sortOption1;
 	@ObfuscatedName("d")
-	@ObfuscatedGetter(
-		intValue = -1527326097
-	)
-	@Export("id")
-	int id;
+	int field779;
 	@ObfuscatedName("a")
-	@ObfuscatedGetter(
-		intValue = -224086541
-	)
-	@Export("properties")
-	int properties;
+	int field780;
 	@ObfuscatedName("m")
-	@ObfuscatedGetter(
-		intValue = 519550573
-	)
-	@Export("population")
-	int population;
+	int field781;
 	@ObfuscatedName("u")
-	@Export("host")
-	String host;
+	String field782;
 	@ObfuscatedName("l")
-	@Export("activity")
-	String activity;
+	String field783;
 	@ObfuscatedName("z")
-	@ObfuscatedGetter(
-		intValue = -192731231
-	)
-	@Export("location")
-	int location;
+	int field784;
 	@ObfuscatedName("r")
-	@ObfuscatedGetter(
-		intValue = -1040647153
-	)
-	@Export("index")
-	int index;
+	int field775;
 
 	static {
 		World_count = 0;
@@ -87,7 +58,7 @@ public class World {
 	)
 	@Export("isMembersOnly")
 	boolean isMembersOnly() {
-		return (1 & this.properties) != 0;
+		return (1 & this.field780 * -224086541) != 0;
 	}
 
 	@ObfuscatedName("d")
@@ -96,7 +67,7 @@ public class World {
 		garbageValue = "-1456709211"
 	)
 	boolean method1587() {
-		return (2 & this.properties) != 0;
+		return (2 & this.field780 * -224086541) != 0;
 	}
 
 	@ObfuscatedName("a")
@@ -106,7 +77,7 @@ public class World {
 	)
 	@Export("isPvp")
 	boolean isPvp() {
-		return (4 & this.properties) != 0;
+		return (4 & this.field780 * -224086541) != 0;
 	}
 
 	@ObfuscatedName("m")
@@ -115,7 +86,7 @@ public class World {
 		garbageValue = "1495382243"
 	)
 	boolean method1596() {
-		return (8 & this.properties) != 0;
+		return (8 & this.field780 * -224086541) != 0;
 	}
 
 	@ObfuscatedName("u")
@@ -123,9 +94,8 @@ public class World {
 		descriptor = "(B)Z",
 		garbageValue = "-113"
 	)
-	@Export("isDeadman")
-	boolean isDeadman() {
-		return (536870912 & this.properties) != 0;
+	boolean method1584() {
+		return (536870912 & this.field780 * -224086541) != 0;
 	}
 
 	@ObfuscatedName("l")
@@ -133,9 +103,8 @@ public class World {
 		descriptor = "(B)Z",
 		garbageValue = "10"
 	)
-	@Export("isBeta")
-	boolean isBeta() {
-		return (33554432 & this.properties) != 0;
+	boolean method1600() {
+		return (33554432 & this.field780 * -224086541) != 0;
 	}
 
 	@ObfuscatedName("z")
@@ -144,7 +113,7 @@ public class World {
 		garbageValue = "1404429891"
 	)
 	boolean method1586() {
-		return (1073741824 & this.properties) != 0;
+		return (1073741824 & this.field780 * -224086541) != 0;
 	}
 
 	@ObfuscatedName("s")

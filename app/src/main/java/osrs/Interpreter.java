@@ -3,7 +3,6 @@ package osrs;
 import java.util.ArrayList;
 import net.runelite.mapping.Export;
 import net.runelite.mapping.Implements;
-import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
@@ -11,11 +10,9 @@ import net.runelite.mapping.ObfuscatedSignature;
 @Implements("Interpreter")
 public class Interpreter {
 	@ObfuscatedName("v")
-	@Export("Interpreter_intLocals")
-	static int[] Interpreter_intLocals;
+	static int[] field818;
 	@ObfuscatedName("c")
-	@Export("Interpreter_stringLocals")
-	static String[] Interpreter_stringLocals;
+	static String[] field819;
 	@ObfuscatedName("q")
 	@Export("Interpreter_arrayLengths")
 	static int[] Interpreter_arrayLengths;
@@ -29,9 +26,6 @@ public class Interpreter {
 	@Export("Interpreter_stringStack")
 	static String[] Interpreter_stringStack;
 	@ObfuscatedName("a")
-	@ObfuscatedGetter(
-		intValue = 1584311727
-	)
 	@Export("Interpreter_frameDepth")
 	static int Interpreter_frameDepth;
 	@ObfuscatedName("m")
@@ -39,7 +33,7 @@ public class Interpreter {
 		descriptor = "[Lbu;"
 	)
 	@Export("Interpreter_frames")
-	static ScriptFrame[] Interpreter_frames;
+	static class56[] Interpreter_frames;
 	@ObfuscatedName("r")
 	@ObfuscatedSignature(
 		descriptor = "Lec;"
@@ -58,9 +52,6 @@ public class Interpreter {
 	@ObfuscatedName("t")
 	static ArrayList field831;
 	@ObfuscatedName("j")
-	@ObfuscatedGetter(
-		intValue = 1905581353
-	)
 	static int field830;
 	@ObfuscatedName("av")
 	static final double field824;
@@ -76,7 +67,7 @@ public class Interpreter {
 		Interpreter_intStack = new int[1000];
 		Interpreter_stringStack = new String[1000];
 		Interpreter_frameDepth = 0;
-		Interpreter_frames = new ScriptFrame[50];
+		Interpreter_frames = new class56[50];
 		Interpreter_calendar = java.util.Calendar.getInstance();
 		Interpreter_MONTHS = new String[]{"Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"};
 		field820 = false;

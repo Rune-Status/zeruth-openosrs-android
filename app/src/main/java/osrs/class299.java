@@ -18,13 +18,13 @@ public class class299 {
 		descriptor = "(IB)Lqi;",
 		garbageValue = "7"
 	)
-	public static PrivateChatMode method5660(int var0) {
-		PrivateChatMode[] var1 = new PrivateChatMode[]{PrivateChatMode.field4825, PrivateChatMode.field4823, PrivateChatMode.field4826};
-		PrivateChatMode[] var2 = var1;
+	public static class460 method5660(int var0) {
+		class460[] var1 = new class460[]{class460.field4825, class460.field4823, class460.field4826};
+		class460[] var2 = var1;
 
 		for (int var3 = 0; var3 < var2.length; ++var3) {
-			PrivateChatMode var4 = var2[var3];
-			if (var0 == var4.field4824) {
+			class460 var4 = var2[var3];
+			if (var0 == var4.value * -582494507) {
 				return var4;
 			}
 		}

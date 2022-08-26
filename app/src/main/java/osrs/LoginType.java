@@ -2,7 +2,6 @@ package osrs;
 
 import net.runelite.mapping.Export;
 import net.runelite.mapping.Implements;
-import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
@@ -56,9 +55,6 @@ public class LoginType {
 	)
 	public static final LoginType field4615;
 	@ObfuscatedName("n")
-	@ObfuscatedGetter(
-		intValue = -14950581
-	)
 	public final int field4616;
 	@ObfuscatedName("d")
 	final String field4617;
@@ -76,7 +72,7 @@ public class LoginType {
 	}
 
 	LoginType(int var1, int var2, String var3, String var4) {
-		this.field4616 = var1;
+		this.field4616 = var1 * -1504431517;
 		this.field4617 = var4;
 	}
 
@@ -84,7 +80,7 @@ public class LoginType {
 		descriptor = "(IILjava/lang/String;Ljava/lang/String;Z[Lpl;)V"
 	)
 	LoginType(int var1, int var2, String var3, String var4, boolean var5, LoginType[] var6) {
-		this.field4616 = var1;
+		this.field4616 = var1 * -1504431517;
 		this.field4617 = var4;
 	}
 

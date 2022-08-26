@@ -1,7 +1,6 @@
 package osrs;
 
 import net.runelite.mapping.Export;
-import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
@@ -14,9 +13,6 @@ public class class137 extends class128 {
 	@Export("ItemDefinition_fontPlain11")
 	static Font ItemDefinition_fontPlain11;
 	@ObfuscatedName("ig")
-	@ObfuscatedGetter(
-		intValue = -146328941
-	)
 	static int field1593;
 	@ObfuscatedName("s")
 	String field1591;

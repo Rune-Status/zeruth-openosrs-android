@@ -3,7 +3,6 @@ package osrs;
 import java.util.Comparator;
 import net.runelite.mapping.Export;
 import net.runelite.mapping.Implements;
-import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
@@ -17,9 +16,6 @@ final class GrandExchangeOfferTotalQuantityComparator implements Comparator {
 	@Export("pcmPlayerProvider")
 	static class47 pcmPlayerProvider;
 	@ObfuscatedName("gq")
-	@ObfuscatedGetter(
-		longValue = -7558736102451940417L
-	)
 	static long field4050;
 
 	@ObfuscatedName("s")
@@ -29,7 +25,7 @@ final class GrandExchangeOfferTotalQuantityComparator implements Comparator {
 	)
 	@Export("compare_bridged")
 	int compare_bridged(GrandExchangeEvent var1, GrandExchangeEvent var2) {
-		return var1.grandExchangeOffer.totalQuantity < var2.grandExchangeOffer.totalQuantity ? -1 : (var2.grandExchangeOffer.totalQuantity == var1.grandExchangeOffer.totalQuantity ? 0 : 1);
+		return var1.grandExchangeOffer.totalQuantity * 591860693 < var2.grandExchangeOffer.totalQuantity * 591860693 ? -1 : (var2.grandExchangeOffer.totalQuantity * 591860693 == var1.grandExchangeOffer.totalQuantity * 591860693 ? 0 : 1);
 	}
 
 	public boolean equals(Object var1) {

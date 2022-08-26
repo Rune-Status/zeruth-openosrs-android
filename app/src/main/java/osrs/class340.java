@@ -1,22 +1,17 @@
 package osrs;
 
 import net.runelite.mapping.Export;
-import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
 @ObfuscatedName("mu")
 public final class class340 {
 	@ObfuscatedName("z")
-	@ObfuscatedGetter(
-		intValue = 51853259
-	)
 	@Export("cacheGamebuild")
 	static int cacheGamebuild;
 	@ObfuscatedName("ed")
 	@ObfuscatedSignature(
 		descriptor = "Lln;"
 	)
-	@Export("archive18")
-	static Archive archive18;
+	static Archive field4141;
 }

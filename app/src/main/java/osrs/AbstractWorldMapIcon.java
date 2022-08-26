@@ -2,7 +2,6 @@ package osrs;
 
 import net.runelite.mapping.Export;
 import net.runelite.mapping.Implements;
-import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 import net.runelite.rs.Reflection;
@@ -23,15 +22,9 @@ public abstract class AbstractWorldMapIcon {
 	@Export("coord1")
 	public final Coord coord1;
 	@ObfuscatedName("o")
-	@ObfuscatedGetter(
-		intValue = 2140173675
-	)
 	@Export("screenX")
 	int screenX;
 	@ObfuscatedName("n")
-	@ObfuscatedGetter(
-		intValue = -3406293
-	)
 	@Export("screenY")
 	int screenY;
 
@@ -112,39 +105,39 @@ public abstract class AbstractWorldMapIcon {
 			WorldMapElement var3 = EnumComposition.WorldMapElement_get(this.getElement());
 			int var4 = this.getSubWidth();
 			int var5 = this.getSubHeight();
-			switch(var3.horizontalAlignment.value) {
+			switch(var3.horizontalAlignment.value * -682238819) {
 			case 0:
-				if (var1 < this.screenX - var4 / 2 || var1 > var4 / 2 + this.screenX) {
+				if (var1 < this.screenX * 2140173675 - var4 / 2 || var1 > var4 / 2 + this.screenX * 2140173675) {
 					return false;
 				}
 				break;
 			case 1:
-				if (var1 > this.screenX - var4 && var1 <= this.screenX) {
+				if (var1 > this.screenX * 2140173675 - var4 && var1 <= this.screenX * 2140173675) {
 					break;
 				}
 
 				return false;
 			case 2:
-				if (var1 < this.screenX || var1 >= var4 + this.screenX) {
+				if (var1 < this.screenX * 2140173675 || var1 >= this.screenX * 2140173675 + var4) {
 					return false;
 				}
 			}
 
-			switch(var3.verticalAlignment.value) {
+			switch(var3.verticalAlignment.value * -2090139611) {
 			case 0:
-				if (var2 >= this.screenY - var5 / 2 && var2 <= var5 / 2 + this.screenY) {
+				if (var2 >= this.screenY * -3406293 - var5 / 2 && var2 <= var5 / 2 + this.screenY * -3406293) {
 					break;
 				}
 
 				return false;
 			case 1:
-				if (var2 >= this.screenY && var2 < var5 + this.screenY) {
+				if (var2 >= this.screenY * -3406293 && var2 < var5 + this.screenY * -3406293) {
 					break;
 				}
 
 				return false;
 			case 2:
-				if (var2 <= this.screenY - var5 || var2 > this.screenY) {
+				if (var2 <= this.screenY * -3406293 - var5 || var2 > this.screenY * -3406293) {
 					return false;
 				}
 			}
@@ -163,8 +156,8 @@ public abstract class AbstractWorldMapIcon {
 		WorldMapLabel var3 = this.getLabel();
 		if (var3 == null) {
 			return false;
-		} else if (var1 >= this.screenX - var3.width / 2 && var1 <= var3.width / 2 + this.screenX) {
-			return var2 >= this.screenY && var2 <= var3.height + this.screenY;
+		} else if (var1 >= this.screenX * 2140173675 - var3.width * -633493345 / 2 && var1 <= var3.width * -633493345 / 2 + this.screenX * 2140173675) {
+			return var2 >= this.screenY * -3406293 && var2 <= this.screenY * -3406293 + var3.height * 908481261;
 		} else {
 			return false;
 		}

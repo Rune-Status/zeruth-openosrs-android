@@ -3,7 +3,6 @@ package osrs;
 import java.util.concurrent.ScheduledExecutorService;
 import net.runelite.mapping.Export;
 import net.runelite.mapping.Implements;
-import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
@@ -17,9 +16,6 @@ public class PcmPlayer {
 	@Export("soundSystemExecutor")
 	static ScheduledExecutorService soundSystemExecutor;
 	@ObfuscatedName("o")
-	@ObfuscatedGetter(
-		intValue = -89074195
-	)
 	public static int field279;
 	@ObfuscatedName("m")
 	@Export("Tiles_hueMultiplier")
@@ -40,63 +36,28 @@ public class PcmPlayer {
 	@Export("stream")
 	PcmStream stream;
 	@ObfuscatedName("z")
-	@ObfuscatedGetter(
-		intValue = -1437568663
-	)
 	int field281;
 	@ObfuscatedName("r")
-	@ObfuscatedGetter(
-		longValue = 8741985463652068785L
-	)
-	@Export("timeMs")
-	long timeMs;
+	long field294;
 	@ObfuscatedName("y")
-	@ObfuscatedGetter(
-		intValue = 895919135
-	)
-	@Export("capacity")
-	int capacity;
+	int field289;
 	@ObfuscatedName("p")
-	@ObfuscatedGetter(
-		intValue = 578376697
-	)
 	int field300;
 	@ObfuscatedName("e")
-	@ObfuscatedGetter(
-		intValue = -363737623
-	)
 	int field286;
 	@ObfuscatedName("b")
-	@ObfuscatedGetter(
-		longValue = 7995751903745327077L
-	)
 	long field287;
 	@ObfuscatedName("x")
-	@ObfuscatedGetter(
-		intValue = 77946161
-	)
 	int field288;
 	@ObfuscatedName("f")
-	@ObfuscatedGetter(
-		intValue = 1883029617
-	)
 	int field293;
 	@ObfuscatedName("t")
-	@ObfuscatedGetter(
-		intValue = -527189205
-	)
 	int field290;
 	@ObfuscatedName("j")
-	@ObfuscatedGetter(
-		longValue = 3890268651486961207L
-	)
 	long field291;
 	@ObfuscatedName("g")
 	boolean field292;
 	@ObfuscatedName("ab")
-	@ObfuscatedGetter(
-		intValue = -1250489603
-	)
 	int field277;
 	@ObfuscatedName("ak")
 	@ObfuscatedSignature(
@@ -110,8 +71,8 @@ public class PcmPlayer {
 	PcmStream[] field302;
 
 	protected PcmPlayer() {
-		this.field281 = 32;
-		this.timeMs = class181.method3483();
+		this.field281 = -1561994464;
+		this.field294 = class181.method3483() * 6197142107692071761L;
 		this.field287 = 0L;
 		this.field288 = 0;
 		this.field293 = 0;
@@ -148,7 +109,7 @@ public class PcmPlayer {
 	)
 	@Export("position")
 	protected int position() throws Exception {
-		return this.capacity;
+		return this.field289 * 895919135;
 	}
 
 	@ObfuscatedName("v")
@@ -195,39 +156,39 @@ public class PcmPlayer {
 			long var1 = class181.method3483();
 
 			try {
-				if (0L != this.field287) {
-					if (var1 < this.field287) {
+				if (0L != this.field287 * 7995751903745327077L) {
+					if (var1 < 7995751903745327077L * this.field287) {
 						return;
 					}
 
-					this.open(this.capacity);
+					this.open(this.field289 * 895919135);
 					this.field287 = 0L;
 					this.field292 = true;
 				}
 
 				int var3 = this.position();
-				if (this.field290 - var3 > this.field288) {
-					this.field288 = this.field290 - var3;
+				if (this.field290 * -527189205 - var3 > this.field288 * 77946161) {
+					this.field288 = (this.field290 * -527189205 - var3) * 958847953;
 				}
 
-				int var4 = this.field286 + this.field300;
+				int var4 = this.field286 * -363737623 + this.field300 * 578376697;
 				if (var4 + 256 > 16384) {
 					var4 = 16128;
 				}
 
-				if (var4 + 256 > this.capacity) {
-					this.capacity += 1024;
-					if (this.capacity > 16384) {
-						this.capacity = 16384;
+				if (var4 + 256 > this.field289 * 895919135) {
+					this.field289 += 2136964096;
+					if (this.field289 * 895919135 > 16384) {
+						this.field289 = -168312832;
 					}
 
 					this.close();
-					this.open(this.capacity);
+					this.open(this.field289 * 895919135);
 					var3 = 0;
 					this.field292 = true;
-					if (var4 + 256 > this.capacity) {
-						var4 = this.capacity - 256;
-						this.field286 = var4 - this.field300;
+					if (var4 + 256 > this.field289 * 895919135) {
+						var4 = this.field289 * 895919135 - 256;
+						this.field286 = (var4 - this.field300 * 578376697) * -920659367;
 					}
 				}
 
@@ -237,41 +198,41 @@ public class PcmPlayer {
 					var3 += 256;
 				}
 
-				if (var1 > this.field291) {
+				if (var1 > 3890268651486961207L * this.field291) {
 					if (!this.field292) {
-						if (this.field288 == 0 && this.field293 == 0) {
+						if (this.field288 * 77946161 == 0 && this.field293 * 1883029617 == 0) {
 							this.close();
-							this.field287 = 2000L + var1;
+							this.field287 = (2000L + var1) * 6027220751468291565L;
 							return;
 						}
 
-						this.field286 = Math.min(this.field293, this.field288);
-						this.field293 = this.field288;
+						this.field286 = Math.min(1883029617 * this.field293, this.field288 * 77946161) * -920659367;
+						this.field293 = this.field288 * 947964097;
 					} else {
 						this.field292 = false;
 					}
 
 					this.field288 = 0;
-					this.field291 = 2000L + var1;
+					this.field291 = (2000L + var1) * -4059304781459212409L;
 				}
 
-				this.field290 = var3;
+				this.field290 = var3 * 1147480963;
 			} catch (Exception var7) {
 				this.close();
-				this.field287 = var1 + 2000L;
+				this.field287 = 6027220751468291565L * (var1 + 2000L);
 			}
 
 			try {
-				if (var1 > 500000L + this.timeMs) {
-					var1 = this.timeMs;
+				if (var1 > 500000L + this.field294 * 8741985463652068785L) {
+					var1 = this.field294 * 8741985463652068785L;
 				}
 
-				while (var1 > 5000L + this.timeMs) {
+				while (var1 > 5000L + 8741985463652068785L * this.field294) {
 					this.skip(256);
-					this.timeMs += (long)(256000 / (class344.field4152 * -449918071));
+					this.field294 += 6197142107692071761L * (long)(256000 / (class344.field4152 * -449918071));
 				}
 			} catch (Exception var6) {
-				this.timeMs = var1;
+				this.field294 = 6197142107692071761L * var1;
 			}
 
 		}
@@ -299,7 +260,7 @@ public class PcmPlayer {
 			this.discard();
 		} catch (Exception var2) {
 			this.close();
-			this.field287 = class181.method3483() + 2000L;
+			this.field287 = (class181.method3483() + 2000L) * 6027220751468291565L;
 		}
 
 	}
@@ -342,8 +303,8 @@ public class PcmPlayer {
 	)
 	@Export("skip")
 	final void skip(int var1) {
-		this.field277 -= var1;
-		if (this.field277 < 0) {
+		this.field277 -= var1 * -2134973867;
+		if (this.field277 * -1250489603 < 0) {
 			this.field277 = 0;
 		}
 
@@ -362,9 +323,9 @@ public class PcmPlayer {
 		}
 
 		class351.clearIntArray(var1, 0, var3);
-		this.field277 -= var2;
-		if (this.stream != null && this.field277 <= 0) {
-			this.field277 += class344.field4152 * -449918071 >> 4;
+		this.field277 -= var2 * -2134973867;
+		if (this.stream != null && this.field277 * -1250489603 <= 0) {
+			this.field277 += -2134973867 * (class344.field4152 * -449918071 >> 4);
 			class146.PcmStream_disable(this.stream);
 			this.method674(this.stream, this.stream.vmethod920());
 			int var4 = 0;
@@ -410,7 +371,7 @@ public class PcmPlayer {
 										var12.position += var13;
 									}
 
-									if (var4 >= this.field281) {
+									if (var4 >= this.field281 * -1437568663) {
 										break label107;
 									}
 
@@ -456,7 +417,7 @@ public class PcmPlayer {
 			}
 		}
 
-		if (this.field277 < 0) {
+		if (this.field277 * -1250489603 < 0) {
 			this.field277 = 0;
 		}
 
@@ -464,7 +425,7 @@ public class PcmPlayer {
 			this.stream.fill(var1, 0, var2);
 		}
 
-		this.timeMs = class181.method3483();
+		this.field294 = class181.method3483() * 6197142107692071761L;
 	}
 
 	@ObfuscatedName("ak")
@@ -553,11 +514,11 @@ public class PcmPlayer {
 		garbageValue = "400465000"
 	)
 	static void method689() {
-		int var0 = Players.Players_count;
+		int var0 = Players.Players_count * -2113383221;
 		int[] var1 = Players.Players_indices;
 
 		for (int var2 = 0; var2 < var0; ++var2) {
-			if (var1[var2] != Client.combatTargetPlayerIndex && var1[var2] != Client.localPlayerIndex) {
+			if (Client.combatTargetPlayerIndex * 1162319531 != var1[var2] && Client.localPlayerIndex * 729075111 != var1[var2]) {
 				class9.addPlayerToScene(Client.players[var1[var2]], true);
 			}
 		}
@@ -570,6 +531,6 @@ public class PcmPlayer {
 		garbageValue = "-1869318837"
 	)
 	static boolean method723() {
-		return (Client.drawPlayerNames & 1) != 0;
+		return (Client.drawPlayerNames * 141826713 & 1) != 0;
 	}
 }

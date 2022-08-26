@@ -86,7 +86,7 @@ public final class class300 {
 	static final void changeGameOptions(int var0) {
 		class327.method5979();
 		UserComparator6.method2616();
-		int var1 = class78.VarpDefinition_get(var0).type;
+		int var1 = class78.VarpDefinition_get(var0).type * -953256093;
 		if (var1 != 0) {
 			int var2 = Varps.Varps_main[var0];
 			if (var1 == 1) {
@@ -156,11 +156,11 @@ public final class class300 {
 			}
 
 			if (var1 == 6) {
-				Client.chatEffects = var2;
+				Client.field572 = var2 * -1212744201;
 			}
 
 			if (var1 == 9) {
-				Client.field635 = var2;
+				Client.field635 = var2 * 824946337;
 			}
 
 			if (var1 == 10) {
@@ -186,31 +186,31 @@ public final class class300 {
 			}
 
 			if (var1 == 17) {
-				Client.followerIndex = var2 & 65535;
+				Client.field659 = (var2 & 65535) * -1608622021;
 			}
 
 			AttackOption[] var3;
 			if (var1 == 18) {
-				var3 = new AttackOption[]{AttackOption.field1284, AttackOption.AttackOption_hidden, AttackOption.AttackOption_dependsOnCombatLevels, AttackOption.field1287, AttackOption.AttackOption_alwaysRightClick};
+				var3 = new AttackOption[]{AttackOption.field1284, AttackOption.AttackOption_hidden, AttackOption.field1283, AttackOption.field1287, AttackOption.field1286};
 				Client.playerAttackOption = (AttackOption)GameEngine.findEnumerated(var3, var2);
 				if (Client.playerAttackOption == null) {
-					Client.playerAttackOption = AttackOption.AttackOption_dependsOnCombatLevels;
+					Client.playerAttackOption = AttackOption.field1283;
 				}
 			}
 
 			if (var1 == 19) {
 				if (var2 == -1) {
-					Client.combatTargetPlayerIndex = -1;
+					Client.combatTargetPlayerIndex = 1565805565;
 				} else {
-					Client.combatTargetPlayerIndex = var2 & 2047;
+					Client.combatTargetPlayerIndex = (var2 & 2047) * -1565805565;
 				}
 			}
 
 			if (var1 == 22) {
-				var3 = new AttackOption[]{AttackOption.field1284, AttackOption.AttackOption_hidden, AttackOption.AttackOption_dependsOnCombatLevels, AttackOption.field1287, AttackOption.AttackOption_alwaysRightClick};
+				var3 = new AttackOption[]{AttackOption.field1284, AttackOption.AttackOption_hidden, AttackOption.field1283, AttackOption.field1287, AttackOption.field1286};
 				Client.npcAttackOption = (AttackOption)GameEngine.findEnumerated(var3, var2);
 				if (Client.npcAttackOption == null) {
-					Client.npcAttackOption = AttackOption.AttackOption_dependsOnCombatLevels;
+					Client.npcAttackOption = AttackOption.field1283;
 				}
 			}
 

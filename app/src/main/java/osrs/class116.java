@@ -1,12 +1,11 @@
 package osrs;
 
 import net.runelite.mapping.Export;
-import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
 @ObfuscatedName("dg")
-public enum class116 implements MouseWheel {
+public enum class116 implements class328 {
 	@ObfuscatedName("s")
 	@ObfuscatedSignature(
 		descriptor = "Ldg;"
@@ -34,19 +33,13 @@ public enum class116 implements MouseWheel {
 	field1432(4, 4);
 
 	@ObfuscatedName("q")
-	@ObfuscatedGetter(
-		intValue = -468392523
-	)
 	final int field1430;
 	@ObfuscatedName("i")
-	@ObfuscatedGetter(
-		intValue = -2081257831
-	)
 	final int field1429;
 
 	class116(int var3, int var4) {
-		this.field1430 = var3;
-		this.field1429 = var4;
+		this.field1430 = var3 * 1407623325;
+		this.field1429 = var4 * -1979290199;
 	}
 
 	@ObfuscatedName("h")
@@ -56,7 +49,7 @@ public enum class116 implements MouseWheel {
 	)
 	@Export("rsOrdinal")
 	public int rsOrdinal() {
-		return this.field1429;
+		return this.field1429 * -2081257831;
 	}
 
 	@ObfuscatedName("e")
@@ -65,8 +58,8 @@ public enum class116 implements MouseWheel {
 		garbageValue = "-500725143"
 	)
 	static void method2683(int var0) {
-		if (var0 != Login.loginIndex) {
-			Login.loginIndex = var0;
+		if (Login.loginIndex * 1607677011 != var0) {
+			Login.loginIndex = var0 * 445460443;
 		}
 	}
 
@@ -130,27 +123,27 @@ public enum class116 implements MouseWheel {
 	)
 	static final int method2682() {
 		if (ClanMate.clientPreferences.method2209()) {
-			return class268.Client_plane;
+			return class268.Client_plane * 1083786667;
 		} else {
 			int var0 = 3;
-			if (class82.cameraPitch < 310) {
+			if (class82.field1068 * 363781995 < 310) {
 				label164: {
 					int var1;
 					int var2;
-					if (Client.oculusOrbState == 1) {
-						var1 = FloorOverlayDefinition.oculusOrbFocalPointX >> 7;
-						var2 = AbstractUserComparator.oculusOrbFocalPointY >> 7;
+					if (Client.oculusOrbState * 33319765 == 1) {
+						var1 = FloorOverlayDefinition.field2155 * -214209769 >> 7;
+						var2 = AbstractUserComparator.field4308 * 1435916161 >> 7;
 					} else {
-						var1 = ScriptFrame.localPlayer.x >> 7;
-						var2 = ScriptFrame.localPlayer.y >> 7;
+						var1 = class56.localPlayer.x * 1627221919 >> 7;
+						var2 = class56.localPlayer.y * 1229064101 >> 7;
 					}
 
-					int var3 = class16.cameraX >> 7;
-					int var4 = class269.cameraZ >> 7;
+					int var3 = class16.field88 * -1423106171 >> 7;
+					int var4 = class269.field3179 * -675391155 >> 7;
 					if (var3 >= 0 && var4 >= 0 && var3 < 104 && var4 < 104) {
 						if (var1 >= 0 && var2 >= 0 && var1 < 104 && var2 < 104) {
-							if ((Tiles.Tiles_renderFlags[class268.Client_plane][var3][var4] & 4) != 0) {
-								var0 = class268.Client_plane;
+							if ((Tiles.Tiles_renderFlags[class268.Client_plane * 1083786667][var3][var4] & 4) != 0) {
+								var0 = class268.Client_plane * 1083786667;
 							}
 
 							int var5;
@@ -184,8 +177,8 @@ public enum class116 implements MouseWheel {
 										--var3;
 									}
 
-									if ((Tiles.Tiles_renderFlags[class268.Client_plane][var3][var4] & 4) != 0) {
-										var0 = class268.Client_plane;
+									if ((Tiles.Tiles_renderFlags[class268.Client_plane * 1083786667][var3][var4] & 4) != 0) {
+										var0 = class268.Client_plane * 1083786667;
 									}
 
 									var8 += var7;
@@ -197,8 +190,8 @@ public enum class116 implements MouseWheel {
 											--var4;
 										}
 
-										if ((Tiles.Tiles_renderFlags[class268.Client_plane][var3][var4] & 4) != 0) {
-											var0 = class268.Client_plane;
+										if ((Tiles.Tiles_renderFlags[class268.Client_plane * 1083786667][var3][var4] & 4) != 0) {
+											var0 = class268.Client_plane * 1083786667;
 										}
 									}
 								}
@@ -214,8 +207,8 @@ public enum class116 implements MouseWheel {
 											--var4;
 										}
 
-										if ((Tiles.Tiles_renderFlags[class268.Client_plane][var3][var4] & 4) != 0) {
-											var0 = class268.Client_plane;
+										if ((Tiles.Tiles_renderFlags[class268.Client_plane * 1083786667][var3][var4] & 4) != 0) {
+											var0 = class268.Client_plane * 1083786667;
 										}
 
 										var8 += var7;
@@ -227,8 +220,8 @@ public enum class116 implements MouseWheel {
 												--var3;
 											}
 
-											if ((Tiles.Tiles_renderFlags[class268.Client_plane][var3][var4] & 4) != 0) {
-												var0 = class268.Client_plane;
+											if ((Tiles.Tiles_renderFlags[class268.Client_plane * 1083786667][var3][var4] & 4) != 0) {
+												var0 = class268.Client_plane * 1083786667;
 											}
 										}
 									}
@@ -237,21 +230,21 @@ public enum class116 implements MouseWheel {
 							}
 						}
 
-						return class268.Client_plane;
+						return class268.Client_plane * 1083786667;
 					}
 
-					return class268.Client_plane;
+					return class268.Client_plane * 1083786667;
 				}
 			}
 
-			if (ScriptFrame.localPlayer.x >= 0 && ScriptFrame.localPlayer.y >= 0 && ScriptFrame.localPlayer.x < 13312 && ScriptFrame.localPlayer.y < 13312) {
-				if ((Tiles.Tiles_renderFlags[class268.Client_plane][ScriptFrame.localPlayer.x >> 7][ScriptFrame.localPlayer.y >> 7] & 4) != 0) {
-					var0 = class268.Client_plane;
+			if (class56.localPlayer.x * 1627221919 >= 0 && class56.localPlayer.y * 1229064101 >= 0 && class56.localPlayer.x * 1627221919 < 13312 && class56.localPlayer.y * 1229064101 < 13312) {
+				if ((Tiles.Tiles_renderFlags[class268.Client_plane * 1083786667][class56.localPlayer.x * 1627221919 >> 7][class56.localPlayer.y * 1229064101 >> 7] & 4) != 0) {
+					var0 = class268.Client_plane * 1083786667;
 				}
 
 				return var0;
 			} else {
-				return class268.Client_plane;
+				return class268.Client_plane * 1083786667;
 			}
 		}
 	}

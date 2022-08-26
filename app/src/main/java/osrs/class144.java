@@ -1,16 +1,12 @@
 package osrs;
 
 import net.runelite.mapping.Export;
-import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
 @ObfuscatedName("eg")
 public abstract class class144 extends Node {
 	@ObfuscatedName("o")
-	@ObfuscatedGetter(
-		intValue = -1519113599
-	)
 	@Export("ItemDefinition_fileCount")
 	public static int ItemDefinition_fileCount;
 
@@ -53,7 +49,7 @@ public abstract class class144 extends Node {
 		Tiles.Tiles_underlays = null;
 		Tiles.Tiles_overlays = null;
 		AbstractUserComparator.Tiles_shapes = null;
-		GrandExchangeOfferOwnWorldComparator.field473 = null;
+		class59.field473 = null;
 		class17.field92 = null;
 		Tiles.field975 = null;
 		class135.field1587 = null;
@@ -71,8 +67,8 @@ public abstract class class144 extends Node {
 	)
 	static void method3010() {
 		Login.worldSelectOpen = false;
-		class10.leftTitleSprite.drawAt(Login.xPadding, 0);
-		Login.rightTitleSprite.drawAt(Login.xPadding + 382, 0);
-		MusicPatchPcmStream.logoSprite.drawAt(Login.xPadding + 382 - MusicPatchPcmStream.logoSprite.subWidth / 2, 18);
+		class10.leftTitleSprite.drawAt(Login.xPadding * 143934889, 0);
+		Login.rightTitleSprite.drawAt(Login.xPadding * 143934889 + 382, 0);
+		MusicPatchPcmStream.logoSprite.drawAt(Login.xPadding * 143934889 + 382 - MusicPatchPcmStream.logoSprite.subWidth / 2, 18);
 	}
 }

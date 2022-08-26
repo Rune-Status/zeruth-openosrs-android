@@ -1,12 +1,11 @@
 package osrs;
 
 import net.runelite.mapping.Export;
-import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
 @ObfuscatedName("ch")
-public enum class83 implements MouseWheel {
+public enum class83 implements class328 {
 	@ObfuscatedName("s")
 	@ObfuscatedSignature(
 		descriptor = "Lch;"
@@ -39,19 +38,13 @@ public enum class83 implements MouseWheel {
 	field1078(5, 6);
 
 	@ObfuscatedName("i")
-	@ObfuscatedGetter(
-		intValue = -1715306901
-	)
 	final int field1075;
 	@ObfuscatedName("k")
-	@ObfuscatedGetter(
-		intValue = 419461411
-	)
 	final int field1080;
 
 	class83(int var3, int var4) {
-		this.field1075 = var3;
-		this.field1080 = var4;
+		this.field1075 = var3 * -1624162749;
+		this.field1080 = var4 * -304775541;
 	}
 
 	@ObfuscatedName("h")
@@ -61,7 +54,7 @@ public enum class83 implements MouseWheel {
 	)
 	@Export("rsOrdinal")
 	public int rsOrdinal() {
-		return this.field1080;
+		return this.field1080 * 419461411;
 	}
 
 	@ObfuscatedName("s")
@@ -97,7 +90,7 @@ public enum class83 implements MouseWheel {
 		try {
 			var0 = class433.getPreferencesFile("", class20.field111.name, true);
 			Buffer var1 = ClanMate.clientPreferences.toBuffer();
-			var0.write(var1.array, 0, var1.offset);
+			var0.write(var1.array, 0, var1.offset * 1795921631);
 		} catch (Exception var3) {
 		}
 
@@ -152,18 +145,18 @@ public enum class83 implements MouseWheel {
 			return null;
 		} else {
 			SpritePixels var22 = null;
-			if (var9.noteTemplate != -1) {
-				var22 = getItemSprite(var9.note, 10, 1, 0, 0, true);
+			if (var9.noteTemplate * 128305431 != -1) {
+				var22 = getItemSprite(var9.note * -123389315, 10, 1, 0, 0, true);
 				if (var22 == null) {
 					return null;
 				}
-			} else if (var9.notedId != -1) {
-				var22 = getItemSprite(var9.unnotedId, var1, var2, var3, 0, false);
+			} else if (var9.notedId * 1585697687 != -1) {
+				var22 = getItemSprite(var9.unnotedId * -2021253043, var1, var2, var3, 0, false);
 				if (var22 == null) {
 					return null;
 				}
-			} else if (var9.placeholderTemplate != -1) {
-				var22 = getItemSprite(var9.placeholder, var1, 0, 0, 0, false);
+			} else if (var9.placeholderTemplate * -362144601 != -1) {
+				var22 = getItemSprite(var9.placeholder * 825777631, var1, 0, 0, 0, false);
 				if (var22 == null) {
 					return null;
 				}
@@ -180,22 +173,22 @@ public enum class83 implements MouseWheel {
 			Rasterizer3D.Rasterizer3D_setClipFromRasterizer2D();
 			Rasterizer3D.method4009(16, 16);
 			Rasterizer3D.field2352 = false;
-			if (var9.placeholderTemplate != -1) {
+			if (var9.placeholderTemplate * -362144601 != -1) {
 				var22.drawTransBgAt(0, 0);
 			}
 
-			int var16 = var9.zoom2d;
+			int var16 = var9.zoom2d * -1237058049;
 			if (var5) {
 				var16 = (int)(1.5D * (double)var16);
 			} else if (var2 == 2) {
 				var16 = (int)(1.04D * (double)var16);
 			}
 
-			int var17 = var16 * Rasterizer3D.Rasterizer3D_sine[var9.xan2d] >> 16;
-			int var18 = var16 * Rasterizer3D.Rasterizer3D_cosine[var9.xan2d] >> 16;
+			int var17 = Rasterizer3D.Rasterizer3D_sine[var9.xan2d * -1096273037] * var16 >> 16;
+			int var18 = Rasterizer3D.Rasterizer3D_cosine[var9.xan2d * -1096273037] * var16 >> 16;
 			var21.calculateBoundsCylinder();
-			var21.method4367(0, var9.yan2d, var9.zan2d, var9.xan2d, var9.offsetX2d, var21.height / 2 + var17 + var9.offsetY2d, var18 + var9.offsetY2d);
-			if (var9.notedId != -1) {
+			var21.method4367(0, var9.yan2d * 715428215, var9.zan2d * -662140483, var9.xan2d * -1096273037, var9.offsetX2d * -1479969367, var21.height * 417479049 / 2 + var17 + var9.offsetY2d * -344320311, var9.offsetY2d * -344320311 + var18);
+			if (var9.notedId * 1585697687 != -1) {
 				var22.drawTransBgAt(0, 0);
 			}
 
@@ -212,11 +205,11 @@ public enum class83 implements MouseWheel {
 			}
 
 			Rasterizer2D.Rasterizer2D_replace(var8.pixels, 36, 32);
-			if (var9.noteTemplate != -1) {
+			if (var9.noteTemplate * 128305431 != -1) {
 				var22.drawTransBgAt(0, 0);
 			}
 
-			if (var4 == 1 || var4 == 2 && var9.isStackable == 1) {
+			if (var4 == 1 || var4 == 2 && var9.isStackable * -1525840713 == 1) {
 				Font var19 = class137.ItemDefinition_fontPlain11;
 				String var20;
 				if (var1 < 100000) {
@@ -249,63 +242,63 @@ public enum class83 implements MouseWheel {
 	)
 	static int method2079(int var0, Script var1, boolean var2) {
 		if (var0 == 7600) {
-			--UserComparator8.Interpreter_stringStackSize;
+			UserComparator8.Interpreter_stringStackSize -= 204829809;
 			return 1;
 		} else if (var0 == 7601) {
-			--UserComparator8.Interpreter_stringStackSize;
+			UserComparator8.Interpreter_stringStackSize -= 204829809;
 			return 1;
 		} else if (var0 == 7602) {
-			Interpreter.Interpreter_intStack[++User.Interpreter_intStackSize - 1] = 0;
+			Interpreter.Interpreter_intStack[(User.Interpreter_intStackSize += -312486675) * -313022235 - 1] = 0;
 			return 1;
 		} else if (var0 == 7603) {
-			--User.Interpreter_intStackSize;
-			Interpreter.Interpreter_stringStack[++UserComparator8.Interpreter_stringStackSize - 1] = "";
+			User.Interpreter_intStackSize -= -312486675;
+			Interpreter.Interpreter_stringStack[(UserComparator8.Interpreter_stringStackSize += 204829809) * 929025169 - 1] = "";
 			return 1;
 		} else if (var0 == 7604) {
-			--UserComparator8.Interpreter_stringStackSize;
-			Interpreter.Interpreter_intStack[++User.Interpreter_intStackSize - 1] = 0;
+			UserComparator8.Interpreter_stringStackSize -= 204829809;
+			Interpreter.Interpreter_intStack[(User.Interpreter_intStackSize += -312486675) * -313022235 - 1] = 0;
 			return 1;
 		} else if (var0 == 7605) {
-			--User.Interpreter_intStackSize;
+			User.Interpreter_intStackSize -= -312486675;
 			return 1;
 		} else if (var0 == 7606) {
-			User.Interpreter_intStackSize -= 2;
-			Interpreter.Interpreter_intStack[++User.Interpreter_intStackSize - 1] = 0;
-			Interpreter.Interpreter_intStack[++User.Interpreter_intStackSize - 1] = 0;
+			User.Interpreter_intStackSize -= -624973350;
+			Interpreter.Interpreter_intStack[(User.Interpreter_intStackSize += -312486675) * -313022235 - 1] = 0;
+			Interpreter.Interpreter_intStack[(User.Interpreter_intStackSize += -312486675) * -313022235 - 1] = 0;
 			return 1;
 		} else if (var0 == 7607) {
 			return 1;
 		} else if (var0 == 7608) {
-			--UserComparator8.Interpreter_stringStackSize;
+			UserComparator8.Interpreter_stringStackSize -= 204829809;
 			return 1;
 		} else if (var0 == 7609) {
-			--UserComparator8.Interpreter_stringStackSize;
+			UserComparator8.Interpreter_stringStackSize -= 204829809;
 			return 1;
 		} else if (var0 == 7610) {
-			--UserComparator8.Interpreter_stringStackSize;
+			UserComparator8.Interpreter_stringStackSize -= 204829809;
 			return 1;
 		} else if (var0 == 7611) {
-			--User.Interpreter_intStackSize;
+			User.Interpreter_intStackSize -= -312486675;
 			return 1;
 		} else if (var0 == 7612) {
-			Interpreter.Interpreter_intStack[++User.Interpreter_intStackSize - 1] = 0;
+			Interpreter.Interpreter_intStack[(User.Interpreter_intStackSize += -312486675) * -313022235 - 1] = 0;
 			return 1;
 		} else if (var0 == 7613) {
-			--User.Interpreter_intStackSize;
-			Interpreter.Interpreter_stringStack[++UserComparator8.Interpreter_stringStackSize - 1] = "";
+			User.Interpreter_intStackSize -= -312486675;
+			Interpreter.Interpreter_stringStack[(UserComparator8.Interpreter_stringStackSize += 204829809) * 929025169 - 1] = "";
 			return 1;
 		} else if (var0 == 7614) {
 			return 1;
 		} else if (var0 == 7615) {
-			--UserComparator8.Interpreter_stringStackSize;
+			UserComparator8.Interpreter_stringStackSize -= 204829809;
 			return 1;
 		} else if (var0 == 7616) {
-			--UserComparator8.Interpreter_stringStackSize;
-			User.Interpreter_intStackSize -= 2;
+			UserComparator8.Interpreter_stringStackSize -= 204829809;
+			User.Interpreter_intStackSize -= -624973350;
 			return 1;
 		} else if (var0 == 7617) {
-			--UserComparator8.Interpreter_stringStackSize;
-			Interpreter.Interpreter_intStack[++User.Interpreter_intStackSize - 1] = 0;
+			UserComparator8.Interpreter_stringStackSize -= 204829809;
+			Interpreter.Interpreter_intStack[(User.Interpreter_intStackSize += -312486675) * -313022235 - 1] = 0;
 			return 1;
 		} else {
 			return 2;

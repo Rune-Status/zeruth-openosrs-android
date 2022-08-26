@@ -3,7 +3,6 @@ package osrs;
 import java.util.Iterator;
 import net.runelite.mapping.Export;
 import net.runelite.mapping.Implements;
-import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
@@ -14,8 +13,7 @@ public class ParamComposition extends DualNode {
 	@ObfuscatedSignature(
 		descriptor = "Lls;"
 	)
-	@Export("ParamDefinition_archive")
-	public static AbstractArchive ParamDefinition_archive;
+	public static AbstractArchive field1997;
 	@ObfuscatedName("h")
 	@ObfuscatedSignature(
 		descriptor = "Liz;"
@@ -26,9 +24,6 @@ public class ParamComposition extends DualNode {
 	@Export("type")
 	char type;
 	@ObfuscatedName("v")
-	@ObfuscatedGetter(
-		intValue = -1377513159
-	)
 	@Export("defaultInt")
 	public int defaultInt;
 	@ObfuscatedName("c")
@@ -82,7 +77,7 @@ public class ParamComposition extends DualNode {
 		if (var2 == 1) {
 			this.type = UrlRequest.method2530(var1.readByte());
 		} else if (var2 == 2) {
-			this.defaultInt = var1.readInt();
+			this.defaultInt = var1.readInt() * -994390775;
 		} else if (var2 == 4) {
 			this.autoDisable = false;
 		} else if (var2 == 5) {
@@ -127,7 +122,7 @@ public class ParamComposition extends DualNode {
 						byte[] var3 = class438.Widget_archive.takeFile(var0, var2);
 						if (var3 != null) {
 							class358.Widget_interfaceComponents[var0][var2] = new Widget();
-							class358.Widget_interfaceComponents[var0][var2].id = var2 + (var0 << 16);
+							class358.Widget_interfaceComponents[var0][var2].id = (var2 + (var0 << 16)) * -2096093449;
 							if (var3[0] == -1) {
 								class358.Widget_interfaceComponents[var0][var2].decode(new Buffer(var3));
 							} else {
@@ -148,15 +143,14 @@ public class ParamComposition extends DualNode {
 		descriptor = "(I)Z",
 		garbageValue = "-927717931"
 	)
-	@Export("isKeyDown")
-	public static final boolean isKeyDown() {
+	public static final boolean method3517() {
 		synchronized(KeyHandler.KeyHandler_instance) {
-			if (KeyHandler.field139 == KeyHandler.field141) {
+			if (KeyHandler.field139 * 1364539797 == KeyHandler.field141 * 631010953) {
 				return false;
 			} else {
-				class145.field1653 = KeyHandler.field144[KeyHandler.field139];
-				BoundaryObject.field2636 = KeyHandler.field125[KeyHandler.field139];
-				KeyHandler.field139 = KeyHandler.field139 + 1 & 127;
+				class145.field1653 = KeyHandler.field144[KeyHandler.field139 * 1364539797] * 2091439357;
+				BoundaryObject.field2636 = KeyHandler.field125[KeyHandler.field139 * 1364539797];
+				KeyHandler.field139 = (KeyHandler.field139 * 1364539797 + 1 & 127) * 1002785213;
 				return true;
 			}
 		}
@@ -188,6 +182,6 @@ public class ParamComposition extends DualNode {
 		garbageValue = "-1050807698"
 	)
 	static final void method3508() {
-		Client.field710 = Client.cycleCntr;
+		Client.field710 = Client.field674 * -2055096163;
 	}
 }

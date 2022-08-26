@@ -25,18 +25,18 @@ public final class class4 {
 				byte[] var0 = class258.World_request.getResponse();
 				Buffer var1 = new Buffer(var0);
 				var1.readInt();
-				World.World_count = var1.readUnsignedShort();
-				World.World_worlds = new World[World.World_count];
+				World.World_count = var1.readUnsignedShort() * -1988229471;
+				World.World_worlds = new World[World.World_count * -898146975];
 
-				World var3;
-				for (int var2 = 0; var2 < World.World_count; var3.index = var2++) {
-					var3 = World.World_worlds[var2] = new World();
-					var3.id = var1.readUnsignedShort();
-					var3.properties = var1.readInt();
-					var3.host = var1.readStringCp1252NullTerminated();
-					var3.activity = var1.readStringCp1252NullTerminated();
-					var3.location = var1.readUnsignedByte();
-					var3.population = var1.readShort();
+				for (int var2 = 0; var2 < World.World_count * -898146975; ++var2) {
+					World var3 = World.World_worlds[var2] = new World();
+					var3.field779 = var1.readUnsignedShort() * -24001393;
+					var3.field780 = var1.readInt() * -2014516421;
+					var3.field782 = var1.readStringCp1252NullTerminated();
+					var3.field783 = var1.readStringCp1252NullTerminated();
+					var3.field784 = var1.readUnsignedByte() * -1919124383;
+					var3.field781 = var1.readShort() * -2020555931;
+					var3.field775 = var2 * 2094166767;
 				}
 
 				WorldMapData_1.sortWorlds(World.World_worlds, 0, World.World_worlds.length - 1, World.World_sortOption1, World.World_sortOption2);
@@ -65,10 +65,9 @@ public final class class4 {
 		descriptor = "(II)V",
 		garbageValue = "1306352219"
 	)
-	@Export("updateGameState")
-	static void updateGameState(int var0) {
-		if (var0 != Client.gameState) {
-			if (Client.gameState == 0) {
+	static void method22(int var0) {
+		if (var0 != Client.gameState * 433143709) {
+			if (Client.gameState * 433143709 == 0) {
 				AbstractByteArrayCopier.client.method481();
 			}
 
@@ -87,17 +86,17 @@ public final class class4 {
 				PacketBufferNode.field3045 = null;
 			}
 
-			if (Client.gameState == 25) {
+			if (Client.gameState * 433143709 == 25) {
 				Client.field539 = 0;
 				Client.field670 = 0;
-				Client.field541 = 1;
+				Client.field541 = 2077402943;
 				Client.field644 = 0;
-				Client.field731 = 1;
+				Client.field731 = -809583473;
 			}
 
 			if (var0 != 5 && var0 != 10) {
 				if (var0 == 20) {
-					int var7 = Client.gameState == 11 ? 4 : 0;
+					int var7 = Client.gameState * 433143709 == 11 ? 4 : 0;
 					ClanMate.method6613(KitDefinition.archive10, class299.archive8, false, var7);
 				} else if (var0 == 11) {
 					ClanMate.method6613(KitDefinition.archive10, class299.archive8, false, 4);
@@ -105,28 +104,28 @@ public final class class4 {
 					ItemComposition.setLoginResponseString("", "Updating date of birth...", "");
 					ClanMate.method6613(KitDefinition.archive10, class299.archive8, false, 7);
 				} else if (Login.clearLoginScreen) {
-					class19.titleboxSprite = null;
-					Login.titlebuttonSprite = null;
-					Login.runesSprite = null;
+					class19.field102 = null;
+					Login.field871 = null;
+					Login.field870 = null;
 					class10.leftTitleSprite = null;
 					Login.rightTitleSprite = null;
 					MusicPatchPcmStream.logoSprite = null;
-					class161.title_muteSprite = null;
-					class29.options_buttons_0Sprite = null;
-					VerticalAlignment.options_buttons_2Sprite = null;
+					class161.field1760 = null;
+					class29.field168 = null;
+					VerticalAlignment.field1952 = null;
 					class388.worldSelectBackSprites = null;
 					NetCache.worldSelectFlagSprites = null;
 					PcmPlayer.worldSelectArrows = null;
 					VarbitComposition.worldSelectStars = null;
 					GrandExchangeOfferWorldComparator.field4064 = null;
-					class259.loginScreenRunesAnimation.method2173();
-					class273.musicPlayerStatus = 1;
+					class259.field2909.method2173();
+					class273.musicPlayerStatus = 168497391;
 					NetFileRequest.musicTrackArchive = null;
-					UrlRequester.musicTrackGroupId = -1;
-					SceneTilePaint.musicTrackFileId = -1;
+					UrlRequester.musicTrackGroupId = 1733946155;
+					SceneTilePaint.musicTrackFileId = 2021054053;
 					class28.musicTrackVolume = 0;
 					class273.musicTrackBoolean = false;
-					class160.pcmSampleLength = 2;
+					class160.pcmSampleLength = -2074556818;
 					if (NetCache.NetCache_socket != null) {
 						try {
 							Buffer var3 = new Buffer(4);
@@ -139,7 +138,7 @@ public final class class4 {
 							} catch (Exception var5) {
 							}
 
-							++NetCache.NetCache_ioExceptions;
+							NetCache.NetCache_ioExceptions += 1082841761;
 							NetCache.NetCache_socket = null;
 						}
 					}
@@ -147,12 +146,12 @@ public final class class4 {
 					Login.clearLoginScreen = false;
 				}
 			} else {
-				boolean var1 = ClanMate.clientPreferences.method2229() >= Client.field480;
+				boolean var1 = ClanMate.clientPreferences.method2229() >= Client.field480 * 424143225;
 				int var2 = var1 ? 0 : 12;
 				ClanMate.method6613(KitDefinition.archive10, class299.archive8, true, var2);
 			}
 
-			Client.gameState = var0;
+			Client.gameState = var0 * -1369555275;
 		}
 	}
 
@@ -162,8 +161,8 @@ public final class class4 {
 		garbageValue = "5"
 	)
 	static final void method19(int var0, int var1, int var2, int var3) {
-		for (int var4 = 0; var4 < Client.rootWidgetCount; ++var4) {
-			if (Client.rootWidgetXs[var4] + Client.rootWidgetWidths[var4] > var0 && Client.rootWidgetXs[var4] < var0 + var2 && Client.rootWidgetYs[var4] + Client.rootWidgetHeights[var4] > var1 && Client.rootWidgetYs[var4] < var3 + var1) {
+		for (int var4 = 0; var4 < Client.field696 * -1456709211; ++var4) {
+			if (Client.field701[var4] + Client.field703[var4] > var0 && Client.field701[var4] < var0 + var2 && Client.field508[var4] + Client.field746[var4] > var1 && Client.field508[var4] < var3 + var1) {
 				Client.field643[var4] = true;
 			}
 		}

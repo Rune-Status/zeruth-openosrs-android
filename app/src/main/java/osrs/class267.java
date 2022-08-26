@@ -17,16 +17,16 @@ public class class267 {
 	@Export("readReflectionCheck")
 	public static void readReflectionCheck(Buffer var0, int var1) {
 		ReflectionCheck var2 = new ReflectionCheck();
-		var2.size = var0.readUnsignedByte();
-		var2.id = var0.readInt();
-		var2.operations = new int[var2.size];
-		var2.creationErrors = new int[var2.size];
-		var2.fields = new Field[var2.size];
-		var2.intReplaceValues = new int[var2.size];
-		var2.methods = new Method[var2.size];
-		var2.arguments = new byte[var2.size][][];
+		var2.size = var0.readUnsignedByte() * -935526043;
+		var2.id = var0.readInt() * 1763123819;
+		var2.operations = new int[var2.size * 1174030445];
+		var2.creationErrors = new int[var2.size * 1174030445];
+		var2.fields = new Field[var2.size * 1174030445];
+		var2.intReplaceValues = new int[var2.size * 1174030445];
+		var2.methods = new Method[var2.size * 1174030445];
+		var2.arguments = new byte[var2.size * 1174030445][][];
 
-		for (int var3 = 0; var3 < var2.size; ++var3) {
+		for (int var3 = 0; var3 < var2.size * 1174030445; ++var3) {
 			try {
 				int var4 = var0.readUnsignedByte();
 				String var5;
@@ -148,51 +148,51 @@ public class class267 {
 	)
 	static int method5148(int var0, Script var1, boolean var2) {
 		if (var0 == 6200) {
-			User.Interpreter_intStackSize -= 2;
-			Client.field561 = (short)class296.method5653(Interpreter.Interpreter_intStack[User.Interpreter_intStackSize]);
+			User.Interpreter_intStackSize -= -624973350;
+			Client.field561 = (short)class296.method5653(Interpreter.Interpreter_intStack[User.Interpreter_intStackSize * -313022235]);
 			if (Client.field561 <= 0) {
 				Client.field561 = 256;
 			}
 
-			Client.field744 = (short)class296.method5653(Interpreter.Interpreter_intStack[User.Interpreter_intStackSize + 1]);
+			Client.field744 = (short)class296.method5653(Interpreter.Interpreter_intStack[User.Interpreter_intStackSize * -313022235 + 1]);
 			if (Client.field744 <= 0) {
 				Client.field744 = 256;
 			}
 
 			return 1;
 		} else if (var0 == 6201) {
-			User.Interpreter_intStackSize -= 2;
-			Client.zoomHeight = (short)Interpreter.Interpreter_intStack[User.Interpreter_intStackSize];
+			User.Interpreter_intStackSize -= -624973350;
+			Client.zoomHeight = (short)Interpreter.Interpreter_intStack[User.Interpreter_intStackSize * -313022235];
 			if (Client.zoomHeight <= 0) {
 				Client.zoomHeight = 256;
 			}
 
-			Client.zoomWidth = (short)Interpreter.Interpreter_intStack[User.Interpreter_intStackSize + 1];
+			Client.zoomWidth = (short)Interpreter.Interpreter_intStack[User.Interpreter_intStackSize * -313022235 + 1];
 			if (Client.zoomWidth <= 0) {
 				Client.zoomWidth = 320;
 			}
 
 			return 1;
 		} else if (var0 == 6202) {
-			User.Interpreter_intStackSize -= 4;
-			Client.field747 = (short)Interpreter.Interpreter_intStack[User.Interpreter_intStackSize];
+			User.Interpreter_intStackSize -= -1249946700;
+			Client.field747 = (short)Interpreter.Interpreter_intStack[User.Interpreter_intStackSize * -313022235];
 			if (Client.field747 <= 0) {
 				Client.field747 = 1;
 			}
 
-			Client.field748 = (short)Interpreter.Interpreter_intStack[User.Interpreter_intStackSize + 1];
+			Client.field748 = (short)Interpreter.Interpreter_intStack[User.Interpreter_intStackSize * -313022235 + 1];
 			if (Client.field748 <= 0) {
 				Client.field748 = 32767;
 			} else if (Client.field748 < Client.field747) {
 				Client.field748 = Client.field747;
 			}
 
-			Client.field749 = (short)Interpreter.Interpreter_intStack[User.Interpreter_intStackSize + 2];
+			Client.field749 = (short)Interpreter.Interpreter_intStack[User.Interpreter_intStackSize * -313022235 + 2];
 			if (Client.field749 <= 0) {
 				Client.field749 = 1;
 			}
 
-			Client.field724 = (short)Interpreter.Interpreter_intStack[User.Interpreter_intStackSize + 3];
+			Client.field724 = (short)Interpreter.Interpreter_intStack[User.Interpreter_intStackSize * -313022235 + 3];
 			if (Client.field724 <= 0) {
 				Client.field724 = 32767;
 			} else if (Client.field724 < Client.field749) {
@@ -202,34 +202,34 @@ public class class267 {
 			return 1;
 		} else if (var0 == 6203) {
 			if (Client.viewportWidget != null) {
-				class134.setViewportShape(0, 0, Client.viewportWidget.width, Client.viewportWidget.height, false);
-				Interpreter.Interpreter_intStack[++User.Interpreter_intStackSize - 1] = Client.viewportWidth;
-				Interpreter.Interpreter_intStack[++User.Interpreter_intStackSize - 1] = Client.viewportHeight;
+				class134.setViewportShape(0, 0, Client.viewportWidget.field3372 * 1791266795, Client.viewportWidget.field3426 * -1514292503, false);
+				Interpreter.Interpreter_intStack[(User.Interpreter_intStackSize += -312486675) * -313022235 - 1] = Client.field704 * 452330879;
+				Interpreter.Interpreter_intStack[(User.Interpreter_intStackSize += -312486675) * -313022235 - 1] = Client.field754 * -1231054653;
 			} else {
-				Interpreter.Interpreter_intStack[++User.Interpreter_intStackSize - 1] = -1;
-				Interpreter.Interpreter_intStack[++User.Interpreter_intStackSize - 1] = -1;
+				Interpreter.Interpreter_intStack[(User.Interpreter_intStackSize += -312486675) * -313022235 - 1] = -1;
+				Interpreter.Interpreter_intStack[(User.Interpreter_intStackSize += -312486675) * -313022235 - 1] = -1;
 			}
 
 			return 1;
 		} else if (var0 == 6204) {
-			Interpreter.Interpreter_intStack[++User.Interpreter_intStackSize - 1] = Client.zoomHeight;
-			Interpreter.Interpreter_intStack[++User.Interpreter_intStackSize - 1] = Client.zoomWidth;
+			Interpreter.Interpreter_intStack[(User.Interpreter_intStackSize += -312486675) * -313022235 - 1] = Client.zoomHeight;
+			Interpreter.Interpreter_intStack[(User.Interpreter_intStackSize += -312486675) * -313022235 - 1] = Client.zoomWidth;
 			return 1;
 		} else if (var0 == 6205) {
-			Interpreter.Interpreter_intStack[++User.Interpreter_intStackSize - 1] = FriendSystem.method1661(Client.field561);
-			Interpreter.Interpreter_intStack[++User.Interpreter_intStackSize - 1] = FriendSystem.method1661(Client.field744);
+			Interpreter.Interpreter_intStack[(User.Interpreter_intStackSize += -312486675) * -313022235 - 1] = FriendSystem.method1661(Client.field561);
+			Interpreter.Interpreter_intStack[(User.Interpreter_intStackSize += -312486675) * -313022235 - 1] = FriendSystem.method1661(Client.field744);
 			return 1;
 		} else if (var0 == 6220) {
-			Interpreter.Interpreter_intStack[++User.Interpreter_intStackSize - 1] = 0;
+			Interpreter.Interpreter_intStack[(User.Interpreter_intStackSize += -312486675) * -313022235 - 1] = 0;
 			return 1;
 		} else if (var0 == 6221) {
-			Interpreter.Interpreter_intStack[++User.Interpreter_intStackSize - 1] = 0;
+			Interpreter.Interpreter_intStack[(User.Interpreter_intStackSize += -312486675) * -313022235 - 1] = 0;
 			return 1;
 		} else if (var0 == 6222) {
-			Interpreter.Interpreter_intStack[++User.Interpreter_intStackSize - 1] = class7.canvasWidth;
+			Interpreter.Interpreter_intStack[(User.Interpreter_intStackSize += -312486675) * -313022235 - 1] = class7.canvasWidth * -1894406353;
 			return 1;
 		} else if (var0 == 6223) {
-			Interpreter.Interpreter_intStack[++User.Interpreter_intStackSize - 1] = WallDecoration.canvasHeight;
+			Interpreter.Interpreter_intStack[(User.Interpreter_intStackSize += -312486675) * -313022235 - 1] = WallDecoration.canvasHeight * 1562461341;
 			return 1;
 		} else {
 			return 2;

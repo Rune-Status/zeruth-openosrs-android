@@ -2,7 +2,6 @@ package osrs;
 
 import java.util.concurrent.Future;
 import net.runelite.mapping.Export;
-import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
@@ -18,15 +17,11 @@ public class class19 {
 	@ObfuscatedSignature(
 		descriptor = "Lqe;"
 	)
-	@Export("titleboxSprite")
-	static IndexedSprite titleboxSprite;
+	static IndexedSprite field102;
 	@ObfuscatedName("y")
 	@Export("cacheSubPaths")
 	static String[] cacheSubPaths;
 	@ObfuscatedName("bi")
-	@ObfuscatedGetter(
-		intValue = 585170537
-	)
 	static int field100;
 	@ObfuscatedName("s")
 	Future field99;
@@ -114,11 +109,11 @@ public class class19 {
 		garbageValue = "-1943707241"
 	)
 	static void method284() {
-		Tiles.Tiles_minPlane = 99;
+		Tiles.Tiles_minPlane = -52032511;
 		Tiles.Tiles_underlays = new byte[4][104][104];
 		Tiles.Tiles_overlays = new byte[4][104][104];
 		AbstractUserComparator.Tiles_shapes = new byte[4][104][104];
-		GrandExchangeOfferOwnWorldComparator.field473 = new byte[4][104][104];
+		class59.field473 = new byte[4][104][104];
 		class17.field92 = new int[4][105][105];
 		Tiles.field975 = new byte[4][105][105];
 		class135.field1587 = new int[105][105];

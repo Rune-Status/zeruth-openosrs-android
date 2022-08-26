@@ -1,13 +1,11 @@
 package osrs;
 
 import net.runelite.mapping.Export;
-import net.runelite.mapping.Implements;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
 @ObfuscatedName("ld")
-@Implements("MouseWheel")
-public interface MouseWheel {
+public interface class328 {
 	@ObfuscatedName("h")
 	@ObfuscatedSignature(
 		descriptor = "(B)I",

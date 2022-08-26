@@ -2,7 +2,6 @@ package osrs;
 
 import net.runelite.mapping.Export;
 import net.runelite.mapping.Implements;
-import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
@@ -10,24 +9,14 @@ import net.runelite.mapping.ObfuscatedSignature;
 @Implements("WorldMapLabel")
 public class WorldMapLabel {
 	@ObfuscatedName("jg")
-	@ObfuscatedGetter(
-		intValue = 436575851
-	)
-	@Export("cameraY")
-	static int cameraY;
+	static int field2837;
 	@ObfuscatedName("s")
 	@Export("text")
 	String text;
 	@ObfuscatedName("h")
-	@ObfuscatedGetter(
-		intValue = -633493345
-	)
 	@Export("width")
 	int width;
 	@ObfuscatedName("w")
-	@ObfuscatedGetter(
-		intValue = 908481261
-	)
 	@Export("height")
 	int height;
 	@ObfuscatedName("v")
@@ -42,8 +31,8 @@ public class WorldMapLabel {
 	)
 	WorldMapLabel(String var1, int var2, int var3, WorldMapLabelSize var4) {
 		this.text = var1;
-		this.width = var2;
-		this.height = var3;
+		this.width = var2 * -2143194273;
+		this.height = var3 * 1011014373;
 		this.size = var4;
 	}
 

@@ -1,66 +1,32 @@
 package osrs;
 
 import net.runelite.mapping.Export;
-import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
 @ObfuscatedName("hb")
 public class class228 implements WorldMapSection {
 	@ObfuscatedName("ek")
-	@ObfuscatedGetter(
-		longValue = -2072947809351730293L
-	)
 	static long field2765;
 	@ObfuscatedName("s")
-	@ObfuscatedGetter(
-		intValue = 47745645
-	)
 	int field2770;
 	@ObfuscatedName("h")
-	@ObfuscatedGetter(
-		intValue = 263675681
-	)
 	int field2761;
 	@ObfuscatedName("w")
-	@ObfuscatedGetter(
-		intValue = 1353652937
-	)
 	int field2762;
 	@ObfuscatedName("v")
-	@ObfuscatedGetter(
-		intValue = 305913255
-	)
 	int field2763;
 	@ObfuscatedName("c")
-	@ObfuscatedGetter(
-		intValue = 730488789
-	)
 	int field2764;
 	@ObfuscatedName("q")
-	@ObfuscatedGetter(
-		intValue = -2135219953
-	)
 	int field2767;
 	@ObfuscatedName("i")
-	@ObfuscatedGetter(
-		intValue = 887995033
-	)
 	int field2766;
 	@ObfuscatedName("k")
-	@ObfuscatedGetter(
-		intValue = 258163739
-	)
 	int field2768;
 	@ObfuscatedName("o")
-	@ObfuscatedGetter(
-		intValue = 498509109
-	)
 	int field2760;
 	@ObfuscatedName("n")
-	@ObfuscatedGetter(
-		intValue = -229699945
-	)
 	int field2769;
 
 	class228() {
@@ -73,20 +39,20 @@ public class class228 implements WorldMapSection {
 	)
 	@Export("expandBounds")
 	public void expandBounds(WorldMapArea var1) {
-		if (var1.regionLowX > this.field2764) {
-			var1.regionLowX = this.field2764;
+		if (var1.field2721 * 2010353697 > this.field2764 * 730488789) {
+			var1.field2721 = this.field2764 * 1117808949;
 		}
 
-		if (var1.regionHighX < this.field2764) {
-			var1.regionHighX = this.field2764;
+		if (var1.field2717 * 1119275097 < this.field2764 * 730488789) {
+			var1.field2717 = this.field2764 * 2110612445;
 		}
 
-		if (var1.regionLowY > this.field2767) {
-			var1.regionLowY = this.field2767;
+		if (var1.field2719 * 1280794219 > this.field2767 * -2135219953) {
+			var1.field2719 = this.field2767 * -1656215315;
 		}
 
-		if (var1.regionHighY < this.field2767) {
-			var1.regionHighY = this.field2767;
+		if (var1.field2718 * 1477951297 < this.field2767 * -2135219953) {
+			var1.field2718 = this.field2767 * -713286577;
 		}
 
 	}
@@ -98,8 +64,8 @@ public class class228 implements WorldMapSection {
 	)
 	@Export("containsCoord")
 	public boolean containsCoord(int var1, int var2, int var3) {
-		if (var1 >= this.field2770 && var1 < this.field2770 + this.field2761) {
-			return var2 >= (this.field2762 << 6) + (this.field2766 << 3) && var2 <= (this.field2762 << 6) + (this.field2766 << 3) + 7 && var3 >= (this.field2763 << 6) + (this.field2768 << 3) && var3 <= (this.field2763 << 6) + (this.field2768 << 3) + 7;
+		if (var1 >= this.field2770 * 47745645 && var1 < this.field2761 * 263675681 + this.field2770 * 47745645) {
+			return var2 >= (this.field2766 * 887995033 << 3) + (this.field2762 * 1353652937 << 6) && var2 <= (this.field2762 * 1353652937 << 6) + (this.field2766 * 887995033 << 3) + 7 && var3 >= (this.field2763 * 305913255 << 6) + (this.field2768 * 258163739 << 3) && var3 <= (this.field2768 * 258163739 << 3) + (this.field2763 * 305913255 << 6) + 7;
 		} else {
 			return false;
 		}
@@ -112,7 +78,7 @@ public class class228 implements WorldMapSection {
 	)
 	@Export("containsPosition")
 	public boolean containsPosition(int var1, int var2) {
-		return var1 >= (this.field2764 << 6) + (this.field2760 << 3) && var1 <= (this.field2764 << 6) + (this.field2760 << 3) + 7 && var2 >= (this.field2767 << 6) + (this.field2769 << 3) && var2 <= (this.field2767 << 6) + (this.field2769 << 3) + 7;
+		return var1 >= (this.field2764 * 730488789 << 6) + (this.field2760 * 498509109 << 3) && var1 <= (this.field2764 * 730488789 << 6) + (this.field2760 * 498509109 << 3) + 7 && var2 >= (this.field2767 * -2135219953 << 6) + (this.field2769 * -229699945 << 3) && var2 <= (this.field2767 * -2135219953 << 6) + (this.field2769 * -229699945 << 3) + 7;
 	}
 
 	@ObfuscatedName("v")
@@ -125,7 +91,7 @@ public class class228 implements WorldMapSection {
 		if (!this.containsCoord(var1, var2, var3)) {
 			return null;
 		} else {
-			int[] var4 = new int[]{this.field2764 * 64 - this.field2762 * 64 + var2 + (this.field2760 * 8 - this.field2766 * 8), var3 + (this.field2767 * 64 - this.field2763 * 64) + (this.field2769 * 8 - this.field2768 * 8)};
+			int[] var4 = new int[]{this.field2760 * -306894424 - this.field2766 * -1485974328 + var2 + (this.field2764 * -493357760 - this.field2762 * 734442048), var3 + (this.field2767 * 784876480 - this.field2763 * -1896388160) + (this.field2769 * -1837599560 - this.field2768 * 2065309912)};
 			return var4;
 		}
 	}
@@ -140,9 +106,9 @@ public class class228 implements WorldMapSection {
 		if (!this.containsPosition(var1, var2)) {
 			return null;
 		} else {
-			int var3 = this.field2762 * 64 - this.field2764 * 64 + (this.field2766 * 8 - this.field2760 * 8) + var1;
-			int var4 = this.field2763 * 64 - this.field2767 * 64 + var2 + (this.field2768 * 8 - this.field2769 * 8);
-			return new Coord(this.field2770, var3, var4);
+			int var3 = this.field2766 * -1485974328 - this.field2760 * -306894424 + (this.field2762 * 734442048 - this.field2764 * -493357760) + var1;
+			int var4 = this.field2763 * -1896388160 - this.field2767 * 784876480 + (this.field2768 * 2065309912 - this.field2769 * -1837599560) + var2;
+			return new Coord(this.field2770 * 47745645, var3, var4);
 		}
 	}
 
@@ -153,16 +119,16 @@ public class class228 implements WorldMapSection {
 	)
 	@Export("read")
 	public void read(Buffer var1) {
-		this.field2770 = var1.readUnsignedByte();
-		this.field2761 = var1.readUnsignedByte();
-		this.field2762 = var1.readUnsignedShort();
-		this.field2766 = var1.readUnsignedByte();
-		this.field2763 = var1.readUnsignedShort();
-		this.field2768 = var1.readUnsignedByte();
-		this.field2764 = var1.readUnsignedShort();
-		this.field2760 = var1.readUnsignedByte();
-		this.field2767 = var1.readUnsignedShort();
-		this.field2769 = var1.readUnsignedByte();
+		this.field2770 = var1.readUnsignedByte() * -114749595;
+		this.field2761 = var1.readUnsignedByte() * 127722721;
+		this.field2762 = var1.readUnsignedShort() * -1576132743;
+		this.field2766 = var1.readUnsignedByte() * 1555691945;
+		this.field2763 = var1.readUnsignedShort() * -1312359913;
+		this.field2768 = var1.readUnsignedByte() * 194049555;
+		this.field2764 = var1.readUnsignedShort() * -773725827;
+		this.field2760 = var1.readUnsignedByte() * -1448590051;
+		this.field2767 = var1.readUnsignedShort() * 1790684655;
+		this.field2769 = var1.readUnsignedByte() * 1380012327;
 		this.method4791();
 	}
 

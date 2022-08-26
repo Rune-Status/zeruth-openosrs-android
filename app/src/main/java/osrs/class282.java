@@ -1,16 +1,12 @@
 package osrs;
 
 import net.runelite.mapping.Export;
-import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
 @ObfuscatedName("js")
 public class class282 {
 	@ObfuscatedName("nm")
-	@ObfuscatedGetter(
-		intValue = 1739476279
-	)
 	@Export("selectedSpellWidget")
 	static int selectedSpellWidget;
 
@@ -67,7 +63,7 @@ public class class282 {
 						ScriptEvent var4 = new ScriptEvent();
 						var4.widget = var3;
 						var4.args = var3.onLoad;
-						GraphicsObject.runScript(var4, 5000000, 0);
+						GraphicsObject.method1854(var4, 5000000, 0);
 					}
 				}
 
@@ -81,21 +77,21 @@ public class class282 {
 		garbageValue = "1702625955"
 	)
 	static void method5426(SequenceDefinition var0, int var1, int var2, int var3) {
-		if (Client.soundEffectCount < 50 && ClanMate.clientPreferences.method2226() != 0) {
+		if (Client.field708 * 1564846879 < 50 && ClanMate.clientPreferences.method2226() != 0) {
 			if (var0.soundEffects != null && var1 < var0.soundEffects.length) {
 				int var4 = var0.soundEffects[var1];
 				if (var4 != 0) {
 					int var7 = var4 >> 8;
 					int var8 = var4 >> 4 & 7;
 					int var9 = var4 & 15;
-					Client.soundEffectIds[Client.soundEffectCount] = var7;
-					Client.queuedSoundEffectLoops[Client.soundEffectCount] = var8;
-					Client.queuedSoundEffectDelays[Client.soundEffectCount] = 0;
-					Client.soundEffects[Client.soundEffectCount] = null;
+					Client.field507[Client.field708 * 1564846879] = var7;
+					Client.field732[Client.field708 * 1564846879] = var8;
+					Client.field733[Client.field708 * 1564846879] = 0;
+					Client.field735[Client.field708 * 1564846879] = null;
 					int var10 = (var2 - 64) / 128;
 					int var11 = (var3 - 64) / 128;
-					Client.soundLocations[Client.soundEffectCount] = var9 + (var11 << 8) + (var10 << 16);
-					++Client.soundEffectCount;
+					Client.field734[Client.field708 * 1564846879] = var9 + (var11 << 8) + (var10 << 16);
+					Client.field708 += 1688342751;
 				}
 
 			}
@@ -107,76 +103,75 @@ public class class282 {
 		descriptor = "([Lkn;IB)V",
 		garbageValue = "48"
 	)
-	@Export("drawModelComponents")
-	static final void drawModelComponents(Widget[] var0, int var1) {
+	static final void method5434(Widget[] var0, int var1) {
 		for (int var2 = 0; var2 < var0.length; ++var2) {
 			Widget var3 = var0[var2];
-			if (var3 != null && var3.parentId == var1 && (!var3.isIf3 || !Tiles.isComponentHidden(var3))) {
+			if (var3 != null && var3.parentId * -1386189839 == var1 && (!var3.isIf3 || !Tiles.method2023(var3))) {
 				int var5;
-				if (var3.type == 0) {
-					if (!var3.isIf3 && Tiles.isComponentHidden(var3) && var3 != class113.mousedOverWidgetIf1) {
+				if (var3.type * 1201269859 == 0) {
+					if (!var3.isIf3 && Tiles.method2023(var3) && var3 != class113.field1405) {
 						continue;
 					}
 
-					drawModelComponents(var0, var3.id);
+					method5434(var0, var3.id * -1692370233);
 					if (var3.children != null) {
-						drawModelComponents(var3.children, var3.id);
+						method5434(var3.children, var3.id * -1692370233);
 					}
 
-					InterfaceParent var4 = (InterfaceParent)Client.interfaceParents.get((long)var3.id);
+					InterfaceParent var4 = (InterfaceParent)Client.interfaceParents.get((long)(var3.id * -1692370233));
 					if (var4 != null) {
-						var5 = var4.group;
+						var5 = var4.group * 1124857953;
 						if (ParamComposition.loadInterface(var5)) {
-							drawModelComponents(class358.Widget_interfaceComponents[var5], -1);
+							method5434(class358.Widget_interfaceComponents[var5], -1);
 						}
 					}
 				}
 
-				if (var3.type == 6) {
-					if (var3.sequenceId != -1 || var3.sequenceId2 != -1) {
+				if (var3.type * 1201269859 == 6) {
+					if (var3.field3401 * -1955723579 != -1 || var3.field3416 * 263482215 != -1) {
 						boolean var8 = WorldMapRegion.runCs1(var3);
 						if (var8) {
-							var5 = var3.sequenceId2;
+							var5 = var3.field3416 * 263482215;
 						} else {
-							var5 = var3.sequenceId;
+							var5 = var3.field3401 * -1955723579;
 						}
 
 						if (var5 != -1) {
 							SequenceDefinition var6 = ByteArrayPool.SequenceDefinition_get(var5);
 							if (!var6.isCachedModelIdSet()) {
-								for (var3.modelFrameCycle += Client.field599; var3.modelFrameCycle > var6.frameLengths[var3.modelFrame]; class125.invalidateWidget(var3)) {
-									var3.modelFrameCycle -= var6.frameLengths[var3.modelFrame];
-									++var3.modelFrame;
-									if (var3.modelFrame >= var6.frameIds.length) {
-										var3.modelFrame -= var6.frameCount;
-										if (var3.modelFrame < 0 || var3.modelFrame >= var6.frameIds.length) {
+								for (var3.modelFrameCycle += Client.field599 * 75121955; var3.modelFrameCycle * -511764213 > var6.frameLengths[var3.modelFrame * 1038522613]; class125.method2770(var3)) {
+									var3.modelFrameCycle -= var6.frameLengths[var3.modelFrame * 1038522613] * 820898467;
+									var3.modelFrame += 2000114525;
+									if (var3.modelFrame * 1038522613 >= var6.frameIds.length) {
+										var3.modelFrame -= var6.frameCount * -943554033;
+										if (var3.modelFrame * 1038522613 < 0 || var3.modelFrame * 1038522613 >= var6.frameIds.length) {
 											var3.modelFrame = 0;
 										}
 									}
 								}
 							} else {
-								var3.modelFrame += Client.field599;
+								var3.modelFrame += -515639075 * Client.field599;
 								int var7 = var6.method3729();
-								if (var3.modelFrame >= var7) {
-									var3.modelFrame -= var6.frameCount;
-									if (var3.modelFrame < 0 || var3.modelFrame >= var7) {
+								if (var3.modelFrame * 1038522613 >= var7) {
+									var3.modelFrame -= var6.frameCount * -943554033;
+									if (var3.modelFrame * 1038522613 < 0 || var3.modelFrame * 1038522613 >= var7) {
 										var3.modelFrame = 0;
 									}
 								}
 
-								class125.invalidateWidget(var3);
+								class125.method2770(var3);
 							}
 						}
 					}
 
-					if (var3.field3414 != 0 && !var3.isIf3) {
-						int var9 = var3.field3414 >> 16;
-						var5 = var3.field3414 << 16 >> 16;
-						var9 *= Client.field599;
-						var5 *= Client.field599;
-						var3.modelAngleX = var9 + var3.modelAngleX & 2047;
-						var3.modelAngleY = var5 + var3.modelAngleY & 2047;
-						class125.invalidateWidget(var3);
+					if (var3.field3414 * 1514535987 != 0 && !var3.isIf3) {
+						int var9 = var3.field3414 * 1514535987 >> 16;
+						var5 = var3.field3414 * 1514535987 << 16 >> 16;
+						var9 = var9 * Client.field599 * 828269441;
+						var5 = var5 * Client.field599 * 828269441;
+						var3.field3409 = (var9 + var3.field3409 * 530256893 & 2047) * 1694884181;
+						var3.field3471 = (var5 + var3.field3471 * 1932334201 & 2047) * 2031424969;
+						class125.method2770(var3);
 					}
 				}
 			}

@@ -4,30 +4,21 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
 import net.runelite.mapping.Export;
-import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
 @ObfuscatedName("k")
 public class class7 {
 	@ObfuscatedName("t")
-	@ObfuscatedGetter(
-		intValue = -1894406353
-	)
 	@Export("canvasWidth")
 	public static int canvasWidth;
 	@ObfuscatedName("hv")
-	@ObfuscatedGetter(
-		intValue = 542116271
-	)
-	@Export("baseY")
-	static int baseY;
+	static int field30;
 	@ObfuscatedName("ia")
 	@ObfuscatedSignature(
 		descriptor = "[Lqn;"
 	)
-	@Export("mapMarkerSprites")
-	static SpritePixels[] mapMarkerSprites;
+	static SpritePixels[] field24;
 	@ObfuscatedName("s")
 	ExecutorService field29;
 	@ObfuscatedName("h")
@@ -101,7 +92,7 @@ public class class7 {
 	)
 	static void method60() {
 		if (ClientPacket.worldMap != null) {
-			ClientPacket.worldMap.method7130(class268.Client_plane, Decimator.baseX * 64 + (ScriptFrame.localPlayer.x >> 7), baseY * 64 + (ScriptFrame.localPlayer.y >> 7), false);
+			ClientPacket.worldMap.method7130(class268.Client_plane * 1083786667, (class56.localPlayer.x * 1627221919 >> 7) + Decimator.field404 * 620670661, (class56.localPlayer.y * 1229064101 >> 7) + field30 * 542116271, false);
 			ClientPacket.worldMap.loadCache();
 		}
 

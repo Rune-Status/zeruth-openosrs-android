@@ -2,7 +2,6 @@ package osrs;
 
 import net.runelite.mapping.Export;
 import net.runelite.mapping.Implements;
-import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
@@ -10,28 +9,19 @@ import net.runelite.mapping.ObfuscatedSignature;
 @Implements("WorldMapDecoration")
 public class WorldMapDecoration {
 	@ObfuscatedName("s")
-	@ObfuscatedGetter(
-		intValue = 1371988127
-	)
 	@Export("objectDefinitionId")
 	final int objectDefinitionId;
 	@ObfuscatedName("h")
-	@ObfuscatedGetter(
-		intValue = -761624157
-	)
 	@Export("decoration")
 	final int decoration;
 	@ObfuscatedName("w")
-	@ObfuscatedGetter(
-		intValue = -863337605
-	)
 	@Export("rotation")
 	final int rotation;
 
 	WorldMapDecoration(int var1, int var2, int var3) {
-		this.objectDefinitionId = var1;
-		this.decoration = var2;
-		this.rotation = var3;
+		this.objectDefinitionId = var1 * 298990431;
+		this.decoration = var2 * 29422091;
+		this.rotation = var3 * 212919219;
 	}
 
 	@ObfuscatedName("q")

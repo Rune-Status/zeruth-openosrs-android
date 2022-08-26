@@ -2,7 +2,6 @@ package osrs;
 
 import net.runelite.mapping.Export;
 import net.runelite.mapping.Implements;
-import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
@@ -10,32 +9,17 @@ import net.runelite.mapping.ObfuscatedSignature;
 @Implements("RouteStrategy")
 public abstract class RouteStrategy {
 	@ObfuscatedName("sh")
-	@ObfuscatedGetter(
-		intValue = 1077493760
-	)
 	static int field2198;
 	@ObfuscatedName("s")
-	@ObfuscatedGetter(
-		intValue = 58129171
-	)
 	@Export("approxDestinationX")
 	public int approxDestinationX;
 	@ObfuscatedName("h")
-	@ObfuscatedGetter(
-		intValue = -980043277
-	)
 	@Export("approxDestinationY")
 	public int approxDestinationY;
 	@ObfuscatedName("w")
-	@ObfuscatedGetter(
-		intValue = -393157049
-	)
 	@Export("approxDestinationSizeX")
 	public int approxDestinationSizeX;
 	@ObfuscatedName("v")
-	@ObfuscatedGetter(
-		intValue = 312616933
-	)
 	@Export("approxDestinationSizeY")
 	public int approxDestinationSizeY;
 
@@ -123,9 +107,9 @@ public abstract class RouteStrategy {
 		garbageValue = "7"
 	)
 	public static int[] method3814() {
-		int[] var0 = new int[KeyHandler.field138];
+		int[] var0 = new int[KeyHandler.field138 * -162929509];
 
-		for (int var1 = 0; var1 < KeyHandler.field138; ++var1) {
+		for (int var1 = 0; var1 < KeyHandler.field138 * -162929509; ++var1) {
 			var0[var1] = KeyHandler.field137[var1];
 		}
 
@@ -134,7 +118,7 @@ public abstract class RouteStrategy {
 
 	@ObfuscatedName("jj")
 	static final void method3811(double var0) {
-		Rasterizer3D.Rasterizer3D_setBrightness(var0);
+		Rasterizer3D.method3938(var0);
 		((TextureProvider)Rasterizer3D.Rasterizer3D_textureLoader).setBrightness(var0);
 		class269.method5150();
 		ClanMate.clientPreferences.method2234(var0);

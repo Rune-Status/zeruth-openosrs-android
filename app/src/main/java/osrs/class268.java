@@ -3,7 +3,6 @@ package osrs;
 import java.util.HashMap;
 import java.util.TimeZone;
 import net.runelite.mapping.Export;
-import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
@@ -16,12 +15,8 @@ public final class class268 {
 	@ObfuscatedSignature(
 		descriptor = "Lln;"
 	)
-	@Export("archive15")
-	static Archive archive15;
+	static Archive field3176;
 	@ObfuscatedName("lp")
-	@ObfuscatedGetter(
-		intValue = 1083786667
-	)
 	@Export("Client_plane")
 	static int Client_plane;
 
@@ -47,7 +42,7 @@ public final class class268 {
 		garbageValue = "824492268"
 	)
 	static boolean method5149(int var0) {
-		for (int var1 = 0; var1 < Client.field714; ++var1) {
+		for (int var1 = 0; var1 < Client.field714 * 1745202273; ++var1) {
 			if (Client.field716[var1] == var0) {
 				return true;
 			}

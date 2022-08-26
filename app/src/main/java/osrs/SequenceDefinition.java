@@ -4,7 +4,6 @@ import java.util.HashMap;
 import java.util.Map;
 import net.runelite.mapping.Export;
 import net.runelite.mapping.Implements;
-import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
@@ -44,22 +43,13 @@ public class SequenceDefinition extends DualNode {
 	@Export("archive12")
 	static Archive archive12;
 	@ObfuscatedName("k")
-	@ObfuscatedGetter(
-		intValue = 1415278789
-	)
 	@Export("SequenceDefinition_cachedModelId")
 	public int SequenceDefinition_cachedModelId;
 	@ObfuscatedName("o")
 	public Map field2174;
 	@ObfuscatedName("n")
-	@ObfuscatedGetter(
-		intValue = -1128191889
-	)
 	int field2164;
 	@ObfuscatedName("d")
-	@ObfuscatedGetter(
-		intValue = -2047273713
-	)
 	int field2175;
 	@ObfuscatedName("a")
 	@Export("frameIds")
@@ -74,9 +64,6 @@ public class SequenceDefinition extends DualNode {
 	@Export("soundEffects")
 	public int[] soundEffects;
 	@ObfuscatedName("z")
-	@ObfuscatedGetter(
-		intValue = 383344731
-	)
 	@Export("frameCount")
 	public int frameCount;
 	@ObfuscatedName("r")
@@ -86,43 +73,22 @@ public class SequenceDefinition extends DualNode {
 	@ObfuscatedName("p")
 	public boolean field2173;
 	@ObfuscatedName("e")
-	@ObfuscatedGetter(
-		intValue = -809328371
-	)
 	public int field2157;
 	@ObfuscatedName("b")
-	@ObfuscatedGetter(
-		intValue = -1366245483
-	)
 	@Export("shield")
 	public int shield;
 	@ObfuscatedName("x")
-	@ObfuscatedGetter(
-		intValue = 506341681
-	)
 	@Export("weapon")
 	public int weapon;
 	@ObfuscatedName("f")
-	@ObfuscatedGetter(
-		intValue = -111055229
-	)
 	public int field2177;
 	@ObfuscatedName("t")
 	public boolean field2178;
 	@ObfuscatedName("j")
-	@ObfuscatedGetter(
-		intValue = -239889375
-	)
 	public int field2179;
 	@ObfuscatedName("g")
-	@ObfuscatedGetter(
-		intValue = 1316679313
-	)
 	public int field2180;
 	@ObfuscatedName("ar")
-	@ObfuscatedGetter(
-		intValue = -1618338471
-	)
 	public int field2181;
 
 	static {
@@ -133,19 +99,19 @@ public class SequenceDefinition extends DualNode {
 	}
 
 	SequenceDefinition() {
-		this.SequenceDefinition_cachedModelId = -1;
+		this.SequenceDefinition_cachedModelId = -880184845;
 		this.field2164 = 0;
 		this.field2175 = 0;
-		this.frameCount = -1;
+		this.frameCount = 712716333;
 		this.field2173 = false;
-		this.field2157 = 5;
-		this.shield = -1;
-		this.weapon = -1;
-		this.field2177 = 99;
+		this.field2157 = -1687917351;
+		this.shield = -882938813;
+		this.weapon = 726757423;
+		this.field2177 = -1171750751;
 		this.field2178 = false;
-		this.field2179 = -1;
-		this.field2180 = -1;
-		this.field2181 = 2;
+		this.field2179 = 1377767455;
+		this.field2180 = -1473155697;
+		this.field2181 = -954944046;
 	}
 
 	@ObfuscatedName("w")
@@ -192,7 +158,7 @@ public class SequenceDefinition extends DualNode {
 				this.frameIds[var4] += var1.readUnsignedShort() << 16;
 			}
 		} else if (var2 == 2) {
-			this.frameCount = var1.readUnsignedShort();
+			this.frameCount = var1.readUnsignedShort() * -712716333;
 		} else if (var2 == 3) {
 			var3 = var1.readUnsignedByte();
 			this.field2171 = new int[var3 + 1];
@@ -205,20 +171,20 @@ public class SequenceDefinition extends DualNode {
 		} else if (var2 == 4) {
 			this.field2173 = true;
 		} else if (var2 == 5) {
-			this.field2157 = var1.readUnsignedByte();
+			this.field2157 = var1.readUnsignedByte() * 521409989;
 		} else if (var2 == 6) {
-			this.shield = var1.readUnsignedShort();
+			this.shield = var1.readUnsignedShort() * 882938813;
 		} else if (var2 == 7) {
-			this.weapon = var1.readUnsignedShort();
+			this.weapon = var1.readUnsignedShort() * -726757423;
 		} else if (var2 == 8) {
-			this.field2177 = var1.readUnsignedByte();
+			this.field2177 = var1.readUnsignedByte() * 1246285867;
 			this.field2178 = true;
 		} else if (var2 == 9) {
-			this.field2179 = var1.readUnsignedByte();
+			this.field2179 = var1.readUnsignedByte() * -1377767455;
 		} else if (var2 == 10) {
-			this.field2180 = var1.readUnsignedByte();
+			this.field2180 = var1.readUnsignedByte() * 1473155697;
 		} else if (var2 == 11) {
-			this.field2181 = var1.readUnsignedByte();
+			this.field2181 = var1.readUnsignedByte() * 1670011625;
 		} else if (var2 == 12) {
 			var3 = var1.readUnsignedByte();
 			this.chatFrameIds = new int[var3];
@@ -238,7 +204,7 @@ public class SequenceDefinition extends DualNode {
 				this.soundEffects[var4] = var1.readMedium();
 			}
 		} else if (var2 == 14) {
-			this.SequenceDefinition_cachedModelId = var1.readInt();
+			this.SequenceDefinition_cachedModelId = var1.readInt() * 880184845;
 		} else if (var2 == 15) {
 			var3 = var1.readUnsignedShort();
 			this.field2174 = new HashMap();
@@ -249,8 +215,8 @@ public class SequenceDefinition extends DualNode {
 				this.field2174.put(var5, var6);
 			}
 		} else if (var2 == 16) {
-			this.field2164 = var1.readUnsignedShort();
-			this.field2175 = var1.readUnsignedShort();
+			this.field2164 = var1.readUnsignedShort() * 320681615;
+			this.field2175 = var1.readUnsignedShort() * -1091880465;
 		} else if (var2 == 17) {
 			this.field2172 = new boolean[256];
 
@@ -274,19 +240,19 @@ public class SequenceDefinition extends DualNode {
 	)
 	@Export("postDecode")
 	void postDecode() {
-		if (this.field2179 == -1) {
+		if (this.field2179 * -239889375 == -1) {
 			if (this.field2171 == null && this.field2172 == null) {
 				this.field2179 = 0;
 			} else {
-				this.field2179 = 2;
+				this.field2179 = 1539432386;
 			}
 		}
 
-		if (this.field2180 == -1) {
+		if (this.field2180 * 1316679313 == -1) {
 			if (this.field2171 == null && this.field2172 == null) {
 				this.field2180 = 0;
 			} else {
-				this.field2180 = 2;
+				this.field2180 = -1348655902;
 			}
 		}
 
@@ -312,7 +278,7 @@ public class SequenceDefinition extends DualNode {
 				return var4;
 			}
 		} else {
-			class122 var3 = StructComposition.method3543(this.SequenceDefinition_cachedModelId);
+			class122 var3 = StructComposition.method3543(this.SequenceDefinition_cachedModelId * 1415278789);
 			if (var3 == null) {
 				return var1.toSharedSequenceModel(true);
 			} else {
@@ -360,7 +326,7 @@ public class SequenceDefinition extends DualNode {
 				return var5;
 			}
 		} else {
-			class122 var4 = StructComposition.method3543(this.SequenceDefinition_cachedModelId);
+			class122 var4 = StructComposition.method3543(this.SequenceDefinition_cachedModelId * 1415278789);
 			if (var4 == null) {
 				return var1.toSharedSequenceModel(true);
 			} else {
@@ -393,26 +359,25 @@ public class SequenceDefinition extends DualNode {
 		descriptor = "(Lhp;II)Lhp;",
 		garbageValue = "-2034924646"
 	)
-	@Export("transformSpotAnimationModel")
-	Model transformSpotAnimationModel(Model var1, int var2) {
+	Model method3721(Model var1, int var2) {
 		Model var4;
 		if (!this.isCachedModelIdSet()) {
 			var2 = this.frameIds[var2];
 			Frames var5 = class142.getFrames(var2 >> 16);
 			var2 &= 65535;
 			if (var5 == null) {
-				return var1.toSharedSpotAnimationModel(true);
+				return var1.method4273(true);
 			} else {
-				var4 = var1.toSharedSpotAnimationModel(!var5.hasAlphaTransform(var2));
+				var4 = var1.method4273(!var5.hasAlphaTransform(var2));
 				var4.animate(var5, var2);
 				return var4;
 			}
 		} else {
-			class122 var3 = StructComposition.method3543(this.SequenceDefinition_cachedModelId);
+			class122 var3 = StructComposition.method3543(this.SequenceDefinition_cachedModelId * 1415278789);
 			if (var3 == null) {
-				return var1.toSharedSpotAnimationModel(true);
+				return var1.method4273(true);
 			} else {
-				var4 = var1.toSharedSpotAnimationModel(!var3.method2743());
+				var4 = var1.method4273(!var3.method2743());
 				var4.method4305(var3, var2);
 				return var4;
 			}
@@ -576,7 +541,7 @@ public class SequenceDefinition extends DualNode {
 	)
 	@Export("isCachedModelIdSet")
 	public boolean isCachedModelIdSet() {
-		return this.SequenceDefinition_cachedModelId >= 0;
+		return this.SequenceDefinition_cachedModelId * 1415278789 >= 0;
 	}
 
 	@ObfuscatedName("m")
@@ -585,7 +550,7 @@ public class SequenceDefinition extends DualNode {
 		garbageValue = "7"
 	)
 	public int method3729() {
-		return this.field2175 - this.field2164;
+		return this.field2175 * -2047273713 - this.field2164 * -1128191889;
 	}
 
 	@ObfuscatedName("l")
@@ -594,7 +559,7 @@ public class SequenceDefinition extends DualNode {
 		garbageValue = "-56777197"
 	)
 	class122 method3726() {
-		return this.isCachedModelIdSet() ? StructComposition.method3543(this.SequenceDefinition_cachedModelId) : null;
+		return this.isCachedModelIdSet() ? StructComposition.method3543(this.SequenceDefinition_cachedModelId * 1415278789) : null;
 	}
 
 	@ObfuscatedName("n")
@@ -603,6 +568,6 @@ public class SequenceDefinition extends DualNode {
 		garbageValue = "486945829"
 	)
 	static final int method3770() {
-		return ViewportMouse.ViewportMouse_x;
+		return ViewportMouse.ViewportMouse_x * 858842197;
 	}
 }

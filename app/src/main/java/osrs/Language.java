@@ -3,13 +3,12 @@ package osrs;
 import java.util.Locale;
 import net.runelite.mapping.Export;
 import net.runelite.mapping.Implements;
-import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
 @ObfuscatedName("lv")
 @Implements("Language")
-public class Language implements MouseWheel {
+public class Language implements class328 {
 	@ObfuscatedName("s")
 	@ObfuscatedSignature(
 		descriptor = "Llv;"
@@ -64,9 +63,6 @@ public class Language implements MouseWheel {
 	@Export("language")
 	final String language;
 	@ObfuscatedName("n")
-	@ObfuscatedGetter(
-		intValue = -265545555
-	)
 	@Export("id")
 	final int id;
 
@@ -84,11 +80,11 @@ public class Language implements MouseWheel {
 
 		for (int var3 = 0; var3 < var2.length; ++var3) {
 			Language var4 = var2[var3];
-			if (Language_valuesOrdered[var4.id] != null) {
+			if (Language_valuesOrdered[var4.id * -265545555] != null) {
 				throw new IllegalStateException();
 			}
 
-			Language_valuesOrdered[var4.id] = var4;
+			Language_valuesOrdered[var4.id * -265545555] = var4;
 		}
 
 	}
@@ -99,7 +95,7 @@ public class Language implements MouseWheel {
 	Language(String var1, String var2, String var3, ModeWhere var4, int var5, String var6) {
 		this.field4100 = var1;
 		this.language = var2;
-		this.id = var5;
+		this.id = var5 * -1007351003;
 		if (var6 != null) {
 			new Locale(var2.substring(0, 2), var6);
 		} else {
@@ -125,7 +121,7 @@ public class Language implements MouseWheel {
 	)
 	@Export("rsOrdinal")
 	public int rsOrdinal() {
-		return this.id;
+		return this.id * -265545555;
 	}
 
 	public String toString() {
@@ -139,11 +135,11 @@ public class Language implements MouseWheel {
 	)
 	public static class388 method5989() {
 		synchronized(class388.field4399) {
-			if (class388.field4400 == 0) {
+			if (class388.field4400 * -1878154693 == 0) {
 				return new class388();
 			} else {
-				class388.field4399[--class388.field4400].method6940();
-				return class388.field4399[class388.field4400];
+				class388.field4399[(class388.field4400 -= 923461363) * -1878154693].method6940();
+				return class388.field4399[class388.field4400 * -1878154693];
 			}
 		}
 	}

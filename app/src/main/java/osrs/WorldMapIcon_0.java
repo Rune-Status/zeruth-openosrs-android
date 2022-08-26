@@ -2,7 +2,6 @@ package osrs;
 
 import net.runelite.mapping.Export;
 import net.runelite.mapping.Implements;
-import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
@@ -10,9 +9,6 @@ import net.runelite.mapping.ObfuscatedSignature;
 @Implements("WorldMapIcon_0")
 public class WorldMapIcon_0 extends AbstractWorldMapIcon {
 	@ObfuscatedName("s")
-	@ObfuscatedGetter(
-		intValue = 1919114089
-	)
 	@Export("element")
 	final int element;
 	@ObfuscatedName("h")
@@ -22,15 +18,9 @@ public class WorldMapIcon_0 extends AbstractWorldMapIcon {
 	@Export("label")
 	final WorldMapLabel label;
 	@ObfuscatedName("w")
-	@ObfuscatedGetter(
-		intValue = 1211617279
-	)
 	@Export("subWidth")
 	final int subWidth;
 	@ObfuscatedName("v")
-	@ObfuscatedGetter(
-		intValue = -1879968737
-	)
 	@Export("subHeight")
 	final int subHeight;
 
@@ -39,13 +29,13 @@ public class WorldMapIcon_0 extends AbstractWorldMapIcon {
 	)
 	WorldMapIcon_0(Coord var1, Coord var2, int var3, WorldMapLabel var4) {
 		super(var1, var2);
-		this.element = var3;
+		this.element = var3 * -1280383783;
 		this.label = var4;
 		WorldMapElement var5 = EnumComposition.WorldMapElement_get(this.getElement());
 		SpritePixels var6 = var5.getSpriteBool(false);
 		if (var6 != null) {
-			this.subWidth = var6.subWidth;
-			this.subHeight = var6.subHeight;
+			this.subWidth = var6.subWidth * -1362612225;
+			this.subHeight = var6.subHeight * 1803585503;
 		} else {
 			this.subWidth = 0;
 			this.subHeight = 0;
@@ -60,7 +50,7 @@ public class WorldMapIcon_0 extends AbstractWorldMapIcon {
 	)
 	@Export("getElement")
 	public int getElement() {
-		return this.element;
+		return this.element * 1919114089;
 	}
 
 	@ObfuscatedName("w")
@@ -80,7 +70,7 @@ public class WorldMapIcon_0 extends AbstractWorldMapIcon {
 	)
 	@Export("getSubWidth")
 	int getSubWidth() {
-		return this.subWidth;
+		return this.subWidth * 1211617279;
 	}
 
 	@ObfuscatedName("c")
@@ -90,7 +80,7 @@ public class WorldMapIcon_0 extends AbstractWorldMapIcon {
 	)
 	@Export("getSubHeight")
 	int getSubHeight() {
-		return this.subHeight;
+		return this.subHeight * -1879968737;
 	}
 
 	@ObfuscatedName("s")
@@ -308,7 +298,7 @@ public class WorldMapIcon_0 extends AbstractWorldMapIcon {
 		PendingSpawn var9 = null;
 
 		for (PendingSpawn var10 = (PendingSpawn)Client.pendingSpawns.last(); var10 != null; var10 = (PendingSpawn)Client.pendingSpawns.previous()) {
-			if (var0 == var10.plane && var10.x == var1 && var2 == var10.y && var3 == var10.type) {
+			if (var0 == var10.plane * -2038881543 && var10.x * 1805977901 == var1 && var10.y * -1439978855 == var2 && var3 == var10.type * 1829738397) {
 				var9 = var10;
 				break;
 			}
@@ -316,18 +306,18 @@ public class WorldMapIcon_0 extends AbstractWorldMapIcon {
 
 		if (var9 == null) {
 			var9 = new PendingSpawn();
-			var9.plane = var0;
-			var9.type = var3;
-			var9.x = var1;
-			var9.y = var2;
+			var9.plane = var0 * -1286078647;
+			var9.type = var3 * 1731372725;
+			var9.x = var1 * 1237790373;
+			var9.y = var2 * -759887447;
 			WorldMap.method7319(var9);
 			Client.pendingSpawns.addFirst(var9);
 		}
 
-		var9.id = var4;
-		var9.field1122 = var5;
-		var9.orientation = var6;
-		var9.delay = var7;
-		var9.hitpoints = var8;
+		var9.id = var4 * 1032554601;
+		var9.field1122 = var5 * 1639562083;
+		var9.orientation = var6 * 883279065;
+		var9.delay = var7 * -821591997;
+		var9.hitpoints = var8 * -342295399;
 	}
 }

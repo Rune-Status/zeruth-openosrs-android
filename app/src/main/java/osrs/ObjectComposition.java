@@ -3,7 +3,6 @@ package osrs;
 import java.awt.Component;
 import net.runelite.mapping.Export;
 import net.runelite.mapping.Implements;
-import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
@@ -55,9 +54,6 @@ public class ObjectComposition extends DualNode {
 	)
 	static ModelData[] field2041;
 	@ObfuscatedName("o")
-	@ObfuscatedGetter(
-		intValue = 1716638741
-	)
 	@Export("id")
 	public int id;
 	@ObfuscatedName("n")
@@ -82,36 +78,21 @@ public class ObjectComposition extends DualNode {
 	@Export("retextureTo")
 	short[] retextureTo;
 	@ObfuscatedName("r")
-	@ObfuscatedGetter(
-		intValue = 6263545
-	)
 	@Export("sizeX")
 	public int sizeX;
 	@ObfuscatedName("y")
-	@ObfuscatedGetter(
-		intValue = -1277582079
-	)
 	@Export("sizeY")
 	public int sizeY;
 	@ObfuscatedName("p")
-	@ObfuscatedGetter(
-		intValue = 1112693661
-	)
 	@Export("interactType")
 	public int interactType;
 	@ObfuscatedName("e")
 	@Export("boolean1")
 	public boolean boolean1;
 	@ObfuscatedName("b")
-	@ObfuscatedGetter(
-		intValue = 1193889907
-	)
 	@Export("int1")
 	public int int1;
 	@ObfuscatedName("x")
-	@ObfuscatedGetter(
-		intValue = -1672696147
-	)
 	@Export("clipType")
 	int clipType;
 	@ObfuscatedName("f")
@@ -121,42 +102,24 @@ public class ObjectComposition extends DualNode {
 	@Export("modelClipped")
 	public boolean modelClipped;
 	@ObfuscatedName("j")
-	@ObfuscatedGetter(
-		intValue = 1211853407
-	)
 	@Export("animationId")
 	public int animationId;
 	@ObfuscatedName("g")
-	@ObfuscatedGetter(
-		intValue = -1706315471
-	)
 	@Export("int2")
 	public int int2;
 	@ObfuscatedName("ar")
-	@ObfuscatedGetter(
-		intValue = 1134442739
-	)
 	@Export("ambient")
 	int ambient;
 	@ObfuscatedName("aq")
-	@ObfuscatedGetter(
-		intValue = -1327263361
-	)
 	@Export("contrast")
 	int contrast;
 	@ObfuscatedName("av")
 	@Export("actions")
 	public String[] actions;
 	@ObfuscatedName("aj")
-	@ObfuscatedGetter(
-		intValue = -1155865977
-	)
 	@Export("mapIconId")
 	public int mapIconId;
 	@ObfuscatedName("ax")
-	@ObfuscatedGetter(
-		intValue = 288199677
-	)
 	@Export("mapSceneId")
 	public int mapSceneId;
 	@ObfuscatedName("ab")
@@ -166,39 +129,21 @@ public class ObjectComposition extends DualNode {
 	@Export("clipped")
 	public boolean clipped;
 	@ObfuscatedName("au")
-	@ObfuscatedGetter(
-		intValue = 511878921
-	)
 	@Export("modelSizeX")
 	int modelSizeX;
 	@ObfuscatedName("ae")
-	@ObfuscatedGetter(
-		intValue = 348928171
-	)
 	@Export("modelHeight")
 	int modelHeight;
 	@ObfuscatedName("as")
-	@ObfuscatedGetter(
-		intValue = -975070589
-	)
 	@Export("modelSizeY")
 	int modelSizeY;
 	@ObfuscatedName("ay")
-	@ObfuscatedGetter(
-		intValue = -2097460151
-	)
 	@Export("offsetX")
 	int offsetX;
 	@ObfuscatedName("ag")
-	@ObfuscatedGetter(
-		intValue = 1742624353
-	)
 	@Export("offsetHeight")
 	int offsetHeight;
 	@ObfuscatedName("ad")
-	@ObfuscatedGetter(
-		intValue = -1926983773
-	)
 	@Export("offsetY")
 	int offsetY;
 	@ObfuscatedName("af")
@@ -208,48 +153,26 @@ public class ObjectComposition extends DualNode {
 	@Export("isSolid")
 	boolean isSolid;
 	@ObfuscatedName("ai")
-	@ObfuscatedGetter(
-		intValue = 871937947
-	)
 	@Export("int3")
 	public int int3;
 	@ObfuscatedName("ap")
 	@Export("transforms")
 	public int[] transforms;
 	@ObfuscatedName("az")
-	@ObfuscatedGetter(
-		intValue = -722816661
-	)
 	@Export("transformVarbit")
 	int transformVarbit;
 	@ObfuscatedName("an")
-	@ObfuscatedGetter(
-		intValue = 2038839259
-	)
-	@Export("transformVarp")
-	int transformVarp;
+	int field2048;
 	@ObfuscatedName("ah")
-	@ObfuscatedGetter(
-		intValue = -1491735715
-	)
 	@Export("ambientSoundId")
 	public int ambientSoundId;
 	@ObfuscatedName("aa")
-	@ObfuscatedGetter(
-		intValue = -1546651255
-	)
 	@Export("int7")
 	public int int7;
 	@ObfuscatedName("am")
-	@ObfuscatedGetter(
-		intValue = -406029585
-	)
 	@Export("int5")
 	public int int5;
 	@ObfuscatedName("ao")
-	@ObfuscatedGetter(
-		intValue = 66433035
-	)
 	@Export("int6")
 	public int int6;
 	@ObfuscatedName("at")
@@ -276,35 +199,35 @@ public class ObjectComposition extends DualNode {
 
 	ObjectComposition() {
 		this.name = "null";
-		this.sizeX = 1;
-		this.sizeY = 1;
-		this.interactType = 2;
+		this.sizeX = -1302950071;
+		this.sizeY = 327113473;
+		this.interactType = -1848900246;
 		this.boolean1 = true;
-		this.int1 = -1;
-		this.clipType = -1;
+		this.int1 = 616442693;
+		this.clipType = -982705445;
 		this.nonFlatShading = false;
 		this.modelClipped = false;
-		this.animationId = -1;
-		this.int2 = 16;
+		this.animationId = -586903967;
+		this.int2 = 1371569424;
 		this.ambient = 0;
 		this.contrast = 0;
 		this.actions = new String[5];
-		this.mapIconId = -1;
-		this.mapSceneId = -1;
+		this.mapIconId = 393198793;
+		this.mapSceneId = -744972629;
 		this.isRotated = false;
 		this.clipped = true;
-		this.modelSizeX = 128;
-		this.modelHeight = 128;
-		this.modelSizeY = 128;
+		this.modelSizeX = -1215587200;
+		this.modelHeight = -1090453120;
+		this.modelSizeY = -578677376;
 		this.offsetX = 0;
 		this.offsetHeight = 0;
 		this.offsetY = 0;
 		this.boolean2 = false;
 		this.isSolid = false;
-		this.int3 = -1;
-		this.transformVarbit = -1;
-		this.transformVarp = -1;
-		this.ambientSoundId = -1;
+		this.int3 = 1563830637;
+		this.transformVarbit = -1547825987;
+		this.field2048 = -559606867;
+		this.ambientSoundId = -1300283637;
 		this.int7 = 0;
 		this.int5 = 0;
 		this.int6 = 0;
@@ -318,21 +241,21 @@ public class ObjectComposition extends DualNode {
 	)
 	@Export("postDecode")
 	void postDecode() {
-		if (this.int1 == -1) {
+		if (this.int1 * 1193889907 == -1) {
 			this.int1 = 0;
 			if (this.modelIds != null && (this.models == null || this.models[0] == 10)) {
-				this.int1 = 1;
+				this.int1 = -616442693;
 			}
 
 			for (int var1 = 0; var1 < 5; ++var1) {
 				if (this.actions[var1] != null) {
-					this.int1 = 1;
+					this.int1 = -616442693;
 				}
 			}
 		}
 
-		if (this.int3 == -1) {
-			this.int3 = this.interactType != 0 ? 1 : 0;
+		if (this.int3 * 871937947 == -1) {
+			this.int3 = -1563830637 * (this.interactType * 1112693661 != 0 ? 1 : 0);
 		}
 
 	}
@@ -367,7 +290,7 @@ public class ObjectComposition extends DualNode {
 			var3 = var1.readUnsignedByte();
 			if (var3 > 0) {
 				if (this.modelIds != null && !ObjectDefinition_isLowDetail) {
-					var1.offset += var3 * 3;
+					var1.offset += var3 * -1022300323;
 				} else {
 					this.models = new int[var3];
 					this.modelIds = new int[var3];
@@ -384,7 +307,7 @@ public class ObjectComposition extends DualNode {
 			var3 = var1.readUnsignedByte();
 			if (var3 > 0) {
 				if (this.modelIds != null && !ObjectDefinition_isLowDetail) {
-					var1.offset += 2 * var3;
+					var1.offset += -2113189314 * var3;
 				} else {
 					this.models = null;
 					this.modelIds = new int[var3];
@@ -395,16 +318,16 @@ public class ObjectComposition extends DualNode {
 				}
 			}
 		} else if (var2 == 14) {
-			this.sizeX = var1.readUnsignedByte();
+			this.sizeX = var1.readUnsignedByte() * -1302950071;
 		} else if (var2 == 15) {
-			this.sizeY = var1.readUnsignedByte();
+			this.sizeY = var1.readUnsignedByte() * 327113473;
 		} else if (var2 == 17) {
 			this.interactType = 0;
 			this.boolean1 = false;
 		} else if (var2 == 18) {
 			this.boolean1 = false;
 		} else if (var2 == 19) {
-			this.int1 = var1.readUnsignedByte();
+			this.int1 = var1.readUnsignedByte() * -616442693;
 		} else if (var2 == 21) {
 			this.clipType = 0;
 		} else if (var2 == 22) {
@@ -412,18 +335,18 @@ public class ObjectComposition extends DualNode {
 		} else if (var2 == 23) {
 			this.modelClipped = true;
 		} else if (var2 == 24) {
-			this.animationId = var1.readUnsignedShort();
-			if (this.animationId == 65535) {
-				this.animationId = -1;
+			this.animationId = var1.readUnsignedShort() * 586903967;
+			if (this.animationId * 1211853407 == 65535) {
+				this.animationId = -586903967;
 			}
 		} else if (var2 == 27) {
-			this.interactType = 1;
+			this.interactType = 1223033525;
 		} else if (var2 == 28) {
-			this.int2 = var1.readUnsignedByte();
+			this.int2 = var1.readUnsignedByte() * -1524889647;
 		} else if (var2 == 29) {
-			this.ambient = var1.readByte();
+			this.ambient = var1.readByte() * -1182031813;
 		} else if (var2 == 39) {
-			this.contrast = var1.readByte() * 25;
+			this.contrast = var1.readByte() * 889096807;
 		} else if (var2 >= 30 && var2 < 35) {
 			this.actions[var2 - 30] = var1.readStringCp1252NullTerminated();
 			if (this.actions[var2 - 30].equalsIgnoreCase("Hidden")) {
@@ -454,35 +377,35 @@ public class ObjectComposition extends DualNode {
 		} else if (var2 == 64) {
 			this.clipped = false;
 		} else if (var2 == 65) {
-			this.modelSizeX = var1.readUnsignedShort();
+			this.modelSizeX = var1.readUnsignedShort() * 1936660281;
 		} else if (var2 == 66) {
-			this.modelHeight = var1.readUnsignedShort();
+			this.modelHeight = var1.readUnsignedShort() * -813825533;
 		} else if (var2 == 67) {
-			this.modelSizeY = var1.readUnsignedShort();
+			this.modelSizeY = var1.readUnsignedShort() * -172293077;
 		} else if (var2 == 68) {
-			this.mapSceneId = var1.readUnsignedShort();
+			this.mapSceneId = var1.readUnsignedShort() * 744972629;
 		} else if (var2 == 69) {
 			var1.readUnsignedByte();
 		} else if (var2 == 70) {
-			this.offsetX = var1.readShort();
+			this.offsetX = var1.readShort() * 1823106553;
 		} else if (var2 == 71) {
-			this.offsetHeight = var1.readShort();
+			this.offsetHeight = var1.readShort() * -503263839;
 		} else if (var2 == 72) {
-			this.offsetY = var1.readShort();
+			this.offsetY = var1.readShort() * 1827150859;
 		} else if (var2 == 73) {
 			this.boolean2 = true;
 		} else if (var2 == 74) {
 			this.isSolid = true;
 		} else if (var2 == 75) {
-			this.int3 = var1.readUnsignedByte();
+			this.int3 = var1.readUnsignedByte() * -1563830637;
 		} else if (var2 != 77 && var2 != 92) {
 			if (var2 == 78) {
-				this.ambientSoundId = var1.readUnsignedShort();
-				this.int7 = var1.readUnsignedByte();
+				this.ambientSoundId = var1.readUnsignedShort() * 1300283637;
+				this.int7 = var1.readUnsignedByte() * -744469319;
 			} else if (var2 == 79) {
-				this.int5 = var1.readUnsignedShort();
-				this.int6 = var1.readUnsignedShort();
-				this.int7 = var1.readUnsignedByte();
+				this.int5 = var1.readUnsignedShort() * -1414007793;
+				this.int6 = var1.readUnsignedShort() * 2081905571;
+				this.int7 = var1.readUnsignedByte() * -744469319;
 				var3 = var1.readUnsignedByte();
 				this.soundEffectIds = new int[var3];
 
@@ -490,23 +413,23 @@ public class ObjectComposition extends DualNode {
 					this.soundEffectIds[var4] = var1.readUnsignedShort();
 				}
 			} else if (var2 == 81) {
-				this.clipType = var1.readUnsignedByte() * 256;
+				this.clipType = var1.readUnsignedByte() * -1830476544;
 			} else if (var2 == 82) {
-				this.mapIconId = var1.readUnsignedShort();
+				this.mapIconId = var1.readUnsignedShort() * -393198793;
 			} else if (var2 == 89) {
 				this.boolean3 = false;
 			} else if (var2 == 249) {
 				this.params = World.readStringIntParameters(var1, this.params);
 			}
 		} else {
-			this.transformVarbit = var1.readUnsignedShort();
-			if (this.transformVarbit == 65535) {
-				this.transformVarbit = -1;
+			this.transformVarbit = var1.readUnsignedShort() * 1547825987;
+			if (this.transformVarbit * -722816661 == 65535) {
+				this.transformVarbit = -1547825987;
 			}
 
-			this.transformVarp = var1.readUnsignedShort();
-			if (this.transformVarp == 65535) {
-				this.transformVarp = -1;
+			this.field2048 = var1.readUnsignedShort() * 559606867;
+			if (this.field2048 * 2038839259 == 65535) {
+				this.field2048 = -559606867;
 			}
 
 			var3 = -1;
@@ -590,9 +513,9 @@ public class ObjectComposition extends DualNode {
 	public final Renderable getEntity(int var1, int var2, int[][] var3, int var4, int var5, int var6) {
 		long var7;
 		if (this.models == null) {
-			var7 = (long)(var2 + (this.id << 10));
+			var7 = (long)((this.id * 1716638741 << 10) + var2);
 		} else {
-			var7 = (long)(var2 + (var1 << 3) + (this.id << 10));
+			var7 = (long)(var2 + (var1 << 3) + (this.id * 1716638741 << 10));
 		}
 
 		Object var9 = (Renderable)ObjectDefinition_cachedEntities.get(var7);
@@ -603,10 +526,10 @@ public class ObjectComposition extends DualNode {
 			}
 
 			if (!this.nonFlatShading) {
-				var9 = var10.toModel(this.ambient + 64, this.contrast + 768, -50, -10, -50);
+				var9 = var10.toModel(this.ambient * 1134442739 + 64, this.contrast * -1327263361 + 768, -50, -10, -50);
 			} else {
-				var10.ambient = (short)(this.ambient + 64);
-				var10.contrast = (short)(this.contrast + 768);
+				var10.ambient = (short)(this.ambient * 1134442739 + 64);
+				var10.contrast = (short)(this.contrast * -1327263361 + 768);
 				var10.calculateVertexNormals();
 				var9 = var10;
 			}
@@ -618,11 +541,11 @@ public class ObjectComposition extends DualNode {
 			var9 = ((ModelData)var9).copyModelData();
 		}
 
-		if (this.clipType * 65536 >= 0) {
+		if (this.clipType * -1672696147 >= 0) {
 			if (var9 instanceof Model) {
-				var9 = ((Model)var9).contourGround(var3, var4, var5, var6, true, this.clipType * 65536);
+				var9 = ((Model)var9).contourGround(var3, var4, var5, var6, true, this.clipType * -1672696147);
 			} else if (var9 instanceof ModelData) {
-				var9 = ((ModelData)var9).method3832(var3, var4, var5, var6, true, this.clipType * 65536);
+				var9 = ((ModelData)var9).method3832(var3, var4, var5, var6, true, this.clipType * -1672696147);
 			}
 		}
 
@@ -638,9 +561,9 @@ public class ObjectComposition extends DualNode {
 	public final Model getModel(int var1, int var2, int[][] var3, int var4, int var5, int var6) {
 		long var7;
 		if (this.models == null) {
-			var7 = (long)(var2 + (this.id << 10));
+			var7 = (long)(var2 + (this.id * 1716638741 << 10));
 		} else {
-			var7 = (long)(var2 + (var1 << 3) + (this.id << 10));
+			var7 = (long)(var2 + (var1 << 3) + (this.id * 1716638741 << 10));
 		}
 
 		Model var9 = (Model)ObjectDefinition_cachedModels.get(var7);
@@ -650,12 +573,12 @@ public class ObjectComposition extends DualNode {
 				return null;
 			}
 
-			var9 = var10.toModel(this.ambient + 64, this.contrast + 768, -50, -10, -50);
+			var9 = var10.toModel(this.ambient * 1134442739 + 64, this.contrast * -1327263361 + 768, -50, -10, -50);
 			ObjectDefinition_cachedModels.put(var9, var7);
 		}
 
-		if (this.clipType * 65536 >= 0) {
-			var9 = var9.contourGround(var3, var4, var5, var6, true, this.clipType * 65536);
+		if (this.clipType * -1672696147 >= 0) {
+			var9 = var9.contourGround(var3, var4, var5, var6, true, this.clipType * -1672696147);
 		}
 
 		return var9;
@@ -670,9 +593,9 @@ public class ObjectComposition extends DualNode {
 	public final Model getModelDynamic(int var1, int var2, int[][] var3, int var4, int var5, int var6, SequenceDefinition var7, int var8) {
 		long var9;
 		if (this.models == null) {
-			var9 = (long)(var2 + (this.id << 10));
+			var9 = (long)(var2 + (this.id * 1716638741 << 10));
 		} else {
-			var9 = (long)(var2 + (var1 << 3) + (this.id << 10));
+			var9 = (long)((this.id * 1716638741 << 10) + var2 + (var1 << 3));
 		}
 
 		Model var11 = (Model)ObjectDefinition_cachedModels.get(var9);
@@ -682,11 +605,11 @@ public class ObjectComposition extends DualNode {
 				return null;
 			}
 
-			var11 = var12.toModel(this.ambient + 64, this.contrast + 768, -50, -10, -50);
+			var11 = var12.toModel(this.ambient * 1134442739 + 64, this.contrast * -1327263361 + 768, -50, -10, -50);
 			ObjectDefinition_cachedModels.put(var11, var9);
 		}
 
-		if (var7 == null && this.clipType * 65536 == -1) {
+		if (var7 == null && this.clipType * -1672696147 == -1) {
 			return var11;
 		} else {
 			if (var7 != null) {
@@ -695,8 +618,8 @@ public class ObjectComposition extends DualNode {
 				var11 = var11.toSharedSequenceModel(true);
 			}
 
-			if (this.clipType * 65536 >= 0) {
-				var11 = var11.contourGround(var3, var4, var5, var6, false, this.clipType * 65536);
+			if (this.clipType * -1672696147 >= 0) {
+				var11 = var11.contourGround(var3, var4, var5, var6, false, this.clipType * -1672696147);
 			}
 
 			return var11;
@@ -793,14 +716,14 @@ public class ObjectComposition extends DualNode {
 			}
 		}
 
-		if (this.modelSizeX == 128 && this.modelHeight == 128 && this.modelSizeY == 128) {
+		if (this.modelSizeX * 511878921 == 128 && this.modelHeight * 348928171 == 128 && this.modelSizeY * -975070589 == 128) {
 			var4 = false;
 		} else {
 			var4 = true;
 		}
 
 		boolean var11;
-		if (this.offsetX == 0 && this.offsetHeight == 0 && this.offsetY == 0) {
+		if (this.offsetX * -2097460151 == 0 && this.offsetHeight * 1742624353 == 0 && this.offsetY * -1926983773 == 0) {
 			var11 = false;
 		} else {
 			var11 = true;
@@ -834,11 +757,11 @@ public class ObjectComposition extends DualNode {
 		}
 
 		if (var4) {
-			var8.resize(this.modelSizeX, this.modelHeight, this.modelSizeY);
+			var8.resize(this.modelSizeX * 511878921, this.modelHeight * 348928171, this.modelSizeY * -975070589);
 		}
 
 		if (var11) {
-			var8.changeOffset(this.offsetX, this.offsetHeight, this.offsetY);
+			var8.changeOffset(this.offsetX * -2097460151, this.offsetHeight * 1742624353, this.offsetY * -1926983773);
 		}
 
 		return var8;
@@ -852,10 +775,10 @@ public class ObjectComposition extends DualNode {
 	@Export("transform")
 	public final ObjectComposition transform() {
 		int var1 = -1;
-		if (this.transformVarbit != -1) {
-			var1 = class133.getVarbit(this.transformVarbit);
-		} else if (this.transformVarp != -1) {
-			var1 = Varps.Varps_main[this.transformVarp];
+		if (this.transformVarbit * -722816661 != -1) {
+			var1 = class133.getVarbit(this.transformVarbit * -722816661);
+		} else if (this.field2048 * 2038839259 != -1) {
+			var1 = Varps.Varps_main[this.field2048 * 2038839259];
 		}
 
 		int var2;
@@ -875,7 +798,7 @@ public class ObjectComposition extends DualNode {
 	)
 	@Export("getIntParam")
 	public int getIntParam(int var1, int var2) {
-		return ScriptFrame.method1035(this.params, var1, var2);
+		return class56.method1035(this.params, var1, var2);
 	}
 
 	@ObfuscatedName("m")
@@ -896,12 +819,12 @@ public class ObjectComposition extends DualNode {
 	@Export("hasSound")
 	public boolean hasSound() {
 		if (this.transforms == null) {
-			return this.ambientSoundId != -1 || this.soundEffectIds != null;
+			return this.ambientSoundId * -1491735715 != -1 || this.soundEffectIds != null;
 		} else {
 			for (int var1 = 0; var1 < this.transforms.length; ++var1) {
 				if (this.transforms[var1] != -1) {
 					ObjectComposition var2 = FileSystem.getObjectDefinition(this.transforms[var1]);
-					if (var2.ambientSoundId != -1 || var2.soundEffectIds != null) {
+					if (var2.ambientSoundId * -1491735715 != -1 || var2.soundEffectIds != null) {
 						return true;
 					}
 				}

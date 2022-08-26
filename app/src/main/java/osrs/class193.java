@@ -1,7 +1,6 @@
 package osrs;
 
 import net.runelite.mapping.Export;
-import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
@@ -14,9 +13,6 @@ public class class193 {
 	@Export("distances")
 	public static int[][] distances;
 	@ObfuscatedName("q")
-	@ObfuscatedGetter(
-		intValue = -1089933965
-	)
 	public static int field2212;
 	@ObfuscatedName("k")
 	@Export("bufferX")
@@ -28,8 +24,7 @@ public class class193 {
 	@ObfuscatedSignature(
 		descriptor = "Lls;"
 	)
-	@Export("Widget_modelsArchive")
-	public static AbstractArchive Widget_modelsArchive;
+	public static AbstractArchive field2219;
 
 	static {
 		directions = new int[128][128];
@@ -70,7 +65,7 @@ public class class193 {
 	)
 	@Export("getWidgetFlags")
 	static int getWidgetFlags(Widget var0) {
-		IntegerNode var1 = (IntegerNode)Client.widgetFlags.get(((long)var0.id << 32) + (long)var0.childIndex);
-		return var1 != null ? var1.integer : var0.flags;
+		IntegerNode var1 = (IntegerNode)Client.widgetFlags.get(((long)(var0.id * -1692370233) << 32) + (long)(var0.childIndex * 1985146419));
+		return var1 != null ? var1.integer : var0.field3371 * -143869235;
 	}
 }

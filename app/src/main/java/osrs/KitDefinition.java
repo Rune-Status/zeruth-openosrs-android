@@ -2,7 +2,6 @@ package osrs;
 
 import net.runelite.mapping.Export;
 import net.runelite.mapping.Implements;
-import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
@@ -22,11 +21,7 @@ public class KitDefinition extends DualNode {
 	@Export("KitDefinition_modelsArchive")
 	static AbstractArchive KitDefinition_modelsArchive;
 	@ObfuscatedName("w")
-	@ObfuscatedGetter(
-		intValue = 1273507349
-	)
-	@Export("KitDefinition_fileCount")
-	public static int KitDefinition_fileCount;
+	public static int field1857;
 	@ObfuscatedName("v")
 	@ObfuscatedSignature(
 		descriptor = "Liz;"
@@ -40,9 +35,6 @@ public class KitDefinition extends DualNode {
 	@Export("archive10")
 	static Archive archive10;
 	@ObfuscatedName("c")
-	@ObfuscatedGetter(
-		intValue = -1346029147
-	)
 	@Export("bodypartID")
 	public int bodypartID;
 	@ObfuscatedName("q")
@@ -72,7 +64,7 @@ public class KitDefinition extends DualNode {
 	}
 
 	KitDefinition() {
-		this.bodypartID = -1;
+		this.bodypartID = 2145450451;
 		this.models = new int[]{-1, -1, -1, -1, -1};
 		this.nonSelectable = false;
 	}
@@ -102,7 +94,7 @@ public class KitDefinition extends DualNode {
 	@Export("decodeNext")
 	void decodeNext(Buffer var1, int var2) {
 		if (var2 == 1) {
-			this.bodypartID = var1.readUnsignedByte();
+			this.bodypartID = var1.readUnsignedByte() * -2145450451;
 		} else {
 			int var3;
 			int var4;
@@ -268,45 +260,45 @@ public class KitDefinition extends DualNode {
 	)
 	static int method3336(int var0, Script var1, boolean var2) {
 		if (var0 == 7400) {
-			--User.Interpreter_intStackSize;
-			--UserComparator8.Interpreter_stringStackSize;
+			User.Interpreter_intStackSize -= -312486675;
+			UserComparator8.Interpreter_stringStackSize -= 204829809;
 			return 1;
 		} else if (var0 == 7401) {
-			--User.Interpreter_intStackSize;
-			--UserComparator8.Interpreter_stringStackSize;
+			User.Interpreter_intStackSize -= -312486675;
+			UserComparator8.Interpreter_stringStackSize -= 204829809;
 			return 1;
 		} else if (var0 == 7402) {
-			User.Interpreter_intStackSize -= 2;
-			--UserComparator8.Interpreter_stringStackSize;
+			User.Interpreter_intStackSize -= -624973350;
+			UserComparator8.Interpreter_stringStackSize -= 204829809;
 			return 1;
 		} else if (var0 == 7403) {
-			User.Interpreter_intStackSize -= 2;
-			--UserComparator8.Interpreter_stringStackSize;
+			User.Interpreter_intStackSize -= -624973350;
+			UserComparator8.Interpreter_stringStackSize -= 204829809;
 			return 1;
 		} else if (var0 == 7404) {
-			--User.Interpreter_intStackSize;
-			--UserComparator8.Interpreter_stringStackSize;
+			User.Interpreter_intStackSize -= -312486675;
+			UserComparator8.Interpreter_stringStackSize -= 204829809;
 			return 1;
 		} else if (var0 == 7405) {
-			User.Interpreter_intStackSize -= 2;
+			User.Interpreter_intStackSize -= -624973350;
 			return 1;
 		} else if (var0 == 7406) {
-			--User.Interpreter_intStackSize;
-			Interpreter.Interpreter_stringStack[++UserComparator8.Interpreter_stringStackSize - 1] = "";
+			User.Interpreter_intStackSize -= -312486675;
+			Interpreter.Interpreter_stringStack[(UserComparator8.Interpreter_stringStackSize += 204829809) * 929025169 - 1] = "";
 			return 1;
 		} else if (var0 == 7407) {
-			Interpreter.Interpreter_intStack[++User.Interpreter_intStackSize - 1] = 0;
+			Interpreter.Interpreter_intStack[(User.Interpreter_intStackSize += -312486675) * -313022235 - 1] = 0;
 			return 1;
 		} else if (var0 == 7408) {
-			User.Interpreter_intStackSize -= 2;
-			--UserComparator8.Interpreter_stringStackSize;
-			Interpreter.Interpreter_intStack[++User.Interpreter_intStackSize - 1] = 0;
+			User.Interpreter_intStackSize -= -624973350;
+			UserComparator8.Interpreter_stringStackSize -= 204829809;
+			Interpreter.Interpreter_intStack[(User.Interpreter_intStackSize += -312486675) * -313022235 - 1] = 0;
 			return 1;
 		} else if (var0 == 7409) {
-			--User.Interpreter_intStackSize;
+			User.Interpreter_intStackSize -= -312486675;
 			return 1;
 		} else if (var0 == 7463) {
-			boolean var3 = Interpreter.Interpreter_intStack[--User.Interpreter_intStackSize] == 1;
+			boolean var3 = Interpreter.Interpreter_intStack[(User.Interpreter_intStackSize -= -312486675) * -313022235] == 1;
 			ApproximateRouteStrategy.method1071(var3);
 			return 1;
 		} else {

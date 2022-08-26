@@ -16,8 +16,7 @@ public class class120 implements class112 {
 	@ObfuscatedSignature(
 		descriptor = "[Lqe;"
 	)
-	@Export("mapSceneSprites")
-	static IndexedSprite[] mapSceneSprites;
+	static IndexedSprite[] field1494;
 
 	@ObfuscatedName("c")
 	@ObfuscatedSignature(

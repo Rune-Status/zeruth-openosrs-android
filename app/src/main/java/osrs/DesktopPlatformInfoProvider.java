@@ -2,27 +2,17 @@ package osrs;
 
 import net.runelite.mapping.Export;
 import net.runelite.mapping.Implements;
-import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
 @ObfuscatedName("og")
 @Implements("DesktopPlatformInfoProvider")
-public class DesktopPlatformInfoProvider implements PlatformInfoProvider {
+public class DesktopPlatformInfoProvider implements class413 {
 	@ObfuscatedName("v")
-	@ObfuscatedGetter(
-		intValue = 1073109487
-	)
 	int field4472;
 	@ObfuscatedName("c")
-	@ObfuscatedGetter(
-		intValue = -1650217075
-	)
 	int field4473;
 	@ObfuscatedName("q")
-	@ObfuscatedGetter(
-		intValue = 109602713
-	)
 	int field4470;
 
 	@ObfuscatedName("s")
@@ -139,7 +129,7 @@ public class DesktopPlatformInfoProvider implements PlatformInfoProvider {
 		boolean var9 = false;
 		int var10 = (int)(Runtime.getRuntime().maxMemory() / 1048576L) + 1;
 		int var11;
-		if (this.field4472 > 3) {
+		if (this.field4472 * 1073109487 > 3) {
 			var11 = Runtime.getRuntime().availableProcessors();
 		} else {
 			var11 = 0;
@@ -160,7 +150,7 @@ public class DesktopPlatformInfoProvider implements PlatformInfoProvider {
 		boolean var24 = false;
 		String var25 = "";
 		boolean var26 = false;
-		return new PlatformInfo(var1, var27, var7, var8, this.field4472, this.field4473, this.field4470, false, var10, var11, var12, 0, var13, var14, var15, var16, 0, 0, 0, 0, var17, var18, var23, 0, "");
+		return new PlatformInfo(var1, var27, var7, var8, this.field4472 * 1073109487, this.field4473 * -1650217075, this.field4470 * 109602713, false, var10, var11, var12, 0, var13, var14, var15, var16, 0, 0, 0, 0, var17, var18, var23, 0, "");
 	}
 
 	@ObfuscatedName("h")
@@ -186,10 +176,10 @@ public class DesktopPlatformInfoProvider implements PlatformInfoProvider {
 		String[] var2 = var1.split("\\.");
 
 		try {
-			this.field4472 = Integer.parseInt(var2[1]);
+			this.field4472 = Integer.parseInt(var2[1]) * -697174769;
 			var2 = var2[2].split("_");
-			this.field4473 = Integer.parseInt(var2[0]);
-			this.field4470 = Integer.parseInt(var2[1]);
+			this.field4473 = Integer.parseInt(var2[0]) * 641280837;
+			this.field4470 = Integer.parseInt(var2[1]) * 291634345;
 		} catch (Exception var4) {
 		}
 
@@ -204,9 +194,9 @@ public class DesktopPlatformInfoProvider implements PlatformInfoProvider {
 		String[] var2 = var1.split("\\.");
 
 		try {
-			this.field4472 = Integer.parseInt(var2[0]);
-			this.field4473 = Integer.parseInt(var2[1]);
-			this.field4470 = Integer.parseInt(var2[2]);
+			this.field4472 = Integer.parseInt(var2[0]) * -697174769;
+			this.field4473 = Integer.parseInt(var2[1]) * 641280837;
+			this.field4470 = Integer.parseInt(var2[2]) * 291634345;
 		} catch (Exception var4) {
 		}
 
@@ -217,13 +207,12 @@ public class DesktopPlatformInfoProvider implements PlatformInfoProvider {
 		descriptor = "(II)Lgw;",
 		garbageValue = "-2052928889"
 	)
-	@Export("getParamDefinition")
-	public static ParamComposition getParamDefinition(int var0) {
+	public static ParamComposition method7094(int var0) {
 		ParamComposition var1 = (ParamComposition)ParamComposition.ParamDefinition_cached.get((long)var0);
 		if (var1 != null) {
 			return var1;
 		} else {
-			byte[] var2 = ParamComposition.ParamDefinition_archive.takeFile(11, var0);
+			byte[] var2 = ParamComposition.field1997.takeFile(11, var0);
 			var1 = new ParamComposition();
 			if (var2 != null) {
 				var1.decode(new Buffer(var2));

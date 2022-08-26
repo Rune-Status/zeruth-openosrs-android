@@ -18,7 +18,7 @@ public class ApproximateRouteStrategy extends RouteStrategy {
 	)
 	@Export("hasArrived")
 	public boolean hasArrived(int var1, int var2, int var3, CollisionMap var4) {
-		return var2 == super.approxDestinationX && var3 == super.approxDestinationY;
+		return super.approxDestinationX * 58129171 == var2 && var3 == super.approxDestinationY * -980043277;
 	}
 
 	@ObfuscatedName("ek")
@@ -29,7 +29,7 @@ public class ApproximateRouteStrategy extends RouteStrategy {
 	static void method1070(Archive var0, String var1) {
 		ArchiveLoader var2 = new ArchiveLoader(var0, var1);
 		Client.archiveLoaders.add(var2);
-		Client.field509 += var2.groupCount;
+		Client.field509 += var2.groupCount * 43054337;
 	}
 
 	@ObfuscatedName("fq")
@@ -38,13 +38,13 @@ public class ApproximateRouteStrategy extends RouteStrategy {
 		garbageValue = "574817710"
 	)
 	static final void method1068(Actor var0) {
-		int var1 = Math.max(1, var0.field1182 - Client.cycle);
-		int var2 = var0.field1178 * 128 + var0.field1190 * 373555200;
-		int var3 = var0.field1127 * 128 + var0.field1190 * 373555200;
-		var0.x += (var2 - var0.x) / var1;
-		var0.y += (var3 - var0.y) / var1;
+		int var1 = Math.max(1, var0.field1182 * -1885865357 - Client.cycle * 2009455757);
+		int var2 = var0.field1190 * -1534074048 + var0.field1178 * -1188330112;
+		int var3 = var0.field1127 * -1467674752 + var0.field1190 * -1534074048;
+		var0.x += (var2 - var0.x * 1627221919) / var1 * 1104407647;
+		var0.y += (var3 - var0.y * 1229064101) / var1 * 636586029;
 		var0.field1200 = 0;
-		var0.orientation = var0.field1136;
+		var0.orientation = var0.field1136 * -1094363775;
 	}
 
 	@ObfuscatedName("hv")
@@ -61,7 +61,7 @@ public class ApproximateRouteStrategy extends RouteStrategy {
 			int var5 = Client.field630[var0];
 			String var6 = Client.menuActions[var0];
 			String var7 = Client.menuTargets[var0];
-			class352.menuAction(var1, var2, var3, var4, var5, var6, var7, MouseHandler.MouseHandler_lastPressedX, MouseHandler.MouseHandler_lastPressedY);
+			class352.method6432(var1, var2, var3, var4, var5, var6, var7, MouseHandler.MouseHandler_lastPressedX * 1804877833, MouseHandler.MouseHandler_lastPressedY * 1565070067);
 		}
 	}
 
@@ -71,8 +71,8 @@ public class ApproximateRouteStrategy extends RouteStrategy {
 		garbageValue = "-33"
 	)
 	static void method1069(int var0) {
-		if (var0 != Client.loginState) {
-			Client.loginState = var0;
+		if (Client.loginState * 456325949 != var0) {
+			Client.loginState = var0 * -2122501099;
 		}
 	}
 

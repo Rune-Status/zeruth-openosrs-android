@@ -1,12 +1,11 @@
 package osrs;
 
 import net.runelite.mapping.Export;
-import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
 @ObfuscatedName("dt")
-public class class119 implements MouseWheel {
+public class class119 implements class328 {
 	@ObfuscatedName("s")
 	@ObfuscatedSignature(
 		descriptor = "Ldt;"
@@ -105,19 +104,10 @@ public class class119 implements MouseWheel {
 	@Export("mouseWheel")
 	static class158 mouseWheel;
 	@ObfuscatedName("y")
-	@ObfuscatedGetter(
-		intValue = -752072491
-	)
 	final int field1485;
 	@ObfuscatedName("p")
-	@ObfuscatedGetter(
-		intValue = -1075378133
-	)
 	final int field1486;
 	@ObfuscatedName("e")
-	@ObfuscatedGetter(
-		intValue = 2147335737
-	)
 	final int field1487;
 
 	static {
@@ -145,9 +135,9 @@ public class class119 implements MouseWheel {
 		garbageValue = "-1"
 	)
 	class119(int var1, int var2, String var3, int var4, int var5) {
-		this.field1485 = var1;
-		this.field1486 = var2;
-		this.field1487 = var4;
+		this.field1485 = var1 * -216616835;
+		this.field1486 = var2 * -796297597;
+		this.field1487 = var4 * -508112887;
 	}
 
 	@ObfuscatedName("h")
@@ -157,7 +147,7 @@ public class class119 implements MouseWheel {
 	)
 	@Export("rsOrdinal")
 	public int rsOrdinal() {
-		return this.field1486;
+		return this.field1486 * -1075378133;
 	}
 
 	@ObfuscatedName("w")
@@ -166,7 +156,7 @@ public class class119 implements MouseWheel {
 		garbageValue = "-404131772"
 	)
 	int method2723() {
-		return this.field1487;
+		return this.field1487 * 2147335737;
 	}
 
 	@ObfuscatedName("s")
@@ -175,7 +165,7 @@ public class class119 implements MouseWheel {
 		garbageValue = "1989632710"
 	)
 	public static class3 method2732(class6 var0) {
-		switch(var0.field20) {
+		switch(var0.field20 * -1989990503) {
 		case 0:
 			return new class0();
 		default:
@@ -196,7 +186,7 @@ public class class119 implements MouseWheel {
 		} else {
 			byte[] var2 = NPCComposition.NpcDefinition_archive.takeFile(9, var0);
 			var1 = new NPCComposition();
-			var1.id = var0;
+			var1.id = var0 * 902504079;
 			if (var2 != null) {
 				var1.decode(new Buffer(var2));
 			}
@@ -213,7 +203,7 @@ public class class119 implements MouseWheel {
 		garbageValue = "-1896748538"
 	)
 	static final int method2724() {
-		return ViewportMouse.ViewportMouse_y;
+		return ViewportMouse.ViewportMouse_y * 1382738033;
 	}
 
 	@ObfuscatedName("ga")
@@ -245,16 +235,16 @@ public class class119 implements MouseWheel {
 				var10 = var4;
 			}
 
-			int[] var19 = class1.sceneMinimapSprite.pixels;
+			int[] var19 = class1.field4.pixels;
 			var26 = var1 * 4 + (103 - var2) * 2048 + 24624;
 			var14 = WorldMapSection2.Entity_unpackID(var5);
 			ObjectComposition var15 = FileSystem.getObjectDefinition(var14);
-			if (var15.mapSceneId != -1) {
-				IndexedSprite var16 = class120.mapSceneSprites[var15.mapSceneId];
+			if (var15.mapSceneId * 288199677 != -1) {
+				IndexedSprite var16 = class120.field1494[var15.mapSceneId * 288199677];
 				if (var16 != null) {
-					int var17 = (var15.sizeX * 4 - var16.subWidth) / 2;
-					int var18 = (var15.sizeY * 4 - var16.subHeight) / 2;
-					var16.drawAt(var1 * 4 + var17 + 48, var18 + (104 - var2 - var15.sizeY) * 4 + 48);
+					int var17 = (var15.sizeX * 25054180 - var16.subWidth) / 2;
+					int var18 = (var15.sizeY * -815361020 - var16.subHeight) / 2;
+					var16.drawAt(var1 * 4 + var17 + 48, var18 + (104 - var2 - var15.sizeY * -1277582079) * 4 + 48);
 				}
 			} else {
 				if (var9 == 0 || var9 == 2) {
@@ -326,12 +316,12 @@ public class class119 implements MouseWheel {
 			var9 = var7 & 31;
 			var10 = WorldMapSection2.Entity_unpackID(var5);
 			ObjectComposition var20 = FileSystem.getObjectDefinition(var10);
-			if (var20.mapSceneId != -1) {
-				IndexedSprite var28 = class120.mapSceneSprites[var20.mapSceneId];
+			if (var20.mapSceneId * 288199677 != -1) {
+				IndexedSprite var28 = class120.field1494[var20.mapSceneId * 288199677];
 				if (var28 != null) {
-					var26 = (var20.sizeX * 4 - var28.subWidth) / 2;
-					var14 = (var20.sizeY * 4 - var28.subHeight) / 2;
-					var28.drawAt(var1 * 4 + var26 + 48, (104 - var2 - var20.sizeY) * 4 + var14 + 48);
+					var26 = (var20.sizeX * 25054180 - var28.subWidth) / 2;
+					var14 = (var20.sizeY * -815361020 - var28.subHeight) / 2;
+					var28.drawAt(var1 * 4 + var26 + 48, (104 - var2 - var20.sizeY * -1277582079) * 4 + var14 + 48);
 				}
 			} else if (var9 == 9) {
 				int var25 = 15658734;
@@ -345,7 +335,7 @@ public class class119 implements MouseWheel {
 					var25 = 15597568;
 				}
 
-				int[] var22 = class1.sceneMinimapSprite.pixels;
+				int[] var22 = class1.field4.pixels;
 				int var29 = var1 * 4 + (103 - var2) * 2048 + 24624;
 				if (var8 != 0 && var8 != 2) {
 					var22[var29] = var25;
@@ -365,12 +355,12 @@ public class class119 implements MouseWheel {
 		if (var5 != 0L) {
 			var7 = WorldMapSection2.Entity_unpackID(var5);
 			ObjectComposition var23 = FileSystem.getObjectDefinition(var7);
-			if (var23.mapSceneId != -1) {
-				IndexedSprite var24 = class120.mapSceneSprites[var23.mapSceneId];
+			if (var23.mapSceneId * 288199677 != -1) {
+				IndexedSprite var24 = class120.field1494[var23.mapSceneId * 288199677];
 				if (var24 != null) {
-					var10 = (var23.sizeX * 4 - var24.subWidth) / 2;
-					int var11 = (var23.sizeY * 4 - var24.subHeight) / 2;
-					var24.drawAt(var10 + var1 * 4 + 48, var11 + (104 - var2 - var23.sizeY) * 4 + 48);
+					var10 = (var23.sizeX * 25054180 - var24.subWidth) / 2;
+					int var11 = (var23.sizeY * -815361020 - var24.subHeight) / 2;
+					var24.drawAt(var10 + var1 * 4 + 48, var11 + (104 - var2 - var23.sizeY * -1277582079) * 4 + 48);
 				}
 			}
 		}

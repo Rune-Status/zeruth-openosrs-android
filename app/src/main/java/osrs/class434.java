@@ -41,8 +41,8 @@ final class class434 implements class429 {
 	@Export("compareWorlds")
 	static int compareWorlds(World var0, World var1, int var2, boolean var3) {
 		if (var2 == 1) {
-			int var4 = var0.population;
-			int var5 = var1.population;
+			int var4 = var0.field781 * 519550573;
+			int var5 = var1.field781 * 519550573;
 			if (!var3) {
 				if (var4 == -1) {
 					var4 = 2001;
@@ -55,18 +55,18 @@ final class class434 implements class429 {
 
 			return var4 - var5;
 		} else if (var2 == 2) {
-			return var0.location - var1.location;
+			return var0.field784 * -192731231 - var1.field784 * -192731231;
 		} else if (var2 == 3) {
-			if (var0.activity.equals("-")) {
-				if (var1.activity.equals("-")) {
+			if (var0.field783.equals("-")) {
+				if (var1.field783.equals("-")) {
 					return 0;
 				} else {
 					return var3 ? -1 : 1;
 				}
-			} else if (var1.activity.equals("-")) {
+			} else if (var1.field783.equals("-")) {
 				return var3 ? 1 : -1;
 			} else {
-				return var0.activity.compareTo(var1.activity);
+				return var0.field783.compareTo(var1.field783);
 			}
 		} else if (var2 == 4) {
 			return var0.method1596() ? (var1.method1596() ? 0 : 1) : (var1.method1596() ? -1 : 0);
@@ -77,7 +77,7 @@ final class class434 implements class429 {
 		} else if (var2 == 7) {
 			return var0.isMembersOnly() ? (var1.isMembersOnly() ? 0 : 1) : (var1.isMembersOnly() ? -1 : 0);
 		} else {
-			return var0.id - var1.id;
+			return var0.field779 * -1527326097 - var1.field779 * -1527326097;
 		}
 	}
 }

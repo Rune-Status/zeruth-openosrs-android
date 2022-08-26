@@ -2,7 +2,6 @@ package osrs;
 
 import net.runelite.mapping.Export;
 import net.runelite.mapping.Implements;
-import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
@@ -13,8 +12,8 @@ public class FloorUnderlayDefinition extends DualNode {
 	@ObfuscatedSignature(
 		descriptor = "Lls;"
 	)
-	@Export("FloorUnderlayDefinition_archive")
-	static AbstractArchive FloorUnderlayDefinition_archive;
+	@Export("FloorOverlayDefinition_archive")
+	static AbstractArchive FloorOverlayDefinition_archive;
 	@ObfuscatedName("h")
 	@ObfuscatedSignature(
 		descriptor = "Liz;"
@@ -28,42 +27,24 @@ public class FloorUnderlayDefinition extends DualNode {
 	@Export("archive11")
 	static Archive archive11;
 	@ObfuscatedName("w")
-	@ObfuscatedGetter(
-		intValue = 1415861081
-	)
-	@Export("rgb")
-	int rgb;
+	int field1973;
 	@ObfuscatedName("v")
-	@ObfuscatedGetter(
-		intValue = 711472625
-	)
-	@Export("hue")
-	public int hue;
+	public int field1978;
 	@ObfuscatedName("c")
-	@ObfuscatedGetter(
-		intValue = 1601741227
-	)
 	@Export("saturation")
 	public int saturation;
 	@ObfuscatedName("q")
-	@ObfuscatedGetter(
-		intValue = -754627641
-	)
 	@Export("lightness")
 	public int lightness;
 	@ObfuscatedName("i")
-	@ObfuscatedGetter(
-		intValue = 42167891
-	)
-	@Export("hueMultiplier")
-	public int hueMultiplier;
+	public int field1976;
 
 	static {
 		FloorUnderlayDefinition_cached = new EvictingDualNodeHashTable(64);
 	}
 
 	FloorUnderlayDefinition() {
-		this.rgb = 0;
+		this.field1973 = 0;
 	}
 
 	@ObfuscatedName("w")
@@ -73,7 +54,7 @@ public class FloorUnderlayDefinition extends DualNode {
 	)
 	@Export("postDecode")
 	void postDecode() {
-		this.setHsl(this.rgb);
+		this.setHsl(this.field1973 * 1415861081);
 	}
 
 	@ObfuscatedName("v")
@@ -101,7 +82,7 @@ public class FloorUnderlayDefinition extends DualNode {
 	@Export("decodeNext")
 	void decodeNext(Buffer var1, int var2, int var3) {
 		if (var2 == 1) {
-			this.rgb = var1.readMedium();
+			this.field1973 = var1.readMedium() * -1411332887;
 		}
 
 	}
@@ -156,30 +137,30 @@ public class FloorUnderlayDefinition extends DualNode {
 		}
 
 		var12 /= 6.0D;
-		this.saturation = (int)(var14 * 256.0D);
-		this.lightness = (int)(256.0D * var16);
-		if (this.saturation < 0) {
+		this.saturation = (int)(var14 * 256.0D) * 1112363267;
+		this.lightness = (int)(256.0D * var16) * -816904713;
+		if (this.saturation * 1601741227 < 0) {
 			this.saturation = 0;
-		} else if (this.saturation > 255) {
-			this.saturation = 255;
+		} else if (this.saturation * 1601741227 > 255) {
+			this.saturation = 184791549;
 		}
 
-		if (this.lightness < 0) {
+		if (this.lightness * -754627641 < 0) {
 			this.lightness = 0;
-		} else if (this.lightness > 255) {
-			this.lightness = 255;
+		} else if (this.lightness * -754627641 > 255) {
+			this.lightness = 2142695689;
 		}
 
 		if (var16 > 0.5D) {
-			this.hueMultiplier = (int)(var14 * (1.0D - var16) * 512.0D);
+			this.field1976 = (int)(var14 * (1.0D - var16) * 512.0D) * -19724837;
 		} else {
-			this.hueMultiplier = (int)(512.0D * var16 * var14);
+			this.field1976 = (int)(512.0D * var16 * var14) * -19724837;
 		}
 
-		if (this.hueMultiplier < 1) {
-			this.hueMultiplier = 1;
+		if (this.field1976 * 42167891 < 1) {
+			this.field1976 = -19724837;
 		}
 
-		this.hue = (int)(var12 * (double)this.hueMultiplier);
+		this.field1978 = (int)(var12 * (double)(this.field1976 * 42167891)) * -744219887;
 	}
 }

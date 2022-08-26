@@ -16,8 +16,7 @@ public class class306 {
 	@ObfuscatedSignature(
 		descriptor = "Lmg;"
 	)
-	@Export("fontPlain11")
-	static Font fontPlain11;
+	static Font field3607;
 
 	static {
 		int var0 = 0;
@@ -26,12 +25,12 @@ public class class306 {
 
 		for (int var3 = 0; var3 < var2.length; ++var3) {
 			class302 var4 = var2[var3];
-			if (var4.field3579 > var0) {
-				var0 = var4.field3579;
+			if (var4.field3579 * -203479261 > var0) {
+				var0 = var4.field3579 * -203479261;
 			}
 
-			if (var4.field3580 > var1) {
-				var1 = var4.field3580;
+			if (var4.field3580 * 1691521283 > var1) {
+				var1 = var4.field3580 * 1691521283;
 			}
 		}
 

@@ -1,16 +1,12 @@
 package osrs;
 
 import net.runelite.mapping.Export;
-import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
 @ObfuscatedName("dl")
 public class class127 extends class128 {
 	@ObfuscatedName("s")
-	@ObfuscatedGetter(
-		intValue = -1705057231
-	)
 	int field1535;
 	// $FF: synthetic field
 	@ObfuscatedSignature(
@@ -23,7 +19,7 @@ public class class127 extends class128 {
 	)
 	class127(class131 var1) {
 		this.this$0 = var1;
-		this.field1535 = -1;
+		this.field1535 = 765856559;
 	}
 
 	@ObfuscatedName("s")
@@ -32,7 +28,7 @@ public class class127 extends class128 {
 		garbageValue = "-885940784"
 	)
 	void vmethod3087(Buffer var1) {
-		this.field1535 = var1.readUnsignedShort();
+		this.field1535 = var1.readUnsignedShort() * -765856559;
 	}
 
 	@ObfuscatedName("h")
@@ -41,7 +37,7 @@ public class class127 extends class128 {
 		garbageValue = "0"
 	)
 	void vmethod3084(ClanSettings var1) {
-		var1.method2906(this.field1535);
+		var1.method2906(this.field1535 * -1705057231);
 	}
 
 	@ObfuscatedName("s")
@@ -50,7 +46,7 @@ public class class127 extends class128 {
 		garbageValue = "848477537"
 	)
 	public static void method2798(AbstractArchive var0) {
-		FloorOverlayDefinition.FloorOverlayDefinition_archive = var0;
+		FloorOverlayDefinition.field2154 = var0;
 	}
 
 	@ObfuscatedName("h")
@@ -80,7 +76,7 @@ public class class127 extends class128 {
 		if (Client.currentClanChannels[var0] != null) {
 			if (var1 >= 0 && var1 < Client.currentClanChannels[var0].method3046()) {
 				ClanChannelMember var3 = (ClanChannelMember)Client.currentClanChannels[var0].members.get(var1);
-				PacketBufferNode var4 = DevicePcmPlayerProvider.getPacketBufferNode(ClientPacket.field2987, Client.packetWriter.isaacCipher);
+				PacketBufferNode var4 = DevicePcmPlayerProvider.method354(ClientPacket.field2987, Client.packetWriter.field1338);
 				var4.packetBuffer.writeByte(4 + class309.stringCp1252NullTerminatedByteSize(var3.username.getName()));
 				var4.packetBuffer.writeByte(var0);
 				var4.packetBuffer.writeShort(var1);

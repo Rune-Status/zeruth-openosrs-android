@@ -7,7 +7,6 @@ import java.util.LinkedList;
 import java.util.List;
 import net.runelite.mapping.Export;
 import net.runelite.mapping.Implements;
-import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
@@ -66,33 +65,18 @@ public final class WorldMapManager {
 	@Export("fonts")
 	final HashMap fonts;
 	@ObfuscatedName("a")
-	@ObfuscatedGetter(
-		intValue = -1288902597
-	)
 	@Export("tileX")
 	int tileX;
 	@ObfuscatedName("m")
-	@ObfuscatedGetter(
-		intValue = -1035707968
-	)
 	@Export("tileY")
 	int tileY;
 	@ObfuscatedName("u")
-	@ObfuscatedGetter(
-		intValue = -566269120
-	)
 	@Export("tileWidth")
 	int tileWidth;
 	@ObfuscatedName("l")
-	@ObfuscatedGetter(
-		intValue = -439772096
-	)
 	@Export("tileHeight")
 	int tileHeight;
 	@ObfuscatedName("z")
-	@ObfuscatedGetter(
-		intValue = 1542077429
-	)
 	@Export("pixelsPerTile")
 	public int pixelsPerTile;
 
@@ -138,10 +122,10 @@ public final class WorldMapManager {
 			this.mapAreaData.getOriginX();
 			this.mapAreaData.getOriginPlane();
 			this.mapAreaData.getOriginY();
-			this.tileX = this.mapAreaData.getRegionLowX() * 64;
-			this.tileY = this.mapAreaData.getRegionLowY() * 4096;
-			this.tileWidth = (this.mapAreaData.getRegionHighX() - this.mapAreaData.getRegionLowX() + 1) * 4096;
-			this.tileHeight = (this.mapAreaData.getRegionHighY() - this.mapAreaData.getRegionLowY() + 1) * 4096;
+			this.tileX = this.mapAreaData.getRegionLowX() * 1835809984;
+			this.tileY = this.mapAreaData.getRegionLowY() * 1478399424;
+			this.tileWidth = (this.mapAreaData.getRegionHighX() - this.mapAreaData.getRegionLowX() + 1) * -1143240384;
+			this.tileHeight = (this.mapAreaData.getRegionHighY() - this.mapAreaData.getRegionLowY() + 1) * 636920896;
 			int var16 = this.mapAreaData.getRegionHighX() - this.mapAreaData.getRegionLowX() + 1;
 			int var9 = this.mapAreaData.getRegionHighY() - this.mapAreaData.getRegionLowY() + 1;
 			System.nanoTime();
@@ -152,8 +136,8 @@ public final class WorldMapManager {
 
 			while (var10.hasNext()) {
 				WorldMapData_0 var11 = (WorldMapData_0)var10.next();
-				int var12 = var11.regionX;
-				int var13 = var11.regionY;
+				int var12 = var11.field2806 * -743392137;
+				int var13 = var11.field2807 * -493602369;
 				int var14 = var12 - this.mapAreaData.getRegionLowX();
 				int var15 = var13 - this.mapAreaData.getRegionLowY();
 				this.regions[var14][var15] = new WorldMapRegion(var12, var13, this.mapAreaData.getBackGroundColor(), this.fonts);
@@ -208,20 +192,20 @@ public final class WorldMapManager {
 		WorldMapRectangle var13 = this.createWorldMapRectangle(var1, var2, var3, var4);
 		float var14 = this.getPixelsPerTile(var7 - var5, var3 - var1);
 		int var15 = (int)Math.ceil((double)var14);
-		this.pixelsPerTile = var15;
+		this.pixelsPerTile = var15 * -1768138659;
 		if (!this.scaleHandlers.containsKey(var15)) {
 			WorldMapScaleHandler var16 = new WorldMapScaleHandler(var15);
 			var16.init();
 			this.scaleHandlers.put(var15, var16);
 		}
 
-		int var23 = var13.width + var13.x - 1;
-		int var17 = var13.height + var13.y - 1;
+		int var23 = var13.x * 1711487245 + var13.width * 172936477 - 1;
+		int var17 = var13.y * -1262950775 + var13.height * -1149493653 - 1;
 
 		int var18;
 		int var19;
-		for (var18 = var13.x; var18 <= var23; ++var18) {
-			for (var19 = var13.y; var19 <= var17; ++var19) {
+		for (var18 = var13.x * 1711487245; var18 <= var23; ++var18) {
+			for (var19 = var13.y * -1262950775; var19 <= var17; ++var19) {
 				this.regions[var18][var19].drawTile(var15, (WorldMapScaleHandler)this.scaleHandlers.get(var15), this.mapSceneSprites, this.geographyArchive, this.groundArchive);
 			}
 		}
@@ -229,12 +213,12 @@ public final class WorldMapManager {
 		Rasterizer2D.Rasterizer2D_replace(var9, var10, var11);
 		Rasterizer2D.Rasterizer2D_setClipArray(var12);
 		var18 = (int)(64.0F * var14);
-		var19 = this.tileX * 4096 + var1;
-		int var20 = this.tileY * 64 + var2;
+		var19 = this.tileX * -1288902597 + var1;
+		int var20 = this.tileY * -1291251353 + var2;
 
-		for (int var21 = var13.x; var21 < var13.width + var13.x; ++var21) {
-			for (int var22 = var13.y; var22 < var13.height + var13.y; ++var22) {
-				this.regions[var21][var22].method4587(var5 + var18 * (this.regions[var21][var22].regionX * 64 - var19) / 64, var8 - var18 * (this.regions[var21][var22].regionY * 64 - var20 + 64) / 64, var18);
+		for (int var21 = var13.x * 1711487245; var21 < var13.x * 1711487245 + var13.width * 172936477; ++var21) {
+			for (int var22 = var13.y * -1262950775; var22 < var13.y * -1262950775 + var13.height * -1149493653; ++var22) {
+				this.regions[var21][var22].method4587(var5 + var18 * (this.regions[var21][var22].regionX * 1152516544 - var19) / 64, var8 - var18 * (this.regions[var21][var22].regionY * -1537080128 - var20 + 64) / 64, var18);
 			}
 		}
 
@@ -250,24 +234,24 @@ public final class WorldMapManager {
 		WorldMapRectangle var14 = this.createWorldMapRectangle(var1, var2, var3, var4);
 		float var15 = this.getPixelsPerTile(var7 - var5, var3 - var1);
 		int var16 = (int)(var15 * 64.0F);
-		int var17 = this.tileX * 4096 + var1;
-		int var18 = this.tileY * 64 + var2;
+		int var17 = this.tileX * -1288902597 + var1;
+		int var18 = this.tileY * -1291251353 + var2;
 
 		int var19;
 		int var20;
-		for (var19 = var14.x; var19 < var14.width + var14.x; ++var19) {
-			for (var20 = var14.y; var20 < var14.y + var14.height; ++var20) {
+		for (var19 = var14.x * 1711487245; var19 < var14.x * 1711487245 + var14.width * 172936477; ++var19) {
+			for (var20 = var14.y * -1262950775; var20 < var14.height * -1149493653 + var14.y * -1262950775; ++var20) {
 				if (var13) {
 					this.regions[var19][var20].initWorldMapIcon1s();
 				}
 
-				this.regions[var19][var20].method4597(var5 + var16 * (this.regions[var19][var20].regionX * 64 - var17) / 64, var8 - var16 * (this.regions[var19][var20].regionY * 64 - var18 + 64) / 64, var16, var9);
+				this.regions[var19][var20].method4597(var5 + var16 * (this.regions[var19][var20].regionX * 1152516544 - var17) / 64, var8 - var16 * (this.regions[var19][var20].regionY * -1537080128 - var18 + 64) / 64, var16, var9);
 			}
 		}
 
 		if (var10 != null && var11 > 0) {
-			for (var19 = var14.x; var19 < var14.width + var14.x; ++var19) {
-				for (var20 = var14.y; var20 < var14.height + var14.y; ++var20) {
+			for (var19 = var14.x * 1711487245; var19 < var14.x * 1711487245 + var14.width * 172936477; ++var19) {
+				for (var20 = var14.y * -1262950775; var20 < var14.y * -1262950775 + var14.height * -1149493653; ++var20) {
 					this.regions[var19][var20].flashElements(var10, var11, var12);
 				}
 			}
@@ -306,8 +290,8 @@ public final class WorldMapManager {
 
 					while (var11.hasNext()) {
 						AbstractWorldMapIcon var12 = (AbstractWorldMapIcon)var11.next();
-						int var13 = var3 * (var12.coord2.x - this.tileX * 4096) / (this.tileWidth * 64);
-						int var14 = var4 - var4 * (var12.coord2.y - this.tileY * 64) / (this.tileHeight * 64);
+						int var13 = var3 * (var12.coord2.x * -887279971 - this.tileX * -1288902597) / (this.tileWidth * 1601764781);
+						int var14 = var4 - (var12.coord2.y * -325968273 - this.tileY * -1291251353) * var4 / (this.tileHeight * 462890609);
 						Rasterizer2D.Rasterizer2D_drawCircleAlpha(var13 + var1, var14 + var2, 2, 16776960, 256);
 					}
 				}
@@ -328,12 +312,12 @@ public final class WorldMapManager {
 			WorldMapRectangle var12 = this.createWorldMapRectangle(var1, var2, var3, var4);
 			float var13 = this.getPixelsPerTile(var7, var3 - var1);
 			int var14 = (int)(64.0F * var13);
-			int var15 = this.tileX * 4096 + var1;
-			int var16 = this.tileY * 64 + var2;
+			int var15 = this.tileX * -1288902597 + var1;
+			int var16 = this.tileY * -1291251353 + var2;
 
-			for (int var17 = var12.x; var17 < var12.x + var12.width; ++var17) {
-				for (int var18 = var12.y; var18 < var12.height + var12.y; ++var18) {
-					List var19 = this.regions[var17][var18].method4618(var5 + var14 * (this.regions[var17][var18].regionX * 64 - var15) / 64, var8 + var6 - var14 * (this.regions[var17][var18].regionY * 64 - var16 + 64) / 64, var14, var9, var10);
+			for (int var17 = var12.x * 1711487245; var17 < var12.x * 1711487245 + var12.width * 172936477; ++var17) {
+				for (int var18 = var12.y * -1262950775; var18 < var12.y * -1262950775 + var12.height * -1149493653; ++var18) {
+					List var19 = this.regions[var17][var18].method4618(var5 + var14 * (this.regions[var17][var18].regionX * 1152516544 - var15) / 64, var8 + var6 - var14 * (this.regions[var17][var18].regionY * -1537080128 - var16 + 64) / 64, var14, var9, var10);
 					if (!var19.isEmpty()) {
 						var11.addAll(var19);
 					}
@@ -352,38 +336,38 @@ public final class WorldMapManager {
 	@Export("createWorldMapRectangle")
 	WorldMapRectangle createWorldMapRectangle(int var1, int var2, int var3, int var4) {
 		WorldMapRectangle var5 = new WorldMapRectangle(this);
-		int var6 = this.tileX * 4096 + var1;
-		int var7 = this.tileY * 64 + var2;
-		int var8 = var3 + this.tileX * 4096;
-		int var9 = this.tileY * 64 + var4;
+		int var6 = this.tileX * -1288902597 + var1;
+		int var7 = this.tileY * -1291251353 + var2;
+		int var8 = var3 + this.tileX * -1288902597;
+		int var9 = this.tileY * -1291251353 + var4;
 		int var10 = var6 / 64;
 		int var11 = var7 / 64;
 		int var12 = var8 / 64;
 		int var13 = var9 / 64;
-		var5.width = var12 - var10 + 1;
-		var5.height = var13 - var11 + 1;
-		var5.x = var10 - this.mapAreaData.getRegionLowX();
-		var5.y = var11 - this.mapAreaData.getRegionLowY();
-		if (var5.x < 0) {
-			var5.width += var5.x;
+		var5.width = (var12 - var10 + 1) * -1508090571;
+		var5.height = (var13 - var11 + 1) * 783982147;
+		var5.x = (var10 - this.mapAreaData.getRegionLowX()) * 1365327301;
+		var5.y = (var11 - this.mapAreaData.getRegionLowY()) * 202141625;
+		if (var5.x * 1711487245 < 0) {
+			var5.width += -170882895 * var5.x;
 			var5.x = 0;
 		}
 
-		if (var5.x > this.regions.length - var5.width) {
-			var5.width = this.regions.length - var5.x;
+		if (var5.x * 1711487245 > this.regions.length - var5.width * 172936477) {
+			var5.width = (this.regions.length - var5.x * 1711487245) * -1508090571;
 		}
 
-		if (var5.y < 0) {
-			var5.height += var5.y;
+		if (var5.y * -1262950775 < 0) {
+			var5.height += -2009668645 * var5.y;
 			var5.y = 0;
 		}
 
-		if (var5.y > this.regions[0].length - var5.height) {
-			var5.height = this.regions[0].length - var5.y;
+		if (var5.y * -1262950775 > this.regions[0].length - var5.height * -1149493653) {
+			var5.height = (this.regions[0].length - var5.y * -1262950775) * 783982147;
 		}
 
-		var5.width = Math.min(var5.width, this.regions.length);
-		var5.height = Math.min(var5.height, this.regions[0].length);
+		var5.width = Math.min(var5.width * 172936477, this.regions.length) * -1508090571;
+		var5.height = Math.min(-1149493653 * var5.height, this.regions[0].length) * 783982147;
 		return var5;
 	}
 

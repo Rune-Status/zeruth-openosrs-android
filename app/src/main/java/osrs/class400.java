@@ -1,7 +1,7 @@
 package osrs;
 
 import java.io.UnsupportedEncodingException;
-
+import java.net.URI;
 import net.runelite.mapping.Export;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
@@ -57,7 +57,7 @@ public class class400 implements class399 {
 
 				JSONArray var2 = new JSONArray(var1);
 				this.field4439 = new JSONObject();
-/*				this.field4439.method8265("arrayValues", var2);*/
+				this.field4439.method8265("arrayValues", var2);
 			}
 
 		} catch (JSONException var3) {
@@ -126,14 +126,14 @@ public class class400 implements class399 {
 			}*/
 
 			if (class29.field167.startsWith("win")) {
-				FriendLoginUpdate.method6597(var0, 0, "openjs");
+				class369.method6597(var0, 0, "openjs");
 			} else if (class29.field167.startsWith("mac")) {
-				FriendLoginUpdate.method6597(var0, 1, "openjs");
+				class369.method6597(var0, 1, "openjs");
 			} else {
-				FriendLoginUpdate.method6597(var0, 2, "openjs");
+				class369.method6597(var0, 2, "openjs");
 			}
 		} else {
-			FriendLoginUpdate.method6597(var0, 3, "openjs");
+			class369.method6597(var0, 3, "openjs");
 		}
 
 	}

@@ -67,14 +67,14 @@ public class SecureRandomFuture {
 	static int method1932(int var0, Script var1, boolean var2) {
 		Widget var3 = var2 ? SoundSystem.scriptDotWidget : Ignored.scriptActiveWidget;
 		if (var0 == 1800) {
-			Interpreter.Interpreter_intStack[++User.Interpreter_intStackSize - 1] = ModeWhere.Widget_unpackTargetMask(class193.getWidgetFlags(var3));
+			Interpreter.Interpreter_intStack[(User.Interpreter_intStackSize += -312486675) * -313022235 - 1] = ModeWhere.Widget_unpackTargetMask(class193.getWidgetFlags(var3));
 			return 1;
 		} else if (var0 != 1801) {
 			if (var0 == 1802) {
 				if (var3.dataText == null) {
-					Interpreter.Interpreter_stringStack[++UserComparator8.Interpreter_stringStackSize - 1] = "";
+					Interpreter.Interpreter_stringStack[(UserComparator8.Interpreter_stringStackSize += 204829809) * 929025169 - 1] = "";
 				} else {
-					Interpreter.Interpreter_stringStack[++UserComparator8.Interpreter_stringStackSize - 1] = var3.dataText;
+					Interpreter.Interpreter_stringStack[(UserComparator8.Interpreter_stringStackSize += 204829809) * 929025169 - 1] = var3.dataText;
 				}
 
 				return 1;
@@ -82,12 +82,12 @@ public class SecureRandomFuture {
 				return 2;
 			}
 		} else {
-			int var4 = Interpreter.Interpreter_intStack[--User.Interpreter_intStackSize];
+			int var4 = Interpreter.Interpreter_intStack[(User.Interpreter_intStackSize -= -312486675) * -313022235];
 			--var4;
 			if (var3.actions != null && var4 < var3.actions.length && var3.actions[var4] != null) {
-				Interpreter.Interpreter_stringStack[++UserComparator8.Interpreter_stringStackSize - 1] = var3.actions[var4];
+				Interpreter.Interpreter_stringStack[(UserComparator8.Interpreter_stringStackSize += 204829809) * 929025169 - 1] = var3.actions[var4];
 			} else {
-				Interpreter.Interpreter_stringStack[++UserComparator8.Interpreter_stringStackSize - 1] = "";
+				Interpreter.Interpreter_stringStack[(UserComparator8.Interpreter_stringStackSize += 204829809) * 929025169 - 1] = "";
 			}
 
 			return 1;

@@ -1,7 +1,6 @@
 package osrs;
 
 import net.runelite.mapping.Export;
-import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
@@ -11,9 +10,6 @@ public class class136 extends class144 {
 	@Export("fontHelvetica13")
 	static java.awt.Font fontHelvetica13;
 	@ObfuscatedName("s")
-	@ObfuscatedGetter(
-		intValue = -868352589
-	)
 	int field1590;
 	// $FF: synthetic field
 	@ObfuscatedSignature(
@@ -26,7 +22,7 @@ public class class136 extends class144 {
 	)
 	class136(class145 var1) {
 		this.this$0 = var1;
-		this.field1590 = -1;
+		this.field1590 = -834468219;
 	}
 
 	@ObfuscatedName("s")
@@ -35,10 +31,10 @@ public class class136 extends class144 {
 		garbageValue = "1539485988"
 	)
 	void vmethod3074(Buffer var1) {
-		this.field1590 = var1.readUnsignedShort();
+		this.field1590 = var1.readUnsignedShort() * 834468219;
 		var1.readUnsignedByte();
 		if (var1.readUnsignedByte() != 255) {
-			--var1.offset;
+			var1.offset -= 1090888991;
 			var1.readLong();
 		}
 
@@ -50,7 +46,7 @@ public class class136 extends class144 {
 		garbageValue = "-1270425284"
 	)
 	void vmethod3073(ClanChannel var1) {
-		var1.removeMember(this.field1590);
+		var1.removeMember(this.field1590 * -868352589);
 	}
 
 	@ObfuscatedName("j")
@@ -60,15 +56,15 @@ public class class136 extends class144 {
 	)
 	static int method2878(int var0, Script var1, boolean var2) {
 		if (var0 == 3200) {
-			User.Interpreter_intStackSize -= 3;
-			class147.queueSoundEffect(Interpreter.Interpreter_intStack[User.Interpreter_intStackSize], Interpreter.Interpreter_intStack[User.Interpreter_intStackSize + 1], Interpreter.Interpreter_intStack[User.Interpreter_intStackSize + 2]);
+			User.Interpreter_intStackSize -= -937460025;
+			class147.queueSoundEffect(Interpreter.Interpreter_intStack[User.Interpreter_intStackSize * -313022235], Interpreter.Interpreter_intStack[User.Interpreter_intStackSize * -313022235 + 1], Interpreter.Interpreter_intStack[User.Interpreter_intStackSize * -313022235 + 2]);
 			return 1;
 		} else if (var0 == 3201) {
-			InvDefinition.playSong(Interpreter.Interpreter_intStack[--User.Interpreter_intStackSize]);
+			InvDefinition.playSong(Interpreter.Interpreter_intStack[(User.Interpreter_intStackSize -= -312486675) * -313022235]);
 			return 1;
 		} else if (var0 == 3202) {
-			User.Interpreter_intStackSize -= 2;
-			JagexCache.method3206(Interpreter.Interpreter_intStack[User.Interpreter_intStackSize], Interpreter.Interpreter_intStack[User.Interpreter_intStackSize + 1]);
+			User.Interpreter_intStackSize -= -624973350;
+			JagexCache.method3206(Interpreter.Interpreter_intStack[User.Interpreter_intStackSize * -313022235], Interpreter.Interpreter_intStack[User.Interpreter_intStackSize * -313022235 + 1]);
 			return 1;
 		} else {
 			class83 var3;
@@ -84,7 +80,7 @@ public class class136 extends class144 {
 					var4 = class82.field1065;
 					boolean var8 = false;
 					if (var0 == 3214) {
-						var6 = Interpreter.Interpreter_intStack[--User.Interpreter_intStackSize];
+						var6 = Interpreter.Interpreter_intStack[(User.Interpreter_intStackSize -= -312486675) * -313022235];
 						var3 = (class83)GameEngine.findEnumerated(Players.method2388(), var6);
 						if (var3 == null) {
 							throw new RuntimeException(String.format("Unrecognized device option %d", var6));
@@ -92,7 +88,7 @@ public class class136 extends class144 {
 					}
 
 					if (var0 == 3215) {
-						var6 = Interpreter.Interpreter_intStack[--User.Interpreter_intStackSize];
+						var6 = Interpreter.Interpreter_intStack[(User.Interpreter_intStackSize -= -312486675) * -313022235];
 						var4 = (class82)GameEngine.findEnumerated(GameEngine.method528(), var6);
 						if (var4 == null) {
 							throw new RuntimeException(String.format("Unrecognized game option %d", var6));
@@ -100,7 +96,7 @@ public class class136 extends class144 {
 					}
 
 					if (var0 == 3210) {
-						var6 = Interpreter.Interpreter_intStack[--User.Interpreter_intStackSize];
+						var6 = Interpreter.Interpreter_intStack[(User.Interpreter_intStackSize -= -312486675) * -313022235];
 						var3 = (class83)GameEngine.findEnumerated(Players.method2388(), var6);
 						if (var3 == null) {
 							var4 = (class82)GameEngine.findEnumerated(GameEngine.method528(), var6);
@@ -119,7 +115,7 @@ public class class136 extends class144 {
 					}
 
 					if (var4 == class82.field1065) {
-						switch(var3.field1075) {
+						switch(var3.field1075 * -1715306901) {
 						case 1:
 							var5 = ClanMate.clientPreferences.method2211() ? 1 : 0;
 							break;
@@ -140,7 +136,7 @@ public class class136 extends class144 {
 							throw new RuntimeException(var7);
 						}
 					} else {
-						switch(var4.field1061) {
+						switch(var4.field1061 * -1358235955) {
 						case 1:
 							var5 = ClanMate.clientPreferences.method2209() ? 1 : 0;
 							break;
@@ -162,15 +158,15 @@ public class class136 extends class144 {
 						}
 					}
 
-					Interpreter.Interpreter_intStack[++User.Interpreter_intStackSize - 1] = var5;
+					Interpreter.Interpreter_intStack[(User.Interpreter_intStackSize += -312486675) * -313022235 - 1] = var5;
 					return 1;
 				}
 			} else {
 				var3 = class83.field1076;
 				var4 = class82.field1065;
-				var5 = Interpreter.Interpreter_intStack[--User.Interpreter_intStackSize];
+				var5 = Interpreter.Interpreter_intStack[(User.Interpreter_intStackSize -= -312486675) * -313022235];
 				if (var0 == 3212) {
-					var6 = Interpreter.Interpreter_intStack[--User.Interpreter_intStackSize];
+					var6 = Interpreter.Interpreter_intStack[(User.Interpreter_intStackSize -= -312486675) * -313022235];
 					var3 = (class83)GameEngine.findEnumerated(Players.method2388(), var6);
 					if (var3 == null) {
 						throw new RuntimeException(String.format("Unrecognized device option %d", var6));
@@ -178,7 +174,7 @@ public class class136 extends class144 {
 				}
 
 				if (var0 == 3213) {
-					var6 = Interpreter.Interpreter_intStack[--User.Interpreter_intStackSize];
+					var6 = Interpreter.Interpreter_intStack[(User.Interpreter_intStackSize -= -312486675) * -313022235];
 					var4 = (class82)GameEngine.findEnumerated(GameEngine.method528(), var6);
 					if (var4 == null) {
 						throw new RuntimeException(String.format("Unrecognized game option %d", var6));
@@ -186,7 +182,7 @@ public class class136 extends class144 {
 				}
 
 				if (var0 == 3209) {
-					var6 = Interpreter.Interpreter_intStack[--User.Interpreter_intStackSize];
+					var6 = Interpreter.Interpreter_intStack[(User.Interpreter_intStackSize -= -312486675) * -313022235];
 					var3 = (class83)GameEngine.findEnumerated(Players.method2388(), var6);
 					if (var3 == null) {
 						var4 = (class82)GameEngine.findEnumerated(GameEngine.method528(), var6);
@@ -205,7 +201,7 @@ public class class136 extends class144 {
 				}
 
 				if (var4 == class82.field1065) {
-					switch(var3.field1075) {
+					switch(var3.field1075 * -1715306901) {
 					case 1:
 						ClanMate.clientPreferences.method2210(var5 == 1);
 						break;
@@ -230,7 +226,7 @@ public class class136 extends class144 {
 						throw new RuntimeException(var7);
 					}
 				} else {
-					switch(var4.field1061) {
+					switch(var4.field1061 * -1358235955) {
 					case 1:
 						ClanMate.clientPreferences.method2241(var5 == 1);
 						break;

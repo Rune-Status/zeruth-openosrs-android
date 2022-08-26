@@ -2,7 +2,6 @@ package osrs;
 
 import java.io.File;
 import net.runelite.mapping.Export;
-import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
@@ -12,24 +11,12 @@ public class class125 extends class128 {
 	@Export("cacheDir")
 	static File cacheDir;
 	@ObfuscatedName("s")
-	@ObfuscatedGetter(
-		intValue = -987319237
-	)
 	int field1529;
 	@ObfuscatedName("h")
-	@ObfuscatedGetter(
-		intValue = 1623168443
-	)
 	int field1527;
 	@ObfuscatedName("w")
-	@ObfuscatedGetter(
-		intValue = -638251523
-	)
 	int field1526;
 	@ObfuscatedName("v")
-	@ObfuscatedGetter(
-		intValue = 603420191
-	)
 	int field1528;
 	// $FF: synthetic field
 	@ObfuscatedSignature(
@@ -42,7 +29,7 @@ public class class125 extends class128 {
 	)
 	class125(class131 var1) {
 		this.this$0 = var1;
-		this.field1529 = -1;
+		this.field1529 = 415890189;
 	}
 
 	@ObfuscatedName("s")
@@ -51,10 +38,10 @@ public class class125 extends class128 {
 		garbageValue = "-885940784"
 	)
 	void vmethod3087(Buffer var1) {
-		this.field1529 = var1.readUnsignedShort();
-		this.field1527 = var1.readInt();
-		this.field1526 = var1.readUnsignedByte();
-		this.field1528 = var1.readUnsignedByte();
+		this.field1529 = var1.readUnsignedShort() * -415890189;
+		this.field1527 = var1.readInt() * -1774393485;
+		this.field1526 = var1.readUnsignedByte() * 594884437;
+		this.field1528 = var1.readUnsignedByte() * -290552353;
 	}
 
 	@ObfuscatedName("h")
@@ -63,7 +50,7 @@ public class class125 extends class128 {
 		garbageValue = "0"
 	)
 	void vmethod3084(ClanSettings var1) {
-		var1.method2937(this.field1529, this.field1527, this.field1526, this.field1528);
+		var1.method2937(this.field1529 * -987319237, this.field1527 * 1623168443, this.field1526 * -638251523, this.field1528 * 603420191);
 	}
 
 	@ObfuscatedName("w")
@@ -102,10 +89,9 @@ public class class125 extends class128 {
 		descriptor = "(Lkn;B)V",
 		garbageValue = "-43"
 	)
-	@Export("invalidateWidget")
-	static void invalidateWidget(Widget var0) {
-		if (var0 != null && var0.cycle == Client.field697) {
-			Client.field643[var0.rootIndex] = true;
+	static void method2770(Widget var0) {
+		if (var0 != null && var0.field3505 * -1655892453 == Client.field697 * -1360612847) {
+			Client.field643[var0.field3504 * 939629325] = true;
 		}
 
 	}

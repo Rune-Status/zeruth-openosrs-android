@@ -2,7 +2,6 @@ package osrs;
 
 import net.runelite.mapping.Export;
 import net.runelite.mapping.Implements;
-import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
@@ -10,35 +9,23 @@ import net.runelite.mapping.ObfuscatedSignature;
 @Implements("HealthBarUpdate")
 public class HealthBarUpdate extends Node {
 	@ObfuscatedName("s")
-	@ObfuscatedGetter(
-		intValue = 767819071
-	)
 	@Export("cycle")
 	int cycle;
 	@ObfuscatedName("h")
-	@ObfuscatedGetter(
-		intValue = 1604184597
-	)
 	@Export("health")
 	int health;
 	@ObfuscatedName("w")
-	@ObfuscatedGetter(
-		intValue = 1895664145
-	)
 	@Export("health2")
 	int health2;
 	@ObfuscatedName("v")
-	@ObfuscatedGetter(
-		intValue = -226595329
-	)
 	@Export("cycleOffset")
 	int cycleOffset;
 
 	HealthBarUpdate(int var1, int var2, int var3, int var4) {
-		this.cycle = var1;
-		this.health = var2;
-		this.health2 = var3;
-		this.cycleOffset = var4;
+		this.cycle = var1 * 1811968703;
+		this.health = var2 * -757230275;
+		this.health2 = var3 * 1663739633;
+		this.cycleOffset = var4 * 1581093375;
 	}
 
 	@ObfuscatedName("s")
@@ -48,10 +35,10 @@ public class HealthBarUpdate extends Node {
 	)
 	@Export("set")
 	void set(int var1, int var2, int var3, int var4) {
-		this.cycle = var1;
-		this.health = var2;
-		this.health2 = var3;
-		this.cycleOffset = var4;
+		this.cycle = var1 * 1811968703;
+		this.health = var2 * -757230275;
+		this.health2 = var3 * 1663739633;
+		this.cycleOffset = var4 * 1581093375;
 	}
 
 	@ObfuscatedName("ej")

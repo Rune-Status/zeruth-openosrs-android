@@ -31,7 +31,7 @@ public class Frames extends DualNode {
 			int var11 = (var9[0] & 255) << 8 | var9[1] & 255;
 
 			for (Skeleton var12 = (Skeleton)var5.last(); var12 != null; var12 = (Skeleton)var5.previous()) {
-				if (var11 == var12.id) {
+				if (var11 == var12.id * -577196497) {
 					var10 = var12;
 					break;
 				}
@@ -66,7 +66,7 @@ public class Frames extends DualNode {
 	@Export("addPendingSpawnToScene")
 	static final void addPendingSpawnToScene(int var0, int var1, int var2, int var3, int var4, int var5, int var6) {
 		if (var2 >= 1 && var3 >= 1 && var2 <= 102 && var3 <= 102) {
-			if (Client.isLowDetail && var0 != class268.Client_plane) {
+			if (Client.isLowDetail && var0 != class268.Client_plane * 1083786667) {
 				return;
 			}
 
@@ -100,7 +100,7 @@ public class Frames extends DualNode {
 				if (var1 == 0) {
 					class12.scene.removeBoundaryObject(var0, var2, var3);
 					var13 = FileSystem.getObjectDefinition(var14);
-					if (var13.interactType != 0) {
+					if (var13.interactType * 1112693661 != 0) {
 						Client.collisionMaps[var0].method3778(var2, var3, var15, var16, var13.boolean1);
 					}
 				}
@@ -112,19 +112,19 @@ public class Frames extends DualNode {
 				if (var1 == 2) {
 					class12.scene.removeGameObject(var0, var2, var3);
 					var13 = FileSystem.getObjectDefinition(var14);
-					if (var2 + var13.sizeX > 103 || var3 + var13.sizeX > 103 || var2 + var13.sizeY > 103 || var3 + var13.sizeY > 103) {
+					if (var2 + var13.sizeX * 6263545 > 103 || var3 + var13.sizeX * 6263545 > 103 || var13.sizeY * -1277582079 + var2 > 103 || var3 + var13.sizeY * -1277582079 > 103) {
 						return;
 					}
 
-					if (var13.interactType != 0) {
-						Client.collisionMaps[var0].setFlagOffNonSquare(var2, var3, var13.sizeX, var13.sizeY, var16, var13.boolean1);
+					if (var13.interactType * 1112693661 != 0) {
+						Client.collisionMaps[var0].setFlagOffNonSquare(var2, var3, var13.sizeX * 6263545, var13.sizeY * -1277582079, var16, var13.boolean1);
 					}
 				}
 
 				if (var1 == 3) {
 					class12.scene.removeFloorDecoration(var0, var2, var3);
 					var13 = FileSystem.getObjectDefinition(var14);
-					if (var13.interactType == 1) {
+					if (var13.interactType * 1112693661 == 1) {
 						Client.collisionMaps[var0].method3781(var2, var3);
 					}
 				}

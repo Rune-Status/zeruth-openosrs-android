@@ -3,7 +3,6 @@ package osrs;
 import java.security.SecureRandom;
 import net.runelite.mapping.Export;
 import net.runelite.mapping.Implements;
-import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
@@ -20,8 +19,7 @@ public class Script extends DualNode {
 	@ObfuscatedSignature(
 		descriptor = "Lap;"
 	)
-	@Export("soundCache")
-	public static SoundCache soundCache;
+	public static SoundCache field955;
 	@ObfuscatedName("h")
 	String field952;
 	@ObfuscatedName("w")
@@ -34,27 +32,15 @@ public class Script extends DualNode {
 	@Export("stringOperands")
 	String[] stringOperands;
 	@ObfuscatedName("q")
-	@ObfuscatedGetter(
-		intValue = -2052154599
-	)
 	@Export("localIntCount")
 	int localIntCount;
 	@ObfuscatedName("i")
-	@ObfuscatedGetter(
-		intValue = -470503423
-	)
 	@Export("localStringCount")
 	int localStringCount;
 	@ObfuscatedName("k")
-	@ObfuscatedGetter(
-		intValue = 303491303
-	)
 	@Export("intArgumentCount")
 	int intArgumentCount;
 	@ObfuscatedName("o")
-	@ObfuscatedGetter(
-		intValue = -130768209
-	)
 	@Export("stringArgumentCount")
 	int stringArgumentCount;
 	@ObfuscatedName("n")
@@ -130,17 +116,17 @@ public class Script extends DualNode {
 	)
 	static int method1947(int var0, Script var1, boolean var2) {
 		if (var0 == 5630) {
-			Client.logoutTimer = 250;
+			Client.logoutTimer = -1760852066;
 			return 1;
 		} else if (var0 != 5631 && var0 != 5633) {
 			if (var0 == 5632) {
-				Interpreter.Interpreter_intStack[++User.Interpreter_intStackSize - 1] = 26;
+				Interpreter.Interpreter_intStack[(User.Interpreter_intStackSize += -312486675) * -313022235 - 1] = 26;
 				return 1;
 			} else {
 				return 2;
 			}
 		} else {
-			UserComparator8.Interpreter_stringStackSize -= 2;
+			UserComparator8.Interpreter_stringStackSize -= 409659618;
 			return 1;
 		}
 	}

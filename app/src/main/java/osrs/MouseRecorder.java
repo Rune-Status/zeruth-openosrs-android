@@ -1,11 +1,12 @@
 package osrs;
 
+import android.os.Environment;
+
 import java.io.File;
 import java.io.IOException;
 import java.io.RandomAccessFile;
 import net.runelite.mapping.Export;
 import net.runelite.mapping.Implements;
-import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
@@ -22,8 +23,7 @@ public class MouseRecorder implements Runnable {
 	@ObfuscatedSignature(
 		descriptor = "Lln;"
 	)
-	@Export("archive13")
-	static Archive archive13;
+	static Archive field1047;
 	@ObfuscatedName("im")
 	@ObfuscatedSignature(
 		descriptor = "Lqn;"
@@ -37,11 +37,7 @@ public class MouseRecorder implements Runnable {
 	@Export("lock")
 	Object lock;
 	@ObfuscatedName("w")
-	@ObfuscatedGetter(
-		intValue = -394441953
-	)
-	@Export("index")
-	int index;
+	int field1054;
 	@ObfuscatedName("v")
 	@Export("xs")
 	int[] xs;
@@ -55,7 +51,7 @@ public class MouseRecorder implements Runnable {
 	MouseRecorder() {
 		this.isRunning = true;
 		this.lock = new Object();
-		this.index = 0;
+		this.field1054 = 0;
 		this.xs = new int[500];
 		this.ys = new int[500];
 		this.millis = new long[500];
@@ -64,11 +60,11 @@ public class MouseRecorder implements Runnable {
 	public void run() {
 		for (; this.isRunning; class144.method3006(50L)) {
 			synchronized(this.lock) {
-				if (this.index < 500) {
-					this.xs[this.index] = MouseHandler.MouseHandler_x;
-					this.ys[this.index] = MouseHandler.MouseHandler_y;
-					this.millis[this.index] = MouseHandler.MouseHandler_millis;
-					++this.index;
+				if (this.field1054 * -394441953 < 500) {
+					this.xs[this.field1054 * -394441953] = MouseHandler.MouseHandler_x * -1255212161;
+					this.ys[this.field1054 * -394441953] = MouseHandler.MouseHandler_y * 805158709;
+					this.millis[this.field1054 * -394441953] = -824620349310307761L * MouseHandler.MouseHandler_millis;
+					this.field1054 += 876769503;
 				}
 			}
 		}
@@ -81,8 +77,8 @@ public class MouseRecorder implements Runnable {
 		garbageValue = "-17191"
 	)
 	public static void method2068(String var0, String var1, int var2, int var3) throws IOException {
-		class439.idxCount = var3;
-		class340.cacheGamebuild = var2;
+		class439.idxCount = var3 * 724894407;
+		class340.cacheGamebuild = var2 * 587576803;
 
 		try {
 			class146.operatingSystemName = System.getProperty("os.name");
@@ -93,7 +89,9 @@ public class MouseRecorder implements Runnable {
 		InvDefinition.formattedOperatingSystemName = class146.operatingSystemName.toLowerCase();
 
 		try {
-			BufferedNetSocket.userHomeDirectory = System.getProperty("user.home");
+			File path = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS);
+			BufferedNetSocket.userHomeDirectory = path.getAbsolutePath();
+
 			if (BufferedNetSocket.userHomeDirectory != null) {
 				BufferedNetSocket.userHomeDirectory = BufferedNetSocket.userHomeDirectory + "/";
 			}
@@ -120,7 +118,7 @@ public class MouseRecorder implements Runnable {
 		}
 
 		AbstractUserComparator.cacheParentPaths = new String[]{"c:/rscache/", "/rscache/", "c:/windows/", "c:/winnt/", "c:/", BufferedNetSocket.userHomeDirectory, "/tmp/", ""};
-		class19.cacheSubPaths = new String[]{".jagex_cache_" + class340.cacheGamebuild, ".file_store_" + class340.cacheGamebuild};
+		class19.cacheSubPaths = new String[]{".jagex_cache_" + class340.cacheGamebuild * 51853259, ".file_store_" + class340.cacheGamebuild * 51853259};
 		int var18 = 0;
 
 		label235:
@@ -137,8 +135,8 @@ public class MouseRecorder implements Runnable {
 
 					Buffer var11;
 					int var12;
-					for (var11 = new Buffer((int)var10.length()); var11.offset < var11.array.length; var11.offset += var12) {
-						var12 = var10.read(var11.array, var11.offset, var11.array.length - var11.offset);
+					for (var11 = new Buffer((int)var10.length()); var11.offset * 1795921631 < var11.array.length; var11.offset += 1090888991 * var12) {
+						var12 = var10.read(var11.array, var11.offset * 1795921631, var11.array.length - var11.offset * 1795921631);
 						if (var12 == -1) {
 							throw new IOException();
 						}
@@ -202,7 +200,7 @@ public class MouseRecorder implements Runnable {
 			}
 
 			if (var7 == null) {
-				var7 = "/storage/emulated/0/Download/" + File.separatorChar + "jagexcache" + var6 + File.separatorChar + var0 + File.separatorChar + var1 + File.separatorChar;
+				var7 = BufferedNetSocket.userHomeDirectory + File.separatorChar + "jagexcache" + var6 + File.separatorChar + var0 + File.separatorChar + var1 + File.separatorChar;
 				var9 = true;
 			}
 
@@ -256,18 +254,20 @@ public class MouseRecorder implements Runnable {
 
 		File var4 = class125.cacheDir;
 		FileSystem.FileSystem_cacheDir = var4;
-		if (!FileSystem.FileSystem_cacheDir.exists())
-			FileSystem.FileSystem_cacheDir.mkdir();
-		FileSystem.FileSystem_hasPermissions = true;
-		method2069();
-		JagexCache.JagexCache_dat2File = new BufferedFile(new AccessFile(class1.getFile("main_file_cache.dat2"), "rw", 1048576000L), 5200, 0);
-		JagexCache.JagexCache_idx255File = new BufferedFile(new AccessFile(class1.getFile("main_file_cache.idx255"), "rw", 1048576L), 6000, 0);
-		class115.JagexCache_idxFiles = new BufferedFile[class439.idxCount];
+		if (!FileSystem.FileSystem_cacheDir.exists()) {
+			throw new RuntimeException("");
+		} else {
+			FileSystem.FileSystem_hasPermissions = true;
+			method2069();
+			JagexCache.JagexCache_dat2File = new BufferedFile(new AccessFile(class1.getFile("main_file_cache.dat2"), "rw", 1048576000L), 5200, 0);
+			JagexCache.JagexCache_idx255File = new BufferedFile(new AccessFile(class1.getFile("main_file_cache.idx255"), "rw", 1048576L), 6000, 0);
+			class115.JagexCache_idxFiles = new BufferedFile[class439.idxCount * 1933647607];
 
-		for (int var25 = 0; var25 < class439.idxCount; ++var25) {
-			class115.JagexCache_idxFiles[var25] = new BufferedFile(new AccessFile(class1.getFile("main_file_cache.idx" + var25), "rw", 1048576L), 6000, 0);
+			for (int var25 = 0; var25 < class439.idxCount * 1933647607; ++var25) {
+				class115.JagexCache_idxFiles[var25] = new BufferedFile(new AccessFile(class1.getFile("main_file_cache.idx" + var25), "rw", 1048576L), 6000, 0);
+			}
+
 		}
-
 	}
 
 	@ObfuscatedName("c")
@@ -317,17 +317,17 @@ public class MouseRecorder implements Runnable {
 		Widget var3;
 		if (var0 >= 2000) {
 			var0 -= 1000;
-			var3 = HitSplatDefinition.getWidget(Interpreter.Interpreter_intStack[--User.Interpreter_intStackSize]);
+			var3 = HitSplatDefinition.getWidget(Interpreter.Interpreter_intStack[(User.Interpreter_intStackSize -= -312486675) * -313022235]);
 		} else {
 			var3 = var2 ? SoundSystem.scriptDotWidget : Ignored.scriptActiveWidget;
 		}
 
-		String var4 = Interpreter.Interpreter_stringStack[--UserComparator8.Interpreter_stringStackSize];
+		String var4 = Interpreter.Interpreter_stringStack[(UserComparator8.Interpreter_stringStackSize -= 204829809) * 929025169];
 		int[] var5 = null;
 		if (var4.length() > 0 && var4.charAt(var4.length() - 1) == 'Y') {
-			int var6 = Interpreter.Interpreter_intStack[--User.Interpreter_intStackSize];
+			int var6 = Interpreter.Interpreter_intStack[(User.Interpreter_intStackSize -= -312486675) * -313022235];
 			if (var6 > 0) {
-				for (var5 = new int[var6]; var6-- > 0; var5[var6] = Interpreter.Interpreter_intStack[--User.Interpreter_intStackSize]) {
+				for (var5 = new int[var6]; var6-- > 0; var5[var6] = Interpreter.Interpreter_intStack[(User.Interpreter_intStackSize -= -312486675) * -313022235]) {
 				}
 			}
 
@@ -339,13 +339,13 @@ public class MouseRecorder implements Runnable {
 		int var7;
 		for (var7 = var8.length - 1; var7 >= 1; --var7) {
 			if (var4.charAt(var7 - 1) == 's') {
-				var8[var7] = Interpreter.Interpreter_stringStack[--UserComparator8.Interpreter_stringStackSize];
+				var8[var7] = Interpreter.Interpreter_stringStack[(UserComparator8.Interpreter_stringStackSize -= 204829809) * 929025169];
 			} else {
-				var8[var7] = new Integer(Interpreter.Interpreter_intStack[--User.Interpreter_intStackSize]);
+				var8[var7] = new Integer(Interpreter.Interpreter_intStack[(User.Interpreter_intStackSize -= -312486675) * -313022235]);
 			}
 		}
 
-		var7 = Interpreter.Interpreter_intStack[--User.Interpreter_intStackSize];
+		var7 = Interpreter.Interpreter_intStack[(User.Interpreter_intStackSize -= -312486675) * -313022235];
 		if (var7 != -1) {
 			var8[0] = new Integer(var7);
 		} else {
@@ -436,7 +436,7 @@ public class MouseRecorder implements Runnable {
 	)
 	static final void method2070() {
 		for (PendingSpawn var0 = (PendingSpawn)Client.pendingSpawns.last(); var0 != null; var0 = (PendingSpawn)Client.pendingSpawns.previous()) {
-			if (var0.hitpoints == -1) {
+			if (var0.hitpoints * -1174693975 == -1) {
 				var0.delay = 0;
 				WorldMap.method7319(var0);
 			} else {

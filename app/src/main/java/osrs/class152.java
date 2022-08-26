@@ -1,20 +1,13 @@
 package osrs;
 
-import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
 @ObfuscatedName("em")
 public class class152 extends class128 {
 	@ObfuscatedName("s")
-	@ObfuscatedGetter(
-		intValue = -1608830795
-	)
 	int field1696;
 	@ObfuscatedName("h")
-	@ObfuscatedGetter(
-		longValue = -5624748645665028423L
-	)
 	long field1694;
 	// $FF: synthetic field
 	@ObfuscatedSignature(
@@ -35,8 +28,8 @@ public class class152 extends class128 {
 		garbageValue = "-885940784"
 	)
 	void vmethod3087(Buffer var1) {
-		this.field1696 = var1.readInt();
-		this.field1694 = var1.readLong();
+		this.field1696 = var1.readInt() * -858243683;
+		this.field1694 = var1.readLong() * -6732163079424352375L;
 	}
 
 	@ObfuscatedName("h")
@@ -45,7 +38,7 @@ public class class152 extends class128 {
 		garbageValue = "0"
 	)
 	void vmethod3084(ClanSettings var1) {
-		var1.method2916(this.field1696, this.field1694);
+		var1.method2916(this.field1696 * -1608830795, -5624748645665028423L * this.field1694);
 	}
 
 	@ObfuscatedName("s")
@@ -56,6 +49,6 @@ public class class152 extends class128 {
 	public static void method3079(AbstractArchive var0, AbstractArchive var1) {
 		KitDefinition.KitDefinition_archive = var0;
 		KitDefinition.KitDefinition_modelsArchive = var1;
-		KitDefinition.KitDefinition_fileCount = KitDefinition.KitDefinition_archive.getGroupFileCount(3);
+		KitDefinition.field1857 = KitDefinition.KitDefinition_archive.getGroupFileCount(3) * -1221643971;
 	}
 }

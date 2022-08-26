@@ -34,8 +34,8 @@ public class UserComparator3 extends AbstractUserComparator {
 	)
 	@Export("compareBuddy")
 	int compareBuddy(Buddy var1, Buddy var2) {
-		if (var2.world != var1.world) {
-			return this.reversed ? var1.world - var2.world : var2.world - var1.world;
+		if (var2.world * 1881839891 != var1.world * 1881839891) {
+			return this.reversed ? var1.world * 1881839891 - var2.world * 1881839891 : var2.world * 1881839891 - var1.world * 1881839891;
 		} else {
 			return this.compareUser(var1, var2);
 		}
@@ -60,7 +60,7 @@ public class UserComparator3 extends AbstractUserComparator {
 		garbageValue = "-97"
 	)
 	static final void method2582(String var0) {
-		PacketBufferNode var1 = DevicePcmPlayerProvider.getPacketBufferNode(ClientPacket.field2946, Client.packetWriter.isaacCipher);
+		PacketBufferNode var1 = DevicePcmPlayerProvider.method354(ClientPacket.field2946, Client.packetWriter.field1338);
 		var1.packetBuffer.writeByte(class309.stringCp1252NullTerminatedByteSize(var0));
 		var1.packetBuffer.writeStringCp1252NullTerminated(var0);
 		Client.packetWriter.addNode(var1);
@@ -73,25 +73,25 @@ public class UserComparator3 extends AbstractUserComparator {
 	)
 	static int method2575(int var0, Script var1, boolean var2) {
 		if (var0 >= 7200 && var0 < 7204) {
-			User.Interpreter_intStackSize -= 5;
-			Interpreter.Interpreter_intStack[++User.Interpreter_intStackSize - 1] = -1;
+			User.Interpreter_intStackSize -= -1562433375;
+			Interpreter.Interpreter_intStack[(User.Interpreter_intStackSize += -312486675) * -313022235 - 1] = -1;
 			return 1;
 		} else if (var0 == 7204) {
-			User.Interpreter_intStackSize -= 6;
-			Interpreter.Interpreter_intStack[++User.Interpreter_intStackSize - 1] = -1;
+			User.Interpreter_intStackSize -= -1874920050;
+			Interpreter.Interpreter_intStack[(User.Interpreter_intStackSize += -312486675) * -313022235 - 1] = -1;
 			return 1;
 		} else if (var0 >= 7205 && var0 < 7209) {
-			Interpreter.Interpreter_intStack[User.Interpreter_intStackSize - 1] = -1;
+			Interpreter.Interpreter_intStack[User.Interpreter_intStackSize * -313022235 - 1] = -1;
 			return 1;
 		} else if (var0 == 7209) {
-			User.Interpreter_intStackSize -= 2;
-			Interpreter.Interpreter_intStack[++User.Interpreter_intStackSize - 1] = -1;
+			User.Interpreter_intStackSize -= -624973350;
+			Interpreter.Interpreter_intStack[(User.Interpreter_intStackSize += -312486675) * -313022235 - 1] = -1;
 			return 1;
 		} else if (var0 >= 7210 && var0 < 7214) {
-			--User.Interpreter_intStackSize;
+			User.Interpreter_intStackSize -= -312486675;
 			return 1;
 		} else if (var0 == 7214) {
-			User.Interpreter_intStackSize -= 2;
+			User.Interpreter_intStackSize -= -624973350;
 			return 1;
 		} else {
 			return 2;

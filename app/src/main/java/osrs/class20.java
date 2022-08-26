@@ -3,7 +3,6 @@ package osrs;
 import java.io.IOException;
 import java.util.concurrent.Callable;
 import net.runelite.mapping.Export;
-import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
@@ -21,9 +20,6 @@ public class class20 implements Callable {
 	)
 	static StudioGame field111;
 	@ObfuscatedName("hh")
-	@ObfuscatedGetter(
-		intValue = 798548671
-	)
 	static int field105;
 	@ObfuscatedName("s")
 	@ObfuscatedSignature(
@@ -136,8 +132,8 @@ public class class20 implements Callable {
 				int var9 = var5;
 				int var10 = var6;
 
-				for (int var11 = 0; var11 < Client.rootWidgetCount; ++var11) {
-					if (Client.rootWidgetWidths[var11] + Client.rootWidgetXs[var11] > var7 && Client.rootWidgetXs[var11] < var9 + var7 && Client.rootWidgetHeights[var11] + Client.rootWidgetYs[var11] > var8 && Client.rootWidgetYs[var11] < var10 + var8) {
+				for (int var11 = 0; var11 < Client.field696 * -1456709211; ++var11) {
+					if (Client.field703[var11] + Client.field701[var11] > var7 && Client.field701[var11] < var9 + var7 && Client.field746[var11] + Client.field508[var11] > var8 && Client.field508[var11] < var10 + var8) {
 						Client.field753[var11] = true;
 					}
 				}
@@ -152,6 +148,6 @@ public class class20 implements Callable {
 		garbageValue = "-28"
 	)
 	static boolean method286() {
-		return (Client.drawPlayerNames & 2) != 0;
+		return (Client.drawPlayerNames * 141826713 & 2) != 0;
 	}
 }

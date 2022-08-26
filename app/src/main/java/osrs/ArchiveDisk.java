@@ -4,7 +4,6 @@ import java.io.EOFException;
 import java.io.IOException;
 import net.runelite.mapping.Export;
 import net.runelite.mapping.Implements;
-import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
@@ -27,15 +26,9 @@ public final class ArchiveDisk {
 	@Export("idxFile")
 	BufferedFile idxFile;
 	@ObfuscatedName("v")
-	@ObfuscatedGetter(
-		intValue = -1863173991
-	)
 	@Export("archive")
 	int archive;
 	@ObfuscatedName("c")
-	@ObfuscatedGetter(
-		intValue = -1536954985
-	)
 	@Export("maxEntrySize")
 	int maxEntrySize;
 
@@ -49,11 +42,11 @@ public final class ArchiveDisk {
 	public ArchiveDisk(int var1, BufferedFile var2, BufferedFile var3, int var4) {
 		this.datFile = null;
 		this.idxFile = null;
-		this.maxEntrySize = 65000;
-		this.archive = var1;
+		this.maxEntrySize = 199327320;
+		this.archive = var1 * 653564841;
 		this.datFile = var2;
 		this.idxFile = var3;
-		this.maxEntrySize = var4;
+		this.maxEntrySize = var4 * 723870247;
 	}
 
 	@ObfuscatedName("s")
@@ -74,7 +67,7 @@ public final class ArchiveDisk {
 					this.idxFile.read(ArchiveDisk_buffer, 0, 6);
 					int var3 = ((ArchiveDisk_buffer[0] & 255) << 16) + (ArchiveDisk_buffer[2] & 255) + ((ArchiveDisk_buffer[1] & 255) << 8);
 					int var4 = (ArchiveDisk_buffer[5] & 255) + ((ArchiveDisk_buffer[3] & 255) << 16) + ((ArchiveDisk_buffer[4] & 255) << 8);
-					if (var3 < 0 || var3 > this.maxEntrySize) {
+					if (var3 < 0 || var3 > this.maxEntrySize * -1536954985) {
 						var10000 = null;
 						return (byte[])var10000;
 					} else if (var4 <= 0 || (long)var4 > this.datFile.length() / 520L) {
@@ -122,7 +115,7 @@ public final class ArchiveDisk {
 								var12 = ArchiveDisk_buffer[7] & 255;
 							}
 
-							if (var9 == var1 && var7 == var10 && var12 == this.archive) {
+							if (var9 == var1 && var7 == var10 && this.archive * -1863173991 == var12) {
 								if (var11 >= 0 && (long)var11 <= this.datFile.length() / 520L) {
 									int var14 = var13 + var8;
 
@@ -161,7 +154,7 @@ public final class ArchiveDisk {
 	@Export("write")
 	public boolean write(int var1, byte[] var2, int var3) {
 		synchronized(this.datFile) {
-			if (var3 >= 0 && var3 <= this.maxEntrySize) {
+			if (var3 >= 0 && var3 <= this.maxEntrySize * -1536954985) {
 				boolean var5 = this.write0(var1, var2, var3, true);
 				if (!var5) {
 					var5 = this.write0(var1, var2, var3, false);
@@ -169,7 +162,7 @@ public final class ArchiveDisk {
 
 				return var5;
 			} else {
-				throw new IllegalArgumentException("" + this.archive + ',' + var1 + ',' + var3);
+				throw new IllegalArgumentException("" + this.archive * -1863173991 + ',' + var1 + ',' + var3);
 			}
 		}
 	}
@@ -249,7 +242,7 @@ public final class ArchiveDisk {
 									var12 = ArchiveDisk_buffer[7] & 255;
 								}
 
-								if (var10 != var1 || var8 != var11 || var12 != this.archive) {
+								if (var10 != var1 || var8 != var11 || this.archive * -1863173991 != var12) {
 									var10000 = false;
 									return var10000;
 								}
@@ -286,7 +279,7 @@ public final class ArchiveDisk {
 								ArchiveDisk_buffer[6] = (byte)(var9 >> 16);
 								ArchiveDisk_buffer[7] = (byte)(var9 >> 8);
 								ArchiveDisk_buffer[8] = (byte)var9;
-								ArchiveDisk_buffer[9] = (byte)this.archive;
+								ArchiveDisk_buffer[9] = (byte)(this.archive * -1863173991);
 								this.datFile.seek((long)var6 * 520L);
 								this.datFile.write(ArchiveDisk_buffer, 0, 10);
 								var10 = var3 - var7;
@@ -308,7 +301,7 @@ public final class ArchiveDisk {
 								ArchiveDisk_buffer[4] = (byte)(var9 >> 16);
 								ArchiveDisk_buffer[5] = (byte)(var9 >> 8);
 								ArchiveDisk_buffer[6] = (byte)var9;
-								ArchiveDisk_buffer[7] = (byte)this.archive;
+								ArchiveDisk_buffer[7] = (byte)(this.archive * -1863173991);
 								this.datFile.seek((long)var6 * 520L);
 								this.datFile.write(ArchiveDisk_buffer, 0, 8);
 								var10 = var3 - var7;
@@ -336,7 +329,7 @@ public final class ArchiveDisk {
 	}
 
 	public String toString() {
-		return "" + this.archive;
+		return "" + this.archive * -1863173991;
 	}
 
 	@ObfuscatedName("s")
@@ -352,7 +345,7 @@ public final class ArchiveDisk {
 		} else {
 			byte[] var2 = SpotAnimationDefinition.SpotAnimationDefinition_archive.takeFile(13, var0);
 			var1 = new SpotAnimationDefinition();
-			var1.id = var0;
+			var1.id = var0 * 1785784069;
 			if (var2 != null) {
 				var1.decode(new Buffer(var2));
 			}
@@ -410,45 +403,45 @@ public final class ArchiveDisk {
 						if (var0 != 7008 && var0 != 7018 && var0 != 7028) {
 							if (var0 != 7031 && var0 != 7032) {
 								if (var0 == 7033) {
-									--UserComparator8.Interpreter_stringStackSize;
+									UserComparator8.Interpreter_stringStackSize -= 204829809;
 									return 1;
 								} else if (var0 != 7036 && var0 != 7037) {
 									if (var0 == 7038) {
-										--User.Interpreter_intStackSize;
+										User.Interpreter_intStackSize -= -312486675;
 										return 1;
 									} else if (var0 != 7004 && var0 != 7009 && var0 != 7014 && var0 != 7019 && var0 != 7024 && var0 != 7029 && var0 != 7034 && var0 != 7039) {
 										return 2;
 									} else {
-										--User.Interpreter_intStackSize;
+										User.Interpreter_intStackSize -= -312486675;
 										return 1;
 									}
 								} else {
-									User.Interpreter_intStackSize -= 2;
+									User.Interpreter_intStackSize -= -624973350;
 									return 1;
 								}
 							} else {
-								--UserComparator8.Interpreter_stringStackSize;
-								--User.Interpreter_intStackSize;
+								UserComparator8.Interpreter_stringStackSize -= 204829809;
+								User.Interpreter_intStackSize -= -312486675;
 								return 1;
 							}
 						} else {
-							--User.Interpreter_intStackSize;
+							User.Interpreter_intStackSize -= -312486675;
 							return 1;
 						}
 					} else {
-						User.Interpreter_intStackSize -= 2;
+						User.Interpreter_intStackSize -= -624973350;
 						return 1;
 					}
 				} else {
-					User.Interpreter_intStackSize -= 2;
+					User.Interpreter_intStackSize -= -624973350;
 					return 1;
 				}
 			} else {
-				User.Interpreter_intStackSize -= 3;
+				User.Interpreter_intStackSize -= -937460025;
 				return 1;
 			}
 		} else {
-			User.Interpreter_intStackSize -= 5;
+			User.Interpreter_intStackSize -= -1562433375;
 			return 1;
 		}
 	}

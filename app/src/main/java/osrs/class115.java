@@ -1,7 +1,6 @@
 package osrs;
 
 import net.runelite.mapping.Export;
-import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
@@ -14,9 +13,6 @@ public class class115 {
 	@Export("JagexCache_idxFiles")
 	public static BufferedFile[] JagexCache_idxFiles;
 	@ObfuscatedName("s")
-	@ObfuscatedGetter(
-		intValue = -1293518941
-	)
 	public final int field1421;
 	@ObfuscatedName("h")
 	@ObfuscatedSignature(
@@ -75,7 +71,7 @@ public class class115 {
 		this.field1420 = new class388();
 		this.field1424 = true;
 		this.field1422 = new class388();
-		this.field1421 = var2.readShort();
+		this.field1421 = var2.readShort() * -1866370037;
 		this.field1415 = new class388[var1];
 		this.field1416 = new class388[this.field1415.length];
 		this.field1417 = new class388[this.field1415.length];

@@ -50,7 +50,7 @@ public class class327 {
 	)
 	static void method5979() {
 		for (InterfaceParent var0 = (InterfaceParent)Client.interfaceParents.first(); var0 != null; var0 = (InterfaceParent)Client.interfaceParents.next()) {
-			int var1 = var0.group;
+			int var1 = var0.group * 1124857953;
 			if (ParamComposition.loadInterface(var1)) {
 				boolean var2 = true;
 				Widget[] var3 = class358.Widget_interfaceComponents[var1];
@@ -67,7 +67,7 @@ public class class327 {
 					var4 = (int)var0.key;
 					Widget var5 = HitSplatDefinition.getWidget(var4);
 					if (var5 != null) {
-						class125.invalidateWidget(var5);
+						class125.method2770(var5);
 					}
 				}
 			}

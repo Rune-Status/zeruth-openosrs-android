@@ -2,7 +2,6 @@ package osrs;
 
 import net.runelite.mapping.Export;
 import net.runelite.mapping.Implements;
-import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
@@ -10,9 +9,6 @@ import net.runelite.mapping.ObfuscatedSignature;
 @Implements("IsaacCipher")
 public final class IsaacCipher {
 	@ObfuscatedName("v")
-	@ObfuscatedGetter(
-		intValue = 1973916005
-	)
 	@Export("valuesRemaining")
 	int valuesRemaining;
 	@ObfuscatedName("c")
@@ -22,21 +18,12 @@ public final class IsaacCipher {
 	@Export("mm")
 	int[] mm;
 	@ObfuscatedName("i")
-	@ObfuscatedGetter(
-		intValue = 1680441565
-	)
 	@Export("aa")
 	int aa;
 	@ObfuscatedName("k")
-	@ObfuscatedGetter(
-		intValue = 1520769261
-	)
 	@Export("bb")
 	int bb;
 	@ObfuscatedName("o")
-	@ObfuscatedGetter(
-		intValue = -623046153
-	)
 	@Export("cc")
 	int cc;
 
@@ -58,12 +45,12 @@ public final class IsaacCipher {
 	)
 	@Export("nextInt")
 	public final int nextInt() {
-		if (this.valuesRemaining == 0) {
+		if (this.valuesRemaining * 1973916005 == 0) {
 			this.generateMoreResults();
-			this.valuesRemaining = 256;
+			this.valuesRemaining = 1698196736;
 		}
 
-		return this.results[--this.valuesRemaining];
+		return this.results[(this.valuesRemaining -= -1486538643) * 1973916005];
 	}
 
 	@ObfuscatedName("h")
@@ -72,12 +59,12 @@ public final class IsaacCipher {
 		garbageValue = "66"
 	)
 	public final int method8195() {
-		if (this.valuesRemaining == 0) {
+		if (this.valuesRemaining * 1973916005 == 0) {
 			this.generateMoreResults();
-			this.valuesRemaining = 256;
+			this.valuesRemaining = 1698196736;
 		}
 
-		return this.results[this.valuesRemaining - 1];
+		return this.results[this.valuesRemaining * 1973916005 - 1];
 	}
 
 	@ObfuscatedName("w")
@@ -87,26 +74,26 @@ public final class IsaacCipher {
 	)
 	@Export("generateMoreResults")
 	final void generateMoreResults() {
-		this.bb += ++this.cc;
+		this.bb += (this.cc += 1347354567) * 889187827;
 
 		for (int var1 = 0; var1 < 256; ++var1) {
 			int var2 = this.mm[var1];
 			if ((var1 & 2) == 0) {
 				if ((var1 & 1) == 0) {
-					this.aa ^= this.aa << 13;
+					this.aa = (this.aa * 1680441565 ^ this.aa * 1680441565 << 13) * -1931389067;
 				} else {
-					this.aa ^= this.aa >>> 6;
+					this.aa = (this.aa * 1680441565 ^ this.aa * 1680441565 >>> 6) * -1931389067;
 				}
 			} else if ((var1 & 1) == 0) {
-				this.aa ^= this.aa << 2;
+				this.aa = (this.aa * 1680441565 ^ this.aa * 1680441565 << 2) * -1931389067;
 			} else {
-				this.aa ^= this.aa >>> 16;
+				this.aa = (this.aa * 1680441565 ^ this.aa * 1680441565 >>> 16) * -1931389067;
 			}
 
-			this.aa += this.mm[var1 + 128 & 255];
+			this.aa += -1931389067 * this.mm[var1 + 128 & 255];
 			int var3;
-			this.mm[var1] = var3 = this.mm[(var2 & 1020) >> 2] + this.aa + this.bb;
-			this.results[var1] = this.bb = this.mm[(var3 >> 8 & 1020) >> 2] + var2;
+			this.mm[var1] = var3 = this.bb * 1520769261 + this.mm[(var2 & 1020) >> 2] + this.aa * 1680441565;
+			this.results[var1] = (this.bb = -1862204187 * (this.mm[(var3 >> 8 & 1020) >> 2] + var2)) * 1520769261;
 		}
 
 	}
@@ -241,6 +228,6 @@ public final class IsaacCipher {
 		}
 
 		this.generateMoreResults();
-		this.valuesRemaining = 256;
+		this.valuesRemaining = 1698196736;
 	}
 }

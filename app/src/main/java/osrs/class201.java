@@ -1,6 +1,5 @@
 package osrs;
 
-import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
@@ -17,9 +16,6 @@ public class class201 {
 	)
 	class115[] field2367;
 	@ObfuscatedName("w")
-	@ObfuscatedGetter(
-		intValue = -27439819
-	)
 	int field2365;
 
 	@ObfuscatedSignature(
@@ -27,10 +23,10 @@ public class class201 {
 	)
 	class201(Buffer var1, int var2) {
 		this.field2367 = new class115[var2];
-		this.field2365 = var1.readUnsignedByte();
+		this.field2365 = var1.readUnsignedByte() * 119168285;
 
 		for (int var3 = 0; var3 < this.field2367.length; ++var3) {
-			class115 var4 = new class115(this.field2365, var1, false);
+			class115 var4 = new class115(this.field2365 * -27439819, var1, false);
 			this.field2367[var3] = var4;
 		}
 
@@ -47,8 +43,8 @@ public class class201 {
 
 		for (int var2 = 0; var2 < var1.length; ++var2) {
 			class115 var3 = var1[var2];
-			if (var3.field1421 >= 0) {
-				var3.field1413 = this.field2367[var3.field1421];
+			if (var3.field1421 * -1293518941 >= 0) {
+				var3.field1413 = this.field2367[var3.field1421 * -1293518941];
 			}
 		}
 

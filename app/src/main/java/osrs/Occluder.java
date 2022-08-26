@@ -2,7 +2,6 @@ package osrs;
 
 import net.runelite.mapping.Export;
 import net.runelite.mapping.Implements;
-import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
@@ -10,105 +9,51 @@ import net.runelite.mapping.ObfuscatedSignature;
 @Implements("Occluder")
 public final class Occluder {
 	@ObfuscatedName("s")
-	@ObfuscatedGetter(
-		intValue = 420323745
-	)
 	@Export("minTileX")
 	int minTileX;
 	@ObfuscatedName("h")
-	@ObfuscatedGetter(
-		intValue = 664232373
-	)
 	@Export("maxTileX")
 	int maxTileX;
 	@ObfuscatedName("w")
-	@ObfuscatedGetter(
-		intValue = 1752935515
-	)
 	@Export("minTileY")
 	int minTileY;
 	@ObfuscatedName("v")
-	@ObfuscatedGetter(
-		intValue = -1056536929
-	)
 	@Export("maxTileY")
 	int maxTileY;
 	@ObfuscatedName("c")
-	@ObfuscatedGetter(
-		intValue = 571087511
-	)
 	@Export("type")
 	int type;
 	@ObfuscatedName("q")
-	@ObfuscatedGetter(
-		intValue = 406575443
-	)
 	@Export("minX")
 	int minX;
 	@ObfuscatedName("i")
-	@ObfuscatedGetter(
-		intValue = 1576796185
-	)
 	@Export("maxX")
 	int maxX;
 	@ObfuscatedName("k")
-	@ObfuscatedGetter(
-		intValue = 1314559405
-	)
 	@Export("minZ")
 	int minZ;
 	@ObfuscatedName("o")
-	@ObfuscatedGetter(
-		intValue = 2128416579
-	)
 	@Export("maxZ")
 	int maxZ;
 	@ObfuscatedName("n")
-	@ObfuscatedGetter(
-		intValue = 1717210177
-	)
 	@Export("minY")
 	int minY;
 	@ObfuscatedName("d")
-	@ObfuscatedGetter(
-		intValue = -492747543
-	)
 	@Export("maxY")
 	int maxY;
 	@ObfuscatedName("a")
-	@ObfuscatedGetter(
-		intValue = -1212775709
-	)
 	int field2470;
 	@ObfuscatedName("m")
-	@ObfuscatedGetter(
-		intValue = 2080254021
-	)
 	int field2471;
 	@ObfuscatedName("u")
-	@ObfuscatedGetter(
-		intValue = 1185688463
-	)
 	int field2472;
 	@ObfuscatedName("l")
-	@ObfuscatedGetter(
-		intValue = -333239733
-	)
 	int field2473;
 	@ObfuscatedName("z")
-	@ObfuscatedGetter(
-		intValue = 1901247891
-	)
 	int field2474;
 	@ObfuscatedName("r")
-	@ObfuscatedGetter(
-		intValue = 1422842103
-	)
 	int field2477;
 	@ObfuscatedName("y")
-	@ObfuscatedGetter(
-		intValue = 205898589
-	)
 	int field2461;
 
 	Occluder() {

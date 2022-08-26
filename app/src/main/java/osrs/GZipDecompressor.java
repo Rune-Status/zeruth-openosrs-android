@@ -16,8 +16,7 @@ public class GZipDecompressor {
 	@Export("SequenceDefinition_skeletonsArchive")
 	static AbstractArchive SequenceDefinition_skeletonsArchive;
 	@ObfuscatedName("s")
-	@Export("inflater")
-	Inflater inflater;
+	Inflater field4827;
 
 	public GZipDecompressor() {
 		this(-1, 1000000, 1000000);
@@ -37,20 +36,20 @@ public class GZipDecompressor {
 	)
 	@Export("decompress")
 	public void decompress(Buffer var1, byte[] var2) {
-		if (var1.array[var1.offset] == 31 && var1.array[var1.offset + 1] == -117) {
-			if (this.inflater == null) {
-				this.inflater = new Inflater(true);
+		if (var1.array[var1.offset * 1795921631] == 31 && var1.array[var1.offset * 1795921631 + 1] == -117) {
+			if (this.field4827 == null) {
+				this.field4827 = new Inflater(true);
 			}
 
 			try {
-				this.inflater.setInput(var1.array, var1.offset + 10, var1.array.length - (var1.offset + 8 + 10));
-				this.inflater.inflate(var2);
+				this.field4827.setInput(var1.array, var1.offset * 1795921631 + 10, var1.array.length - (var1.offset * 1795921631 + 8 + 10));
+				this.field4827.inflate(var2);
 			} catch (Exception var4) {
-				this.inflater.reset();
+				this.field4827.reset();
 				throw new RuntimeException("");
 			}
 
-			this.inflater.reset();
+			this.field4827.reset();
 		} else {
 			throw new RuntimeException("");
 		}

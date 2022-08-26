@@ -27,7 +27,7 @@ public class UserComparator4 implements Comparator {
 	)
 	@Export("compare_bridged")
 	int compare_bridged(Buddy var1, Buddy var2) {
-		return this.reversed ? var1.int2 - var2.int2 : var2.int2 - var1.int2;
+		return this.reversed ? var1.int2 * 547305229 - var2.int2 * 547305229 : var2.int2 * 547305229 - var1.int2 * 547305229;
 	}
 
 	public int compare(Object var1, Object var2) {

@@ -96,8 +96,8 @@ public class class342 {
 		garbageValue = "-21882073"
 	)
 	public static final void method6200(int var0, int var1) {
-		ViewportMouse.ViewportMouse_x = var0;
-		ViewportMouse.ViewportMouse_y = var1;
+		ViewportMouse.ViewportMouse_x = var0 * 2039281917;
+		ViewportMouse.ViewportMouse_y = var1 * -1543251823;
 		ViewportMouse.ViewportMouse_isInViewport = true;
 		ViewportMouse.ViewportMouse_entityCount = 0;
 		ViewportMouse.ViewportMouse_false0 = false;

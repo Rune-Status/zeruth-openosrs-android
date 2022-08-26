@@ -5,7 +5,6 @@ import java.util.Comparator;
 import java.util.HashMap;
 import net.runelite.mapping.Export;
 import net.runelite.mapping.Implements;
-import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
@@ -13,15 +12,9 @@ import net.runelite.mapping.ObfuscatedSignature;
 @Implements("UserList")
 public abstract class UserList {
 	@ObfuscatedName("o")
-	@ObfuscatedGetter(
-		intValue = 2139320615
-	)
 	@Export("capacity")
 	final int capacity;
 	@ObfuscatedName("n")
-	@ObfuscatedGetter(
-		intValue = -1908802599
-	)
 	@Export("size")
 	int size;
 	@ObfuscatedName("d")
@@ -43,7 +36,7 @@ public abstract class UserList {
 	UserList(int var1) {
 		this.size = 0;
 		this.comparator = null;
-		this.capacity = var1;
+		this.capacity = var1 * -1219826025;
 		this.array = this.newTypedArray(var1);
 		this.usernamesMap = new HashMap(var1 / 8);
 		this.previousUsernamesMap = new HashMap(var1 / 8);
@@ -85,7 +78,7 @@ public abstract class UserList {
 	)
 	@Export("getSize")
 	public int getSize() {
-		return this.size;
+		return this.size * -1908802599;
 	}
 
 	@ObfuscatedName("ay")
@@ -95,7 +88,7 @@ public abstract class UserList {
 	)
 	@Export("isFull")
 	public boolean isFull() {
-		return this.size == this.capacity;
+		return this.size * -1908802599 == this.capacity * 2139320615;
 	}
 
 	@ObfuscatedName("ag")
@@ -208,7 +201,7 @@ public abstract class UserList {
 	)
 	@Export("get")
 	public final User get(int var1) {
-		if (var1 >= 0 && var1 < this.size) {
+		if (var1 >= 0 && var1 < this.size * -1908802599) {
 			return this.array[var1];
 		} else {
 			throw new ArrayIndexOutOfBoundsException(var1);
@@ -223,9 +216,9 @@ public abstract class UserList {
 	@Export("sort")
 	public final void sort() {
 		if (this.comparator == null) {
-			Arrays.sort(this.array, 0, this.size);
+			Arrays.sort(this.array, 0, this.size * -1908802599);
 		} else {
-			Arrays.sort(this.array, 0, this.size, this.comparator);
+			Arrays.sort(this.array, 0, this.size * -1908802599, this.comparator);
 		}
 
 	}
@@ -249,7 +242,7 @@ public abstract class UserList {
 	)
 	@Export("indexOf")
 	final int indexOf(User var1) {
-		for (int var2 = 0; var2 < this.size; ++var2) {
+		for (int var2 = 0; var2 < this.size * -1908802599; ++var2) {
 			if (this.array[var2] == var1) {
 				return var2;
 			}
@@ -282,7 +275,7 @@ public abstract class UserList {
 	)
 	@Export("arrayAddLast")
 	final void arrayAddLast(User var1) {
-		this.array[++this.size - 1] = var1;
+		this.array[(this.size += 300471401) * -1908802599 - 1] = var1;
 	}
 
 	@ObfuscatedName("bv")
@@ -309,9 +302,9 @@ public abstract class UserList {
 	)
 	@Export("arrayRemove")
 	final void arrayRemove(int var1) {
-		--this.size;
-		if (var1 < this.size) {
-			System.arraycopy(this.array, var1 + 1, this.array, var1, this.size - var1);
+		this.size -= 300471401;
+		if (var1 < this.size * -1908802599) {
+			System.arraycopy(this.array, var1 + 1, this.array, var1, this.size * -1908802599 - var1);
 		}
 
 	}

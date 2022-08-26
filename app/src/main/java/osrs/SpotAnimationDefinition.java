@@ -2,7 +2,6 @@ package osrs;
 
 import net.runelite.mapping.Export;
 import net.runelite.mapping.Implements;
-import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
@@ -34,21 +33,12 @@ public class SpotAnimationDefinition extends DualNode {
 	@Export("SpotAnimationDefinition_cachedModels")
 	public static EvictingDualNodeHashTable SpotAnimationDefinition_cachedModels;
 	@ObfuscatedName("c")
-	@ObfuscatedGetter(
-		intValue = 1136184781
-	)
 	@Export("id")
 	int id;
 	@ObfuscatedName("q")
-	@ObfuscatedGetter(
-		intValue = 590008803
-	)
 	@Export("archive")
 	int archive;
 	@ObfuscatedName("i")
-	@ObfuscatedGetter(
-		intValue = 672890511
-	)
 	@Export("sequence")
 	public int sequence;
 	@ObfuscatedName("k")
@@ -64,33 +54,18 @@ public class SpotAnimationDefinition extends DualNode {
 	@Export("retextureTo")
 	short[] retextureTo;
 	@ObfuscatedName("a")
-	@ObfuscatedGetter(
-		intValue = 1162147017
-	)
 	@Export("widthScale")
 	int widthScale;
 	@ObfuscatedName("m")
-	@ObfuscatedGetter(
-		intValue = 1392330275
-	)
 	@Export("heightScale")
 	int heightScale;
 	@ObfuscatedName("u")
-	@ObfuscatedGetter(
-		intValue = -1895455467
-	)
 	@Export("orientation")
 	int orientation;
 	@ObfuscatedName("l")
-	@ObfuscatedGetter(
-		intValue = -542780989
-	)
 	@Export("ambient")
 	int ambient;
 	@ObfuscatedName("z")
-	@ObfuscatedGetter(
-		intValue = 1964148583
-	)
 	@Export("contrast")
 	int contrast;
 
@@ -100,9 +75,9 @@ public class SpotAnimationDefinition extends DualNode {
 	}
 
 	SpotAnimationDefinition() {
-		this.sequence = -1;
-		this.widthScale = 128;
-		this.heightScale = 128;
+		this.sequence = -1757012079;
+		this.widthScale = 1454554240;
+		this.heightScale = -1739799168;
 		this.orientation = 0;
 		this.ambient = 0;
 		this.contrast = 0;
@@ -133,19 +108,19 @@ public class SpotAnimationDefinition extends DualNode {
 	@Export("decodeNext")
 	void decodeNext(Buffer var1, int var2) {
 		if (var2 == 1) {
-			this.archive = var1.readUnsignedShort();
+			this.archive = var1.readUnsignedShort() * 358022091;
 		} else if (var2 == 2) {
-			this.sequence = var1.readUnsignedShort();
+			this.sequence = var1.readUnsignedShort() * 1757012079;
 		} else if (var2 == 4) {
-			this.widthScale = var1.readUnsignedShort();
+			this.widthScale = var1.readUnsignedShort() * -1834130055;
 		} else if (var2 == 5) {
-			this.heightScale = var1.readUnsignedShort();
+			this.heightScale = var1.readUnsignedShort() * 422615435;
 		} else if (var2 == 6) {
-			this.orientation = var1.readUnsignedShort();
+			this.orientation = var1.readUnsignedShort() * 1900511805;
 		} else if (var2 == 7) {
-			this.ambient = var1.readUnsignedByte();
+			this.ambient = var1.readUnsignedByte() * 804038379;
 		} else if (var2 == 8) {
-			this.contrast = var1.readUnsignedByte();
+			this.contrast = var1.readUnsignedByte() * 2090509399;
 		} else {
 			int var3;
 			int var4;
@@ -179,9 +154,9 @@ public class SpotAnimationDefinition extends DualNode {
 	)
 	@Export("getModel")
 	public final Model getModel(int var1) {
-		Model var2 = (Model)SpotAnimationDefinition_cachedModels.get((long)this.id);
+		Model var2 = (Model)SpotAnimationDefinition_cachedModels.get((long)(this.id * 1136184781));
 		if (var2 == null) {
-			ModelData var3 = ModelData.ModelData_get(SpotAnimationDefinition_modelArchive, this.archive, 0);
+			ModelData var3 = ModelData.ModelData_get(SpotAnimationDefinition_modelArchive, this.archive * 590008803, 0);
 			if (var3 == null) {
 				return null;
 			}
@@ -199,32 +174,32 @@ public class SpotAnimationDefinition extends DualNode {
 				}
 			}
 
-			var2 = var3.toModel(this.ambient + 64, this.contrast + 850, -30, -50, -30);
-			SpotAnimationDefinition_cachedModels.put(var2, (long)this.id);
+			var2 = var3.toModel(this.ambient * -542780989 + 64, this.contrast * 1964148583 + 850, -30, -50, -30);
+			SpotAnimationDefinition_cachedModels.put(var2, (long)(this.id * 1136184781));
 		}
 
 		Model var5;
-		if (this.sequence != -1 && var1 != -1) {
-			var5 = ByteArrayPool.SequenceDefinition_get(this.sequence).transformSpotAnimationModel(var2, var1);
+		if (this.sequence * 672890511 != -1 && var1 != -1) {
+			var5 = ByteArrayPool.SequenceDefinition_get(this.sequence * 672890511).method3721(var2, var1);
 		} else {
-			var5 = var2.toSharedSpotAnimationModel(true);
+			var5 = var2.method4273(true);
 		}
 
-		if (this.widthScale != 128 || this.heightScale != 128) {
-			var5.scale(this.widthScale, this.heightScale, this.widthScale);
+		if (this.widthScale * 1162147017 != 128 || this.heightScale * 1392330275 != 128) {
+			var5.scale(this.widthScale * 1162147017, this.heightScale * 1392330275, this.widthScale * 1162147017);
 		}
 
-		if (this.orientation != 0) {
-			if (this.orientation == 90) {
+		if (this.orientation * -1895455467 != 0) {
+			if (this.orientation * -1895455467 == 90) {
 				var5.rotateY90Ccw();
 			}
 
-			if (this.orientation == 180) {
+			if (this.orientation * -1895455467 == 180) {
 				var5.rotateY90Ccw();
 				var5.rotateY90Ccw();
 			}
 
-			if (this.orientation == 270) {
+			if (this.orientation * -1895455467 == 270) {
 				var5.rotateY90Ccw();
 				var5.rotateY90Ccw();
 				var5.rotateY90Ccw();

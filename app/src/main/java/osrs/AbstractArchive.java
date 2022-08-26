@@ -2,7 +2,6 @@ package osrs;
 
 import net.runelite.mapping.Export;
 import net.runelite.mapping.Implements;
-import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
@@ -16,22 +15,14 @@ public abstract class AbstractArchive {
 	@Export("gzipDecompressor")
 	static GZipDecompressor gzipDecompressor;
 	@ObfuscatedName("au")
-	@ObfuscatedGetter(
-		intValue = 398177169
-	)
 	static int field4014;
 	@ObfuscatedName("y")
-	@ObfuscatedGetter(
-		intValue = 1240581473
-	)
-	@Export("groupCount")
-	int groupCount;
+	int field4007;
 	@ObfuscatedName("p")
 	@Export("groupIds")
 	int[] groupIds;
 	@ObfuscatedName("e")
-	@Export("groupNameHashes")
-	int[] groupNameHashes;
+	int[] field4000;
 	@ObfuscatedName("b")
 	@ObfuscatedSignature(
 		descriptor = "Lqo;"
@@ -51,8 +42,7 @@ public abstract class AbstractArchive {
 	@Export("fileIds")
 	int[][] fileIds;
 	@ObfuscatedName("g")
-	@Export("fileNameHashes")
-	int[][] fileNameHashes;
+	int[][] field4006;
 	@ObfuscatedName("ar")
 	@ObfuscatedSignature(
 		descriptor = "[Lqo;"
@@ -66,9 +56,6 @@ public abstract class AbstractArchive {
 	@Export("files")
 	Object[][] files;
 	@ObfuscatedName("ax")
-	@ObfuscatedGetter(
-		intValue = 871047805
-	)
 	@Export("hash")
 	public int hash;
 	@ObfuscatedName("ab")
@@ -125,7 +112,7 @@ public abstract class AbstractArchive {
 	void decodeIndex(byte[] var1) {
 		int var3 = var1.length;
 		int var2 = class282.method5435(var1, 0, var3);
-		this.hash = var2;
+		this.hash = var2 * 199288533;
 		Buffer var4 = new Buffer(class305.decompressBytes(var1));
 		int var5 = var4.readUnsignedByte();
 		if (var5 >= 5 && var5 <= 7) {
@@ -135,24 +122,24 @@ public abstract class AbstractArchive {
 
 			int var6 = var4.readUnsignedByte();
 			if (var5 >= 7) {
-				this.groupCount = var4.method7773();
+				this.field4007 = var4.method7773() * 432119457;
 			} else {
-				this.groupCount = var4.readUnsignedShort();
+				this.field4007 = var4.readUnsignedShort() * 432119457;
 			}
 
 			int var7 = 0;
 			int var8 = -1;
-			this.groupIds = new int[this.groupCount];
+			this.groupIds = new int[this.field4007 * 1240581473];
 			int var9;
 			if (var5 >= 7) {
-				for (var9 = 0; var9 < this.groupCount; ++var9) {
+				for (var9 = 0; var9 < this.field4007 * 1240581473; ++var9) {
 					this.groupIds[var9] = var7 += var4.method7773();
 					if (this.groupIds[var9] > var8) {
 						var8 = this.groupIds[var9];
 					}
 				}
 			} else {
-				for (var9 = 0; var9 < this.groupCount; ++var9) {
+				for (var9 = 0; var9 < this.field4007 * 1240581473; ++var9) {
 					this.groupIds[var9] = var7 += var4.readUnsignedShort();
 					if (this.groupIds[var9] > var8) {
 						var8 = this.groupIds[var9];
@@ -167,24 +154,24 @@ public abstract class AbstractArchive {
 			this.groups = new Object[var8 + 1];
 			this.files = new Object[var8 + 1][];
 			if (var6 != 0) {
-				this.groupNameHashes = new int[var8 + 1];
+				this.field4000 = new int[var8 + 1];
 
-				for (var9 = 0; var9 < this.groupCount; ++var9) {
-					this.groupNameHashes[this.groupIds[var9]] = var4.readInt();
+				for (var9 = 0; var9 < this.field4007 * 1240581473; ++var9) {
+					this.field4000[this.groupIds[var9]] = var4.readInt();
 				}
 
-				this.groupNameHashTable = new IntHashTable(this.groupNameHashes);
+				this.groupNameHashTable = new IntHashTable(this.field4000);
 			}
 
-			for (var9 = 0; var9 < this.groupCount; ++var9) {
+			for (var9 = 0; var9 < this.field4007 * 1240581473; ++var9) {
 				this.groupCrcs[this.groupIds[var9]] = var4.readInt();
 			}
 
-			for (var9 = 0; var9 < this.groupCount; ++var9) {
+			for (var9 = 0; var9 < this.field4007 * 1240581473; ++var9) {
 				this.groupVersions[this.groupIds[var9]] = var4.readInt();
 			}
 
-			for (var9 = 0; var9 < this.groupCount; ++var9) {
+			for (var9 = 0; var9 < this.field4007 * 1240581473; ++var9) {
 				this.fileCounts[this.groupIds[var9]] = var4.readUnsignedShort();
 			}
 
@@ -194,7 +181,7 @@ public abstract class AbstractArchive {
 			int var13;
 			int var14;
 			if (var5 >= 7) {
-				for (var9 = 0; var9 < this.groupCount; ++var9) {
+				for (var9 = 0; var9 < this.field4007 * 1240581473; ++var9) {
 					var10 = this.groupIds[var9];
 					var11 = this.fileCounts[var10];
 					var7 = 0;
@@ -211,7 +198,7 @@ public abstract class AbstractArchive {
 					this.files[var10] = new Object[var12 + 1];
 				}
 			} else {
-				for (var9 = 0; var9 < this.groupCount; ++var9) {
+				for (var9 = 0; var9 < this.field4007 * 1240581473; ++var9) {
 					var10 = this.groupIds[var9];
 					var11 = this.fileCounts[var10];
 					var7 = 0;
@@ -230,19 +217,19 @@ public abstract class AbstractArchive {
 			}
 
 			if (var6 != 0) {
-				this.fileNameHashes = new int[var8 + 1][];
+				this.field4006 = new int[var8 + 1][];
 				this.fileNameHashTables = new IntHashTable[var8 + 1];
 
-				for (var9 = 0; var9 < this.groupCount; ++var9) {
+				for (var9 = 0; var9 < this.field4007 * 1240581473; ++var9) {
 					var10 = this.groupIds[var9];
 					var11 = this.fileCounts[var10];
-					this.fileNameHashes[var10] = new int[this.files[var10].length];
+					this.field4006[var10] = new int[this.files[var10].length];
 
 					for (var12 = 0; var12 < var11; ++var12) {
-						this.fileNameHashes[var10][this.fileIds[var10][var12]] = var4.readInt();
+						this.field4006[var10][this.fileIds[var10][var12]] = var4.readInt();
 					}
 
-					this.fileNameHashTables[var10] = new IntHashTable(this.fileNameHashes[var10]);
+					this.fileNameHashTables[var10] = new IntHashTable(this.field4006[var10]);
 				}
 			}
 
@@ -542,7 +529,7 @@ public abstract class AbstractArchive {
 					var22 -= var10 * var3 * 4;
 					Buffer var11 = new Buffer(var25);
 					int[] var12 = new int[var3];
-					var11.offset = var22;
+					var11.offset = var22 * 1090888991;
 
 					int var14;
 					int var15;
@@ -562,7 +549,7 @@ public abstract class AbstractArchive {
 						var12[var14] = 0;
 					}
 
-					var11.offset = var22;
+					var11.offset = var22 * 1090888991;
 					var14 = 0;
 
 					int var17;

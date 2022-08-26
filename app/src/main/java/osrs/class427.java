@@ -2,16 +2,12 @@ package osrs;
 
 import java.util.Arrays;
 import java.util.Iterator;
-import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
 @ObfuscatedName("pe")
 class class427 implements Iterator {
 	@ObfuscatedName("s")
-	@ObfuscatedGetter(
-		intValue = 1289417949
-	)
 	int field4640;
 	// $FF: synthetic field
 	@ObfuscatedSignature(
@@ -27,11 +23,11 @@ class class427 implements Iterator {
 	}
 
 	public boolean hasNext() {
-		return this.field4640 < this.this$0.method7011();
+		return this.field4640 * 1289417949 < this.this$0.method7011();
 	}
 
 	public Object next() {
-		int var1 = ++this.field4640 - 1;
+		int var1 = (this.field4640 += -1869249675) * 1289417949 - 1;
 		class394 var2 = (class394)this.this$0.field4645.get((long)var1);
 		return var2 != null ? var2 : this.this$0.method7446(var1);
 	}
@@ -47,31 +43,31 @@ class class427 implements Iterator {
 	)
 	public static void method7443() {
 		synchronized(KeyHandler.KeyHandler_instance) {
-			++KeyHandler.KeyHandler_idleCycles;
-			KeyHandler.field139 = KeyHandler.field141;
+			KeyHandler.KeyHandler_idleCycles += 1919291287;
+			KeyHandler.field139 = KeyHandler.field141 * 750621733;
 			KeyHandler.field136 = 0;
 			KeyHandler.field138 = 0;
 			Arrays.fill(KeyHandler.field128, false);
 			Arrays.fill(KeyHandler.field126, false);
-			if (KeyHandler.field132 < 0) {
+			if (KeyHandler.field132 * 624097121 < 0) {
 				Arrays.fill(KeyHandler.KeyHandler_pressedKeys, false);
-				KeyHandler.field132 = KeyHandler.field149;
+				KeyHandler.field132 = KeyHandler.field149 * -1393075495;
 			} else {
-				while (KeyHandler.field149 != KeyHandler.field132) {
-					int var1 = KeyHandler.field130[KeyHandler.field149];
-					KeyHandler.field149 = KeyHandler.field149 + 1 & 127;
+				while (KeyHandler.field132 * 624097121 != KeyHandler.field149 * 1304611641) {
+					int var1 = KeyHandler.field130[KeyHandler.field149 * 1304611641];
+					KeyHandler.field149 = (KeyHandler.field149 * 1304611641 + 1 & 127) * 1518252809;
 					if (var1 < 0) {
 						var1 = ~var1;
 						if (KeyHandler.KeyHandler_pressedKeys[var1]) {
 							KeyHandler.KeyHandler_pressedKeys[var1] = false;
 							KeyHandler.field126[var1] = true;
-							KeyHandler.field137[KeyHandler.field138] = var1;
-							++KeyHandler.field138;
+							KeyHandler.field137[KeyHandler.field138 * -162929509] = var1;
+							KeyHandler.field138 += 126443923;
 						}
 					} else {
-						if (!KeyHandler.KeyHandler_pressedKeys[var1] && KeyHandler.field136 < KeyHandler.field135.length - 1) {
+						if (!KeyHandler.KeyHandler_pressedKeys[var1] && KeyHandler.field136 * -693924747 < KeyHandler.field135.length - 1) {
 							KeyHandler.field128[var1] = true;
-							KeyHandler.field135[++KeyHandler.field136 - 1] = var1;
+							KeyHandler.field135[(KeyHandler.field136 += -1716198435) * -693924747 - 1] = var1;
 						}
 
 						KeyHandler.KeyHandler_pressedKeys[var1] = true;
@@ -79,11 +75,11 @@ class class427 implements Iterator {
 				}
 			}
 
-			if (KeyHandler.field136 > 0) {
+			if (KeyHandler.field136 * -693924747 > 0) {
 				KeyHandler.KeyHandler_idleCycles = 0;
 			}
 
-			KeyHandler.field141 = KeyHandler.field133;
+			KeyHandler.field141 = KeyHandler.field133 * 625430197;
 		}
 	}
 }

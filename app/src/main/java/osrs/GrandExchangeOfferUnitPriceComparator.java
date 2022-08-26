@@ -16,7 +16,7 @@ final class GrandExchangeOfferUnitPriceComparator implements Comparator {
 	)
 	@Export("compare_bridged")
 	int compare_bridged(GrandExchangeEvent var1, GrandExchangeEvent var2) {
-		return var1.grandExchangeOffer.unitPrice < var2.grandExchangeOffer.unitPrice ? -1 : (var2.grandExchangeOffer.unitPrice == var1.grandExchangeOffer.unitPrice ? 0 : 1);
+		return var1.grandExchangeOffer.unitPrice * 1524422837 < var2.grandExchangeOffer.unitPrice * 1524422837 ? -1 : (var1.grandExchangeOffer.unitPrice * 1524422837 == var2.grandExchangeOffer.unitPrice * 1524422837 ? 0 : 1);
 	}
 
 	public boolean equals(Object var1) {
@@ -33,11 +33,11 @@ final class GrandExchangeOfferUnitPriceComparator implements Comparator {
 		garbageValue = "29"
 	)
 	static final void method5960() {
-		for (int var0 = 0; var0 < Client.npcCount; ++var0) {
+		for (int var0 = 0; var0 < Client.npcCount * -140634995; ++var0) {
 			int var1 = Client.npcIndices[var0];
 			NPC var2 = Client.npcs[var1];
 			if (var2 != null) {
-				WorldMapSection2.updateActorSequence(var2, var2.definition.size);
+				WorldMapSection2.method4510(var2, var2.definition.size * 1339905335);
 			}
 		}
 

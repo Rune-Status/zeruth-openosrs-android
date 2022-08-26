@@ -2,7 +2,6 @@ package osrs;
 
 import net.runelite.mapping.Export;
 import net.runelite.mapping.Implements;
-import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
@@ -32,21 +31,12 @@ public class PlayerComposition {
 	@Export("isFemale")
 	public boolean isFemale;
 	@ObfuscatedName("v")
-	@ObfuscatedGetter(
-		intValue = 498090761
-	)
 	@Export("npcTransformId")
 	public int npcTransformId;
 	@ObfuscatedName("c")
-	@ObfuscatedGetter(
-		longValue = 9056698069051954845L
-	)
 	@Export("hash")
 	long hash;
 	@ObfuscatedName("q")
-	@ObfuscatedGetter(
-		longValue = 4728249697680037065L
-	)
 	long field3337;
 	@ObfuscatedName("i")
 	@ObfuscatedSignature(
@@ -87,9 +77,9 @@ public class PlayerComposition {
 			var1 = new int[12];
 
 			for (int var5 = 0; var5 < 7; ++var5) {
-				for (int var6 = 0; var6 < KitDefinition.KitDefinition_fileCount; ++var6) {
+				for (int var6 = 0; var6 < KitDefinition.field1857 * 1273507349; ++var6) {
 					KitDefinition var7 = class17.KitDefinition_get(var6);
-					if (var7 != null && !var7.nonSelectable && var7.bodypartID == var5 + (var3 ? 7 : 0)) {
+					if (var7 != null && !var7.nonSelectable && -1346029147 * var7.bodypartID == var5 + (var3 ? 7 : 0)) {
 						var1[equipmentIndices[var5]] = var6 + 256;
 						break;
 					}
@@ -100,7 +90,7 @@ public class PlayerComposition {
 		this.equipment = var1;
 		this.bodyColors = var2;
 		this.isFemale = var3;
-		this.npcTransformId = var4;
+		this.npcTransformId = var4 * -1352778951;
 		this.setHash();
 	}
 
@@ -121,17 +111,17 @@ public class PlayerComposition {
 					if (!var2) {
 						--var3;
 						if (var3 < 0) {
-							var3 = KitDefinition.KitDefinition_fileCount - 1;
+							var3 = KitDefinition.field1857 * 1273507349 - 1;
 						}
 					} else {
 						++var3;
-						if (var3 >= KitDefinition.KitDefinition_fileCount) {
+						if (var3 >= KitDefinition.field1857 * 1273507349) {
 							var3 = 0;
 						}
 					}
 
 					var4 = class17.KitDefinition_get(var3);
-				} while(var4 == null || var4.nonSelectable || var1 + (this.isFemale ? 7 : 0) != var4.bodypartID);
+				} while(var4 == null || var4.nonSelectable || var1 + (this.isFemale ? 7 : 0) != var4.bodypartID * -1346029147);
 
 				this.equipment[equipmentIndices[var1]] = var3 + 256;
 				this.setHash();
@@ -223,7 +213,7 @@ public class PlayerComposition {
 	)
 	@Export("setHash")
 	void setHash() {
-		long var1 = this.hash;
+		long var1 = this.hash * 9056698069051954845L;
 		int var3 = this.equipment[5];
 		int var4 = this.equipment[9];
 		this.equipment[5] = var4;
@@ -232,30 +222,30 @@ public class PlayerComposition {
 
 		int var5;
 		for (var5 = 0; var5 < 12; ++var5) {
-			this.hash <<= 4;
+			this.hash = (9056698069051954845L * this.hash << 4) * -5507971397144125515L;
 			if (this.equipment[var5] >= 256) {
-				this.hash += (long)(this.equipment[var5] - 256);
+				this.hash += -5507971397144125515L * (long)(this.equipment[var5] - 256);
 			}
 		}
 
 		if (this.equipment[0] >= 256) {
-			this.hash += (long)(this.equipment[0] - 256 >> 4);
+			this.hash += -5507971397144125515L * (long)(this.equipment[0] - 256 >> 4);
 		}
 
 		if (this.equipment[1] >= 256) {
-			this.hash += (long)(this.equipment[1] - 256 >> 8);
+			this.hash += (long)(this.equipment[1] - 256 >> 8) * -5507971397144125515L;
 		}
 
 		for (var5 = 0; var5 < 5; ++var5) {
-			this.hash <<= 3;
-			this.hash += (long)this.bodyColors[var5];
+			this.hash = (this.hash * 9056698069051954845L << 3) * -5507971397144125515L;
+			this.hash += -5507971397144125515L * (long)this.bodyColors[var5];
 		}
 
-		this.hash <<= 1;
-		this.hash += (long)(this.isFemale ? 1 : 0);
+		this.hash = (this.hash * 9056698069051954845L << 1) * -5507971397144125515L;
+		this.hash += -5507971397144125515L * (long)(this.isFemale ? 1 : 0);
 		this.equipment[5] = var3;
 		this.equipment[9] = var4;
-		if (0L != var1 && var1 != this.hash || this.field3332) {
+		if (0L != var1 && var1 != this.hash * 9056698069051954845L || this.field3332) {
 			PlayerAppearance_cachedModels.remove(var1);
 		}
 
@@ -268,26 +258,26 @@ public class PlayerComposition {
 	)
 	@Export("getModel")
 	public Model getModel(SequenceDefinition var1, int var2, SequenceDefinition var3, int var4) {
-		if (this.npcTransformId != -1) {
-			return class119.getNpcDefinition(this.npcTransformId).getModel(var1, var2, var3, var4);
+		if (this.npcTransformId * 498090761 != -1) {
+			return class119.getNpcDefinition(this.npcTransformId * 498090761).getModel(var1, var2, var3, var4);
 		} else {
-			long var5 = this.hash;
+			long var5 = this.hash * 9056698069051954845L;
 			int[] var7 = this.equipment;
-			if (var1 != null && (var1.shield >= 0 || var1.weapon >= 0)) {
+			if (var1 != null && (var1.shield * -1366245483 >= 0 || var1.weapon * 506341681 >= 0)) {
 				var7 = new int[12];
 
 				for (int var8 = 0; var8 < 12; ++var8) {
 					var7[var8] = this.equipment[var8];
 				}
 
-				if (var1.shield >= 0) {
-					var5 += (long)(var1.shield - this.equipment[5] << 40);
-					var7[5] = var1.shield;
+				if (var1.shield * -1366245483 >= 0) {
+					var5 += (long)(var1.shield * -1366245483 - this.equipment[5] << 40);
+					var7[5] = var1.shield * -1366245483;
 				}
 
-				if (var1.weapon >= 0) {
-					var5 += (long)(var1.weapon - this.equipment[3] << 48);
-					var7[3] = var1.weapon;
+				if (var1.weapon * 506341681 >= 0) {
+					var5 += (long)(var1.weapon * 506341681 - this.equipment[3] << 48);
+					var7[3] = var1.weapon * 506341681;
 				}
 			}
 
@@ -302,14 +292,14 @@ public class PlayerComposition {
 						var9 = true;
 					}
 
-					if (var11 >= 512 && !AttackOption.ItemDefinition_get(var11 - 512).hasNoValidModel(this.isFemale)) {
+					if (var11 >= 512 && !AttackOption.ItemDefinition_get(var11 - 512).method3634(this.isFemale)) {
 						var9 = true;
 					}
 				}
 
 				if (var9) {
-					if (-1L != this.field3337) {
-						var18 = (Model)PlayerAppearance_cachedModels.get(this.field3337);
+					if (-1L != this.field3337 * 4728249697680037065L) {
+						var18 = (Model)PlayerAppearance_cachedModels.get(4728249697680037065L * this.field3337);
 					}
 
 					if (var18 == null) {
@@ -372,7 +362,7 @@ public class PlayerComposition {
 
 					var18 = var20.toModel(64, 850, -30, -50, -30);
 					PlayerAppearance_cachedModels.put(var18, var5);
-					this.field3337 = var5;
+					this.field3337 = 8150485109380433273L * var5;
 				}
 			}
 
@@ -400,8 +390,8 @@ public class PlayerComposition {
 	)
 	@Export("getModelData")
 	ModelData getModelData() {
-		if (this.npcTransformId != -1) {
-			return class119.getNpcDefinition(this.npcTransformId).getModelData();
+		if (this.npcTransformId * 498090761 != -1) {
+			return class119.getNpcDefinition(this.npcTransformId * 498090761).getModelData();
 		} else {
 			boolean var1 = false;
 
@@ -466,7 +456,7 @@ public class PlayerComposition {
 	)
 	@Export("getChatHeadId")
 	public int getChatHeadId() {
-		return this.npcTransformId == -1 ? (this.equipment[0] << 15) + this.equipment[1] + (this.equipment[11] << 5) + (this.equipment[8] << 10) + (this.bodyColors[0] << 25) + (this.bodyColors[4] << 20) : 305419896 + class119.getNpcDefinition(this.npcTransformId).id;
+		return this.npcTransformId * 498090761 == -1 ? (this.equipment[0] << 15) + this.equipment[1] + (this.equipment[11] << 5) + (this.equipment[8] << 10) + (this.bodyColors[0] << 25) + (this.bodyColors[4] << 20) : 305419896 + class119.getNpcDefinition(498090761 * this.npcTransformId).id * -350863249;
 	}
 
 	@ObfuscatedName("h")
@@ -502,6 +492,6 @@ public class PlayerComposition {
 	)
 	static int method5528(int var0, int var1) {
 		long var2 = (long)((var0 << 16) + var1);
-		return MenuAction.NetCache_currentResponse != null && var2 == MenuAction.NetCache_currentResponse.key ? ClientPreferences.NetCache_responseArchiveBuffer.offset * 99 / (ClientPreferences.NetCache_responseArchiveBuffer.array.length - MenuAction.NetCache_currentResponse.padding) + 1 : 0;
+		return MenuAction.NetCache_currentResponse != null && var2 == MenuAction.NetCache_currentResponse.key ? ClientPreferences.field1234.offset * 1702582333 / (ClientPreferences.field1234.array.length - MenuAction.NetCache_currentResponse.padding) + 1 : 0;
 	}
 }

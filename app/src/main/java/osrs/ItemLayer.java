@@ -2,7 +2,6 @@ package osrs;
 
 import net.runelite.mapping.Export;
 import net.runelite.mapping.Implements;
-import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
@@ -10,21 +9,12 @@ import net.runelite.mapping.ObfuscatedSignature;
 @Implements("ItemLayer")
 public final class ItemLayer {
 	@ObfuscatedName("s")
-	@ObfuscatedGetter(
-		intValue = 1634075517
-	)
 	@Export("z")
 	int z;
 	@ObfuscatedName("h")
-	@ObfuscatedGetter(
-		intValue = -302907033
-	)
 	@Export("x")
 	int x;
 	@ObfuscatedName("w")
-	@ObfuscatedGetter(
-		intValue = 1448377563
-	)
 	@Export("y")
 	int y;
 	@ObfuscatedName("v")
@@ -46,15 +36,9 @@ public final class ItemLayer {
 	@Export("third")
 	Renderable third;
 	@ObfuscatedName("i")
-	@ObfuscatedGetter(
-		longValue = -8670153185654999153L
-	)
 	@Export("tag")
 	long tag;
 	@ObfuscatedName("k")
-	@ObfuscatedGetter(
-		intValue = 691025921
-	)
 	@Export("height")
 	int height;
 

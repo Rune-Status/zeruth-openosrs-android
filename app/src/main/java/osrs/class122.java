@@ -1,16 +1,12 @@
 package osrs;
 
 import net.runelite.mapping.Export;
-import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
 @ObfuscatedName("dk")
 public class class122 extends DualNode {
 	@ObfuscatedName("s")
-	@ObfuscatedGetter(
-		intValue = 47124249
-	)
 	int field1500;
 	@ObfuscatedName("h")
 	@ObfuscatedSignature(
@@ -28,9 +24,6 @@ public class class122 extends DualNode {
 	)
 	public Skeleton field1498;
 	@ObfuscatedName("c")
-	@ObfuscatedGetter(
-		intValue = -1241117003
-	)
 	int field1502;
 	@ObfuscatedName("q")
 	boolean field1503;
@@ -42,8 +35,8 @@ public class class122 extends DualNode {
 		this.field1499 = null;
 		this.field1501 = null;
 		this.field1502 = 0;
-		this.field1500 = var3;
-		byte[] var5 = var1.takeFile(this.field1500 >> 16 & 65535, this.field1500 & 65535);
+		this.field1500 = var3 * -1560355543;
+		byte[] var5 = var1.takeFile(this.field1500 * 47124249 >> 16 & 65535, this.field1500 * 47124249 & 65535);
 		Buffer var6 = new Buffer(var5);
 		int var7 = var6.readUnsignedByte();
 		int var8 = var6.readUnsignedShort();
@@ -66,7 +59,7 @@ public class class122 extends DualNode {
 	void method2738(Buffer var1, int var2) {
 		var1.readUnsignedShort();
 		var1.readUnsignedShort();
-		this.field1502 = var1.readUnsignedByte();
+		this.field1502 = var1.readUnsignedByte() * -2028540003;
 		int var3 = var1.readUnsignedShort();
 		this.field1501 = new class117[this.field1498.method4044().method4035()][];
 		this.field1499 = new class117[this.field1498.method4042()][];
@@ -114,7 +107,7 @@ public class class122 extends DualNode {
 		garbageValue = "-331412620"
 	)
 	public int method2753() {
-		return this.field1502;
+		return this.field1502 * -1241117003;
 	}
 
 	@ObfuscatedName("v")
@@ -146,7 +139,7 @@ public class class122 extends DualNode {
 		garbageValue = "-13"
 	)
 	void method2741(class388 var1, int var2, class115 var3, int var4) {
-		float[] var5 = var3.method2648(this.field1502);
+		float[] var5 = var3.method2648(this.field1502 * -1241117003);
 		float var6 = var5[0];
 		float var7 = var5[1];
 		float var8 = var5[2];
@@ -193,7 +186,7 @@ public class class122 extends DualNode {
 		garbageValue = "-1790393470"
 	)
 	void method2742(class388 var1, int var2, class115 var3, int var4) {
-		float[] var5 = var3.method2649(this.field1502);
+		float[] var5 = var3.method2649(this.field1502 * -1241117003);
 		float var6 = var5[0];
 		float var7 = var5[1];
 		float var8 = var5[2];
@@ -225,7 +218,7 @@ public class class122 extends DualNode {
 		garbageValue = "-1739320011"
 	)
 	void method2737(class388 var1, int var2, class115 var3, int var4) {
-		float[] var5 = var3.method2647(this.field1502);
+		float[] var5 = var3.method2647(this.field1502 * -1241117003);
 		float var6 = var5[0];
 		float var7 = var5[1];
 		float var8 = var5[2];
@@ -261,8 +254,8 @@ public class class122 extends DualNode {
 	static final void drawCompass(Widget var0, int var1, int var2, int var3) {
 		SpriteMask var4 = var0.getSpriteMask(false);
 		if (var4 != null) {
-			if (Client.minimapState < 3) {
-				class16.compass.drawRotatedMaskedCenteredAround(var1, var2, var4.width, var4.height, 25, 25, Client.camAngleY, 256, var4.xStarts, var4.xWidths);
+			if (Client.minimapState * 2065268297 < 3) {
+				class16.field86.drawRotatedMaskedCenteredAround(var1, var2, var4.width * -1491857767, var4.height * -260397409, 25, 25, Client.camAngleY * -531646697, 256, var4.xStarts, var4.xWidths);
 			} else {
 				Rasterizer2D.Rasterizer2D_fillMaskedRectangle(var1, var2, 0, var4.xStarts, var4.xWidths);
 			}

@@ -2,7 +2,6 @@ package osrs;
 
 import net.runelite.mapping.Export;
 import net.runelite.mapping.Implements;
-import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
@@ -13,20 +12,14 @@ public class ScriptEvent extends Node {
 	@ObfuscatedSignature(
 		descriptor = "Lbq;"
 	)
-	@Export("decimator")
-	static Decimator decimator;
+	static Decimator field1046;
 	@ObfuscatedName("vx")
-	@ObfuscatedGetter(
-		intValue = -1961432799
-	)
-	@Export("foundItemIdCount")
-	static int foundItemIdCount;
+	static int field1044;
 	@ObfuscatedName("s")
 	@Export("args")
 	Object[] args;
 	@ObfuscatedName("h")
-	@Export("isMouseInputEvent")
-	boolean isMouseInputEvent;
+	boolean field1040;
 	@ObfuscatedName("w")
 	@ObfuscatedSignature(
 		descriptor = "Lkn;"
@@ -34,58 +27,32 @@ public class ScriptEvent extends Node {
 	@Export("widget")
 	Widget widget;
 	@ObfuscatedName("v")
-	@ObfuscatedGetter(
-		intValue = 1908546929
-	)
-	@Export("mouseX")
-	int mouseX;
+	int field1032;
 	@ObfuscatedName("c")
-	@ObfuscatedGetter(
-		intValue = 2078605609
-	)
-	@Export("mouseY")
-	int mouseY;
+	int field1030;
 	@ObfuscatedName("q")
-	@ObfuscatedGetter(
-		intValue = 292390885
-	)
 	@Export("opIndex")
 	int opIndex;
 	@ObfuscatedName("i")
 	@ObfuscatedSignature(
 		descriptor = "Lkn;"
 	)
-	@Export("dragTarget")
-	Widget dragTarget;
+	Widget field1035;
 	@ObfuscatedName("k")
-	@ObfuscatedGetter(
-		intValue = 358587025
-	)
-	@Export("keyTyped")
-	int keyTyped;
+	int field1037;
 	@ObfuscatedName("o")
-	@ObfuscatedGetter(
-		intValue = 474745929
-	)
-	@Export("keyPressed")
-	int keyPressed;
+	int field1033;
 	@ObfuscatedName("n")
 	@Export("targetName")
 	String targetName;
 	@ObfuscatedName("d")
-	@ObfuscatedGetter(
-		intValue = -327885641
-	)
 	int field1039;
 	@ObfuscatedName("a")
-	@ObfuscatedGetter(
-		intValue = 736580663
-	)
 	@Export("type")
 	int type;
 
 	public ScriptEvent() {
-		this.type = 76;
+		this.type = -1256197100;
 	}
 
 	@ObfuscatedName("s")
@@ -105,7 +72,7 @@ public class ScriptEvent extends Node {
 	)
 	@Export("setType")
 	public void setType(int var1) {
-		this.type = var1;
+		this.type = var1 * -1655398009;
 	}
 
 	@ObfuscatedName("s")

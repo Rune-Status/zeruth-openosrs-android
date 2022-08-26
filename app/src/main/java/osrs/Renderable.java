@@ -4,7 +4,6 @@ import java.io.File;
 import java.io.RandomAccessFile;
 import net.runelite.mapping.Export;
 import net.runelite.mapping.Implements;
-import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
@@ -18,14 +17,11 @@ public abstract class Renderable extends DualNode {
 	@Export("archive2")
 	static Archive archive2;
 	@ObfuscatedName("dv")
-	@ObfuscatedGetter(
-		intValue = 417479049
-	)
 	@Export("height")
 	public int height;
 
 	protected Renderable() {
-		this.height = 1000;
+		this.height = 1979822760;
 	}
 
 	@ObfuscatedName("h")
@@ -43,7 +39,7 @@ public abstract class Renderable extends DualNode {
 	void draw(int var1, int var2, int var3, int var4, int var5, int var6, int var7, int var8, long var9) {
 		Model var11 = this.getModel();
 		if (var11 != null) {
-			this.height = var11.height;
+			this.height = var11.height * 1;
 			var11.draw(var1, var2, var3, var4, var5, var6, var7, var8, var9);
 		}
 
@@ -101,19 +97,18 @@ public abstract class Renderable extends DualNode {
 		descriptor = "([Lkn;II)V",
 		garbageValue = "-313022235"
 	)
-	@Export("runComponentCloseListeners")
-	static final void runComponentCloseListeners(Widget[] var0, int var1) {
+	static final void method4230(Widget[] var0, int var1) {
 		for (int var2 = 0; var2 < var0.length; ++var2) {
 			Widget var3 = var0[var2];
 			if (var3 != null) {
-				if (var3.type == 0) {
+				if (var3.type * 1201269859 == 0) {
 					if (var3.children != null) {
-						runComponentCloseListeners(var3.children, var1);
+						method4230(var3.children, var1);
 					}
 
-					InterfaceParent var4 = (InterfaceParent)Client.interfaceParents.get((long)var3.id);
+					InterfaceParent var4 = (InterfaceParent)Client.interfaceParents.get((long)(var3.id * -1692370233));
 					if (var4 != null) {
-						ModelData0.runIntfCloseListeners(var4.group, var1);
+						ModelData0.runIntfCloseListeners(var4.group * 1124857953, var1);
 					}
 				}
 
@@ -126,9 +121,9 @@ public abstract class Renderable extends DualNode {
 				}
 
 				if (var1 == 1 && var3.onSubChange != null) {
-					if (var3.childIndex >= 0) {
-						Widget var6 = HitSplatDefinition.getWidget(var3.id);
-						if (var6 == null || var6.children == null || var3.childIndex >= var6.children.length || var3 != var6.children[var3.childIndex]) {
+					if (var3.childIndex * 1985146419 >= 0) {
+						Widget var6 = HitSplatDefinition.getWidget(var3.id * -1692370233);
+						if (var6 == null || var6.children == null || var3.childIndex * 1985146419 >= var6.children.length || var3 != var6.children[var3.childIndex * 1985146419]) {
 							continue;
 						}
 					}

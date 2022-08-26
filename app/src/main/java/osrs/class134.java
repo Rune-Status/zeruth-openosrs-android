@@ -2,23 +2,16 @@ package osrs;
 
 import java.util.Date;
 import net.runelite.mapping.Export;
-import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
 @ObfuscatedName("ej")
 public class class134 extends class144 {
 	@ObfuscatedName("s")
-	@ObfuscatedGetter(
-		intValue = -305870119
-	)
 	int field1573;
 	@ObfuscatedName("h")
 	byte field1574;
 	@ObfuscatedName("w")
-	@ObfuscatedGetter(
-		intValue = 469034561
-	)
 	int field1577;
 	@ObfuscatedName("v")
 	String field1576;
@@ -33,7 +26,7 @@ public class class134 extends class144 {
 	)
 	class134(class145 var1) {
 		this.this$0 = var1;
-		this.field1573 = -1;
+		this.field1573 = 1448274583;
 	}
 
 	@ObfuscatedName("s")
@@ -42,9 +35,9 @@ public class class134 extends class144 {
 		garbageValue = "1539485988"
 	)
 	void vmethod3074(Buffer var1) {
-		this.field1573 = var1.readUnsignedShort();
+		this.field1573 = var1.readUnsignedShort() * -1448274583;
 		this.field1574 = var1.readByte();
-		this.field1577 = var1.readUnsignedShort();
+		this.field1577 = var1.readUnsignedShort() * 2147363265;
 		var1.readLong();
 		this.field1576 = var1.readStringCp1252NullTerminated();
 	}
@@ -55,9 +48,9 @@ public class class134 extends class144 {
 		garbageValue = "-1270425284"
 	)
 	void vmethod3073(ClanChannel var1) {
-		ClanChannelMember var2 = (ClanChannelMember)var1.members.get(this.field1573);
+		ClanChannelMember var2 = (ClanChannelMember)var1.members.get(this.field1573 * -305870119);
 		var2.rank = this.field1574;
-		var2.world = this.field1577;
+		var2.world = this.field1577 * -568100075;
 		var2.username = new Username(this.field1576);
 	}
 
@@ -79,7 +72,7 @@ public class class134 extends class144 {
 	)
 	public static void method2857(AbstractArchive var0) {
 		VarpDefinition.VarpDefinition_archive = var0;
-		VarpDefinition.field1809 = VarpDefinition.VarpDefinition_archive.getGroupFileCount(16);
+		VarpDefinition.field1809 = VarpDefinition.VarpDefinition_archive.getGroupFileCount(16) * -209422995;
 	}
 
 	@ObfuscatedName("v")
@@ -164,8 +157,8 @@ public class class134 extends class144 {
 			}
 		}
 
-		Client.viewportZoom = var3 * var6 / 334;
-		if (var2 != Client.viewportWidth || var3 != Client.viewportHeight) {
+		Client.viewportZoom = var3 * var6 / 334 * 1185482297;
+		if (Client.field704 * 452330879 != var2 || var3 != Client.field754 * -1231054653) {
 			int[] var13 = new int[9];
 
 			for (var9 = 0; var9 < var13.length; ++var9) {
@@ -179,9 +172,9 @@ public class class134 extends class144 {
 			Scene.Scene_buildVisiblityMap(var13, 500, 800, var2 * 334 / var3, 334);
 		}
 
-		Client.viewportOffsetX = var0;
-		Client.viewportOffsetY = var1;
-		Client.viewportWidth = var2;
-		Client.viewportHeight = var3;
+		Client.field751 = var0 * -585490305;
+		Client.field752 = var1 * -1696022463;
+		Client.field704 = var2 * 478919295;
+		Client.field754 = var3 * 1238489067;
 	}
 }

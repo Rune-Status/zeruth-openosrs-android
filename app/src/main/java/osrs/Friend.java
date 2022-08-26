@@ -16,8 +16,7 @@ public class Friend extends Buddy {
 	@ObfuscatedSignature(
 		descriptor = "Lln;"
 	)
-	@Export("archive20")
-	static Archive archive20;
+	static Archive field4295;
 	@ObfuscatedName("s")
 	boolean field4294;
 	@ObfuscatedName("h")
@@ -33,13 +32,13 @@ public class Friend extends Buddy {
 	)
 	@Export("compareToFriend")
 	int compareToFriend(Friend var1) {
-		if (super.world == Client.worldId && Client.worldId != var1.world) {
+		if (super.world * 1881839891 == Client.worldId * -1074720787 && Client.worldId * -1074720787 != var1.world * 1881839891) {
 			return -1;
-		} else if (Client.worldId == var1.world && super.world != Client.worldId) {
+		} else if (Client.worldId * -1074720787 == var1.world * 1881839891 && Client.worldId * -1074720787 != super.world * 1881839891) {
 			return 1;
-		} else if (super.world != 0 && var1.world == 0) {
+		} else if (super.world * 1881839891 != 0 && var1.world * 1881839891 == 0) {
 			return -1;
-		} else if (var1.world != 0 && super.world == 0) {
+		} else if (var1.world * 1881839891 != 0 && super.world * 1881839891 == 0) {
 			return 1;
 		} else if (this.field4294 && !var1.field4294) {
 			return -1;
@@ -50,7 +49,7 @@ public class Friend extends Buddy {
 		} else if (!this.field4293 && var1.field4293) {
 			return 1;
 		} else {
-			return super.world != 0 ? super.int2 - var1.int2 : var1.int2 - super.int2;
+			return super.world * 1881839891 != 0 ? super.int2 * 547305229 - var1.int2 * 547305229 : var1.int2 * 547305229 - super.int2 * 547305229;
 		}
 	}
 

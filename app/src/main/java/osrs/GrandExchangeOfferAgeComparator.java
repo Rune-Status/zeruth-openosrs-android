@@ -16,7 +16,7 @@ final class GrandExchangeOfferAgeComparator implements Comparator {
 	)
 	@Export("compare_bridged")
 	int compare_bridged(GrandExchangeEvent var1, GrandExchangeEvent var2) {
-		return var1.age < var2.age ? -1 : (var1.age == var2.age ? 0 : 1);
+		return var1.age * -725951589010215611L < var2.age * -725951589010215611L ? -1 : (-725951589010215611L * var1.age == var2.age * -725951589010215611L ? 0 : 1);
 	}
 
 	public int compare(Object var1, Object var2) {

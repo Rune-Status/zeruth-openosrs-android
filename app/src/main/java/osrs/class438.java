@@ -1,7 +1,6 @@
 package osrs;
 
 import net.runelite.mapping.Export;
-import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
@@ -29,9 +28,6 @@ public class class438 extends DualNode {
 	@ObfuscatedName("v")
 	int[][] field4681;
 	@ObfuscatedName("c")
-	@ObfuscatedGetter(
-		intValue = 1503762807
-	)
 	public int field4677;
 
 	static {
@@ -103,7 +99,7 @@ public class class438 extends DualNode {
 				this.field4681[var4] = var6;
 			}
 		} else if (var2 == 4) {
-			this.field4677 = var1.method7678();
+			this.field4677 = var1.method7678() * 1608585287;
 		}
 
 	}

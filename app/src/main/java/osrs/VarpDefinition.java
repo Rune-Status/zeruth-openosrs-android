@@ -2,7 +2,6 @@ package osrs;
 
 import net.runelite.mapping.Export;
 import net.runelite.mapping.Implements;
-import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
@@ -10,9 +9,6 @@ import net.runelite.mapping.ObfuscatedSignature;
 @Implements("VarpDefinition")
 public class VarpDefinition extends DualNode {
 	@ObfuscatedName("tf")
-	@ObfuscatedGetter(
-		intValue = -1358941939
-	)
 	static int field1805;
 	@ObfuscatedName("s")
 	@ObfuscatedSignature(
@@ -21,9 +17,6 @@ public class VarpDefinition extends DualNode {
 	@Export("VarpDefinition_archive")
 	static AbstractArchive VarpDefinition_archive;
 	@ObfuscatedName("h")
-	@ObfuscatedGetter(
-		intValue = -1767580571
-	)
 	public static int field1809;
 	@ObfuscatedName("w")
 	@ObfuscatedSignature(
@@ -35,12 +28,8 @@ public class VarpDefinition extends DualNode {
 	@ObfuscatedSignature(
 		descriptor = "[Lqe;"
 	)
-	@Export("modIconSprites")
-	static IndexedSprite[] modIconSprites;
+	static IndexedSprite[] field1803;
 	@ObfuscatedName("v")
-	@ObfuscatedGetter(
-		intValue = -953256093
-	)
 	@Export("type")
 	public int type;
 
@@ -77,7 +66,7 @@ public class VarpDefinition extends DualNode {
 	@Export("decodeNext")
 	void decodeNext(Buffer var1, int var2) {
 		if (var2 == 5) {
-			this.type = var1.readUnsignedShort();
+			this.type = var1.readUnsignedShort() * -762396085;
 		}
 
 	}

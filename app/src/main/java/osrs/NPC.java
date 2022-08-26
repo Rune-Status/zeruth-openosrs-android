@@ -40,32 +40,32 @@ public final class NPC extends Actor {
 		if (this.definition == null) {
 			return null;
 		} else {
-			SequenceDefinition var1 = super.sequence != -1 && super.sequenceDelay == 0 ? ByteArrayPool.SequenceDefinition_get(super.sequence) : null;
-			SequenceDefinition var2 = super.movementSequence != -1 && (super.idleSequence != super.movementSequence || var1 == null) ? ByteArrayPool.SequenceDefinition_get(super.movementSequence) : null;
-			Model var3 = this.definition.getModel(var1, super.sequenceFrame, var2, super.movementFrame);
+			SequenceDefinition var1 = super.field1168 * 317961021 != -1 && super.field1126 * -850715395 == 0 ? ByteArrayPool.SequenceDefinition_get(super.field1168 * 317961021) : null;
+			SequenceDefinition var2 = super.field1155 * -1722266545 != -1 && (super.idleSequence * 202365461 != super.field1155 * -1722266545 || var1 == null) ? ByteArrayPool.SequenceDefinition_get(super.field1155 * -1722266545) : null;
+			Model var3 = this.definition.getModel(var1, super.field1169 * 950342315, var2, super.field1165 * -476097555);
 			if (var3 == null) {
 				return null;
 			} else {
 				var3.calculateBoundsCylinder();
-				super.defaultHeight = var3.height;
+				super.field1186 = var3.height * 1854176371;
 				int var4 = var3.indicesCount;
-				if (super.spotAnimation != -1 && super.spotAnimationFrame != -1) {
-					Model var5 = ArchiveDisk.SpotAnimationDefinition_get(super.spotAnimation).getModel(super.spotAnimationFrame);
+				if (super.field1173 * -2060788623 != -1 && super.field1174 * 1267076011 != -1) {
+					Model var5 = ArchiveDisk.SpotAnimationDefinition_get(super.field1173 * -2060788623).getModel(super.field1174 * 1267076011);
 					if (var5 != null) {
-						var5.offsetBy(0, -super.field1195, 0);
+						var5.offsetBy(0, -(super.field1195 * 1225658055), 0);
 						Model[] var6 = new Model[]{var3, var5};
 						var3 = new Model(var6, 2);
 					}
 				}
 
-				if (this.definition.size == 1) {
+				if (this.definition.size * 1339905335 == 1) {
 					var3.isSingleTile = true;
 				}
 
-				if (super.field1192 != 0 && Client.cycle >= super.field1187 && Client.cycle < super.field1188) {
-					var3.overrideHue = super.field1189;
-					var3.overrideSaturation = super.field1131;
-					var3.overrideLuminance = super.field1191;
+				if (super.field1192 != 0 && Client.cycle * 2009455757 >= super.field1187 * 300576935 && Client.cycle * 2009455757 < super.field1188 * -719314241) {
+					var3.field2549 = super.field1189;
+					var3.field2524 = super.field1131;
+					var3.field2588 = super.field1191;
 					var3.overrideAmount = super.field1192;
 					var3.field2527 = (short)var4;
 				} else {
@@ -142,15 +142,15 @@ public final class NPC extends Actor {
 			--var4;
 		}
 
-		if (super.sequence != -1 && ByteArrayPool.SequenceDefinition_get(super.sequence).field2180 == 1) {
-			super.sequence = -1;
+		if (super.field1168 * 317961021 != -1 && ByteArrayPool.SequenceDefinition_get(317961021 * super.field1168).field2180 * 1316679313 == 1) {
+			super.field1168 = 469746667;
 		}
 
-		if (super.pathLength < 9) {
-			++super.pathLength;
+		if (super.pathLength * -2007282911 < 9) {
+			super.pathLength += -90441503;
 		}
 
-		for (int var5 = super.pathLength; var5 > 0; --var5) {
+		for (int var5 = super.pathLength * -2007282911; var5 > 0; --var5) {
 			super.pathX[var5] = super.pathX[var5 - 1];
 			super.pathY[var5] = super.pathY[var5 - 1];
 			super.pathTraversed[var5] = super.pathTraversed[var5 - 1];
@@ -167,19 +167,19 @@ public final class NPC extends Actor {
 		garbageValue = "-1292121019"
 	)
 	final void method2316(int var1, int var2, boolean var3) {
-		if (super.sequence != -1 && ByteArrayPool.SequenceDefinition_get(super.sequence).field2180 == 1) {
-			super.sequence = -1;
+		if (super.field1168 * 317961021 != -1 && ByteArrayPool.SequenceDefinition_get(super.field1168 * 317961021).field2180 * 1316679313 == 1) {
+			super.field1168 = 469746667;
 		}
 
 		if (!var3) {
 			int var4 = var1 - super.pathX[0];
 			int var5 = var2 - super.pathY[0];
 			if (var4 >= -8 && var4 <= 8 && var5 >= -8 && var5 <= 8) {
-				if (super.pathLength < 9) {
-					++super.pathLength;
+				if (super.pathLength * -2007282911 < 9) {
+					super.pathLength += -90441503;
 				}
 
-				for (int var6 = super.pathLength; var6 > 0; --var6) {
+				for (int var6 = super.pathLength * -2007282911; var6 > 0; --var6) {
 					super.pathX[var6] = super.pathX[var6 - 1];
 					super.pathY[var6] = super.pathY[var6 - 1];
 					super.pathTraversed[var6] = super.pathTraversed[var6 - 1];
@@ -197,8 +197,8 @@ public final class NPC extends Actor {
 		super.field1200 = 0;
 		super.pathX[0] = var1;
 		super.pathY[0] = var2;
-		super.x = super.pathX[0] * 128 + super.field1190 * 373555200;
-		super.y = super.field1190 * 373555200 + super.pathY[0] * 128;
+		super.x = super.pathX[0] * -369741952 + super.field1190 * 1151620288;
+		super.y = super.pathY[0] * -121366912 + super.field1190 * -1924861376;
 	}
 
 	@ObfuscatedName("p")
@@ -228,6 +228,6 @@ public final class NPC extends Actor {
 		garbageValue = "8"
 	)
 	static void method2320(int var0) {
-		Client.oculusOrbState = var0;
+		Client.oculusOrbState = var0 * -1491846659;
 	}
 }

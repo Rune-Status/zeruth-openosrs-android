@@ -1,6 +1,5 @@
 package osrs;
 
-import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
@@ -9,9 +8,6 @@ public class class140 extends class144 {
 	@ObfuscatedName("s")
 	String field1627;
 	@ObfuscatedName("h")
-	@ObfuscatedGetter(
-		intValue = -1156811659
-	)
 	int field1628;
 	@ObfuscatedName("w")
 	byte field1626;
@@ -36,12 +32,12 @@ public class class140 extends class144 {
 	)
 	void vmethod3074(Buffer var1) {
 		if (var1.readUnsignedByte() != 255) {
-			--var1.offset;
+			var1.offset -= 1090888991;
 			var1.readLong();
 		}
 
 		this.field1627 = var1.readStringCp1252NullTerminatedOrNull();
-		this.field1628 = var1.readUnsignedShort();
+		this.field1628 = var1.readUnsignedShort() * -625558563;
 		this.field1626 = var1.readByte();
 		var1.readLong();
 	}
@@ -54,7 +50,7 @@ public class class140 extends class144 {
 	void vmethod3073(ClanChannel var1) {
 		ClanChannelMember var2 = new ClanChannelMember();
 		var2.username = new Username(this.field1627);
-		var2.world = this.field1628;
+		var2.world = this.field1628 * -19482535;
 		var2.rank = this.field1626;
 		var1.addMember(var2);
 	}
@@ -96,9 +92,9 @@ public class class140 extends class144 {
 					int var14 = var10 + var2;
 					if (var13 > 0 && var14 > 0 && var13 < 103 && var14 < 103) {
 						ObjectComposition var15 = FileSystem.getObjectDefinition(var5);
-						if (var12 != 22 || !Client.isLowDetail || var15.int1 != 0 || var15.interactType == 1 || var15.boolean2) {
+						if (var12 != 22 || !Client.isLowDetail || var15.int1 * 1193889907 != 0 || var15.interactType * 1112693661 == 1 || var15.boolean2) {
 							if (!var15.needsModelFiles()) {
-								++Client.field644;
+								Client.field644 += 1605735773;
 								var3 = false;
 							}
 

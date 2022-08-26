@@ -12,8 +12,7 @@ public class Username implements Comparable {
 	@ObfuscatedSignature(
 		descriptor = "Lja;"
 	)
-	@Export("musicTrack")
-	public static MusicTrack musicTrack;
+	public static MusicTrack field4838;
 	@ObfuscatedName("s")
 	@Export("name")
 	String name;
@@ -47,7 +46,7 @@ public class Username implements Comparable {
 					if (var2 == null) {
 						var9 = 12;
 					} else {
-						switch(var2.field4616) {
+						switch(var2.field4616 * -14950581) {
 						case 1:
 							var9 = 20;
 							break;
@@ -192,7 +191,7 @@ public class Username implements Comparable {
 					if (var4 == null) {
 						var9 = 12;
 					} else {
-						switch(var4.field4616) {
+						switch(var4.field4616 * -14950581) {
 						case 1:
 							var9 = 20;
 							break;

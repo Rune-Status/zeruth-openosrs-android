@@ -2,7 +2,6 @@ package osrs;
 
 import java.util.HashMap;
 import net.runelite.mapping.Export;
-import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
@@ -24,9 +23,6 @@ public class class326 {
 	@ObfuscatedName("v")
 	int[] field4081;
 	@ObfuscatedName("c")
-	@ObfuscatedGetter(
-		intValue = -307734671
-	)
 	int field4085;
 
 	public class326() {
@@ -102,10 +98,10 @@ public class class326 {
 		garbageValue = "1758451771"
 	)
 	public final void method5964(int var1, int var2) {
-		if (this.field4085 < this.field4080.length) {
-			this.field4080[this.field4085] = var1;
-			this.field4081[this.field4085] = var2;
-			++this.field4085;
+		if (this.field4085 * -307734671 < this.field4080.length) {
+			this.field4080[this.field4085 * -307734671] = var1;
+			this.field4081[this.field4085 * -307734671] = var2;
+			this.field4085 += -1156871791;
 		}
 	}
 
@@ -135,7 +131,7 @@ public class class326 {
 		int var10;
 		int var11;
 		int var12;
-		for (var10 = 0; var10 < this.field4085; ++var10) {
+		for (var10 = 0; var10 < this.field4085 * -307734671; ++var10) {
 			var11 = this.field4080[var10];
 			var12 = this.field4081[var10];
 			int var13 = (int)(var4 * (float)(var11 - var1)) - var5;
@@ -175,29 +171,29 @@ public class class326 {
 		garbageValue = "-1601570159"
 	)
 	void method5967(SpritePixels var1, SpritePixels var2, Bounds var3) {
-		if (var3.highX != 0 && var3.highY != 0) {
+		if (var3.highX * -1180177163 != 0 && var3.highY * -1058256337 != 0) {
 			int var4 = 0;
 			int var5 = 0;
-			if (var3.lowX == 0) {
-				var4 = var1.subWidth - var3.highX;
+			if (var3.lowX * -1706987485 == 0) {
+				var4 = var1.subWidth - var3.highX * -1180177163;
 			}
 
-			if (var3.lowY == 0) {
-				var5 = var1.subHeight - var3.highY;
+			if (var3.lowY * 600654443 == 0) {
+				var5 = var1.subHeight - var3.highY * -1058256337;
 			}
 
 			int var6 = var4 + var5 * var1.subWidth;
-			int var7 = var2.subWidth * var3.lowY + var3.lowX;
+			int var7 = var3.lowX * -1706987485 + var2.subWidth * var3.lowY * 600654443;
 
-			for (int var8 = 0; var8 < var3.highY; ++var8) {
-				for (int var9 = 0; var9 < var3.highX; ++var9) {
+			for (int var8 = 0; var8 < var3.highY * -1058256337; ++var8) {
+				for (int var9 = 0; var9 < var3.highX * -1180177163; ++var9) {
 					int[] var10000 = var2.pixels;
 					int var10001 = var7++;
 					var10000[var10001] += var1.pixels[var6++];
 				}
 
-				var6 += var1.subWidth - var3.highX;
-				var7 += var2.subWidth - var3.highX;
+				var6 += var1.subWidth - var3.highX * -1180177163;
+				var7 += var2.subWidth - var3.highX * -1180177163;
 			}
 
 		}

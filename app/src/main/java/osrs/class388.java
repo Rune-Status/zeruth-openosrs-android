@@ -2,7 +2,6 @@ package osrs;
 
 import java.util.Arrays;
 import net.runelite.mapping.Export;
-import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
@@ -14,14 +13,8 @@ public final class class388 {
 	)
 	static class388[] field4399;
 	@ObfuscatedName("w")
-	@ObfuscatedGetter(
-		intValue = -381772935
-	)
 	static int field4401;
 	@ObfuscatedName("v")
-	@ObfuscatedGetter(
-		intValue = -1878154693
-	)
 	static int field4400;
 	@ObfuscatedName("q")
 	@ObfuscatedSignature(
@@ -39,7 +32,7 @@ public final class class388 {
 
 	static {
 		field4399 = new class388[0];
-		field4401 = 100;
+		field4401 = -320141692;
 		field4399 = new class388[100];
 		field4400 = 0;
 		field4402 = new class388();
@@ -73,8 +66,8 @@ public final class class388 {
 	)
 	public void method6946() {
 		synchronized(field4399) {
-			if (field4400 < field4401 - 1) {
-				field4399[++field4400 - 1] = this;
+			if (field4400 * -1878154693 < field4401 * -381772935 - 1) {
+				field4399[(field4400 += 923461363) * -1878154693 - 1] = this;
 			}
 
 		}
@@ -455,13 +448,12 @@ public final class class388 {
 		descriptor = "(IB)Lgm;",
 		garbageValue = "-22"
 	)
-	@Export("StructDefinition_getStructDefinition")
-	public static StructComposition StructDefinition_getStructDefinition(int var0) {
+	public static StructComposition method6978(int var0) {
 		StructComposition var1 = (StructComposition)StructComposition.StructDefinition_cached.get((long)var0);
 		if (var1 != null) {
 			return var1;
 		} else {
-			byte[] var2 = StructComposition.StructDefinition_archive.takeFile(34, var0);
+			byte[] var2 = StructComposition.field2010.takeFile(34, var0);
 			var1 = new StructComposition();
 			if (var2 != null) {
 				var1.decode(new Buffer(var2));

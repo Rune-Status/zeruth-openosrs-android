@@ -11,7 +11,7 @@ public class class260 {
 		garbageValue = "1980903392"
 	)
 	public static boolean method5128() {
-		return class273.musicPlayerStatus != 0 ? true : ItemContainer.midiPcmStream.isReady();
+		return class273.musicPlayerStatus * -1132323313 != 0 ? true : ItemContainer.midiPcmStream.isReady();
 	}
 
 	@ObfuscatedName("fd")
@@ -20,45 +20,45 @@ public class class260 {
 		garbageValue = "-83"
 	)
 	static final void method5127(int var0, int var1, int var2) {
-		if (class16.cameraX < var0) {
-			class16.cameraX = (var0 - class16.cameraX) * WorldMapData_1.field2759 / 1000 + class16.cameraX + class271.field3186;
-			if (class16.cameraX > var0) {
-				class16.cameraX = var0;
+		if (class16.field88 * -1423106171 < var0) {
+			class16.field88 += ((var0 - class16.field88 * -1423106171) * WorldMapData_1.field2759 * 1242378975 / 1000 + class271.field3186 * -293795815) * 1131807053;
+			if (class16.field88 * -1423106171 > var0) {
+				class16.field88 = var0 * 1131807053;
 			}
 		}
 
-		if (class16.cameraX > var0) {
-			class16.cameraX -= (class16.cameraX - var0) * WorldMapData_1.field2759 / 1000 + class271.field3186;
-			if (class16.cameraX < var0) {
-				class16.cameraX = var0;
+		if (class16.field88 * -1423106171 > var0) {
+			class16.field88 -= (class271.field3186 * -293795815 + (class16.field88 * -1423106171 - var0) * WorldMapData_1.field2759 * 1242378975 / 1000) * 1131807053;
+			if (class16.field88 * -1423106171 < var0) {
+				class16.field88 = var0 * 1131807053;
 			}
 		}
 
-		if (WorldMapLabel.cameraY < var1) {
-			WorldMapLabel.cameraY = (var1 - WorldMapLabel.cameraY) * WorldMapData_1.field2759 / 1000 + WorldMapLabel.cameraY + class271.field3186;
-			if (WorldMapLabel.cameraY > var1) {
-				WorldMapLabel.cameraY = var1;
+		if (WorldMapLabel.field2837 * 436575851 < var1) {
+			WorldMapLabel.field2837 += (class271.field3186 * -293795815 + WorldMapData_1.field2759 * (var1 - WorldMapLabel.field2837 * 436575851) * 1242378975 / 1000) * -2019221949;
+			if (WorldMapLabel.field2837 * 436575851 > var1) {
+				WorldMapLabel.field2837 = var1 * -2019221949;
 			}
 		}
 
-		if (WorldMapLabel.cameraY > var1) {
-			WorldMapLabel.cameraY -= (WorldMapLabel.cameraY - var1) * WorldMapData_1.field2759 / 1000 + class271.field3186;
-			if (WorldMapLabel.cameraY < var1) {
-				WorldMapLabel.cameraY = var1;
+		if (WorldMapLabel.field2837 * 436575851 > var1) {
+			WorldMapLabel.field2837 -= (class271.field3186 * -293795815 + (WorldMapLabel.field2837 * 436575851 - var1) * WorldMapData_1.field2759 * 1242378975 / 1000) * -2019221949;
+			if (WorldMapLabel.field2837 * 436575851 < var1) {
+				WorldMapLabel.field2837 = var1 * -2019221949;
 			}
 		}
 
-		if (class269.cameraZ < var2) {
-			class269.cameraZ = (var2 - class269.cameraZ) * WorldMapData_1.field2759 / 1000 + class269.cameraZ + class271.field3186;
-			if (class269.cameraZ > var2) {
-				class269.cameraZ = var2;
+		if (class269.field3179 * -675391155 < var2) {
+			class269.field3179 += (class271.field3186 * -293795815 + (var2 - class269.field3179 * -675391155) * WorldMapData_1.field2759 * 1242378975 / 1000) * 1259636613;
+			if (class269.field3179 * -675391155 > var2) {
+				class269.field3179 = var2 * 1259636613;
 			}
 		}
 
-		if (class269.cameraZ > var2) {
-			class269.cameraZ -= (class269.cameraZ - var2) * WorldMapData_1.field2759 / 1000 + class271.field3186;
-			if (class269.cameraZ < var2) {
-				class269.cameraZ = var2;
+		if (class269.field3179 * -675391155 > var2) {
+			class269.field3179 -= (class271.field3186 * -293795815 + (class269.field3179 * -675391155 - var2) * WorldMapData_1.field2759 * 1242378975 / 1000) * 1259636613;
+			if (class269.field3179 * -675391155 < var2) {
+				class269.field3179 = var2 * 1259636613;
 			}
 		}
 
@@ -84,7 +84,7 @@ public class class260 {
 					break;
 				}
 
-				var2 = HitSplatDefinition.getWidget(var2.parentId);
+				var2 = HitSplatDefinition.getWidget(var2.parentId * -1386189839);
 				if (var2 == null) {
 					var1 = null;
 					break;

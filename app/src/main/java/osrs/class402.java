@@ -1,14 +1,10 @@
 package osrs;
 
-import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 
 @ObfuscatedName("oi")
 public class class402 {
 	@ObfuscatedName("tn")
-	@ObfuscatedGetter(
-		intValue = 289607871
-	)
 	static int field4448;
 	@ObfuscatedName("c")
 	static final int[] field4444;

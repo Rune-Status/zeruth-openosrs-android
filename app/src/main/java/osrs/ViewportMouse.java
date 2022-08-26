@@ -2,7 +2,6 @@ package osrs;
 
 import net.runelite.mapping.Export;
 import net.runelite.mapping.Implements;
-import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
@@ -13,34 +12,19 @@ public class ViewportMouse {
 	@Export("ViewportMouse_isInViewport")
 	public static boolean ViewportMouse_isInViewport;
 	@ObfuscatedName("h")
-	@ObfuscatedGetter(
-		intValue = 858842197
-	)
 	@Export("ViewportMouse_x")
 	static int ViewportMouse_x;
 	@ObfuscatedName("w")
-	@ObfuscatedGetter(
-		intValue = 1382738033
-	)
 	@Export("ViewportMouse_y")
 	static int ViewportMouse_y;
 	@ObfuscatedName("v")
 	@Export("ViewportMouse_false0")
 	static boolean ViewportMouse_false0;
 	@ObfuscatedName("q")
-	@ObfuscatedGetter(
-		intValue = -1792884329
-	)
 	static int field2593;
 	@ObfuscatedName("n")
-	@ObfuscatedGetter(
-		intValue = 191932759
-	)
 	static int field2599;
 	@ObfuscatedName("u")
-	@ObfuscatedGetter(
-		intValue = -834575933
-	)
 	@Export("ViewportMouse_entityCount")
 	public static int ViewportMouse_entityCount;
 	@ObfuscatedName("l")
@@ -121,6 +105,6 @@ public class ViewportMouse {
 		garbageValue = "1744172239"
 	)
 	static boolean method4413() {
-		return (Client.drawPlayerNames & 4) != 0;
+		return (Client.drawPlayerNames * 141826713 & 4) != 0;
 	}
 }

@@ -1,16 +1,12 @@
 package osrs;
 
 import net.runelite.mapping.Export;
-import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
 @ObfuscatedName("jd")
 public class class271 {
 	@ObfuscatedName("ta")
-	@ObfuscatedGetter(
-		intValue = -293795815
-	)
 	static int field3186;
 	@ObfuscatedName("ud")
 	@Export("foundItemIds")
@@ -79,14 +75,14 @@ public class class271 {
 		garbageValue = "112"
 	)
 	static final void method5170() {
-		for (int var0 = 0; var0 < Players.Players_count; ++var0) {
+		for (int var0 = 0; var0 < Players.Players_count * -2113383221; ++var0) {
 			Player var1 = Client.players[Players.Players_indices[var0]];
-			var1.clearIsFriend();
+			var1.method2094();
 		}
 
 		Archive.method5750();
 		if (class19.friendsChat != null) {
-			class19.friendsChat.clearFriends();
+			class19.friendsChat.method6557();
 		}
 
 	}

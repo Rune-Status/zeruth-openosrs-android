@@ -2,13 +2,12 @@ package osrs;
 
 import net.runelite.mapping.Export;
 import net.runelite.mapping.Implements;
-import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
 @ObfuscatedName("ky")
 @Implements("PlayerType")
-public enum PlayerType implements MouseWheel {
+public enum PlayerType implements class328 {
 	@ObfuscatedName("s")
 	@ObfuscatedSignature(
 		descriptor = "Lky;"
@@ -97,15 +96,9 @@ public enum PlayerType implements MouseWheel {
 	field3961(15, 49, false, false, true);
 
 	@ObfuscatedName("r")
-	@ObfuscatedGetter(
-		intValue = -835440721
-	)
 	@Export("id")
 	final int id;
 	@ObfuscatedName("y")
-	@ObfuscatedGetter(
-		intValue = -1081419077
-	)
 	@Export("modIcon")
 	public final int modIcon;
 	@ObfuscatedName("p")
@@ -116,8 +109,8 @@ public enum PlayerType implements MouseWheel {
 	public final boolean isUser;
 
 	PlayerType(int var3, int var4, boolean var5, boolean var6, boolean var7) {
-		this.id = var3;
-		this.modIcon = var4;
+		this.id = var3 * 591431503;
+		this.modIcon = var4 * 1888377459;
 		this.isPrivileged = var6;
 		this.isUser = var7;
 	}
@@ -129,7 +122,7 @@ public enum PlayerType implements MouseWheel {
 	)
 	@Export("rsOrdinal")
 	public int rsOrdinal() {
-		return this.id;
+		return this.id * -835440721;
 	}
 
 	@ObfuscatedName("h")

@@ -2,7 +2,6 @@ package osrs;
 
 import net.runelite.mapping.Export;
 import net.runelite.mapping.Implements;
-import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
@@ -10,9 +9,6 @@ import net.runelite.mapping.ObfuscatedSignature;
 @Implements("Huffman")
 public class Huffman {
 	@ObfuscatedName("c")
-	@ObfuscatedGetter(
-		intValue = -409714973
-	)
 	public static int field3288;
 	@ObfuscatedName("bg")
 	static String field3291;

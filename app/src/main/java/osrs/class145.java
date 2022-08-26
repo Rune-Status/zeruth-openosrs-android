@@ -1,6 +1,5 @@
 package osrs;
 
-import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
@@ -9,19 +8,10 @@ public class class145 {
 	@ObfuscatedName("ao")
 	static String field1650;
 	@ObfuscatedName("ct")
-	@ObfuscatedGetter(
-		intValue = 1348266069
-	)
 	public static int field1653;
 	@ObfuscatedName("s")
-	@ObfuscatedGetter(
-		longValue = -8272204923837980529L
-	)
 	long field1652;
 	@ObfuscatedName("h")
-	@ObfuscatedGetter(
-		longValue = -9190614716111529967L
-	)
 	long field1648;
 	@ObfuscatedName("w")
 	@ObfuscatedSignature(
@@ -33,7 +23,7 @@ public class class145 {
 		descriptor = "(Lqr;)V"
 	)
 	public class145(Buffer var1) {
-		this.field1648 = -1L;
+		this.field1648 = 1296346834646460175L;
 		this.field1649 = new IterableNodeDeque();
 		this.method3014(var1);
 	}
@@ -44,8 +34,8 @@ public class class145 {
 		garbageValue = "116"
 	)
 	void method3014(Buffer var1) {
-		this.field1652 = var1.readLong();
-		this.field1648 = var1.readLong();
+		this.field1652 = var1.readLong() * -1735606452767244689L;
+		this.field1648 = var1.readLong() * -1296346834646460175L;
 
 		for (int var2 = var1.readUnsignedByte(); var2 != 0; var2 = var1.readUnsignedByte()) {
 			Object var3;
@@ -77,12 +67,12 @@ public class class145 {
 		garbageValue = "-248253496"
 	)
 	public void method3016(ClanChannel var1) {
-		if (this.field1652 == var1.key && var1.field1670 == this.field1648) {
+		if (-8272204923837980529L * this.field1652 == var1.key && 7243300474328225169L * var1.field1670 == -9190614716111529967L * this.field1648) {
 			for (class144 var2 = (class144)this.field1649.last(); var2 != null; var2 = (class144)this.field1649.previous()) {
 				var2.vmethod3073(var1);
 			}
 
-			++var1.field1670;
+			var1.field1670 += -1940136571916989583L;
 		} else {
 			throw new RuntimeException("");
 		}

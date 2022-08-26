@@ -1,7 +1,5 @@
 package osrs;
 
-import android.os.Environment;
-
 import java.io.EOFException;
 import java.io.File;
 import java.io.IOException;
@@ -11,7 +9,6 @@ import java.util.Map;
 import java.util.Map.Entry;
 import net.runelite.mapping.Export;
 import net.runelite.mapping.Implements;
-import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
@@ -23,8 +20,7 @@ public class Varcs {
 	@ObfuscatedSignature(
 		descriptor = "Lln;"
 	)
-	@Export("archive14")
-	static Archive archive14;
+	static Archive field1319;
 	@ObfuscatedName("hc")
 	@Export("regionMapArchives")
 	static byte[][] regionMapArchives;
@@ -42,9 +38,6 @@ public class Varcs {
 	@Export("unwrittenChanges")
 	boolean unwrittenChanges;
 	@ObfuscatedName("i")
-	@ObfuscatedGetter(
-		longValue = 3851811378176756195L
-	)
 	long field1317;
 
 	Varcs() {
@@ -210,13 +203,13 @@ public class Varcs {
 					var24.writeShort(var14);
 					Object var8 = var13.getValue();
 					class433 var9 = class433.method7490(var8.getClass());
-					var24.writeByte(var9.field4658);
+					var24.writeByte(var9.field4658 * -132270883);
 					class429 var10 = class433.method7504(var8.getClass());
 					var10.vmethod7506(var8, var24);
 				}
 			}
 
-			var1.write(var24.array, 0, var24.offset);
+			var1.write(var24.array, 0, var24.offset * 1795921631);
 		} catch (Exception var22) {
 		} finally {
 			try {
@@ -227,7 +220,7 @@ public class Varcs {
 		}
 
 		this.unwrittenChanges = false;
-		this.field1317 = class181.method3483();
+		this.field1317 = class181.method3483() * -7180587515055766581L;
 	}
 
 	@ObfuscatedName("n")
@@ -239,7 +232,7 @@ public class Varcs {
 	void read() {
 		AccessFile var1 = this.getPreferencesFile(false);
 
-		label213: {
+		label214: {
 			try {
 				byte[] var2 = new byte[(int)var1.length()];
 
@@ -252,12 +245,12 @@ public class Varcs {
 				}
 
 				Buffer var14 = new Buffer(var2);
-				if (var14.array.length - var14.offset < 1) {
-					return;
-				}
+				if (var14.array.length - var14.offset * 1795921631 >= 1) {
+					int var15 = var14.readUnsignedByte();
+					if (var15 < 0 || var15 > 2) {
+						return;
+					}
 
-				int var15 = var14.readUnsignedByte();
-				if (var15 >= 0 && var15 <= 2) {
 					int var7;
 					int var8;
 					int var9;
@@ -268,7 +261,7 @@ public class Varcs {
 
 						while (true) {
 							if (var7 >= var16) {
-								break label213;
+								break label214;
 							}
 
 							var8 = var14.readUnsignedShort();
@@ -297,7 +290,7 @@ public class Varcs {
 
 						while (true) {
 							if (var8 >= var7) {
-								break label213;
+								break label214;
 							}
 
 							var14.readUnsignedShort();
@@ -307,7 +300,7 @@ public class Varcs {
 					}
 				}
 			} catch (Exception var25) {
-				break label213;
+				break label214;
 			} finally {
 				try {
 					var1.close();
@@ -329,7 +322,7 @@ public class Varcs {
 	)
 	@Export("tryWrite")
 	void tryWrite() {
-		if (this.unwrittenChanges && this.field1317 < class181.method3483() - 60000L) {
+		if (this.unwrittenChanges && this.field1317 * 3851811378176756195L < class181.method3483() - 60000L) {
 			this.write();
 		}
 
@@ -352,16 +345,6 @@ public class Varcs {
 	)
 	static void method2418(File var0, File var1) {
 		try {
-			if (!var0.toPath().startsWith("/storage/emulated/0/Download/"))
-			{
-				File path = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS);
-				var0 = new File(path, "/" + var0);
-			}
-
-			System.out.println("Cache Direcotry: " + var0);
-			if (!var0.exists())
-				var0.createNewFile();
-
 			AccessFile var2 = new AccessFile(NetFileRequest.JagexCache_locationFile, "rw", 10000L);
 			Buffer var3 = new Buffer(500);
 			var3.writeByte(3);
@@ -371,7 +354,7 @@ public class Varcs {
 				var3.writeCESU8("");
 			}
 
-			var2.write(var3.array, 0, var3.offset);
+			var2.write(var3.array, 0, var3.offset * 1795921631);
 			var2.close();
 		} catch (IOException var4) {
 			var4.printStackTrace();

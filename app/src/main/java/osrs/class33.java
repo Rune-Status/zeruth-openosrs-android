@@ -103,7 +103,7 @@ public class class33 {
 					return;
 				}
 
-/*				URL var3 = new URL(RunException.RunException_applet.getCodeBase(), "clienterror.ws?cv=" + RunException.RunException_revision + "&cs=" + RunException.field4847 + "&u=" + RunException.localPlayerName + "&v1=" + TaskHandler.javaVendor + "&v2=" + TaskHandler.javaVersion + "&ct=" + RunException.clientType + "&e=" + var2);
+/*				URL var3 = new URL(RunException.RunException_applet.getCodeBase(), "clienterror.ws?cv=" + RunException.RunException_revision * 1126443877 + "&cs=" + RunException.field4847 * 1917074983 + "&u=" + RunException.field4845 + "&v1=" + TaskHandler.javaVendor + "&v2=" + TaskHandler.javaVersion + "&ct=" + RunException.field4846 * -1784255921 + "&e=" + var2);
 				DataInputStream var17 = new DataInputStream(var3.openStream());
 				var17.read();
 				var17.close();*/
@@ -120,7 +120,7 @@ public class class33 {
 	)
 	static void method572(boolean var0) {
 		byte var1 = 0;
-		boolean var2 = ClanMate.clientPreferences.method2229() >= Client.field480;
+		boolean var2 = ClanMate.clientPreferences.method2229() >= Client.field480 * 424143225;
 		if (!var2) {
 			var1 = 12;
 		} else if (AbstractByteArrayCopier.client.method1086() || AbstractByteArrayCopier.client.method1087()) {
@@ -132,7 +132,7 @@ public class class33 {
 			Login.Login_username = "";
 			Login.Login_password = "";
 			class19.field100 = 0;
-			KeyHandler.otp = "";
+			KeyHandler.field146 = "";
 		}
 
 		if (Login.Login_username == null || Login.Login_username.length() <= 0) {

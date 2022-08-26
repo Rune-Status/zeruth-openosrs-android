@@ -1,7 +1,6 @@
 package osrs;
 
 import net.runelite.mapping.Export;
-import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 import org.osrsjson.JSONArray;
@@ -11,9 +10,6 @@ import org.osrsjson.JSONObject;
 @ObfuscatedName("ey")
 public class class149 {
 	@ObfuscatedName("nu")
-	@ObfuscatedGetter(
-		intValue = -1532835829
-	)
 	@Export("selectedSpellFlags")
 	static int selectedSpellFlags;
 

@@ -6,7 +6,6 @@ import java.io.File;
 import java.io.RandomAccessFile;
 import java.util.concurrent.Callable;
 import net.runelite.mapping.Export;
-import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
@@ -16,14 +15,9 @@ public class class1 implements Callable {
 	@ObfuscatedSignature(
 		descriptor = "Lqn;"
 	)
-	@Export("sceneMinimapSprite")
-	static SpritePixels sceneMinimapSprite;
+	static SpritePixels field4;
 	@ObfuscatedName("mz")
-	@ObfuscatedGetter(
-		intValue = -1008403491
-	)
-	@Export("menuY")
-	static int menuY;
+	static int field1;
 	@ObfuscatedName("s")
 	@ObfuscatedSignature(
 		descriptor = "Lqr;"
@@ -119,6 +113,6 @@ public class class1 implements Callable {
 		garbageValue = "-1880349412"
 	)
 	static void method10() {
-		ClanMate.clientPreferences.method2228(Client.field480);
+		ClanMate.clientPreferences.method2228(Client.field480 * 424143225);
 	}
 }

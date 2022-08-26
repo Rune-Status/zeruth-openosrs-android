@@ -3,7 +3,6 @@ package osrs;
 import java.util.LinkedList;
 import net.runelite.mapping.Export;
 import net.runelite.mapping.Implements;
-import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
@@ -11,53 +10,22 @@ import net.runelite.mapping.ObfuscatedSignature;
 @Implements("AbstractWorldMapData")
 public abstract class AbstractWorldMapData {
 	@ObfuscatedName("c")
-	@ObfuscatedGetter(
-		intValue = 439984064
-	)
-	@Export("regionXLow")
-	int regionXLow;
+	int field2811;
 	@ObfuscatedName("q")
-	@ObfuscatedGetter(
-		intValue = -871596096
-	)
-	@Export("regionYLow")
-	int regionYLow;
+	int field2815;
 	@ObfuscatedName("i")
-	@ObfuscatedGetter(
-		intValue = -743392137
-	)
-	@Export("regionX")
-	int regionX;
+	int field2806;
 	@ObfuscatedName("k")
-	@ObfuscatedGetter(
-		intValue = -493602369
-	)
-	@Export("regionY")
-	int regionY;
+	int field2807;
 	@ObfuscatedName("o")
-	@ObfuscatedGetter(
-		intValue = 1840059819
-	)
-	@Export("minPlane")
-	int minPlane;
+	int field2812;
 	@ObfuscatedName("n")
-	@ObfuscatedGetter(
-		intValue = 1086583875
-	)
 	@Export("planes")
 	int planes;
 	@ObfuscatedName("d")
-	@ObfuscatedGetter(
-		intValue = -1776846601
-	)
-	@Export("groupId")
-	int groupId;
+	int field2810;
 	@ObfuscatedName("a")
-	@ObfuscatedGetter(
-		intValue = -1471098933
-	)
-	@Export("fileId")
-	int fileId;
+	int field2819;
 	@ObfuscatedName("m")
 	@Export("floorUnderlayIds")
 	short[][][] floorUnderlayIds;
@@ -80,8 +48,8 @@ public abstract class AbstractWorldMapData {
 	boolean field2818;
 
 	AbstractWorldMapData() {
-		this.groupId = -1;
-		this.fileId = -1;
+		this.field2810 = 591345465;
+		this.field2819 = 47096349;
 		new LinkedList();
 		this.field2817 = false;
 		this.field2818 = false;
@@ -113,7 +81,7 @@ public abstract class AbstractWorldMapData {
 	@Export("loadGeography")
 	void loadGeography(AbstractArchive var1) {
 		if (!this.isFullyLoaded()) {
-			byte[] var2 = var1.takeFile(this.groupId, this.fileId);
+			byte[] var2 = var1.takeFile(this.field2810 * -1776846601, this.field2819 * -1471098933);
 			if (var2 != null) {
 				this.readGeography(new Buffer(var2));
 				this.field2817 = true;
@@ -222,7 +190,7 @@ public abstract class AbstractWorldMapData {
 	)
 	@Export("getRegionX")
 	int getRegionX() {
-		return this.regionX;
+		return this.field2806 * -743392137;
 	}
 
 	@ObfuscatedName("ar")
@@ -230,9 +198,8 @@ public abstract class AbstractWorldMapData {
 		descriptor = "(I)I",
 		garbageValue = "-68513364"
 	)
-	@Export("getRegionY")
-	int getRegionY() {
-		return this.regionY;
+	int method4889() {
+		return this.field2807 * -493602369;
 	}
 
 	@ObfuscatedName("d")
@@ -280,12 +247,12 @@ public abstract class AbstractWorldMapData {
 	)
 	static void method4911() {
 		if (class347.field4164 != null) {
-			Client.field765 = Client.cycle;
+			Client.field765 = Client.cycle * -986479967;
 			class347.field4164.method5977();
 
 			for (int var0 = 0; var0 < Client.players.length; ++var0) {
 				if (Client.players[var0] != null) {
-					class347.field4164.method5964(Decimator.baseX * 64 + (Client.players[var0].x >> 7), class7.baseY * 64 + (Client.players[var0].y >> 7));
+					class347.field4164.method5964((Client.players[var0].x * 1627221919 >> 7) + Decimator.field404 * 620670661, class7.field30 * 542116271 + (Client.players[var0].y * 1229064101 >> 7));
 				}
 			}
 		}

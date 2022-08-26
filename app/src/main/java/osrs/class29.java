@@ -1,27 +1,22 @@
 package osrs;
 
 import net.runelite.mapping.Export;
-import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
 @ObfuscatedName("aj")
 public class class29 {
 	@ObfuscatedName("td")
-	@ObfuscatedGetter(
-		intValue = -1512161280
-	)
 	static int field172;
 	@ObfuscatedName("s")
-	public static /*Applet*/ Object field174;
+	public static Object field174;
 	@ObfuscatedName("h")
 	public static String field167;
 	@ObfuscatedName("m")
 	@ObfuscatedSignature(
 		descriptor = "Lqe;"
 	)
-	@Export("options_buttons_0Sprite")
-	static IndexedSprite options_buttons_0Sprite;
+	static IndexedSprite field168;
 
 	static {
 		field174 = null;
@@ -57,7 +52,7 @@ public class class29 {
 	)
 	@Export("closeInterface")
 	static final void closeInterface(InterfaceParent var0, boolean var1) {
-		int var2 = var0.group;
+		int var2 = var0.group * 1124857953;
 		int var3 = (int)var0.key;
 		var0.remove();
 		if (var1 && var2 != -1 && Widget.Widget_loadedInterfaces[var2]) {
@@ -67,7 +62,7 @@ public class class29 {
 
 				for (int var5 = 0; var5 < class358.Widget_interfaceComponents[var2].length; ++var5) {
 					if (class358.Widget_interfaceComponents[var2][var5] != null) {
-						if (class358.Widget_interfaceComponents[var2][var5].type != 2) {
+						if (class358.Widget_interfaceComponents[var2][var5].type * 1201269859 != 2) {
 							class358.Widget_interfaceComponents[var2][var5] = null;
 						} else {
 							var4 = false;
@@ -86,11 +81,11 @@ public class class29 {
 		StudioGame.method5676(var2);
 		Widget var6 = HitSplatDefinition.getWidget(var3);
 		if (var6 != null) {
-			class125.invalidateWidget(var6);
+			class125.method2770(var6);
 		}
 
-		if (Client.rootInterface != -1) {
-			ModelData0.runIntfCloseListeners(Client.rootInterface, 1);
+		if (Client.field649 * 1440668979 != -1) {
+			ModelData0.runIntfCloseListeners(Client.field649 * 1440668979, 1);
 		}
 
 	}

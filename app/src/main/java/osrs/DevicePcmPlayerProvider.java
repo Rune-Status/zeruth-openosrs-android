@@ -30,31 +30,30 @@ public class DevicePcmPlayerProvider implements class47 {
 		descriptor = "(Ljb;Lqb;B)Ljg;",
 		garbageValue = "-79"
 	)
-	@Export("getPacketBufferNode")
-	public static PacketBufferNode getPacketBufferNode(ClientPacket var0, IsaacCipher var1) {
+	public static PacketBufferNode method354(ClientPacket var0, IsaacCipher var1) {
 		PacketBufferNode var2;
-		if (PacketBufferNode.PacketBufferNode_packetBufferNodeCount == 0) {
+		if (PacketBufferNode.field3039 * 230152311 == 0) {
 			var2 = new PacketBufferNode();
 		} else {
-			var2 = PacketBufferNode.PacketBufferNode_packetBufferNodes[--PacketBufferNode.PacketBufferNode_packetBufferNodeCount];
+			var2 = PacketBufferNode.field3042[(PacketBufferNode.field3039 -= -867598009) * 230152311];
 		}
 
-		var2.clientPacket = var0;
-		var2.clientPacketLength = var0.length;
-		if (var2.clientPacketLength == -1) {
+		var2.field3040 = var0;
+		var2.field3043 = var0.length * -146789531;
+		if (var2.field3043 * 1911786961 == -1) {
 			var2.packetBuffer = new PacketBuffer(260);
-		} else if (var2.clientPacketLength == -2) {
+		} else if (var2.field3043 * 1911786961 == -2) {
 			var2.packetBuffer = new PacketBuffer(10000);
-		} else if (var2.clientPacketLength <= 18) {
+		} else if (var2.field3043 * 1911786961 <= 18) {
 			var2.packetBuffer = new PacketBuffer(20);
-		} else if (var2.clientPacketLength <= 98) {
+		} else if (var2.field3043 * 1911786961 <= 98) {
 			var2.packetBuffer = new PacketBuffer(100);
 		} else {
 			var2.packetBuffer = new PacketBuffer(260);
 		}
 
 		var2.packetBuffer.setIsaacCipher(var1);
-		var2.packetBuffer.writeByteIsaac(var2.clientPacket.id);
+		var2.packetBuffer.writeByteIsaac(var2.field3040.id * 164940899);
 		var2.index = 0;
 		return var2;
 	}
@@ -66,40 +65,39 @@ public class DevicePcmPlayerProvider implements class47 {
 	)
 	@Export("getGcDuration")
 	protected static int getGcDuration() {
-/*		int var0 = 0;
-		if (WorldMapID.garbageCollector == null || !WorldMapID.garbageCollector.isValid()) {
+		int var0 = 0;
+/*		if (class239.garbageCollector == null || !class239.garbageCollector.isValid()) {
 			try {
 				Iterator var1 = ManagementFactory.getGarbageCollectorMXBeans().iterator();
 
 				while (var1.hasNext()) {
 					GarbageCollectorMXBean var2 = (GarbageCollectorMXBean)var1.next();
 					if (var2.isValid()) {
-						WorldMapID.garbageCollector = var2;
-						GameEngine.garbageCollectorLastCheckTimeMs = -1L;
-						GameEngine.garbageCollectorLastCollectionTime = -1L;
+						class239.garbageCollector = var2;
+						GameEngine.garbageCollectorLastCheckTimeMs = 5762211633847296445L;
+						GameEngine.garbageCollectorLastCollectionTime = -4640969998250327127L;
 					}
 				}
 			} catch (Throwable var11) {
 			}
 		}
 
-		if (WorldMapID.garbageCollector != null) {
+		if (class239.garbageCollector != null) {
 			long var9 = class181.method3483();
-			long var3 = WorldMapID.garbageCollector.getCollectionTime();
-			if (GameEngine.garbageCollectorLastCollectionTime != -1L) {
-				long var5 = var3 - GameEngine.garbageCollectorLastCollectionTime;
-				long var7 = var9 - GameEngine.garbageCollectorLastCheckTimeMs;
+			long var3 = class239.garbageCollector.getCollectionTime();
+			if (-8992699287611248793L * GameEngine.garbageCollectorLastCollectionTime != -1L) {
+				long var5 = var3 - GameEngine.garbageCollectorLastCollectionTime * -8992699287611248793L;
+				long var7 = var9 - 2378449895296999019L * GameEngine.garbageCollectorLastCheckTimeMs;
 				if (var7 != 0L) {
 					var0 = (int)(100L * var5 / var7);
 				}
 			}
 
-			GameEngine.garbageCollectorLastCollectionTime = var3;
-			GameEngine.garbageCollectorLastCheckTimeMs = var9;
-		}
+			GameEngine.garbageCollectorLastCollectionTime = var3 * 4640969998250327127L;
+			GameEngine.garbageCollectorLastCheckTimeMs = -5762211633847296445L * var9;
+		}*/
 
-		return var0;*/
-		return 0;
+		return var0;
 	}
 
 	@ObfuscatedName("gp")
@@ -108,19 +106,19 @@ public class DevicePcmPlayerProvider implements class47 {
 		garbageValue = "111"
 	)
 	static final void method348(int var0, int var1, boolean var2) {
-		if (!var2 || var0 != class352.field4196 || class20.field105 != var1) {
-			class352.field4196 = var0;
-			class20.field105 = var1;
-			class4.updateGameState(25);
+		if (!var2 || var0 != class352.field4196 * 1322948655 || class20.field105 * 798548671 != var1) {
+			class352.field4196 = var0 * 6401743;
+			class20.field105 = var1 * -473723585;
+			class4.method22(25);
 			class20.drawLoadingMessage("Loading - please wait.", true);
-			int var3 = Decimator.baseX * 64;
-			int var4 = class7.baseY * 64;
-			Decimator.baseX = (var0 - 6) * 8;
-			class7.baseY = (var1 - 6) * 8;
-			int var5 = Decimator.baseX * 64 - var3;
-			int var6 = class7.baseY * 64 - var4;
-			var3 = Decimator.baseX * 64;
-			var4 = class7.baseY * 64;
+			int var3 = Decimator.field404 * 620670661;
+			int var4 = class7.field30 * 542116271;
+			Decimator.field404 = (var0 - 6) * 1056243816;
+			class7.field30 = (var1 - 6) * 1415015032;
+			int var5 = Decimator.field404 * 620670661 - var3;
+			int var6 = class7.field30 * 542116271 - var4;
+			var3 = Decimator.field404 * 620670661;
+			var4 = class7.field30 * 542116271;
 
 			int var7;
 			int var9;
@@ -135,8 +133,8 @@ public class DevicePcmPlayerProvider implements class47 {
 						var10000[var9] -= var6;
 					}
 
-					var19.x -= var5 * 128;
-					var19.y -= var6 * 128;
+					var19.x -= var5 * -369741952;
+					var19.y -= var6 * -121366912;
 				}
 			}
 
@@ -150,8 +148,8 @@ public class DevicePcmPlayerProvider implements class47 {
 						var10000[var9] -= var6;
 					}
 
-					var22.x -= var5 * 128;
-					var22.y -= var6 * 128;
+					var22.x -= var5 * -369741952;
+					var22.y -= var6 * -121366912;
 				}
 			}
 
@@ -190,25 +188,25 @@ public class DevicePcmPlayerProvider implements class47 {
 			}
 
 			for (PendingSpawn var18 = (PendingSpawn)Client.pendingSpawns.last(); var18 != null; var18 = (PendingSpawn)Client.pendingSpawns.previous()) {
-				var18.x -= var5;
-				var18.y -= var6;
-				if (var18.x < 0 || var18.y < 0 || var18.x >= 104 || var18.y >= 104) {
+				var18.x -= var5 * 1237790373;
+				var18.y -= var6 * -759887447;
+				if (var18.x * 1805977901 < 0 || var18.y * -1439978855 < 0 || var18.x * 1805977901 >= 104 || var18.y * -1439978855 >= 104) {
 					var18.remove();
 				}
 			}
 
-			if (Client.destinationX != 0) {
-				Client.destinationX -= var5;
-				Client.destinationY -= var6;
+			if (Client.destinationX * -958997991 != 0) {
+				Client.destinationX -= var5 * 789963305;
+				Client.field726 -= var6 * -83878273;
 			}
 
-			Client.soundEffectCount = 0;
-			Client.isCameraLocked = false;
-			class16.cameraX -= var5 << 7;
-			class269.cameraZ -= var6 << 7;
-			FloorOverlayDefinition.oculusOrbFocalPointX -= var5 << 7;
-			AbstractUserComparator.oculusOrbFocalPointY -= var6 << 7;
-			Client.field720 = -1;
+			Client.field708 = 0;
+			Client.field736 = false;
+			class16.field88 -= (var5 << 7) * 1131807053;
+			class269.field3179 -= (var6 << 7) * 1259636613;
+			FloorOverlayDefinition.field2155 -= (var5 << 7) * 424836263;
+			AbstractUserComparator.field4308 -= (var6 << 7) * 7465089;
+			Client.field720 = 967530877;
 			Client.graphicsObjects.clear();
 			Client.projectiles.clear();
 
@@ -225,23 +223,23 @@ public class DevicePcmPlayerProvider implements class47 {
 		garbageValue = "-762895060"
 	)
 	static final void method352(int var0, int var1) {
-		if (Client.menuOptionsCount >= 2 || Client.isItemSelected != 0 || Client.isSpellSelected) {
+		if (Client.menuOptionsCount * -2113868255 >= 2 || Client.field483 * -1697567139 != 0 || Client.isSpellSelected) {
 			if (Client.showMouseOverText) {
-				int var2 = Client.menuOptionsCount - 1;
+				int var2 = Client.menuOptionsCount * -2113868255 - 1;
 				String var4;
-				if (Client.isItemSelected == 1 && Client.menuOptionsCount < 2) {
-					var4 = "Use" + " " + Client.selectedItemName + " " + "->";
-				} else if (Client.isSpellSelected && Client.menuOptionsCount < 2) {
-					var4 = Client.selectedSpellActionName + " " + Client.selectedSpellName + " " + "->";
+				if (Client.field483 * -1697567139 == 1 && Client.menuOptionsCount * -2113868255 < 2) {
+					var4 = "Use" + " " + Client.field642 + " " + "->";
+				} else if (Client.isSpellSelected && Client.menuOptionsCount * -2113868255 < 2) {
+					var4 = Client.field647 + " " + Client.field489 + " " + "->";
 				} else {
-					var4 = ScriptFrame.method1034(var2);
+					var4 = class56.method1034(var2);
 				}
 
-				if (Client.menuOptionsCount > 2) {
-					var4 = var4 + Clock.colorStartTag(16777215) + " " + '/' + " " + (Client.menuOptionsCount - 2) + " more options";
+				if (Client.menuOptionsCount * -2113868255 > 2) {
+					var4 = var4 + Clock.colorStartTag(16777215) + " " + '/' + " " + (Client.menuOptionsCount * -2113868255 - 2) + " more options";
 				}
 
-				WorldMapSection2.fontBold12.drawRandomAlphaAndSpacing(var4, var0 + 4, var1 + 15, 16777215, 0, Client.cycle / 1000);
+				WorldMapSection2.fontBold12.drawRandomAlphaAndSpacing(var4, var0 + 4, var1 + 15, 16777215, 0, Client.cycle * 2009455757 / 1000);
 			}
 		}
 	}

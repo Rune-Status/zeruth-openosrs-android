@@ -2,7 +2,6 @@ package osrs;
 
 import net.runelite.mapping.Export;
 import net.runelite.mapping.Implements;
-import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
@@ -34,24 +33,15 @@ public class NPCComposition extends DualNode {
 	@Export("NpcDefinition_cachedModels")
 	static EvictingDualNodeHashTable NpcDefinition_cachedModels;
 	@ObfuscatedName("ps")
-	@ObfuscatedGetter(
-		intValue = 1707906409
-	)
 	@Export("widgetDragDuration")
 	static int widgetDragDuration;
 	@ObfuscatedName("c")
-	@ObfuscatedGetter(
-		intValue = -350863249
-	)
 	@Export("id")
 	public int id;
 	@ObfuscatedName("q")
 	@Export("name")
 	public String name;
 	@ObfuscatedName("i")
-	@ObfuscatedGetter(
-		intValue = 1339905335
-	)
 	@Export("size")
 	public int size;
 	@ObfuscatedName("k")
@@ -60,86 +50,41 @@ public class NPCComposition extends DualNode {
 	@ObfuscatedName("o")
 	int[] field1916;
 	@ObfuscatedName("n")
-	@ObfuscatedGetter(
-		intValue = 683972011
-	)
 	@Export("idleSequence")
 	public int idleSequence;
 	@ObfuscatedName("d")
-	@ObfuscatedGetter(
-		intValue = -1751739551
-	)
 	@Export("turnLeftSequence")
 	public int turnLeftSequence;
 	@ObfuscatedName("a")
-	@ObfuscatedGetter(
-		intValue = 1593832419
-	)
 	@Export("turnRightSequence")
 	public int turnRightSequence;
 	@ObfuscatedName("m")
-	@ObfuscatedGetter(
-		intValue = -1906728429
-	)
 	@Export("walkSequence")
 	public int walkSequence;
 	@ObfuscatedName("u")
-	@ObfuscatedGetter(
-		intValue = 746107445
-	)
 	@Export("walkBackSequence")
 	public int walkBackSequence;
 	@ObfuscatedName("l")
-	@ObfuscatedGetter(
-		intValue = -5276589
-	)
 	@Export("walkLeftSequence")
 	public int walkLeftSequence;
 	@ObfuscatedName("z")
-	@ObfuscatedGetter(
-		intValue = 386176907
-	)
 	@Export("walkRightSequence")
 	public int walkRightSequence;
 	@ObfuscatedName("r")
-	@ObfuscatedGetter(
-		intValue = 2084863299
-	)
 	public int field1914;
 	@ObfuscatedName("y")
-	@ObfuscatedGetter(
-		intValue = 1996379429
-	)
 	public int field1919;
 	@ObfuscatedName("p")
-	@ObfuscatedGetter(
-		intValue = -1437262857
-	)
 	public int field1918;
 	@ObfuscatedName("e")
-	@ObfuscatedGetter(
-		intValue = 290637331
-	)
 	public int field1938;
 	@ObfuscatedName("b")
-	@ObfuscatedGetter(
-		intValue = -159729975
-	)
 	public int field1920;
 	@ObfuscatedName("x")
-	@ObfuscatedGetter(
-		intValue = -320262815
-	)
 	public int field1933;
 	@ObfuscatedName("f")
-	@ObfuscatedGetter(
-		intValue = -423611445
-	)
 	public int field1922;
 	@ObfuscatedName("t")
-	@ObfuscatedGetter(
-		intValue = -880190441
-	)
 	public int field1923;
 	@ObfuscatedName("j")
 	@Export("recolorFrom")
@@ -160,65 +105,37 @@ public class NPCComposition extends DualNode {
 	@Export("drawMapDot")
 	public boolean drawMapDot;
 	@ObfuscatedName("ax")
-	@ObfuscatedGetter(
-		intValue = -292859821
-	)
 	@Export("combatLevel")
 	public int combatLevel;
 	@ObfuscatedName("ab")
-	@ObfuscatedGetter(
-		intValue = 229011133
-	)
 	@Export("widthScale")
 	int widthScale;
 	@ObfuscatedName("ak")
-	@ObfuscatedGetter(
-		intValue = -1716714027
-	)
 	@Export("heightScale")
 	int heightScale;
 	@ObfuscatedName("au")
 	@Export("isVisible")
 	public boolean isVisible;
 	@ObfuscatedName("ae")
-	@ObfuscatedGetter(
-		intValue = 1984237137
-	)
 	@Export("ambient")
 	int ambient;
 	@ObfuscatedName("as")
-	@ObfuscatedGetter(
-		intValue = -939749389
-	)
 	@Export("contrast")
 	int contrast;
 	@ObfuscatedName("ay")
-	@ObfuscatedGetter(
-		intValue = -1283027553
-	)
 	@Export("headIconPrayer")
 	public int headIconPrayer;
 	@ObfuscatedName("ag")
-	@ObfuscatedGetter(
-		intValue = 57880073
-	)
 	@Export("rotation")
 	public int rotation;
 	@ObfuscatedName("ad")
 	@Export("transforms")
 	public int[] transforms;
 	@ObfuscatedName("af")
-	@ObfuscatedGetter(
-		intValue = 1171786609
-	)
 	@Export("transformVarbit")
 	int transformVarbit;
 	@ObfuscatedName("aw")
-	@ObfuscatedGetter(
-		intValue = -586469401
-	)
-	@Export("transformVarp")
-	int transformVarp;
+	int field1940;
 	@ObfuscatedName("ai")
 	@Export("isInteractable")
 	public boolean isInteractable;
@@ -242,34 +159,34 @@ public class NPCComposition extends DualNode {
 
 	NPCComposition() {
 		this.name = "null";
-		this.size = 1;
-		this.idleSequence = -1;
-		this.turnLeftSequence = -1;
-		this.turnRightSequence = -1;
-		this.walkSequence = -1;
-		this.walkBackSequence = -1;
-		this.walkLeftSequence = -1;
-		this.walkRightSequence = -1;
-		this.field1914 = -1;
-		this.field1919 = -1;
-		this.field1918 = -1;
-		this.field1938 = -1;
-		this.field1920 = -1;
-		this.field1933 = -1;
-		this.field1922 = -1;
-		this.field1923 = -1;
+		this.size = -620728185;
+		this.idleSequence = 795230973;
+		this.turnLeftSequence = 207662943;
+		this.turnRightSequence = 290395701;
+		this.walkSequence = -528578587;
+		this.walkBackSequence = -1820233757;
+		this.walkLeftSequence = 1253038117;
+		this.walkRightSequence = 272181213;
+		this.field1914 = -288159595;
+		this.field1919 = 310133075;
+		this.field1918 = -752096711;
+		this.field1938 = 973474789;
+		this.field1920 = -543245177;
+		this.field1933 = -516437665;
+		this.field1922 = -262265315;
+		this.field1923 = -1029020583;
 		this.actions = new String[5];
 		this.drawMapDot = true;
-		this.combatLevel = -1;
-		this.widthScale = 128;
-		this.heightScale = 128;
+		this.combatLevel = 1414564901;
+		this.widthScale = -1421981056;
+		this.heightScale = 436584064;
 		this.isVisible = false;
 		this.ambient = 0;
 		this.contrast = 0;
-		this.headIconPrayer = -1;
-		this.rotation = 32;
-		this.transformVarbit = -1;
-		this.transformVarp = -1;
+		this.headIconPrayer = 264941985;
+		this.rotation = -426244320;
+		this.transformVarbit = -631592337;
+		this.field1940 = -1467642839;
 		this.isInteractable = true;
 		this.isClickable = true;
 		this.isFollower = false;
@@ -320,20 +237,20 @@ public class NPCComposition extends DualNode {
 		} else if (var2 == 2) {
 			this.name = var1.readStringCp1252NullTerminated();
 		} else if (var2 == 12) {
-			this.size = var1.readUnsignedByte();
+			this.size = var1.readUnsignedByte() * -620728185;
 		} else if (var2 == 13) {
-			this.idleSequence = var1.readUnsignedShort();
+			this.idleSequence = var1.readUnsignedShort() * -795230973;
 		} else if (var2 == 14) {
-			this.walkSequence = var1.readUnsignedShort();
+			this.walkSequence = var1.readUnsignedShort() * 528578587;
 		} else if (var2 == 15) {
-			this.turnLeftSequence = var1.readUnsignedShort();
+			this.turnLeftSequence = var1.readUnsignedShort() * -207662943;
 		} else if (var2 == 16) {
-			this.turnRightSequence = var1.readUnsignedShort();
+			this.turnRightSequence = var1.readUnsignedShort() * -290395701;
 		} else if (var2 == 17) {
-			this.walkSequence = var1.readUnsignedShort();
-			this.walkBackSequence = var1.readUnsignedShort();
-			this.walkLeftSequence = var1.readUnsignedShort();
-			this.walkRightSequence = var1.readUnsignedShort();
+			this.walkSequence = var1.readUnsignedShort() * 528578587;
+			this.walkBackSequence = var1.readUnsignedShort() * 1820233757;
+			this.walkLeftSequence = var1.readUnsignedShort() * -1253038117;
+			this.walkRightSequence = var1.readUnsignedShort() * -272181213;
 		} else if (var2 == 18) {
 			var1.readUnsignedShort();
 		} else if (var2 >= 30 && var2 < 35) {
@@ -369,21 +286,21 @@ public class NPCComposition extends DualNode {
 		} else if (var2 == 93) {
 			this.drawMapDot = false;
 		} else if (var2 == 95) {
-			this.combatLevel = var1.readUnsignedShort();
+			this.combatLevel = var1.readUnsignedShort() * -1414564901;
 		} else if (var2 == 97) {
-			this.widthScale = var1.readUnsignedShort();
+			this.widthScale = var1.readUnsignedShort() * -2125038443;
 		} else if (var2 == 98) {
-			this.heightScale = var1.readUnsignedShort();
+			this.heightScale = var1.readUnsignedShort() * -130806915;
 		} else if (var2 == 99) {
 			this.isVisible = true;
 		} else if (var2 == 100) {
-			this.ambient = var1.readByte();
+			this.ambient = var1.readByte() * 912718513;
 		} else if (var2 == 101) {
-			this.contrast = var1.readByte() * 5;
+			this.contrast = var1.readByte() * -1170725337;
 		} else if (var2 == 102) {
-			this.headIconPrayer = var1.readUnsignedShort();
+			this.headIconPrayer = var1.readUnsignedShort() * -264941985;
 		} else if (var2 == 103) {
-			this.rotation = var1.readUnsignedShort();
+			this.rotation = var1.readUnsignedShort() * 1194639417;
 		} else if (var2 != 106 && var2 != 118) {
 			if (var2 == 107) {
 				this.isInteractable = false;
@@ -392,31 +309,31 @@ public class NPCComposition extends DualNode {
 			} else if (var2 == 111) {
 				this.isFollower = true;
 			} else if (var2 == 114) {
-				this.field1914 = var1.readUnsignedShort();
+				this.field1914 = var1.readUnsignedShort() * 288159595;
 			} else if (var2 == 115) {
-				this.field1914 = var1.readUnsignedShort();
-				this.field1919 = var1.readUnsignedShort();
-				this.field1918 = var1.readUnsignedShort();
-				this.field1938 = var1.readUnsignedShort();
+				this.field1914 = var1.readUnsignedShort() * 288159595;
+				this.field1919 = var1.readUnsignedShort() * -310133075;
+				this.field1918 = var1.readUnsignedShort() * 752096711;
+				this.field1938 = var1.readUnsignedShort() * -973474789;
 			} else if (var2 == 116) {
-				this.field1920 = var1.readUnsignedShort();
+				this.field1920 = var1.readUnsignedShort() * 543245177;
 			} else if (var2 == 117) {
-				this.field1920 = var1.readUnsignedShort();
-				this.field1933 = var1.readUnsignedShort();
-				this.field1922 = var1.readUnsignedShort();
-				this.field1923 = var1.readUnsignedShort();
+				this.field1920 = var1.readUnsignedShort() * 543245177;
+				this.field1933 = var1.readUnsignedShort() * 516437665;
+				this.field1922 = var1.readUnsignedShort() * 262265315;
+				this.field1923 = var1.readUnsignedShort() * 1029020583;
 			} else if (var2 == 249) {
 				this.params = World.readStringIntParameters(var1, this.params);
 			}
 		} else {
-			this.transformVarbit = var1.readUnsignedShort();
-			if (this.transformVarbit == 65535) {
-				this.transformVarbit = -1;
+			this.transformVarbit = var1.readUnsignedShort() * 631592337;
+			if (this.transformVarbit * 1171786609 == 65535) {
+				this.transformVarbit = -631592337;
 			}
 
-			this.transformVarp = var1.readUnsignedShort();
-			if (this.transformVarp == 65535) {
-				this.transformVarp = -1;
+			this.field1940 = var1.readUnsignedShort() * 1467642839;
+			if (this.field1940 * -586469401 == 65535) {
+				this.field1940 = -1467642839;
 			}
 
 			var3 = -1;
@@ -453,7 +370,7 @@ public class NPCComposition extends DualNode {
 			NPCComposition var12 = this.transform();
 			return var12 == null ? null : var12.getModel(var1, var2, var3, var4);
 		} else {
-			Model var5 = (Model)NpcDefinition_cachedModels.get((long)this.id);
+			Model var5 = (Model)NpcDefinition_cachedModels.get((long)(this.id * -350863249));
 			if (var5 == null) {
 				boolean var6 = false;
 
@@ -493,8 +410,8 @@ public class NPCComposition extends DualNode {
 					}
 				}
 
-				var5 = var10.toModel(this.ambient + 64, this.contrast + 850, -30, -50, -30);
-				NpcDefinition_cachedModels.put(var5, (long)this.id);
+				var5 = var10.toModel(this.ambient * 1984237137 + 64, this.contrast * -939749389 + 850, -30, -50, -30);
+				NpcDefinition_cachedModels.put(var5, (long)(this.id * -350863249));
 			}
 
 			Model var11;
@@ -508,8 +425,8 @@ public class NPCComposition extends DualNode {
 				var11 = var5.toSharedSequenceModel(true);
 			}
 
-			if (this.widthScale != 128 || this.heightScale != 128) {
-				var11.scale(this.widthScale, this.heightScale, this.widthScale);
+			if (this.widthScale * 229011133 != 128 || this.heightScale * -1716714027 != 128) {
+				var11.scale(this.widthScale * 229011133, this.heightScale * -1716714027, this.widthScale * 229011133);
 			}
 
 			return var11;
@@ -579,10 +496,10 @@ public class NPCComposition extends DualNode {
 	@Export("transform")
 	public final NPCComposition transform() {
 		int var1 = -1;
-		if (this.transformVarbit != -1) {
-			var1 = class133.getVarbit(this.transformVarbit);
-		} else if (this.transformVarp != -1) {
-			var1 = Varps.Varps_main[this.transformVarp];
+		if (this.transformVarbit * 1171786609 != -1) {
+			var1 = class133.getVarbit(this.transformVarbit * 1171786609);
+		} else if (this.field1940 * -586469401 != -1) {
+			var1 = Varps.Varps_main[this.field1940 * -586469401];
 		}
 
 		int var2;
@@ -606,10 +523,10 @@ public class NPCComposition extends DualNode {
 			return true;
 		} else {
 			int var1 = -1;
-			if (this.transformVarbit != -1) {
-				var1 = class133.getVarbit(this.transformVarbit);
-			} else if (this.transformVarp != -1) {
-				var1 = Varps.Varps_main[this.transformVarp];
+			if (this.transformVarbit * 1171786609 != -1) {
+				var1 = class133.getVarbit(this.transformVarbit * 1171786609);
+			} else if (this.field1940 * -586469401 != -1) {
+				var1 = Varps.Varps_main[this.field1940 * -586469401];
 			}
 
 			if (var1 >= 0 && var1 < this.transforms.length) {
@@ -627,7 +544,7 @@ public class NPCComposition extends DualNode {
 	)
 	@Export("getIntParam")
 	public int getIntParam(int var1, int var2) {
-		return ScriptFrame.method1035(this.params, var1, var2);
+		return class56.method1035(this.params, var1, var2);
 	}
 
 	@ObfuscatedName("d")

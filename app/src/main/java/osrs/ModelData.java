@@ -411,7 +411,7 @@ public class ModelData extends Renderable {
 		Buffer var6 = new Buffer(var1);
 		Buffer var7 = new Buffer(var1);
 		Buffer var8 = new Buffer(var1);
-		var2.offset = var1.length - 26;
+		var2.offset = (var1.length - 26) * 1090888991;
 		int var9 = var2.readUnsignedShort();
 		int var10 = var2.readUnsignedShort();
 		int var11 = var2.readUnsignedByte();
@@ -557,11 +557,11 @@ public class ModelData extends Renderable {
 			this.texTriangleZ = new short[var11];
 		}
 
-		var2.offset = var11;
-		var3.offset = var40;
-		var4.offset = var41;
-		var5.offset = var42;
-		var6.offset = var34;
+		var2.offset = var11 * 1090888991;
+		var3.offset = var40 * 1090888991;
+		var4.offset = var41 * 1090888991;
+		var5.offset = var42 * 1090888991;
+		var6.offset = var34 * 1090888991;
 		int var50 = 0;
 		int var51 = 0;
 		int var52 = 0;
@@ -612,13 +612,13 @@ public class ModelData extends Renderable {
 			}
 		}
 
-		var2.offset = var39;
-		var3.offset = var30;
-		var4.offset = var32;
-		var5.offset = var35;
-		var6.offset = var33;
-		var7.offset = var37;
-		var8.offset = var38;
+		var2.offset = var39 * 1090888991;
+		var3.offset = var30 * 1090888991;
+		var4.offset = var32 * 1090888991;
+		var5.offset = var35 * 1090888991;
+		var6.offset = var33 * 1090888991;
+		var7.offset = var37 * 1090888991;
+		var8.offset = var38 * 1090888991;
 
 		for (var53 = 0; var53 < var10; ++var53) {
 			this.faceColors[var53] = (short)var2.readUnsignedShort();
@@ -647,8 +647,8 @@ public class ModelData extends Renderable {
 			}
 		}
 
-		var2.offset = var36;
-		var3.offset = var31;
+		var2.offset = var36 * 1090888991;
+		var3.offset = var31 * 1090888991;
 		var53 = 0;
 		var54 = 0;
 		var55 = 0;
@@ -697,12 +697,12 @@ public class ModelData extends Renderable {
 			}
 		}
 
-		var2.offset = var43;
-		var3.offset = var44;
-		var4.offset = var45;
-		var5.offset = var46;
-		var6.offset = var47;
-		var7.offset = var48;
+		var2.offset = var43 * 1090888991;
+		var3.offset = var44 * 1090888991;
+		var4.offset = var45 * 1090888991;
+		var5.offset = var46 * 1090888991;
+		var6.offset = var47 * 1090888991;
+		var7.offset = var48 * 1090888991;
 
 		for (var57 = 0; var57 < var11; ++var57) {
 			var58 = this.textureRenderTypes[var57] & 255;
@@ -713,7 +713,7 @@ public class ModelData extends Renderable {
 			}
 		}
 
-		var2.offset = var28;
+		var2.offset = var28 * 1090888991;
 		var57 = var2.readUnsignedByte();
 		if (var57 != 0) {
 			new ModelData0();
@@ -734,7 +734,7 @@ public class ModelData extends Renderable {
 		Buffer var6 = new Buffer(var1);
 		Buffer var7 = new Buffer(var1);
 		Buffer var8 = new Buffer(var1);
-		var4.offset = var1.length - 23;
+		var4.offset = (var1.length - 23) * 1090888991;
 		int var9 = var4.readUnsignedShort();
 		int var10 = var4.readUnsignedShort();
 		int var11 = var4.readUnsignedByte();
@@ -832,11 +832,11 @@ public class ModelData extends Renderable {
 		}
 
 		this.faceColors = new short[var10];
-		var4.offset = var23;
-		var5.offset = var34;
-		var6.offset = var35;
-		var7.offset = var47;
-		var8.offset = var29;
+		var4.offset = var23 * 1090888991;
+		var5.offset = var34 * 1090888991;
+		var6.offset = var35 * 1090888991;
+		var7.offset = var47 * 1090888991;
+		var8.offset = var29 * 1090888991;
 		int var37 = 0;
 		int var38 = 0;
 		int var39 = 0;
@@ -887,11 +887,11 @@ public class ModelData extends Renderable {
 			}
 		}
 
-		var4.offset = var32;
-		var5.offset = var28;
-		var6.offset = var26;
-		var7.offset = var30;
-		var8.offset = var27;
+		var4.offset = var32 * 1090888991;
+		var5.offset = var28 * 1090888991;
+		var6.offset = var26 * 1090888991;
+		var7.offset = var30 * 1090888991;
+		var8.offset = var27 * 1090888991;
 
 		for (var40 = 0; var40 < var10; ++var40) {
 			this.faceColors[var40] = (short)var4.readUnsignedShort();
@@ -930,8 +930,8 @@ public class ModelData extends Renderable {
 			}
 		}
 
-		var4.offset = var31;
-		var5.offset = var25;
+		var4.offset = var31 * 1090888991;
+		var5.offset = var25 * 1090888991;
 		var40 = 0;
 		var41 = 0;
 		var42 = 0;
@@ -981,7 +981,7 @@ public class ModelData extends Renderable {
 			}
 		}
 
-		var4.offset = var33;
+		var4.offset = var33 * 1090888991;
 
 		for (var44 = 0; var44 < var11; ++var44) {
 			this.textureRenderTypes[var44] = 0;
@@ -1028,7 +1028,7 @@ public class ModelData extends Renderable {
 		Buffer var6 = new Buffer(var1);
 		Buffer var7 = new Buffer(var1);
 		Buffer var8 = new Buffer(var1);
-		var2.offset = var1.length - 23;
+		var2.offset = (var1.length - 23) * 1090888991;
 		int var9 = var2.readUnsignedShort();
 		int var10 = var2.readUnsignedShort();
 		int var11 = var2.readUnsignedByte();
@@ -1170,11 +1170,11 @@ public class ModelData extends Renderable {
 			this.texTriangleZ = new short[var11];
 		}
 
-		var2.offset = var11;
-		var3.offset = var38;
-		var4.offset = var39;
-		var5.offset = var40;
-		var6.offset = var32;
+		var2.offset = var11 * 1090888991;
+		var3.offset = var38 * 1090888991;
+		var4.offset = var39 * 1090888991;
+		var5.offset = var40 * 1090888991;
+		var6.offset = var32 * 1090888991;
 		int var48 = 0;
 		int var49 = 0;
 		int var50 = 0;
@@ -1212,13 +1212,13 @@ public class ModelData extends Renderable {
 			}
 		}
 
-		var2.offset = var37;
-		var3.offset = var28;
-		var4.offset = var30;
-		var5.offset = var33;
-		var6.offset = var31;
-		var7.offset = var35;
-		var8.offset = var36;
+		var2.offset = var37 * 1090888991;
+		var3.offset = var28 * 1090888991;
+		var4.offset = var30 * 1090888991;
+		var5.offset = var33 * 1090888991;
+		var6.offset = var31 * 1090888991;
+		var7.offset = var35 * 1090888991;
+		var8.offset = var36 * 1090888991;
 
 		for (var51 = 0; var51 < var10; ++var51) {
 			this.faceColors[var51] = (short)var2.readUnsignedShort();
@@ -1247,8 +1247,8 @@ public class ModelData extends Renderable {
 			}
 		}
 
-		var2.offset = var34;
-		var3.offset = var29;
+		var2.offset = var34 * 1090888991;
+		var3.offset = var29 * 1090888991;
 		var51 = 0;
 		var52 = 0;
 		var53 = 0;
@@ -1297,12 +1297,12 @@ public class ModelData extends Renderable {
 			}
 		}
 
-		var2.offset = var41;
-		var3.offset = var42;
-		var4.offset = var43;
-		var5.offset = var44;
-		var6.offset = var45;
-		var7.offset = var46;
+		var2.offset = var41 * 1090888991;
+		var3.offset = var42 * 1090888991;
+		var4.offset = var43 * 1090888991;
+		var5.offset = var44 * 1090888991;
+		var6.offset = var45 * 1090888991;
+		var7.offset = var46 * 1090888991;
 
 		for (var55 = 0; var55 < var11; ++var55) {
 			var56 = this.textureRenderTypes[var55] & 255;
@@ -1313,7 +1313,7 @@ public class ModelData extends Renderable {
 			}
 		}
 
-		var2.offset = var26;
+		var2.offset = var26 * 1090888991;
 		var55 = var2.readUnsignedByte();
 		if (var55 != 0) {
 			new ModelData0();
@@ -1334,7 +1334,7 @@ public class ModelData extends Renderable {
 		Buffer var6 = new Buffer(var1);
 		Buffer var7 = new Buffer(var1);
 		Buffer var8 = new Buffer(var1);
-		var4.offset = var1.length - 18;
+		var4.offset = (var1.length - 18) * 1090888991;
 		int var9 = var4.readUnsignedShort();
 		int var10 = var4.readUnsignedShort();
 		int var11 = var4.readUnsignedByte();
@@ -1428,11 +1428,11 @@ public class ModelData extends Renderable {
 		}
 
 		this.faceColors = new short[var10];
-		var4.offset = var21;
-		var5.offset = var32;
-		var6.offset = var33;
-		var7.offset = var45;
-		var8.offset = var27;
+		var4.offset = var21 * 1090888991;
+		var5.offset = var32 * 1090888991;
+		var6.offset = var33 * 1090888991;
+		var7.offset = var45 * 1090888991;
+		var8.offset = var27 * 1090888991;
 		int var35 = 0;
 		int var36 = 0;
 		int var37 = 0;
@@ -1470,11 +1470,11 @@ public class ModelData extends Renderable {
 			}
 		}
 
-		var4.offset = var30;
-		var5.offset = var26;
-		var6.offset = var24;
-		var7.offset = var28;
-		var8.offset = var25;
+		var4.offset = var30 * 1090888991;
+		var5.offset = var26 * 1090888991;
+		var6.offset = var24 * 1090888991;
+		var7.offset = var28 * 1090888991;
+		var8.offset = var25 * 1090888991;
 
 		for (var38 = 0; var38 < var10; ++var38) {
 			this.faceColors[var38] = (short)var4.readUnsignedShort();
@@ -1513,8 +1513,8 @@ public class ModelData extends Renderable {
 			}
 		}
 
-		var4.offset = var29;
-		var5.offset = var23;
+		var4.offset = var29 * 1090888991;
+		var5.offset = var23 * 1090888991;
 		var38 = 0;
 		var39 = 0;
 		var40 = 0;
@@ -1564,7 +1564,7 @@ public class ModelData extends Renderable {
 			}
 		}
 
-		var4.offset = var31;
+		var4.offset = var31 * 1090888991;
 
 		for (var42 = 0; var42 < var11; ++var42) {
 			this.textureRenderTypes[var42] = 0;
@@ -1753,7 +1753,7 @@ public class ModelData extends Renderable {
 					}
 				} else {
 					for (var12 = 0; var12 < var11.verticesCount; ++var12) {
-						var13 = (-this.verticesY[var12] << 16) / super.height;
+						var13 = (-this.verticesY[var12] << 16) / (super.height * 417479049);
 						if (var13 < var6) {
 							var14 = var2 + this.verticesX[var12];
 							var15 = var4 + this.verticesZ[var12];
@@ -1998,29 +1998,29 @@ public class ModelData extends Renderable {
 
 				if (var15 == 0) {
 					VertexNormal var16 = this.vertexNormals[var2];
-					var16.x += var11;
-					var16.y += var12;
-					var16.z += var13;
-					++var16.magnitude;
+					var16.x += var11 * -1987478441;
+					var16.y += var12 * -822240497;
+					var16.z += var13 * 1629333413;
+					var16.magnitude += 1586413783;
 					var16 = this.vertexNormals[var3];
-					var16.x += var11;
-					var16.y += var12;
-					var16.z += var13;
-					++var16.magnitude;
+					var16.x += var11 * -1987478441;
+					var16.y += var12 * -822240497;
+					var16.z += var13 * 1629333413;
+					var16.magnitude += 1586413783;
 					var16 = this.vertexNormals[var4];
-					var16.x += var11;
-					var16.y += var12;
-					var16.z += var13;
-					++var16.magnitude;
+					var16.x += var11 * -1987478441;
+					var16.y += var12 * -822240497;
+					var16.z += var13 * 1629333413;
+					var16.magnitude += 1586413783;
 				} else if (var15 == 1) {
 					if (this.faceNormals == null) {
 						this.faceNormals = new FaceNormal[this.faceCount];
 					}
 
 					FaceNormal var17 = this.faceNormals[var1] = new FaceNormal();
-					var17.x = var11;
-					var17.y = var12;
-					var17.z = var13;
+					var17.x = var11 * -490073161;
+					var17.y = var12 * 2060334389;
+					var17.z = var13 * -62367369;
 				}
 			}
 
@@ -2067,8 +2067,8 @@ public class ModelData extends Renderable {
 					this.field2267 = var4;
 				}
 
-				if (-var3 > super.height) {
-					super.height = -var3;
+				if (-var3 > super.height * 417479049) {
+					super.height = -var3 * 1354894521;
 				}
 
 				if (var3 > this.field2273) {
@@ -2176,7 +2176,7 @@ public class ModelData extends Renderable {
 				if (var17 != 0) {
 					if (var17 == 1) {
 						var19 = this.faceNormals[var16];
-						var14 = (var4 * var19.y + var5 * var19.z + var3 * var19.x) / (var7 / 2 + var7) + var1;
+						var14 = (var4 * var19.y * -1558170339 + var3 * var19.x * -1878115833 + var5 * var19.z * 307646535) / (var7 / 2 + var7) + var1;
 						var8.faceColors1[var16] = method3869(this.faceColors[var16] & '\uffff', var14);
 						var8.faceColors3[var16] = -1;
 					} else if (var17 == 3) {
@@ -2193,7 +2193,7 @@ public class ModelData extends Renderable {
 						var13 = this.vertexNormals[this.indices1[var16]];
 					}
 
-					var14 = (var4 * var13.y + var5 * var13.z + var3 * var13.x) / (var7 * var13.magnitude) + var1;
+					var14 = (var4 * var13.y * -333188113 + var3 * var13.x * -1709363353 + var5 * var13.z * -810751955) / (var7 * var13.magnitude * -773180697) + var1;
 					var8.faceColors1[var16] = method3869(var15, var14);
 					if (this.vertexVertices != null && this.vertexVertices[this.indices2[var16]] != null) {
 						var13 = this.vertexVertices[this.indices2[var16]];
@@ -2201,7 +2201,7 @@ public class ModelData extends Renderable {
 						var13 = this.vertexNormals[this.indices2[var16]];
 					}
 
-					var14 = (var4 * var13.y + var5 * var13.z + var3 * var13.x) / (var7 * var13.magnitude) + var1;
+					var14 = (var4 * var13.y * -333188113 + var3 * var13.x * -1709363353 + var5 * var13.z * -810751955) / (var7 * var13.magnitude * -773180697) + var1;
 					var8.faceColors2[var16] = method3869(var15, var14);
 					if (this.vertexVertices != null && this.vertexVertices[this.indices3[var16]] != null) {
 						var13 = this.vertexVertices[this.indices3[var16]];
@@ -2209,13 +2209,13 @@ public class ModelData extends Renderable {
 						var13 = this.vertexNormals[this.indices3[var16]];
 					}
 
-					var14 = (var4 * var13.y + var5 * var13.z + var3 * var13.x) / (var7 * var13.magnitude) + var1;
+					var14 = (var4 * var13.y * -333188113 + var3 * var13.x * -1709363353 + var5 * var13.z * -810751955) / (var7 * var13.magnitude * -773180697) + var1;
 					var8.faceColors3[var16] = method3869(var15, var14);
 				}
 			} else if (var17 != 0) {
 				if (var17 == 1) {
 					var19 = this.faceNormals[var16];
-					var14 = (var4 * var19.y + var5 * var19.z + var3 * var19.x) / (var7 / 2 + var7) + var1;
+					var14 = (var4 * var19.y * -1558170339 + var3 * var19.x * -1878115833 + var5 * var19.z * 307646535) / (var7 / 2 + var7) + var1;
 					var8.faceColors1[var16] = method3849(var14);
 					var8.faceColors3[var16] = -1;
 				} else {
@@ -2228,7 +2228,7 @@ public class ModelData extends Renderable {
 					var13 = this.vertexNormals[this.indices1[var16]];
 				}
 
-				var14 = (var4 * var13.y + var5 * var13.z + var3 * var13.x) / (var7 * var13.magnitude) + var1;
+				var14 = (var4 * var13.y * -333188113 + var3 * var13.x * -1709363353 + var5 * var13.z * -810751955) / (var7 * var13.magnitude * -773180697) + var1;
 				var8.faceColors1[var16] = method3849(var14);
 				if (this.vertexVertices != null && this.vertexVertices[this.indices2[var16]] != null) {
 					var13 = this.vertexVertices[this.indices2[var16]];
@@ -2236,7 +2236,7 @@ public class ModelData extends Renderable {
 					var13 = this.vertexNormals[this.indices2[var16]];
 				}
 
-				var14 = (var4 * var13.y + var5 * var13.z + var3 * var13.x) / (var7 * var13.magnitude) + var1;
+				var14 = (var4 * var13.y * -333188113 + var3 * var13.x * -1709363353 + var5 * var13.z * -810751955) / (var7 * var13.magnitude * -773180697) + var1;
 				var8.faceColors2[var16] = method3849(var14);
 				if (this.vertexVertices != null && this.vertexVertices[this.indices3[var16]] != null) {
 					var13 = this.vertexVertices[this.indices3[var16]];
@@ -2244,7 +2244,7 @@ public class ModelData extends Renderable {
 					var13 = this.vertexNormals[this.indices3[var16]];
 				}
 
-				var14 = (var4 * var13.y + var5 * var13.z + var3 * var13.x) / (var7 * var13.magnitude) + var1;
+				var14 = (var4 * var13.y * -333188113 + var3 * var13.x * -1709363353 + var5 * var13.z * -810751955) / (var7 * var13.magnitude * -773180697) + var1;
 				var8.faceColors3[var16] = method3849(var14);
 			}
 		}
@@ -2296,7 +2296,7 @@ public class ModelData extends Renderable {
 		int var9;
 		for (var9 = 0; var9 < var0.verticesCount; ++var9) {
 			VertexNormal var10 = var0.vertexNormals[var9];
-			if (var10.magnitude != 0) {
+			if (var10.magnitude * -773180697 != 0) {
 				int var11 = var0.verticesY[var9] - var3;
 				if (var11 <= var1.field2273) {
 					int var12 = var0.verticesX[var9] - var2;
@@ -2305,7 +2305,7 @@ public class ModelData extends Renderable {
 						if (var13 >= var1.field2268 && var13 <= var1.field2267) {
 							for (int var14 = 0; var14 < var8; ++var14) {
 								VertexNormal var15 = var1.vertexNormals[var14];
-								if (var12 == var7[var14] && var13 == var1.verticesZ[var14] && var11 == var1.verticesY[var14] && var15.magnitude != 0) {
+								if (var12 == var7[var14] && var13 == var1.verticesZ[var14] && var11 == var1.verticesY[var14] && var15.magnitude * -773180697 != 0) {
 									if (var0.vertexVertices == null) {
 										var0.vertexVertices = new VertexNormal[var0.verticesCount];
 									}
@@ -2324,14 +2324,14 @@ public class ModelData extends Renderable {
 										var17 = var1.vertexVertices[var14] = new VertexNormal(var15);
 									}
 
-									var16.x += var15.x;
-									var16.y += var15.y;
-									var16.z += var15.z;
-									var16.magnitude += var15.magnitude;
-									var17.x += var10.x;
-									var17.y += var10.y;
-									var17.z += var10.z;
-									var17.magnitude += var10.magnitude;
+									var16.x += var15.x * 1;
+									var16.y += var15.y * 1;
+									var16.z += var15.z * 1;
+									var16.magnitude += var15.magnitude * 1;
+									var17.x += var10.x * 1;
+									var17.y += var10.y * 1;
+									var17.z += var10.z * 1;
+									var17.magnitude += var10.magnitude * 1;
 									++var6;
 									field2269[var9] = field2271;
 									field2270[var14] = field2271;

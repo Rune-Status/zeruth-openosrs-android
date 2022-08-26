@@ -81,7 +81,7 @@ public class VarcInt extends DualNode {
 	)
 	public static void method3328() {
 		ItemContainer.midiPcmStream.clear();
-		class273.musicPlayerStatus = 1;
+		class273.musicPlayerStatus = 168497391;
 		NetFileRequest.musicTrackArchive = null;
 	}
 }

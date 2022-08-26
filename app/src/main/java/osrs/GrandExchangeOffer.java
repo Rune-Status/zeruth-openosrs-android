@@ -2,7 +2,6 @@ package osrs;
 
 import net.runelite.mapping.Export;
 import net.runelite.mapping.Implements;
-import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
@@ -13,33 +12,18 @@ public class GrandExchangeOffer {
 	@Export("state")
 	byte state;
 	@ObfuscatedName("h")
-	@ObfuscatedGetter(
-		intValue = -1422086043
-	)
 	@Export("id")
 	public int id;
 	@ObfuscatedName("w")
-	@ObfuscatedGetter(
-		intValue = 1524422837
-	)
 	@Export("unitPrice")
 	public int unitPrice;
 	@ObfuscatedName("v")
-	@ObfuscatedGetter(
-		intValue = 591860693
-	)
 	@Export("totalQuantity")
 	public int totalQuantity;
 	@ObfuscatedName("c")
-	@ObfuscatedGetter(
-		intValue = -884581949
-	)
 	@Export("currentQuantity")
 	public int currentQuantity;
 	@ObfuscatedName("q")
-	@ObfuscatedGetter(
-		intValue = 277958717
-	)
 	@Export("currentPrice")
 	public int currentPrice;
 
@@ -52,11 +36,11 @@ public class GrandExchangeOffer {
 	)
 	public GrandExchangeOffer(Buffer var1, boolean var2) {
 		this.state = var1.readByte();
-		this.id = var1.readUnsignedShort();
-		this.unitPrice = var1.readInt();
-		this.totalQuantity = var1.readInt();
-		this.currentQuantity = var1.readInt();
-		this.currentPrice = var1.readInt();
+		this.id = var1.readUnsignedShort() * -1110539923;
+		this.unitPrice = var1.readInt() * 1074746781;
+		this.totalQuantity = var1.readInt() * -1587311235;
+		this.currentQuantity = var1.readInt() * -615358741;
+		this.currentPrice = var1.readInt() * 131712789;
 	}
 
 	@ObfuscatedName("h")

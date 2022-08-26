@@ -1,6 +1,5 @@
 package osrs;
 
-import net.runelite.mapping.Export;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
@@ -10,8 +9,7 @@ public abstract class class393 extends class249 implements class450 {
 	@ObfuscatedSignature(
 		descriptor = "Loo;"
 	)
-	@Export("platformInfo")
-	static PlatformInfo platformInfo;
+	static PlatformInfo field4430;
 
 	@ObfuscatedSignature(
 		descriptor = "(Lkp;Llv;I)V"
@@ -33,7 +31,7 @@ public abstract class class393 extends class249 implements class450 {
 		garbageValue = "-1852646260"
 	)
 	public int method7011() {
-		return super.field2890;
+		return super.field2890 * 2143205125;
 	}
 
 	@ObfuscatedName("w")

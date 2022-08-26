@@ -3,16 +3,12 @@ package osrs;
 import java.util.Comparator;
 import java.util.HashMap;
 import java.util.Map;
-import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
 @ObfuscatedName("mv")
 public final class class362 {
 	@ObfuscatedName("r")
-	@ObfuscatedGetter(
-		intValue = -1329008803
-	)
 	static int field4262;
 	@ObfuscatedName("s")
 	final Comparator field4268;
@@ -29,9 +25,6 @@ public final class class362 {
 	)
 	final class348 field4263;
 	@ObfuscatedName("c")
-	@ObfuscatedGetter(
-		longValue = -4423586593673882757L
-	)
 	final long field4260;
 	@ObfuscatedName("q")
 	@ObfuscatedSignature(
@@ -39,9 +32,6 @@ public final class class362 {
 	)
 	final class360 field4265;
 	@ObfuscatedName("i")
-	@ObfuscatedGetter(
-		intValue = -635055347
-	)
 	final int field4266;
 
 	@ObfuscatedSignature(
@@ -49,10 +39,10 @@ public final class class362 {
 	)
 	class362(long var1, int var3, class360 var4) {
 		this.field4268 = new class361(this);
-		this.field4260 = var1;
-		this.field4266 = var3;
+		this.field4260 = 266548888683910067L * var1;
+		this.field4266 = var3 * 352138181;
 		this.field4265 = var4;
-		if (this.field4266 == -1) {
+		if (this.field4266 * -635055347 == -1) {
 			this.field4261 = new HashMap(64);
 			this.field4264 = new class348(64, this.field4268);
 			this.field4263 = null;
@@ -61,9 +51,9 @@ public final class class362 {
 				throw new IllegalArgumentException("");
 			}
 
-			this.field4261 = new HashMap(this.field4266);
-			this.field4264 = new class348(this.field4266, this.field4268);
-			this.field4263 = new class348(this.field4266);
+			this.field4261 = new HashMap(this.field4266 * -635055347);
+			this.field4264 = new class348(this.field4266 * -635055347, this.field4268);
+			this.field4263 = new class348(this.field4266 * -635055347);
 		}
 
 	}
@@ -81,7 +71,7 @@ public final class class362 {
 		garbageValue = "-43"
 	)
 	boolean method6497() {
-		return this.field4266 != -1;
+		return this.field4266 * -635055347 != -1;
 	}
 
 	@ObfuscatedName("h")
@@ -91,7 +81,7 @@ public final class class362 {
 	)
 	public Object method6498(Object var1) {
 		synchronized(this) {
-			if (this.field4260 != -1L) {
+			if (this.field4260 * -4423586593673882757L != -1L) {
 				this.method6508();
 			}
 
@@ -112,7 +102,7 @@ public final class class362 {
 	)
 	public Object method6499(Object var1, Object var2) {
 		synchronized(this) {
-			if (this.field4260 != -1L) {
+			if (this.field4260 * -4423586593673882757L != -1L) {
 				this.method6508();
 			}
 
@@ -124,7 +114,7 @@ public final class class362 {
 				return var8;
 			} else {
 				class363 var5;
-				if (this.method6497() && this.field4261.size() == this.field4266) {
+				if (this.method6497() && this.field4261.size() == this.field4266 * -635055347) {
 					var5 = (class363)this.field4263.remove();
 					this.field4261.remove(var5.field4271);
 					this.field4264.remove(var5);
@@ -151,14 +141,14 @@ public final class class362 {
 			}
 		}
 
-		var1.field4270 = System.currentTimeMillis();
+		var1.field4270 = System.currentTimeMillis() * 1699411018873980445L;
 		if (this.method6497()) {
-			switch(this.field4265.field4258) {
+			switch(this.field4265.field4258 * 1324921489) {
 			case 0:
-				var1.field4273 = var1.field4270;
+				var1.field4273 = var1.field4270 * 220624431772655893L;
 				break;
 			case 1:
-				++var1.field4273;
+				var1.field4273 += -2576304177829429919L;
 			}
 
 			this.field4263.add(var1);
@@ -173,14 +163,14 @@ public final class class362 {
 		garbageValue = "294917768"
 	)
 	void method6508() {
-		if (-1L == this.field4260) {
+		if (-1L == this.field4260 * -4423586593673882757L) {
 			throw new IllegalStateException("");
 		} else {
-			long var1 = System.currentTimeMillis() - this.field4260;
+			long var1 = System.currentTimeMillis() - this.field4260 * -4423586593673882757L;
 
 			while (!this.field4264.isEmpty()) {
 				class363 var3 = (class363)this.field4264.peek();
-				if (var3.field4270 >= var1) {
+				if (var3.field4270 * 8385483307841793077L >= var1) {
 					return;
 				}
 

@@ -1,20 +1,13 @@
 package osrs;
 
-import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
 @ObfuscatedName("ei")
 public class class131 {
 	@ObfuscatedName("s")
-	@ObfuscatedGetter(
-		longValue = -3274018055934261563L
-	)
 	long field1550;
 	@ObfuscatedName("h")
-	@ObfuscatedGetter(
-		intValue = 587642307
-	)
 	int field1558;
 	@ObfuscatedName("w")
 	@ObfuscatedSignature(
@@ -26,7 +19,7 @@ public class class131 {
 		descriptor = "(Lqr;)V"
 	)
 	public class131(Buffer var1) {
-		this.field1558 = -1;
+		this.field1558 = 1626610965;
 		this.field1551 = new IterableNodeDeque();
 		this.method2821(var1);
 	}
@@ -37,8 +30,8 @@ public class class131 {
 		garbageValue = "7"
 	)
 	void method2821(Buffer var1) {
-		this.field1550 = var1.readLong();
-		this.field1558 = var1.readInt();
+		this.field1550 = var1.readLong() * -8584506895143090163L;
+		this.field1558 = var1.readInt() * -1626610965;
 
 		for (int var2 = var1.readUnsignedByte(); var2 != 0; var2 = var1.readUnsignedByte()) {
 			Object var3;
@@ -90,12 +83,12 @@ public class class131 {
 		garbageValue = "89"
 	)
 	public void method2822(ClanSettings var1) {
-		if (this.field1550 == var1.field1602 && this.field1558 == var1.field1603) {
+		if (-3274018055934261563L * this.field1550 == -6876764368805247545L * var1.field1602 && this.field1558 * 587642307 == var1.field1603 * -1040141595) {
 			for (class128 var2 = (class128)this.field1551.last(); var2 != null; var2 = (class128)this.field1551.previous()) {
 				var2.vmethod3084(var1);
 			}
 
-			++var1.field1603;
+			var1.field1603 += 1071692525;
 		} else {
 			throw new RuntimeException("");
 		}

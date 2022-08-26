@@ -28,7 +28,7 @@ public class UserComparator9 extends AbstractUserComparator {
 	)
 	@Export("compareBuddy")
 	int compareBuddy(Buddy var1, Buddy var2) {
-		if (Client.worldId == var1.world && var2.world == Client.worldId) {
+		if (Client.worldId * -1074720787 == var1.world * 1881839891 && Client.worldId * -1074720787 == var2.world * 1881839891) {
 			return this.reversed ? var1.getUsername().compareToTyped(var2.getUsername()) : var2.getUsername().compareToTyped(var1.getUsername());
 		} else {
 			return this.compareUser(var1, var2);
@@ -58,11 +58,11 @@ public class UserComparator9 extends AbstractUserComparator {
 		if (var0 == null) {
 			throw new IllegalStateException("popValueOfType() failure - null baseVarType");
 		} else {
-			switch(var0.field4657) {
+			switch(var0.field4657 * -432754423) {
 			case 0:
-				return Interpreter.Interpreter_intStack[--User.Interpreter_intStackSize];
+				return Interpreter.Interpreter_intStack[(User.Interpreter_intStackSize -= -312486675) * -313022235];
 			case 1:
-				return Interpreter.Interpreter_stringStack[--UserComparator8.Interpreter_stringStackSize];
+				return Interpreter.Interpreter_stringStack[(UserComparator8.Interpreter_stringStackSize -= 204829809) * 929025169];
 			default:
 				throw new IllegalStateException("popValueOfType() failure - unsupported type");
 			}
@@ -74,23 +74,22 @@ public class UserComparator9 extends AbstractUserComparator {
 		descriptor = "(Lct;IIII)V",
 		garbageValue = "1861235170"
 	)
-	@Export("addNpcToMenu")
-	static final void addNpcToMenu(NPC var0, int var1, int var2, int var3) {
+	static final void method2586(NPC var0, int var1, int var2, int var3) {
 		NPCComposition var4 = var0.definition;
-		if (Client.menuOptionsCount < 400) {
+		if (Client.menuOptionsCount * -2113868255 < 400) {
 			if (var4.transforms != null) {
 				var4 = var4.transform();
 			}
 
 			if (var4 != null) {
 				if (var4.isInteractable) {
-					if (!var4.isFollower || Client.followerIndex == var1) {
+					if (!var4.isFollower || Client.field659 * 138246387 == var1) {
 						String var5 = var0.method2314();
 						int var6;
 						int var9;
-						if (var4.combatLevel != 0 && var0.field1202 != 0) {
-							var6 = var0.field1202 != -1 ? var0.field1202 : var4.combatLevel;
-							var9 = ScriptFrame.localPlayer.combatLevel;
+						if (var4.combatLevel * -292859821 != 0 && var0.field1202 * -1123890181 != 0) {
+							var6 = var0.field1202 * -1123890181 != -1 ? var0.field1202 * -1123890181 : var4.combatLevel * -292859821;
+							var9 = class56.localPlayer.field1088 * 295884031;
 							int var10 = var9 - var6;
 							String var8;
 							if (var10 < -9) {
@@ -120,11 +119,11 @@ public class UserComparator9 extends AbstractUserComparator {
 							ChatChannel.insertMenuItemNoShift("Examine", Clock.colorStartTag(16776960) + var5, 1003, var1, var2, var3);
 						}
 
-						if (Client.isItemSelected == 1) {
-							ChatChannel.insertMenuItemNoShift("Use", Client.selectedItemName + " " + "->" + " " + Clock.colorStartTag(16776960) + var5, 7, var1, var2, var3);
+						if (Client.field483 * -1697567139 == 1) {
+							ChatChannel.insertMenuItemNoShift("Use", Client.field642 + " " + "->" + " " + Clock.colorStartTag(16776960) + var5, 7, var1, var2, var3);
 						} else if (Client.isSpellSelected) {
-							if ((class149.selectedSpellFlags & 2) == 2) {
-								ChatChannel.insertMenuItemNoShift(Client.selectedSpellActionName, Client.selectedSpellName + " " + "->" + " " + Clock.colorStartTag(16776960) + var5, 8, var1, var2, var3);
+							if ((class149.selectedSpellFlags * -1532835829 & 2) == 2) {
+								ChatChannel.insertMenuItemNoShift(Client.field647, Client.field489 + " " + "->" + " " + Clock.colorStartTag(16776960) + var5, 8, var1, var2, var3);
 							}
 						} else {
 							var6 = var4.isFollower && Client.followerOpsLowPriority ? 2000 : 0;
@@ -164,7 +163,7 @@ public class UserComparator9 extends AbstractUserComparator {
 									if (var7[var11] != null && var7[var11].equalsIgnoreCase("Attack")) {
 										short var12 = 0;
 										if (AttackOption.AttackOption_hidden != Client.npcAttackOption) {
-											if (Client.npcAttackOption == AttackOption.AttackOption_alwaysRightClick || AttackOption.AttackOption_dependsOnCombatLevels == Client.npcAttackOption && var4.combatLevel > ScriptFrame.localPlayer.combatLevel) {
+											if (Client.npcAttackOption == AttackOption.field1286 || AttackOption.field1283 == Client.npcAttackOption && var4.combatLevel * -292859821 > class56.localPlayer.field1088 * 295884031) {
 												var12 = 2000;
 											}
 

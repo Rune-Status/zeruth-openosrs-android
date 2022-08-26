@@ -1,7 +1,6 @@
 package osrs;
 
 import java.util.Iterator;
-import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
@@ -18,9 +17,6 @@ public class class428 extends class393 implements class251 {
 	)
 	final DemotingHashTable field4645;
 	@ObfuscatedName("v")
-	@ObfuscatedGetter(
-		intValue = 2130544563
-	)
 	final int field4646;
 
 	@ObfuscatedSignature(
@@ -30,7 +26,7 @@ public class class428 extends class393 implements class251 {
 		super(var1, var3, var4 != null ? var4.getGroupFileCount(var2) : 0);
 		this.field4645 = new DemotingHashTable(64);
 		this.field4644 = var4;
-		this.field4646 = var2;
+		this.field4646 = var2 * 61505403;
 	}
 
 	@ObfuscatedName("s")
@@ -56,7 +52,7 @@ public class class428 extends class393 implements class251 {
 		garbageValue = "-521852329"
 	)
 	class394 method7446(int var1) {
-		byte[] var2 = this.field4644.takeFile(this.field4646, var1);
+		byte[] var2 = this.field4644.takeFile(this.field4646 * 2130544563, var1);
 		class394 var3 = new class394(var1);
 		if (var2 != null) {
 			var3.method7031(new Buffer(var2));

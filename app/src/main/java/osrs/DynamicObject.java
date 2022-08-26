@@ -2,7 +2,6 @@ package osrs;
 
 import net.runelite.mapping.Export;
 import net.runelite.mapping.Implements;
-import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
@@ -10,39 +9,21 @@ import net.runelite.mapping.ObfuscatedSignature;
 @Implements("DynamicObject")
 public class DynamicObject extends Renderable {
 	@ObfuscatedName("s")
-	@ObfuscatedGetter(
-		intValue = -2094517607
-	)
 	@Export("id")
 	int id;
 	@ObfuscatedName("h")
-	@ObfuscatedGetter(
-		intValue = -140486865
-	)
 	@Export("type")
 	int type;
 	@ObfuscatedName("w")
-	@ObfuscatedGetter(
-		intValue = -1181845419
-	)
 	@Export("orientation")
 	int orientation;
 	@ObfuscatedName("v")
-	@ObfuscatedGetter(
-		intValue = -1335219741
-	)
 	@Export("plane")
 	int plane;
 	@ObfuscatedName("c")
-	@ObfuscatedGetter(
-		intValue = -1839332185
-	)
 	@Export("x")
 	int x;
 	@ObfuscatedName("q")
-	@ObfuscatedGetter(
-		intValue = 38712731
-	)
 	@Export("y")
 	int y;
 	@ObfuscatedName("i")
@@ -52,15 +33,9 @@ public class DynamicObject extends Renderable {
 	@Export("sequenceDefinition")
 	SequenceDefinition sequenceDefinition;
 	@ObfuscatedName("k")
-	@ObfuscatedGetter(
-		intValue = -1728628647
-	)
 	@Export("frame")
 	int frame;
 	@ObfuscatedName("o")
-	@ObfuscatedGetter(
-		intValue = -1660744645
-	)
 	@Export("cycleStart")
 	int cycleStart;
 
@@ -68,31 +43,31 @@ public class DynamicObject extends Renderable {
 		descriptor = "(IIIIIIIZLgq;)V"
 	)
 	DynamicObject(int var1, int var2, int var3, int var4, int var5, int var6, int var7, boolean var8, Renderable var9) {
-		this.id = var1;
-		this.type = var2;
-		this.orientation = var3;
-		this.plane = var4;
-		this.x = var5;
-		this.y = var6;
+		this.id = var1 * 48497065;
+		this.type = var2 * 1613647823;
+		this.orientation = var3 * 1003144445;
+		this.plane = var4 * -431332405;
+		this.x = var5 * -279485673;
+		this.y = var6 * 987801747;
 		if (var7 != -1) {
 			this.sequenceDefinition = ByteArrayPool.SequenceDefinition_get(var7);
 			this.frame = 0;
-			this.cycleStart = Client.cycle - 1;
-			if (this.sequenceDefinition.field2181 == 0 && var9 != null && var9 instanceof DynamicObject) {
+			this.cycleStart = Client.cycle * 1845843415 - 942664947;
+			if (this.sequenceDefinition.field2181 * -1618338471 == 0 && var9 != null && var9 instanceof DynamicObject) {
 				DynamicObject var10 = (DynamicObject)var9;
 				if (this.sequenceDefinition == var10.sequenceDefinition) {
-					this.frame = var10.frame;
-					this.cycleStart = var10.cycleStart;
+					this.frame = var10.frame * 1;
+					this.cycleStart = var10.cycleStart * 1;
 					return;
 				}
 			}
 
-			if (var8 && this.sequenceDefinition.frameCount != -1) {
+			if (var8 && this.sequenceDefinition.frameCount * 383344731 != -1) {
 				if (!this.sequenceDefinition.isCachedModelIdSet()) {
-					this.frame = (int)(Math.random() * (double)this.sequenceDefinition.frameIds.length);
-					this.cycleStart -= (int)(Math.random() * (double)this.sequenceDefinition.frameLengths[this.frame]);
+					this.frame = (int)(Math.random() * (double)this.sequenceDefinition.frameIds.length) * -1843097623;
+					this.cycleStart -= (int)(Math.random() * (double)this.sequenceDefinition.frameLengths[this.frame * -1728628647]) * 942664947;
 				} else {
-					this.frame = (int)(Math.random() * (double)this.sequenceDefinition.method3729());
+					this.frame = (int)(Math.random() * (double)this.sequenceDefinition.method3729()) * -1843097623;
 				}
 			}
 		}
@@ -108,18 +83,18 @@ public class DynamicObject extends Renderable {
 	protected final Model getModel() {
 		int var2;
 		if (this.sequenceDefinition != null) {
-			int var1 = Client.cycle - this.cycleStart;
-			if (var1 > 100 && this.sequenceDefinition.frameCount > 0) {
+			int var1 = Client.cycle * 2009455757 - this.cycleStart * -1660744645;
+			if (var1 > 100 && this.sequenceDefinition.frameCount * 383344731 > 0) {
 				var1 = 100;
 			}
 
 			if (this.sequenceDefinition.isCachedModelIdSet()) {
 				var2 = this.sequenceDefinition.method3729();
-				this.frame += var1;
+				this.frame += -1843097623 * var1;
 				var1 = 0;
-				if (this.frame >= var2) {
-					this.frame = var2 - this.sequenceDefinition.frameCount;
-					if (this.frame < 0 || this.frame > var2) {
+				if (this.frame * -1728628647 >= var2) {
+					this.frame = (var2 - this.sequenceDefinition.frameCount * 383344731) * -1843097623;
+					if (this.frame * -1728628647 < 0 || this.frame * -1728628647 > var2) {
 						this.sequenceDefinition = null;
 					}
 				}
@@ -127,25 +102,25 @@ public class DynamicObject extends Renderable {
 				label80: {
 					do {
 						do {
-							if (var1 <= this.sequenceDefinition.frameLengths[this.frame]) {
+							if (var1 <= this.sequenceDefinition.frameLengths[this.frame * -1728628647]) {
 								break label80;
 							}
 
-							var1 -= this.sequenceDefinition.frameLengths[this.frame];
-							++this.frame;
-						} while(this.frame < this.sequenceDefinition.frameIds.length);
+							var1 -= this.sequenceDefinition.frameLengths[this.frame * -1728628647];
+							this.frame += -1843097623;
+						} while(this.frame * -1728628647 < this.sequenceDefinition.frameIds.length);
 
-						this.frame -= this.sequenceDefinition.frameCount;
-					} while(this.frame >= 0 && this.frame < this.sequenceDefinition.frameIds.length);
+						this.frame -= this.sequenceDefinition.frameCount * -1418229805;
+					} while(this.frame * -1728628647 >= 0 && this.frame * -1728628647 < this.sequenceDefinition.frameIds.length);
 
 					this.sequenceDefinition = null;
 				}
 			}
 
-			this.cycleStart = Client.cycle - var1;
+			this.cycleStart = (Client.cycle * 2009455757 - var1) * 942664947;
 		}
 
-		ObjectComposition var12 = FileSystem.getObjectDefinition(this.id);
+		ObjectComposition var12 = FileSystem.getObjectDefinition(this.id * -2094517607);
 		if (var12.transforms != null) {
 			var12 = var12.transform();
 		}
@@ -154,23 +129,23 @@ public class DynamicObject extends Renderable {
 			return null;
 		} else {
 			int var3;
-			if (this.orientation != 1 && this.orientation != 3) {
-				var2 = var12.sizeX;
-				var3 = var12.sizeY;
+			if (this.orientation * -1181845419 != 1 && this.orientation * -1181845419 != 3) {
+				var2 = var12.sizeX * 6263545;
+				var3 = var12.sizeY * -1277582079;
 			} else {
-				var2 = var12.sizeY;
-				var3 = var12.sizeX;
+				var2 = var12.sizeY * -1277582079;
+				var3 = var12.sizeX * 6263545;
 			}
 
-			int var4 = (var2 >> 1) + this.x;
-			int var5 = (var2 + 1 >> 1) + this.x;
-			int var6 = (var3 >> 1) + this.y;
-			int var7 = (var3 + 1 >> 1) + this.y;
-			int[][] var8 = Tiles.Tiles_heights[this.plane];
+			int var4 = this.x * -1839332185 + (var2 >> 1);
+			int var5 = this.x * -1839332185 + (var2 + 1 >> 1);
+			int var6 = this.y * 38712731 + (var3 >> 1);
+			int var7 = this.y * 38712731 + (var3 + 1 >> 1);
+			int[][] var8 = Tiles.Tiles_heights[this.plane * -1335219741];
 			int var9 = var8[var4][var7] + var8[var4][var6] + var8[var5][var6] + var8[var5][var7] >> 2;
-			int var10 = (this.x << 7) + (var2 << 6);
-			int var11 = (this.y << 7) + (var3 << 6);
-			return var12.getModelDynamic(this.type, this.orientation, var8, var10, var9, var11, this.sequenceDefinition, this.frame);
+			int var10 = (this.x * -1839332185 << 7) + (var2 << 6);
+			int var11 = (this.y * 38712731 << 7) + (var3 << 6);
+			return var12.getModelDynamic(this.type * -140486865, this.orientation * -1181845419, var8, var10, var9, var11, this.sequenceDefinition, this.frame * -1728628647);
 		}
 	}
 
@@ -228,12 +203,12 @@ public class DynamicObject extends Renderable {
 			SceneTilePaint.runScriptEvent(var5);
 		}
 
-		Client.selectedSpellItemId = var3;
+		Client.selectedSpellItemId = var3 * 561514189;
 		Client.isSpellSelected = true;
-		class282.selectedSpellWidget = var0;
-		Client.selectedSpellChildIndex = var1;
-		class149.selectedSpellFlags = var2;
-		class125.invalidateWidget(var4);
+		class282.selectedSpellWidget = var0 * 771291271;
+		Client.selectedSpellChildIndex = var1 * -1509823743;
+		class149.selectedSpellFlags = var2 * 353862563;
+		class125.method2770(var4);
 	}
 
 	@ObfuscatedName("km")
@@ -244,7 +219,7 @@ public class DynamicObject extends Renderable {
 	@Export("clanKickUser")
 	static final void clanKickUser(String var0) {
 		if (class19.friendsChat != null) {
-			PacketBufferNode var1 = DevicePcmPlayerProvider.getPacketBufferNode(ClientPacket.field3017, Client.packetWriter.isaacCipher);
+			PacketBufferNode var1 = DevicePcmPlayerProvider.method354(ClientPacket.field3017, Client.packetWriter.field1338);
 			var1.packetBuffer.writeByte(class309.stringCp1252NullTerminatedByteSize(var0));
 			var1.packetBuffer.writeStringCp1252NullTerminated(var0);
 			Client.packetWriter.addNode(var1);
@@ -262,7 +237,7 @@ public class DynamicObject extends Renderable {
 			ClanChannelMember var3 = (ClanChannelMember)var2.members.get(var1);
 			if (var3.rank == -1) {
 				String var4 = var3.username.getName();
-				PacketBufferNode var5 = DevicePcmPlayerProvider.getPacketBufferNode(ClientPacket.field2984, Client.packetWriter.isaacCipher);
+				PacketBufferNode var5 = DevicePcmPlayerProvider.method354(ClientPacket.field2984, Client.packetWriter.field1338);
 				var5.packetBuffer.writeByte(3 + class309.stringCp1252NullTerminatedByteSize(var4));
 				var5.packetBuffer.writeByte(var0);
 				var5.packetBuffer.writeShort(var1);

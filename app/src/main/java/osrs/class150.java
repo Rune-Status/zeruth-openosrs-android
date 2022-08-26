@@ -1,27 +1,16 @@
 package osrs;
 
 import net.runelite.mapping.Export;
-import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
 @ObfuscatedName("ed")
 public class class150 extends class128 {
 	@ObfuscatedName("m")
-	@ObfuscatedGetter(
-		intValue = 182134033
-	)
 	static int field1677;
 	@ObfuscatedName("ix")
-	@ObfuscatedGetter(
-		intValue = -241255257
-	)
-	@Export("selectedItemWidget")
-	static int selectedItemWidget;
+	static int field1681;
 	@ObfuscatedName("s")
-	@ObfuscatedGetter(
-		longValue = -4544622703293666003L
-	)
 	long field1685;
 	@ObfuscatedName("h")
 	String field1678;
@@ -36,7 +25,7 @@ public class class150 extends class128 {
 	)
 	class150(class131 var1) {
 		this.this$0 = var1;
-		this.field1685 = -1L;
+		this.field1685 = 4756928115737859419L;
 		this.field1678 = null;
 	}
 
@@ -47,8 +36,8 @@ public class class150 extends class128 {
 	)
 	void vmethod3087(Buffer var1) {
 		if (var1.readUnsignedByte() != 255) {
-			--var1.offset;
-			this.field1685 = var1.readLong();
+			var1.offset -= 1090888991;
+			this.field1685 = var1.readLong() * -4756928115737859419L;
 		}
 
 		this.field1678 = var1.readStringCp1252NullTerminatedOrNull();
@@ -60,7 +49,7 @@ public class class150 extends class128 {
 		garbageValue = "0"
 	)
 	void vmethod3084(ClanSettings var1) {
-		var1.method2908(this.field1685, this.field1678);
+		var1.method2908(this.field1685 * -4544622703293666003L, this.field1678);
 	}
 
 	@ObfuscatedName("q")
@@ -91,7 +80,7 @@ public class class150 extends class128 {
 				TaskHandler.regionLandArchives[var1] = class120.archive9.takeFile(Archive.regionMapArchiveIds[var1], 0);
 				if (TaskHandler.regionLandArchives[var1] == null) {
 					var0 = false;
-					++Client.field670;
+					Client.field670 += 1345309131;
 				}
 			}
 
@@ -99,13 +88,13 @@ public class class150 extends class128 {
 				Varcs.regionMapArchives[var1] = class120.archive9.takeFileEncrypted(NetFileRequest.regionLandArchiveIds[var1], 0, class220.xteaKeys[var1]);
 				if (Varcs.regionMapArchives[var1] == null) {
 					var0 = false;
-					++Client.field670;
+					Client.field670 += 1345309131;
 				}
 			}
 		}
 
 		if (!var0) {
-			Client.field539 = 1;
+			Client.field539 = 1768033067;
 		} else {
 			Client.field644 = 0;
 			var0 = true;
@@ -115,8 +104,8 @@ public class class150 extends class128 {
 			for (var1 = 0; var1 < TaskHandler.regionLandArchives.length; ++var1) {
 				byte[] var15 = Varcs.regionMapArchives[var1];
 				if (var15 != null) {
-					var3 = (class394.regions[var1] >> 8) * 64 - Decimator.baseX * 64;
-					var4 = (class394.regions[var1] & 255) * 64 - class7.baseY * 64;
+					var3 = (class394.regions[var1] >> 8) * 64 - Decimator.field404 * 620670661;
+					var4 = (class394.regions[var1] & 255) * 64 - class7.field30 * 542116271;
 					if (Client.isInInstance) {
 						var3 = 10;
 						var4 = 10;
@@ -127,9 +116,9 @@ public class class150 extends class128 {
 			}
 
 			if (!var0) {
-				Client.field539 = 2;
+				Client.field539 = -758901162;
 			} else {
-				if (Client.field539 != 0) {
+				if (Client.field539 * 1284791171 != 0) {
 					class20.drawLoadingMessage("Loading - please wait." + "<br>" + " (" + 100 + "%" + ")", true);
 				}
 
@@ -158,20 +147,20 @@ public class class150 extends class128 {
 				if (!Client.isInInstance) {
 					byte[] var14;
 					for (var2 = 0; var2 < var1; ++var2) {
-						var3 = (class394.regions[var2] >> 8) * 64 - Decimator.baseX * 64;
-						var4 = (class394.regions[var2] & 255) * 64 - class7.baseY * 64;
+						var3 = (class394.regions[var2] >> 8) * 64 - Decimator.field404 * 620670661;
+						var4 = (class394.regions[var2] & 255) * 64 - class7.field30 * 542116271;
 						var14 = TaskHandler.regionLandArchives[var2];
 						if (var14 != null) {
 							class83.playPcmPlayers();
-							Script.method1948(var14, var3, var4, class352.field4196 * 8 - 48, class20.field105 * 8 - 48, Client.collisionMaps);
+							Script.method1948(var14, var3, var4, class352.field4196 * 1993654648 - 48, class20.field105 * 2093422072 - 48, Client.collisionMaps);
 						}
 					}
 
 					for (var2 = 0; var2 < var1; ++var2) {
-						var3 = (class394.regions[var2] >> 8) * 64 - Decimator.baseX * 64;
-						var4 = (class394.regions[var2] & 255) * 64 - class7.baseY * 64;
+						var3 = (class394.regions[var2] >> 8) * 64 - Decimator.field404 * 620670661;
+						var4 = (class394.regions[var2] & 255) * 64 - class7.field30 * 542116271;
 						var14 = TaskHandler.regionLandArchives[var2];
-						if (var14 == null && class20.field105 < 800) {
+						if (var14 == null && class20.field105 * 798548671 < 800) {
 							class83.playPcmPlayers();
 							class125.method2776(var3, var4, 64, 64);
 						}
@@ -182,8 +171,8 @@ public class class150 extends class128 {
 					for (var2 = 0; var2 < var1; ++var2) {
 						byte[] var13 = Varcs.regionMapArchives[var2];
 						if (var13 != null) {
-							var4 = (class394.regions[var2] >> 8) * 64 - Decimator.baseX * 64;
-							var5 = (class394.regions[var2] & 255) * 64 - class7.baseY * 64;
+							var4 = (class394.regions[var2] >> 8) * 64 - Decimator.field404 * 620670661;
+							var5 = (class394.regions[var2] & 255) * 64 - class7.field30 * 542116271;
 							class83.playPcmPlayers();
 							class12.method157(var13, var4, var5, class12.scene, Client.collisionMaps);
 						}
@@ -267,24 +256,24 @@ public class class150 extends class128 {
 				class83.playPcmPlayers();
 				User.method6633(class12.scene, Client.collisionMaps);
 				class6.method45(true);
-				var2 = Tiles.Tiles_minPlane;
-				if (var2 > class268.Client_plane) {
-					var2 = class268.Client_plane;
+				var2 = Tiles.Tiles_minPlane * -625386397;
+				if (var2 > class268.Client_plane * 1083786667) {
+					var2 = class268.Client_plane * 1083786667;
 				}
 
-				if (var2 < class268.Client_plane - 1) {
-					var2 = class268.Client_plane - 1;
+				if (var2 < class268.Client_plane * 1083786667 - 1) {
+					var2 = class268.Client_plane * 1083786667 - 1;
 				}
 
 				if (Client.isLowDetail) {
-					class12.scene.init(Tiles.Tiles_minPlane);
+					class12.scene.init(Tiles.Tiles_minPlane * -625386397);
 				} else {
 					class12.scene.init(0);
 				}
 
 				for (var3 = 0; var3 < 104; ++var3) {
 					for (var4 = 0; var4 < 104; ++var4) {
-						class360.updateItemPile(var3, var4);
+						class360.method6483(var3, var4);
 					}
 				}
 
@@ -293,16 +282,16 @@ public class class150 extends class128 {
 				ObjectComposition.ObjectDefinition_cachedModelData.clear();
 				PacketBufferNode var17;
 				if (AbstractByteArrayCopier.client.hasFrame()) {
-					var17 = DevicePcmPlayerProvider.getPacketBufferNode(ClientPacket.field3012, Client.packetWriter.isaacCipher);
+					var17 = DevicePcmPlayerProvider.method354(ClientPacket.field3012, Client.packetWriter.field1338);
 					var17.packetBuffer.writeInt(1057001181);
 					Client.packetWriter.addNode(var17);
 				}
 
 				if (!Client.isInInstance) {
-					var3 = (class352.field4196 - 6) / 8;
-					var4 = (class352.field4196 + 6) / 8;
-					var5 = (class20.field105 - 6) / 8;
-					var6 = (class20.field105 + 6) / 8;
+					var3 = (class352.field4196 * 1322948655 - 6) / 8;
+					var4 = (class352.field4196 * 1322948655 + 6) / 8;
+					var5 = (class20.field105 * 798548671 - 6) / 8;
+					var6 = (class20.field105 * 798548671 + 6) / 8;
 
 					for (var7 = var3 - 1; var7 <= var4 + 1; ++var7) {
 						for (var8 = var5 - 1; var8 <= var6 + 1; ++var8) {
@@ -314,10 +303,10 @@ public class class150 extends class128 {
 					}
 				}
 
-				class4.updateGameState(30);
+				class4.method22(30);
 				class83.playPcmPlayers();
 				class144.method3011();
-				var17 = DevicePcmPlayerProvider.getPacketBufferNode(ClientPacket.field2948, Client.packetWriter.isaacCipher);
+				var17 = DevicePcmPlayerProvider.method354(ClientPacket.field2948, Client.packetWriter.field1338);
 				Client.packetWriter.addNode(var17);
 				class82.method2078();
 			}

@@ -1,6 +1,5 @@
 package osrs;
 
-import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
@@ -12,14 +11,8 @@ public final class class387 {
 	)
 	static class387[] field4397;
 	@ObfuscatedName("h")
-	@ObfuscatedGetter(
-		intValue = 880421731
-	)
 	static int field4391;
 	@ObfuscatedName("v")
-	@ObfuscatedGetter(
-		intValue = 360696249
-	)
 	static int field4392;
 	@ObfuscatedName("c")
 	float field4393;
@@ -32,7 +25,7 @@ public final class class387 {
 
 	static {
 		field4397 = new class387[0];
-		field4391 = 100;
+		field4391 = -689695412;
 		field4397 = new class387[100];
 		field4392 = 0;
 		new class387();
@@ -49,8 +42,8 @@ public final class class387 {
 	)
 	public void method6881() {
 		synchronized(field4397) {
-			if (field4392 < field4391 - 1) {
-				field4397[++field4392 - 1] = this;
+			if (field4392 * 360696249 < field4391 * 880421731 - 1) {
+				field4397[(field4392 += 1192979593) * 360696249 - 1] = this;
 			}
 
 		}

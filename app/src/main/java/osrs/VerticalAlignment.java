@@ -2,13 +2,12 @@ package osrs;
 
 import net.runelite.mapping.Export;
 import net.runelite.mapping.Implements;
-import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
 @ObfuscatedName("fl")
 @Implements("VerticalAlignment")
-public enum VerticalAlignment implements MouseWheel {
+public enum VerticalAlignment implements class328 {
 	@ObfuscatedName("s")
 	@ObfuscatedSignature(
 		descriptor = "Lfl;"
@@ -30,24 +29,17 @@ public enum VerticalAlignment implements MouseWheel {
 	@ObfuscatedSignature(
 		descriptor = "Lqe;"
 	)
-	@Export("options_buttons_2Sprite")
-	static IndexedSprite options_buttons_2Sprite;
+	static IndexedSprite field1952;
 	@ObfuscatedName("v")
-	@ObfuscatedGetter(
-		intValue = -2090139611
-	)
 	@Export("value")
 	public final int value;
 	@ObfuscatedName("c")
-	@ObfuscatedGetter(
-		intValue = 1225371451
-	)
 	@Export("id")
 	final int id;
 
 	VerticalAlignment(int var3, int var4) {
-		this.value = var3;
-		this.id = var4;
+		this.value = var3 * -823583827;
+		this.id = var4 * -431533581;
 	}
 
 	@ObfuscatedName("h")
@@ -57,6 +49,6 @@ public enum VerticalAlignment implements MouseWheel {
 	)
 	@Export("rsOrdinal")
 	public int rsOrdinal() {
-		return this.id;
+		return this.id * 1225371451;
 	}
 }

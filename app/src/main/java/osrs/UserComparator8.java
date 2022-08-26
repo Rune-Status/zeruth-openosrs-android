@@ -2,7 +2,6 @@ package osrs;
 
 import net.runelite.mapping.Export;
 import net.runelite.mapping.Implements;
-import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
@@ -10,9 +9,6 @@ import net.runelite.mapping.ObfuscatedSignature;
 @Implements("UserComparator8")
 public class UserComparator8 extends AbstractUserComparator {
 	@ObfuscatedName("d")
-	@ObfuscatedGetter(
-		intValue = 929025169
-	)
 	@Export("Interpreter_stringStackSize")
 	static int Interpreter_stringStackSize;
 	@ObfuscatedName("gz")
@@ -32,11 +28,11 @@ public class UserComparator8 extends AbstractUserComparator {
 	)
 	@Export("compareBuddy")
 	int compareBuddy(Buddy var1, Buddy var2) {
-		if (Client.worldId == var1.world) {
-			if (var2.world != Client.worldId) {
+		if (Client.worldId * -1074720787 == var1.world * 1881839891) {
+			if (Client.worldId * -1074720787 != var2.world * 1881839891) {
 				return this.reversed ? -1 : 1;
 			}
-		} else if (var2.world == Client.worldId) {
+		} else if (Client.worldId * -1074720787 == var2.world * 1881839891) {
 			return this.reversed ? 1 : -1;
 		}
 
@@ -112,40 +108,40 @@ public class UserComparator8 extends AbstractUserComparator {
 	static int method2553(int var0, Script var1, boolean var2) {
 		Widget var3;
 		if (var0 == 2700) {
-			var3 = HitSplatDefinition.getWidget(Interpreter.Interpreter_intStack[--User.Interpreter_intStackSize]);
-			Interpreter.Interpreter_intStack[++User.Interpreter_intStackSize - 1] = var3.itemId;
+			var3 = HitSplatDefinition.getWidget(Interpreter.Interpreter_intStack[(User.Interpreter_intStackSize -= -312486675) * -313022235]);
+			Interpreter.Interpreter_intStack[(User.Interpreter_intStackSize += -312486675) * -313022235 - 1] = var3.field3374 * 1646409911;
 			return 1;
 		} else if (var0 == 2701) {
-			var3 = HitSplatDefinition.getWidget(Interpreter.Interpreter_intStack[--User.Interpreter_intStackSize]);
-			if (var3.itemId != -1) {
-				Interpreter.Interpreter_intStack[++User.Interpreter_intStackSize - 1] = var3.itemQuantity;
+			var3 = HitSplatDefinition.getWidget(Interpreter.Interpreter_intStack[(User.Interpreter_intStackSize -= -312486675) * -313022235]);
+			if (var3.field3374 * 1646409911 != -1) {
+				Interpreter.Interpreter_intStack[(User.Interpreter_intStackSize += -312486675) * -313022235 - 1] = var3.field3394 * 948778825;
 			} else {
-				Interpreter.Interpreter_intStack[++User.Interpreter_intStackSize - 1] = 0;
+				Interpreter.Interpreter_intStack[(User.Interpreter_intStackSize += -312486675) * -313022235 - 1] = 0;
 			}
 
 			return 1;
 		} else if (var0 == 2702) {
-			int var5 = Interpreter.Interpreter_intStack[--User.Interpreter_intStackSize];
+			int var5 = Interpreter.Interpreter_intStack[(User.Interpreter_intStackSize -= -312486675) * -313022235];
 			InterfaceParent var4 = (InterfaceParent)Client.interfaceParents.get((long)var5);
 			if (var4 != null) {
-				Interpreter.Interpreter_intStack[++User.Interpreter_intStackSize - 1] = 1;
+				Interpreter.Interpreter_intStack[(User.Interpreter_intStackSize += -312486675) * -313022235 - 1] = 1;
 			} else {
-				Interpreter.Interpreter_intStack[++User.Interpreter_intStackSize - 1] = 0;
+				Interpreter.Interpreter_intStack[(User.Interpreter_intStackSize += -312486675) * -313022235 - 1] = 0;
 			}
 
 			return 1;
 		} else if (var0 == 2706) {
-			Interpreter.Interpreter_intStack[++User.Interpreter_intStackSize - 1] = Client.rootInterface;
+			Interpreter.Interpreter_intStack[(User.Interpreter_intStackSize += -312486675) * -313022235 - 1] = Client.field649 * 1440668979;
 			return 1;
 		} else if (var0 == 2707) {
-			var3 = HitSplatDefinition.getWidget(Interpreter.Interpreter_intStack[--User.Interpreter_intStackSize]);
-			Interpreter.Interpreter_intStack[++User.Interpreter_intStackSize - 1] = var3.method5562() ? 1 : 0;
+			var3 = HitSplatDefinition.getWidget(Interpreter.Interpreter_intStack[(User.Interpreter_intStackSize -= -312486675) * -313022235]);
+			Interpreter.Interpreter_intStack[(User.Interpreter_intStackSize += -312486675) * -313022235 - 1] = var3.method5562() ? 1 : 0;
 			return 1;
 		} else if (var0 == 2708) {
-			var3 = HitSplatDefinition.getWidget(Interpreter.Interpreter_intStack[--User.Interpreter_intStackSize]);
+			var3 = HitSplatDefinition.getWidget(Interpreter.Interpreter_intStack[(User.Interpreter_intStackSize -= -312486675) * -313022235]);
 			return class154.method3103(var3);
 		} else if (var0 == 2709) {
-			var3 = HitSplatDefinition.getWidget(Interpreter.Interpreter_intStack[--User.Interpreter_intStackSize]);
+			var3 = HitSplatDefinition.getWidget(Interpreter.Interpreter_intStack[(User.Interpreter_intStackSize -= -312486675) * -313022235]);
 			return AttackOption.method2360(var3);
 		} else {
 			return 2;
@@ -168,17 +164,17 @@ public class UserComparator8 extends AbstractUserComparator {
 		}
 
 		System.gc();
-		class273.musicPlayerStatus = 1;
+		class273.musicPlayerStatus = 168497391;
 		NetFileRequest.musicTrackArchive = null;
-		UrlRequester.musicTrackGroupId = -1;
-		SceneTilePaint.musicTrackFileId = -1;
+		UrlRequester.musicTrackGroupId = 1733946155;
+		SceneTilePaint.musicTrackFileId = 2021054053;
 		class28.musicTrackVolume = 0;
 		class273.musicTrackBoolean = false;
-		class160.pcmSampleLength = 2;
-		Client.currentTrackGroupId = -1;
+		class160.pcmSampleLength = -2074556818;
+		Client.currentTrackGroupId = 203351755;
 		Client.playingJingle = false;
 		class83.method2085();
-		class4.updateGameState(10);
+		class4.method22(10);
 	}
 
 	@ObfuscatedName("ic")
@@ -201,7 +197,7 @@ public class UserComparator8 extends AbstractUserComparator {
 			if (var1 >= 0 && var1 < Client.currentClanChannels[var0].method3046()) {
 				ClanChannelMember var2 = (ClanChannelMember)Client.currentClanChannels[var0].members.get(var1);
 				if (var2.rank == -1) {
-					PacketBufferNode var3 = DevicePcmPlayerProvider.getPacketBufferNode(ClientPacket.field2947, Client.packetWriter.isaacCipher);
+					PacketBufferNode var3 = DevicePcmPlayerProvider.method354(ClientPacket.field2947, Client.packetWriter.field1338);
 					var3.packetBuffer.writeByte(3 + class309.stringCp1252NullTerminatedByteSize(var2.username.getName()));
 					var3.packetBuffer.writeByte(var0);
 					var3.packetBuffer.writeShort(var1);

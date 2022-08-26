@@ -1,7 +1,6 @@
 package osrs;
 
 import net.runelite.mapping.Export;
-import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
@@ -11,12 +10,8 @@ public class class113 {
 	@ObfuscatedSignature(
 		descriptor = "Lkn;"
 	)
-	@Export("mousedOverWidgetIf1")
-	static Widget mousedOverWidgetIf1;
+	static Widget field1405;
 	@ObfuscatedName("s")
-	@ObfuscatedGetter(
-		intValue = 615485545
-	)
 	int field1400;
 	@ObfuscatedName("h")
 	float field1399;
@@ -47,7 +42,7 @@ public class class113 {
 		garbageValue = "439402435"
 	)
 	void method2621(Buffer var1, int var2) {
-		this.field1400 = var1.readShort();
+		this.field1400 = var1.readShort() * 149356505;
 		this.field1399 = var1.method7824();
 		this.field1403 = var1.method7824();
 		this.field1401 = var1.method7824();

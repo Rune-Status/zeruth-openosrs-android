@@ -3,7 +3,6 @@ package osrs;
 import java.util.Comparator;
 import net.runelite.mapping.Export;
 import net.runelite.mapping.Implements;
-import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
@@ -17,11 +16,7 @@ public abstract class AbstractUserComparator implements Comparator {
 	@Export("cacheParentPaths")
 	static String[] cacheParentPaths;
 	@ObfuscatedName("ja")
-	@ObfuscatedGetter(
-		intValue = 1435916161
-	)
-	@Export("oculusOrbFocalPointY")
-	static int oculusOrbFocalPointY;
+	static int field4308;
 	@ObfuscatedName("h")
 	@Export("nextComparator")
 	Comparator nextComparator;
@@ -67,7 +62,7 @@ public abstract class AbstractUserComparator implements Comparator {
 		byte[] var3 = null;
 		synchronized(ArchiveDiskActionHandler.ArchiveDiskActionHandler_requestQueue) {
 			for (ArchiveDiskAction var5 = (ArchiveDiskAction)ArchiveDiskActionHandler.ArchiveDiskActionHandler_requestQueue.last(); var5 != null; var5 = (ArchiveDiskAction)ArchiveDiskActionHandler.ArchiveDiskActionHandler_requestQueue.previous()) {
-				if ((long)var0 == var5.key && var1 == var5.archiveDisk && var5.type == 0) {
+				if ((long)var0 == var5.key && var1 == var5.archiveDisk && var5.type * -1360611527 == 0) {
 					var3 = var5.data;
 					break;
 				}

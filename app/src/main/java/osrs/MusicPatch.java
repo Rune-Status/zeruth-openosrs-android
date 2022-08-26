@@ -2,7 +2,6 @@ package osrs;
 
 import net.runelite.mapping.Export;
 import net.runelite.mapping.Implements;
-import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
@@ -10,9 +9,6 @@ import net.runelite.mapping.ObfuscatedSignature;
 @Implements("MusicPatch")
 public class MusicPatch extends Node {
 	@ObfuscatedName("s")
-	@ObfuscatedGetter(
-		intValue = -1613285659
-	)
 	int field3248;
 	@ObfuscatedName("h")
 	@ObfuscatedSignature(
@@ -47,7 +43,7 @@ public class MusicPatch extends Node {
 		Buffer var2 = new Buffer(var1);
 
 		int var3;
-		for (var3 = 0; var2.array[var3 + var2.offset] != 0; ++var3) {
+		for (var3 = 0; var2.array[var2.offset * 1795921631 + var3] != 0; ++var3) {
 		}
 
 		byte[] var4 = new byte[var3];
@@ -57,13 +53,13 @@ public class MusicPatch extends Node {
 			var4[var5] = var2.readByte();
 		}
 
-		++var2.offset;
+		var2.offset += 1090888991;
 		++var3;
-		var5 = var2.offset;
-		var2.offset += var3;
+		var5 = var2.offset * 1795921631;
+		var2.offset += 1090888991 * var3;
 
 		int var6;
-		for (var6 = 0; var2.array[var6 + var2.offset] != 0; ++var6) {
+		for (var6 = 0; var2.array[var2.offset * 1795921631 + var6] != 0; ++var6) {
 		}
 
 		byte[] var7 = new byte[var6];
@@ -73,13 +69,13 @@ public class MusicPatch extends Node {
 			var7[var8] = var2.readByte();
 		}
 
-		++var2.offset;
+		var2.offset += 1090888991;
 		++var6;
-		var8 = var2.offset;
-		var2.offset += var6;
+		var8 = var2.offset * 1795921631;
+		var2.offset += var6 * 1090888991;
 
 		int var9;
-		for (var9 = 0; var2.array[var9 + var2.offset] != 0; ++var9) {
+		for (var9 = 0; var2.array[var2.offset * 1795921631 + var9] != 0; ++var9) {
 		}
 
 		byte[] var10 = new byte[var9];
@@ -88,7 +84,7 @@ public class MusicPatch extends Node {
 			var10[var11] = var2.readByte();
 		}
 
-		++var2.offset;
+		var2.offset += 1090888991;
 		++var9;
 		byte[] var38 = new byte[var9];
 		int var12;
@@ -139,7 +135,7 @@ public class MusicPatch extends Node {
 		byte[] var16 = var14 > 0 ? new byte[var14 * 2] : null;
 
 		int var17;
-		for (var17 = 0; var2.array[var17 + var2.offset] != 0; ++var17) {
+		for (var17 = 0; var2.array[var2.offset * 1795921631 + var17] != 0; ++var17) {
 		}
 
 		byte[] var18 = new byte[var17];
@@ -149,7 +145,7 @@ public class MusicPatch extends Node {
 			var18[var19] = var2.readByte();
 		}
 
-		++var2.offset;
+		var2.offset += 1090888991;
 		++var17;
 		var19 = 0;
 
@@ -276,7 +272,7 @@ public class MusicPatch extends Node {
 			--var20;
 		}
 
-		this.field3248 = var2.readUnsignedByte() + 1;
+		this.field3248 = (var2.readUnsignedByte() + 1) * 733517549;
 
 		int var29;
 		MusicPatchNode2 var41;
@@ -448,39 +444,39 @@ public class MusicPatch extends Node {
 		}
 
 		for (var27 = 0; var27 < var12; ++var27) {
-			var39[var27].field3190 = var2.readUnsignedByte();
+			var39[var27].field3190 = var2.readUnsignedByte() * -273085373;
 		}
 
 		for (var27 = 0; var27 < var12; ++var27) {
 			var41 = var39[var27];
 			if (var41.field3189 != null) {
-				var41.field3191 = var2.readUnsignedByte();
+				var41.field3191 = var2.readUnsignedByte() * 1088779159;
 			}
 
 			if (var41.field3195 != null) {
-				var41.field3192 = var2.readUnsignedByte();
+				var41.field3192 = var2.readUnsignedByte() * -1358135165;
 			}
 
-			if (var41.field3190 > 0) {
-				var41.field3188 = var2.readUnsignedByte();
+			if (var41.field3190 * -1591041941 > 0) {
+				var41.field3188 = var2.readUnsignedByte() * 712944441;
 			}
 		}
 
 		for (var27 = 0; var27 < var12; ++var27) {
-			var39[var27].field3193 = var2.readUnsignedByte();
-		}
-
-		for (var27 = 0; var27 < var12; ++var27) {
-			var41 = var39[var27];
-			if (var41.field3193 > 0) {
-				var41.field3194 = var2.readUnsignedByte();
-			}
+			var39[var27].field3193 = var2.readUnsignedByte() * -1670451227;
 		}
 
 		for (var27 = 0; var27 < var12; ++var27) {
 			var41 = var39[var27];
-			if (var41.field3194 > 0) {
-				var41.field3196 = var2.readUnsignedByte();
+			if (var41.field3193 * 1443083757 > 0) {
+				var41.field3194 = var2.readUnsignedByte() * -545497249;
+			}
+		}
+
+		for (var27 = 0; var27 < var12; ++var27) {
+			var41 = var39[var27];
+			if (var41.field3194 * -626410337 > 0) {
+				var41.field3196 = var2.readUnsignedByte() * -1409875575;
 			}
 		}
 

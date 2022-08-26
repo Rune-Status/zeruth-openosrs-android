@@ -2,7 +2,6 @@ package osrs;
 
 import net.runelite.mapping.Export;
 import net.runelite.mapping.Implements;
-import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
@@ -13,15 +12,9 @@ public abstract class AbstractRasterProvider {
 	@Export("pixels")
 	public int[] pixels;
 	@ObfuscatedName("v")
-	@ObfuscatedGetter(
-		intValue = -1447914741
-	)
 	@Export("width")
 	public int width;
 	@ObfuscatedName("c")
-	@ObfuscatedGetter(
-		intValue = -1901266975
-	)
 	@Export("height")
 	public int height;
 
@@ -51,6 +44,6 @@ public abstract class AbstractRasterProvider {
 	)
 	@Export("apply")
 	public final void apply() {
-		Rasterizer2D.Rasterizer2D_replace(this.pixels, this.width, this.height);
+		Rasterizer2D.Rasterizer2D_replace(this.pixels, this.width * -1447914741, this.height * -1901266975);
 	}
 }

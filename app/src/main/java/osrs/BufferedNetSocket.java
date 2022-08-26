@@ -54,9 +54,8 @@ public class BufferedNetSocket extends AbstractSocket {
 		descriptor = "(B)I",
 		garbageValue = "14"
 	)
-	@Export("available")
-	public int available() throws IOException {
-		return this.source.available();
+	public int vmethod6784() throws IOException {
+		return this.source.method6793();
 	}
 
 	@ObfuscatedName("v")
@@ -64,9 +63,8 @@ public class BufferedNetSocket extends AbstractSocket {
 		descriptor = "(I)I",
 		garbageValue = "-660901031"
 	)
-	@Export("readUnsignedByte")
-	public int readUnsignedByte() throws IOException {
-		return this.source.readUnsignedByte();
+	public int vmethod6770() throws IOException {
+		return this.source.method6794();
 	}
 
 	@ObfuscatedName("c")

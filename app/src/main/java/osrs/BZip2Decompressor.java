@@ -24,16 +24,16 @@ public final class BZip2Decompressor {
 	public static int BZip2Decompressor_decompress(byte[] var0, int var1, byte[] var2, int var3, int var4) {
 		synchronized(BZip2Decompressor_state) {
 			BZip2Decompressor_state.inputArray = var2;
-			BZip2Decompressor_state.nextByte = var4;
+			BZip2Decompressor_state.nextByte = var4 * 2085775905;
 			BZip2Decompressor_state.outputArray = var0;
 			BZip2Decompressor_state.next_out = 0;
-			BZip2Decompressor_state.outputLength = var1;
+			BZip2Decompressor_state.outputLength = var1 * -294336979;
 			BZip2Decompressor_state.bsLive = 0;
 			BZip2Decompressor_state.bsBuff = 0;
 			BZip2Decompressor_state.nextBit_unused = 0;
 			BZip2Decompressor_state.field4722 = 0;
 			BZip2Decompressor_decompress(BZip2Decompressor_state);
-			var1 -= BZip2Decompressor_state.outputLength;
+			var1 -= BZip2Decompressor_state.outputLength * -990545499;
 			BZip2Decompressor_state.inputArray = null;
 			BZip2Decompressor_state.outputArray = null;
 			return var1;
@@ -45,16 +45,16 @@ public final class BZip2Decompressor {
 		descriptor = "(Lqq;)V"
 	)
 	static void method7886(BZip2State var0) {
-		byte var2 = var0.out_char;
-		int var3 = var0.su_rNToGo;
-		int var4 = var0.nblocks_used;
-		int var5 = var0.su_ch2;
+		byte var2 = var0.field4723;
+		int var3 = var0.field4724 * 440338361;
+		int var4 = var0.field4732 * 1297480759;
+		int var5 = var0.field4742 * -1678636317;
 		int[] var6 = class101.BZip2Decompressor_block;
-		int var7 = var0.field4710;
+		int var7 = var0.field4710 * 2056731845;
 		byte[] var8 = var0.outputArray;
-		int var9 = var0.next_out;
-		int var10 = var0.outputLength;
-		int var12 = var0.field4711 + 1;
+		int var9 = var0.next_out * 82328733;
+		int var10 = var0.outputLength * -990545499;
+		int var12 = var0.field4711 * -1455022529 + 1;
 
 		label70:
 		while (true) {
@@ -150,20 +150,20 @@ public final class BZip2Decompressor {
 			break;
 		}
 
-		int var13 = var0.field4722;
-		var0.field4722 += var10 - var10;
-		if (var0.field4722 < var13) {
+		int var13 = var0.field4722 * -258517701;
+		var0.field4722 += (var10 - var10) * -1916224525;
+		if (var0.field4722 * -258517701 < var13) {
 		}
 
-		var0.out_char = var2;
-		var0.su_rNToGo = var3;
-		var0.nblocks_used = var4;
-		var0.su_ch2 = var5;
+		var0.field4723 = var2;
+		var0.field4724 = var3 * 1736363657;
+		var0.field4732 = var4 * -1558283897;
+		var0.field4742 = var5 * -445543733;
 		class101.BZip2Decompressor_block = var6;
-		var0.field4710 = var7;
+		var0.field4710 = var7 * 985457165;
 		var0.outputArray = var8;
-		var0.next_out = var9;
-		var0.outputLength = var10;
+		var0.next_out = var9 * -1225250379;
+		var0.outputLength = var10 * -294336979;
 	}
 
 	@ObfuscatedName("w")
@@ -194,44 +194,44 @@ public final class BZip2Decompressor {
 		int[] var23 = null;
 		int[] var24 = null;
 		int[] var25 = null;
-		var0.blockSize100k = 1410065408;
+		var0.blockSize100k = 1416595015;
 		if (class101.BZip2Decompressor_block == null) {
-			class101.BZip2Decompressor_block = new int[4096 * 100];
+			class101.BZip2Decompressor_block = new int[var0.blockSize100k * 946959456];
 		}
 
 		boolean var26 = true;
 
 		while (true) {
 			while (var26) {
-				byte var1 = BZip2Decompressor_readNextByte(var0);
+				byte var1 = method7884(var0);
 				if (var1 == 23) {
 					return;
 				}
 
-				var1 = BZip2Decompressor_readNextByte(var0);
-				var1 = BZip2Decompressor_readNextByte(var0);
-				var1 = BZip2Decompressor_readNextByte(var0);
-				var1 = BZip2Decompressor_readNextByte(var0);
-				var1 = BZip2Decompressor_readNextByte(var0);
-				var1 = BZip2Decompressor_readNextByte(var0);
-				var1 = BZip2Decompressor_readNextByte(var0);
-				var1 = BZip2Decompressor_readNextByte(var0);
-				var1 = BZip2Decompressor_readNextByte(var0);
-				var1 = BZip2Decompressor_readNextBit(var0);
+				var1 = method7884(var0);
+				var1 = method7884(var0);
+				var1 = method7884(var0);
+				var1 = method7884(var0);
+				var1 = method7884(var0);
+				var1 = method7884(var0);
+				var1 = method7884(var0);
+				var1 = method7884(var0);
+				var1 = method7884(var0);
+				var1 = method7889(var0);
 				if (var1 != 0) {
 				}
 
-				var0.originalPointer = 0;
-				var1 = BZip2Decompressor_readNextByte(var0);
-				var0.originalPointer = var0.originalPointer << 8 | var1 & 255;
-				var1 = BZip2Decompressor_readNextByte(var0);
-				var0.originalPointer = var0.originalPointer << 8 | var1 & 255;
-				var1 = BZip2Decompressor_readNextByte(var0);
-				var0.originalPointer = var0.originalPointer << 8 | var1 & 255;
+				var0.field4728 = 0;
+				var1 = method7884(var0);
+				var0.field4728 = (var0.field4728 * -1966700557 << 8 | var1 & 255) * -1969985221;
+				var1 = method7884(var0);
+				var0.field4728 = (var0.field4728 * -1966700557 << 8 | var1 & 255) * -1969985221;
+				var1 = method7884(var0);
+				var0.field4728 = (var0.field4728 * -1966700557 << 8 | var1 & 255) * -1969985221;
 
 				int var36;
 				for (var36 = 0; var36 < 16; ++var36) {
-					var1 = BZip2Decompressor_readNextBit(var0);
+					var1 = method7889(var0);
 					if (var1 == 1) {
 						var0.inUse16[var36] = true;
 					} else {
@@ -247,7 +247,7 @@ public final class BZip2Decompressor {
 				for (var36 = 0; var36 < 16; ++var36) {
 					if (var0.inUse16[var36]) {
 						for (var37 = 0; var37 < 16; ++var37) {
-							var1 = BZip2Decompressor_readNextBit(var0);
+							var1 = method7889(var0);
 							if (var1 == 1) {
 								var0.inUse[var37 + var36 * 16] = true;
 							}
@@ -256,7 +256,7 @@ public final class BZip2Decompressor {
 				}
 
 				makeMaps(var0);
-				int var39 = var0.nInUse + 2;
+				int var39 = var0.nInUse * -751030927 + 2;
 				int var40 = BZip2Decompressor_readBits(3, var0);
 				int var41 = BZip2Decompressor_readBits(15, var0);
 
@@ -264,7 +264,7 @@ public final class BZip2Decompressor {
 					var37 = 0;
 
 					while (true) {
-						var1 = BZip2Decompressor_readNextBit(var0);
+						var1 = method7889(var0);
 						if (var1 == 0) {
 							var0.selectorMtf[var36] = (byte)var37;
 							break;
@@ -298,13 +298,13 @@ public final class BZip2Decompressor {
 
 					for (var36 = 0; var36 < var39; ++var36) {
 						while (true) {
-							var1 = BZip2Decompressor_readNextBit(var0);
+							var1 = method7889(var0);
 							if (var1 == 0) {
 								var0.temp_charArray2d[var38][var36] = (byte)var50;
 								break;
 							}
 
-							var1 = BZip2Decompressor_readNextBit(var0);
+							var1 = method7889(var0);
 							if (var1 == 0) {
 								++var50;
 							} else {
@@ -332,7 +332,7 @@ public final class BZip2Decompressor {
 					var0.minLens[var38] = var2;
 				}
 
-				int var42 = var0.nInUse + 1;
+				int var42 = var0.nInUse * -751030927 + 1;
 				int var43 = -1;
 				byte var44 = 0;
 
@@ -372,7 +372,7 @@ public final class BZip2Decompressor {
 				byte var53;
 				for (var52 = BZip2Decompressor_readBits(var22, var0); var52 > var23[var51]; var52 = var52 << 1 | var53) {
 					++var51;
-					var53 = BZip2Decompressor_readNextBit(var0);
+					var53 = method7889(var0);
 				}
 
 				int var46 = var25[var52 - var24[var51]];
@@ -449,7 +449,7 @@ public final class BZip2Decompressor {
 
 							for (var52 = BZip2Decompressor_readBits(var22, var0); var52 > var23[var51]; var52 = var52 << 1 | var53) {
 								++var51;
-								var53 = BZip2Decompressor_readNextBit(var0);
+								var53 = method7889(var0);
 							}
 
 							var46 = var25[var52 - var24[var51]];
@@ -459,7 +459,7 @@ public final class BZip2Decompressor {
 
 							do {
 								if (var46 == 0) {
-									var48 += var49;
+									var48 += var49 * 1;
 								} else if (var46 == 1) {
 									var48 += var49 * 2;
 								}
@@ -480,7 +480,7 @@ public final class BZip2Decompressor {
 
 								for (var52 = BZip2Decompressor_readBits(var22, var0); var52 > var23[var51]; var52 = var52 << 1 | var53) {
 									++var51;
-									var53 = BZip2Decompressor_readNextBit(var0);
+									var53 = method7889(var0);
 								}
 
 								var46 = var25[var52 - var24[var51]];
@@ -497,8 +497,8 @@ public final class BZip2Decompressor {
 						}
 					}
 
-					var0.su_rNToGo = 0;
-					var0.out_char = 0;
+					var0.field4724 = 0;
+					var0.field4723 = 0;
 					var0.cftab[0] = 0;
 
 					for (var36 = 1; var36 <= 256; ++var36) {
@@ -518,15 +518,15 @@ public final class BZip2Decompressor {
 						var10002 = var0.cftab[var1 & 255]++;
 					}
 
-					var0.field4710 = class101.BZip2Decompressor_block[var0.originalPointer] >> 8;
-					var0.nblocks_used = 0;
-					var0.field4710 = class101.BZip2Decompressor_block[var0.field4710];
-					var0.su_ch2 = (byte)(var0.field4710 & 255);
-					var0.field4710 >>= 8;
-					++var0.nblocks_used;
-					var0.field4711 = var47;
+					var0.field4710 = (class101.BZip2Decompressor_block[var0.field4728 * -1966700557] >> 8) * 985457165;
+					var0.field4732 = 0;
+					var0.field4710 = class101.BZip2Decompressor_block[var0.field4710 * 2056731845] * 985457165;
+					var0.field4742 = (byte)(var0.field4710 * 2056731845 & 255) * -445543733;
+					var0.field4710 = (var0.field4710 * 2056731845 >> 8) * 985457165;
+					var0.field4732 += -1558283897;
+					var0.field4711 = var47 * 1719849407;
 					method7886(var0);
-					if (var0.field4711 + 1 == var0.nblocks_used && var0.su_rNToGo == 0) {
+					if (var0.field4711 * -1455022529 + 1 == var0.field4732 * 1297480759 && var0.field4724 * 440338361 == 0) {
 						var26 = true;
 						break;
 					}
@@ -544,8 +544,7 @@ public final class BZip2Decompressor {
 	@ObfuscatedSignature(
 		descriptor = "(Lqq;)B"
 	)
-	@Export("BZip2Decompressor_readNextByte")
-	static byte BZip2Decompressor_readNextByte(BZip2State var0) {
+	static byte method7884(BZip2State var0) {
 		return (byte)BZip2Decompressor_readBits(8, var0);
 	}
 
@@ -553,8 +552,7 @@ public final class BZip2Decompressor {
 	@ObfuscatedSignature(
 		descriptor = "(Lqq;)B"
 	)
-	@Export("BZip2Decompressor_readNextBit")
-	static byte BZip2Decompressor_readNextBit(BZip2State var0) {
+	static byte method7889(BZip2State var0) {
 		return (byte)BZip2Decompressor_readBits(1, var0);
 	}
 
@@ -564,17 +562,17 @@ public final class BZip2Decompressor {
 	)
 	@Export("BZip2Decompressor_readBits")
 	static int BZip2Decompressor_readBits(int var0, BZip2State var1) {
-		while (var1.bsLive < var0) {
-			var1.bsBuff = var1.bsBuff << 8 | var1.inputArray[var1.nextByte] & 255;
-			var1.bsLive += 8;
-			++var1.nextByte;
-			++var1.nextBit_unused;
-			if (var1.nextBit_unused == 0) {
+		while (var1.bsLive * -583561549 < var0) {
+			var1.bsBuff = (var1.bsBuff * -54042767 << 8 | var1.inputArray[var1.nextByte * 1136892385] & 255) * -1809088111;
+			var1.bsLive += 360612824;
+			var1.nextByte += 2085775905;
+			var1.nextBit_unused += -630159187;
+			if (var1.nextBit_unused * 1557797669 == 0) {
 			}
 		}
 
-		int var2 = var1.bsBuff >> var1.bsLive - var0 & (1 << var0) - 1;
-		var1.bsLive -= var0;
+		int var2 = var1.bsBuff * -54042767 >> var1.bsLive * -583561549 - var0 & (1 << var0) - 1;
+		var1.bsLive -= var0 * -491794309;
 		return var2;
 	}
 
@@ -588,8 +586,8 @@ public final class BZip2Decompressor {
 
 		for (int var1 = 0; var1 < 256; ++var1) {
 			if (var0.inUse[var1]) {
-				var0.seqToUnseq[var0.nInUse] = (byte)var1;
-				++var0.nInUse;
+				var0.seqToUnseq[var0.nInUse * -751030927] = (byte)var1;
+				var0.nInUse += -1270287471;
 			}
 		}
 

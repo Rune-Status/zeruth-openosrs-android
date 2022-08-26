@@ -22,7 +22,7 @@ public class MusicTrack extends Node {
 		descriptor = "(Lqr;)V"
 	)
 	MusicTrack(Buffer var1) {
-		var1.offset = var1.array.length - 3;
+		var1.offset = (var1.array.length - 3) * 1090888991;
 		int var2 = var1.readUnsignedByte();
 		int var3 = var1.readUnsignedShort();
 		int var4 = var2 * 10 + 14;
@@ -80,15 +80,15 @@ public class MusicTrack extends Node {
 		var4 += var5 * 5;
 		var4 += (var7 + var8 + var6 + var9 + var11) * 2;
 		var4 = var4 + var10 + var12;
-		var13 = var1.offset;
+		var13 = var1.offset * 1795921631;
 		var14 = var2 + var5 + var6 + var7 + var8 + var9 + var10 + var11 + var12;
 
 		for (var15 = 0; var15 < var14; ++var15) {
 			var1.readVarInt();
 		}
 
-		var4 += var1.offset - var13;
-		var15 = var1.offset;
+		var4 += var1.offset * 1795921631 - var13;
+		var15 = var1.offset * 1795921631;
 		int var16 = 0;
 		int var17 = 0;
 		int var18 = 0;
@@ -138,48 +138,48 @@ public class MusicTrack extends Node {
 		}
 
 		var29 = 0;
-		int var30 = var1.offset;
-		var1.offset += var26;
-		int var31 = var1.offset;
-		var1.offset += var11;
-		int var32 = var1.offset;
-		var1.offset += var10;
-		int var33 = var1.offset;
-		var1.offset += var9;
-		int var34 = var1.offset;
-		var1.offset += var16;
-		int var35 = var1.offset;
-		var1.offset += var18;
-		int var36 = var1.offset;
-		var1.offset += var20;
-		int var37 = var1.offset;
-		var1.offset += var7 + var8 + var11;
-		int var38 = var1.offset;
-		var1.offset += var7;
-		int var39 = var1.offset;
-		var1.offset += var27;
-		int var40 = var1.offset;
-		var1.offset += var8;
-		int var41 = var1.offset;
-		var1.offset += var17;
-		int var42 = var1.offset;
-		var1.offset += var19;
-		int var43 = var1.offset;
-		var1.offset += var21;
-		int var44 = var1.offset;
-		var1.offset += var12;
-		int var45 = var1.offset;
-		var1.offset += var9;
-		int var46 = var1.offset;
-		var1.offset += var22;
-		int var47 = var1.offset;
-		var1.offset += var23;
-		int var48 = var1.offset;
-		var1.offset += var24;
-		int var49 = var1.offset;
-		var1.offset += var25;
-		int var50 = var1.offset;
-		var1.offset += var5 * 3;
+		int var30 = var1.offset * 1795921631;
+		var1.offset += var26 * 1090888991;
+		int var31 = var1.offset * 1795921631;
+		var1.offset += var11 * 1090888991;
+		int var32 = var1.offset * 1795921631;
+		var1.offset += var10 * 1090888991;
+		int var33 = var1.offset * 1795921631;
+		var1.offset += var9 * 1090888991;
+		int var34 = var1.offset * 1795921631;
+		var1.offset += var16 * 1090888991;
+		int var35 = var1.offset * 1795921631;
+		var1.offset += var18 * 1090888991;
+		int var36 = var1.offset * 1795921631;
+		var1.offset += var20 * 1090888991;
+		int var37 = var1.offset * 1795921631;
+		var1.offset += (var7 + var8 + var11) * 1090888991;
+		int var38 = var1.offset * 1795921631;
+		var1.offset += var7 * 1090888991;
+		int var39 = var1.offset * 1795921631;
+		var1.offset += var27 * 1090888991;
+		int var40 = var1.offset * 1795921631;
+		var1.offset += var8 * 1090888991;
+		int var41 = var1.offset * 1795921631;
+		var1.offset += var17 * 1090888991;
+		int var42 = var1.offset * 1795921631;
+		var1.offset += var19 * 1090888991;
+		int var43 = var1.offset * 1795921631;
+		var1.offset += var21 * 1090888991;
+		int var44 = var1.offset * 1795921631;
+		var1.offset += var12 * 1090888991;
+		int var45 = var1.offset * 1795921631;
+		var1.offset += var9 * 1090888991;
+		int var46 = var1.offset * 1795921631;
+		var1.offset += var22 * 1090888991;
+		int var47 = var1.offset * 1795921631;
+		var1.offset += var23 * 1090888991;
+		int var48 = var1.offset * 1795921631;
+		var1.offset += var24 * 1090888991;
+		int var49 = var1.offset * 1795921631;
+		var1.offset += var25 * 1090888991;
+		int var50 = var1.offset * 1795921631;
+		var1.offset += var5 * -1022300323;
 		this.midi = new byte[var4];
 		Buffer var51 = new Buffer(this.midi);
 		var51.writeInt(1297377380);
@@ -187,7 +187,7 @@ public class MusicTrack extends Node {
 		var51.writeShort(var2 > 1 ? 1 : 0);
 		var51.writeShort(var2);
 		var51.writeShort(var3);
-		var1.offset = var13;
+		var1.offset = var13 * 1090888991;
 		int var52 = 0;
 		int var53 = 0;
 		int var54 = 0;
@@ -201,8 +201,8 @@ public class MusicTrack extends Node {
 		label244:
 		for (int var60 = 0; var60 < var2; ++var60) {
 			var51.writeInt(1297379947);
-			var51.offset += 4;
-			int var61 = var51.offset;
+			var51.offset += 68588668;
+			int var61 = var51.offset * 1795921631;
 			int var62 = -1;
 
 			while (true) {
@@ -219,7 +219,7 @@ public class MusicTrack extends Node {
 
 						var51.writeByte(47);
 						var51.writeByte(0);
-						var51.writeLengthInt(var51.offset - var61);
+						var51.writeLengthInt(var51.offset * 1795921631 - var61);
 						continue label244;
 					}
 

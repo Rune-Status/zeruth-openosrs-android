@@ -3,7 +3,6 @@ package osrs;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
-
 @ObfuscatedName("mh")
 public final class class343 {
 	@ObfuscatedName("h")

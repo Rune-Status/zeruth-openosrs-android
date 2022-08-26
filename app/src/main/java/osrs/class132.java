@@ -1,22 +1,14 @@
 package osrs;
 
 import net.runelite.mapping.Export;
-import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
 @ObfuscatedName("ek")
 public class class132 extends class128 {
 	@ObfuscatedName("mt")
-	@ObfuscatedGetter(
-		intValue = -785479869
-	)
-	@Export("menuWidth")
-	static int menuWidth;
+	static int field1561;
 	@ObfuscatedName("s")
-	@ObfuscatedGetter(
-		intValue = -1004156633
-	)
 	int field1566;
 	@ObfuscatedName("h")
 	byte field1562;
@@ -31,7 +23,7 @@ public class class132 extends class128 {
 	)
 	class132(class131 var1) {
 		this.this$0 = var1;
-		this.field1566 = -1;
+		this.field1566 = 531949929;
 	}
 
 	@ObfuscatedName("s")
@@ -40,7 +32,7 @@ public class class132 extends class128 {
 		garbageValue = "-885940784"
 	)
 	void vmethod3087(Buffer var1) {
-		this.field1566 = var1.readUnsignedShort();
+		this.field1566 = var1.readUnsignedShort() * -531949929;
 		this.field1562 = var1.readByte();
 	}
 
@@ -50,7 +42,7 @@ public class class132 extends class128 {
 		garbageValue = "0"
 	)
 	void vmethod3084(ClanSettings var1) {
-		var1.method2910(this.field1566, this.field1562);
+		var1.method2910(this.field1566 * -1004156633, this.field1562);
 	}
 
 	@ObfuscatedName("s")
@@ -110,25 +102,24 @@ public class class132 extends class128 {
 		descriptor = "(ZS)V",
 		garbageValue = "-13470"
 	)
-	@Export("addNpcsToScene")
-	static final void addNpcsToScene(boolean var0) {
-		for (int var1 = 0; var1 < Client.npcCount; ++var1) {
+	static final void method2840(boolean var0) {
+		for (int var1 = 0; var1 < Client.npcCount * -140634995; ++var1) {
 			NPC var2 = Client.npcs[Client.npcIndices[var1]];
 			if (var2 != null && var2.isVisible() && var2.definition.isVisible == var0 && var2.definition.transformIsVisible()) {
-				int var3 = var2.x >> 7;
-				int var4 = var2.y >> 7;
+				int var3 = var2.x * 1627221919 >> 7;
+				int var4 = var2.y * 1229064101 >> 7;
 				if (var3 >= 0 && var3 < 104 && var4 >= 0 && var4 < 104) {
-					if (var2.field1190 * -1671884800 == 1 && (var2.x & 127) == 64 && (var2.y & 127) == 64) {
-						if (Client.tileLastDrawnActor[var3][var4] == Client.viewportDrawCount) {
+					if (var2.field1190 * 1116880781 == 1 && (var2.x * 1627221919 & 127) == 64 && (var2.y * 1229064101 & 127) == 64) {
+						if (Client.tileLastDrawnActor[var3][var4] == Client.viewportDrawCount * 420951309) {
 							continue;
 						}
 
-						Client.tileLastDrawnActor[var3][var4] = Client.viewportDrawCount;
+						Client.tileLastDrawnActor[var3][var4] = Client.viewportDrawCount * 420951309;
 					}
 
 					long var5 = FloorDecoration.calculateTag(0, 0, 1, !var2.definition.isInteractable, Client.npcIndices[var1]);
-					var2.playerCycle = Client.cycle;
-					class12.scene.drawEntity(class268.Client_plane, var2.x, var2.y, ObjectComposition.getTileHeight(var2.field1190 * 373555200 - 64 + var2.x, var2.field1190 * 373555200 - 64 + var2.y, class268.Client_plane), var2.field1190 * 373555200 - 64 + 60, var2, var2.rotation, var5, var2.isWalking);
+					var2.field1146 = Client.cycle * -1560995923;
+					class12.scene.drawEntity(class268.Client_plane * 1083786667, var2.x * 1627221919, var2.y * 1229064101, ObjectComposition.getTileHeight(var2.x * 1627221919 + (var2.field1190 * -1534074048 - 64), var2.field1190 * -1534074048 - 64 + var2.y * 1229064101, class268.Client_plane * 1083786667), var2.field1190 * -1534074048 - 64 + 60, var2, var2.field1160 * 859314757, var5, var2.field1129);
 				}
 			}
 		}

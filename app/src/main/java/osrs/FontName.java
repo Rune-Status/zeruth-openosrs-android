@@ -2,7 +2,6 @@ package osrs;
 
 import net.runelite.mapping.Export;
 import net.runelite.mapping.Implements;
-import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
@@ -16,9 +15,6 @@ public class FontName {
 	@Export("guestClanSettings")
 	static ClanSettings guestClanSettings;
 	@ObfuscatedName("uj")
-	@ObfuscatedGetter(
-		longValue = -8852451714535883403L
-	)
 	static long field4587;
 	@ObfuscatedName("s")
 	@ObfuscatedSignature(
@@ -92,7 +88,7 @@ public class FontName {
 		if (var1 == null) {
 			return -1;
 		} else {
-			return var1.nextDual == Messages.Messages_queue.sentinel ? -1 : ((Message)var1.nextDual).count;
+			return var1.nextDual == Messages.Messages_queue.sentinel ? -1 : ((Message)var1.nextDual).count * 416329001;
 		}
 	}
 }

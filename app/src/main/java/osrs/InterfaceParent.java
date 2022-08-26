@@ -2,7 +2,6 @@ package osrs;
 
 import net.runelite.mapping.Export;
 import net.runelite.mapping.Implements;
-import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
@@ -22,15 +21,9 @@ public class InterfaceParent extends Node {
 	@Export("scrollBarSprites")
 	static IndexedSprite[] scrollBarSprites;
 	@ObfuscatedName("s")
-	@ObfuscatedGetter(
-		intValue = 1124857953
-	)
 	@Export("group")
 	int group;
 	@ObfuscatedName("h")
-	@ObfuscatedGetter(
-		intValue = 67717225
-	)
 	@Export("type")
 	int type;
 	@ObfuscatedName("w")

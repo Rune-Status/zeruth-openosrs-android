@@ -2,7 +2,6 @@ package osrs;
 
 import net.runelite.mapping.Export;
 import net.runelite.mapping.Implements;
-import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
@@ -10,9 +9,6 @@ import net.runelite.mapping.ObfuscatedSignature;
 @Implements("WorldMapData_1")
 public class WorldMapData_1 extends AbstractWorldMapData {
 	@ObfuscatedName("tk")
-	@ObfuscatedGetter(
-		intValue = 1242378975
-	)
 	static int field2759;
 	@ObfuscatedName("t")
 	@ObfuscatedSignature(
@@ -21,29 +17,13 @@ public class WorldMapData_1 extends AbstractWorldMapData {
 	@Export("Widget_spritesArchive")
 	public static AbstractArchive Widget_spritesArchive;
 	@ObfuscatedName("s")
-	@ObfuscatedGetter(
-		intValue = -1062025967
-	)
-	@Export("chunkXLow")
-	int chunkXLow;
+	int field2755;
 	@ObfuscatedName("h")
-	@ObfuscatedGetter(
-		intValue = -2000179473
-	)
-	@Export("chunkYLow")
-	int chunkYLow;
+	int field2754;
 	@ObfuscatedName("w")
-	@ObfuscatedGetter(
-		intValue = -1632822297
-	)
-	@Export("chunkX")
-	int chunkX;
+	int field2758;
 	@ObfuscatedName("v")
-	@ObfuscatedGetter(
-		intValue = -135385345
-	)
-	@Export("chunkY")
-	int chunkY;
+	int field2757;
 
 	WorldMapData_1() {
 	}
@@ -56,21 +36,21 @@ public class WorldMapData_1 extends AbstractWorldMapData {
 	@Export("init")
 	void init(Buffer var1) {
 		int var2 = var1.readUnsignedByte();
-		if (var2 != WorldMapID.field2846.value) {
+		if (var2 != class239.field2846.field2847 * -1483153309) {
 			throw new IllegalStateException("");
 		} else {
-			super.minPlane = var1.readUnsignedByte();
-			super.planes = var1.readUnsignedByte();
-			super.regionXLow = var1.readUnsignedShort() * 64;
-			super.regionYLow = var1.readUnsignedShort() * 64;
-			this.chunkXLow = var1.readUnsignedByte();
-			this.chunkYLow = var1.readUnsignedByte();
-			super.regionX = var1.readUnsignedShort();
-			super.regionY = var1.readUnsignedShort();
-			this.chunkX = var1.readUnsignedByte();
-			this.chunkY = var1.readUnsignedByte();
-			super.groupId = var1.method7652();
-			super.fileId = var1.method7652();
+			super.field2812 = var1.readUnsignedByte() * -1116914429;
+			super.planes = var1.readUnsignedByte() * -450299797;
+			super.field2811 = var1.readUnsignedShort() * -848504449;
+			super.field2815 = var1.readUnsignedShort() * -351547905;
+			this.field2755 = var1.readUnsignedByte() * -1099904015;
+			this.field2754 = var1.readUnsignedByte() * 947863567;
+			super.field2806 = var1.readUnsignedShort() * -633348793;
+			super.field2807 = var1.readUnsignedShort() * -1853311425;
+			this.field2758 = var1.readUnsignedByte() * 520865751;
+			this.field2757 = var1.readUnsignedByte() * 208720127;
+			super.field2810 = var1.method7652() * -591345465;
+			super.field2819 = var1.method7652() * -47096349;
 		}
 	}
 
@@ -81,24 +61,24 @@ public class WorldMapData_1 extends AbstractWorldMapData {
 	)
 	@Export("readGeography")
 	void readGeography(Buffer var1) {
-		super.planes = Math.min(super.planes, 4);
+		super.planes = Math.min(1086583875 * super.planes, 4) * -450299797;
 		super.floorUnderlayIds = new short[1][64][64];
-		super.floorOverlayIds = new short[super.planes][64][64];
-		super.field2814 = new byte[super.planes][64][64];
-		super.field2808 = new byte[super.planes][64][64];
-		super.decorations = new WorldMapDecoration[super.planes][64][64][];
+		super.floorOverlayIds = new short[super.planes * 1086583875][64][64];
+		super.field2814 = new byte[super.planes * 1086583875][64][64];
+		super.field2808 = new byte[super.planes * 1086583875][64][64];
+		super.decorations = new WorldMapDecoration[super.planes * 1086583875][64][64][];
 		int var2 = var1.readUnsignedByte();
-		if (var2 != class238.field2842.value) {
+		if (var2 != class238.field2842.field2841 * 488116779) {
 			throw new IllegalStateException("");
 		} else {
 			int var3 = var1.readUnsignedByte();
 			int var4 = var1.readUnsignedByte();
 			int var5 = var1.readUnsignedByte();
 			int var6 = var1.readUnsignedByte();
-			if (var3 == super.regionX && var4 == super.regionY && var5 == this.chunkX && var6 == this.chunkY) {
+			if (var3 == super.field2806 * -743392137 && var4 == super.field2807 * -493602369 && var5 == this.field2758 * -1632822297 && this.field2757 * -135385345 == var6) {
 				for (int var7 = 0; var7 < 8; ++var7) {
 					for (int var8 = 0; var8 < 8; ++var8) {
-						this.readTile(var7 + this.chunkX * 8, var8 + this.chunkY * 8, var1);
+						this.readTile(var7 + this.field2758 * -177676488, this.field2757 * -1083082760 + var8, var1);
 					}
 				}
 
@@ -115,7 +95,7 @@ public class WorldMapData_1 extends AbstractWorldMapData {
 	)
 	@Export("getChunkXLow")
 	int getChunkXLow() {
-		return this.chunkXLow;
+		return this.field2755 * -1062025967;
 	}
 
 	@ObfuscatedName("k")
@@ -125,7 +105,7 @@ public class WorldMapData_1 extends AbstractWorldMapData {
 	)
 	@Export("getChunkYLow")
 	int getChunkYLow() {
-		return this.chunkYLow;
+		return this.field2754 * -2000179473;
 	}
 
 	@ObfuscatedName("o")
@@ -135,7 +115,7 @@ public class WorldMapData_1 extends AbstractWorldMapData {
 	)
 	@Export("getChunkX")
 	int getChunkX() {
-		return this.chunkX;
+		return this.field2758 * -1632822297;
 	}
 
 	@ObfuscatedName("n")
@@ -145,7 +125,7 @@ public class WorldMapData_1 extends AbstractWorldMapData {
 	)
 	@Export("getChunkY")
 	int getChunkY() {
-		return this.chunkY;
+		return this.field2757 * -135385345;
 	}
 
 	public boolean equals(Object var1) {
@@ -153,8 +133,8 @@ public class WorldMapData_1 extends AbstractWorldMapData {
 			return false;
 		} else {
 			WorldMapData_1 var2 = (WorldMapData_1)var1;
-			if (super.regionX == var2.regionX && var2.regionY == super.regionY) {
-				return this.chunkX == var2.chunkX && this.chunkY == var2.chunkY;
+			if (super.field2806 * -743392137 == var2.field2806 * -743392137 && var2.field2807 * -493602369 == super.field2807 * -493602369) {
+				return this.field2758 * -1632822297 == var2.field2758 * -1632822297 && var2.field2757 * -135385345 == this.field2757 * -135385345;
 			} else {
 				return false;
 			}
@@ -162,7 +142,7 @@ public class WorldMapData_1 extends AbstractWorldMapData {
 	}
 
 	public int hashCode() {
-		return super.regionX | super.regionY << 8 | this.chunkX << 16 | this.chunkY << 24;
+		return super.field2806 * -743392137 | super.field2807 * -493602369 << 8 | this.field2758 * -1632822297 << 16 | this.field2757 * -135385345 << 24;
 	}
 
 	@ObfuscatedName("w")
@@ -191,11 +171,11 @@ public class WorldMapData_1 extends AbstractWorldMapData {
 
 					for (var10 = 0; var10 < 4; ++var10) {
 						if (var3[var10] == 2) {
-							var11 = var0[var6].index;
-							var12 = var8.index;
+							var11 = var0[var6].field775 * -1040647153;
+							var12 = var8.field775 * -1040647153;
 						} else if (var3[var10] == 1) {
-							var11 = var0[var6].population;
-							var12 = var8.population;
+							var11 = var0[var6].field781 * 519550573;
+							var12 = var8.field781 * 519550573;
 							if (var11 == -1 && var4[var10] == 1) {
 								var11 = 2001;
 							}
@@ -207,8 +187,8 @@ public class WorldMapData_1 extends AbstractWorldMapData {
 							var11 = var0[var6].isMembersOnly() ? 1 : 0;
 							var12 = var8.isMembersOnly() ? 1 : 0;
 						} else {
-							var11 = var0[var6].id;
-							var12 = var8.id;
+							var11 = var0[var6].field779 * -1527326097;
+							var12 = var8.field779 * -1527326097;
 						}
 
 						if (var12 != var11) {
@@ -231,11 +211,11 @@ public class WorldMapData_1 extends AbstractWorldMapData {
 
 					for (var10 = 0; var10 < 4; ++var10) {
 						if (var3[var10] == 2) {
-							var11 = var0[var5].index;
-							var12 = var8.index;
+							var11 = var0[var5].field775 * -1040647153;
+							var12 = var8.field775 * -1040647153;
 						} else if (var3[var10] == 1) {
-							var11 = var0[var5].population;
-							var12 = var8.population;
+							var11 = var0[var5].field781 * 519550573;
+							var12 = var8.field781 * 519550573;
 							if (var11 == -1 && var4[var10] == 1) {
 								var11 = 2001;
 							}
@@ -247,8 +227,8 @@ public class WorldMapData_1 extends AbstractWorldMapData {
 							var11 = var0[var5].isMembersOnly() ? 1 : 0;
 							var12 = var8.isMembersOnly() ? 1 : 0;
 						} else {
-							var11 = var0[var5].id;
-							var12 = var8.id;
+							var11 = var0[var5].field779 * -1527326097;
+							var12 = var8.field779 * -1527326097;
 						}
 
 						if (var11 != var12) {
@@ -284,14 +264,14 @@ public class WorldMapData_1 extends AbstractWorldMapData {
 	)
 	@Export("ByteArrayPool_release")
 	public static synchronized void ByteArrayPool_release(byte[] var0) {
-		if (var0.length == 100 && ByteArrayPool.ByteArrayPool_smallCount < ByteArrayPool.field4210) {
-			ByteArrayPool.ByteArrayPool_small[++ByteArrayPool.ByteArrayPool_smallCount - 1] = var0;
-		} else if (var0.length == 5000 && ByteArrayPool.ByteArrayPool_mediumCount < ByteArrayPool.field4201) {
-			ByteArrayPool.ByteArrayPool_medium[++ByteArrayPool.ByteArrayPool_mediumCount - 1] = var0;
-		} else if (var0.length == 10000 && ByteArrayPool.ByteArrayPool_largeCount < ByteArrayPool.field4211) {
-			ByteArrayPool.ByteArrayPool_large[++ByteArrayPool.ByteArrayPool_largeCount - 1] = var0;
-		} else if (var0.length == 30000 && ByteArrayPool.field4209 < ByteArrayPool.field4212) {
-			ByteArrayPool.field4216[++ByteArrayPool.field4209 - 1] = var0;
+		if (var0.length == 100 && ByteArrayPool.ByteArrayPool_smallCount * -862731127 < ByteArrayPool.field4210 * -1700131269) {
+			ByteArrayPool.ByteArrayPool_small[(ByteArrayPool.ByteArrayPool_smallCount += -1692208711) * -862731127 - 1] = var0;
+		} else if (var0.length == 5000 && ByteArrayPool.ByteArrayPool_mediumCount * -1822826689 < ByteArrayPool.field4201 * -832696811) {
+			ByteArrayPool.ByteArrayPool_medium[(ByteArrayPool.ByteArrayPool_mediumCount += -1260285761) * -1822826689 - 1] = var0;
+		} else if (var0.length == 10000 && ByteArrayPool.ByteArrayPool_largeCount * 1571439245 < ByteArrayPool.field4211 * -1345624255) {
+			ByteArrayPool.ByteArrayPool_large[(ByteArrayPool.ByteArrayPool_largeCount += -779071419) * 1571439245 - 1] = var0;
+		} else if (var0.length == 30000 && ByteArrayPool.field4209 * -1983574547 < ByteArrayPool.field4212 * -1304474513) {
+			ByteArrayPool.field4216[(ByteArrayPool.field4209 += 1058756581) * -1983574547 - 1] = var0;
 		} else {
 			if (AbstractByteArrayCopier.ByteArrayPool_arrays != null) {
 				for (int var1 = 0; var1 < UserComparator4.ByteArrayPool_alternativeSizes.length; ++var1) {

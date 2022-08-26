@@ -78,7 +78,7 @@ public class SoundSystem implements Runnable {
 		}
 
 		if (var6 != -1 && var7 != null) {
-			CollisionMap.method3809(var7, Clock.colorStartTag(16748608) + var1.name, var6, 0, var2, var0.id, var1.id, var4);
+			CollisionMap.method3809(var7, Clock.colorStartTag(16748608) + var1.name, var6, 0, var2, var0.id * -1692370233, var1.id * -1571483579, var4);
 		}
 
 	}

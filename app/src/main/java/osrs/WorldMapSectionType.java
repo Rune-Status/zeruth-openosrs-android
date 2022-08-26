@@ -2,13 +2,12 @@ package osrs;
 
 import net.runelite.mapping.Export;
 import net.runelite.mapping.Implements;
-import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
 @ObfuscatedName("hi")
 @Implements("WorldMapSectionType")
-public enum WorldMapSectionType implements MouseWheel {
+public enum WorldMapSectionType implements class328 {
 	@ObfuscatedName("s")
 	@ObfuscatedSignature(
 		descriptor = "Lhi;"
@@ -35,9 +34,6 @@ public enum WorldMapSectionType implements MouseWheel {
 	WORLDMAPSECTIONTYPE3(3, (byte)3);
 
 	@ObfuscatedName("c")
-	@ObfuscatedGetter(
-		intValue = 189258081
-	)
 	@Export("type")
 	final int type;
 	@ObfuscatedName("q")
@@ -45,7 +41,7 @@ public enum WorldMapSectionType implements MouseWheel {
 	final byte id;
 
 	WorldMapSectionType(int var3, byte var4) {
-		this.type = var3;
+		this.type = var3 * 1709345441;
 		this.id = var4;
 	}
 

@@ -5,7 +5,6 @@ import java.util.LinkedHashMap;
 import java.util.Map.Entry;
 import net.runelite.mapping.Export;
 import net.runelite.mapping.Implements;
-import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
@@ -13,21 +12,13 @@ import net.runelite.mapping.ObfuscatedSignature;
 @Implements("ClientPreferences")
 public class ClientPreferences {
 	@ObfuscatedName("s")
-	@ObfuscatedGetter(
-		intValue = 1849447049
-	)
-	@Export("ClientPreferences_optionCount")
-	static int ClientPreferences_optionCount;
+	static int field1236;
 	@ObfuscatedName("z")
 	@ObfuscatedSignature(
 		descriptor = "Lqr;"
 	)
-	@Export("NetCache_responseArchiveBuffer")
-	public static Buffer NetCache_responseArchiveBuffer;
+	public static Buffer field1234;
 	@ObfuscatedName("bm")
-	@ObfuscatedGetter(
-		intValue = 546312455
-	)
 	static int field1245;
 	@ObfuscatedName("dc")
 	@ObfuscatedSignature(
@@ -36,11 +27,7 @@ public class ClientPreferences {
 	@Export("js5Socket")
 	static AbstractSocket js5Socket;
 	@ObfuscatedName("jn")
-	@ObfuscatedGetter(
-		intValue = 1468675189
-	)
-	@Export("cameraYaw")
-	static int cameraYaw;
+	static int field1246;
 	@ObfuscatedName("w")
 	@Export("roofsHidden")
 	boolean roofsHidden;
@@ -54,43 +41,25 @@ public class ClientPreferences {
 	@Export("displayFps")
 	boolean displayFps;
 	@ObfuscatedName("i")
-	@ObfuscatedGetter(
-		intValue = -1551707667
-	)
 	int field1240;
 	@ObfuscatedName("k")
 	@Export("brightness")
 	double brightness;
 	@ObfuscatedName("o")
-	@ObfuscatedGetter(
-		intValue = 798414231
-	)
 	@Export("musicVolume")
 	int musicVolume;
 	@ObfuscatedName("n")
-	@ObfuscatedGetter(
-		intValue = 1689386949
-	)
 	@Export("soundEffectsVolume")
 	int soundEffectsVolume;
 	@ObfuscatedName("d")
-	@ObfuscatedGetter(
-		intValue = -608443659
-	)
 	@Export("areaSoundEffectsVolume")
 	int areaSoundEffectsVolume;
 	@ObfuscatedName("a")
-	@ObfuscatedGetter(
-		intValue = -1481673311
-	)
 	int field1241;
 	@ObfuscatedName("m")
 	@Export("rememberedUsername")
 	String rememberedUsername;
 	@ObfuscatedName("u")
-	@ObfuscatedGetter(
-		intValue = 296751793
-	)
 	@Export("windowMode")
 	int windowMode;
 	@ObfuscatedName("l")
@@ -98,19 +67,19 @@ public class ClientPreferences {
 	LinkedHashMap parameters;
 
 	static {
-		ClientPreferences_optionCount = 10;
+		field1236 = 2135663930;
 	}
 
 	ClientPreferences() {
 		this.hideUsername = false;
 		this.displayFps = false;
 		this.brightness = 0.8D;
-		this.musicVolume = 127;
-		this.soundEffectsVolume = 127;
-		this.areaSoundEffectsVolume = 127;
-		this.field1241 = -1;
+		this.musicVolume = 309074265;
+		this.soundEffectsVolume = 530603891;
+		this.areaSoundEffectsVolume = -1702988509;
+		this.field1241 = -2029104737;
 		this.rememberedUsername = null;
-		this.windowMode = 1;
+		this.windowMode = -1751845295;
 		this.parameters = new LinkedHashMap();
 		this.method2221(true);
 	}
@@ -122,16 +91,16 @@ public class ClientPreferences {
 		this.hideUsername = false;
 		this.displayFps = false;
 		this.brightness = 0.8D;
-		this.musicVolume = 127;
-		this.soundEffectsVolume = 127;
-		this.areaSoundEffectsVolume = 127;
-		this.field1241 = -1;
+		this.musicVolume = 309074265;
+		this.soundEffectsVolume = 530603891;
+		this.areaSoundEffectsVolume = -1702988509;
+		this.field1241 = -2029104737;
 		this.rememberedUsername = null;
-		this.windowMode = 1;
+		this.windowMode = -1751845295;
 		this.parameters = new LinkedHashMap();
 		if (var1 != null && var1.array != null) {
 			int var2 = var1.readUnsignedByte();
-			if (var2 >= 0 && var2 <= ClientPreferences_optionCount) {
+			if (var2 >= 0 && var2 <= field1236 * 1849447049) {
 				if (var1.readUnsignedByte() == 1) {
 					this.roofsHidden = true;
 				}
@@ -141,7 +110,7 @@ public class ClientPreferences {
 				}
 
 				if (var2 > 3) {
-					this.windowMode = var1.readUnsignedByte();
+					this.windowMode = var1.readUnsignedByte() * -1751845295;
 				}
 
 				if (var2 > 2) {
@@ -164,13 +133,13 @@ public class ClientPreferences {
 
 				if (var2 > 6) {
 					this.brightness = (double)var1.readUnsignedByte() / 100.0D;
-					this.musicVolume = var1.readUnsignedByte();
-					this.soundEffectsVolume = var1.readUnsignedByte();
-					this.areaSoundEffectsVolume = var1.readUnsignedByte();
+					this.musicVolume = var1.readUnsignedByte() * -166659545;
+					this.soundEffectsVolume = var1.readUnsignedByte() * -638376179;
+					this.areaSoundEffectsVolume = var1.readUnsignedByte() * -1264699043;
 				}
 
 				if (var2 > 7) {
-					this.field1241 = var1.readUnsignedByte();
+					this.field1241 = var1.readUnsignedByte() * 2029104737;
 				}
 
 				if (var2 > 8) {
@@ -178,7 +147,7 @@ public class ClientPreferences {
 				}
 
 				if (var2 > 9) {
-					this.field1240 = var1.readInt();
+					this.field1240 = var1.readInt() * -137874459;
 				}
 			} else {
 				this.method2221(true);
@@ -205,10 +174,10 @@ public class ClientPreferences {
 	@Export("toBuffer")
 	Buffer toBuffer() {
 		Buffer var1 = new Buffer(100);
-		var1.writeByte(ClientPreferences_optionCount);
+		var1.writeByte(field1236 * 1849447049);
 		var1.writeByte(this.roofsHidden ? 1 : 0);
 		var1.writeByte(this.titleMusicDisabled ? 1 : 0);
-		var1.writeByte(this.windowMode);
+		var1.writeByte(this.windowMode * 296751793);
 		var1.writeByte(this.parameters.size());
 		Iterator var2 = this.parameters.entrySet().iterator();
 
@@ -221,12 +190,12 @@ public class ClientPreferences {
 		var1.writeStringCp1252NullTerminated(this.rememberedUsername != null ? this.rememberedUsername : "");
 		var1.writeBoolean(this.hideUsername);
 		var1.writeByte((int)(100.0D * this.brightness));
-		var1.writeByte(this.musicVolume);
-		var1.writeByte(this.soundEffectsVolume);
-		var1.writeByte(this.areaSoundEffectsVolume);
-		var1.writeByte(this.field1241);
+		var1.writeByte(this.musicVolume * 798414231);
+		var1.writeByte(this.soundEffectsVolume * 1689386949);
+		var1.writeByte(this.areaSoundEffectsVolume * -608443659);
+		var1.writeByte(this.field1241 * -1481673311);
 		var1.writeByte(this.displayFps ? 1 : 0);
-		var1.writeInt(this.field1240);
+		var1.writeInt(this.field1240 * -1551707667);
 		return var1;
 	}
 
@@ -321,7 +290,7 @@ public class ClientPreferences {
 		garbageValue = "1413642376"
 	)
 	void method2217(int var1) {
-		this.field1240 = var1;
+		this.field1240 = var1 * -137874459;
 		class83.savePreferences();
 	}
 
@@ -331,7 +300,7 @@ public class ClientPreferences {
 		garbageValue = "1323232903"
 	)
 	int method2218() {
-		return this.field1240;
+		return this.field1240 * -1551707667;
 	}
 
 	@ObfuscatedName("l")
@@ -355,7 +324,7 @@ public class ClientPreferences {
 		garbageValue = "4"
 	)
 	void method2224(int var1) {
-		this.musicVolume = var1;
+		this.musicVolume = var1 * -166659545;
 		class83.savePreferences();
 	}
 
@@ -365,7 +334,7 @@ public class ClientPreferences {
 		garbageValue = "807829996"
 	)
 	int method2222() {
-		return this.musicVolume;
+		return this.musicVolume * 798414231;
 	}
 
 	@ObfuscatedName("p")
@@ -375,7 +344,7 @@ public class ClientPreferences {
 	)
 	@Export("updateSoundEffectVolume")
 	void updateSoundEffectVolume(int var1) {
-		this.soundEffectsVolume = var1;
+		this.soundEffectsVolume = var1 * -638376179;
 		class83.savePreferences();
 	}
 
@@ -385,7 +354,7 @@ public class ClientPreferences {
 		garbageValue = "-2022982328"
 	)
 	int method2204() {
-		return this.soundEffectsVolume;
+		return this.soundEffectsVolume * 1689386949;
 	}
 
 	@ObfuscatedName("b")
@@ -394,7 +363,7 @@ public class ClientPreferences {
 		garbageValue = "22"
 	)
 	void method2225(int var1) {
-		this.areaSoundEffectsVolume = var1;
+		this.areaSoundEffectsVolume = var1 * -1264699043;
 		class83.savePreferences();
 	}
 
@@ -404,7 +373,7 @@ public class ClientPreferences {
 		garbageValue = "-963216332"
 	)
 	int method2226() {
-		return this.areaSoundEffectsVolume;
+		return this.areaSoundEffectsVolume * -608443659;
 	}
 
 	@ObfuscatedName("f")
@@ -432,7 +401,7 @@ public class ClientPreferences {
 		garbageValue = "1056396306"
 	)
 	void method2228(int var1) {
-		this.field1241 = var1;
+		this.field1241 = var1 * 2029104737;
 		class83.savePreferences();
 	}
 
@@ -442,7 +411,7 @@ public class ClientPreferences {
 		garbageValue = "76"
 	)
 	int method2229() {
-		return this.field1241;
+		return this.field1241 * -1481673311;
 	}
 
 	@ObfuscatedName("ar")
@@ -451,7 +420,7 @@ public class ClientPreferences {
 		garbageValue = "-1468848973"
 	)
 	void method2244(int var1) {
-		this.windowMode = var1;
+		this.windowMode = var1 * -1751845295;
 		class83.savePreferences();
 	}
 
@@ -461,7 +430,7 @@ public class ClientPreferences {
 		garbageValue = "-1353353753"
 	)
 	int method2231() {
-		return this.windowMode;
+		return this.windowMode * 296751793;
 	}
 
 	@ObfuscatedName("c")

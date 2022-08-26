@@ -11,7 +11,6 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
 import javax.imageio.ImageIO;
-import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 import org.osrsjson.JSONArray;
@@ -21,9 +20,6 @@ import org.osrsjson.JSONObject;
 @ObfuscatedName("eu")
 public class class155 {
 	@ObfuscatedName("o")
-	@ObfuscatedGetter(
-		intValue = -1709164427
-	)
 	int field1704;
 	@ObfuscatedName("n")
 	String field1705;
@@ -48,7 +44,7 @@ public class class155 {
 	Map field1715;
 
 	public class155() {
-		this.field1704 = -1;
+		this.field1704 = -923916253;
 		this.field1707 = null;
 		this.field1702 = new float[4];
 		this.field1714 = new ArrayList();
@@ -77,7 +73,7 @@ public class class155 {
 					return true;
 				} catch (MalformedURLException var4) {
 					this.method3116();
-					this.field1704 = 100;
+					this.field1704 = -2097655212;
 					return false;
 				}
 			}
@@ -92,7 +88,7 @@ public class class155 {
 		garbageValue = "631956877"
 	)
 	public void method3138(UrlRequester var1) {
-		switch(this.field1704) {
+		switch(this.field1704 * -1709164427) {
 		case 0:
 			this.method3117(var1);
 			break;
@@ -111,7 +107,7 @@ public class class155 {
 		garbageValue = "1528603017"
 	)
 	public int method3108() {
-		return this.field1704;
+		return this.field1704 * -1709164427;
 	}
 
 	@ObfuscatedName("v")
@@ -206,7 +202,7 @@ public class class155 {
 			byte[] var2 = this.field1706.getResponse();
 			if (var2 == null) {
 				this.method3116();
-				this.field1704 = 100;
+				this.field1704 = -2097655212;
 			} else {
 				JSONObject var3;
 				try {
@@ -215,7 +211,7 @@ public class class155 {
 					var3 = var3.getJSONObject("message");
 				} catch (Exception var9) {
 					this.method3116();
-					this.field1704 = 102;
+					this.field1704 = -249822706;
 					return;
 				}
 
@@ -249,7 +245,7 @@ public class class155 {
 					this.field1715.clear();
 				}
 
-				this.field1704 = this.field1710.size() > 0 ? 1 : 2;
+				this.field1704 = (this.field1710.size() > 0 ? 1 : 2) * 923916253;
 				this.field1706 = null;
 			}
 		}
@@ -273,14 +269,14 @@ public class class155 {
 					if (var2.field1749 != null) {
 						byte[] var3 = var2.field1749.getResponse();
 						if (var3 != null && var3.length > 0) {
-							this.field1704 = 2;
+							this.field1704 = 1847832506;
 							return;
 						}
 					}
 				}
 
 				this.method3116();
-				this.field1704 = 101;
+				this.field1704 = -1173738959;
 				return;
 			}
 
@@ -321,9 +317,9 @@ public class class155 {
 				JSONObject var3 = var1.getJSONObject(var2);
 				class161 var4 = new class161(this);
 				var4.field1755 = var3.getString("text");
-				var4.field1758 = Renderable.method4228(var3.getString("align_x"));
-				var4.field1757 = Renderable.method4228(var3.getString("align_y"));
-				var4.field1759 = var3.getInt("font");
+				var4.field1758 = Renderable.method4228(var3.getString("align_x")) * 1738617341;
+				var4.field1757 = Renderable.method4228(var3.getString("align_y")) * -93259797;
+				var4.field1759 = var3.getInt("font") * 985061801;
 				var4.field1752 = class149.method3061(var3, "placement");
 				this.field1711.add(var4);
 			}

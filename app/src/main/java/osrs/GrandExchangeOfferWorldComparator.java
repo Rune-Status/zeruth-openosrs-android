@@ -22,7 +22,7 @@ final class GrandExchangeOfferWorldComparator implements Comparator {
 	)
 	@Export("compare_bridged")
 	int compare_bridged(GrandExchangeEvent var1, GrandExchangeEvent var2) {
-		return var1.world < var2.world ? -1 : (var2.world == var1.world ? 0 : 1);
+		return var1.world * -1839842789 < var2.world * -1839842789 ? -1 : (var2.world * -1839842789 == var1.world * -1839842789 ? 0 : 1);
 	}
 
 	public int compare(Object var1, Object var2) {

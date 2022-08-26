@@ -19,6 +19,6 @@ public class class290 {
 		garbageValue = "-548587979"
 	)
 	public static int method5488(int var0) {
-		return (var0 & class439.field4689) - 1;
+		return (var0 & class439.field4689 * 812509895) - 1;
 	}
 }

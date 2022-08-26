@@ -2,7 +2,6 @@ package osrs;
 
 import net.runelite.mapping.Export;
 import net.runelite.mapping.Implements;
-import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
@@ -22,18 +21,12 @@ public class Players {
 	)
 	static Buffer[] field1308;
 	@ObfuscatedName("q")
-	@ObfuscatedGetter(
-		intValue = -2113383221
-	)
 	@Export("Players_count")
 	static int Players_count;
 	@ObfuscatedName("i")
 	@Export("Players_indices")
 	static int[] Players_indices;
 	@ObfuscatedName("k")
-	@ObfuscatedGetter(
-		intValue = 1667275583
-	)
 	@Export("Players_emptyIdxCount")
 	static int Players_emptyIdxCount;
 	@ObfuscatedName("o")
@@ -49,9 +42,6 @@ public class Players {
 	@Export("Players_targetIndices")
 	static int[] Players_targetIndices;
 	@ObfuscatedName("m")
-	@ObfuscatedGetter(
-		intValue = -1903883359
-	)
 	@Export("Players_pendingUpdateCount")
 	static int Players_pendingUpdateCount;
 	@ObfuscatedName("u")

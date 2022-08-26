@@ -2,7 +2,6 @@ package osrs;
 
 import net.runelite.mapping.Export;
 import net.runelite.mapping.Implements;
-import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
@@ -12,24 +11,14 @@ public final class FloorDecoration {
 	@ObfuscatedName("n")
 	public static short[][] field2275;
 	@ObfuscatedName("fb")
-	@ObfuscatedGetter(
-		intValue = -2009762117
-	)
-	@Export("worldPort")
-	static int worldPort;
+	static int field2280;
 	@ObfuscatedName("s")
-	@ObfuscatedGetter(
-		intValue = -1439351211
-	)
 	@Export("z")
 	int z;
 	@ObfuscatedName("h")
 	@Export("x")
 	int x;
 	@ObfuscatedName("w")
-	@ObfuscatedGetter(
-		intValue = -675416611
-	)
 	@Export("y")
 	int y;
 	@ObfuscatedName("v")
@@ -39,15 +28,9 @@ public final class FloorDecoration {
 	@Export("renderable")
 	public Renderable renderable;
 	@ObfuscatedName("c")
-	@ObfuscatedGetter(
-		longValue = -6753090577772011297L
-	)
 	@Export("tag")
 	public long tag;
 	@ObfuscatedName("q")
-	@ObfuscatedGetter(
-		intValue = 861358365
-	)
 	@Export("flags")
 	int flags;
 

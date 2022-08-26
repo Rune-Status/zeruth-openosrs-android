@@ -2,7 +2,6 @@ package osrs;
 
 import net.runelite.mapping.Export;
 import net.runelite.mapping.Implements;
-import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
@@ -37,15 +36,11 @@ public class GameBuild {
 	@ObfuscatedSignature(
 		descriptor = "Lhl;"
 	)
-	@Export("textureProvider")
-	static TextureProvider textureProvider;
+	static TextureProvider field3588;
 	@ObfuscatedName("c")
 	@Export("name")
 	public final String name;
 	@ObfuscatedName("q")
-	@ObfuscatedGetter(
-		intValue = 1346396169
-	)
 	@Export("buildId")
 	final int buildId;
 
@@ -58,6 +53,6 @@ public class GameBuild {
 
 	GameBuild(String var1, int var2) {
 		this.name = var1;
-		this.buildId = var2;
+		this.buildId = var2 * 90254905;
 	}
 }

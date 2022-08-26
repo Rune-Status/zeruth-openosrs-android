@@ -1,33 +1,22 @@
 package osrs;
 
 import net.runelite.mapping.Export;
-import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
 @ObfuscatedName("ft")
 public class class160 {
 	@ObfuscatedName("n")
-	@ObfuscatedGetter(
-		intValue = -942095737
-	)
 	@Export("pcmSampleLength")
 	public static int pcmSampleLength;
 	@ObfuscatedName("y")
-	@ObfuscatedGetter(
-		intValue = 128601363
-	)
 	static int field1744;
 	@ObfuscatedName("b")
 	@ObfuscatedSignature(
 		descriptor = "Lib;"
 	)
-	@Export("worldMapEvent")
-	static WorldMapEvent worldMapEvent;
+	static WorldMapEvent field1746;
 	@ObfuscatedName("fz")
-	@ObfuscatedGetter(
-		intValue = -975943677
-	)
 	static int field1751;
 	@ObfuscatedName("s")
 	@ObfuscatedSignature(

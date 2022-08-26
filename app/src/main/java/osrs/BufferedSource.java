@@ -5,7 +5,6 @@ import java.io.IOException;
 import java.io.InputStream;
 import net.runelite.mapping.Export;
 import net.runelite.mapping.Implements;
-import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
@@ -16,8 +15,7 @@ public class BufferedSource implements Runnable {
 	@ObfuscatedSignature(
 		descriptor = "[Lqn;"
 	)
-	@Export("headIconPkSprites")
-	static SpritePixels[] headIconPkSprites;
+	static SpritePixels[] field4343;
 	@ObfuscatedName("s")
 	@Export("thread")
 	Thread thread;
@@ -25,36 +23,25 @@ public class BufferedSource implements Runnable {
 	@Export("inputStream")
 	InputStream inputStream;
 	@ObfuscatedName("w")
-	@ObfuscatedGetter(
-		intValue = -1647447189
-	)
 	@Export("capacity")
 	int capacity;
 	@ObfuscatedName("v")
 	@Export("buffer")
 	byte[] buffer;
 	@ObfuscatedName("c")
-	@ObfuscatedGetter(
-		intValue = -1571074557
-	)
-	@Export("position")
-	int position;
+	int field4340;
 	@ObfuscatedName("q")
-	@ObfuscatedGetter(
-		intValue = 1029497331
-	)
-	@Export("limit")
-	int limit;
+	int field4341;
 	@ObfuscatedName("i")
 	@Export("exception")
 	IOException exception;
 
 	BufferedSource(InputStream var1, int var2) {
-		this.position = 0;
-		this.limit = 0;
+		this.field4340 = 0;
+		this.field4341 = 0;
 		this.inputStream = var1;
-		this.capacity = var2 + 1;
-		this.buffer = new byte[this.capacity];
+		this.capacity = (var2 + 1) * -1429626557;
+		this.buffer = new byte[this.capacity * -1647447189];
 		this.thread = new Thread(this);
 		this.thread.setDaemon(true);
 		this.thread.start();
@@ -69,13 +56,13 @@ public class BufferedSource implements Runnable {
 	boolean isAvailable(int var1) throws IOException {
 		if (var1 == 0) {
 			return true;
-		} else if (var1 > 0 && var1 < this.capacity) {
+		} else if (var1 > 0 && var1 < this.capacity * -1647447189) {
 			synchronized(this) {
 				int var3;
-				if (this.position <= this.limit) {
-					var3 = this.limit - this.position;
+				if (this.field4340 * -1571074557 <= this.field4341 * 1029497331) {
+					var3 = this.field4341 * 1029497331 - this.field4340 * -1571074557;
 				} else {
-					var3 = this.capacity - this.position + this.limit;
+					var3 = this.capacity * -1647447189 - this.field4340 * -1571074557 + this.field4341 * 1029497331;
 				}
 
 				if (var3 < var1) {
@@ -99,14 +86,13 @@ public class BufferedSource implements Runnable {
 		descriptor = "(I)I",
 		garbageValue = "182656390"
 	)
-	@Export("available")
-	int available() throws IOException {
+	int method6793() throws IOException {
 		synchronized(this) {
 			int var2;
-			if (this.position <= this.limit) {
-				var2 = this.limit - this.position;
+			if (this.field4340 * -1571074557 <= this.field4341 * 1029497331) {
+				var2 = this.field4341 * 1029497331 - this.field4340 * -1571074557;
 			} else {
-				var2 = this.capacity - this.position + this.limit;
+				var2 = this.capacity * -1647447189 - this.field4340 * -1571074557 + this.field4341 * 1029497331;
 			}
 
 			if (var2 <= 0 && this.exception != null) {
@@ -123,18 +109,17 @@ public class BufferedSource implements Runnable {
 		descriptor = "(B)I",
 		garbageValue = "39"
 	)
-	@Export("readUnsignedByte")
-	int readUnsignedByte() throws IOException {
+	int method6794() throws IOException {
 		synchronized(this) {
-			if (this.limit == this.position) {
+			if (this.field4340 * -1571074557 == this.field4341 * 1029497331) {
 				if (this.exception != null) {
 					throw new IOException(this.exception.toString());
 				} else {
 					return -1;
 				}
 			} else {
-				int var2 = this.buffer[this.position] & 255;
-				this.position = (this.position + 1) % this.capacity;
+				int var2 = this.buffer[this.field4340 * -1571074557] & 255;
+				this.field4340 = (this.field4340 * -1571074557 + 1) % (this.capacity * -1647447189) * -996258645;
 				this.notifyAll();
 				return var2;
 			}
@@ -151,10 +136,10 @@ public class BufferedSource implements Runnable {
 		if (var3 >= 0 && var2 >= 0 && var3 + var2 <= var1.length) {
 			synchronized(this) {
 				int var5;
-				if (this.position <= this.limit) {
-					var5 = this.limit - this.position;
+				if (this.field4340 * -1571074557 <= this.field4341 * 1029497331) {
+					var5 = this.field4341 * 1029497331 - this.field4340 * -1571074557;
 				} else {
-					var5 = this.capacity - this.position + this.limit;
+					var5 = this.capacity * -1647447189 - this.field4340 * -1571074557 + this.field4341 * 1029497331;
 				}
 
 				if (var3 > var5) {
@@ -164,15 +149,15 @@ public class BufferedSource implements Runnable {
 				if (var3 == 0 && this.exception != null) {
 					throw new IOException(this.exception.toString());
 				} else {
-					if (var3 + this.position <= this.capacity) {
-						System.arraycopy(this.buffer, this.position, var1, var2, var3);
+					if (var3 + this.field4340 * -1571074557 <= this.capacity * -1647447189) {
+						System.arraycopy(this.buffer, this.field4340 * -1571074557, var1, var2, var3);
 					} else {
-						int var6 = this.capacity - this.position;
-						System.arraycopy(this.buffer, this.position, var1, var2, var6);
+						int var6 = this.capacity * -1647447189 - this.field4340 * -1571074557;
+						System.arraycopy(this.buffer, this.field4340 * -1571074557, var1, var2, var6);
 						System.arraycopy(this.buffer, 0, var1, var6 + var2, var3 - var6);
 					}
 
-					this.position = (var3 + this.position) % this.capacity;
+					this.field4340 = (var3 + this.field4340 * -1571074557) % (this.capacity * -1647447189) * -996258645;
 					this.notifyAll();
 					return var3;
 				}
@@ -213,12 +198,12 @@ public class BufferedSource implements Runnable {
 						return;
 					}
 
-					if (this.position == 0) {
-						var1 = this.capacity - this.limit - 1;
-					} else if (this.position <= this.limit) {
-						var1 = this.capacity - this.limit;
+					if (this.field4340 * -1571074557 == 0) {
+						var1 = this.capacity * -1647447189 - this.field4341 * 1029497331 - 1;
+					} else if (this.field4340 * -1571074557 <= this.field4341 * 1029497331) {
+						var1 = this.capacity * -1647447189 - this.field4341 * 1029497331;
 					} else {
-						var1 = this.position - this.limit - 1;
+						var1 = this.field4340 * -1571074557 - this.field4341 * 1029497331 - 1;
 					}
 
 					if (var1 > 0) {
@@ -234,7 +219,7 @@ public class BufferedSource implements Runnable {
 
 			int var7;
 			try {
-				var7 = this.inputStream.read(this.buffer, this.limit, var1);
+				var7 = this.inputStream.read(this.buffer, this.field4341 * 1029497331, var1);
 				if (var7 == -1) {
 					throw new EOFException();
 				}
@@ -247,7 +232,7 @@ public class BufferedSource implements Runnable {
 			}
 
 			synchronized(this) {
-				this.limit = (var7 + this.limit) % this.capacity;
+				this.field4341 = (var7 + this.field4341 * 1029497331) % (this.capacity * -1647447189) * -164192453;
 			}
 		}
 	}

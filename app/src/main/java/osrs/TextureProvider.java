@@ -2,7 +2,6 @@ package osrs;
 
 import net.runelite.mapping.Export;
 import net.runelite.mapping.Implements;
-import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
@@ -22,24 +21,15 @@ public class TextureProvider implements TextureLoader {
 	@Export("deque")
 	NodeDeque deque;
 	@ObfuscatedName("w")
-	@ObfuscatedGetter(
-		intValue = -624661903
-	)
 	@Export("capacity")
 	int capacity;
 	@ObfuscatedName("v")
-	@ObfuscatedGetter(
-		intValue = -1695745131
-	)
 	@Export("remaining")
 	int remaining;
 	@ObfuscatedName("c")
 	@Export("brightness")
 	double brightness;
 	@ObfuscatedName("q")
-	@ObfuscatedGetter(
-		intValue = -504292393
-	)
 	@Export("textureSize")
 	int textureSize;
 	@ObfuscatedName("i")
@@ -56,12 +46,12 @@ public class TextureProvider implements TextureLoader {
 		this.deque = new NodeDeque();
 		this.remaining = 0;
 		this.brightness = 1.0D;
-		this.textureSize = 128;
+		this.textureSize = 226751360;
 		this.archive = var2;
-		this.capacity = var3;
-		this.remaining = this.capacity;
+		this.capacity = var3 * -1741023599;
+		this.remaining = this.capacity * -1196090259;
 		this.brightness = var4;
-		this.textureSize = var6;
+		this.textureSize = var6 * 672860135;
 		int[] var7 = var1.getGroupFileIds(0);
 		int var8 = var7.length;
 		this.textures = new Texture[var1.getGroupFileCount(0)];
@@ -128,13 +118,13 @@ public class TextureProvider implements TextureLoader {
 				return var2.pixels;
 			}
 
-			boolean var3 = var2.load(this.brightness, this.textureSize, this.archive);
+			boolean var3 = var2.load(this.brightness, this.textureSize * -504292393, this.archive);
 			if (var3) {
-				if (this.remaining == 0) {
-					Texture var4 = (Texture)this.deque.removeFirst();
+				if (this.remaining * -1695745131 == 0) {
+					Texture var4 = (Texture)this.deque.method6023();
 					var4.reset();
 				} else {
-					--this.remaining;
+					this.remaining -= 1471707069;
 				}
 
 				this.deque.addLast(var2);
@@ -172,7 +162,7 @@ public class TextureProvider implements TextureLoader {
 	)
 	@Export("isLowDetail")
 	public boolean isLowDetail(int var1) {
-		return this.textureSize == 64;
+		return this.textureSize * -504292393 == 64;
 	}
 
 	@ObfuscatedName("i")
@@ -189,7 +179,7 @@ public class TextureProvider implements TextureLoader {
 		}
 
 		this.deque = new NodeDeque();
-		this.remaining = this.capacity;
+		this.remaining = this.capacity * -1196090259;
 	}
 
 	@ObfuscatedName("k")

@@ -4,7 +4,6 @@ import java.util.LinkedList;
 import java.util.List;
 import net.runelite.mapping.Export;
 import net.runelite.mapping.Implements;
-import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
@@ -32,21 +31,12 @@ public class VarbitComposition extends DualNode {
 	@Export("worldSelectStars")
 	static IndexedSprite[] worldSelectStars;
 	@ObfuscatedName("w")
-	@ObfuscatedGetter(
-		intValue = 1045443253
-	)
 	@Export("baseVar")
 	public int baseVar;
 	@ObfuscatedName("v")
-	@ObfuscatedGetter(
-		intValue = -683508103
-	)
 	@Export("startBit")
 	public int startBit;
 	@ObfuscatedName("c")
-	@ObfuscatedGetter(
-		intValue = 705581509
-	)
 	@Export("endBit")
 	public int endBit;
 
@@ -90,9 +80,9 @@ public class VarbitComposition extends DualNode {
 	@Export("decodeNext")
 	void decodeNext(Buffer var1, int var2) {
 		if (var2 == 1) {
-			this.baseVar = var1.readUnsignedShort();
-			this.startBit = var1.readUnsignedByte();
-			this.endBit = var1.readUnsignedByte();
+			this.baseVar = var1.readUnsignedShort() * 1483385757;
+			this.startBit = var1.readUnsignedByte() * 1599572937;
+			this.endBit = var1.readUnsignedByte() * -87489267;
 		}
 
 	}
@@ -122,10 +112,10 @@ public class VarbitComposition extends DualNode {
 				int var19;
 				int var20;
 				if (var0 == 7502) {
-					User.Interpreter_intStackSize -= 3;
-					var3 = Interpreter.Interpreter_intStack[User.Interpreter_intStackSize];
-					var19 = Interpreter.Interpreter_intStack[User.Interpreter_intStackSize + 1];
-					var5 = Interpreter.Interpreter_intStack[User.Interpreter_intStackSize + 2];
+					User.Interpreter_intStackSize -= -937460025;
+					var3 = Interpreter.Interpreter_intStack[User.Interpreter_intStackSize * -313022235];
+					var19 = Interpreter.Interpreter_intStack[User.Interpreter_intStackSize * -313022235 + 1];
+					var5 = Interpreter.Interpreter_intStack[User.Interpreter_intStackSize * -313022235 + 2];
 					var20 = class145.method3023(var19);
 					var7 = ClanSettings.method2909(var19);
 					int var21 = class290.method5488(var19);
@@ -155,9 +145,9 @@ public class VarbitComposition extends DualNode {
 							var16 = var28[var15];
 							class433 var22 = class19.method285(var16);
 							if (var22 == class433.field4655) {
-								Interpreter.Interpreter_stringStack[++UserComparator8.Interpreter_stringStackSize - 1] = "";
+								Interpreter.Interpreter_stringStack[(UserComparator8.Interpreter_stringStackSize += 204829809) * 929025169 - 1] = "";
 							} else {
-								Interpreter.Interpreter_intStack[++User.Interpreter_intStackSize - 1] = class352.method6435(var16);
+								Interpreter.Interpreter_intStack[(User.Interpreter_intStackSize += -312486675) * -313022235 - 1] = class352.method6435(var16);
 							}
 						}
 
@@ -169,9 +159,9 @@ public class VarbitComposition extends DualNode {
 								int var17 = var16 + var28.length * var5;
 								class433 var18 = class19.method285(var28[var16]);
 								if (var18 == class433.field4655) {
-									Interpreter.Interpreter_stringStack[++UserComparator8.Interpreter_stringStackSize - 1] = (String)var14[var17];
+									Interpreter.Interpreter_stringStack[(UserComparator8.Interpreter_stringStackSize += 204829809) * 929025169 - 1] = (String)var14[var17];
 								} else {
-									Interpreter.Interpreter_intStack[++User.Interpreter_intStackSize - 1] = (Integer)var14[var17];
+									Interpreter.Interpreter_intStack[(User.Interpreter_intStackSize += -312486675) * -313022235 - 1] = (Integer)var14[var17];
 								}
 							}
 
@@ -181,9 +171,9 @@ public class VarbitComposition extends DualNode {
 						}
 					}
 				} else if (var0 == 7503) {
-					User.Interpreter_intStackSize -= 2;
-					var3 = Interpreter.Interpreter_intStack[User.Interpreter_intStackSize];
-					var19 = Interpreter.Interpreter_intStack[User.Interpreter_intStackSize + 1];
+					User.Interpreter_intStackSize -= -624973350;
+					var3 = Interpreter.Interpreter_intStack[User.Interpreter_intStackSize * -313022235];
+					var19 = Interpreter.Interpreter_intStack[User.Interpreter_intStackSize * -313022235 + 1];
 					var5 = 0;
 					var20 = class145.method3023(var19);
 					var7 = ClanSettings.method2909(var19);
@@ -199,33 +189,33 @@ public class VarbitComposition extends DualNode {
 						var5 = var11.length / var10.length;
 					}
 
-					Interpreter.Interpreter_intStack[++User.Interpreter_intStackSize - 1] = var5;
+					Interpreter.Interpreter_intStack[(User.Interpreter_intStackSize += -312486675) * -313022235 - 1] = var5;
 					return 1;
 				} else if (var0 != 7504 && var0 != 7509) {
 					if (var0 == 7505) {
-						var3 = Interpreter.Interpreter_intStack[--User.Interpreter_intStackSize];
+						var3 = Interpreter.Interpreter_intStack[(User.Interpreter_intStackSize -= -312486675) * -313022235];
 						class438 var24 = class101.method2516(var3);
-						Interpreter.Interpreter_intStack[++User.Interpreter_intStackSize - 1] = var24.field4677;
+						Interpreter.Interpreter_intStack[(User.Interpreter_intStackSize += -312486675) * -313022235 - 1] = var24.field4677 * 1503762807;
 						return 1;
 					} else if (var0 == 7506) {
-						var3 = Interpreter.Interpreter_intStack[--User.Interpreter_intStackSize];
+						var3 = Interpreter.Interpreter_intStack[(User.Interpreter_intStackSize -= -312486675) * -313022235];
 						var19 = -1;
 						if (class93.field1281 != null && var3 >= 0 && var3 < class93.field1281.size()) {
 							var19 = (Integer)class93.field1281.get(var3);
 						}
 
-						Interpreter.Interpreter_intStack[++User.Interpreter_intStackSize - 1] = var19;
+						Interpreter.Interpreter_intStack[(User.Interpreter_intStackSize += -312486675) * -313022235 - 1] = var19;
 						return 1;
 					} else if (var0 != 7507 && var0 != 7510) {
 						return 2;
 					} else {
-						var3 = Interpreter.Interpreter_intStack[--User.Interpreter_intStackSize];
+						var3 = Interpreter.Interpreter_intStack[(User.Interpreter_intStackSize -= -312486675) * -313022235];
 						var4 = BuddyRankComparator.method2610(var3);
-						var5 = Interpreter.Interpreter_intStack[--User.Interpreter_intStackSize];
+						var5 = Interpreter.Interpreter_intStack[(User.Interpreter_intStackSize -= -312486675) * -313022235];
 						var6 = Message.method1060(var5);
 						if (var6 == null) {
 							throw new RuntimeException();
-						} else if (class145.method3023(var5) != Client.field764) {
+						} else if (class145.method3023(var5) != Client.field764 * 1934216883) {
 							throw new RuntimeException();
 						} else if (class93.field1281 == null && class93.field1281.isEmpty()) {
 							throw new RuntimeException();
@@ -241,15 +231,15 @@ public class VarbitComposition extends DualNode {
 
 							Skills.field3547 = class93.field1281.iterator();
 							if (var0 == 7507) {
-								Interpreter.Interpreter_intStack[++User.Interpreter_intStackSize - 1] = class93.field1281.size();
+								Interpreter.Interpreter_intStack[(User.Interpreter_intStackSize += -312486675) * -313022235 - 1] = class93.field1281.size();
 							}
 
 							return 1;
 						}
 					}
 				} else {
-					--User.Interpreter_intStackSize;
-					var3 = Interpreter.Interpreter_intStack[User.Interpreter_intStackSize];
+					User.Interpreter_intStackSize -= -312486675;
+					var3 = Interpreter.Interpreter_intStack[User.Interpreter_intStackSize * -313022235];
 					class437 var23 = class115.method2650(var3);
 					if (var23 == null) {
 						throw new RuntimeException();
@@ -257,13 +247,13 @@ public class VarbitComposition extends DualNode {
 						class93.field1281 = var23.method7537(0, 0);
 						var5 = 0;
 						if (class93.field1281 != null) {
-							Client.field764 = var3;
+							Client.field764 = var3 * -30961541;
 							Skills.field3547 = class93.field1281.iterator();
 							var5 = class93.field1281.size();
 						}
 
 						if (var0 == 7504) {
-							Interpreter.Interpreter_intStack[++User.Interpreter_intStackSize - 1] = var5;
+							Interpreter.Interpreter_intStack[(User.Interpreter_intStackSize += -312486675) * -313022235 - 1] = var5;
 						}
 
 						return 1;
@@ -271,17 +261,17 @@ public class VarbitComposition extends DualNode {
 				}
 			} else {
 				if (Skills.field3547 != null && Skills.field3547.hasNext()) {
-					Interpreter.Interpreter_intStack[++User.Interpreter_intStackSize - 1] = (Integer)Skills.field3547.next();
+					Interpreter.Interpreter_intStack[(User.Interpreter_intStackSize += -312486675) * -313022235 - 1] = (Integer)Skills.field3547.next();
 				} else {
-					Interpreter.Interpreter_intStack[++User.Interpreter_intStackSize - 1] = -1;
+					Interpreter.Interpreter_intStack[(User.Interpreter_intStackSize += -312486675) * -313022235 - 1] = -1;
 				}
 
 				return 1;
 			}
 		} else {
-			var3 = Interpreter.Interpreter_intStack[--User.Interpreter_intStackSize];
+			var3 = Interpreter.Interpreter_intStack[(User.Interpreter_intStackSize -= -312486675) * -313022235];
 			var4 = BuddyRankComparator.method2610(var3);
-			var5 = Interpreter.Interpreter_intStack[--User.Interpreter_intStackSize];
+			var5 = Interpreter.Interpreter_intStack[(User.Interpreter_intStackSize -= -312486675) * -313022235];
 			var6 = Message.method1060(var5);
 			if (var6 == null) {
 				throw new RuntimeException();
@@ -289,16 +279,16 @@ public class VarbitComposition extends DualNode {
 				var7 = class290.method5488(var5);
 				class93.field1281 = var6.method7537(var4, var7);
 				if (class93.field1281 != null) {
-					Client.field764 = class145.method3023(var5);
+					Client.field764 = class145.method3023(var5) * -30961541;
 					Skills.field3547 = class93.field1281.iterator();
 					if (var0 == 7500) {
-						Interpreter.Interpreter_intStack[++User.Interpreter_intStackSize - 1] = class93.field1281.size();
+						Interpreter.Interpreter_intStack[(User.Interpreter_intStackSize += -312486675) * -313022235 - 1] = class93.field1281.size();
 					}
 				} else {
-					Client.field764 = -1;
+					Client.field764 = 30961541;
 					Skills.field3547 = null;
 					if (var0 == 7500) {
-						Interpreter.Interpreter_intStack[++User.Interpreter_intStackSize - 1] = 0;
+						Interpreter.Interpreter_intStack[(User.Interpreter_intStackSize += -312486675) * -313022235 - 1] = 0;
 					}
 				}
 

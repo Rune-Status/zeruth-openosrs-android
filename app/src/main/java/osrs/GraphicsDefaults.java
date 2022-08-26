@@ -2,7 +2,6 @@ package osrs;
 
 import net.runelite.mapping.Export;
 import net.runelite.mapping.Implements;
-import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
@@ -10,76 +9,40 @@ import net.runelite.mapping.ObfuscatedSignature;
 @Implements("GraphicsDefaults")
 public class GraphicsDefaults {
 	@ObfuscatedName("s")
-	@ObfuscatedGetter(
-		intValue = 1135268835
-	)
-	@Export("compass")
-	public int compass;
+	public int field4367;
 	@ObfuscatedName("h")
-	@ObfuscatedGetter(
-		intValue = -2134294425
-	)
 	public int field4366;
 	@ObfuscatedName("w")
-	@ObfuscatedGetter(
-		intValue = 347744275
-	)
-	@Export("mapScenes")
-	public int mapScenes;
+	public int field4368;
 	@ObfuscatedName("v")
-	@ObfuscatedGetter(
-		intValue = 1554196661
-	)
-	@Export("headIconsPk")
-	public int headIconsPk;
+	public int field4372;
 	@ObfuscatedName("c")
-	@ObfuscatedGetter(
-		intValue = 557907727
-	)
 	public int field4370;
 	@ObfuscatedName("q")
-	@ObfuscatedGetter(
-		intValue = 1928213369
-	)
 	public int field4369;
 	@ObfuscatedName("i")
-	@ObfuscatedGetter(
-		intValue = 1582876983
-	)
 	public int field4371;
 	@ObfuscatedName("k")
-	@ObfuscatedGetter(
-		intValue = 823602837
-	)
 	public int field4373;
 	@ObfuscatedName("o")
-	@ObfuscatedGetter(
-		intValue = 2013848631
-	)
 	public int field4374;
 	@ObfuscatedName("n")
-	@ObfuscatedGetter(
-		intValue = -431849749
-	)
 	public int field4375;
 	@ObfuscatedName("d")
-	@ObfuscatedGetter(
-		intValue = 1535977443
-	)
 	public int field4376;
 
 	public GraphicsDefaults() {
-		this.compass = -1;
-		this.field4366 = -1;
-		this.mapScenes = -1;
-		this.headIconsPk = -1;
-		this.field4370 = -1;
-		this.field4369 = -1;
-		this.field4371 = -1;
-		this.field4373 = -1;
-		this.field4374 = -1;
-		this.field4375 = -1;
-		this.field4376 = -1;
+		this.field4367 = -322767307;
+		this.field4366 = -75881303;
+		this.field4368 = -481288731;
+		this.field4372 = -216171933;
+		this.field4370 = 2069884945;
+		this.field4369 = 1678063927;
+		this.field4371 = -1050885255;
+		this.field4373 = 1021498179;
+		this.field4374 = 2129129081;
+		this.field4375 = -1468348867;
+		this.field4376 = 1907272245;
 	}
 
 	@ObfuscatedName("s")
@@ -89,7 +52,7 @@ public class GraphicsDefaults {
 	)
 	@Export("decode")
 	public void decode(AbstractArchive var1) {
-		byte[] var2 = var1.takeFileFlat(DefaultsGroup.field4365.group);
+		byte[] var2 = var1.takeFileFlat(class382.field4365.field4364 * -645648235);
 		Buffer var3 = new Buffer(var2);
 
 		while (true) {
@@ -103,17 +66,17 @@ public class GraphicsDefaults {
 				var3.readMedium();
 				break;
 			case 2:
-				this.compass = var3.method7652();
-				this.field4366 = var3.method7652();
-				this.mapScenes = var3.method7652();
-				this.headIconsPk = var3.method7652();
-				this.field4370 = var3.method7652();
-				this.field4369 = var3.method7652();
-				this.field4371 = var3.method7652();
-				this.field4373 = var3.method7652();
-				this.field4374 = var3.method7652();
-				this.field4375 = var3.method7652();
-				this.field4376 = var3.method7652();
+				this.field4367 = var3.method7652() * 322767307;
+				this.field4366 = var3.method7652() * 75881303;
+				this.field4368 = var3.method7652() * 481288731;
+				this.field4372 = var3.method7652() * 216171933;
+				this.field4370 = var3.method7652() * -2069884945;
+				this.field4369 = var3.method7652() * -1678063927;
+				this.field4371 = var3.method7652() * 1050885255;
+				this.field4373 = var3.method7652() * -1021498179;
+				this.field4374 = var3.method7652() * -2129129081;
+				this.field4375 = var3.method7652() * 1468348867;
+				this.field4376 = var3.method7652() * -1907272245;
 			}
 		}
 	}

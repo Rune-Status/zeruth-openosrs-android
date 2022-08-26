@@ -23,8 +23,8 @@ public class BuddyRankComparator extends AbstractUserComparator {
 	)
 	@Export("compareBuddy")
 	int compareBuddy(Buddy var1, Buddy var2) {
-		if (var2.rank != var1.rank) {
-			return this.reversed ? var1.rank - var2.rank : var2.rank - var1.rank;
+		if (var2.rank * 1944406411 != var1.rank * 1944406411) {
+			return this.reversed ? var1.rank * 1944406411 - var2.rank * 1944406411 : var2.rank * 1944406411 - var1.rank * 1944406411;
 		} else {
 			return this.compareUser(var1, var2);
 		}

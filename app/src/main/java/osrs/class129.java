@@ -1,7 +1,5 @@
 package osrs;
 
-import net.runelite.mapping.Export;
-import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
@@ -11,12 +9,8 @@ public class class129 extends class128 {
 	@ObfuscatedSignature(
 		descriptor = "Lpj;"
 	)
-	@Export("WorldMapElement_fonts")
-	static Fonts WorldMapElement_fonts;
+	static Fonts field1540;
 	@ObfuscatedName("s")
-	@ObfuscatedGetter(
-		intValue = -1595981299
-	)
 	int field1539;
 	@ObfuscatedName("h")
 	boolean field1538;
@@ -31,7 +25,7 @@ public class class129 extends class128 {
 	)
 	class129(class131 var1) {
 		this.this$0 = var1;
-		this.field1539 = -1;
+		this.field1539 = 1402217275;
 	}
 
 	@ObfuscatedName("s")
@@ -40,7 +34,7 @@ public class class129 extends class128 {
 		garbageValue = "-885940784"
 	)
 	void vmethod3087(Buffer var1) {
-		this.field1539 = var1.readUnsignedShort();
+		this.field1539 = var1.readUnsignedShort() * -1402217275;
 		this.field1538 = var1.readUnsignedByte() == 1;
 	}
 
@@ -50,6 +44,6 @@ public class class129 extends class128 {
 		garbageValue = "0"
 	)
 	void vmethod3084(ClanSettings var1) {
-		var1.method2913(this.field1539, this.field1538);
+		var1.method2913(this.field1539 * -1595981299, this.field1538);
 	}
 }

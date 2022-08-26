@@ -2,7 +2,6 @@ package osrs;
 
 import net.runelite.mapping.Export;
 import net.runelite.mapping.Implements;
-import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
@@ -15,21 +14,11 @@ public class Decimator {
 	)
 	static Archive field403;
 	@ObfuscatedName("hu")
-	@ObfuscatedGetter(
-		intValue = 620670661
-	)
-	@Export("baseX")
-	static int baseX;
+	static int field404;
 	@ObfuscatedName("v")
-	@ObfuscatedGetter(
-		intValue = 1580600363
-	)
 	@Export("inputRate")
 	int inputRate;
 	@ObfuscatedName("c")
-	@ObfuscatedGetter(
-		intValue = -135318399
-	)
 	@Export("outputRate")
 	int outputRate;
 	@ObfuscatedName("q")
@@ -41,8 +30,8 @@ public class Decimator {
 			int var3 = method1005(var1, var2);
 			var1 /= var3;
 			var2 /= var3;
-			this.inputRate = var1;
-			this.outputRate = var2;
+			this.inputRate = var1 * 743854723;
+			this.outputRate = var2 * -1430975615;
 			this.table = new int[var1][14];
 
 			for (int var4 = 0; var4 < var1; ++var4) {
@@ -81,7 +70,7 @@ public class Decimator {
 	@Export("resample")
 	byte[] resample(byte[] var1) {
 		if (this.table != null) {
-			int var2 = (int)((long)this.outputRate * (long)var1.length / (long)this.inputRate) + 14;
+			int var2 = (int)((long)(this.outputRate * -135318399) * (long)var1.length / (long)(this.inputRate * 1580600363)) + 14;
 			int[] var3 = new int[var2];
 			int var4 = 0;
 			int var5 = 0;
@@ -96,10 +85,10 @@ public class Decimator {
 					var3[var4 + var9] += var7 * var8[var9];
 				}
 
-				var5 += this.outputRate;
-				var9 = var5 / this.inputRate;
+				var5 += this.outputRate * -135318399;
+				var9 = var5 / (this.inputRate * 1580600363);
 				var4 += var9;
-				var5 -= var9 * this.inputRate;
+				var5 -= var9 * this.inputRate * 1580600363;
 			}
 
 			var1 = new byte[var2];
@@ -127,7 +116,7 @@ public class Decimator {
 	@Export("scaleRate")
 	int scaleRate(int var1) {
 		if (this.table != null) {
-			var1 = (int)((long)var1 * (long)this.outputRate / (long)this.inputRate);
+			var1 = (int)((long)var1 * (long)(this.outputRate * -135318399) / (long)(this.inputRate * 1580600363));
 		}
 
 		return var1;
@@ -141,7 +130,7 @@ public class Decimator {
 	@Export("scalePosition")
 	int scalePosition(int var1) {
 		if (this.table != null) {
-			var1 = (int)((long)this.outputRate * (long)var1 / (long)this.inputRate) + 6;
+			var1 = (int)((long)(this.outputRate * -135318399) * (long)var1 / (long)(this.inputRate * 1580600363)) + 6;
 		}
 
 		return var1;
@@ -216,21 +205,21 @@ public class Decimator {
 	)
 	static final InterfaceParent method1001(int var0, int var1, int var2) {
 		InterfaceParent var3 = new InterfaceParent();
-		var3.group = var1;
-		var3.type = var2;
+		var3.group = var1 * 546352033;
+		var3.type = var2 * -1692874791;
 		Client.interfaceParents.put(var3, (long)var0);
 		PacketWriter.Widget_resetModelFrames(var1);
 		Widget var4 = HitSplatDefinition.getWidget(var0);
-		class125.invalidateWidget(var4);
+		class125.method2770(var4);
 		if (Client.meslayerContinueWidget != null) {
-			class125.invalidateWidget(Client.meslayerContinueWidget);
+			class125.method2770(Client.meslayerContinueWidget);
 			Client.meslayerContinueWidget = null;
 		}
 
 		class181.revalidateWidgetScroll(class358.Widget_interfaceComponents[var0 >> 16], var4, false);
 		class282.runWidgetOnLoadListener(var1);
-		if (Client.rootInterface != -1) {
-			ModelData0.runIntfCloseListeners(Client.rootInterface, 1);
+		if (Client.field649 * 1440668979 != -1) {
+			ModelData0.runIntfCloseListeners(Client.field649 * 1440668979, 1);
 		}
 
 		return var3;

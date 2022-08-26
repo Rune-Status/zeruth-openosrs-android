@@ -2,7 +2,6 @@ package osrs;
 
 import net.runelite.mapping.Export;
 import net.runelite.mapping.Implements;
-import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
@@ -46,9 +45,6 @@ public class LoginPacket implements class261 {
 	@Export("LoginPacket_indexedValues")
 	static final LoginPacket[] LoginPacket_indexedValues;
 	@ObfuscatedName("i")
-	@ObfuscatedGetter(
-		intValue = 2091844323
-	)
 	@Export("id")
 	public final int id;
 
@@ -64,7 +60,7 @@ public class LoginPacket implements class261 {
 		LoginPacket[] var1 = var0;
 
 		for (int var2 = 0; var2 < var1.length; ++var2) {
-			LoginPacket_indexedValues[var1[var2].id] = var1[var2];
+			LoginPacket_indexedValues[var1[var2].id * 2091844323] = var1[var2];
 		}
 
 	}
@@ -74,7 +70,7 @@ public class LoginPacket implements class261 {
 		garbageValue = "0"
 	)
 	LoginPacket(int var1, int var2) {
-		this.id = var1;
+		this.id = var1 * -633056565;
 	}
 
 	@ObfuscatedName("s")
@@ -88,7 +84,7 @@ public class LoginPacket implements class261 {
 
 		for (int var3 = 0; var3 < var2.length; ++var3) {
 			GameBuild var4 = var2[var3];
-			if (var0 == var4.buildId) {
+			if (var0 == var4.buildId * 1346396169) {
 				return var4;
 			}
 		}
@@ -102,6 +98,6 @@ public class LoginPacket implements class261 {
 		garbageValue = "101"
 	)
 	public static void method5144(AbstractArchive var0) {
-		FloorUnderlayDefinition.FloorUnderlayDefinition_archive = var0;
+		FloorUnderlayDefinition.FloorOverlayDefinition_archive = var0;
 	}
 }

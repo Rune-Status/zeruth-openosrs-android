@@ -2,7 +2,6 @@ package osrs;
 
 import net.runelite.mapping.Export;
 import net.runelite.mapping.Implements;
-import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
@@ -13,14 +12,9 @@ public class PacketBufferNode extends Node {
 	@ObfuscatedSignature(
 		descriptor = "[Ljg;"
 	)
-	@Export("PacketBufferNode_packetBufferNodes")
-	public static PacketBufferNode[] PacketBufferNode_packetBufferNodes;
+	public static PacketBufferNode[] field3042;
 	@ObfuscatedName("q")
-	@ObfuscatedGetter(
-		intValue = 230152311
-	)
-	@Export("PacketBufferNode_packetBufferNodeCount")
-	public static int PacketBufferNode_packetBufferNodeCount;
+	public static int field3039;
 	@ObfuscatedName("gt")
 	@ObfuscatedSignature(
 		descriptor = "Lnc;"
@@ -30,14 +24,9 @@ public class PacketBufferNode extends Node {
 	@ObfuscatedSignature(
 		descriptor = "Ljb;"
 	)
-	@Export("clientPacket")
-	public ClientPacket clientPacket;
+	public ClientPacket field3040;
 	@ObfuscatedName("h")
-	@ObfuscatedGetter(
-		intValue = 1911786961
-	)
-	@Export("clientPacketLength")
-	public int clientPacketLength;
+	public int field3043;
 	@ObfuscatedName("w")
 	@ObfuscatedSignature(
 		descriptor = "Lqz;"
@@ -45,15 +34,12 @@ public class PacketBufferNode extends Node {
 	@Export("packetBuffer")
 	public PacketBuffer packetBuffer;
 	@ObfuscatedName("v")
-	@ObfuscatedGetter(
-		intValue = 1990774047
-	)
 	@Export("index")
 	public int index;
 
 	static {
-		PacketBufferNode_packetBufferNodes = new PacketBufferNode[300];
-		PacketBufferNode_packetBufferNodeCount = 0;
+		field3042 = new PacketBufferNode[300];
+		field3039 = 0;
 	}
 
 	@ObfuscatedName("h")
@@ -63,8 +49,8 @@ public class PacketBufferNode extends Node {
 	)
 	@Export("release")
 	public void release() {
-		if (PacketBufferNode_packetBufferNodeCount < PacketBufferNode_packetBufferNodes.length) {
-			PacketBufferNode_packetBufferNodes[++PacketBufferNode_packetBufferNodeCount - 1] = this;
+		if (field3039 * 230152311 < field3042.length) {
+			field3042[(field3039 += -867598009) * 230152311 - 1] = this;
 		}
 	}
 

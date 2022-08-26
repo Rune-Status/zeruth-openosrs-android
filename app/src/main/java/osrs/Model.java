@@ -199,14 +199,11 @@ public class Model extends Renderable {
 	@Export("zMidOffset")
 	int zMidOffset;
 	@ObfuscatedName("be")
-	@Export("overrideHue")
-	public byte overrideHue;
+	public byte field2549;
 	@ObfuscatedName("bk")
-	@Export("overrideSaturation")
-	public byte overrideSaturation;
+	public byte field2524;
 	@ObfuscatedName("bf")
-	@Export("overrideLuminance")
-	public byte overrideLuminance;
+	public byte field2588;
 	@ObfuscatedName("ce")
 	@Export("overrideAmount")
 	public byte overrideAmount;
@@ -473,7 +470,7 @@ public class Model extends Renderable {
 					}
 				} else {
 					for (var12 = 0; var12 < var11.verticesCount; ++var12) {
-						var13 = (-this.verticesY[var12] << 16) / super.height;
+						var13 = (-this.verticesY[var12] << 16) / (super.height * 417479049);
 						if (var13 < var6) {
 							var14 = var2 + this.verticesX[var12];
 							var15 = var4 + this.verticesZ[var12];
@@ -514,8 +511,7 @@ public class Model extends Renderable {
 	@ObfuscatedSignature(
 		descriptor = "(Z)Lhp;"
 	)
-	@Export("toSharedSpotAnimationModel")
-	public Model toSharedSpotAnimationModel(boolean var1) {
+	public Model method4273(boolean var1) {
 		if (!var1 && Model_sharedSpotAnimationModelFaceAlphas.length < this.indicesCount) {
 			Model_sharedSpotAnimationModelFaceAlphas = new byte[this.indicesCount + 100];
 		}
@@ -662,8 +658,8 @@ public class Model extends Renderable {
 				int var2 = this.verticesX[var1];
 				int var3 = this.verticesY[var1];
 				int var4 = this.verticesZ[var1];
-				if (-var3 > super.height) {
-					super.height = -var3;
+				if (-var3 > super.height * 417479049) {
+					super.height = -var3 * 1354894521;
 				}
 
 				if (var3 > this.bottomY) {
@@ -677,7 +673,7 @@ public class Model extends Renderable {
 			}
 
 			this.xzRadius = (int)(Math.sqrt((double)this.xzRadius) + 0.99D);
-			this.radius = (int)(Math.sqrt((double)(this.xzRadius * this.xzRadius + super.height * super.height)) + 0.99D);
+			this.radius = (int)(Math.sqrt((double)(this.xzRadius * this.xzRadius + super.height * super.height * 417479049 * 417479049)) + 0.99D);
 			this.diameter = this.radius + (int)(Math.sqrt((double)(this.xzRadius * this.xzRadius + this.bottomY * this.bottomY)) + 0.99D);
 		}
 	}
@@ -767,7 +763,7 @@ public class Model extends Renderable {
 	void method4282(class122 var1, int var2) {
 		Skeleton var3 = var1.field1498;
 
-		for (int var4 = 0; var4 < var3.count; ++var4) {
+		for (int var4 = 0; var4 < var3.count * -61318255; ++var4) {
 			int var5 = var3.transformTypes[var4];
 			if (var5 == 5 && var1.field1499 != null && var1.field1499[var4] != null && var1.field1499[var4][0] != null && this.faceLabelsAlpha != null && this.faceAlphas != null) {
 				class117 var6 = var1.field1499[var4][0];
@@ -1316,20 +1312,20 @@ public class Model extends Renderable {
 							var15 = modelViewportYs[var8];
 							var16 = modelViewportYs[var9];
 							var29 = modelViewportYs[var10];
-							var18 = var6 + ViewportMouse.ViewportMouse_y;
+							var18 = var6 + ViewportMouse.ViewportMouse_y * 1382738033;
 							boolean var35;
 							if (var18 < var15 && var18 < var16 && var18 < var29) {
 								var35 = false;
 							} else {
-								var18 = ViewportMouse.ViewportMouse_y - var6;
+								var18 = ViewportMouse.ViewportMouse_y * 1382738033 - var6;
 								if (var18 > var15 && var18 > var16 && var18 > var29) {
 									var35 = false;
 								} else {
-									var18 = var6 + ViewportMouse.ViewportMouse_x;
+									var18 = ViewportMouse.ViewportMouse_x * 858842197 + var6;
 									if (var18 < var11 && var18 < var12 && var18 < var28) {
 										var35 = false;
 									} else {
-										var18 = ViewportMouse.ViewportMouse_x - var6;
+										var18 = ViewportMouse.ViewportMouse_x * 858842197 - var6;
 										if (var18 > var11 && var18 > var12 && var18 > var28) {
 											var35 = false;
 										} else {
@@ -1340,7 +1336,7 @@ public class Model extends Renderable {
 							}
 
 							if (var35) {
-								GrandExchangeOfferOwnWorldComparator.method1082(var4);
+								class59.method1082(var4);
 								var2 = false;
 							}
 						}
@@ -1586,11 +1582,11 @@ public class Model extends Renderable {
 		} else {
 			boolean var11 = this.method4294(var1);
 			if (this.faceColors3[var1] == -1 && var11) {
-				Rasterizer3D.method4019(var2, var3, var4, var5, var6, var7, field2584[this.faceColors1[var1]], this.overrideHue, this.overrideSaturation, this.overrideLuminance, this.overrideAmount);
+				Rasterizer3D.method4019(var2, var3, var4, var5, var6, var7, field2584[this.faceColors1[var1]], this.field2549, this.field2524, this.field2588, this.overrideAmount);
 			} else if (this.faceColors3[var1] == -1) {
 				Rasterizer3D.method3952(var2, var3, var4, var5, var6, var7, field2584[this.faceColors1[var1]]);
 			} else if (var11) {
-				Rasterizer3D.method3949(var2, var3, var4, var5, var6, var7, var8, var9, var10, this.overrideHue, this.overrideSaturation, this.overrideLuminance, this.overrideAmount);
+				Rasterizer3D.method3949(var2, var3, var4, var5, var6, var7, var8, var9, var10, this.field2549, this.field2524, this.field2588, this.overrideAmount);
 			} else {
 				Rasterizer3D.method3962(var2, var3, var4, var5, var6, var7, var8, var9, var10);
 			}
@@ -1735,15 +1731,15 @@ public class Model extends Renderable {
 				boolean var17 = this.method4294(var1);
 				if (this.faceColors3[var1] == -1 && var17) {
 					var18 = field2584[this.faceColors1[var1]];
-					Rasterizer3D.method4019(var14, var15, var16, var11, var12, var13, var18, this.overrideHue, this.overrideSaturation, this.overrideLuminance, this.overrideAmount);
-					Rasterizer3D.method4019(var14, var16, field2570[3], var11, var13, field2569[3], var18, this.overrideHue, this.overrideSaturation, this.overrideLuminance, this.overrideAmount);
+					Rasterizer3D.method4019(var14, var15, var16, var11, var12, var13, var18, this.field2549, this.field2524, this.field2588, this.overrideAmount);
+					Rasterizer3D.method4019(var14, var16, field2570[3], var11, var13, field2569[3], var18, this.field2549, this.field2524, this.field2588, this.overrideAmount);
 				} else if (this.faceColors3[var1] == -1) {
 					var18 = field2584[this.faceColors1[var1]];
 					Rasterizer3D.method3952(var14, var15, var16, var11, var12, var13, var18);
 					Rasterizer3D.method3952(var14, var16, field2570[3], var11, var13, field2569[3], var18);
 				} else if (var17) {
-					Rasterizer3D.method3949(var14, var15, var16, var11, var12, var13, field2513[0], field2513[1], field2513[2], this.overrideHue, this.overrideLuminance, this.overrideSaturation, this.overrideAmount);
-					Rasterizer3D.method3949(var14, var16, field2570[3], var11, var13, field2569[3], field2513[0], field2513[2], field2513[3], this.overrideHue, this.overrideLuminance, this.overrideSaturation, this.overrideAmount);
+					Rasterizer3D.method3949(var14, var15, var16, var11, var12, var13, field2513[0], field2513[1], field2513[2], this.field2549, this.field2588, this.field2524, this.overrideAmount);
+					Rasterizer3D.method3949(var14, var16, field2570[3], var11, var13, field2569[3], field2513[0], field2513[2], field2513[3], this.field2549, this.field2588, this.field2524, this.overrideAmount);
 				} else {
 					Rasterizer3D.method3962(var14, var15, var16, var11, var12, var13, field2513[0], field2513[1], field2513[2]);
 					Rasterizer3D.method3962(var14, var16, field2570[3], var11, var13, field2569[3], field2513[0], field2513[2], field2513[3]);
@@ -1820,10 +1816,10 @@ public class Model extends Renderable {
 					int var20 = (var3 * this.bottomY >> 16) + var19;
 					int var21 = (var18 + var20) * Rasterizer3D.Rasterizer3D_zoom;
 					if (var21 / var14 > Rasterizer3D.Rasterizer3D_clipNegativeMidY) {
-						int var22 = (var3 * super.height >> 16) + var19;
+						int var22 = var19 + (var3 * super.height * 417479049 >> 16);
 						int var23 = (var18 - var22) * Rasterizer3D.Rasterizer3D_zoom;
 						if (var23 / var14 < Rasterizer3D.Rasterizer3D_clipMidY2) {
-							int var24 = var13 + (var2 * super.height >> 16);
+							int var24 = var13 + (var2 * super.height * 417479049 >> 16);
 							boolean var25 = false;
 							boolean var26 = false;
 							if (var12 - var24 <= 50) {
@@ -1880,7 +1876,7 @@ public class Model extends Renderable {
 
 								if (var35) {
 									if (this.isSingleTile) {
-										GrandExchangeOfferOwnWorldComparator.method1082(var9);
+										class59.method1082(var9);
 									} else {
 										var34 = true;
 									}

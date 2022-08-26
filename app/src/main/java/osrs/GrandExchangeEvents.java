@@ -147,7 +147,7 @@ public class GrandExchangeEvents {
 					}
 
 					if (var6 == 8) {
-						var7 = ScriptFrame.localPlayer.combatLevel;
+						var7 = class56.localPlayer.field1088 * 295884031;
 					}
 
 					if (var6 == 9) {
@@ -174,11 +174,11 @@ public class GrandExchangeEvents {
 					}
 
 					if (var6 == 11) {
-						var7 = Client.runEnergy;
+						var7 = Client.field656 * 169360043;
 					}
 
 					if (var6 == 12) {
-						var7 = Client.weight;
+						var7 = Client.field657 * 1767446111;
 					}
 
 					if (var6 == 13) {
@@ -205,11 +205,11 @@ public class GrandExchangeEvents {
 					}
 
 					if (var6 == 18) {
-						var7 = Decimator.baseX * 64 + (ScriptFrame.localPlayer.x >> 7);
+						var7 = (class56.localPlayer.x * 1627221919 >> 7) + Decimator.field404 * 620670661;
 					}
 
 					if (var6 == 19) {
-						var7 = class7.baseY * 64 + (ScriptFrame.localPlayer.y >> 7);
+						var7 = (class56.localPlayer.y * 1229064101 >> 7) + class7.field30 * 542116271;
 					}
 
 					if (var6 == 20) {

@@ -4,7 +4,6 @@ import java.util.Iterator;
 import java.util.zip.CRC32;
 import net.runelite.mapping.Export;
 import net.runelite.mapping.Implements;
-import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
@@ -30,15 +29,9 @@ public class Archive extends AbstractArchive {
 	@Export("masterDisk")
 	ArchiveDisk masterDisk;
 	@ObfuscatedName("k")
-	@ObfuscatedGetter(
-		intValue = -485058211
-	)
 	@Export("index")
 	int index;
 	@ObfuscatedName("o")
-	@ObfuscatedGetter(
-		intValue = 1666198691
-	)
 	volatile int field3981;
 	@ObfuscatedName("n")
 	boolean field3989;
@@ -46,21 +39,12 @@ public class Archive extends AbstractArchive {
 	@Export("validGroups")
 	volatile boolean[] validGroups;
 	@ObfuscatedName("m")
-	@ObfuscatedGetter(
-		intValue = 2011863653
-	)
 	@Export("indexCrc")
 	int indexCrc;
 	@ObfuscatedName("u")
-	@ObfuscatedGetter(
-		intValue = 1947826101
-	)
 	@Export("indexVersion")
 	int indexVersion;
 	@ObfuscatedName("l")
-	@ObfuscatedGetter(
-		intValue = -1638662051
-	)
 	int field3984;
 	@ObfuscatedName("z")
 	boolean field3988;
@@ -76,35 +60,35 @@ public class Archive extends AbstractArchive {
 		super(var4, var5);
 		this.field3981 = 0;
 		this.field3989 = false;
-		this.field3984 = -1;
+		this.field3984 = 912534539;
 		this.field3988 = false;
 		this.archiveDisk = var1;
 		this.masterDisk = var2;
-		this.index = var3;
+		this.index = var3 * 1503036149;
 		this.field3989 = var6;
 		this.field3988 = var7;
-		int var9 = this.index;
+		int var9 = this.index * -485058211;
 		if (this.field3988) {
-			if (var9 <= NetCache.field4031) {
+			if (var9 <= NetCache.field4031 * 1057478507) {
 				throw new RuntimeException("");
 			}
 
-			if (var9 < NetCache.field4015) {
-				NetCache.field4015 = var9;
+			if (var9 < NetCache.field4015 * -1151493933) {
+				NetCache.field4015 = var9 * -617709733;
 			}
 		} else {
-			if (var9 >= NetCache.field4015) {
+			if (var9 >= NetCache.field4015 * -1151493933) {
 				throw new RuntimeException("");
 			}
 
-			if (var9 > NetCache.field4031) {
-				NetCache.field4031 = var9;
+			if (var9 > NetCache.field4031 * 1057478507) {
+				NetCache.field4031 = var9 * -922575549;
 			}
 		}
 
 		if (UserComparator3.field1385 != null) {
-			UserComparator3.field1385.offset = var9 * 8 + 5;
-			if (UserComparator3.field1385.offset >= UserComparator3.field1385.array.length) {
+			UserComparator3.field1385.offset = var9 * 137177336 + 1159477659;
+			if (UserComparator3.field1385.offset * 1795921631 >= UserComparator3.field1385.array.length) {
 				if (!this.field3988) {
 					throw new RuntimeException("");
 				}
@@ -128,7 +112,7 @@ public class Archive extends AbstractArchive {
 		garbageValue = "104"
 	)
 	public boolean method5710() {
-		return this.field3981 == 1;
+		return this.field3981 * 1666198691 == 1;
 	}
 
 	@ObfuscatedName("h")
@@ -136,14 +120,13 @@ public class Archive extends AbstractArchive {
 		descriptor = "(I)I",
 		garbageValue = "-14263237"
 	)
-	@Export("percentage")
-	public int percentage() {
-		if (this.field3981 == 1 || this.field3988 && this.field3981 == 2) {
+	public int method5739() {
+		if (this.field3981 * 1666198691 == 1 || this.field3988 && this.field3981 * 1666198691 == 2) {
 			return 100;
 		} else if (super.groups != null) {
 			return 99;
 		} else {
-			int var1 = PlayerComposition.method5528(255, this.index);
+			int var1 = PlayerComposition.method5528(255, this.index * -485058211);
 			if (var1 >= 100) {
 				var1 = 99;
 			}
@@ -159,7 +142,7 @@ public class Archive extends AbstractArchive {
 	)
 	@Export("loadRegionFromGroup")
 	void loadRegionFromGroup(int var1) {
-		int var2 = this.index;
+		int var2 = this.index * -485058211;
 		long var3 = (long)((var2 << 16) + var1);
 		NetFileRequest var5 = (NetFileRequest)NetCache.NetCache_pendingWrites.get(var3);
 		if (var5 != null) {
@@ -178,7 +161,7 @@ public class Archive extends AbstractArchive {
 		if (this.archiveDisk != null && this.validGroups != null && this.validGroups[var1]) {
 			AbstractUserComparator.method6637(var1, this.archiveDisk, this);
 		} else {
-			StudioGame.requestNetFile(this, this.index, var1, super.groupCrcs[var1], (byte)2, true);
+			StudioGame.requestNetFile(this, this.index * -485058211, var1, super.groupCrcs[var1], (byte)2, true);
 		}
 
 	}
@@ -189,7 +172,7 @@ public class Archive extends AbstractArchive {
 		garbageValue = "93"
 	)
 	void method5729() {
-		this.field3981 = 2;
+		this.field3981 = -1441018346;
 		super.groupIds = new int[0];
 		super.groupCrcs = new int[0];
 		super.groupVersions = new int[0];
@@ -206,12 +189,12 @@ public class Archive extends AbstractArchive {
 	)
 	@Export("loadIndex")
 	void loadIndex(int var1, int var2) {
-		this.indexCrc = var1;
-		this.indexVersion = var2;
+		this.indexCrc = var1 * -413300883;
+		this.indexVersion = var2 * -223543651;
 		if (this.masterDisk != null) {
-			AbstractUserComparator.method6637(this.index, this.masterDisk, this);
+			AbstractUserComparator.method6637(this.index * -485058211, this.masterDisk, this);
 		} else {
-			StudioGame.requestNetFile(this, 255, this.index, this.indexCrc, (byte)0, true);
+			StudioGame.requestNetFile(this, 255, this.index * -485058211, this.indexCrc * 2011863653, (byte)0, true);
 		}
 
 	}
@@ -224,12 +207,12 @@ public class Archive extends AbstractArchive {
 	@Export("write")
 	void write(int var1, byte[] var2, boolean var3, boolean var4) {
 		if (var3) {
-			if (this.field3981 == 1) {
+			if (this.field3981 * 1666198691 == 1) {
 				throw new RuntimeException();
 			}
 
 			if (this.masterDisk != null) {
-				int var5 = this.index;
+				int var5 = this.index * -485058211;
 				ArchiveDisk var6 = this.masterDisk;
 				ArchiveDiskAction var7 = new ArchiveDiskAction();
 				var7.type = 0;
@@ -241,14 +224,14 @@ public class Archive extends AbstractArchive {
 				}
 
 				synchronized(ArchiveDiskActionHandler.ArchiveDiskActionHandler_lock) {
-					if (ArchiveDiskActionHandler.field3970 == 0) {
-						ArchiveDiskActionHandler.ArchiveDiskActionHandler_thread = new Thread(new ArchiveDiskActionHandler());
-						ArchiveDiskActionHandler.ArchiveDiskActionHandler_thread.setDaemon(true);
-						ArchiveDiskActionHandler.ArchiveDiskActionHandler_thread.start();
-						ArchiveDiskActionHandler.ArchiveDiskActionHandler_thread.setPriority(5);
+					if (ArchiveDiskActionHandler.field3970 * -2145355515 == 0) {
+						ArchiveDiskActionHandler.field3972 = new Thread(new ArchiveDiskActionHandler());
+						ArchiveDiskActionHandler.field3972.setDaemon(true);
+						ArchiveDiskActionHandler.field3972.start();
+						ArchiveDiskActionHandler.field3972.setPriority(5);
 					}
 
-					ArchiveDiskActionHandler.field3970 = 600;
+					ArchiveDiskActionHandler.field3970 = -1431525256;
 				}
 			}
 
@@ -269,14 +252,14 @@ public class Archive extends AbstractArchive {
 				}
 
 				synchronized(ArchiveDiskActionHandler.ArchiveDiskActionHandler_lock) {
-					if (ArchiveDiskActionHandler.field3970 == 0) {
-						ArchiveDiskActionHandler.ArchiveDiskActionHandler_thread = new Thread(new ArchiveDiskActionHandler());
-						ArchiveDiskActionHandler.ArchiveDiskActionHandler_thread.setDaemon(true);
-						ArchiveDiskActionHandler.ArchiveDiskActionHandler_thread.start();
-						ArchiveDiskActionHandler.ArchiveDiskActionHandler_thread.setPriority(5);
+					if (ArchiveDiskActionHandler.field3970 * -2145355515 == 0) {
+						ArchiveDiskActionHandler.field3972 = new Thread(new ArchiveDiskActionHandler());
+						ArchiveDiskActionHandler.field3972.setDaemon(true);
+						ArchiveDiskActionHandler.field3972.start();
+						ArchiveDiskActionHandler.field3972.setPriority(5);
 					}
 
-					ArchiveDiskActionHandler.field3970 = 600;
+					ArchiveDiskActionHandler.field3970 = -1431525256;
 				}
 
 				this.validGroups[var1] = true;
@@ -310,27 +293,27 @@ public class Archive extends AbstractArchive {
 	public void load(ArchiveDisk var1, int var2, byte[] var3, boolean var4) {
 		int var5;
 		if (var1 == this.masterDisk) {
-			if (this.field3981 == 1) {
+			if (this.field3981 * 1666198691 == 1) {
 				throw new RuntimeException();
 			}
 
 			if (var3 == null) {
-				StudioGame.requestNetFile(this, 255, this.index, this.indexCrc, (byte)0, true);
+				StudioGame.requestNetFile(this, 255, this.index * -485058211, this.indexCrc * 2011863653, (byte)0, true);
 				return;
 			}
 
 			Archive_crc.reset();
 			Archive_crc.update(var3, 0, var3.length);
 			var5 = (int)Archive_crc.getValue();
-			if (var5 != this.indexCrc) {
-				StudioGame.requestNetFile(this, 255, this.index, this.indexCrc, (byte)0, true);
+			if (var5 != this.indexCrc * 2011863653) {
+				StudioGame.requestNetFile(this, 255, this.index * -485058211, this.indexCrc * 2011863653, (byte)0, true);
 				return;
 			}
 
 			Buffer var11 = new Buffer(class305.decompressBytes(var3));
 			int var12 = var11.readUnsignedByte();
 			if (var12 != 5 && var12 != 6) {
-				throw new RuntimeException(var12 + "," + this.index + "," + var2);
+				throw new RuntimeException(var12 + "," + this.index * -485058211 + "," + var2);
 			}
 
 			int var8 = 0;
@@ -338,22 +321,22 @@ public class Archive extends AbstractArchive {
 				var8 = var11.readInt();
 			}
 
-			if (var8 != this.indexVersion) {
-				StudioGame.requestNetFile(this, 255, this.index, this.indexCrc, (byte)0, true);
+			if (var8 != this.indexVersion * 1947826101) {
+				StudioGame.requestNetFile(this, 255, this.index * -485058211, this.indexCrc * 2011863653, (byte)0, true);
 				return;
 			}
 
 			this.decodeIndex(var3);
 			this.loadAllLocal();
 		} else {
-			if (!var4 && var2 == this.field3984) {
-				this.field3981 = 1;
+			if (!var4 && this.field3984 * -1638662051 == var2) {
+				this.field3981 = 1426974475;
 			}
 
 			if (var3 == null || var3.length <= 2) {
 				this.validGroups[var2] = false;
 				if (this.field3989 || var4) {
-					StudioGame.requestNetFile(this, this.index, var2, super.groupCrcs[var2], (byte)2, var4);
+					StudioGame.requestNetFile(this, this.index * -485058211, var2, super.groupCrcs[var2], (byte)2, var4);
 				}
 
 				return;
@@ -366,7 +349,7 @@ public class Archive extends AbstractArchive {
 			if (var5 != super.groupCrcs[var2] || var6 != super.groupVersions[var2]) {
 				this.validGroups[var2] = false;
 				if (this.field3989 || var4) {
-					StudioGame.requestNetFile(this, this.index, var2, super.groupCrcs[var2], (byte)2, var4);
+					StudioGame.requestNetFile(this, this.index * -485058211, var2, super.groupCrcs[var2], (byte)2, var4);
 				}
 
 				return;
@@ -407,19 +390,19 @@ public class Archive extends AbstractArchive {
 		}
 
 		if (this.archiveDisk == null) {
-			this.field3981 = 1;
+			this.field3981 = 1426974475;
 		} else {
-			this.field3984 = -1;
+			this.field3984 = 912534539;
 
 			for (var1 = 0; var1 < this.validGroups.length; ++var1) {
 				if (super.fileCounts[var1] > 0) {
 					class360.method6484(var1, this.archiveDisk, this);
-					this.field3984 = var1;
+					this.field3984 = var1 * -912534539;
 				}
 			}
 
-			if (this.field3984 == -1) {
-				this.field3981 = 1;
+			if (this.field3984 * -1638662051 == -1) {
+				this.field3981 = 1426974475;
 			}
 
 		}
@@ -435,7 +418,7 @@ public class Archive extends AbstractArchive {
 		if (super.groups[var1] != null) {
 			return 100;
 		} else {
-			return this.validGroups[var1] ? 100 : PlayerComposition.method5528(this.index, var1);
+			return this.validGroups[var1] ? 100 : PlayerComposition.method5528(this.index * -485058211, var1);
 		}
 	}
 

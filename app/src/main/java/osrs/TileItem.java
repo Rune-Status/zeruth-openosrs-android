@@ -2,7 +2,6 @@ package osrs;
 
 import net.runelite.mapping.Export;
 import net.runelite.mapping.Implements;
-import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
@@ -10,17 +9,9 @@ import net.runelite.mapping.ObfuscatedSignature;
 @Implements("TileItem")
 public final class TileItem extends Renderable {
 	@ObfuscatedName("s")
-	@ObfuscatedGetter(
-		intValue = 504973657
-	)
-	@Export("id")
-	int id;
+	int field1293;
 	@ObfuscatedName("h")
-	@ObfuscatedGetter(
-		intValue = -1383840147
-	)
-	@Export("quantity")
-	int quantity;
+	int field1291;
 
 	TileItem() {
 	}
@@ -32,7 +23,7 @@ public final class TileItem extends Renderable {
 	)
 	@Export("getModel")
 	protected final Model getModel() {
-		return AttackOption.ItemDefinition_get(this.id).getModel(this.quantity);
+		return AttackOption.ItemDefinition_get(this.field1293 * 504973657).getModel(this.field1291 * -1383840147);
 	}
 
 	@ObfuscatedName("s")
@@ -43,24 +34,24 @@ public final class TileItem extends Renderable {
 	@Export("updatePlayer")
 	static final void updatePlayer(PacketBuffer var0) {
 		var0.importIndex();
-		int var1 = Client.localPlayerIndex;
-		Player var2 = ScriptFrame.localPlayer = Client.players[var1] = new Player();
-		var2.index = var1;
+		int var1 = Client.localPlayerIndex * 729075111;
+		Player var2 = class56.localPlayer = Client.players[var1] = new Player();
+		var2.index = var1 * 1072435695;
 		int var3 = var0.readBits(30);
 		byte var4 = (byte)(var3 >> 28);
 		int var5 = var3 >> 14 & 16383;
 		int var6 = var3 & 16383;
-		var2.pathX[0] = var5 - Decimator.baseX * 64;
-		var2.x = (var2.pathX[0] << 7) + (var2.transformedSize() << 6);
-		var2.pathY[0] = var6 - class7.baseY * 64;
-		var2.y = (var2.pathY[0] << 7) + (var2.transformedSize() << 6);
-		class268.Client_plane = var2.plane = var4;
+		var2.pathX[0] = var5 - Decimator.field404 * 620670661;
+		var2.x = ((var2.pathX[0] << 7) + (var2.transformedSize() << 6)) * 1104407647;
+		var2.pathY[0] = var6 - class7.field30 * 542116271;
+		var2.y = ((var2.pathY[0] << 7) + (var2.transformedSize() << 6)) * 636586029;
+		class268.Client_plane = (var2.plane = -1367827023 * var4) * -1826537741;
 		if (Players.field1308[var1] != null) {
 			var2.read(Players.field1308[var1]);
 		}
 
 		Players.Players_count = 0;
-		Players.Players_indices[++Players.Players_count - 1] = var1;
+		Players.Players_indices[(Players.Players_count += -1140035357) * -2113383221 - 1] = var1;
 		Players.field1297[var1] = 0;
 		Players.Players_emptyIdxCount = 0;
 
@@ -73,7 +64,7 @@ public final class TileItem extends Renderable {
 				Players.Players_regions[var7] = (var10 << 14) + var11 + (var9 << 28);
 				Players.Players_orientations[var7] = 0;
 				Players.Players_targetIndices[var7] = -1;
-				Players.Players_emptyIndices[++Players.Players_emptyIdxCount - 1] = var7;
+				Players.Players_emptyIndices[(Players.Players_emptyIdxCount += 447009983) * 1667275583 - 1] = var7;
 				Players.field1297[var7] = 0;
 			}
 		}
@@ -100,16 +91,16 @@ public final class TileItem extends Renderable {
 				}
 			}
 
-			int var75 = Players.Players_count;
+			int var75 = Players.Players_count * -2113383221;
 			int[] var7 = Players.Players_indices;
 			byte var8 = 0;
-			if (var1 < var75 && var0.playerCycle == Client.cycle && CollisionMap.method3794((Player)var0)) {
+			if (var1 < var75 && var0.field1146 * 1586754657 == Client.cycle * 2009455757 && CollisionMap.method3794((Player)var0)) {
 				Player var9 = (Player)var0;
 				if (var1 < var75) {
-					SoundCache.method757(var0, var0.defaultHeight + 15);
+					SoundCache.method757(var0, var0.field1186 * -622538989 + 15);
 					AbstractFont var10 = (AbstractFont)Client.fontsMap.get(FontName.FontName_plain12);
 					byte var11 = 9;
-					var10.drawCentered(var9.username.getName(), var2 + Client.viewportTempX, var3 + Client.viewportTempY - var11, 16777215, 0);
+					var10.drawCentered(var9.username.getName(), Client.viewportTempX * -1559516189 + var2, var3 + Client.viewportTempY * -414199115 - var11, 16777215, 0);
 					var8 = 18;
 				}
 			}
@@ -119,48 +110,48 @@ public final class TileItem extends Renderable {
 			int var22;
 			int var23;
 			if (!var0.healthBars.method6073()) {
-				SoundCache.method757(var0, var0.defaultHeight + 15);
+				SoundCache.method757(var0, var0.field1186 * -622538989 + 15);
 
 				for (HealthBar var87 = (HealthBar)var0.healthBars.last(); var87 != null; var87 = (HealthBar)var0.healthBars.previous()) {
-					HealthBarUpdate var79 = var87.get(Client.cycle);
+					HealthBarUpdate var79 = var87.get(Client.cycle * 2009455757);
 					if (var79 == null) {
 						if (var87.isEmpty()) {
 							var87.remove();
 						}
 					} else {
 						HealthBarDefinition var80 = var87.definition;
-						SpritePixels var13 = var80.getBackSprite();
-						SpritePixels var81 = var80.getFrontSprite();
+						SpritePixels var13 = var80.method3367();
+						SpritePixels var81 = var80.method3366();
 						int var82 = 0;
 						if (var13 != null && var81 != null) {
-							if (var80.widthPadding * 2 < var81.subWidth) {
-								var82 = var80.widthPadding;
+							if (var80.widthPadding * -1466085178 < var81.subWidth) {
+								var82 = var80.widthPadding * -733042589;
 							}
 
 							var15 = var81.subWidth - var82 * 2;
 						} else {
-							var15 = var80.width;
+							var15 = var80.width * 477799443;
 						}
 
 						int var17 = 255;
 						boolean var83 = true;
-						int var84 = Client.cycle - var79.cycle;
-						int var85 = var15 * var79.health2 / var80.width;
+						int var84 = Client.cycle * 2009455757 - var79.cycle * 767819071;
+						int var85 = var15 * var79.health2 * 1895664145 / (var80.width * 477799443);
 						int var86;
 						int var94;
-						if (var79.cycleOffset > var84) {
-							var86 = var80.field1867 == 0 ? 0 : var80.field1867 * (var84 / var80.field1867);
-							var22 = var15 * var79.health / var80.width;
-							var94 = var86 * (var85 - var22) / var79.cycleOffset + var22;
+						if (var79.cycleOffset * -226595329 > var84) {
+							var86 = var80.field1867 * -323970275 == 0 ? 0 : var84 / (var80.field1867 * -323970275) * var80.field1867 * -323970275;
+							var22 = var15 * var79.health * 1604184597 / (var80.width * 477799443);
+							var94 = var22 + var86 * (var85 - var22) / (var79.cycleOffset * -226595329);
 						} else {
 							var94 = var85;
-							var86 = var79.cycleOffset + var80.int5 - var84;
-							if (var80.int3 >= 0) {
-								var17 = (var86 << 8) / (var80.int5 - var80.int3);
+							var86 = var79.cycleOffset * -226595329 + var80.int5 * 1905605681 - var84;
+							if (var80.int3 * 355492597 >= 0) {
+								var17 = (var86 << 8) / (var80.int5 * 1905605681 - var80.int3 * 355492597);
 							}
 						}
 
-						if (var79.health2 > 0 && var94 < 1) {
+						if (var79.health2 * 1895664145 > 0 && var94 < 1) {
 							var94 = 1;
 						}
 
@@ -173,8 +164,8 @@ public final class TileItem extends Renderable {
 
 							var86 = var13.subHeight;
 							var76 += var86;
-							var22 = var2 + Client.viewportTempX - (var15 >> 1);
-							var23 = var3 + Client.viewportTempY - var76;
+							var22 = Client.viewportTempX * -1559516189 + var2 - (var15 >> 1);
+							var23 = var3 + Client.viewportTempY * -414199115 - var76;
 							var22 -= var82;
 							if (var17 >= 0 && var17 < 255) {
 								var13.drawTransAt(var22, var23, var17);
@@ -190,9 +181,9 @@ public final class TileItem extends Renderable {
 							var76 += 2;
 						} else {
 							var76 += 5;
-							if (Client.viewportTempX > -1) {
-								var86 = var2 + Client.viewportTempX - (var15 >> 1);
-								var22 = var3 + Client.viewportTempY - var76;
+							if (Client.viewportTempX * -1559516189 > -1) {
+								var86 = Client.viewportTempX * -1559516189 + var2 - (var15 >> 1);
+								var22 = var3 + Client.viewportTempY * -414199115 - var76;
 								Rasterizer2D.Rasterizer2D_fillRectangle(var86, var22, var94, 5, 65280);
 								Rasterizer2D.Rasterizer2D_fillRectangle(var94 + var86, var22, var15 - var94, 5, 16711680);
 							}
@@ -214,26 +205,26 @@ public final class TileItem extends Renderable {
 					return;
 				}
 
-				if (var88.headIconPk != -1 || var88.headIconPrayer != -1) {
-					SoundCache.method757(var0, var0.defaultHeight + 15);
-					if (Client.viewportTempX > -1) {
-						if (var88.headIconPk != -1) {
+				if (var88.headIconPk * -339690919 != -1 || var88.headIconPrayer * -1767225387 != -1) {
+					SoundCache.method757(var0, var0.field1186 * -622538989 + 15);
+					if (Client.viewportTempX * -1559516189 > -1) {
+						if (var88.headIconPk * -339690919 != -1) {
 							var76 += 25;
-							BufferedSource.headIconPkSprites[var88.headIconPk].drawTransBgAt(var2 + Client.viewportTempX - 12, var3 + Client.viewportTempY - var76);
+							BufferedSource.field4343[var88.headIconPk * -339690919].drawTransBgAt(Client.viewportTempX * -1559516189 + var2 - 12, var3 + Client.viewportTempY * -414199115 - var76);
 						}
 
-						if (var88.headIconPrayer != -1) {
+						if (var88.headIconPrayer * -1767225387 != -1) {
 							var76 += 25;
-							MusicPatchNode.headIconPrayerSprites[var88.headIconPrayer].drawTransBgAt(var2 + Client.viewportTempX - 12, var3 + Client.viewportTempY - var76);
+							MusicPatchNode.field3277[var88.headIconPrayer * -1767225387].drawTransBgAt(Client.viewportTempX * -1559516189 + var2 - 12, var3 + Client.viewportTempY * -414199115 - var76);
 						}
 					}
 				}
 
-				if (var1 >= 0 && Client.hintArrowType == 10 && var7[var1] == Client.hintArrowPlayerIndex) {
-					SoundCache.method757(var0, var0.defaultHeight + 15);
-					if (Client.viewportTempX > -1) {
-						var76 += class229.headIconHintSprites[1].subHeight;
-						class229.headIconHintSprites[1].drawTransBgAt(var2 + Client.viewportTempX - 12, var3 + Client.viewportTempY - var76);
+				if (var1 >= 0 && Client.hintArrowType * 674077049 == 10 && Client.hintArrowPlayerIndex * -1315231485 == var7[var1]) {
+					SoundCache.method757(var0, var0.field1186 * -622538989 + 15);
+					if (Client.viewportTempX * -1559516189 > -1) {
+						var76 += class229.field2771[1].subHeight;
+						class229.field2771[1].drawTransBgAt(Client.viewportTempX * -1559516189 + var2 - 12, var3 + Client.viewportTempY * -414199115 - var76);
 					}
 				}
 			} else {
@@ -242,33 +233,33 @@ public final class TileItem extends Renderable {
 					var89 = var89.transform();
 				}
 
-				if (var89.headIconPrayer >= 0 && var89.headIconPrayer < MusicPatchNode.headIconPrayerSprites.length) {
-					SoundCache.method757(var0, var0.defaultHeight + 15);
-					if (Client.viewportTempX > -1) {
-						MusicPatchNode.headIconPrayerSprites[var89.headIconPrayer].drawTransBgAt(var2 + Client.viewportTempX - 12, var3 + Client.viewportTempY - 30);
+				if (var89.headIconPrayer * -1283027553 >= 0 && var89.headIconPrayer * -1283027553 < MusicPatchNode.field3277.length) {
+					SoundCache.method757(var0, var0.field1186 * -622538989 + 15);
+					if (Client.viewportTempX * -1559516189 > -1) {
+						MusicPatchNode.field3277[var89.headIconPrayer * -1283027553].drawTransBgAt(Client.viewportTempX * -1559516189 + var2 - 12, var3 + Client.viewportTempY * -414199115 - 30);
 					}
 				}
 
-				if (Client.hintArrowType == 1 && Client.npcIndices[var1 - var75] == Client.hintArrowNpcIndex && Client.cycle % 20 < 10) {
-					SoundCache.method757(var0, var0.defaultHeight + 15);
-					if (Client.viewportTempX > -1) {
-						class229.headIconHintSprites[0].drawTransBgAt(var2 + Client.viewportTempX - 12, var3 + Client.viewportTempY - 28);
+				if (Client.hintArrowType * 674077049 == 1 && Client.hintArrowNpcIndex * -1946576145 == Client.npcIndices[var1 - var75] && Client.cycle * 2009455757 % 20 < 10) {
+					SoundCache.method757(var0, var0.field1186 * -622538989 + 15);
+					if (Client.viewportTempX * -1559516189 > -1) {
+						class229.field2771[0].drawTransBgAt(Client.viewportTempX * -1559516189 + var2 - 12, var3 + Client.viewportTempY * -414199115 - 28);
 					}
 				}
 			}
 
-			if (var0.overheadText != null && (var1 >= var75 || !var0.field1164 && (Client.publicChatMode == 4 || !var0.isAutoChatting && (Client.publicChatMode == 0 || Client.publicChatMode == 3 || Client.publicChatMode == 1 && ((Player)var0).isFriend())))) {
-				SoundCache.method757(var0, var0.defaultHeight);
-				if (Client.viewportTempX > -1 && Client.overheadTextCount < Client.overheadTextLimit) {
-					Client.overheadTextXOffsets[Client.overheadTextCount] = WorldMapSection2.fontBold12.stringWidth(var0.overheadText) / 2;
-					Client.overheadTextAscents[Client.overheadTextCount] = WorldMapSection2.fontBold12.ascent;
-					Client.overheadTextXs[Client.overheadTextCount] = Client.viewportTempX;
-					Client.overheadTextYs[Client.overheadTextCount] = Client.viewportTempY;
-					Client.overheadTextColors[Client.overheadTextCount] = var0.overheadTextColor;
-					Client.overheadTextEffects[Client.overheadTextCount] = var0.overheadTextEffect;
-					Client.overheadTextCyclesRemaining[Client.overheadTextCount] = var0.overheadTextCyclesRemaining;
-					Client.overheadText[Client.overheadTextCount] = var0.overheadText;
-					++Client.overheadTextCount;
+			if (var0.field1142 != null && (var1 >= var75 || !var0.field1164 && (Client.field709 * -771162051 == 4 || !var0.field1184 && (Client.field709 * -771162051 == 0 || Client.field709 * -771162051 == 3 || Client.field709 * -771162051 == 1 && ((Player)var0).method2093())))) {
+				SoundCache.method757(var0, var0.field1186 * -622538989);
+				if (Client.viewportTempX * -1559516189 > -1 && Client.overheadTextCount * -443603057 < Client.overheadTextLimit * -1635512001) {
+					Client.overheadTextXOffsets[Client.overheadTextCount * -443603057] = WorldMapSection2.fontBold12.stringWidth(var0.field1142) / 2;
+					Client.overheadTextAscents[Client.overheadTextCount * -443603057] = WorldMapSection2.fontBold12.ascent;
+					Client.overheadTextXs[Client.overheadTextCount * -443603057] = Client.viewportTempX * -1559516189;
+					Client.overheadTextYs[Client.overheadTextCount * -443603057] = Client.viewportTempY * -414199115;
+					Client.overheadTextColors[Client.overheadTextCount * -443603057] = var0.field1151 * -1029513379;
+					Client.overheadTextEffects[Client.overheadTextCount * -443603057] = var0.field1152 * 1684740929;
+					Client.overheadTextCyclesRemaining[Client.overheadTextCount * -443603057] = var0.field1177 * 620000609;
+					Client.overheadText[Client.overheadTextCount * -443603057] = var0.field1142;
+					Client.overheadTextCount += -1885333649;
 				}
 			}
 
@@ -278,14 +269,14 @@ public final class TileItem extends Renderable {
 				HitSplatDefinition var91 = null;
 				int var14 = 0;
 				if (var12 >= 0) {
-					if (var90 <= Client.cycle) {
+					if (var90 <= Client.cycle * 2009455757) {
 						continue;
 					}
 
 					var91 = HealthBar.method2311(var0.hitSplatTypes[var77]);
-					var14 = var91.field2019;
-					if (var91 != null && var91.transforms != null) {
-						var91 = var91.transform();
+					var14 = var91.field2019 * -385387327;
+					if (var91 != null && var91.field2030 != null) {
+						var91 = var91.method3557();
 						if (var91 == null) {
 							var0.hitSplatCycles[var77] = -1;
 							continue;
@@ -299,30 +290,30 @@ public final class TileItem extends Renderable {
 				HitSplatDefinition var16 = null;
 				if (var15 >= 0) {
 					var16 = HealthBar.method2311(var15);
-					if (var16 != null && var16.transforms != null) {
-						var16 = var16.transform();
+					if (var16 != null && var16.field2030 != null) {
+						var16 = var16.method3557();
 					}
 				}
 
-				if (var90 - var14 <= Client.cycle) {
+				if (var90 - var14 <= Client.cycle * 2009455757) {
 					if (var91 == null) {
 						var0.hitSplatCycles[var77] = -1;
 					} else {
-						SoundCache.method757(var0, var0.defaultHeight / 2);
-						if (Client.viewportTempX > -1) {
+						SoundCache.method757(var0, var0.field1186 * -622538989 / 2);
+						if (Client.viewportTempX * -1559516189 > -1) {
 							boolean var92 = true;
 							if (var77 == 1) {
-								Client.viewportTempY -= 20;
+								Client.viewportTempY -= -2022119356;
 							}
 
 							if (var77 == 2) {
-								Client.viewportTempX -= 15;
-								Client.viewportTempY -= 10;
+								Client.viewportTempX -= 2029267685;
+								Client.viewportTempY -= 1136423970;
 							}
 
 							if (var77 == 3) {
-								Client.viewportTempX += 15;
-								Client.viewportTempY -= 10;
+								Client.viewportTempX += 2029267685;
+								Client.viewportTempY -= 1136423970;
 							}
 
 							SpritePixels var18 = null;
@@ -441,19 +432,19 @@ public final class TileItem extends Renderable {
 								}
 							}
 
-							Font var78 = var91.getFont();
+							Font var78 = var91.method3555();
 							if (var78 == null) {
-								var78 = class306.fontPlain11;
+								var78 = class306.field3607;
 							}
 
 							Font var44;
 							if (var16 != null) {
-								var44 = var16.getFont();
+								var44 = var16.method3555();
 								if (var44 == null) {
-									var44 = class306.fontPlain11;
+									var44 = class306.field3607;
 								}
 							} else {
-								var44 = class306.fontPlain11;
+								var44 = class306.field3607;
 							}
 
 							String var45 = null;
@@ -548,14 +539,14 @@ public final class TileItem extends Renderable {
 								}
 							}
 
-							var62 = var0.hitSplatCycles[var77] - Client.cycle;
-							int var63 = var91.field2015 - var62 * var91.field2015 / var91.field2019;
-							int var64 = var62 * var91.field2025 / var91.field2019 + -var91.field2025;
-							int var65 = var63 + (var2 + Client.viewportTempX - (var51 >> 1));
-							int var66 = var64 + (var3 + Client.viewportTempY - 12);
+							var62 = var0.hitSplatCycles[var77] - Client.cycle * 2009455757;
+							int var63 = var91.field2015 * -1971059461 - var62 * var91.field2015 * -1971059461 / (var91.field2019 * -385387327);
+							int var64 = -(var91.field2025 * -1207041019) + var62 * var91.field2025 * -1207041019 / (var91.field2019 * -385387327);
+							int var65 = Client.viewportTempX * -1559516189 + var2 - (var51 >> 1) + var63;
+							int var66 = var3 + Client.viewportTempY * -414199115 - 12 + var64;
 							int var67 = var66;
 							int var68 = var66 + var42;
-							int var69 = var66 + var91.field2031 + 15;
+							int var69 = var91.field2031 * 217225219 + var66 + 15;
 							int var70 = var69 - var78.maxAscent;
 							int var71 = var69 + var78.maxDescent;
 							if (var70 < var66) {
@@ -570,7 +561,7 @@ public final class TileItem extends Renderable {
 							int var73;
 							int var74;
 							if (var16 != null) {
-								var72 = var66 + var16.field2031 + 15;
+								var72 = var66 + var16.field2031 * 217225219 + 15;
 								var73 = var72 - var44.maxAscent;
 								var74 = var72 + var44.maxDescent;
 								if (var73 < var67) {
@@ -583,8 +574,8 @@ public final class TileItem extends Renderable {
 							}
 
 							var73 = 255;
-							if (var91.field2026 >= 0) {
-								var73 = (var62 << 8) / (var91.field2019 - var91.field2026);
+							if (var91.field2026 * -390038703 >= 0) {
+								var73 = (var62 << 8) / (var91.field2019 * -385387327 - var91.field2026 * -390038703);
 							}
 
 							if (var73 >= 0 && var73 < 255) {
@@ -606,7 +597,7 @@ public final class TileItem extends Renderable {
 									var21.drawTransAt(var56 + var65 - var29, var66, var73);
 								}
 
-								var78.drawAlpha(var45, var55 + var65, var69, var91.textColor, 0, var73);
+								var78.drawAlpha(var45, var55 + var65, var69, var91.textColor * -681177141, 0, var73);
 								if (var16 != null) {
 									if (var30 != null) {
 										var30.drawTransAt(var57 + var65 - var38, var66, var73);
@@ -626,7 +617,7 @@ public final class TileItem extends Renderable {
 										var33.drawTransAt(var65 + var60 - var41, var66, var73);
 									}
 
-									var44.drawAlpha(var46, var65 + var61, var72, var16.textColor, 0, var73);
+									var44.drawAlpha(var46, var65 + var61, var72, var16.textColor * -681177141, 0, var73);
 								}
 							} else {
 								if (var18 != null) {
@@ -647,7 +638,7 @@ public final class TileItem extends Renderable {
 									var21.drawTransBgAt(var56 + var65 - var29, var66);
 								}
 
-								var78.draw(var45, var65 + var55, var69, var91.textColor | -16777216, 0);
+								var78.draw(var45, var65 + var55, var69, var91.textColor * -681177141 | -16777216, 0);
 								if (var16 != null) {
 									if (var30 != null) {
 										var30.drawTransBgAt(var57 + var65 - var38, var66);
@@ -667,7 +658,7 @@ public final class TileItem extends Renderable {
 										var33.drawTransBgAt(var65 + var60 - var41, var66);
 									}
 
-									var44.draw(var46, var61 + var65, var72, var16.textColor | -16777216, 0);
+									var44.draw(var46, var61 + var65, var72, var16.textColor * -681177141 | -16777216, 0);
 								}
 							}
 						}

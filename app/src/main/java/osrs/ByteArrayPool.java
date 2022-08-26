@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import net.runelite.mapping.Export;
 import net.runelite.mapping.Implements;
-import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
@@ -12,47 +11,23 @@ import net.runelite.mapping.ObfuscatedSignature;
 @Implements("ByteArrayPool")
 public class ByteArrayPool {
 	@ObfuscatedName("c")
-	@ObfuscatedGetter(
-		intValue = -862731127
-	)
 	@Export("ByteArrayPool_smallCount")
 	static int ByteArrayPool_smallCount;
 	@ObfuscatedName("q")
-	@ObfuscatedGetter(
-		intValue = -1822826689
-	)
 	@Export("ByteArrayPool_mediumCount")
 	static int ByteArrayPool_mediumCount;
 	@ObfuscatedName("i")
-	@ObfuscatedGetter(
-		intValue = 1571439245
-	)
 	@Export("ByteArrayPool_largeCount")
 	static int ByteArrayPool_largeCount;
 	@ObfuscatedName("k")
-	@ObfuscatedGetter(
-		intValue = -1983574547
-	)
 	static int field4209;
 	@ObfuscatedName("o")
-	@ObfuscatedGetter(
-		intValue = -1700131269
-	)
 	static int field4210;
 	@ObfuscatedName("n")
-	@ObfuscatedGetter(
-		intValue = -832696811
-	)
 	static int field4201;
 	@ObfuscatedName("d")
-	@ObfuscatedGetter(
-		intValue = -1345624255
-	)
 	static int field4211;
 	@ObfuscatedName("a")
-	@ObfuscatedGetter(
-		intValue = -1304474513
-	)
 	static int field4212;
 	@ObfuscatedName("m")
 	@Export("ByteArrayPool_small")
@@ -76,10 +51,10 @@ public class ByteArrayPool {
 		ByteArrayPool_mediumCount = 0;
 		ByteArrayPool_largeCount = 0;
 		field4209 = 0;
-		field4210 = 1000;
-		field4201 = 250;
-		field4211 = 100;
-		field4212 = 50;
+		field4210 = 1014318392;
+		field4201 = 263411090;
+		field4211 = -1492915356;
+		field4212 = 624074734;
 		ByteArrayPool_small = new byte[1000][];
 		ByteArrayPool_medium = new byte[250][];
 		ByteArrayPool_large = new byte[100][];
@@ -110,36 +85,36 @@ public class ByteArrayPool {
 		if (var0 != 100) {
 			if (var0 < 100) {
 			}
-		} else if (ByteArrayPool_smallCount > 0) {
-			var4 = ByteArrayPool_small[--ByteArrayPool_smallCount];
-			ByteArrayPool_small[ByteArrayPool_smallCount] = null;
+		} else if (ByteArrayPool_smallCount * -862731127 > 0) {
+			var4 = ByteArrayPool_small[(ByteArrayPool_smallCount -= -1692208711) * -862731127];
+			ByteArrayPool_small[ByteArrayPool_smallCount * -862731127] = null;
 			return var4;
 		}
 
 		if (var0 != 5000) {
 			if (var0 < 5000) {
 			}
-		} else if (ByteArrayPool_mediumCount > 0) {
-			var4 = ByteArrayPool_medium[--ByteArrayPool_mediumCount];
-			ByteArrayPool_medium[ByteArrayPool_mediumCount] = null;
+		} else if (ByteArrayPool_mediumCount * -1822826689 > 0) {
+			var4 = ByteArrayPool_medium[(ByteArrayPool_mediumCount -= -1260285761) * -1822826689];
+			ByteArrayPool_medium[ByteArrayPool_mediumCount * -1822826689] = null;
 			return var4;
 		}
 
 		if (var0 != 10000) {
 			if (var0 < 10000) {
 			}
-		} else if (ByteArrayPool_largeCount > 0) {
-			var4 = ByteArrayPool_large[--ByteArrayPool_largeCount];
-			ByteArrayPool_large[ByteArrayPool_largeCount] = null;
+		} else if (ByteArrayPool_largeCount * 1571439245 > 0) {
+			var4 = ByteArrayPool_large[(ByteArrayPool_largeCount -= -779071419) * 1571439245];
+			ByteArrayPool_large[ByteArrayPool_largeCount * 1571439245] = null;
 			return var4;
 		}
 
 		if (var0 != 30000) {
 			if (var0 < 30000) {
 			}
-		} else if (field4209 > 0) {
-			var4 = field4216[--field4209];
-			field4216[field4209] = null;
+		} else if (field4209 * -1983574547 > 0) {
+			var4 = field4216[(field4209 -= 1058756581) * -1983574547];
+			field4216[field4209 * -1983574547] = null;
 			return var4;
 		}
 

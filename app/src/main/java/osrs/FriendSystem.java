@@ -2,7 +2,6 @@ package osrs;
 
 import net.runelite.mapping.Export;
 import net.runelite.mapping.Implements;
-import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
@@ -28,9 +27,6 @@ public class FriendSystem {
 	@Export("ignoreList")
 	public final IgnoreList ignoreList;
 	@ObfuscatedName("i")
-	@ObfuscatedGetter(
-		intValue = 927837377
-	)
 	int field794;
 
 	@ObfuscatedSignature(
@@ -49,7 +45,7 @@ public class FriendSystem {
 		garbageValue = "-788390797"
 	)
 	boolean method1627() {
-		return this.field794 == 2;
+		return this.field794 * 927837377 == 2;
 	}
 
 	@ObfuscatedName("h")
@@ -58,7 +54,7 @@ public class FriendSystem {
 		garbageValue = "1"
 	)
 	final void method1702() {
-		this.field794 = 1;
+		this.field794 = -1558650047;
 	}
 
 	@ObfuscatedName("w")
@@ -69,7 +65,7 @@ public class FriendSystem {
 	@Export("readUpdate")
 	final void readUpdate(Buffer var1, int var2) {
 		this.friendsList.read(var1, var2);
-		this.field794 = 2;
+		this.field794 = 1177667202;
 		class271.method5170();
 	}
 
@@ -80,14 +76,14 @@ public class FriendSystem {
 	)
 	@Export("processFriendUpdates")
 	final void processFriendUpdates() {
-		for (FriendLoginUpdate var1 = (FriendLoginUpdate)this.friendsList.friendLoginUpdates.last(); var1 != null; var1 = (FriendLoginUpdate)this.friendsList.friendLoginUpdates.previous()) {
-			if ((long)var1.field4296 < class181.method3483() / 1000L - 5L) {
-				if (var1.world > 0) {
-					VarcInt.addGameMessage(5, "", var1.username + " has logged in.");
+		for (class369 var1 = (class369)this.friendsList.friendLoginUpdates.last(); var1 != null; var1 = (class369)this.friendsList.friendLoginUpdates.previous()) {
+			if ((long)(var1.field4296 * 2088013585) < class181.method3483() / 1000L - 5L) {
+				if (var1.field4299 > 0) {
+					VarcInt.addGameMessage(5, "", var1.field4297 + " has logged in.");
 				}
 
-				if (var1.world == 0) {
-					VarcInt.addGameMessage(5, "", var1.username + " has logged out.");
+				if (var1.field4299 == 0) {
+					VarcInt.addGameMessage(5, "", var1.field4297 + " has logged out.");
 				}
 
 				var1.remove();
@@ -117,7 +113,7 @@ public class FriendSystem {
 	final boolean isFriended(Username var1, boolean var2) {
 		if (var1 == null) {
 			return false;
-		} else if (var1.equals(ScriptFrame.localPlayer.username)) {
+		} else if (var1.equals(class56.localPlayer.username)) {
 			return true;
 		} else {
 			return this.friendsList.isFriended(var1, var2);
@@ -152,14 +148,14 @@ public class FriendSystem {
 					Object var10000 = null;
 					String var4 = "Your friend list is full. Max of 200 for free users, and 400 for members";
 					VarcInt.addGameMessage(30, "", var4);
-				} else if (ScriptFrame.localPlayer.username.equals(var2)) {
+				} else if (class56.localPlayer.username.equals(var2)) {
 					class270.method5154();
 				} else if (this.isFriended(var2, false)) {
 					WorldMapLabelSize.method4449(var1);
 				} else if (this.isIgnored(var2)) {
 					class128.method2801(var1);
 				} else {
-					PacketBufferNode var3 = DevicePcmPlayerProvider.getPacketBufferNode(ClientPacket.field3009, Client.packetWriter.isaacCipher);
+					PacketBufferNode var3 = DevicePcmPlayerProvider.method354(ClientPacket.field3009, Client.packetWriter.field1338);
 					var3.packetBuffer.writeByte(class309.stringCp1252NullTerminatedByteSize(var1));
 					var3.packetBuffer.writeStringCp1252NullTerminated(var1);
 					Client.packetWriter.addNode(var3);
@@ -175,7 +171,7 @@ public class FriendSystem {
 	)
 	@Export("friendsListIsFull")
 	final boolean friendsListIsFull() {
-		return this.friendsList.isFull() || this.friendsList.getSize() >= 200 && Client.field592 != 1;
+		return this.friendsList.isFull() || this.friendsList.getSize() >= 200 && Client.field592 * -824541387 != 1;
 	}
 
 	@ObfuscatedName("u")
@@ -190,7 +186,7 @@ public class FriendSystem {
 			if (var2.hasCleanName()) {
 				if (this.canAddIgnore()) {
 					class4.method20("Your ignore list is full. Max of 100 for free users, and 400 for members");
-				} else if (ScriptFrame.localPlayer.username.equals(var2)) {
+				} else if (class56.localPlayer.username.equals(var2)) {
 					PacketBufferNode.method5137();
 				} else if (this.isIgnored(var2)) {
 					WorldMapCacheName.method4984(var1);
@@ -210,7 +206,7 @@ public class FriendSystem {
 	)
 	@Export("canAddIgnore")
 	final boolean canAddIgnore() {
-		return this.ignoreList.isFull() || this.ignoreList.getSize() >= 100 && Client.field592 != 1;
+		return this.ignoreList.isFull() || this.ignoreList.getSize() >= 100 && Client.field592 * -824541387 != 1;
 	}
 
 	@ObfuscatedName("e")
@@ -225,7 +221,7 @@ public class FriendSystem {
 			if (var2.hasCleanName()) {
 				if (this.friendsList.removeByUsername(var2)) {
 					ParamComposition.method3508();
-					PacketBufferNode var3 = DevicePcmPlayerProvider.getPacketBufferNode(ClientPacket.field2962, Client.packetWriter.isaacCipher);
+					PacketBufferNode var3 = DevicePcmPlayerProvider.method354(ClientPacket.field2962, Client.packetWriter.field1338);
 					var3.packetBuffer.writeByte(class309.stringCp1252NullTerminatedByteSize(var1));
 					var3.packetBuffer.writeStringCp1252NullTerminated(var1);
 					Client.packetWriter.addNode(var3);
@@ -248,7 +244,7 @@ public class FriendSystem {
 			if (var2.hasCleanName()) {
 				if (this.ignoreList.removeByUsername(var2)) {
 					ParamComposition.method3508();
-					PacketBufferNode var3 = DevicePcmPlayerProvider.getPacketBufferNode(ClientPacket.field2917, Client.packetWriter.isaacCipher);
+					PacketBufferNode var3 = DevicePcmPlayerProvider.method354(ClientPacket.field2917, Client.packetWriter.field1338);
 					var3.packetBuffer.writeByte(class309.stringCp1252NullTerminatedByteSize(var1));
 					var3.packetBuffer.writeStringCp1252NullTerminated(var1);
 					Client.packetWriter.addNode(var3);
@@ -275,9 +271,8 @@ public class FriendSystem {
 		descriptor = "(I)Lbd;",
 		garbageValue = "-1446818255"
 	)
-	@Export("getNextWorldListWorld")
-	static World getNextWorldListWorld() {
-		return World.World_listCount < World.World_count ? World.World_worlds[++World.World_listCount - 1] : null;
+	static World method1706() {
+		return World.World_listCount * -68555585 < World.World_count * -898146975 ? World.World_worlds[(World.World_listCount += 1610056511) * -68555585 - 1] : null;
 	}
 
 	@ObfuscatedName("aw")
@@ -295,9 +290,9 @@ public class FriendSystem {
 		garbageValue = "-2052694572"
 	)
 	static final void method1670() {
-		for (int var0 = 0; var0 < Players.Players_count; ++var0) {
+		for (int var0 = 0; var0 < Players.Players_count * -2113383221; ++var0) {
 			Player var1 = Client.players[Players.Players_indices[var0]];
-			var1.clearIsInFriendsChat();
+			var1.method2097();
 		}
 
 	}

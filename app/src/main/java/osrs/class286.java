@@ -1,16 +1,12 @@
 package osrs;
 
 import net.runelite.mapping.Export;
-import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
 @ObfuscatedName("kf")
 public class class286 {
 	@ObfuscatedName("vc")
-	@ObfuscatedGetter(
-		intValue = -1699767817
-	)
 	@Export("foundItemIndex")
 	static int foundItemIndex;
 

@@ -46,13 +46,13 @@ public class class154 extends class165 {
 		garbageValue = "1587324314"
 	)
 	static int method3103(Widget var0) {
-		if (var0.type != 11) {
-			--UserComparator8.Interpreter_stringStackSize;
-			Interpreter.Interpreter_intStack[++User.Interpreter_intStackSize - 1] = -1;
+		if (var0.type * 1201269859 != 11) {
+			UserComparator8.Interpreter_stringStackSize -= 204829809;
+			Interpreter.Interpreter_intStack[(User.Interpreter_intStackSize += -312486675) * -313022235 - 1] = -1;
 			return 1;
 		} else {
-			String var1 = Interpreter.Interpreter_stringStack[--UserComparator8.Interpreter_stringStackSize];
-			Interpreter.Interpreter_intStack[++User.Interpreter_intStackSize - 1] = var0.method5552(var1);
+			String var1 = Interpreter.Interpreter_stringStack[(UserComparator8.Interpreter_stringStackSize -= 204829809) * 929025169];
+			Interpreter.Interpreter_intStack[(User.Interpreter_intStackSize += -312486675) * -313022235 - 1] = var0.method5552(var1);
 			return 1;
 		}
 	}

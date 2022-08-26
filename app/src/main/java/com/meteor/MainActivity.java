@@ -58,8 +58,8 @@ public class MainActivity extends AppCompatActivity {
     public static boolean shouldDraw = false;
     View mImg;
 
-    public String username = "";
-    public String password = "";
+    public static String username = "";
+    public static String password = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -158,6 +158,11 @@ public class MainActivity extends AppCompatActivity {
         Login.Login_username = username;
         Login.Login_password = password;
         Client.androidActivity = this;
+        ScheduledExecutorService scheduler =
+                Executors.newSingleThreadScheduledExecutor();
+
+        scheduler.scheduleAtFixedRate
+                (() -> System.out.println("Gamestate (10 is login screen): " + Client.gameState * 433143709), 0, 2, TimeUnit.SECONDS);
     }
 
 
@@ -196,7 +201,7 @@ public class MainActivity extends AppCompatActivity {
 /*                                Paint paint = new Paint();
                                 paint.setStyle(Paint.Style.FILL);
                                 paint.setColor(Color.BLACK);*/
-            gameImage.setPixels(class119.rasterProvider.pixels, 0, class119.rasterProvider.width , 0, 0, class119.rasterProvider.width, class119.rasterProvider.height);
+            gameImage.setPixels(class119.rasterProvider.pixels, 0, 765 , 0, 0, 765, 503);
             //System.out.println(class119.rasterProvider.width + ":" + class119.rasterProvider.height);
 /*                                Canvas gameImageCanvas = new Canvas(gameImage.copy(Bitmap.Config.ARGB_8888, true));
                                 gameImageCanvas.drawText("OSRS Android Port 207.4", 0F, 0F, paint);*/
@@ -210,14 +215,14 @@ public class MainActivity extends AppCompatActivity {
                             int[] posXY = new int[2];
                             mImg.getLocationOnScreen(posXY);
 
-                            int touchX = (int) event.getX();
-                            int touchY = (int) event.getY();
+                            int touchX = (int) event.getX() / 10;
+                            int touchY = (int) event.getY() / 2;
 
-                            int imageX = touchX - posXY[0]; // posXY[0] is the X coordinate
-                            int imageY = touchY - posXY[1]; // posXY[1] is the y coordinate
+/*                            int imageX = touchX - posXY[0]; // posXY[0] is the X coordinate
+                            int imageY = touchY - posXY[1]; // posXY[1] is the y coordinate*/
 
-                            MouseHandler.mousePressed(new Point(imageX, imageY));
-                            System.out.println("Should click x:" + imageX + " y:" + imageY);
+                            MouseHandler.mousePressed(new Point(touchX, touchY));
+                            System.out.println("Should click x:" + touchX + " y:" + touchY);
                             return false;
                         }
                     });

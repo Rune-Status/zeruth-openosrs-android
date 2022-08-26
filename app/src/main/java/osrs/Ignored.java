@@ -2,7 +2,6 @@ package osrs;
 
 import net.runelite.mapping.Export;
 import net.runelite.mapping.Implements;
-import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
@@ -16,11 +15,7 @@ public class Ignored extends User {
 	@Export("scriptActiveWidget")
 	static Widget scriptActiveWidget;
 	@ObfuscatedName("s")
-	@ObfuscatedGetter(
-		intValue = 410982667
-	)
-	@Export("id")
-	int id;
+	int field4322;
 
 	Ignored() {
 	}
@@ -32,7 +27,7 @@ public class Ignored extends User {
 	)
 	@Export("compareTo_ignored")
 	int compareTo_ignored(Ignored var1) {
-		return this.id - var1.id;
+		return this.field4322 * 410982667 - var1.field4322 * 410982667;
 	}
 
 	@ObfuscatedName("h")
@@ -62,6 +57,6 @@ public class Ignored extends User {
 		Client.menuTargets[0] = "";
 		Client.menuOpcodes[0] = 1006;
 		Client.menuShiftClick[0] = false;
-		Client.menuOptionsCount = 1;
+		Client.menuOptionsCount = -1192880671;
 	}
 }

@@ -1,12 +1,11 @@
 package osrs;
 
 import net.runelite.mapping.Export;
-import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
 @ObfuscatedName("dn")
-public class class118 implements MouseWheel {
+public class class118 implements class328 {
 	@ObfuscatedName("s")
 	@ObfuscatedSignature(
 		descriptor = "Ldn;"
@@ -41,22 +40,12 @@ public class class118 implements MouseWheel {
 	@ObfuscatedSignature(
 		descriptor = "Lfq;"
 	)
-	@Export("socketTask")
-	static Task socketTask;
+	static Task field1456;
 	@ObfuscatedName("i")
-	@ObfuscatedGetter(
-		intValue = -1949909645
-	)
 	final int field1462;
 	@ObfuscatedName("k")
-	@ObfuscatedGetter(
-		intValue = 458997395
-	)
 	final int field1463;
 	@ObfuscatedName("o")
-	@ObfuscatedGetter(
-		intValue = -278782955
-	)
 	final int field1460;
 
 	static {
@@ -69,9 +58,9 @@ public class class118 implements MouseWheel {
 	}
 
 	class118(int var1, int var2, String var3, int var4) {
-		this.field1462 = var1;
-		this.field1463 = var2;
-		this.field1460 = var4;
+		this.field1462 = var1 * -1746489413;
+		this.field1463 = var2 * -2009919589;
+		this.field1460 = var4 * 1662178109;
 	}
 
 	@ObfuscatedName("s")
@@ -80,7 +69,7 @@ public class class118 implements MouseWheel {
 		garbageValue = "-121656532"
 	)
 	int method2714() {
-		return this.field1460;
+		return this.field1460 * -278782955;
 	}
 
 	@ObfuscatedName("h")
@@ -90,7 +79,7 @@ public class class118 implements MouseWheel {
 	)
 	@Export("rsOrdinal")
 	public int rsOrdinal() {
-		return this.field1463;
+		return this.field1463 * 458997395;
 	}
 
 	@ObfuscatedName("h")
@@ -120,13 +109,13 @@ public class class118 implements MouseWheel {
 		garbageValue = "1367310887"
 	)
 	public static void method2713(AbstractArchive var0, int var1, int var2, int var3, boolean var4) {
-		class273.musicPlayerStatus = 1;
+		class273.musicPlayerStatus = 168497391;
 		NetFileRequest.musicTrackArchive = var0;
-		UrlRequester.musicTrackGroupId = var1;
-		SceneTilePaint.musicTrackFileId = var2;
-		class28.musicTrackVolume = var3;
+		UrlRequester.musicTrackGroupId = var1 * -1733946155;
+		SceneTilePaint.musicTrackFileId = var2 * -2021054053;
+		class28.musicTrackVolume = var3 * -536149201;
 		class273.musicTrackBoolean = var4;
-		class160.pcmSampleLength = 10000;
+		class160.pcmSampleLength = -438070160;
 	}
 
 	@ObfuscatedName("c")
@@ -152,27 +141,27 @@ public class class118 implements MouseWheel {
 			var4 = var0.readBits(13);
 			boolean var12 = var0.readBits(1) == 1;
 			if (var12) {
-				Players.Players_pendingUpdateIndices[++Players.Players_pendingUpdateCount - 1] = var1;
+				Players.Players_pendingUpdateIndices[(Players.Players_pendingUpdateCount += 709859425) * -1903883359 - 1] = var1;
 			}
 
 			if (Client.players[var1] != null) {
 				throw new RuntimeException();
 			} else {
 				Player var11 = Client.players[var1] = new Player();
-				var11.index = var1;
+				var11.index = var1 * 1072435695;
 				if (Players.field1308[var1] != null) {
 					var11.read(Players.field1308[var1]);
 				}
 
-				var11.orientation = Players.Players_orientations[var1];
-				var11.targetIndex = Players.Players_targetIndices[var1];
+				var11.orientation = Players.Players_orientations[var1] * 705267999;
+				var11.targetIndex = Players.Players_targetIndices[var1] * -296959257;
 				var7 = Players.Players_regions[var1];
 				var8 = var7 >> 28;
 				var9 = var7 >> 14 & 255;
 				var10 = var7 & 255;
 				var11.pathTraversed[0] = Players.field1298[var1];
-				var11.plane = (byte)var8;
-				var11.resetPath((var9 << 13) + var3 - Decimator.baseX * 64, (var10 << 13) + var4 - class7.baseY * 64);
+				var11.plane = (byte)var8 * -1367827023;
+				var11.resetPath((var9 << 13) + var3 - Decimator.field404 * 620670661, (var10 << 13) + var4 - class7.field30 * 542116271);
 				var11.field1111 = false;
 				return true;
 			}

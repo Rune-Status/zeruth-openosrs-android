@@ -4,7 +4,6 @@ import java.lang.reflect.Field;
 import java.lang.reflect.Method;
 import net.runelite.mapping.Export;
 import net.runelite.mapping.Implements;
-import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
@@ -18,15 +17,9 @@ public class ReflectionCheck extends Node {
 	@Export("fontPlain12")
 	static Font fontPlain12;
 	@ObfuscatedName("s")
-	@ObfuscatedGetter(
-		intValue = -899581373
-	)
 	@Export("id")
 	int id;
 	@ObfuscatedName("h")
-	@ObfuscatedGetter(
-		intValue = 1174030445
-	)
 	@Export("size")
 	int size;
 	@ObfuscatedName("w")
@@ -58,7 +51,7 @@ public class ReflectionCheck extends Node {
 	)
 	static void method580() {
 		if (Client.Login_isUsernameRemembered && Login.Login_username != null && Login.Login_username.length() > 0) {
-			Login.currentLoginField = 1;
+			Login.currentLoginField = -1963213965;
 		} else {
 			Login.currentLoginField = 0;
 		}
@@ -93,13 +86,13 @@ public class ReflectionCheck extends Node {
 			Client.showMouseOverText = !Client.showMouseOverText;
 		}
 
-		if (Client.staffModLevel >= 2) {
+		if (Client.field756 * -1044925517 >= 2) {
 			if (var0.equalsIgnoreCase("errortest")) {
 				throw new RuntimeException();
 			}
 
 			if (var0.equalsIgnoreCase("showcoord")) {
-				ClientPacket.worldMap.showCoord = !ClientPacket.worldMap.showCoord;
+				ClientPacket.worldMap.field4569 = !ClientPacket.worldMap.field4569;
 			}
 
 			if (var0.equalsIgnoreCase("fpson")) {
@@ -119,7 +112,7 @@ public class ReflectionCheck extends Node {
 			}
 		}
 
-		PacketBufferNode var1 = DevicePcmPlayerProvider.getPacketBufferNode(ClientPacket.field2939, Client.packetWriter.isaacCipher);
+		PacketBufferNode var1 = DevicePcmPlayerProvider.method354(ClientPacket.field2939, Client.packetWriter.field1338);
 		var1.packetBuffer.writeByte(var0.length() + 1);
 		var1.packetBuffer.writeStringCp1252NullTerminated(var0);
 		Client.packetWriter.addNode(var1);
@@ -133,7 +126,7 @@ public class ReflectionCheck extends Node {
 	@Export("Widget_runOnTargetLeave")
 	static void Widget_runOnTargetLeave() {
 		if (Client.isSpellSelected) {
-			Widget var0 = class128.getWidgetChild(class282.selectedSpellWidget, Client.selectedSpellChildIndex);
+			Widget var0 = class128.getWidgetChild(class282.selectedSpellWidget * 1739476279, Client.selectedSpellChildIndex * 884413697);
 			if (var0 != null && var0.onTargetLeave != null) {
 				ScriptEvent var1 = new ScriptEvent();
 				var1.widget = var0;
@@ -141,9 +134,9 @@ public class ReflectionCheck extends Node {
 				SceneTilePaint.runScriptEvent(var1);
 			}
 
-			Client.selectedSpellItemId = -1;
+			Client.selectedSpellItemId = -561514189;
 			Client.isSpellSelected = false;
-			class125.invalidateWidget(var0);
+			class125.method2770(var0);
 		}
 	}
 }

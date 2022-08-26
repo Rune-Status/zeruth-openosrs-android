@@ -3,7 +3,6 @@ package osrs;
 import java.net.URL;
 import net.runelite.mapping.Export;
 import net.runelite.mapping.Implements;
-import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
@@ -11,9 +10,6 @@ import net.runelite.mapping.ObfuscatedSignature;
 @Implements("UrlRequest")
 public class UrlRequest {
 	@ObfuscatedName("d")
-	@ObfuscatedGetter(
-		intValue = -2013552201
-	)
 	static int field1355;
 	@ObfuscatedName("s")
 	@Export("url")
@@ -64,9 +60,9 @@ public class UrlRequest {
 		garbageValue = "1932536931"
 	)
 	public static boolean method2520(AbstractArchive var0, AbstractArchive var1, AbstractArchive var2, MidiPcmStream var3) {
-		class273.musicPatchesArchive = var0;
-		class273.musicSamplesArchive = var1;
-		class273.soundEffectsArchive = var2;
+		class273.field3201 = var0;
+		class273.field3199 = var1;
+		class273.field3203 = var2;
 		ItemContainer.midiPcmStream = var3;
 		return true;
 	}
@@ -100,6 +96,6 @@ public class UrlRequest {
 		garbageValue = "-137524219"
 	)
 	public static boolean method2525() {
-		return Client.staffModLevel >= 2;
+		return Client.field756 * -1044925517 >= 2;
 	}
 }

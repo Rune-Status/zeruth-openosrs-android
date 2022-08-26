@@ -29,9 +29,9 @@ public class class220 {
 	)
 	public static void method4448(int var0, int var1) {
 		VarbitComposition var2 = class118.method2721(var0);
-		int var3 = var2.baseVar;
-		int var4 = var2.startBit;
-		int var5 = var2.endBit;
+		int var3 = var2.baseVar * 1045443253;
+		int var4 = var2.startBit * -683508103;
+		int var5 = var2.endBit * 705581509;
 		int var6 = Varps.Varps_masks[var5 - var4];
 		if (var1 < 0 || var1 > var6) {
 			var1 = 0;

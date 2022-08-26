@@ -2,7 +2,6 @@ package osrs;
 
 import net.runelite.mapping.Export;
 import net.runelite.mapping.Implements;
-import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
@@ -31,15 +30,9 @@ public class FriendsChat extends UserList {
 	@Export("minKick")
 	public byte minKick;
 	@ObfuscatedName("i")
-	@ObfuscatedGetter(
-		intValue = -1509260973
-	)
 	@Export("rank")
 	public int rank;
 	@ObfuscatedName("k")
-	@ObfuscatedGetter(
-		intValue = -986186667
-	)
 	int field4291;
 
 	@ObfuscatedSignature(
@@ -49,7 +42,7 @@ public class FriendsChat extends UserList {
 		super(500);
 		this.name = null;
 		this.owner = null;
-		this.field4291 = 1;
+		this.field4291 = -123920131;
 		this.loginType = var1;
 		this.localUser = var2;
 	}
@@ -205,8 +198,8 @@ public class FriendsChat extends UserList {
 			for (int var15 = 0; var15 < var10; ++var15) {
 				ClanMate var16 = (ClanMate)this.addLastNoPreviousUsername(new Username(var1.readStringCp1252NullTerminated(), this.loginType));
 				int var13 = var1.readUnsignedShort();
-				var16.set(var13, ++this.field4291 - 1);
-				var16.rank = var1.readByte();
+				var16.set(var13, (this.field4291 += -123920131) * -986186667 - 1);
+				var16.rank = var1.readByte() * 312415779;
 				var1.readStringCp1252NullTerminated();
 				this.isLocalPlayer(var16);
 			}
@@ -242,15 +235,15 @@ public class FriendsChat extends UserList {
 			var1.readStringCp1252NullTerminated();
 			var6 = (ClanMate)this.getByCurrentUsername(var2);
 			if (var6 == null) {
-				if (this.getSize() > super.capacity) {
+				if (this.getSize() > super.capacity * 2139320615) {
 					return;
 				}
 
 				var6 = (ClanMate)this.addLastNoPreviousUsername(var2);
 			}
 
-			var6.set(var3, ++this.field4291 - 1);
-			var6.rank = var4;
+			var6.set(var3, (this.field4291 += -123920131) * -986186667 - 1);
+			var6.rank = var4 * 312415779;
 			this.isLocalPlayer(var6);
 		}
 
@@ -261,10 +254,9 @@ public class FriendsChat extends UserList {
 		descriptor = "(I)V",
 		garbageValue = "-1186289190"
 	)
-	@Export("clearFriends")
-	public final void clearFriends() {
+	public final void method6557() {
 		for (int var1 = 0; var1 < this.getSize(); ++var1) {
-			((ClanMate)this.get(var1)).clearIsFriend();
+			((ClanMate)this.get(var1)).method6599();
 		}
 
 	}
@@ -290,7 +282,7 @@ public class FriendsChat extends UserList {
 	@Export("isLocalPlayer")
 	final void isLocalPlayer(ClanMate var1) {
 		if (var1.getUsername().equals(this.localUser.username())) {
-			this.rank = var1.rank;
+			this.rank = var1.rank * -437749783;
 		}
 
 	}

@@ -12,8 +12,7 @@ public class StructComposition extends DualNode {
 	@ObfuscatedSignature(
 		descriptor = "Lls;"
 	)
-	@Export("StructDefinition_archive")
-	public static AbstractArchive StructDefinition_archive;
+	public static AbstractArchive field2010;
 	@ObfuscatedName("h")
 	@ObfuscatedSignature(
 		descriptor = "Liz;"
@@ -86,7 +85,7 @@ public class StructComposition extends DualNode {
 	)
 	@Export("getIntParam")
 	public int getIntParam(int var1, int var2) {
-		return ScriptFrame.method1035(this.params, var1, var2);
+		return class56.method1035(this.params, var1, var2);
 	}
 
 	@ObfuscatedName("q")
@@ -116,21 +115,21 @@ public class StructComposition extends DualNode {
 			int var8 = var0.xMidOffset;
 			int var9 = var0.yMidOffset;
 			int var10 = var0.zMidOffset;
-			int var11 = class141.field1634 - var5;
-			int var12 = ViewportMouse.field2593 - var6;
-			int var13 = class143.field1639 - var7;
-			if (Math.abs(var11) > var8 + UrlRequest.field1355) {
+			int var11 = class141.field1634 * 1063144767 - var5;
+			int var12 = ViewportMouse.field2593 * -1792884329 - var6;
+			int var13 = class143.field1639 * -772192395 - var7;
+			if (Math.abs(var11) > var8 + UrlRequest.field1355 * -2013552201) {
 				return false;
-			} else if (Math.abs(var12) > var9 + class123.field1517) {
+			} else if (Math.abs(var12) > var9 + class123.field1517 * 373388961) {
 				return false;
-			} else if (Math.abs(var13) > var10 + class150.field1677) {
+			} else if (Math.abs(var13) > var10 + class150.field1677 * 182134033) {
 				return false;
-			} else if (Math.abs(var13 * WorldMapCacheName.field2870 - var12 * ViewportMouse.field2599) > var10 * class123.field1517 + var9 * class150.field1677) {
+			} else if (Math.abs(var13 * WorldMapCacheName.field2870 * -113453181 - var12 * ViewportMouse.field2599 * 191932759) > var10 * class123.field1517 * 373388961 + var9 * class150.field1677 * 182134033) {
 				return false;
-			} else if (Math.abs(var11 * ViewportMouse.field2599 - var13 * SoundCache.field322) > var10 * UrlRequest.field1355 + var8 * class150.field1677) {
+			} else if (Math.abs(var11 * ViewportMouse.field2599 * 191932759 - var13 * SoundCache.field322 * -1871604293) > var10 * UrlRequest.field1355 * -2013552201 + var8 * class150.field1677 * 182134033) {
 				return false;
 			} else {
-				return Math.abs(var12 * SoundCache.field322 - var11 * WorldMapCacheName.field2870) <= var8 * class123.field1517 + var9 * UrlRequest.field1355;
+				return Math.abs(var12 * SoundCache.field322 * -1871604293 - var11 * WorldMapCacheName.field2870 * -113453181) <= var9 * UrlRequest.field1355 * -2013552201 + var8 * class123.field1517 * 373388961;
 			}
 		}
 	}

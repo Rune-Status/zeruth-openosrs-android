@@ -2,7 +2,6 @@ package osrs;
 
 import net.runelite.mapping.Export;
 import net.runelite.mapping.Implements;
-import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
@@ -10,65 +9,43 @@ import net.runelite.mapping.ObfuscatedSignature;
 @Implements("SceneTilePaint")
 public final class SceneTilePaint {
 	@ObfuscatedName("k")
-	@ObfuscatedGetter(
-		intValue = -246999917
-	)
 	@Export("musicTrackFileId")
 	public static int musicTrackFileId;
 	@ObfuscatedName("j")
 	@ObfuscatedSignature(
 		descriptor = "Lls;"
 	)
-	@Export("Widget_fontsArchive")
-	public static AbstractArchive Widget_fontsArchive;
+	public static AbstractArchive field2615;
 	@ObfuscatedName("s")
-	@ObfuscatedGetter(
-		intValue = -874065581
-	)
 	@Export("swColor")
 	int swColor;
 	@ObfuscatedName("h")
-	@ObfuscatedGetter(
-		intValue = 1159712219
-	)
 	@Export("seColor")
 	int seColor;
 	@ObfuscatedName("w")
-	@ObfuscatedGetter(
-		intValue = 1006604365
-	)
 	@Export("neColor")
 	int neColor;
 	@ObfuscatedName("v")
-	@ObfuscatedGetter(
-		intValue = -1851893905
-	)
 	@Export("nwColor")
 	int nwColor;
 	@ObfuscatedName("c")
-	@ObfuscatedGetter(
-		intValue = 503057411
-	)
 	@Export("texture")
 	int texture;
 	@ObfuscatedName("q")
 	@Export("isFlat")
 	boolean isFlat;
 	@ObfuscatedName("i")
-	@ObfuscatedGetter(
-		intValue = -532188411
-	)
 	@Export("rgb")
 	int rgb;
 
 	SceneTilePaint(int var1, int var2, int var3, int var4, int var5, int var6, boolean var7) {
 		this.isFlat = true;
-		this.swColor = var1;
-		this.seColor = var2;
-		this.neColor = var3;
-		this.nwColor = var4;
-		this.texture = var5;
-		this.rgb = var6;
+		this.swColor = var1 * -1157260581;
+		this.seColor = var2 * 930178643;
+		this.neColor = var3 * -2090456955;
+		this.nwColor = var4 * 517531535;
+		this.texture = var5 * 1435762347;
+		this.rgb = var6 * 564421069;
 		this.isFlat = var7;
 	}
 
@@ -79,7 +56,7 @@ public final class SceneTilePaint {
 	)
 	@Export("runScriptEvent")
 	public static void runScriptEvent(ScriptEvent var0) {
-		GraphicsObject.runScript(var0, 500000, 475000);
+		GraphicsObject.method1854(var0, 500000, 475000);
 	}
 
 	@ObfuscatedName("h")
@@ -116,27 +93,27 @@ public final class SceneTilePaint {
 			Client.players[var0] = null;
 		}
 
-		ScriptFrame.localPlayer = null;
+		class56.localPlayer = null;
 
 		for (var0 = 0; var0 < Client.npcs.length; ++var0) {
 			NPC var1 = Client.npcs[var0];
 			if (var1 != null) {
-				var1.targetIndex = -1;
+				var1.targetIndex = 296959257;
 				var1.false0 = false;
 			}
 		}
 
 		ItemContainer.itemContainers = new NodeHashTable(32);
-		class4.updateGameState(30);
+		class4.method22(30);
 
 		for (var0 = 0; var0 < 100; ++var0) {
 			Client.field643[var0] = true;
 		}
 
-		PacketBufferNode var2 = DevicePcmPlayerProvider.getPacketBufferNode(ClientPacket.field2990, Client.packetWriter.isaacCipher);
+		PacketBufferNode var2 = DevicePcmPlayerProvider.method354(ClientPacket.field2990, Client.packetWriter.field1338);
 		var2.packetBuffer.writeByte(Canvas.getWindowedMode());
-		var2.packetBuffer.writeShort(class7.canvasWidth);
-		var2.packetBuffer.writeShort(WallDecoration.canvasHeight);
+		var2.packetBuffer.writeShort(class7.canvasWidth * -1894406353);
+		var2.packetBuffer.writeShort(WallDecoration.canvasHeight * 1562461341);
 		Client.packetWriter.addNode(var2);
 	}
 }

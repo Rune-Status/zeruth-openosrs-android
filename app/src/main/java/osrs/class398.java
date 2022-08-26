@@ -1,6 +1,5 @@
 package osrs;
 
-import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
@@ -17,9 +16,6 @@ public class class398 {
 	)
 	static final class398 field4436;
 	@ObfuscatedName("l")
-	@ObfuscatedGetter(
-		intValue = -1308304145
-	)
 	static int field4437;
 	@ObfuscatedName("w")
 	String field4435;

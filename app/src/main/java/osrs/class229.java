@@ -10,8 +10,7 @@ public class class229 {
 	@ObfuscatedSignature(
 		descriptor = "[Lqn;"
 	)
-	@Export("headIconHintSprites")
-	static SpritePixels[] headIconHintSprites;
+	static SpritePixels[] field2771;
 
 	@ObfuscatedName("w")
 	@ObfuscatedSignature(
@@ -27,7 +26,7 @@ public class class229 {
 			}
 
 			byte[] var3 = new byte[var2];
-			var0.offset += class465.huffman.decompress(var0.array, var0.offset, var3, 0, var2);
+			var0.offset += class465.huffman.decompress(var0.array, var0.offset * 1795921631, var3, 0, var2) * 1090888991;
 			String var4 = PlatformInfo.decodeStringCp1252(var3, 0, var2);
 			var1 = var4;
 		} catch (Exception var6) {
@@ -51,21 +50,21 @@ public class class229 {
 			var0 = 383;
 		}
 
-		if (class82.cameraPitch < var0) {
-			class82.cameraPitch = (var0 - class82.cameraPitch) * class18.field96 / 1000 + class82.cameraPitch + class21.field113;
-			if (class82.cameraPitch > var0) {
-				class82.cameraPitch = var0;
+		if (class82.field1068 * 363781995 < var0) {
+			class82.field1068 += (class21.field113 * 1741723829 + (var0 - class82.field1068 * 363781995) * class18.field96 * -389618459 / 1000) * -580430525;
+			if (class82.field1068 * 363781995 > var0) {
+				class82.field1068 = var0 * -580430525;
 			}
 		}
 
-		if (class82.cameraPitch > var0) {
-			class82.cameraPitch -= (class82.cameraPitch - var0) * class18.field96 / 1000 + class21.field113;
-			if (class82.cameraPitch < var0) {
-				class82.cameraPitch = var0;
+		if (class82.field1068 * 363781995 > var0) {
+			class82.field1068 -= (class18.field96 * (class82.field1068 * 363781995 - var0) * -389618459 / 1000 + class21.field113 * 1741723829) * -580430525;
+			if (class82.field1068 * 363781995 < var0) {
+				class82.field1068 = var0 * -580430525;
 			}
 		}
 
-		int var2 = var1 - ClientPreferences.cameraYaw;
+		int var2 = var1 - ClientPreferences.field1246 * 1468675189;
 		if (var2 > 1024) {
 			var2 -= 2048;
 		}
@@ -75,16 +74,16 @@ public class class229 {
 		}
 
 		if (var2 > 0) {
-			ClientPreferences.cameraYaw = var2 * class18.field96 / 1000 + ClientPreferences.cameraYaw + class21.field113;
-			ClientPreferences.cameraYaw &= 2047;
+			ClientPreferences.field1246 += (var2 * class18.field96 * -389618459 / 1000 + class21.field113 * 1741723829) * -1426392099;
+			ClientPreferences.field1246 = (ClientPreferences.field1246 * 1468675189 & 2047) * -1426392099;
 		}
 
 		if (var2 < 0) {
-			ClientPreferences.cameraYaw -= -var2 * class18.field96 / 1000 + class21.field113;
-			ClientPreferences.cameraYaw &= 2047;
+			ClientPreferences.field1246 -= (class21.field113 * 1741723829 + -var2 * class18.field96 * -389618459 / 1000) * -1426392099;
+			ClientPreferences.field1246 = (ClientPreferences.field1246 * 1468675189 & 2047) * -1426392099;
 		}
 
-		int var3 = var1 - ClientPreferences.cameraYaw;
+		int var3 = var1 - ClientPreferences.field1246 * 1468675189;
 		if (var3 > 1024) {
 			var3 -= 2048;
 		}
@@ -94,7 +93,7 @@ public class class229 {
 		}
 
 		if (var3 < 0 && var2 > 0 || var3 > 0 && var2 < 0) {
-			ClientPreferences.cameraYaw = var1;
+			ClientPreferences.field1246 = var1 * -1426392099;
 		}
 
 	}
@@ -110,11 +109,11 @@ public class class229 {
 			if (var0 != null && class260.method5126(var0) != null) {
 				Client.clickedWidget = var0;
 				Client.clickedWidgetParent = class260.method5126(var0);
-				Client.widgetClickX = var1;
-				Client.widgetClickY = var2;
+				Client.widgetClickX = var1 * 84891819;
+				Client.widgetClickY = var2 * -785954077;
 				NPCComposition.widgetDragDuration = 0;
 				Client.isDraggingWidget = false;
-				int var3 = Client.menuOptionsCount - 1;
+				int var3 = Client.menuOptionsCount * -2113868255 - 1;
 				if (var3 != -1) {
 					class142.method2983(var3);
 				}

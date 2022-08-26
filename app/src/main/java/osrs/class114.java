@@ -1,6 +1,5 @@
 package osrs;
 
-import net.runelite.mapping.Export;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
@@ -33,9 +32,8 @@ public class class114 {
 		descriptor = "(I)V",
 		garbageValue = "1368697061"
 	)
-	@Export("Clan_leaveChat")
-	static final void Clan_leaveChat() {
-		PacketBufferNode var0 = DevicePcmPlayerProvider.getPacketBufferNode(ClientPacket.field2989, Client.packetWriter.isaacCipher);
+	static final void method2638() {
+		PacketBufferNode var0 = DevicePcmPlayerProvider.method354(ClientPacket.field2989, Client.packetWriter.field1338);
 		var0.packetBuffer.writeByte(0);
 		Client.packetWriter.addNode(var0);
 	}

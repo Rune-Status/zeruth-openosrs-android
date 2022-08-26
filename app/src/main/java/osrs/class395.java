@@ -35,7 +35,7 @@ public abstract class class395 implements class248 {
 
 			class391 var3 = (class391)GameEngine.findEnumerated(Projectile.method1926(), var2);
 			if (var3 != null) {
-				switch(var3.field4424) {
+				switch(var3.field4424 * 638529671) {
 				case 0:
 					int var4 = var1.readUnsignedByte();
 					this.field4434 = class19.method285(var4);

@@ -46,8 +46,8 @@ public abstract class Clock {
 			return null;
 		} else {
 			IndexedSprite var4 = new IndexedSprite();
-			var4.width = class457.SpriteBuffer_spriteWidth;
-			var4.height = class457.SpriteBuffer_spriteHeight;
+			var4.width = class457.SpriteBuffer_spriteWidth * -1667114695;
+			var4.height = class457.SpriteBuffer_spriteHeight * -614338987;
 			var4.xOffset = class457.SpriteBuffer_xOffsets[0];
 			var4.yOffset = InterfaceParent.SpriteBuffer_yOffsets[0];
 			var4.subWidth = class457.SpriteBuffer_spriteWidths[0];
@@ -80,11 +80,11 @@ public abstract class Clock {
 		garbageValue = "11"
 	)
 	static final void method3264() {
-		if (Client.logoutTimer > 0) {
+		if (Client.logoutTimer * 1272475123 > 0) {
 			UserComparator8.logOut();
 		} else {
 			Client.timer.method6468();
-			class4.updateGameState(40);
+			class4.method22(40);
 			PacketBufferNode.field3045 = Client.packetWriter.getSocket();
 			Client.packetWriter.removeSocket();
 		}

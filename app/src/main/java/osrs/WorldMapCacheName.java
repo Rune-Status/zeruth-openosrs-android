@@ -2,7 +2,6 @@ package osrs;
 
 import net.runelite.mapping.Export;
 import net.runelite.mapping.Implements;
-import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
@@ -35,9 +34,6 @@ public class WorldMapCacheName {
 	)
 	public static final WorldMapCacheName field2868;
 	@ObfuscatedName("o")
-	@ObfuscatedGetter(
-		intValue = -113453181
-	)
 	static int field2870;
 	@ObfuscatedName("q")
 	@Export("name")

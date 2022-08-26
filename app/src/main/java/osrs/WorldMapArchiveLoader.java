@@ -2,7 +2,6 @@ package osrs;
 
 import net.runelite.mapping.Export;
 import net.runelite.mapping.Implements;
-import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
@@ -19,9 +18,6 @@ public class WorldMapArchiveLoader {
 	@Export("archive")
 	AbstractArchive archive;
 	@ObfuscatedName("i")
-	@ObfuscatedGetter(
-		intValue = 2084954561
-	)
 	@Export("percentLoaded")
 	int percentLoaded;
 	@ObfuscatedName("k")
@@ -61,32 +57,32 @@ public class WorldMapArchiveLoader {
 	)
 	@Export("load")
 	int load() {
-		if (this.percentLoaded < 33) {
+		if (this.percentLoaded * 2084954561 < 33) {
 			if (!this.archive.tryLoadFileByNames(WorldMapCacheName.field2869.name, this.cacheName)) {
-				return this.percentLoaded;
+				return this.percentLoaded * 2084954561;
 			}
 
-			this.percentLoaded = 33;
+			this.percentLoaded = 1545008737;
 		}
 
-		if (this.percentLoaded == 33) {
+		if (this.percentLoaded * 2084954561 == 33) {
 			if (this.archive.isValidFileName(WorldMapCacheName.field2874.name, this.cacheName) && !this.archive.tryLoadFileByNames(WorldMapCacheName.field2874.name, this.cacheName)) {
-				return this.percentLoaded;
+				return this.percentLoaded * 2084954561;
 			}
 
-			this.percentLoaded = 66;
+			this.percentLoaded = -1204949822;
 		}
 
-		if (this.percentLoaded == 66) {
+		if (this.percentLoaded * 2084954561 == 66) {
 			if (!this.archive.tryLoadFileByNames(this.cacheName, WorldMapCacheName.field2868.name)) {
-				return this.percentLoaded;
+				return this.percentLoaded * 2084954561;
 			}
 
-			this.percentLoaded = 100;
+			this.percentLoaded = -1305079452;
 			this.loaded = true;
 		}
 
-		return this.percentLoaded;
+		return this.percentLoaded * 2084954561;
 	}
 
 	@ObfuscatedName("w")
@@ -106,6 +102,6 @@ public class WorldMapArchiveLoader {
 	)
 	@Export("getPercentLoaded")
 	int getPercentLoaded() {
-		return this.percentLoaded;
+		return this.percentLoaded * 2084954561;
 	}
 }

@@ -6,7 +6,6 @@ import java.util.Comparator;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
-import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
@@ -20,16 +19,10 @@ public class class348 extends AbstractQueue {
 	@ObfuscatedName("h")
 	Map field4170;
 	@ObfuscatedName("w")
-	@ObfuscatedGetter(
-		intValue = 54853697
-	)
 	int field4169;
 	@ObfuscatedName("v")
 	final Comparator field4171;
 	@ObfuscatedName("c")
-	@ObfuscatedGetter(
-		intValue = 155497715
-	)
 	int field4172;
 
 	public class348(int var1, Comparator var2) {
@@ -73,11 +66,11 @@ public class class348 extends AbstractQueue {
 			}
 
 			this.field4168[var1] = var4;
-			this.field4168[var1].field4161 = var1;
+			this.field4168[var1].field4161 = var1 * -512352681;
 		}
 
 		this.field4168[var1] = var2;
-		this.field4168[var1].field4161 = var1;
+		this.field4168[var1].field4161 = var1 * -512352681;
 	}
 
 	@ObfuscatedName("w")
@@ -89,18 +82,18 @@ public class class348 extends AbstractQueue {
 		class346 var2 = this.field4168[var1];
 
 		int var8;
-		for (int var3 = this.field4169 >>> 1; var1 < var3; var1 = var8) {
+		for (int var3 = this.field4169 * 54853697 >>> 1; var1 < var3; var1 = var8) {
 			int var4 = (var1 << 1) + 1;
 			class346 var5 = this.field4168[var4];
 			int var6 = (var1 << 1) + 2;
 			class346 var7 = this.field4168[var6];
 			if (this.field4171 != null) {
-				if (var6 < this.field4169 && this.field4171.compare(var5.field4160, var7.field4160) > 0) {
+				if (var6 < this.field4169 * 54853697 && this.field4171.compare(var5.field4160, var7.field4160) > 0) {
 					var8 = var6;
 				} else {
 					var8 = var4;
 				}
-			} else if (var6 < this.field4169 && ((Comparable)var5.field4160).compareTo(var7.field4160) > 0) {
+			} else if (var6 < this.field4169 * 54853697 && ((Comparable)var5.field4160).compareTo(var7.field4160) > 0) {
 				var8 = var6;
 			} else {
 				var8 = var4;
@@ -115,11 +108,11 @@ public class class348 extends AbstractQueue {
 			}
 
 			this.field4168[var1] = this.field4168[var8];
-			this.field4168[var1].field4161 = var1;
+			this.field4168[var1].field4161 = var1 * -512352681;
 		}
 
 		this.field4168[var1] = var2;
-		this.field4168[var1].field4161 = var1;
+		this.field4168[var1].field4161 = var1 * -512352681;
 	}
 
 	public boolean remove(Object var1) {
@@ -127,19 +120,19 @@ public class class348 extends AbstractQueue {
 		if (var2 == null) {
 			return false;
 		} else {
-			++this.field4172;
-			--this.field4169;
-			if (this.field4169 == var2.field4161) {
-				this.field4168[this.field4169] = null;
+			this.field4172 += -1141930949;
+			this.field4169 -= 1882656705;
+			if (this.field4169 * 54853697 == var2.field4161 * 590327143) {
+				this.field4168[this.field4169 * 54853697] = null;
 				return true;
 			} else {
-				class346 var3 = this.field4168[this.field4169];
-				this.field4168[this.field4169] = null;
-				this.field4168[var2.field4161] = var3;
-				this.field4168[var2.field4161].field4161 = var2.field4161;
-				this.method6264(var2.field4161);
-				if (var3 == this.field4168[var2.field4161]) {
-					this.method6288(var2.field4161);
+				class346 var3 = this.field4168[this.field4169 * 54853697];
+				this.field4168[this.field4169 * 54853697] = null;
+				this.field4168[var2.field4161 * 590327143] = var3;
+				this.field4168[var2.field4161 * 590327143].field4161 = var2.field4161 * 1;
+				this.method6264(var2.field4161 * 590327143);
+				if (this.field4168[var2.field4161 * 590327143] == var3) {
+					this.method6288(var2.field4161 * 590327143);
 				}
 
 				return true;
@@ -148,23 +141,23 @@ public class class348 extends AbstractQueue {
 	}
 
 	public Object peek() {
-		return this.field4169 == 0 ? null : this.field4168[0].field4160;
+		return this.field4169 * 54853697 == 0 ? null : this.field4168[0].field4160;
 	}
 
 	public Object poll() {
-		if (this.field4169 == 0) {
+		if (this.field4169 * 54853697 == 0) {
 			return null;
 		} else {
-			++this.field4172;
+			this.field4172 += -1141930949;
 			Object var1 = this.field4168[0].field4160;
 			this.field4170.remove(var1);
-			--this.field4169;
-			if (this.field4169 == 0) {
-				this.field4168[this.field4169] = null;
+			this.field4169 -= 1882656705;
+			if (this.field4169 * 54853697 == 0) {
+				this.field4168[this.field4169 * 54853697] = null;
 			} else {
-				this.field4168[0] = this.field4168[this.field4169];
+				this.field4168[0] = this.field4168[this.field4169 * 54853697];
 				this.field4168[0].field4161 = 0;
-				this.field4168[this.field4169] = null;
+				this.field4168[this.field4169 * 54853697] = null;
 				this.method6264(0);
 			}
 
@@ -173,7 +166,7 @@ public class class348 extends AbstractQueue {
 	}
 
 	public int size() {
-		return this.field4169;
+		return this.field4169 * 54853697;
 	}
 
 	public boolean contains(Object var1) {
@@ -195,13 +188,13 @@ public class class348 extends AbstractQueue {
 		if (this.field4170.containsKey(var1)) {
 			throw new IllegalArgumentException("");
 		} else {
-			++this.field4172;
-			int var2 = this.field4169;
+			this.field4172 += -1141930949;
+			int var2 = this.field4169 * 54853697;
 			if (var2 >= this.field4168.length) {
 				this.method6266();
 			}
 
-			++this.field4169;
+			this.field4169 += 1882656705;
 			if (var2 == 0) {
 				this.field4168[0] = new class346(var1, 0);
 				this.field4170.put(var1, this.field4168[0]);

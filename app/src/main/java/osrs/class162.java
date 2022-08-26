@@ -2,16 +2,12 @@ package osrs;
 
 import java.util.concurrent.Executors;
 import java.util.concurrent.TimeUnit;
-import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
 @ObfuscatedName("fp")
 public class class162 extends class165 {
 	@ObfuscatedName("s")
-	@ObfuscatedGetter(
-		intValue = -1686330275
-	)
 	int field1762;
 	// $FF: synthetic field
 	@ObfuscatedSignature(
@@ -25,7 +21,7 @@ public class class162 extends class165 {
 	class162(class155 var1, String var2, int var3) {
 		super(var1, var2);
 		this.this$0 = var1;
-		this.field1762 = var3;
+		this.field1762 = var3 * 1461080053;
 	}
 
 	@ObfuscatedName("s")
@@ -43,7 +39,7 @@ public class class162 extends class165 {
 		garbageValue = "1570944667"
 	)
 	public int vmethod3239() {
-		return this.field1762;
+		return this.field1762 * -1686330275;
 	}
 
 	@ObfuscatedName("t")
@@ -62,15 +58,15 @@ public class class162 extends class165 {
 			try {
 				PcmPlayer var3 = GrandExchangeOfferTotalQuantityComparator.pcmPlayerProvider.player();
 				var3.samples = new int[256 * (PcmPlayer.PcmPlayer_stereo ? 2 : 1)];
-				var3.field300 = var2;
+				var3.field300 = var2 * 1950809673;
 				var3.init();
-				var3.capacity = (var2 & -1024) + 1024;
-				if (var3.capacity > 16384) {
-					var3.capacity = 16384;
+				var3.field289 = ((var2 & -1024) + 1024) * -1742743585;
+				if (var3.field289 * 895919135 > 16384) {
+					var3.field289 = -168312832;
 				}
 
-				var3.open(var3.capacity);
-				if (PcmPlayer.field279 > 0 && TaskHandler.soundSystem == null) {
+				var3.open(var3.field289 * 895919135);
+				if (PcmPlayer.field279 * -89074195 > 0 && TaskHandler.soundSystem == null) {
 					TaskHandler.soundSystem = new SoundSystem();
 					PcmPlayer.soundSystemExecutor = Executors.newScheduledThreadPool(1);
 					PcmPlayer.soundSystemExecutor.scheduleAtFixedRate(TaskHandler.soundSystem, 0L, 10L, TimeUnit.MILLISECONDS);

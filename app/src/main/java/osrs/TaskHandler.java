@@ -93,7 +93,7 @@ public class TaskHandler implements Runnable {
 	@Export("newTask")
 	final Task newTask(int var1, int var2, int var3, Object var4) {
 		Task var5 = new Task();
-		var5.type = var1;
+		var5.type = var1 * -687012345;
 		var5.intArgument = var2;
 		var5.objectArgument = var4;
 		synchronized(this) {
@@ -114,8 +114,7 @@ public class TaskHandler implements Runnable {
 		descriptor = "(Ljava/lang/String;II)Lfq;",
 		garbageValue = "-248279803"
 	)
-	@Export("newSocketTask")
-	public final Task newSocketTask(String var1, int var2) {
+	public final Task method3176(String var1, int var2) {
 		return this.newTask(1, var2, 0, var1);
 	}
 
@@ -155,24 +154,24 @@ public class TaskHandler implements Runnable {
 			}
 
 			try {
-				int var5 = var1.type;
+				int var5 = var1.type * 329615287;
 				if (var5 == 1) {
-					var1.result = new Socket(InetAddress.getByName((String)var1.objectArgument), var1.intArgument);
+					var1.field1777 = new Socket(InetAddress.getByName((String)var1.objectArgument), var1.intArgument);
 				} else if (var5 == 2) {
 					Thread var3 = new Thread((Runnable)var1.objectArgument);
 					var3.setDaemon(true);
 					var3.start();
 					var3.setPriority(var1.intArgument);
-					var1.result = var3;
+					var1.field1777 = var3;
 				} else if (var5 == 4) {
-					var1.result = new DataInputStream(((URL)var1.objectArgument).openStream());
+					var1.field1777 = new DataInputStream(((URL)var1.objectArgument).openStream());
 				}
 
-				var1.status = 1;
+				var1.field1778 = 1;
 			} catch (ThreadDeath var6) {
 				throw var6;
 			} catch (Throwable var7) {
-				var1.status = 2;
+				var1.field1778 = 2;
 			}
 		}
 	}

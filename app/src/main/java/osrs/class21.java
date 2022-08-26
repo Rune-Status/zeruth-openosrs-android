@@ -6,36 +6,29 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import net.runelite.mapping.Export;
-import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
 @ObfuscatedName("x")
 public class class21 {
 	@ObfuscatedName("tv")
-	@ObfuscatedGetter(
-		intValue = 1741723829
-	)
 	static int field113;
 	@ObfuscatedName("s")
-	@ObfuscatedGetter(
-		intValue = 193817147
-	)
 	final int field112;
 	@ObfuscatedName("h")
 	final String field115;
 
 	class21(String var1) {
-		this.field112 = 400;
+		this.field112 = 969694128;
 		this.field115 = "";
 	}
 
 	class21(HttpURLConnection var1) throws IOException {
-		this.field112 = var1.getResponseCode();
+		this.field112 = var1.getResponseCode() * -2069897485;
 		var1.getResponseMessage();
 		var1.getHeaderFields();
 		StringBuilder var2 = new StringBuilder();
-		InputStream var3 = this.field112 >= 300 ? var1.getErrorStream() : var1.getInputStream();
+		InputStream var3 = this.field112 * 193817147 >= 300 ? var1.getErrorStream() : var1.getInputStream();
 		if (var3 != null) {
 			InputStreamReader var4 = new InputStreamReader(var3);
 			BufferedReader var5 = new BufferedReader(var4);
@@ -57,7 +50,7 @@ public class class21 {
 		garbageValue = "128"
 	)
 	public int method295() {
-		return this.field112;
+		return this.field112 * 193817147;
 	}
 
 	@ObfuscatedName("h")
@@ -102,15 +95,15 @@ public class class21 {
 	static Script newScript(byte[] var0) {
 		Script var1 = new Script();
 		Buffer var2 = new Buffer(var0);
-		var2.offset = var2.array.length - 2;
+		var2.offset = (var2.array.length - 2) * 1090888991;
 		int var3 = var2.readUnsignedShort();
 		int var4 = var2.array.length - 2 - var3 - 12;
-		var2.offset = var4;
+		var2.offset = var4 * 1090888991;
 		int var5 = var2.readInt();
-		var1.localIntCount = var2.readUnsignedShort();
-		var1.localStringCount = var2.readUnsignedShort();
-		var1.intArgumentCount = var2.readUnsignedShort();
-		var1.stringArgumentCount = var2.readUnsignedShort();
+		var1.localIntCount = var2.readUnsignedShort() * -1867476695;
+		var1.localStringCount = var2.readUnsignedShort() * 353062913;
+		var1.intArgumentCount = var2.readUnsignedShort() * 1459595991;
+		var1.stringArgumentCount = var2.readUnsignedShort() * 1463678031;
 		int var6 = var2.readUnsignedByte();
 		int var7;
 		int var8;
@@ -136,7 +129,7 @@ public class class21 {
 		var1.intOperands = new int[var5];
 		var1.stringOperands = new String[var5];
 
-		for (var7 = 0; var2.offset < var4; var1.opcodes[var7++] = var8) {
+		for (var7 = 0; var2.offset * 1795921631 < var4; var1.opcodes[var7++] = var8) {
 			var8 = var2.readUnsignedShort();
 			if (var8 == 3) {
 				var1.stringOperands[var7] = var2.readStringCp1252NullTerminated();
@@ -158,14 +151,14 @@ public class class21 {
 	static int method294(int var0, Script var1, boolean var2) {
 		if (var0 != 3700 && var0 != 3701) {
 			if (var0 == 3702) {
-				++User.Interpreter_intStackSize;
+				User.Interpreter_intStackSize += -312486675;
 				return 1;
 			} else {
 				return 2;
 			}
 		} else {
-			--User.Interpreter_intStackSize;
-			--UserComparator8.Interpreter_stringStackSize;
+			User.Interpreter_intStackSize -= -312486675;
+			UserComparator8.Interpreter_stringStackSize -= 204829809;
 			return 1;
 		}
 	}

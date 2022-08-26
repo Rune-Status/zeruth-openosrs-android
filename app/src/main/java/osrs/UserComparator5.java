@@ -25,11 +25,11 @@ public class UserComparator5 extends AbstractUserComparator {
 	)
 	@Export("compareBuddy")
 	int compareBuddy(Buddy var1, Buddy var2) {
-		if (var1.world != 0) {
-			if (var2.world == 0) {
+		if (var1.world * 1881839891 != 0) {
+			if (var2.world * 1881839891 == 0) {
 				return this.reversed ? -1 : 1;
 			}
-		} else if (var2.world != 0) {
+		} else if (var2.world * 1881839891 != 0) {
 			return this.reversed ? 1 : -1;
 		}
 

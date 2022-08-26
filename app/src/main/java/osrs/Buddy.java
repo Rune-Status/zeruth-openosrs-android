@@ -2,7 +2,6 @@ package osrs;
 
 import net.runelite.mapping.Export;
 import net.runelite.mapping.Implements;
-import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
@@ -10,26 +9,17 @@ import net.runelite.mapping.ObfuscatedSignature;
 @Implements("Buddy")
 public class Buddy extends User {
 	@ObfuscatedName("c")
-	@ObfuscatedGetter(
-		intValue = 1881839891
-	)
 	@Export("world")
 	public int world;
 	@ObfuscatedName("q")
-	@ObfuscatedGetter(
-		intValue = 547305229
-	)
 	@Export("int2")
 	public int int2;
 	@ObfuscatedName("i")
-	@ObfuscatedGetter(
-		intValue = 1944406411
-	)
 	@Export("rank")
 	public int rank;
 
 	Buddy() {
-		this.world = -1;
+		this.world = -1008015643;
 	}
 
 	@ObfuscatedName("ae")
@@ -39,8 +29,8 @@ public class Buddy extends User {
 	)
 	@Export("set")
 	void set(int var1, int var2) {
-		this.world = var1;
-		this.int2 = var2;
+		this.world = var1 * 1008015643;
+		this.int2 = var2 * 1745645509;
 	}
 
 	@ObfuscatedName("as")
@@ -50,7 +40,7 @@ public class Buddy extends User {
 	)
 	@Export("getWorld")
 	public int getWorld() {
-		return this.world;
+		return this.world * 1881839891;
 	}
 
 	@ObfuscatedName("ay")
@@ -60,6 +50,6 @@ public class Buddy extends User {
 	)
 	@Export("hasWorld")
 	public boolean hasWorld() {
-		return this.world > 0;
+		return this.world * 1881839891 > 0;
 	}
 }

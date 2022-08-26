@@ -7,7 +7,6 @@ import java.net.URLConnection;
 import java.util.Date;
 import net.runelite.mapping.Export;
 import net.runelite.mapping.Implements;
-import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
@@ -15,9 +14,6 @@ import net.runelite.mapping.ObfuscatedSignature;
 @Implements("UserComparator7")
 public class UserComparator7 extends AbstractUserComparator {
 	@ObfuscatedName("pa")
-	@ObfuscatedGetter(
-		intValue = -1947823007
-	)
 	static int field1374;
 	@ObfuscatedName("s")
 	@Export("reversed")
@@ -34,8 +30,8 @@ public class UserComparator7 extends AbstractUserComparator {
 	)
 	@Export("compareBuddy")
 	int compareBuddy(Buddy var1, Buddy var2) {
-		if (var1.world != 0 && var2.world != 0) {
-			return this.reversed ? var1.int2 - var2.int2 : var2.int2 - var1.int2;
+		if (var1.world * 1881839891 != 0 && var2.world * 1881839891 != 0) {
+			return this.reversed ? var1.int2 * 547305229 - var2.int2 * 547305229 : var2.int2 * 547305229 - var1.int2 * 547305229;
 		} else {
 			return this.compareUser(var1, var2);
 		}
@@ -83,7 +79,7 @@ public class UserComparator7 extends AbstractUserComparator {
 				Buffer var7 = new Buffer(new byte[1000]);
 
 				while (true) {
-					int var8 = var6.read(var7.array, var7.offset, 1000 - var7.offset);
+					int var8 = var6.read(var7.array, var7.offset * 1795921631, 1000 - var7.offset * 1795921631);
 					if (var8 == -1) {
 						var7.offset = 0;
 						long var10 = var7.readLong();
@@ -91,8 +87,8 @@ public class UserComparator7 extends AbstractUserComparator {
 						break;
 					}
 
-					var7.offset += var8;
-					if (var7.offset >= 1000) {
+					var7.offset += var8 * 1090888991;
+					if (var7.offset * 1795921631 >= 1000) {
 						var1 = 0L;
 						break;
 					}
@@ -137,34 +133,33 @@ public class UserComparator7 extends AbstractUserComparator {
 		descriptor = "(Lkn;III)V",
 		garbageValue = "-1583696044"
 	)
-	@Export("alignWidgetPosition")
-	static void alignWidgetPosition(Widget var0, int var1, int var2) {
-		if (var0.xAlignment == 0) {
-			var0.x = var0.rawX;
-		} else if (var0.xAlignment == 1) {
-			var0.x = var0.rawX + (var1 - var0.width) / 2;
-		} else if (var0.xAlignment == 2) {
-			var0.x = var1 - var0.width - var0.rawX;
-		} else if (var0.xAlignment == 3) {
-			var0.x = var0.rawX * var1 >> 14;
-		} else if (var0.xAlignment == 4) {
-			var0.x = (var1 - var0.width) / 2 + (var0.rawX * var1 >> 14);
+	static void method2564(Widget var0, int var1, int var2) {
+		if (var0.xAlignment * -2080401453 == 0) {
+			var0.field3370 = var0.rawX * 771486611;
+		} else if (var0.xAlignment * -2080401453 == 1) {
+			var0.field3370 = (var0.rawX * -339501621 + (var1 - var0.field3372 * 1791266795) / 2) * -458536871;
+		} else if (var0.xAlignment * -2080401453 == 2) {
+			var0.field3370 = (var1 - var0.field3372 * 1791266795 - var0.rawX * -339501621) * -458536871;
+		} else if (var0.xAlignment * -2080401453 == 3) {
+			var0.field3370 = (var0.rawX * var1 * -339501621 >> 14) * -458536871;
+		} else if (var0.xAlignment * -2080401453 == 4) {
+			var0.field3370 = ((var0.rawX * var1 * -339501621 >> 14) + (var1 - var0.field3372 * 1791266795) / 2) * -458536871;
 		} else {
-			var0.x = var1 - var0.width - (var0.rawX * var1 >> 14);
+			var0.field3370 = (var1 - var0.field3372 * 1791266795 - (var0.rawX * var1 * -339501621 >> 14)) * -458536871;
 		}
 
-		if (var0.yAlignment == 0) {
-			var0.y = var0.rawY;
-		} else if (var0.yAlignment == 1) {
-			var0.y = (var2 - var0.height) / 2 + var0.rawY;
-		} else if (var0.yAlignment == 2) {
-			var0.y = var2 - var0.height - var0.rawY;
-		} else if (var0.yAlignment == 3) {
-			var0.y = var2 * var0.rawY >> 14;
-		} else if (var0.yAlignment == 4) {
-			var0.y = (var2 - var0.height) / 2 + (var2 * var0.rawY >> 14);
+		if (var0.yAlignment * -2086392833 == 0) {
+			var0.field3445 = var0.rawY * -1650582739;
+		} else if (var0.yAlignment * -2086392833 == 1) {
+			var0.field3445 = (var0.rawY * 1265895161 + (var2 - var0.field3426 * -1514292503) / 2) * 1149517525;
+		} else if (var0.yAlignment * -2086392833 == 2) {
+			var0.field3445 = (var2 - var0.field3426 * -1514292503 - var0.rawY * 1265895161) * 1149517525;
+		} else if (var0.yAlignment * -2086392833 == 3) {
+			var0.field3445 = (var2 * var0.rawY * 1265895161 >> 14) * 1149517525;
+		} else if (var0.yAlignment * -2086392833 == 4) {
+			var0.field3445 = ((var2 * var0.rawY * 1265895161 >> 14) + (var2 - var0.field3426 * -1514292503) / 2) * 1149517525;
 		} else {
-			var0.y = var2 - var0.height - (var2 * var0.rawY >> 14);
+			var0.field3445 = (var2 - var0.field3426 * -1514292503 - (var2 * var0.rawY * 1265895161 >> 14)) * 1149517525;
 		}
 
 	}

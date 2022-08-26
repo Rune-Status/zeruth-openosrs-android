@@ -16,7 +16,6 @@ import java.util.LinkedList;
 import java.util.Queue;
 import net.runelite.mapping.Export;
 import net.runelite.mapping.Implements;
-import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 import net.runelite.rs.Reflection;
@@ -25,9 +24,6 @@ import net.runelite.rs.Reflection;
 @Implements("UrlRequester")
 public abstract class UrlRequester implements Runnable {
 	@ObfuscatedName("i")
-	@ObfuscatedGetter(
-		intValue = 1082295421
-	)
 	@Export("musicTrackGroupId")
 	public static int musicTrackGroupId;
 	@ObfuscatedName("al")
@@ -44,9 +40,6 @@ public abstract class UrlRequester implements Runnable {
 	@Export("requests")
 	Queue requests;
 	@ObfuscatedName("v")
-	@ObfuscatedGetter(
-		intValue = -1681223407
-	)
 	int field1349;
 
 	UrlRequester(int var1) {
@@ -54,7 +47,7 @@ public abstract class UrlRequester implements Runnable {
 		this.field1344 = new Thread(this);
 		this.field1344.setPriority(1);
 		this.field1344.start();
-		this.field1349 = var1;
+		this.field1349 = var1 * 1391886321;
 	}
 
 	@ObfuscatedName("s")
@@ -74,7 +67,7 @@ public abstract class UrlRequester implements Runnable {
 		var1.setReadTimeout(5000);
 		var1.setUseCaches(false);
 		var1.setRequestProperty("Connection", "close");
-		var1.setRequestProperty("User-Agent", "OldSchoolRuneScape/" + this.field1349);
+		var1.setRequestProperty("User-Agent", "OldSchoolRuneScape/" + this.field1349 * -1681223407);
 	}
 
 	@ObfuscatedName("w")
@@ -186,10 +179,10 @@ public abstract class UrlRequester implements Runnable {
 	public static void performReflectionCheck(PacketBuffer var0) {
 		ReflectionCheck var1 = (ReflectionCheck)class33.reflectionChecks.last();
 		if (var1 != null) {
-			int var2 = var0.offset;
-			var0.writeInt(var1.id);
+			int var2 = var0.offset * 1795921631;
+			var0.writeInt(var1.id * -899581373);
 
-			for (int var3 = 0; var3 < var1.size; ++var3) {
+			for (int var3 = 0; var3 < var1.size * 1174030445; ++var3) {
 				if (var1.creationErrors[var3] != 0) {
 					var0.writeByte(var1.creationErrors[var3]);
 				} else {

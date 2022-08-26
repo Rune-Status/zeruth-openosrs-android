@@ -3,7 +3,6 @@ package osrs;
 import java.awt.Component;
 import net.runelite.mapping.Export;
 import net.runelite.mapping.Implements;
-import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
@@ -17,39 +16,23 @@ public class MenuAction {
 	@Export("NetCache_currentResponse")
 	public static NetFileRequest NetCache_currentResponse;
 	@ObfuscatedName("s")
-	@ObfuscatedGetter(
-		intValue = 1475359853
-	)
 	@Export("param0")
 	int param0;
 	@ObfuscatedName("h")
-	@ObfuscatedGetter(
-		intValue = -1675827347
-	)
 	@Export("param1")
 	int param1;
 	@ObfuscatedName("w")
-	@ObfuscatedGetter(
-		intValue = -1345081717
-	)
 	@Export("opcode")
 	int opcode;
 	@ObfuscatedName("v")
-	@ObfuscatedGetter(
-		intValue = -1260640699
-	)
 	@Export("identifier")
 	int identifier;
 	@ObfuscatedName("c")
-	@ObfuscatedGetter(
-		intValue = -852648483
-	)
 	int field859;
 	@ObfuscatedName("q")
 	String field857;
 	@ObfuscatedName("i")
-	@Export("action")
-	String action;
+	String field860;
 
 	MenuAction() {
 	}

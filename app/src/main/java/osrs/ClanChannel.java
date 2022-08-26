@@ -5,7 +5,6 @@ import java.util.BitSet;
 import java.util.List;
 import net.runelite.mapping.Export;
 import net.runelite.mapping.Implements;
-import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
@@ -13,9 +12,6 @@ import net.runelite.mapping.ObfuscatedSignature;
 @Implements("ClanChannel")
 public class ClanChannel extends Node {
 	@ObfuscatedName("sp")
-	@ObfuscatedGetter(
-		intValue = -1429812352
-	)
 	static int field1664;
 	@ObfuscatedName("s")
 	boolean field1665;
@@ -28,9 +24,6 @@ public class ClanChannel extends Node {
 	@Export("sortedMembers")
 	int[] sortedMembers;
 	@ObfuscatedName("c")
-	@ObfuscatedGetter(
-		longValue = 7243300474328225169L
-	)
 	long field1670;
 	@ObfuscatedName("q")
 	@Export("name")
@@ -146,7 +139,7 @@ public class ClanChannel extends Node {
 		}
 
 		super.key = var1.readLong();
-		this.field1670 = var1.readLong();
+		this.field1670 = var1.readLong() * -1940136571916989583L;
 		this.name = var1.readStringCp1252NullTerminated();
 		var1.readBoolean();
 		this.field1669 = var1.readByte();
@@ -166,7 +159,7 @@ public class ClanChannel extends Node {
 				}
 
 				var6.rank = var1.readByte();
-				var6.world = var1.readUnsignedShort();
+				var6.world = var1.readUnsignedShort() * -1320409131;
 				if (var3 >= 3) {
 					var1.readBoolean();
 				}

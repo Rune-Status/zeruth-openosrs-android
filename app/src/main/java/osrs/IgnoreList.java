@@ -51,7 +51,7 @@ public class IgnoreList extends UserList {
 	@Export("read")
 	public void read(Buffer var1, int var2) {
 		while (true) {
-			if (var1.offset < var2) {
+			if (var1.offset * 1795921631 < var2) {
 				int var3 = var1.readUnsignedByte();
 				boolean var4 = (var3 & 1) == 1;
 				Username var5 = new Username(var1.readStringCp1252NullTerminated(), this.loginType);
@@ -78,7 +78,7 @@ public class IgnoreList extends UserList {
 					if (this.getSize() < 400) {
 						int var9 = this.getSize();
 						var7 = (Ignored)this.addLast(var5, var6);
-						var7.id = var9;
+						var7.field4322 = var9 * 32369315;
 					}
 					continue;
 				}

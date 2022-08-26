@@ -23,8 +23,8 @@ public class UserComparator10 extends AbstractUserComparator {
 	)
 	@Export("compareBuddy")
 	int compareBuddy(Buddy var1, Buddy var2) {
-		if (Client.worldId == var1.world && var2.world == Client.worldId) {
-			return this.reversed ? var1.int2 - var2.int2 : var2.int2 - var1.int2;
+		if (Client.worldId * -1074720787 == var1.world * 1881839891 && Client.worldId * -1074720787 == var2.world * 1881839891) {
+			return this.reversed ? var1.int2 * 547305229 - var2.int2 * 547305229 : var2.int2 * 547305229 - var1.int2 * 547305229;
 		} else {
 			return this.compareUser(var1, var2);
 		}

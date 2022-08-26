@@ -3,7 +3,6 @@ package osrs;
 import java.io.IOException;
 import net.runelite.mapping.Export;
 import net.runelite.mapping.Implements;
-import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
@@ -23,9 +22,6 @@ public class PacketWriter {
 	@Export("packetBufferNodes")
 	IterableNodeDeque packetBufferNodes;
 	@ObfuscatedName("w")
-	@ObfuscatedGetter(
-		intValue = 368896299
-	)
 	@Export("bufferSize")
 	int bufferSize;
 	@ObfuscatedName("v")
@@ -38,8 +34,7 @@ public class PacketWriter {
 	@ObfuscatedSignature(
 		descriptor = "Lqb;"
 	)
-	@Export("isaacCipher")
-	public IsaacCipher isaacCipher;
+	public IsaacCipher field1338;
 	@ObfuscatedName("q")
 	@ObfuscatedSignature(
 		descriptor = "Lqz;"
@@ -53,22 +48,13 @@ public class PacketWriter {
 	@Export("serverPacket")
 	ServerPacket serverPacket;
 	@ObfuscatedName("k")
-	@ObfuscatedGetter(
-		intValue = 807398607
-	)
 	@Export("serverPacketLength")
 	int serverPacketLength;
 	@ObfuscatedName("o")
 	boolean field1335;
 	@ObfuscatedName("n")
-	@ObfuscatedGetter(
-		intValue = -1783168523
-	)
 	int field1336;
 	@ObfuscatedName("d")
-	@ObfuscatedGetter(
-		intValue = 1886150225
-	)
 	@Export("pendingWrites")
 	int pendingWrites;
 	@ObfuscatedName("a")
@@ -115,21 +101,20 @@ public class PacketWriter {
 		descriptor = "(S)V",
 		garbageValue = "-25497"
 	)
-	@Export("flush")
-	final void flush() throws IOException {
-		if (this.socket != null && this.bufferSize > 0) {
+	final void method2454() throws IOException {
+		if (this.socket != null && this.bufferSize * 368896299 > 0) {
 			this.buffer.offset = 0;
 
 			while (true) {
 				PacketBufferNode var1 = (PacketBufferNode)this.packetBufferNodes.last();
-				if (var1 == null || var1.index > this.buffer.array.length - this.buffer.offset) {
-					this.socket.write(this.buffer.array, 0, this.buffer.offset);
+				if (var1 == null || var1.index * 1990774047 > this.buffer.array.length - this.buffer.offset * 1795921631) {
+					this.socket.write(this.buffer.array, 0, this.buffer.offset * 1795921631);
 					this.pendingWrites = 0;
 					break;
 				}
 
-				this.buffer.writeBytes(var1.packetBuffer.array, 0, var1.index);
-				this.bufferSize -= var1.index;
+				this.buffer.writeBytes(var1.packetBuffer.array, 0, var1.index * 1990774047);
+				this.bufferSize -= var1.index * -2099050019;
 				var1.remove();
 				var1.packetBuffer.releaseArray();
 				var1.release();
@@ -146,9 +131,9 @@ public class PacketWriter {
 	@Export("addNode")
 	public final void addNode(PacketBufferNode var1) {
 		this.packetBufferNodes.addFirst(var1);
-		var1.index = var1.packetBuffer.offset;
+		var1.index = var1.packetBuffer.offset * -448905663;
 		var1.packetBuffer.offset = 0;
-		this.bufferSize += var1.index;
+		this.bufferSize += var1.index * -2099050019;
 	}
 
 	@ObfuscatedName("v")

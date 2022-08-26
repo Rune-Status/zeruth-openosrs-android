@@ -3,7 +3,6 @@ package osrs;
 import java.util.concurrent.ThreadFactory;
 import java.util.concurrent.atomic.AtomicInteger;
 import net.runelite.mapping.Export;
-import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
@@ -13,14 +12,9 @@ public class class16 implements ThreadFactory {
 	@ObfuscatedSignature(
 		descriptor = "Lqn;"
 	)
-	@Export("compass")
-	static SpritePixels compass;
+	static SpritePixels field86;
 	@ObfuscatedName("jq")
-	@ObfuscatedGetter(
-		intValue = -1423106171
-	)
-	@Export("cameraX")
-	static int cameraX;
+	static int field88;
 	@ObfuscatedName("lk")
 	@ObfuscatedSignature(
 		descriptor = "Lkn;"
@@ -127,7 +121,7 @@ public class class16 implements ThreadFactory {
 		if (var1 == null) {
 			return -1;
 		} else {
-			return var1.previousDual == Messages.Messages_queue.sentinel ? -1 : ((Message)var1.previousDual).count;
+			return var1.previousDual == Messages.Messages_queue.sentinel ? -1 : ((Message)var1.previousDual).count * 416329001;
 		}
 	}
 }

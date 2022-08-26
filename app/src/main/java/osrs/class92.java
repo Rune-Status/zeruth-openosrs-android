@@ -45,7 +45,7 @@ public class class92 {
 				if (var7 <= 49) {
 					Tiles.Tiles_overlays[var1][var2][var3] = var0.readByte();
 					AbstractUserComparator.Tiles_shapes[var1][var2][var3] = (byte)((var7 - 2) / 4);
-					GrandExchangeOfferOwnWorldComparator.field473[var1][var2][var3] = (byte)(var7 - 2 + var6 & 3);
+					class59.field473[var1][var2][var3] = (byte)(var7 - 2 + var6 & 3);
 				} else if (var7 <= 81) {
 					Tiles.Tiles_renderFlags[var1][var2][var3] = (byte)(var7 - 49);
 				} else {

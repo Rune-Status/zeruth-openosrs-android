@@ -25,10 +25,10 @@ class class361 implements Comparator {
 		garbageValue = "397999183"
 	)
 	int method6493(class363 var1, class363 var2) {
-		if (var1.field4270 > var2.field4270) {
+		if (var1.field4270 * 8385483307841793077L > 8385483307841793077L * var2.field4270) {
 			return 1;
 		} else {
-			return var1.field4270 < var2.field4270 ? -1 : 0;
+			return 8385483307841793077L * var1.field4270 < var2.field4270 * 8385483307841793077L ? -1 : 0;
 		}
 	}
 

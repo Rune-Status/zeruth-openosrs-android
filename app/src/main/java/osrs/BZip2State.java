@@ -2,7 +2,6 @@ package osrs;
 
 import net.runelite.mapping.Export;
 import net.runelite.mapping.Implements;
-import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 
 @ObfuscatedName("qq")
@@ -24,97 +23,50 @@ public final class BZip2State {
 	@Export("inputArray")
 	byte[] inputArray;
 	@ObfuscatedName("k")
-	@ObfuscatedGetter(
-		intValue = 1136892385
-	)
 	@Export("nextByte")
 	int nextByte;
 	@ObfuscatedName("o")
-	@ObfuscatedGetter(
-		intValue = 1557797669
-	)
 	@Export("nextBit_unused")
 	int nextBit_unused;
 	@ObfuscatedName("n")
 	@Export("outputArray")
 	byte[] outputArray;
 	@ObfuscatedName("d")
-	@ObfuscatedGetter(
-		intValue = 82328733
-	)
 	@Export("next_out")
 	int next_out;
 	@ObfuscatedName("a")
-	@ObfuscatedGetter(
-		intValue = -990545499
-	)
 	@Export("outputLength")
 	int outputLength;
 	@ObfuscatedName("m")
-	@ObfuscatedGetter(
-		intValue = -258517701
-	)
 	int field4722;
 	@ObfuscatedName("u")
-	@Export("out_char")
-	byte out_char;
+	byte field4723;
 	@ObfuscatedName("l")
-	@ObfuscatedGetter(
-		intValue = 440338361
-	)
-	@Export("su_rNToGo")
-	int su_rNToGo;
+	int field4724;
 	@ObfuscatedName("z")
-	@ObfuscatedGetter(
-		intValue = -54042767
-	)
 	@Export("bsBuff")
 	int bsBuff;
 	@ObfuscatedName("r")
-	@ObfuscatedGetter(
-		intValue = -583561549
-	)
 	@Export("bsLive")
 	int bsLive;
 	@ObfuscatedName("y")
-	@ObfuscatedGetter(
-		intValue = 506657792
-	)
 	@Export("blockSize100k")
 	int blockSize100k;
 	@ObfuscatedName("p")
-	@ObfuscatedGetter(
-		intValue = -1966700557
-	)
-	@Export("originalPointer")
-	int originalPointer;
+	int field4728;
 	@ObfuscatedName("e")
-	@ObfuscatedGetter(
-		intValue = 2056731845
-	)
 	int field4710;
 	@ObfuscatedName("b")
-	@ObfuscatedGetter(
-		intValue = -1678636317
-	)
-	@Export("su_ch2")
-	int su_ch2;
+	int field4742;
 	@ObfuscatedName("x")
 	@Export("unzftab")
 	int[] unzftab;
 	@ObfuscatedName("f")
-	@ObfuscatedGetter(
-		intValue = 1297480759
-	)
-	@Export("nblocks_used")
-	int nblocks_used;
+	int field4732;
 	@ObfuscatedName("t")
 	@Export("cftab")
 	int[] cftab;
 	@ObfuscatedName("g")
-	@ObfuscatedGetter(
-		intValue = -751030927
-	)
 	@Export("nInUse")
 	int nInUse;
 	@ObfuscatedName("ar")
@@ -154,9 +106,6 @@ public final class BZip2State {
 	@Export("minLens")
 	int[] minLens;
 	@ObfuscatedName("ad")
-	@ObfuscatedGetter(
-		intValue = -1455022529
-	)
 	int field4711;
 
 	BZip2State() {

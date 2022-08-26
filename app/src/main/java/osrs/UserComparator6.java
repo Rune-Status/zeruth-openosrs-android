@@ -23,7 +23,7 @@ public class UserComparator6 extends AbstractUserComparator {
 	)
 	@Export("compareBuddy")
 	int compareBuddy(Buddy var1, Buddy var2) {
-		if (var1.world != 0 && var2.world != 0) {
+		if (var1.world * 1881839891 != 0 && var2.world * 1881839891 != 0) {
 			return this.reversed ? var1.getUsername().compareToTyped(var2.getUsername()) : var2.getUsername().compareToTyped(var1.getUsername());
 		} else {
 			return this.compareUser(var1, var2);
@@ -54,10 +54,10 @@ public class UserComparator6 extends AbstractUserComparator {
 		garbageValue = "56"
 	)
 	static final void method2611(int var0, int var1) {
-		if (Client.hintArrowType == 2) {
-			Bounds.worldToScreen(Client.hintArrowSubX * 64 + (Client.hintArrowX - Decimator.baseX * 64 << 7), (Client.hintArrowY - class7.baseY * 64 << 7) + Client.hintArrowSubY * 4096, Client.hintArrowHeight * 2);
-			if (Client.viewportTempX > -1 && Client.cycle % 20 < 10) {
-				class229.headIconHintSprites[0].drawTransBgAt(var0 + Client.viewportTempX - 12, Client.viewportTempY + var1 - 28);
+		if (Client.hintArrowType * 674077049 == 2) {
+			Bounds.worldToScreen(Client.hintArrowSubX * 1239167559 + (Client.hintArrowX * 95298825 - Decimator.field404 * 620670661 << 7), Client.hintArrowSubY * 1964755555 + (Client.hintArrowY * 229288235 - class7.field30 * 542116271 << 7), Client.hintArrowHeight * 206269602);
+			if (Client.viewportTempX * -1559516189 > -1 && Client.cycle * 2009455757 % 20 < 10) {
+				class229.field2771[0].drawTransBgAt(var0 + Client.viewportTempX * -1559516189 - 12, Client.viewportTempY * -414199115 + var1 - 28);
 			}
 
 		}

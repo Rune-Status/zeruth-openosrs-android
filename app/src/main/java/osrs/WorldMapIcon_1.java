@@ -2,7 +2,6 @@ package osrs;
 
 import net.runelite.mapping.Export;
 import net.runelite.mapping.Implements;
-import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
@@ -10,9 +9,6 @@ import net.runelite.mapping.ObfuscatedSignature;
 @Implements("WorldMapIcon_1")
 public class WorldMapIcon_1 extends AbstractWorldMapIcon {
 	@ObfuscatedName("s")
-	@ObfuscatedGetter(
-		intValue = -1063677323
-	)
 	@Export("objectDefId")
 	final int objectDefId;
 	@ObfuscatedName("h")
@@ -22,9 +18,6 @@ public class WorldMapIcon_1 extends AbstractWorldMapIcon {
 	@Export("region")
 	final WorldMapRegion region;
 	@ObfuscatedName("w")
-	@ObfuscatedGetter(
-		intValue = 455108447
-	)
 	@Export("element")
 	int element;
 	@ObfuscatedName("v")
@@ -34,15 +27,9 @@ public class WorldMapIcon_1 extends AbstractWorldMapIcon {
 	@Export("label")
 	WorldMapLabel label;
 	@ObfuscatedName("c")
-	@ObfuscatedGetter(
-		intValue = -1834830989
-	)
 	@Export("subWidth")
 	int subWidth;
 	@ObfuscatedName("q")
-	@ObfuscatedGetter(
-		intValue = 1995278701
-	)
 	@Export("subHeight")
 	int subHeight;
 
@@ -51,7 +38,7 @@ public class WorldMapIcon_1 extends AbstractWorldMapIcon {
 	)
 	WorldMapIcon_1(Coord var1, Coord var2, int var3, WorldMapRegion var4) {
 		super(var1, var2);
-		this.objectDefId = var3;
+		this.objectDefId = var3 * 2016816605;
 		this.region = var4;
 		this.init();
 	}
@@ -63,13 +50,13 @@ public class WorldMapIcon_1 extends AbstractWorldMapIcon {
 	)
 	@Export("init")
 	void init() {
-		this.element = FileSystem.getObjectDefinition(this.objectDefId).transform().mapIconId;
-		this.label = this.region.createMapLabel(EnumComposition.WorldMapElement_get(this.element));
+		this.element = FileSystem.getObjectDefinition(-1063677323 * this.objectDefId).transform().mapIconId * 25337305;
+		this.label = this.region.createMapLabel(EnumComposition.WorldMapElement_get(this.element * 455108447));
 		WorldMapElement var1 = EnumComposition.WorldMapElement_get(this.getElement());
 		SpritePixels var2 = var1.getSpriteBool(false);
 		if (var2 != null) {
-			this.subWidth = var2.subWidth;
-			this.subHeight = var2.subHeight;
+			this.subWidth = var2.subWidth * -829380165;
+			this.subHeight = var2.subHeight * 636938341;
 		} else {
 			this.subWidth = 0;
 			this.subHeight = 0;
@@ -84,7 +71,7 @@ public class WorldMapIcon_1 extends AbstractWorldMapIcon {
 	)
 	@Export("getElement")
 	public int getElement() {
-		return this.element;
+		return this.element * 455108447;
 	}
 
 	@ObfuscatedName("w")
@@ -104,7 +91,7 @@ public class WorldMapIcon_1 extends AbstractWorldMapIcon {
 	)
 	@Export("getSubWidth")
 	int getSubWidth() {
-		return this.subWidth;
+		return this.subWidth * -1834830989;
 	}
 
 	@ObfuscatedName("c")
@@ -114,7 +101,7 @@ public class WorldMapIcon_1 extends AbstractWorldMapIcon {
 	)
 	@Export("getSubHeight")
 	int getSubHeight() {
-		return this.subHeight;
+		return this.subHeight * 1995278701;
 	}
 
 	@ObfuscatedName("s")

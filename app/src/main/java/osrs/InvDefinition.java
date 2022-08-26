@@ -2,7 +2,6 @@ package osrs;
 
 import net.runelite.mapping.Export;
 import net.runelite.mapping.Implements;
-import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
@@ -25,9 +24,6 @@ public class InvDefinition extends DualNode {
 	@Export("formattedOperatingSystemName")
 	public static String formattedOperatingSystemName;
 	@ObfuscatedName("w")
-	@ObfuscatedGetter(
-		intValue = -1732860883
-	)
 	@Export("size")
 	public int size;
 
@@ -64,7 +60,7 @@ public class InvDefinition extends DualNode {
 	@Export("decodeNext")
 	void decodeNext(Buffer var1, int var2) {
 		if (var2 == 2) {
-			this.size = var1.readUnsignedShort();
+			this.size = var1.readUnsignedShort() * 860572581;
 		}
 
 	}
@@ -80,7 +76,7 @@ public class InvDefinition extends DualNode {
 		} else if (var0 < 1100) {
 			return Coord.method5485(var0, var1, var2);
 		} else if (var0 < 1200) {
-			return GrandExchangeOfferOwnWorldComparator.method1081(var0, var1, var2);
+			return class59.method1081(var0, var1, var2);
 		} else if (var0 < 1300) {
 			return class14.method170(var0, var1, var2);
 		} else if (var0 < 1400) {
@@ -100,7 +96,7 @@ public class InvDefinition extends DualNode {
 		} else if (var0 < 2100) {
 			return Coord.method5485(var0, var1, var2);
 		} else if (var0 < 2200) {
-			return GrandExchangeOfferOwnWorldComparator.method1081(var0, var1, var2);
+			return class59.method1081(var0, var1, var2);
 		} else if (var0 < 2300) {
 			return class14.method170(var0, var1, var2);
 		} else if (var0 < 2400) {
@@ -140,7 +136,7 @@ public class InvDefinition extends DualNode {
 		} else if (var0 < 4200) {
 			return SoundCache.method744(var0, var1, var2);
 		} else if (var0 < 4300) {
-			return DefaultsGroup.method6838(var0, var1, var2);
+			return class382.method6838(var0, var1, var2);
 		} else if (var0 < 5100) {
 			return Login.method1879(var0, var1, var2);
 		} else if (var0 < 5400) {
@@ -187,21 +183,21 @@ public class InvDefinition extends DualNode {
 			int var4;
 			if (var0 == 1928) {
 				var7 = var2 ? SoundSystem.scriptDotWidget : Ignored.scriptActiveWidget;
-				var4 = Interpreter.Interpreter_intStack[--User.Interpreter_intStackSize];
+				var4 = Interpreter.Interpreter_intStack[(User.Interpreter_intStackSize -= -312486675) * -313022235];
 				if (var4 >= 1 && var4 <= 10) {
-					class93 var8 = new class93(var4, var7.id, var7.childIndex, var7.itemId);
+					class93 var8 = new class93(var4, var7.id * -1692370233, var7.childIndex * 1985146419, var7.field3374 * 1646409911);
 					Interpreter.field831.add(var8);
 					return 1;
 				} else {
 					throw new RuntimeException();
 				}
 			} else if (var0 == 2928) {
-				User.Interpreter_intStackSize -= 3;
-				int var3 = Interpreter.Interpreter_intStack[User.Interpreter_intStackSize];
-				var4 = Interpreter.Interpreter_intStack[User.Interpreter_intStackSize + 1];
-				int var5 = Interpreter.Interpreter_intStack[User.Interpreter_intStackSize + 2];
+				User.Interpreter_intStackSize -= -937460025;
+				int var3 = Interpreter.Interpreter_intStack[User.Interpreter_intStackSize * -313022235];
+				var4 = Interpreter.Interpreter_intStack[User.Interpreter_intStackSize * -313022235 + 1];
+				int var5 = Interpreter.Interpreter_intStack[User.Interpreter_intStackSize * -313022235 + 2];
 				if (var5 >= 1 && var5 <= 10) {
-					class93 var6 = new class93(var5, var3, var4, HitSplatDefinition.getWidget(var3).itemId);
+					class93 var6 = new class93(var5, var3, var4, HitSplatDefinition.getWidget(var3).field3374 * 1646409911);
 					Interpreter.field831.add(var6);
 					return 1;
 				} else {
@@ -210,11 +206,11 @@ public class InvDefinition extends DualNode {
 			} else {
 				return 2;
 			}
-		} else if (Interpreter.field830 >= 10) {
+		} else if (Interpreter.field830 * 1905581353 >= 10) {
 			throw new RuntimeException();
 		} else {
 			if (var0 >= 2000) {
-				var7 = HitSplatDefinition.getWidget(Interpreter.Interpreter_intStack[--User.Interpreter_intStackSize]);
+				var7 = HitSplatDefinition.getWidget(Interpreter.Interpreter_intStack[(User.Interpreter_intStackSize -= -312486675) * -313022235]);
 			} else {
 				var7 = var2 ? SoundSystem.scriptDotWidget : Ignored.scriptActiveWidget;
 			}
@@ -225,8 +221,8 @@ public class InvDefinition extends DualNode {
 				ScriptEvent var9 = new ScriptEvent();
 				var9.widget = var7;
 				var9.args = var7.onResize;
-				var9.field1039 = Interpreter.field830 + 1;
-				Client.scriptEvents.addFirst(var9);
+				var9.field1039 = Interpreter.field830 * 1013314847 + 1826144519;
+				Client.field750.addFirst(var9);
 				return 1;
 			}
 		}
@@ -239,18 +235,18 @@ public class InvDefinition extends DualNode {
 	)
 	static Widget method3278(int var0, Widget var1, int var2, int var3, int var4, int var5, int var6, float[] var7) {
 		Widget var8 = new Widget();
-		var8.type = var0;
-		var8.parentId = var1.id;
-		var8.childIndex = var2;
+		var8.type = var0 * 363853131;
+		var8.parentId = var1.id * 1605364279;
+		var8.childIndex = var2 * -1976451845;
 		var8.isIf3 = true;
-		var8.xAlignment = var3;
-		var8.yAlignment = var4;
-		var8.widthAlignment = var5;
-		var8.heightAlignment = var6;
-		var8.rawX = (int)(var7[0] * (float)var1.width);
-		var8.rawY = (int)(var7[1] * (float)var1.height);
-		var8.rawWidth = (int)(var7[2] * (float)var1.width);
-		var8.rawHeight = (int)(var7[3] * (float)var1.height);
+		var8.xAlignment = var3 * -1343629221;
+		var8.yAlignment = var4 * 1422644223;
+		var8.widthAlignment = var5 * 1620814845;
+		var8.heightAlignment = var6 * -1660309709;
+		var8.rawX = (int)(var7[0] * (float)(var1.field3372 * 1791266795)) * 1180606435;
+		var8.rawY = (int)(var7[1] * (float)(var1.field3426 * -1514292503)) * 1733024585;
+		var8.rawWidth = (int)(var7[2] * (float)(var1.field3372 * 1791266795)) * -1398552895;
+		var8.rawHeight = (int)(var7[3] * (float)(var1.field3426 * -1514292503)) * 1827512093;
 		return var8;
 	}
 
@@ -263,18 +259,18 @@ public class InvDefinition extends DualNode {
 	static void playSong(int var0) {
 		if (var0 == -1 && !Client.playingJingle) {
 			VarcInt.method3328();
-		} else if (var0 != -1 && var0 != Client.currentTrackGroupId && ClanMate.clientPreferences.method2222() != 0 && !Client.playingJingle) {
+		} else if (var0 != -1 && var0 != Client.currentTrackGroupId * 1972973853 && ClanMate.clientPreferences.method2222() != 0 && !Client.playingJingle) {
 			Archive var1 = PacketBuffer.archive6;
 			int var2 = ClanMate.clientPreferences.method2222();
-			class273.musicPlayerStatus = 1;
+			class273.musicPlayerStatus = 168497391;
 			NetFileRequest.musicTrackArchive = var1;
-			UrlRequester.musicTrackGroupId = var0;
+			UrlRequester.musicTrackGroupId = var0 * -1733946155;
 			SceneTilePaint.musicTrackFileId = 0;
-			class28.musicTrackVolume = var2;
+			class28.musicTrackVolume = var2 * -536149201;
 			class273.musicTrackBoolean = false;
-			class160.pcmSampleLength = 2;
+			class160.pcmSampleLength = -2074556818;
 		}
 
-		Client.currentTrackGroupId = var0;
+		Client.currentTrackGroupId = var0 * -203351755;
 	}
 }

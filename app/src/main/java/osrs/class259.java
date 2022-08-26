@@ -1,6 +1,5 @@
 package osrs;
 
-import net.runelite.mapping.Export;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
@@ -10,8 +9,7 @@ public class class259 {
 	@ObfuscatedSignature(
 		descriptor = "Lcm;"
 	)
-	@Export("loginScreenRunesAnimation")
-	static LoginScreenAnimation loginScreenRunesAnimation;
+	static LoginScreenAnimation field2909;
 
 	@ObfuscatedName("s")
 	@ObfuscatedSignature(
@@ -19,9 +17,9 @@ public class class259 {
 		garbageValue = "1571467304"
 	)
 	public static PacketBufferNode method5125(int var0, String var1, Language var2, int var3) {
-		PacketBufferNode var4 = DevicePcmPlayerProvider.getPacketBufferNode(ClientPacket.field2985, Client.packetWriter.isaacCipher);
+		PacketBufferNode var4 = DevicePcmPlayerProvider.method354(ClientPacket.field2985, Client.packetWriter.field1338);
 		var4.packetBuffer.writeByte(0);
-		int var5 = var4.packetBuffer.offset;
+		int var5 = var4.packetBuffer.offset * 1795921631;
 		var4.packetBuffer.writeByte(var0);
 		String var6 = var1.toLowerCase();
 		byte var7 = 0;
@@ -144,7 +142,7 @@ public class class259 {
 			var4.packetBuffer.writeByte(var3);
 		}
 
-		var4.packetBuffer.method7761(var4.packetBuffer.offset - var5);
+		var4.packetBuffer.method7761(var4.packetBuffer.offset * 1795921631 - var5);
 		return var4;
 	}
 }

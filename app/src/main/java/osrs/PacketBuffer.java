@@ -2,7 +2,6 @@ package osrs;
 
 import net.runelite.mapping.Export;
 import net.runelite.mapping.Implements;
-import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
@@ -24,9 +23,6 @@ public class PacketBuffer extends Buffer {
 	@Export("isaacCipher")
 	IsaacCipher isaacCipher;
 	@ObfuscatedName("w")
-	@ObfuscatedGetter(
-		intValue = -996644633
-	)
 	@Export("bitIndex")
 	int bitIndex;
 
@@ -65,7 +61,7 @@ public class PacketBuffer extends Buffer {
 	)
 	@Export("writeByteIsaac")
 	public void writeByteIsaac(int var1) {
-		super.array[++super.offset - 1] = (byte)(var1 + this.isaacCipher.nextInt());
+		super.array[(super.offset += 1090888991) * 1795921631 - 1] = (byte)(var1 + this.isaacCipher.nextInt());
 	}
 
 	@ObfuscatedName("v")
@@ -75,7 +71,7 @@ public class PacketBuffer extends Buffer {
 	)
 	@Export("readByteIsaac")
 	public int readByteIsaac() {
-		return super.array[++super.offset - 1] - this.isaacCipher.nextInt() & 255;
+		return super.array[(super.offset += 1090888991) * 1795921631 - 1] - this.isaacCipher.nextInt() & 255;
 	}
 
 	@ObfuscatedName("c")
@@ -84,7 +80,7 @@ public class PacketBuffer extends Buffer {
 		garbageValue = "-1385121995"
 	)
 	public boolean method7580() {
-		int var1 = super.array[super.offset] - this.isaacCipher.method8195() & 255;
+		int var1 = super.array[super.offset * 1795921631] - this.isaacCipher.method8195() & 255;
 		return var1 >= 128;
 	}
 
@@ -95,8 +91,8 @@ public class PacketBuffer extends Buffer {
 	)
 	@Export("readSmartByteShortIsaac")
 	public int readSmartByteShortIsaac() {
-		int var1 = super.array[++super.offset - 1] - this.isaacCipher.nextInt() & 255;
-		return var1 < 128 ? var1 : (var1 - 128 << 8) + (super.array[++super.offset - 1] - this.isaacCipher.nextInt() & 255);
+		int var1 = super.array[(super.offset += 1090888991) * 1795921631 - 1] - this.isaacCipher.nextInt() & 255;
+		return var1 < 128 ? var1 : (var1 - 128 << 8) + (super.array[(super.offset += 1090888991) * 1795921631 - 1] - this.isaacCipher.nextInt() & 255);
 	}
 
 	@ObfuscatedName("i")
@@ -106,7 +102,7 @@ public class PacketBuffer extends Buffer {
 	)
 	public void method7582(byte[] var1, int var2, int var3) {
 		for (int var4 = 0; var4 < var3; ++var4) {
-			var1[var4 + var2] = (byte)(super.array[++super.offset - 1] - this.isaacCipher.nextInt());
+			var1[var4 + var2] = (byte)(super.array[(super.offset += 1090888991) * 1795921631 - 1] - this.isaacCipher.nextInt());
 		}
 
 	}
@@ -118,7 +114,7 @@ public class PacketBuffer extends Buffer {
 	)
 	@Export("importIndex")
 	public void importIndex() {
-		this.bitIndex = super.offset * 8;
+		this.bitIndex = super.offset * 951212616;
 	}
 
 	@ObfuscatedName("o")
@@ -128,11 +124,11 @@ public class PacketBuffer extends Buffer {
 	)
 	@Export("readBits")
 	public int readBits(int var1) {
-		int var2 = this.bitIndex >> 3;
-		int var3 = 8 - (this.bitIndex & 7);
+		int var2 = this.bitIndex * -996644633 >> 3;
+		int var3 = 8 - (this.bitIndex * -996644633 & 7);
 		int var4 = 0;
 
-		for (this.bitIndex += var1; var1 > var3; var3 = 8) {
+		for (this.bitIndex += -1683608873 * var1; var1 > var3; var3 = 8) {
 			var4 += (super.array[var2++] & field4699[var3]) << var1 - var3;
 			var1 -= var3;
 		}
@@ -153,7 +149,7 @@ public class PacketBuffer extends Buffer {
 	)
 	@Export("exportIndex")
 	public void exportIndex() {
-		super.offset = (this.bitIndex + 7) / 8;
+		super.offset = (this.bitIndex * -996644633 + 7) / 8 * 1090888991;
 	}
 
 	@ObfuscatedName("d")
@@ -163,6 +159,6 @@ public class PacketBuffer extends Buffer {
 	)
 	@Export("bitsRemaining")
 	public int bitsRemaining(int var1) {
-		return var1 * 8 - this.bitIndex;
+		return var1 * 8 - this.bitIndex * -996644633;
 	}
 }

@@ -8,7 +8,6 @@ import java.util.List;
 import java.util.Map.Entry;
 import net.runelite.mapping.Export;
 import net.runelite.mapping.Implements;
-import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
@@ -22,15 +21,9 @@ public class WorldMapRegion {
 	@Export("WorldMapRegion_cachedSprites")
 	static DemotingHashTable WorldMapRegion_cachedSprites;
 	@ObfuscatedName("q")
-	@ObfuscatedGetter(
-		intValue = 1762838535
-	)
 	@Export("regionX")
 	int regionX;
 	@ObfuscatedName("i")
-	@ObfuscatedGetter(
-		intValue = 848398355
-	)
 	@Export("regionY")
 	int regionY;
 	@ObfuscatedName("k")
@@ -43,15 +36,9 @@ public class WorldMapRegion {
 	@Export("worldMapData1List")
 	LinkedList worldMapData1List;
 	@ObfuscatedName("n")
-	@ObfuscatedGetter(
-		intValue = -634393379
-	)
 	@Export("backgroundColor")
 	int backgroundColor;
 	@ObfuscatedName("d")
-	@ObfuscatedGetter(
-		intValue = 159236289
-	)
 	@Export("pixelsPerTile")
 	int pixelsPerTile;
 	@ObfuscatedName("a")
@@ -69,12 +56,12 @@ public class WorldMapRegion {
 	}
 
 	WorldMapRegion(int var1, int var2, int var3, HashMap var4) {
-		this.regionX = var1;
-		this.regionY = var2;
+		this.regionX = var1 * 2139497911;
+		this.regionY = var2 * 970949147;
 		this.worldMapData1List = new LinkedList();
 		this.icon0List = new LinkedList();
 		this.iconMap = new HashMap();
-		this.backgroundColor = var3 | -16777216;
+		this.backgroundColor = (var3 | -16777216) * -280736907;
 		this.fonts = var4;
 	}
 
@@ -84,12 +71,12 @@ public class WorldMapRegion {
 		garbageValue = "2"
 	)
 	void method4587(int var1, int var2, int var3) {
-		int var5 = this.regionX;
-		int var6 = this.regionY;
-		int var7 = this.pixelsPerTile;
+		int var5 = this.regionX * 1762838535;
+		int var6 = this.regionY * 848398355;
+		int var7 = this.pixelsPerTile * 159236289;
 		SpritePixels var4 = (SpritePixels)WorldMapRegion_cachedSprites.get(WorldMapIcon_0.method4840(var5, var6, var7));
 		if (var4 != null) {
-			if (var3 == this.pixelsPerTile * 64) {
+			if (var3 == this.pixelsPerTile * 1601187904) {
 				var4.drawAt(var1, var2);
 			} else {
 				var4.drawScaledWorldmap(var1, var2, var3, var3);
@@ -122,7 +109,7 @@ public class WorldMapRegion {
 
 		while (var3.hasNext()) {
 			WorldMapData_1 var4 = (WorldMapData_1)var3.next();
-			if (var4.getRegionX() == this.regionX && var4.getRegionY() == this.regionY) {
+			if (var4.getRegionX() == 1762838535 * this.regionX && var4.method4889() == 848398355 * this.regionY) {
 				this.worldMapData1List.add(var4);
 			}
 		}
@@ -140,7 +127,7 @@ public class WorldMapRegion {
 		for (int var6 = var1; var6 < var3 + var1; ++var6) {
 			label76:
 			for (int var7 = var2; var7 < var2 + var4; ++var7) {
-				for (int var8 = 0; var8 < var5.planes; ++var8) {
+				for (int var8 = 0; var8 < var5.planes * 1086583875; ++var8) {
 					WorldMapDecoration[] var9 = var5.decorations[var8][var6][var7];
 					if (var9 != null && var9.length != 0) {
 						WorldMapDecoration[] var10 = var9;
@@ -150,19 +137,19 @@ public class WorldMapRegion {
 							boolean var14;
 							label67: {
 								WorldMapDecoration var12 = var10[var11];
-								var13 = FileSystem.getObjectDefinition(var12.objectDefinitionId);
+								var13 = FileSystem.getObjectDefinition(var12.objectDefinitionId * 1371988127);
 								if (var13.transforms != null) {
 									int[] var15 = var13.transforms;
 
 									for (int var16 = 0; var16 < var15.length; ++var16) {
 										int var17 = var15[var16];
 										ObjectComposition var18 = FileSystem.getObjectDefinition(var17);
-										if (var18.mapIconId != -1) {
+										if (var18.mapIconId * -1155865977 != -1) {
 											var14 = true;
 											break label67;
 										}
 									}
-								} else if (var13.mapIconId != -1) {
+								} else if (var13.mapIconId * -1155865977 != -1) {
 									var14 = true;
 									break label67;
 								}
@@ -189,22 +176,22 @@ public class WorldMapRegion {
 	)
 	@Export("getIcon")
 	void getIcon(ObjectComposition var1, int var2, int var3, int var4, AbstractWorldMapData var5) {
-		Coord var6 = new Coord(var2, var3 + this.regionX * 64, this.regionY * 64 + var4);
+		Coord var6 = new Coord(var2, var3 + this.regionX * 1152516544, this.regionY * -1537080128 + var4);
 		Coord var7 = null;
 		if (this.worldMapData_0 != null) {
-			var7 = new Coord(this.worldMapData_0.minPlane + var2, var3 + this.worldMapData_0.regionXLow * 4096, this.worldMapData_0.regionYLow * 4096 + var4);
+			var7 = new Coord(this.worldMapData_0.field2812 * 1840059819 + var2, var3 + this.worldMapData_0.field2811 * 439984064, var4 + this.worldMapData_0.field2815 * -871596096);
 		} else {
 			WorldMapData_1 var8 = (WorldMapData_1)var5;
-			var7 = new Coord(var2 + var8.minPlane, var3 + var8.regionXLow * 4096 + var8.getChunkXLow() * 8, var8.regionYLow * 4096 + var4 + var8.getChunkYLow() * 8);
+			var7 = new Coord(var8.field2812 * 1840059819 + var2, var3 + 439984064 * var8.field2811 + var8.getChunkXLow() * 8, var8.field2815 * -871596096 + var4 + var8.getChunkYLow() * 8);
 		}
 
 		WorldMapElement var9;
 		Object var10;
 		if (var1.transforms != null) {
-			var10 = new WorldMapIcon_1(var7, var6, var1.id, this);
+			var10 = new WorldMapIcon_1(var7, var6, var1.id * 1716638741, this);
 		} else {
-			var9 = EnumComposition.WorldMapElement_get(var1.mapIconId);
-			var10 = new WorldMapIcon_0(var7, var6, var9.objectId, this.createMapLabel(var9));
+			var9 = EnumComposition.WorldMapElement_get(var1.mapIconId * -1155865977);
+			var10 = new WorldMapIcon_0(var7, var6, var9.objectId * -1048381869, this.createMapLabel(var9));
 		}
 
 		var9 = EnumComposition.WorldMapElement_get(((AbstractWorldMapIcon)var10).getElement());
@@ -243,8 +230,8 @@ public class WorldMapRegion {
 
 		while (var2.hasNext()) {
 			WorldMapIcon_0 var3 = (WorldMapIcon_0)var2.next();
-			if (EnumComposition.WorldMapElement_get(var3.element).field1820 && var3.coord2.x >> 6 == this.regionX && var3.coord2.y >> 6 == this.regionY) {
-				WorldMapIcon_0 var4 = new WorldMapIcon_0(var3.coord2, var3.coord2, var3.element, this.method4602(var3.element));
+			if (EnumComposition.WorldMapElement_get(var3.element * 1919114089).field1820 && var3.coord2.x * -887279971 >> 6 == this.regionX * 1762838535 && this.regionY * 848398355 == var3.coord2.y * -325968273 >> 6) {
+				WorldMapIcon_0 var4 = new WorldMapIcon_0(var3.coord2, var3.coord2, var3.element * 1919114089, this.method4602(var3.element * 1919114089));
 				this.icon0List.add(var4);
 			}
 		}
@@ -316,26 +303,26 @@ public class WorldMapRegion {
 	)
 	@Export("drawTile")
 	void drawTile(int var1, WorldMapScaleHandler var2, IndexedSprite[] var3, AbstractArchive var4, AbstractArchive var5) {
-		this.pixelsPerTile = var1;
+		this.pixelsPerTile = var1 * -1615409343;
 		if (this.worldMapData_0 != null || !this.worldMapData1List.isEmpty()) {
-			int var7 = this.regionX;
-			int var8 = this.regionY;
+			int var7 = this.regionX * 1762838535;
+			int var8 = this.regionY * 848398355;
 			SpritePixels var6 = (SpritePixels)WorldMapRegion_cachedSprites.get(WorldMapIcon_0.method4840(var7, var8, var1));
 			if (var6 == null) {
 				boolean var9 = true;
 				var9 &= this.loadGeography(var4);
 				int var11;
 				if (this.worldMapData_0 != null) {
-					var11 = this.worldMapData_0.groupId;
+					var11 = this.worldMapData_0.field2810 * -1776846601;
 				} else {
-					var11 = ((AbstractWorldMapData)this.worldMapData1List.getFirst()).groupId;
+					var11 = ((AbstractWorldMapData)this.worldMapData1List.getFirst()).field2810 * -1776846601;
 				}
 
 				var9 &= var5.tryLoadGroup(var11);
 				if (var9) {
 					byte[] var10 = var5.takeFileFlat(var11);
 					WorldMapSprite var12 = ScriptEvent.method2063(var10);
-					SpritePixels var13 = new SpritePixels(this.pixelsPerTile * 64, this.pixelsPerTile * 64);
+					SpritePixels var13 = new SpritePixels(this.pixelsPerTile * 1601187904, this.pixelsPerTile * 1601187904);
 					var13.setRaster();
 					if (this.worldMapData_0 != null) {
 						this.method4586(var2, var3, var12);
@@ -343,9 +330,9 @@ public class WorldMapRegion {
 						this.method4611(var2, var3, var12);
 					}
 
-					int var14 = this.regionX;
-					int var15 = this.regionY;
-					int var16 = this.pixelsPerTile;
+					int var14 = this.regionX * 1762838535;
+					int var15 = this.regionY * 848398355;
+					int var16 = this.pixelsPerTile * 159236289;
 					WorldMapRegion_cachedSprites.put(var13, WorldMapIcon_0.method4840(var14, var15, var16), var13.pixels.length * 4);
 					this.method4703();
 				}
@@ -382,7 +369,7 @@ public class WorldMapRegion {
 				int var6 = var5.getElement();
 				if (var1.contains(var6)) {
 					WorldMapElement var7 = EnumComposition.WorldMapElement_get(var6);
-					this.drawBackgroundCircle(var7, var5.screenX, var5.screenY, var2, var3);
+					this.drawBackgroundCircle(var7, var5.screenX * 2140173675, var5.screenY * -3406293, var2, var3);
 				}
 			}
 		}
@@ -469,22 +456,22 @@ public class WorldMapRegion {
 		int var6 = var3.floorUnderlayIds[0][var1][var2] - 1;
 		int var7 = var3.floorOverlayIds[0][var1][var2] - 1;
 		if (var6 == -1 && var7 == -1) {
-			Rasterizer2D.Rasterizer2D_fillRectangle(this.pixelsPerTile * var1, this.pixelsPerTile * (63 - var2), this.pixelsPerTile, this.pixelsPerTile, this.backgroundColor);
+			Rasterizer2D.Rasterizer2D_fillRectangle(this.pixelsPerTile * var1 * 159236289, this.pixelsPerTile * (63 - var2) * 159236289, this.pixelsPerTile * 159236289, this.pixelsPerTile * 159236289, this.backgroundColor * -634393379);
 		}
 
 		int var8 = 16711935;
 		if (var7 != -1) {
-			var8 = GameEngine.method428(var7, this.backgroundColor);
+			var8 = GameEngine.method428(var7, this.backgroundColor * -634393379);
 		}
 
 		if (var7 > -1 && var3.field2814[0][var1][var2] == 0) {
-			Rasterizer2D.Rasterizer2D_fillRectangle(this.pixelsPerTile * var1, this.pixelsPerTile * (63 - var2), this.pixelsPerTile, this.pixelsPerTile, var8);
+			Rasterizer2D.Rasterizer2D_fillRectangle(this.pixelsPerTile * var1 * 159236289, this.pixelsPerTile * (63 - var2) * 159236289, this.pixelsPerTile * 159236289, this.pixelsPerTile * 159236289, var8);
 		} else {
 			int var9 = this.method4604(var1, var2, var3, var5);
 			if (var7 == -1) {
-				Rasterizer2D.Rasterizer2D_fillRectangle(this.pixelsPerTile * var1, this.pixelsPerTile * (63 - var2), this.pixelsPerTile, this.pixelsPerTile, var9);
+				Rasterizer2D.Rasterizer2D_fillRectangle(this.pixelsPerTile * var1 * 159236289, this.pixelsPerTile * (63 - var2) * 159236289, this.pixelsPerTile * 159236289, this.pixelsPerTile * 159236289, var9);
 			} else {
-				var4.method5037(this.pixelsPerTile * var1, this.pixelsPerTile * (63 - var2), var9, var8, this.pixelsPerTile, this.pixelsPerTile, var3.field2814[0][var1][var2], var3.field2808[0][var1][var2]);
+				var4.method5037(this.pixelsPerTile * var1 * 159236289, this.pixelsPerTile * (63 - var2) * 159236289, var9, var8, this.pixelsPerTile * 159236289, this.pixelsPerTile * 159236289, var3.field2814[0][var1][var2], var3.field2808[0][var1][var2]);
 			}
 		}
 	}
@@ -495,14 +482,14 @@ public class WorldMapRegion {
 		garbageValue = "-1273458561"
 	)
 	void method4603(int var1, int var2, AbstractWorldMapData var3, WorldMapScaleHandler var4) {
-		for (int var5 = 1; var5 < var3.planes; ++var5) {
+		for (int var5 = 1; var5 < var3.planes * 1086583875; ++var5) {
 			int var6 = var3.floorOverlayIds[var5][var1][var2] - 1;
 			if (var6 > -1) {
-				int var7 = GameEngine.method428(var6, this.backgroundColor);
+				int var7 = GameEngine.method428(var6, this.backgroundColor * -634393379);
 				if (var3.field2814[var5][var1][var2] == 0) {
-					Rasterizer2D.Rasterizer2D_fillRectangle(this.pixelsPerTile * var1, this.pixelsPerTile * (63 - var2), this.pixelsPerTile, this.pixelsPerTile, var7);
+					Rasterizer2D.Rasterizer2D_fillRectangle(this.pixelsPerTile * var1 * 159236289, this.pixelsPerTile * (63 - var2) * 159236289, this.pixelsPerTile * 159236289, this.pixelsPerTile * 159236289, var7);
 				} else {
-					var4.method5037(this.pixelsPerTile * var1, this.pixelsPerTile * (63 - var2), 0, var7, this.pixelsPerTile, this.pixelsPerTile, var3.field2814[var5][var1][var2], var3.field2808[var5][var1][var2]);
+					var4.method5037(this.pixelsPerTile * var1 * 159236289, this.pixelsPerTile * (63 - var2) * 159236289, 0, var7, this.pixelsPerTile * 159236289, this.pixelsPerTile * 159236289, var3.field2814[var5][var1][var2], var3.field2808[var5][var1][var2]);
 				}
 			}
 		}
@@ -515,7 +502,7 @@ public class WorldMapRegion {
 		garbageValue = "-1846005797"
 	)
 	int method4604(int var1, int var2, AbstractWorldMapData var3, WorldMapSprite var4) {
-		return var3.floorUnderlayIds[0][var1][var2] == 0 ? this.backgroundColor : var4.getTileColor(var1, var2);
+		return var3.floorUnderlayIds[0][var1][var2] == 0 ? this.backgroundColor * -634393379 : var4.getTileColor(var1, var2);
 	}
 
 	@ObfuscatedName("b")
@@ -524,29 +511,29 @@ public class WorldMapRegion {
 		garbageValue = "1879739800"
 	)
 	void method4605(int var1, int var2, AbstractWorldMapData var3, IndexedSprite[] var4) {
-		for (int var5 = 0; var5 < var3.planes; ++var5) {
+		for (int var5 = 0; var5 < var3.planes * 1086583875; ++var5) {
 			WorldMapDecoration[] var6 = var3.decorations[var5][var1][var2];
 			if (var6 != null && var6.length != 0) {
 				WorldMapDecoration[] var7 = var6;
 
 				for (int var8 = 0; var8 < var7.length; ++var8) {
 					WorldMapDecoration var9 = var7[var8];
-					int var11 = var9.decoration;
-					boolean var10 = var11 >= WorldMapDecorationType.field3538.id && var11 <= WorldMapDecorationType.field3539.id;
+					int var11 = var9.decoration * -761624157;
+					boolean var10 = var11 >= WorldMapDecorationType.field3538.id * -1322889823 && var11 <= WorldMapDecorationType.field3539.id * -1322889823;
 					if (!var10) {
-						int var13 = var9.decoration;
-						boolean var12 = var13 == WorldMapDecorationType.field3526.id;
+						int var13 = var9.decoration * -761624157;
+						boolean var12 = var13 == WorldMapDecorationType.field3526.id * -1322889823;
 						if (!var12) {
 							continue;
 						}
 					}
 
-					ObjectComposition var14 = FileSystem.getObjectDefinition(var9.objectDefinitionId);
-					if (var14.mapSceneId != -1) {
-						if (var14.mapSceneId != 46 && var14.mapSceneId != 52) {
-							var4[var14.mapSceneId].method8048(this.pixelsPerTile * var1, this.pixelsPerTile * (63 - var2), this.pixelsPerTile * 2, this.pixelsPerTile * 2);
+					ObjectComposition var14 = FileSystem.getObjectDefinition(var9.objectDefinitionId * 1371988127);
+					if (var14.mapSceneId * 288199677 != -1) {
+						if (var14.mapSceneId * 288199677 != 46 && var14.mapSceneId * 288199677 != 52) {
+							var4[var14.mapSceneId * 288199677].method8048(this.pixelsPerTile * var1 * 159236289, this.pixelsPerTile * (63 - var2) * 159236289, this.pixelsPerTile * 318472578, this.pixelsPerTile * 318472578);
 						} else {
-							var4[var14.mapSceneId].method8048(this.pixelsPerTile * var1, this.pixelsPerTile * (63 - var2), this.pixelsPerTile * 2 + 1, this.pixelsPerTile * 2 + 1);
+							var4[var14.mapSceneId * 288199677].method8048(this.pixelsPerTile * var1 * 159236289, this.pixelsPerTile * (63 - var2) * 159236289, this.pixelsPerTile * 318472578 + 1, this.pixelsPerTile * 318472578 + 1);
 						}
 					}
 				}
@@ -561,55 +548,55 @@ public class WorldMapRegion {
 		garbageValue = "105"
 	)
 	void method4689(int var1, int var2, AbstractWorldMapData var3) {
-		for (int var4 = 0; var4 < var3.planes; ++var4) {
+		for (int var4 = 0; var4 < var3.planes * 1086583875; ++var4) {
 			WorldMapDecoration[] var5 = var3.decorations[var4][var1][var2];
 			if (var5 != null && var5.length != 0) {
 				WorldMapDecoration[] var6 = var5;
 
 				for (int var7 = 0; var7 < var6.length; ++var7) {
 					WorldMapDecoration var8 = var6[var7];
-					int var10 = var8.decoration;
-					boolean var9 = var10 >= WorldMapDecorationType.field3532.id && var10 <= WorldMapDecorationType.field3531.id || var10 == WorldMapDecorationType.field3520.id;
+					int var10 = var8.decoration * -761624157;
+					boolean var9 = var10 >= WorldMapDecorationType.field3532.id * -1322889823 && var10 <= WorldMapDecorationType.field3531.id * -1322889823 || var10 == WorldMapDecorationType.field3520.id * -1322889823;
 					if (var9) {
-						ObjectComposition var11 = FileSystem.getObjectDefinition(var8.objectDefinitionId);
-						int var12 = var11.int1 != 0 ? -3407872 : -3355444;
-						if (var8.decoration == WorldMapDecorationType.field3532.id) {
-							this.method4694(var1, var2, var8.rotation, var12);
+						ObjectComposition var11 = FileSystem.getObjectDefinition(var8.objectDefinitionId * 1371988127);
+						int var12 = var11.int1 * 1193889907 != 0 ? -3407872 : -3355444;
+						if (WorldMapDecorationType.field3532.id * -1322889823 == var8.decoration * -761624157) {
+							this.method4694(var1, var2, var8.rotation * -863337605, var12);
 						}
 
-						if (var8.decoration == WorldMapDecorationType.field3523.id) {
-							this.method4694(var1, var2, var8.rotation, -3355444);
-							this.method4694(var1, var2, var8.rotation + 1, var12);
+						if (var8.decoration * -761624157 == WorldMapDecorationType.field3523.id * -1322889823) {
+							this.method4694(var1, var2, var8.rotation * -863337605, -3355444);
+							this.method4694(var1, var2, var8.rotation * -863337605 + 1, var12);
 						}
 
-						if (var8.decoration == WorldMapDecorationType.field3531.id) {
-							if (var8.rotation == 0) {
-								Rasterizer2D.method7967(this.pixelsPerTile * var1, this.pixelsPerTile * (63 - var2), 1, var12);
+						if (var8.decoration * -761624157 == WorldMapDecorationType.field3531.id * -1322889823) {
+							if (var8.rotation * -863337605 == 0) {
+								Rasterizer2D.method7967(this.pixelsPerTile * var1 * 159236289, this.pixelsPerTile * (63 - var2) * 159236289, 1, var12);
 							}
 
-							if (var8.rotation == 1) {
-								Rasterizer2D.method7967(this.pixelsPerTile + this.pixelsPerTile * var1 - 1, this.pixelsPerTile * (63 - var2), 1, var12);
+							if (var8.rotation * -863337605 == 1) {
+								Rasterizer2D.method7967(this.pixelsPerTile * var1 * 159236289 + this.pixelsPerTile * 159236289 - 1, this.pixelsPerTile * (63 - var2) * 159236289, 1, var12);
 							}
 
-							if (var8.rotation == 2) {
-								Rasterizer2D.method7967(this.pixelsPerTile * var1 + this.pixelsPerTile - 1, this.pixelsPerTile * (63 - var2) + this.pixelsPerTile - 1, 1, var12);
+							if (var8.rotation * -863337605 == 2) {
+								Rasterizer2D.method7967(this.pixelsPerTile * var1 * 159236289 + this.pixelsPerTile * 159236289 - 1, this.pixelsPerTile * 159236289 + this.pixelsPerTile * (63 - var2) * 159236289 - 1, 1, var12);
 							}
 
-							if (var8.rotation == 3) {
-								Rasterizer2D.method7967(this.pixelsPerTile * var1, this.pixelsPerTile * (63 - var2) + this.pixelsPerTile - 1, 1, var12);
+							if (var8.rotation * -863337605 == 3) {
+								Rasterizer2D.method7967(this.pixelsPerTile * var1 * 159236289, this.pixelsPerTile * (63 - var2) * 159236289 + this.pixelsPerTile * 159236289 - 1, 1, var12);
 							}
 						}
 
-						if (var8.decoration == WorldMapDecorationType.field3520.id) {
-							int var13 = var8.rotation % 2;
+						if (var8.decoration * -761624157 == WorldMapDecorationType.field3520.id * -1322889823) {
+							int var13 = var8.rotation * -863337605 % 2;
 							int var14;
 							if (var13 == 0) {
-								for (var14 = 0; var14 < this.pixelsPerTile; ++var14) {
-									Rasterizer2D.method7967(var14 + this.pixelsPerTile * var1, (64 - var2) * this.pixelsPerTile - 1 - var14, 1, var12);
+								for (var14 = 0; var14 < this.pixelsPerTile * 159236289; ++var14) {
+									Rasterizer2D.method7967(var14 + this.pixelsPerTile * var1 * 159236289, (64 - var2) * this.pixelsPerTile * 159236289 - 1 - var14, 1, var12);
 								}
 							} else {
-								for (var14 = 0; var14 < this.pixelsPerTile; ++var14) {
-									Rasterizer2D.method7967(var14 + this.pixelsPerTile * var1, var14 + this.pixelsPerTile * (63 - var2), 1, var12);
+								for (var14 = 0; var14 < this.pixelsPerTile * 159236289; ++var14) {
+									Rasterizer2D.method7967(this.pixelsPerTile * var1 * 159236289 + var14, var14 + this.pixelsPerTile * (63 - var2) * 159236289, 1, var12);
 								}
 							}
 						}
@@ -634,12 +621,12 @@ public class WorldMapRegion {
 		while (var7.hasNext()) {
 			Entry var8 = (Entry)var7.next();
 			Coord var9 = (Coord)var8.getKey();
-			int var10 = (int)((float)var9.x * var5 + (float)var1 - var6);
-			int var11 = (int)((float)(var2 + var4) - var5 * (float)var9.y - var6);
+			int var10 = (int)((float)(var9.x * -887279971) * var5 + (float)var1 - var6);
+			int var11 = (int)((float)(var2 + var4) - var5 * (float)(var9.y * -325968273) - var6);
 			AbstractWorldMapIcon var12 = (AbstractWorldMapIcon)var8.getValue();
 			if (var12 != null && var12.hasValidElement()) {
-				var12.screenX = var10;
-				var12.screenY = var11;
+				var12.screenX = var10 * -1225781437;
+				var12.screenY = var11 * 1593215107;
 				WorldMapElement var13 = EnumComposition.WorldMapElement_get(var12.getElement());
 				if (!var3.contains(var13.getObjectId())) {
 					this.method4688(var12, var10, var11, var5);
@@ -662,7 +649,7 @@ public class WorldMapRegion {
 			if (var5.hasValidElement()) {
 				WorldMapElement var6 = EnumComposition.WorldMapElement_get(var5.getElement());
 				if (var6 != null && var1.contains(var6.getObjectId())) {
-					this.drawBackgroundCircle(var6, var5.screenX, var5.screenY, var2, var3);
+					this.drawBackgroundCircle(var6, var5.screenX * 2140173675, var5.screenY * -3406293, var2, var3);
 				}
 			}
 		}
@@ -723,7 +710,7 @@ public class WorldMapRegion {
 		if (var6 != null) {
 			if (var6.size.method4450(var5)) {
 				Font var7 = (Font)this.fonts.get(var6.size);
-				var7.drawLines(var6.text, var3 - var6.width / 2, var4, var6.width, var6.height, -16777216 | var2.field1817, 0, 1, 0, var7.ascent / 2);
+				var7.drawLines(var6.text, var3 - var6.width * -633493345 / 2, var4, var6.width * -633493345, var6.height * 908481261, -16777216 | var2.field1817 * 1591663295, 0, 1, 0, var7.ascent / 2);
 			}
 		}
 	}
@@ -741,12 +728,12 @@ public class WorldMapRegion {
 		while (var6.hasNext()) {
 			AbstractWorldMapIcon var7 = (AbstractWorldMapIcon)var6.next();
 			if (var7.hasValidElement()) {
-				int var8 = var7.coord2.x % 64;
-				int var9 = var7.coord2.y % 64;
-				var7.screenX = (int)((float)var1 + (float)var8 * var5);
-				var7.screenY = (int)((float)(63 - var9) * var5 + (float)var2);
+				int var8 = var7.coord2.x * -887279971 % 64;
+				int var9 = var7.coord2.y * -325968273 % 64;
+				var7.screenX = (int)((float)var1 + (float)var8 * var5) * -1225781437;
+				var7.screenY = (int)((float)(63 - var9) * var5 + (float)var2) * 1593215107;
 				if (!var3.contains(var7.getElement())) {
-					this.method4688(var7, var7.screenX, var7.screenY, var5);
+					this.method4688(var7, var7.screenX * 2140173675, var7.screenY * -3406293, var5);
 				}
 			}
 		}
@@ -759,7 +746,7 @@ public class WorldMapRegion {
 		garbageValue = "245044303"
 	)
 	int method4627(SpritePixels var1, HorizontalAlignment var2) {
-		switch(var2.value) {
+		switch(var2.value * -682238819) {
 		case 0:
 			return -var1.subWidth / 2;
 		case 1:
@@ -775,7 +762,7 @@ public class WorldMapRegion {
 		garbageValue = "-816706088"
 	)
 	int method4615(SpritePixels var1, VerticalAlignment var2) {
-		switch(var2.value) {
+		switch(var2.value * -2090139611) {
 		case 0:
 			return -var1.subHeight / 2;
 		case 2:
@@ -803,7 +790,7 @@ public class WorldMapRegion {
 	@Export("createMapLabel")
 	WorldMapLabel createMapLabel(WorldMapElement var1) {
 		if (var1.name != null && this.fonts != null && this.fonts.get(WorldMapLabelSize.WorldMapLabelSize_small) != null) {
-			int var3 = var1.textSize;
+			int var3 = var1.textSize * 1085600775;
 			WorldMapLabelSize[] var4 = WorldMapLabelSize.method4455();
 			int var5 = 0;
 
@@ -815,7 +802,7 @@ public class WorldMapRegion {
 				}
 
 				WorldMapLabelSize var6 = var4[var5];
-				if (var3 == var6.field2680) {
+				if (var3 == var6.field2680 * -1294860383) {
 					var2 = var6;
 					break;
 				}
@@ -911,19 +898,19 @@ public class WorldMapRegion {
 	void method4694(int var1, int var2, int var3, int var4) {
 		var3 %= 4;
 		if (var3 == 0) {
-			Rasterizer2D.method7975(this.pixelsPerTile * var1, this.pixelsPerTile * (63 - var2), this.pixelsPerTile, var4);
+			Rasterizer2D.method7975(this.pixelsPerTile * var1 * 159236289, this.pixelsPerTile * (63 - var2) * 159236289, this.pixelsPerTile * 159236289, var4);
 		}
 
 		if (var3 == 1) {
-			Rasterizer2D.method7967(this.pixelsPerTile * var1, this.pixelsPerTile * (63 - var2), this.pixelsPerTile, var4);
+			Rasterizer2D.method7967(this.pixelsPerTile * var1 * 159236289, this.pixelsPerTile * (63 - var2) * 159236289, this.pixelsPerTile * 159236289, var4);
 		}
 
 		if (var3 == 2) {
-			Rasterizer2D.method7975(this.pixelsPerTile + this.pixelsPerTile * var1 - 1, this.pixelsPerTile * (63 - var2), this.pixelsPerTile, var4);
+			Rasterizer2D.method7975(this.pixelsPerTile * var1 * 159236289 + this.pixelsPerTile * 159236289 - 1, this.pixelsPerTile * (63 - var2) * 159236289, this.pixelsPerTile * 159236289, var4);
 		}
 
 		if (var3 == 3) {
-			Rasterizer2D.method7967(this.pixelsPerTile * var1, this.pixelsPerTile * (63 - var2) + this.pixelsPerTile - 1, this.pixelsPerTile, var4);
+			Rasterizer2D.method7967(this.pixelsPerTile * var1 * 159236289, this.pixelsPerTile * (63 - var2) * 159236289 + this.pixelsPerTile * 159236289 - 1, this.pixelsPerTile * 159236289, var4);
 		}
 
 	}
@@ -950,21 +937,21 @@ public class WorldMapRegion {
 	)
 	static final void method4607(Widget var0, int var1, int var2, int var3, int var4, int var5, int var6) {
 		if (Client.field554) {
-			Client.alternativeScrollbarWidth = 32;
+			Client.alternativeScrollbarWidth = -1458049248;
 		} else {
 			Client.alternativeScrollbarWidth = 0;
 		}
 
 		Client.field554 = false;
 		int var7;
-		if (MouseHandler.MouseHandler_currentButton == 1 || !Bounds.mouseCam && MouseHandler.MouseHandler_currentButton == 4) {
+		if (MouseHandler.MouseHandler_currentButton * -1275162901 == 1 || !Bounds.mouseCam && MouseHandler.MouseHandler_currentButton * -1275162901 == 4) {
 			if (var5 >= var1 && var5 < var1 + 16 && var6 >= var2 && var6 < var2 + 16) {
-				var0.scrollY -= 4;
-				class125.invalidateWidget(var0);
+				var0.field3379 -= 1661258188;
+				class125.method2770(var0);
 			} else if (var5 >= var1 && var5 < var1 + 16 && var6 >= var3 + var2 - 16 && var6 < var3 + var2) {
-				var0.scrollY += 4;
-				class125.invalidateWidget(var0);
-			} else if (var5 >= var1 - Client.alternativeScrollbarWidth && var5 < Client.alternativeScrollbarWidth + var1 + 16 && var6 >= var2 + 16 && var6 < var3 + var2 - 16) {
+				var0.field3379 += 1661258188;
+				class125.method2770(var0);
+			} else if (var5 >= var1 - Client.alternativeScrollbarWidth * -2127398199 && var5 < Client.alternativeScrollbarWidth * -2127398199 + var1 + 16 && var6 >= var2 + 16 && var6 < var3 + var2 - 16) {
 				var7 = var3 * (var3 - 32) / var4;
 				if (var7 < 8) {
 					var7 = 8;
@@ -972,17 +959,17 @@ public class WorldMapRegion {
 
 				int var8 = var6 - var2 - 16 - var7 / 2;
 				int var9 = var3 - 32 - var7;
-				var0.scrollY = var8 * (var4 - var3) / var9;
-				class125.invalidateWidget(var0);
+				var0.field3379 = var8 * (var4 - var3) / var9 * 1489056371;
+				class125.method2770(var0);
 				Client.field554 = true;
 			}
 		}
 
-		if (Client.mouseWheelRotation != 0) {
-			var7 = var0.width;
+		if (Client.field770 * 440973023 != 0) {
+			var7 = var0.field3372 * 1791266795;
 			if (var5 >= var1 - var7 && var6 >= var2 && var5 < var1 + 16 && var6 <= var3 + var2) {
-				var0.scrollY += Client.mouseWheelRotation * 45;
-				class125.invalidateWidget(var0);
+				var0.field3379 += -23090199 * Client.field770;
+				class125.method2770(var0);
 			}
 		}
 

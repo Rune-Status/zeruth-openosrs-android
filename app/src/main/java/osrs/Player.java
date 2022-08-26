@@ -2,7 +2,6 @@ package osrs;
 
 import net.runelite.mapping.Export;
 import net.runelite.mapping.Implements;
-import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
@@ -14,7 +13,7 @@ public final class Player extends Actor {
 		descriptor = "Lqi;"
 	)
 	@Export("privateChatMode")
-	static PrivateChatMode privateChatMode;
+	static class460 privateChatMode;
 	@ObfuscatedName("s")
 	@ObfuscatedSignature(
 		descriptor = "Lqy;"
@@ -28,118 +27,56 @@ public final class Player extends Actor {
 	@Export("appearance")
 	PlayerComposition appearance;
 	@ObfuscatedName("w")
-	@ObfuscatedGetter(
-		intValue = -339690919
-	)
 	@Export("headIconPk")
 	int headIconPk;
 	@ObfuscatedName("v")
-	@ObfuscatedGetter(
-		intValue = -1767225387
-	)
 	@Export("headIconPrayer")
 	int headIconPrayer;
 	@ObfuscatedName("q")
 	@Export("actions")
 	String[] actions;
 	@ObfuscatedName("i")
-	@ObfuscatedGetter(
-		intValue = 295884031
-	)
-	@Export("combatLevel")
-	int combatLevel;
+	int field1088;
 	@ObfuscatedName("k")
-	@ObfuscatedGetter(
-		intValue = 412407165
-	)
-	@Export("skillLevel")
-	int skillLevel;
+	int field1082;
 	@ObfuscatedName("o")
-	@ObfuscatedGetter(
-		intValue = -705296317
-	)
-	@Export("tileHeight")
-	int tileHeight;
+	int field1090;
 	@ObfuscatedName("n")
-	@ObfuscatedGetter(
-		intValue = 1109822011
-	)
-	@Export("animationCycleStart")
-	int animationCycleStart;
+	int field1091;
 	@ObfuscatedName("d")
-	@ObfuscatedGetter(
-		intValue = 544334885
-	)
-	@Export("animationCycleEnd")
-	int animationCycleEnd;
+	int field1106;
 	@ObfuscatedName("a")
-	@ObfuscatedGetter(
-		intValue = -1362904281
-	)
 	int field1093;
 	@ObfuscatedName("m")
-	@ObfuscatedGetter(
-		intValue = 2036186281
-	)
-	@Export("tileHeight2")
-	int tileHeight2;
+	int field1094;
 	@ObfuscatedName("u")
-	@ObfuscatedGetter(
-		intValue = -472748625
-	)
 	int field1097;
 	@ObfuscatedName("l")
 	@ObfuscatedSignature(
 		descriptor = "Lhp;"
 	)
-	@Export("model0")
-	Model model0;
+	Model field1096;
 	@ObfuscatedName("z")
-	@ObfuscatedGetter(
-		intValue = -1915037801
-	)
-	@Export("minX")
-	int minX;
+	int field1089;
 	@ObfuscatedName("r")
-	@ObfuscatedGetter(
-		intValue = 2110454417
-	)
-	@Export("minY")
-	int minY;
+	int field1098;
 	@ObfuscatedName("y")
-	@ObfuscatedGetter(
-		intValue = -447071197
-	)
-	@Export("maxX")
-	int maxX;
+	int field1099;
 	@ObfuscatedName("p")
-	@ObfuscatedGetter(
-		intValue = 1319610801
-	)
-	@Export("maxY")
-	int maxY;
+	int field1100;
 	@ObfuscatedName("e")
 	@Export("isUnanimated")
 	boolean isUnanimated;
 	@ObfuscatedName("b")
-	@ObfuscatedGetter(
-		intValue = -1985723861
-	)
 	@Export("team")
 	int team;
 	@ObfuscatedName("x")
 	@Export("isHidden")
 	boolean isHidden;
 	@ObfuscatedName("f")
-	@ObfuscatedGetter(
-		intValue = -1670935727
-	)
 	@Export("plane")
 	int plane;
 	@ObfuscatedName("t")
-	@ObfuscatedGetter(
-		intValue = -1637139185
-	)
 	@Export("index")
 	int index;
 	@ObfuscatedName("j")
@@ -163,31 +100,23 @@ public final class Player extends Actor {
 	@ObfuscatedName("aq")
 	boolean field1111;
 	@ObfuscatedName("av")
-	@ObfuscatedGetter(
-		intValue = -1622070341
-	)
-	@Export("tileX")
-	int tileX;
+	int field1110;
 	@ObfuscatedName("aj")
-	@ObfuscatedGetter(
-		intValue = -1343320041
-	)
-	@Export("tileY")
-	int tileY;
+	int field1095;
 
 	Player() {
-		this.headIconPk = -1;
-		this.headIconPrayer = -1;
+		this.headIconPk = 1553797655;
+		this.headIconPrayer = -942324093;
 		this.actions = new String[3];
 
 		for (int var1 = 0; var1 < 3; ++var1) {
 			this.actions[var1] = "";
 		}
 
-		this.combatLevel = 0;
-		this.skillLevel = 0;
-		this.animationCycleStart = 0;
-		this.animationCycleEnd = 0;
+		this.field1088 = 0;
+		this.field1082 = 0;
+		this.field1091 = 0;
+		this.field1106 = 0;
 		this.isUnanimated = false;
 		this.team = 0;
 		this.isHidden = false;
@@ -206,8 +135,8 @@ public final class Player extends Actor {
 	final void read(Buffer var1) {
 		var1.offset = 0;
 		int var2 = var1.readUnsignedByte();
-		this.headIconPk = var1.readByte();
-		this.headIconPrayer = var1.readByte();
+		this.headIconPk = var1.readByte() * -1553797655;
+		this.headIconPrayer = var1.readByte() * 942324093;
 		int var3 = -1;
 		this.team = 0;
 		int[] var4 = new int[12];
@@ -228,9 +157,9 @@ public final class Player extends Actor {
 				}
 
 				if (var4[var5] >= 512) {
-					var8 = AttackOption.ItemDefinition_get(var4[var5] - 512).team;
+					var8 = AttackOption.ItemDefinition_get(var4[var5] - 512).team * 92660005;
 					if (var8 != 0) {
-						this.team = var8;
+						this.team = var8 * -1290244989;
 					}
 				}
 			}
@@ -247,54 +176,54 @@ public final class Player extends Actor {
 			var11[var6] = var7;
 		}
 
-		super.idleSequence = var1.readUnsignedShort();
-		if (super.idleSequence == 65535) {
-			super.idleSequence = -1;
+		super.idleSequence = var1.readUnsignedShort() * -270260931;
+		if (super.idleSequence * 202365461 == 65535) {
+			super.idleSequence = 270260931;
 		}
 
-		super.turnLeftSequence = var1.readUnsignedShort();
-		if (super.turnLeftSequence == 65535) {
-			super.turnLeftSequence = -1;
+		super.field1133 = var1.readUnsignedShort() * 81066307;
+		if (super.field1133 * -443851925 == 65535) {
+			super.field1133 = -81066307;
 		}
 
-		super.turnRightSequence = super.turnLeftSequence;
-		super.walkSequence = var1.readUnsignedShort();
-		if (super.walkSequence == 65535) {
-			super.walkSequence = -1;
+		super.field1134 = super.field1133 * -2054281043;
+		super.field1135 = var1.readUnsignedShort() * 428154351;
+		if (super.field1135 * 831500559 == 65535) {
+			super.field1135 = -428154351;
 		}
 
-		super.walkBackSequence = var1.readUnsignedShort();
-		if (super.walkBackSequence == 65535) {
-			super.walkBackSequence = -1;
+		super.field1128 = var1.readUnsignedShort() * -470861571;
+		if (super.field1128 * -363813803 == 65535) {
+			super.field1128 = 470861571;
 		}
 
-		super.walkLeftSequence = var1.readUnsignedShort();
-		if (super.walkLeftSequence == 65535) {
-			super.walkLeftSequence = -1;
+		super.field1137 = var1.readUnsignedShort() * 1516208503;
+		if (super.field1137 * -48519097 == 65535) {
+			super.field1137 = -1516208503;
 		}
 
-		super.walkRightSequence = var1.readUnsignedShort();
-		if (super.walkRightSequence == 65535) {
-			super.walkRightSequence = -1;
+		super.field1138 = var1.readUnsignedShort() * -1796039677;
+		if (super.field1138 * 1481502379 == 65535) {
+			super.field1138 = 1796039677;
 		}
 
-		super.runSequence = var1.readUnsignedShort();
-		if (super.runSequence == 65535) {
-			super.runSequence = -1;
+		super.field1139 = var1.readUnsignedShort() * -874401617;
+		if (super.field1139 * -1744329137 == 65535) {
+			super.field1139 = 874401617;
 		}
 
 		this.username = new Username(var1.readStringCp1252NullTerminated(), StructComposition.loginType);
-		this.clearIsFriend();
-		this.clearIsInFriendsChat();
+		this.method2094();
+		this.method2097();
 		this.method2134();
-		if (this == ScriptFrame.localPlayer) {
-			RunException.localPlayerName = this.username.getName();
+		if (this == class56.localPlayer) {
+			RunException.field4845 = this.username.getName();
 		}
 
-		this.combatLevel = var1.readUnsignedByte();
-		this.skillLevel = var1.readUnsignedShort();
+		this.field1088 = var1.readUnsignedByte() * 1009003263;
+		this.field1082 = var1.readUnsignedShort() * 1532365781;
 		this.isHidden = var1.readUnsignedByte() == 1;
-		if (Client.gameBuild == 0 && Client.staffModLevel >= 2) {
+		if (Client.gameBuild * -1552911039 == 0 && Client.field756 * -1044925517 >= 2) {
 			this.isHidden = false;
 		}
 
@@ -314,7 +243,7 @@ public final class Player extends Actor {
 			}
 		}
 
-		if (var1.offset < var1.array.length) {
+		if (var1.offset * 1795921631 < var1.array.length) {
 			for (var9 = 0; var9 < 3; ++var9) {
 				this.actions[var9] = var1.readStringCp1252NullTerminated();
 			}
@@ -337,67 +266,67 @@ public final class Player extends Actor {
 		if (this.appearance == null) {
 			return null;
 		} else {
-			SequenceDefinition var1 = super.sequence != -1 && super.sequenceDelay == 0 ? ByteArrayPool.SequenceDefinition_get(super.sequence) : null;
-			SequenceDefinition var2 = super.movementSequence == -1 || this.isUnanimated || super.idleSequence == super.movementSequence && var1 != null ? null : ByteArrayPool.SequenceDefinition_get(super.movementSequence);
-			Model var3 = this.appearance.getModel(var1, super.sequenceFrame, var2, super.movementFrame);
+			SequenceDefinition var1 = super.field1168 * 317961021 != -1 && super.field1126 * -850715395 == 0 ? ByteArrayPool.SequenceDefinition_get(super.field1168 * 317961021) : null;
+			SequenceDefinition var2 = super.field1155 * -1722266545 == -1 || this.isUnanimated || super.idleSequence * 202365461 == super.field1155 * -1722266545 && var1 != null ? null : ByteArrayPool.SequenceDefinition_get(super.field1155 * -1722266545);
+			Model var3 = this.appearance.getModel(var1, super.field1169 * 950342315, var2, super.field1165 * -476097555);
 			if (var3 == null) {
 				return null;
 			} else {
 				var3.calculateBoundsCylinder();
-				super.defaultHeight = var3.height;
+				super.field1186 = var3.height * 1854176371;
 				int var4 = var3.indicesCount;
 				Model var5;
 				Model[] var6;
-				if (!this.isUnanimated && super.spotAnimation != -1 && super.spotAnimationFrame != -1) {
-					var5 = ArchiveDisk.SpotAnimationDefinition_get(super.spotAnimation).getModel(super.spotAnimationFrame);
+				if (!this.isUnanimated && super.field1173 * -2060788623 != -1 && super.field1174 * 1267076011 != -1) {
+					var5 = ArchiveDisk.SpotAnimationDefinition_get(super.field1173 * -2060788623).getModel(super.field1174 * 1267076011);
 					if (var5 != null) {
-						var5.offsetBy(0, -super.field1195, 0);
+						var5.offsetBy(0, -(super.field1195 * 1225658055), 0);
 						var6 = new Model[]{var3, var5};
 						var3 = new Model(var6, 2);
 					}
 				}
 
-				if (!this.isUnanimated && this.model0 != null) {
-					if (Client.cycle >= this.animationCycleEnd) {
-						this.model0 = null;
+				if (!this.isUnanimated && this.field1096 != null) {
+					if (Client.cycle * 2009455757 >= this.field1106 * 544334885) {
+						this.field1096 = null;
 					}
 
-					if (Client.cycle >= this.animationCycleStart && Client.cycle < this.animationCycleEnd) {
-						var5 = this.model0;
-						var5.offsetBy(this.field1093 * 4096 - super.x, this.tileHeight2 - this.tileHeight, this.field1097 * 4096 - super.y);
-						if (super.orientation == 512) {
+					if (Client.cycle * 2009455757 >= this.field1091 * 1109822011 && Client.cycle * 2009455757 < this.field1106 * 544334885) {
+						var5 = this.field1096;
+						var5.offsetBy(this.field1093 * -1362904281 - super.x * 1627221919, this.field1094 * 2036186281 - this.field1090 * -705296317, this.field1097 * -472748625 - super.y * 1229064101);
+						if (super.orientation * 577155807 == 512) {
 							var5.rotateY90Ccw();
 							var5.rotateY90Ccw();
 							var5.rotateY90Ccw();
-						} else if (super.orientation == 1024) {
+						} else if (super.orientation * 577155807 == 1024) {
 							var5.rotateY90Ccw();
 							var5.rotateY90Ccw();
-						} else if (super.orientation == 1536) {
+						} else if (super.orientation * 577155807 == 1536) {
 							var5.rotateY90Ccw();
 						}
 
 						var6 = new Model[]{var3, var5};
 						var3 = new Model(var6, 2);
-						if (super.orientation == 512) {
+						if (super.orientation * 577155807 == 512) {
 							var5.rotateY90Ccw();
-						} else if (super.orientation == 1024) {
+						} else if (super.orientation * 577155807 == 1024) {
 							var5.rotateY90Ccw();
 							var5.rotateY90Ccw();
-						} else if (super.orientation == 1536) {
+						} else if (super.orientation * 577155807 == 1536) {
 							var5.rotateY90Ccw();
 							var5.rotateY90Ccw();
 							var5.rotateY90Ccw();
 						}
 
-						var5.offsetBy(super.x - this.field1093 * 4096, this.tileHeight - this.tileHeight2, super.y - this.field1097 * 4096);
+						var5.offsetBy(super.x * 1627221919 - this.field1093 * -1362904281, this.field1090 * -705296317 - this.field1094 * 2036186281, super.y * 1229064101 - this.field1097 * -472748625);
 					}
 				}
 
 				var3.isSingleTile = true;
-				if (super.field1192 != 0 && Client.cycle >= super.field1187 && Client.cycle < super.field1188) {
-					var3.overrideHue = super.field1189;
-					var3.overrideSaturation = super.field1131;
-					var3.overrideLuminance = super.field1191;
+				if (super.field1192 != 0 && Client.cycle * 2009455757 >= super.field1187 * 300576935 && Client.cycle * 2009455757 < super.field1188 * -719314241) {
+					var3.field2549 = super.field1189;
+					var3.field2524 = super.field1131;
+					var3.field2588 = super.field1191;
 					var3.overrideAmount = super.field1192;
 					var3.field2527 = (short)var4;
 				} else {
@@ -414,8 +343,7 @@ public final class Player extends Actor {
 		descriptor = "(B)Z",
 		garbageValue = "1"
 	)
-	@Export("isFriend")
-	boolean isFriend() {
+	boolean method2093() {
 		if (this.isFriendTriBool == TriBool.TriBool_unknown) {
 			this.checkIsFriend();
 		}
@@ -428,8 +356,7 @@ public final class Player extends Actor {
 		descriptor = "(S)V",
 		garbageValue = "19668"
 	)
-	@Export("clearIsFriend")
-	void clearIsFriend() {
+	void method2094() {
 		this.isFriendTriBool = TriBool.TriBool_unknown;
 	}
 
@@ -448,8 +375,7 @@ public final class Player extends Actor {
 		descriptor = "(I)Z",
 		garbageValue = "365465151"
 	)
-	@Export("isFriendsChatMember")
-	boolean isFriendsChatMember() {
+	boolean method2096() {
 		if (this.isInFriendsChat == TriBool.TriBool_unknown) {
 			this.updateIsInFriendsChat();
 		}
@@ -462,8 +388,7 @@ public final class Player extends Actor {
 		descriptor = "(I)V",
 		garbageValue = "2010863403"
 	)
-	@Export("clearIsInFriendsChat")
-	void clearIsInFriendsChat() {
+	void method2097() {
 		this.isInFriendsChat = TriBool.TriBool_unknown;
 	}
 
@@ -508,8 +433,7 @@ public final class Player extends Actor {
 		descriptor = "(I)Z",
 		garbageValue = "-268947223"
 	)
-	@Export("isClanMember")
-	boolean isClanMember() {
+	boolean method2132() {
 		if (this.isInClanChat == TriBool.TriBool_unknown) {
 			this.updateIsInClanChat();
 		}
@@ -524,7 +448,7 @@ public final class Player extends Actor {
 	)
 	@Export("transformedSize")
 	int transformedSize() {
-		return this.appearance != null && this.appearance.npcTransformId != -1 ? class119.getNpcDefinition(this.appearance.npcTransformId).size : 1;
+		return this.appearance != null && this.appearance.npcTransformId * 498090761 != -1 ? class119.getNpcDefinition(this.appearance.npcTransformId * 498090761).size * 1339905335 : 1;
 	}
 
 	@ObfuscatedName("z")
@@ -533,11 +457,11 @@ public final class Player extends Actor {
 		garbageValue = "646320028"
 	)
 	final void method2131(int var1, int var2, class192 var3) {
-		if (super.sequence != -1 && ByteArrayPool.SequenceDefinition_get(super.sequence).field2180 == 1) {
-			super.sequence = -1;
+		if (super.field1168 * 317961021 != -1 && ByteArrayPool.SequenceDefinition_get(317961021 * super.field1168).field2180 * 1316679313 == 1) {
+			super.field1168 = 469746667;
 		}
 
-		super.field1162 = -1;
+		super.field1162 = 834938459;
 		if (var1 >= 0 && var1 < 104 && var2 >= 0 && var2 < 104) {
 			if (super.pathX[0] >= 0 && super.pathX[0] < 104 && super.pathY[0] >= 0 && super.pathY[0] < 104) {
 				if (var3 == class192.field2207) {
@@ -549,7 +473,7 @@ public final class Player extends Actor {
 					if (var6 >= var8 && var6 < 104 - var8 && var7 >= var8 && var7 < 104 - var8 && var1 >= var8 && var1 < 104 - var8 && var2 >= var8 && var2 < 104 - var8) {
 						int var10 = this.transformedSize();
 						RouteStrategy var11 = class13.method164(var1, var2);
-						CollisionMap var12 = Client.collisionMaps[this.plane];
+						CollisionMap var12 = Client.collisionMaps[this.plane * -1670935727];
 						int[] var13 = Client.field547;
 						int[] var14 = Client.field771;
 						int var15 = 0;
@@ -594,8 +518,8 @@ public final class Player extends Actor {
 
 									while (true) {
 										if (var24 == var40) {
-											Huffman.field3288 = var17;
-											class193.field2212 = var18;
+											Huffman.field3288 = var17 * -1641220405;
+											class193.field2212 = var18 * 855113659;
 											var36 = false;
 											break;
 										}
@@ -605,11 +529,11 @@ public final class Player extends Actor {
 										var24 = var24 + 1 & 4095;
 										var37 = var17 - var21;
 										var38 = var18 - var22;
-										var26 = var17 - var12.xInset;
-										var27 = var18 - var12.yInset;
+										var26 = var17 - var12.field2191 * -710967051;
+										var27 = var18 - var12.field2195 * 15593283;
 										if (var11.hasArrived(1, var17, var18, var12)) {
-											Huffman.field3288 = var17;
-											class193.field2212 = var18;
+											Huffman.field3288 = var17 * -1641220405;
+											class193.field2212 = var18 * 855113659;
 											var36 = true;
 											break;
 										}
@@ -699,8 +623,8 @@ public final class Player extends Actor {
 
 									while (true) {
 										if (var40 == var24) {
-											Huffman.field3288 = var17;
-											class193.field2212 = var18;
+											Huffman.field3288 = var17 * -1641220405;
+											class193.field2212 = var18 * 855113659;
 											var36 = false;
 											break;
 										}
@@ -710,11 +634,11 @@ public final class Player extends Actor {
 										var24 = var24 + 1 & 4095;
 										var37 = var17 - var21;
 										var38 = var18 - var22;
-										var26 = var17 - var12.xInset;
-										var27 = var18 - var12.yInset;
+										var26 = var17 - var12.field2191 * -710967051;
+										var27 = var18 - var12.field2195 * 15593283;
 										if (var11.hasArrived(2, var17, var18, var12)) {
-											Huffman.field3288 = var17;
-											class193.field2212 = var18;
+											Huffman.field3288 = var17 * -1641220405;
+											class193.field2212 = var18 * 855113659;
 											var36 = true;
 											break;
 										}
@@ -812,8 +736,8 @@ public final class Player extends Actor {
 														label824:
 														do {
 															if (var40 == var24) {
-																Huffman.field3288 = var17;
-																class193.field2212 = var18;
+																Huffman.field3288 = var17 * -1641220405;
+																class193.field2212 = var18 * 855113659;
 																var36 = false;
 																break label849;
 															}
@@ -823,11 +747,11 @@ public final class Player extends Actor {
 															var24 = var24 + 1 & 4095;
 															var37 = var17 - var21;
 															var38 = var18 - var22;
-															var26 = var17 - var12.xInset;
-															var27 = var18 - var12.yInset;
+															var26 = var17 - var12.field2191 * -710967051;
+															var27 = var18 - var12.field2195 * 15593283;
 															if (var11.hasArrived(var10, var17, var18, var12)) {
-																Huffman.field3288 = var17;
-																class193.field2212 = var18;
+																Huffman.field3288 = var17 * -1641220405;
+																class193.field2212 = var18 * 855113659;
 																var36 = true;
 																break label849;
 															}
@@ -998,16 +922,16 @@ public final class Player extends Actor {
 								label906: {
 									var16 = var6 - 64;
 									var17 = var7 - 64;
-									var18 = Huffman.field3288;
-									var37 = class193.field2212;
+									var18 = Huffman.field3288 * -409714973;
+									var37 = class193.field2212 * -1089933965;
 									if (!var35) {
 										var38 = Integer.MAX_VALUE;
 										var21 = Integer.MAX_VALUE;
 										byte var39 = 10;
-										var40 = var11.approxDestinationX;
-										var24 = var11.approxDestinationY;
-										int var34 = var11.approxDestinationSizeX;
-										var26 = var11.approxDestinationSizeY;
+										var40 = var11.approxDestinationX * 58129171;
+										var24 = var11.approxDestinationY * -980043277;
+										int var34 = var11.approxDestinationSizeX * -393157049;
+										var26 = var11.approxDestinationSizeY * 312616933;
 
 										for (var27 = var40 - var39; var27 <= var40 + var39; ++var27) {
 											for (var28 = var24 - var39; var28 <= var39 + var24; ++var28) {
@@ -1139,8 +1063,8 @@ public final class Player extends Actor {
 		super.pathX[0] = var1;
 		super.pathY[0] = var2;
 		int var3 = this.transformedSize();
-		super.x = super.pathX[0] * 128 + var3 * 64;
-		super.y = var3 * 64 + super.pathY[0] * 128;
+		super.x = var3 * 1962612672 + super.pathX[0] * -369741952;
+		super.y = super.pathY[0] * -121366912 + var3 * 2086800192;
 	}
 
 	@ObfuscatedName("y")
@@ -1149,11 +1073,11 @@ public final class Player extends Actor {
 		garbageValue = "1"
 	)
 	final void method2106(int var1, int var2, class192 var3) {
-		if (super.pathLength < 9) {
-			++super.pathLength;
+		if (super.pathLength * -2007282911 < 9) {
+			super.pathLength += -90441503;
 		}
 
-		for (int var4 = super.pathLength; var4 > 0; --var4) {
+		for (int var4 = super.pathLength * -2007282911; var4 > 0; --var4) {
 			super.pathX[var4] = super.pathX[var4 - 1];
 			super.pathY[var4] = super.pathY[var4 - 1];
 			super.pathTraversed[var4] = super.pathTraversed[var4 - 1];
@@ -1181,22 +1105,22 @@ public final class Player extends Actor {
 	)
 	static void method2147(int var0, int var1, int var2, ObjectComposition var3, int var4) {
 		ObjectSound var5 = new ObjectSound();
-		var5.plane = var0;
-		var5.x = var1 * 16384;
-		var5.y = var2 * 128;
-		int var6 = var3.sizeX;
-		int var7 = var3.sizeY;
+		var5.plane = var0 * -2119328641;
+		var5.x = var1 * 1409874560;
+		var5.y = var2 * 1758366336;
+		int var6 = var3.sizeX * 6263545;
+		int var7 = var3.sizeY * -1277582079;
 		if (var4 == 1 || var4 == 3) {
-			var6 = var3.sizeY;
-			var7 = var3.sizeX;
+			var6 = var3.sizeY * -1277582079;
+			var7 = var3.sizeX * 6263545;
 		}
 
-		var5.maxX = (var6 + var1) * 128;
-		var5.maxY = (var7 + var2) * 128;
-		var5.soundEffectId = var3.ambientSoundId;
-		var5.field812 = var3.int7 * 128;
-		var5.field807 = var3.int5;
-		var5.field811 = var3.int6;
+		var5.maxX = (var6 + var1) * -416474240;
+		var5.maxY = (var7 + var2) * 1118717568;
+		var5.soundEffectId = var3.ambientSoundId * 2074709595;
+		var5.field812 = var3.int7 * -1152253568;
+		var5.field807 = var3.int5 * 458719731;
+		var5.field811 = var3.int6 * 1390383055;
 		var5.soundEffectIds = var3.soundEffectIds;
 		if (var3.transforms != null) {
 			var5.obj = var3;
@@ -1205,7 +1129,7 @@ public final class Player extends Actor {
 
 		ObjectSound.objectSounds.addFirst(var5);
 		if (var5.soundEffectIds != null) {
-			var5.field815 = var5.field807 + (int)(Math.random() * (double)(var5.field811 - var5.field807));
+			var5.field815 = (583558677 * var5.field807 + (int)(Math.random() * (double)(320425733 * var5.field811 - var5.field807 * 583558677))) * -1677833677;
 		}
 
 	}
