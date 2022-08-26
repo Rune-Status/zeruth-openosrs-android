@@ -1,7 +1,5 @@
 package osrs;
 
-import java.lang.management.GarbageCollectorMXBean;
-import java.lang.management.ManagementFactory;
 import java.util.Iterator;
 import net.runelite.mapping.Export;
 import net.runelite.mapping.Implements;
@@ -68,7 +66,7 @@ public class DevicePcmPlayerProvider implements class47 {
 	)
 	@Export("getGcDuration")
 	protected static int getGcDuration() {
-		int var0 = 0;
+/*		int var0 = 0;
 		if (WorldMapID.garbageCollector == null || !WorldMapID.garbageCollector.isValid()) {
 			try {
 				Iterator var1 = ManagementFactory.getGarbageCollectorMXBeans().iterator();
@@ -100,7 +98,8 @@ public class DevicePcmPlayerProvider implements class47 {
 			GameEngine.garbageCollectorLastCheckTimeMs = var9;
 		}
 
-		return var0;
+		return var0;*/
+		return 0;
 	}
 
 	@ObfuscatedName("gp")

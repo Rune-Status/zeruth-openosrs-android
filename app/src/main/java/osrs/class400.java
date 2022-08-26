@@ -1,15 +1,13 @@
 package osrs;
 
-import java.awt.Desktop;
-import java.awt.Desktop.Action;
 import java.io.UnsupportedEncodingException;
-import java.net.URI;
+
 import net.runelite.mapping.Export;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
+import org.osrsjson.JSONArray;
+import org.osrsjson.JSONException;
+import org.osrsjson.JSONObject;
 
 @ObfuscatedName("oz")
 public class class400 implements class399 {
@@ -59,7 +57,7 @@ public class class400 implements class399 {
 
 				JSONArray var2 = new JSONArray(var1);
 				this.field4439 = new JSONObject();
-				this.field4439.method8265("arrayValues", var2);
+/*				this.field4439.method8265("arrayValues", var2);*/
 			}
 
 		} catch (JSONException var3) {
@@ -119,13 +117,13 @@ public class class400 implements class399 {
 	@Export("openURL")
 	public static void openURL(String var0, boolean var1, boolean var2) {
 		if (var1) {
-			if (Desktop.isDesktopSupported() && Desktop.getDesktop().isSupported(Action.BROWSE)) {
+/*			if (Desktop.isDesktopSupported() && Desktop.getDesktop().isSupported(Action.BROWSE)) {
 				try {
 					Desktop.getDesktop().browse(new URI(var0));
 					return;
 				} catch (Exception var4) {
 				}
-			}
+			}*/
 
 			if (class29.field167.startsWith("win")) {
 				FriendLoginUpdate.method6597(var0, 0, "openjs");

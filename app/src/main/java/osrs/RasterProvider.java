@@ -1,5 +1,8 @@
 package osrs;
 
+import com.meteor.MainActivity;
+
+import java.awt.Canvas;
 import java.awt.Component;
 import java.awt.Graphics;
 import java.awt.Image;
@@ -21,10 +24,10 @@ import net.runelite.mapping.ObfuscatedSignature;
 public final class RasterProvider extends AbstractRasterProvider {
 	@ObfuscatedName("s")
 	@Export("component")
-	Component component;
+	Canvas component;
 	@ObfuscatedName("h")
 	@Export("image")
-	Image image;
+	BufferedImage image;
 
 	RasterProvider(int var1, int var2, Component var3) {
 		super.width = var1;
@@ -45,7 +48,7 @@ public final class RasterProvider extends AbstractRasterProvider {
 	)
 	@Export("setComponent")
 	final void setComponent(Component var1) {
-		this.component = var1;
+		this.component = (Canvas) var1;
 	}
 
 	@ObfuscatedName("h")
@@ -55,7 +58,7 @@ public final class RasterProvider extends AbstractRasterProvider {
 	)
 	@Export("drawFull")
 	public final void drawFull(int var1, int var2) {
-		this.drawFull0(this.component.getGraphics(), var1, var2);
+		this.drawFull0(null, var1, var2);
 	}
 
 	@ObfuscatedName("w")
@@ -65,7 +68,8 @@ public final class RasterProvider extends AbstractRasterProvider {
 	)
 	@Export("draw")
 	public final void draw(int var1, int var2, int var3, int var4) {
-		this.draw0(this.component.getGraphics(), var1, var2, var3, var4);
+		this.draw0(null, var1, var2, var3, var4);
+
 	}
 
 	@ObfuscatedName("v")
@@ -76,11 +80,12 @@ public final class RasterProvider extends AbstractRasterProvider {
 	@Export("drawFull0")
 	final void drawFull0(Graphics var1, int var2, int var3) {
 		try {
-			var1.drawImage(this.image, var2, var3, this.component);
+			MainActivity.gameGraphics.getGraphics().drawImage(this.image, var2, var3, null);
+			if (Client.androidActivity != null)
+				Client.androidActivity.draw();
 		} catch (Exception var5) {
-			this.component.repaint();
+			this.component.paint(MainActivity.gameGraphics.createGraphics());
 		}
-
 	}
 
 	@ObfuscatedName("c")
@@ -93,10 +98,12 @@ public final class RasterProvider extends AbstractRasterProvider {
 		try {
 			Shape var6 = var1.getClip();
 			var1.clipRect(var2, var3, var4, var5);
-			var1.drawImage(this.image, 0, 0, this.component);
+			MainActivity.gameGraphics.createGraphics().drawImage(this.image, 0, 0, null);
 			var1.setClip(var6);
+			if (Client.androidActivity != null)
+				Client.androidActivity.draw();
 		} catch (Exception var7) {
-			this.component.repaint();
+			this.component.paint(MainActivity.gameGraphics.createGraphics());
 		}
 
 	}

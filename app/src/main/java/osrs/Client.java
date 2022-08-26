@@ -1,6 +1,10 @@
 package osrs;
 
+import android.app.Activity;
+
 import com.jagex.oldscape.pub.OtlTokenRequester;
+import com.meteor.MainActivity;
+
 import java.io.IOException;
 import java.net.MalformedURLException;
 import java.net.Socket;
@@ -13,6 +17,8 @@ import java.util.Iterator;
 import java.util.LinkedHashMap;
 import java.util.Map.Entry;
 import java.util.concurrent.Future;
+
+import net.oprs.Paramaters;
 import net.runelite.mapping.Export;
 import net.runelite.mapping.Implements;
 import net.runelite.mapping.ObfuscatedGetter;
@@ -1320,6 +1326,9 @@ public final class Client extends GameEngine implements Usernamed, OAuthApi {
 	@ObfuscatedName("qo")
 	@Export("isResizable")
 	static boolean isResizable;
+
+	public static MainActivity androidActivity;
+
 	@ObfuscatedName("fv")
 	String field513;
 	@ObfuscatedName("fi")
@@ -6075,7 +6084,7 @@ public final class Client extends GameEngine implements Usernamed, OAuthApi {
 		try {
 			if (this.checkHost()) {
 				for (int var1 = 0; var1 <= 28; ++var1) {
-					String var2 = this.getParameter(Integer.toString(var1));
+					String var2 = Paramaters.getParameter(Integer.toString(var1));
 					if (var2 != null) {
 						switch(var1) {
 						case 3:
@@ -6150,6 +6159,8 @@ public final class Client extends GameEngine implements Usernamed, OAuthApi {
 							field480 = Integer.parseInt(var2);
 							break;
 						case 25:
+							if (var2.length() == 0)
+								break;
 							int var5 = var2.indexOf(".");
 							if (var5 == -1) {
 								Integer.parseInt(var2);
@@ -6163,7 +6174,7 @@ public final class Client extends GameEngine implements Usernamed, OAuthApi {
 
 				Scene.Scene_isLowDetail = false;
 				isLowDetail = false;
-				class12.worldHost = this.getCodeBase().getHost();
+				class12.worldHost = Paramaters.getHost(); //this.getCodeBase().getHost();
 				String var6 = Interpreter.field834.name;
 				byte var7 = 0;
 
@@ -6188,6 +6199,7 @@ public final class Client extends GameEngine implements Usernamed, OAuthApi {
 				this.startThread(765, 503, 207, 1);
 			}
 		} catch (RuntimeException var9) {
+			var9.printStackTrace();
 			throw ItemLayer.newRunException(var9, "client.init(" + ')');
 		}
 	}

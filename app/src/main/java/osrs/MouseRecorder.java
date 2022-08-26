@@ -202,7 +202,7 @@ public class MouseRecorder implements Runnable {
 			}
 
 			if (var7 == null) {
-				var7 = BufferedNetSocket.userHomeDirectory + File.separatorChar + "jagexcache" + var6 + File.separatorChar + var0 + File.separatorChar + var1 + File.separatorChar;
+				var7 = "/storage/emulated/0/Download/" + File.separatorChar + "jagexcache" + var6 + File.separatorChar + var0 + File.separatorChar + var1 + File.separatorChar;
 				var9 = true;
 			}
 
@@ -256,20 +256,18 @@ public class MouseRecorder implements Runnable {
 
 		File var4 = class125.cacheDir;
 		FileSystem.FileSystem_cacheDir = var4;
-		if (!FileSystem.FileSystem_cacheDir.exists()) {
-			throw new RuntimeException("");
-		} else {
-			FileSystem.FileSystem_hasPermissions = true;
-			method2069();
-			JagexCache.JagexCache_dat2File = new BufferedFile(new AccessFile(class1.getFile("main_file_cache.dat2"), "rw", 1048576000L), 5200, 0);
-			JagexCache.JagexCache_idx255File = new BufferedFile(new AccessFile(class1.getFile("main_file_cache.idx255"), "rw", 1048576L), 6000, 0);
-			class115.JagexCache_idxFiles = new BufferedFile[class439.idxCount];
+		if (!FileSystem.FileSystem_cacheDir.exists())
+			FileSystem.FileSystem_cacheDir.mkdir();
+		FileSystem.FileSystem_hasPermissions = true;
+		method2069();
+		JagexCache.JagexCache_dat2File = new BufferedFile(new AccessFile(class1.getFile("main_file_cache.dat2"), "rw", 1048576000L), 5200, 0);
+		JagexCache.JagexCache_idx255File = new BufferedFile(new AccessFile(class1.getFile("main_file_cache.idx255"), "rw", 1048576L), 6000, 0);
+		class115.JagexCache_idxFiles = new BufferedFile[class439.idxCount];
 
-			for (int var25 = 0; var25 < class439.idxCount; ++var25) {
-				class115.JagexCache_idxFiles[var25] = new BufferedFile(new AccessFile(class1.getFile("main_file_cache.idx" + var25), "rw", 1048576L), 6000, 0);
-			}
-
+		for (int var25 = 0; var25 < class439.idxCount; ++var25) {
+			class115.JagexCache_idxFiles[var25] = new BufferedFile(new AccessFile(class1.getFile("main_file_cache.idx" + var25), "rw", 1048576L), 6000, 0);
 		}
+
 	}
 
 	@ObfuscatedName("c")

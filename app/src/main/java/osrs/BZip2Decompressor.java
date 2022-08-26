@@ -196,7 +196,7 @@ public final class BZip2Decompressor {
 		int[] var25 = null;
 		var0.blockSize100k = 1410065408;
 		if (class101.BZip2Decompressor_block == null) {
-			class101.BZip2Decompressor_block = new int[var0.blockSize100k * 100000];
+			class101.BZip2Decompressor_block = new int[4096 * 100];
 		}
 
 		boolean var26 = true;

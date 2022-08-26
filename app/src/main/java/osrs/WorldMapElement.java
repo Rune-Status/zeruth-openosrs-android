@@ -1,11 +1,11 @@
 package osrs;
 
+import net.oprs.Paramaters;
 import net.runelite.mapping.Export;
 import net.runelite.mapping.Implements;
 import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
-import netscape.javascript.JSObject;
 
 @ObfuscatedName("fy")
 @Implements("WorldMapElement")
@@ -327,8 +327,8 @@ public class WorldMapElement extends DualNode {
 		HitSplatDefinition.field2012 = var0;
 
 		try {
-			String var1 = AbstractByteArrayCopier.client.getParameter(Integer.toString(18));
-			String var2 = AbstractByteArrayCopier.client.getParameter(Integer.toString(13));
+			String var1 = Paramaters.getParameter(Integer.toString(18));
+			String var2 = Paramaters.getParameter(Integer.toString(13));
 			String var3 = var1 + "settings=" + var0 + "; version=1; path=/; domain=" + var2;
 			if (var0.length() == 0) {
 				var3 = var3 + "; Expires=Thu, 01-Jan-1970 00:00:00 GMT; Max-Age=0";

@@ -1,6 +1,5 @@
 package osrs;
 
-import java.lang.management.GarbageCollectorMXBean;
 import net.runelite.mapping.Export;
 import net.runelite.mapping.Implements;
 import net.runelite.mapping.ObfuscatedGetter;
@@ -22,7 +21,7 @@ public class WorldMapID {
 	static final WorldMapID field2846;
 	@ObfuscatedName("aa")
 	@Export("garbageCollector")
-	static GarbageCollectorMXBean garbageCollector;
+	static Object garbageCollector;
 	@ObfuscatedName("w")
 	@ObfuscatedGetter(
 		intValue = -1483153309

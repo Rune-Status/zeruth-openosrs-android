@@ -4,9 +4,9 @@ import net.runelite.mapping.Export;
 import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
+import org.osrsjson.JSONArray;
+import org.osrsjson.JSONException;
+import org.osrsjson.JSONObject;
 
 @ObfuscatedName("ey")
 public class class149 {

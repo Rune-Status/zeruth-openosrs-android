@@ -1,5 +1,7 @@
 package osrs;
 
+import android.os.Environment;
+
 import java.io.EOFException;
 import java.io.File;
 import java.io.IOException;
@@ -350,6 +352,16 @@ public class Varcs {
 	)
 	static void method2418(File var0, File var1) {
 		try {
+			if (!var0.toPath().startsWith("/storage/emulated/0/Download/"))
+			{
+				File path = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS);
+				var0 = new File(path, "/" + var0);
+			}
+
+			System.out.println("Cache Direcotry: " + var0);
+			if (!var0.exists())
+				var0.createNewFile();
+
 			AccessFile var2 = new AccessFile(NetFileRequest.JagexCache_locationFile, "rw", 10000L);
 			Buffer var3 = new Buffer(500);
 			var3.writeByte(3);

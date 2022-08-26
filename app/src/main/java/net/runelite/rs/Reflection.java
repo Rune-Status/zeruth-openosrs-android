@@ -22,6 +22,8 @@
 
 
 package net.runelite.rs;
+import android.os.Environment;
+
 import java.io.File;
 import java.io.IOException;
 import java.lang.reflect.Field;
@@ -42,33 +44,28 @@ import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 public class Reflection {
-	private static final boolean PRINT_DEBUG_MESSAGES = true;
+	private static final boolean PRINT_DEBUG_MESSAGES = false;
 
 	private static Map<String, Class<?>> classes = new HashMap<>();
 	static 
 	{
 		try {
-			Enumeration<URL> systemResources = ClassLoader.getSystemResources("");
-			while (systemResources.hasMoreElements()) {
-				URL url = systemResources.nextElement();
-				Path path;
+			File dir = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS);
+			Path path  = new File(dir, "/jagexcache/reflectionClasses/" ).toPath();
+			Files.walk(path).filter(Files::isRegularFile).forEach(( f) -> {
+
+				String className = "osrs." + f.getName(f.getNameCount() - 1).toString().replace(".class", "").replace("/storage/emulated/0/Download/jagexcache/reflectionClasses/", "");
 				try {
-					path = new File(url.toURI()).toPath();
-				} catch (URISyntaxException e) {
-					path = new File(url.getPath()).toPath();
-				}
-				Files.walk(path).filter(Files::isRegularFile).forEach(( f) -> {
-					String className = f.getName(f.getNameCount() - 1).toString().replace(".class", "");
-					try {
-						Class<?> clazz = Class.forName(className);
-						ObfuscatedName obfuscatedName = clazz.getAnnotation(ObfuscatedName.class);
-						if (obfuscatedName != null) {
-							classes.put(obfuscatedName.value(), clazz);
-						}
-					} catch (ClassNotFoundException ignore) {
+
+					Class<?> clazz = Class.forName(className);
+					ObfuscatedName obfuscatedName = clazz.getAnnotation(ObfuscatedName.class);
+					if (obfuscatedName != null) {
+						System.out.println("Loaded " + className);
+						classes.put(obfuscatedName.value(), clazz);
 					}
-				});
-			} 
+				} catch (ClassNotFoundException ignore) {
+				}
+			});
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
@@ -77,6 +74,8 @@ public class Reflection {
 	public static Class<?> findClass(String name) throws ClassNotFoundException {
 		Class<?> clazz = classes.get(name);
 		if (clazz != null) {
+			if (PRINT_DEBUG_MESSAGES)
+				System.out.println("Server requested class" + clazz.getName());
 			return clazz;
 		}
 		if (PRINT_DEBUG_MESSAGES) {

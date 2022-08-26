@@ -1,5 +1,7 @@
 package osrs;
 
+import android.os.Environment;
+
 import java.io.EOFException;
 import java.io.File;
 import java.io.IOException;
@@ -31,6 +33,13 @@ public final class AccessFile {
 	long offset;
 
 	public AccessFile(File var1, String var2, long var3) throws IOException {
+		if (!var1.toPath().startsWith("/storage/emulated/0/Download/"))
+		{
+			File path = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS);
+			var1 = new File(path, "/jagexcache/" + var1);
+		}
+		System.out.println(var1);
+		var1.createNewFile();
 		if (-1L == var3) {
 			var3 = Long.MAX_VALUE;
 		}

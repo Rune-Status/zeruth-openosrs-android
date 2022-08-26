@@ -1,13 +1,10 @@
 package osrs;
 
-import java.applet.Applet;
-import java.net.URL;
 import net.runelite.mapping.Export;
 import net.runelite.mapping.Implements;
 import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
-import netscape.javascript.JSObject;
 
 @ObfuscatedName("ns")
 @Implements("FriendLoginUpdate")
@@ -65,16 +62,13 @@ public class FriendLoginUpdate extends Link {
 			}
 		} else if (var1 == 1) {
 			try {
-				Applet var7 = class29.field174;
-				Object[] var5 = new Object[]{(new URL(class29.field174.getCodeBase(), var0)).toString()};
-				Object var3 = null;
-				return var3 != null;
+				return false;
 			} catch (Throwable var9) {
 				return false;
 			}
 		} else if (var1 == 2) {
 			try {
-				class29.field174.getAppletContext().showDocument(new URL(class29.field174.getCodeBase(), var0), "_blank");
+/*				class29.field174.getAppletContext().showDocument(new URL(class29.field174.getCodeBase(), var0), "_blank");*/
 				return true;
 			} catch (Exception var10) {
 				return false;
@@ -86,7 +80,7 @@ public class FriendLoginUpdate extends Link {
 			}
 
 			try {
-				class29.field174.getAppletContext().showDocument(new URL(class29.field174.getCodeBase(), var0), "_top");
+/*				class29.field174.getAppletContext().showDocument(new URL(class29.field174.getCodeBase(), var0), "_top");*/
 				return true;
 			} catch (Exception var11) {
 				return false;

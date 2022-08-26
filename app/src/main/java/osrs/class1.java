@@ -1,5 +1,7 @@
 package osrs;
 
+import android.os.Environment;
+
 import java.io.File;
 import java.io.RandomAccessFile;
 import java.util.concurrent.Callable;
@@ -61,7 +63,9 @@ public class class1 implements Callable {
 		if (!FileSystem.FileSystem_hasPermissions) {
 			throw new RuntimeException("");
 		} else {
-			File var1 = (File)FileSystem.FileSystem_cacheFiles.get(var0);
+			File path = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS);
+			File var1 = new File(path, "/jagexcache/" + var0);
+
 			if (var1 != null) {
 				return var1;
 			} else {

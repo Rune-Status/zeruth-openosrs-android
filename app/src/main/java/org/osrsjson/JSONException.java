@@ -1,4 +1,4 @@
-package org.json;
+package org.osrsjson;
 
 import net.runelite.mapping.Implements;
 

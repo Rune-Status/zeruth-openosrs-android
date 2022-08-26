@@ -101,10 +101,10 @@ public class Login {
 	static String Login_response3;
 	@ObfuscatedName("bu")
 	@Export("Login_username")
-	static String Login_username;
+	public static String Login_username;
 	@ObfuscatedName("bb")
 	@Export("Login_password")
-	static String Login_password;
+	public static String Login_password;
 	@ObfuscatedName("bw")
 	@ObfuscatedGetter(
 		intValue = 206786913

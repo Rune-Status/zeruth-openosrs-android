@@ -1,4 +1,4 @@
-package org.json;
+package org.osrsjson;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -23,7 +23,7 @@ public class JSONTokener {
 		this.index = 0;
 	}
 
-	public char nextClean() throws JSONException {
+	public char nextClean() throws org.osrsjson.JSONException {
 		char var1;
 		do {
 			var1 = this.next();
@@ -32,7 +32,7 @@ public class JSONTokener {
 		return var1;
 	}
 
-	public char next() throws JSONException {
+	public char next() throws org.osrsjson.JSONException {
 		if (this.useLastChar) {
 			this.useLastChar = false;
 			if (this.lastChar != 0) {
@@ -45,7 +45,7 @@ public class JSONTokener {
 			try {
 				var1 = this.reader.read();
 			} catch (IOException var3) {
-				throw new JSONException(var3);
+				throw new org.osrsjson.JSONException(var3);
 			}
 
 			if (var1 <= 0) {
@@ -59,7 +59,7 @@ public class JSONTokener {
 		}
 	}
 
-	public String nextString(char var1) throws JSONException {
+	public String nextString(char var1) throws org.osrsjson.JSONException {
 		StringBuffer var3 = new StringBuffer();
 
 		while (true) {
@@ -127,20 +127,20 @@ public class JSONTokener {
 		return " at character " + this.index;
 	}
 
-	public void back() throws JSONException {
+	public void back() throws org.osrsjson.JSONException {
 		if (!this.useLastChar && this.index > 0) {
 			--this.index;
 			this.useLastChar = true;
 		} else {
-			throw new JSONException("Stepping back two steps is not supported");
+			throw new org.osrsjson.JSONException("Stepping back two steps is not supported");
 		}
 	}
 
-	public JSONException syntaxError(String var1) {
-		return new JSONException(var1 + this.toString());
+	public org.osrsjson.JSONException syntaxError(String var1) {
+		return new org.osrsjson.JSONException(var1 + this.toString());
 	}
 
-	public String next(int var1) throws JSONException {
+	public String next(int var1) throws org.osrsjson.JSONException {
 		if (var1 == 0) {
 			return "";
 		} else {
@@ -158,7 +158,7 @@ public class JSONTokener {
 					var3 += var4;
 				}
 			} catch (IOException var6) {
-				throw new JSONException(var6);
+				throw new org.osrsjson.JSONException(var6);
 			}
 
 			this.index += var3;
@@ -171,7 +171,7 @@ public class JSONTokener {
 		}
 	}
 
-	public Object nextValue() throws JSONException {
+	public Object nextValue() throws org.osrsjson.JSONException {
 		char var1 = this.nextClean();
 		switch(var1) {
 		case '"':
@@ -183,7 +183,7 @@ public class JSONTokener {
 			return new JSONArray(this);
 		case '{':
 			this.back();
-			return new JSONObject(this);
+			return new org.osrsjson.JSONObject(this);
 		default:
 			StringBuffer var3;
 			for (var3 = new StringBuffer(); var1 >= ' ' && ",:]}/\\\"[{;=#".indexOf(var1) < 0; var1 = this.next()) {
@@ -200,7 +200,7 @@ public class JSONTokener {
 		}
 	}
 
-	public String nextTo(String var1) throws JSONException {
+	public String nextTo(String var1) throws org.osrsjson.JSONException {
 		StringBuffer var3 = new StringBuffer();
 
 		while (true) {
@@ -217,7 +217,7 @@ public class JSONTokener {
 		}
 	}
 
-	public boolean more() throws JSONException {
+	public boolean more() throws org.osrsjson.JSONException {
 		char var1 = this.next();
 		if (var1 == 0) {
 			return false;
@@ -227,7 +227,7 @@ public class JSONTokener {
 		}
 	}
 
-	public char skipTo(char var1) throws JSONException {
+	public char skipTo(char var1) throws org.osrsjson.JSONException {
 		char var2;
 		try {
 			int var3 = this.index;
@@ -242,14 +242,14 @@ public class JSONTokener {
 				}
 			} while(var2 != var1);
 		} catch (IOException var5) {
-			throw new JSONException(var5);
+			throw new org.osrsjson.JSONException(var5);
 		}
 
 		this.back();
 		return var2;
 	}
 
-	public String nextTo(char var1) throws JSONException {
+	public String nextTo(char var1) throws org.osrsjson.JSONException {
 		StringBuffer var2 = new StringBuffer();
 
 		while (true) {

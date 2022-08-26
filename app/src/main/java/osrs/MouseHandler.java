@@ -1,19 +1,17 @@
 package osrs;
 
-import java.awt.event.FocusEvent;
-import java.awt.event.FocusListener;
-import java.awt.event.MouseEvent;
-import java.awt.event.MouseListener;
-import java.awt.event.MouseMotionListener;
+
 import net.runelite.mapping.Export;
 import net.runelite.mapping.Implements;
 import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
+import java.awt.Point;
+
 @ObfuscatedName("ak")
 @Implements("MouseHandler")
-public class MouseHandler implements MouseListener, MouseMotionListener, FocusListener {
+public class MouseHandler /*implements MouseListener, MouseMotionListener, FocusListener*/ {
 	@ObfuscatedName("v")
 	@ObfuscatedSignature(
 		descriptor = "Lak;"
@@ -158,20 +156,7 @@ public class MouseHandler implements MouseListener, MouseMotionListener, FocusLi
 	MouseHandler() {
 	}
 
-	@ObfuscatedName("v")
-	@ObfuscatedSignature(
-		descriptor = "(Ljava/awt/event/MouseEvent;S)I",
-		garbageValue = "764"
-	)
-	@Export("getButton")
-	final int getButton(MouseEvent var1) {
-		int var2 = var1.getButton();
-		if (!var1.isAltDown() && var2 != 2) {
-			return !var1.isMetaDown() && var2 != 3 ? 1 : 2;
-		} else {
-			return 4;
-		}
-	}
+/*
 
 	public final synchronized void mouseMoved(MouseEvent var1) {
 		if (MouseHandler_instance != null) {
@@ -218,23 +203,7 @@ public class MouseHandler implements MouseListener, MouseMotionListener, FocusLi
 		this.mouseMoved(var1);
 	}
 
-	public final synchronized void mousePressed(MouseEvent var1) {
-		if (MouseHandler_instance != null) {
-			MouseHandler_idleCycles = 0;
-			MouseHandler_lastPressedXVolatile = var1.getX();
-			MouseHandler_lastPressedYVolatile = var1.getY();
-			MouseHandler_lastPressedTimeMillisVolatile = class181.method3483();
-			MouseHandler_lastButtonVolatile = this.getButton(var1);
-			if (MouseHandler_lastButtonVolatile != 0) {
-				MouseHandler_currentButtonVolatile = MouseHandler_lastButtonVolatile;
-			}
-		}
 
-		if (var1.isPopupTrigger()) {
-			var1.consume();
-		}
-
-	}
 
 	public final synchronized void mouseReleased(MouseEvent var1) {
 		if (MouseHandler_instance != null) {
@@ -245,6 +214,40 @@ public class MouseHandler implements MouseListener, MouseMotionListener, FocusLi
 		if (var1.isPopupTrigger()) {
 			var1.consume();
 		}
+
+	}*/
+
+	@ObfuscatedName("v")
+	@ObfuscatedSignature(
+			descriptor = "(Ljava/awt/event/MouseEvent;S)I",
+			garbageValue = "764"
+	)
+	@Export("getButton")
+	static final int getButton(Point var1) {
+		return 1;
+/*		int var2 = var1.getButton();
+		if (!var1.isAltDown() && var2 != 2) {
+			return !var1.isMetaDown() && var2 != 3 ? 1 : 2;
+		} else {
+			return 4;
+		}*/
+	}
+
+	public static void mousePressed(Point var1) {
+		if (MouseHandler_instance != null) {
+			MouseHandler_idleCycles = 0;
+			MouseHandler_lastPressedXVolatile = (int) var1.getX();
+			MouseHandler_lastPressedYVolatile = (int) var1.getY();
+			MouseHandler_lastPressedTimeMillisVolatile = class181.method3483();
+			MouseHandler_lastButtonVolatile = getButton(var1);
+			if (MouseHandler_lastButtonVolatile != 0) {
+				MouseHandler_currentButtonVolatile = MouseHandler_lastButtonVolatile;
+			}
+		}
+/*
+		if (var1.isPopupTrigger()) {
+			var1.consume();
+		}*/
 
 	}
 

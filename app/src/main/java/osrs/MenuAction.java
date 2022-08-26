@@ -60,9 +60,9 @@ public class MenuAction {
 		garbageValue = "52"
 	)
 	static void method1859(Component var0) {
-		var0.setFocusTraversalKeysEnabled(false);
+/*		var0.setFocusTraversalKeysEnabled(false);
 		var0.addKeyListener(KeyHandler.KeyHandler_instance);
-		var0.addFocusListener(KeyHandler.KeyHandler_instance);
+		var0.addFocusListener(KeyHandler.KeyHandler_instance);*/
 	}
 
 	@ObfuscatedName("c")

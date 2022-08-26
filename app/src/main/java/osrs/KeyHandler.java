@@ -1,9 +1,6 @@
 package osrs;
 
-import java.awt.event.FocusEvent;
-import java.awt.event.FocusListener;
-import java.awt.event.KeyEvent;
-import java.awt.event.KeyListener;
+
 import net.runelite.mapping.Export;
 import net.runelite.mapping.Implements;
 import net.runelite.mapping.ObfuscatedGetter;
@@ -12,7 +9,7 @@ import net.runelite.mapping.ObfuscatedSignature;
 
 @ObfuscatedName("t")
 @Implements("KeyHandler")
-public final class KeyHandler implements KeyListener, FocusListener {
+public final class KeyHandler /*implements KeyListener, FocusListener*/ {
 	@ObfuscatedName("s")
 	@ObfuscatedSignature(
 		descriptor = "Lt;"
@@ -113,7 +110,7 @@ public final class KeyHandler implements KeyListener, FocusListener {
 	KeyHandler() {
 	}
 
-	public final void keyTyped(KeyEvent var1) {
+/*	public final void keyTyped(KeyEvent var1) {
 		if (KeyHandler_instance != null) {
 			char var2 = var1.getKeyChar();
 			if (var2 != 0 && var2 != '\uffff' && class16.method204(var2)) {
@@ -196,7 +193,7 @@ public final class KeyHandler implements KeyListener, FocusListener {
 	}
 
 	public final void focusGained(FocusEvent var1) {
-	}
+	}*/
 
 	@ObfuscatedName("h")
 	@ObfuscatedSignature(

@@ -1,10 +1,10 @@
 package osrs;
 
 import java.awt.Toolkit;
-import java.awt.datatransfer.Clipboard;
+/*import java.awt.datatransfer.Clipboard;
 import java.awt.datatransfer.DataFlavor;
 import java.awt.datatransfer.Transferable;
-import java.awt.datatransfer.UnsupportedFlavorException;
+import java.awt.datatransfer.UnsupportedFlavorException;*/
 import java.io.IOException;
 import java.text.ParseException;
 import java.util.Date;
@@ -351,7 +351,7 @@ public class class174 {
 
 								while (true) {
 									int var48;
-									Transferable var56;
+/*									Transferable var56;*/
 									do {
 										while (true) {
 											label1460:
@@ -416,12 +416,12 @@ public class class174 {
 												}
 											}
 
-											if ((KeyHandler.KeyHandler_pressedKeys[82] || KeyHandler.KeyHandler_pressedKeys[87]) && class145.field1653 == 67) {
+/*											if ((KeyHandler.KeyHandler_pressedKeys[82] || KeyHandler.KeyHandler_pressedKeys[87]) && class145.field1653 == 67) {
 												Clipboard var55 = Toolkit.getDefaultToolkit().getSystemClipboard();
 												var56 = var55.getContents(AbstractByteArrayCopier.client);
 												var48 = 20 - Login.Login_password.length();
 												break;
-											}
+											}*/
 
 											char var49 = BoundaryObject.field2636;
 											if (var49 >= ' ' && var49 < 127 || var49 > 127 && var49 < 160 || var49 > 160 && var49 <= 255) {
@@ -450,7 +450,7 @@ public class class174 {
 										}
 									} while(var48 <= 0);
 
-									try {
+/*									try {
 										String var14 = (String)var56.getTransferData(DataFlavor.stringFlavor);
 										int var50 = Math.min(var48, var14.length());
 
@@ -486,7 +486,7 @@ public class class174 {
 										Login.Login_password = Login.Login_password + var14.substring(0, var50);
 									} catch (UnsupportedFlavorException var38) {
 									} catch (IOException var39) {
-									}
+									}*/
 								}
 							} else if (Login.loginIndex == 3) {
 								var42 = Login.loginBoxX + 180;

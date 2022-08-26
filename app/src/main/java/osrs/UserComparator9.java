@@ -1,6 +1,8 @@
 package osrs;
 
 import java.awt.Image;
+import java.awt.image.BufferedImage;
+
 import net.runelite.mapping.Export;
 import net.runelite.mapping.Implements;
 import net.runelite.mapping.ObfuscatedName;
@@ -10,7 +12,7 @@ import net.runelite.mapping.ObfuscatedSignature;
 @Implements("UserComparator9")
 public class UserComparator9 extends AbstractUserComparator {
 	@ObfuscatedName("ae")
-	static Image field1387;
+	static BufferedImage field1387;
 	@ObfuscatedName("s")
 	@Export("reversed")
 	final boolean reversed;

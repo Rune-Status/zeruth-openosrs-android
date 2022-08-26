@@ -9,12 +9,12 @@ import net.runelite.mapping.ObfuscatedSignature;
 @ObfuscatedName("ar")
 @Implements("DevicePcmPlayer")
 public class DevicePcmPlayer extends PcmPlayer {
-	@ObfuscatedName("s")
+/*	@ObfuscatedName("s")
 	@Export("format")
 	AudioFormat format;
 	@ObfuscatedName("h")
 	@Export("line")
-	SourceDataLine line;
+	SourceDataLine line;*/
 	@ObfuscatedName("w")
 	@ObfuscatedGetter(
 		intValue = -806892277
@@ -35,8 +35,8 @@ public class DevicePcmPlayer extends PcmPlayer {
 	)
 	@Export("init")
 	protected void init() {
-		this.format = new AudioFormat((float)(class344.field4152 * -449918071), 16, PcmPlayer.PcmPlayer_stereo ? 2 : 1, true, false);
-		this.byteSamples = new byte[256 << (PcmPlayer.PcmPlayer_stereo ? 2 : 1)];
+/*		this.format = new AudioFormat((float)(class344.field4152 * -449918071), 16, PcmPlayer.PcmPlayer_stereo ? 2 : 1, true, false);
+		this.byteSamples = new byte[256 << (PcmPlayer.PcmPlayer_stereo ? 2 : 1)];*/
 	}
 
 	@ObfuscatedName("h")
@@ -45,8 +45,8 @@ public class DevicePcmPlayer extends PcmPlayer {
 		garbageValue = "6"
 	)
 	@Export("open")
-	protected void open(int var1) throws LineUnavailableException {
-		try {
+	protected void open(int var1){ // throws LineUnavailableException {
+/*		try {
 			Info var2 = new Info(SourceDataLine.class, this.format, var1 << (PcmPlayer.PcmPlayer_stereo ? 2 : 1));
 			this.line = (SourceDataLine)AudioSystem.getLine(var2);
 			this.line.open();
@@ -59,7 +59,7 @@ public class DevicePcmPlayer extends PcmPlayer {
 				this.line = null;
 				throw var3;
 			}
-		}
+		}*/
 	}
 
 	@ObfuscatedName("w")
@@ -69,7 +69,8 @@ public class DevicePcmPlayer extends PcmPlayer {
 	)
 	@Export("position")
 	protected int position() {
-		return this.capacity2 - (this.line.available() >> (PcmPlayer.PcmPlayer_stereo ? 2 : 1));
+		return 0;
+/*		return this.capacity2 - (this.line.available() >> (PcmPlayer.PcmPlayer_stereo ? 2 : 1));*/
 	}
 
 	@ObfuscatedName("v")
@@ -90,7 +91,7 @@ public class DevicePcmPlayer extends PcmPlayer {
 			this.byteSamples[var2 * 2 + 1] = (byte)(var3 >> 16);
 		}
 
-		this.line.write(this.byteSamples, 0, var1 << 1);
+/*		this.line.write(this.byteSamples, 0, var1 << 1);*/
 	}
 
 	@ObfuscatedName("c")
@@ -100,11 +101,10 @@ public class DevicePcmPlayer extends PcmPlayer {
 	)
 	@Export("close")
 	protected void close() {
-		if (this.line != null) {
+/*		if (this.line != null) {
 			this.line.close();
 			this.line = null;
-		}
-
+		}*/
 	}
 
 	@ObfuscatedName("q")
@@ -114,6 +114,6 @@ public class DevicePcmPlayer extends PcmPlayer {
 	)
 	@Export("discard")
 	protected void discard() {
-		this.line.flush();
+/*		this.line.flush();*/
 	}
 }

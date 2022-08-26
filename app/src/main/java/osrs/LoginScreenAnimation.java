@@ -174,7 +174,8 @@ public class LoginScreenAnimation {
 		garbageValue = "-1318609363"
 	)
 	@Export("draw")
-	void draw(int var1, int var2) {
+	void draw(int var1, int var22) {
+/*		int var2 = var22 -100;
 		if (this.field1222 == null) {
 			this.initColors();
 		}
@@ -193,7 +194,7 @@ public class LoginScreenAnimation {
 			this.method2175(var3);
 		}
 
-		this.method2186(var1);
+		this.method2186(var1);*/
 	}
 
 	@ObfuscatedName("v")

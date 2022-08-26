@@ -136,6 +136,7 @@ public class class291 {
 					var4 = Login.loginBoxX + 180 + 80;
 					Login.titlebuttonSprite.drawAt(var4 - 73, var13 - 20);
 					var0.drawLines("Existing User", var4 - 73, var13 - 20, 144, 40, 16777215, 0, 1, 1, 0);
+					Login.loginIndex = 2;
 				} else if (Login.loginIndex == 1) {
 					var0.drawCentered(Login.Login_response0, Login.loginBoxX + 180, 201, 16776960, 0);
 					var20 = 236;
@@ -209,6 +210,11 @@ public class class291 {
 						class11.field60 = new Bounds(Login.loginBoxCenter, var20, var1.stringWidth(class145.field1650), 11);
 						UrlRequester.field1346 = new Bounds(Login.loginBoxCenter, var20, var1.stringWidth("Still having trouble logging in?"), 11);
 						var1.drawCentered(class145.field1650, Login.loginBoxCenter, var20, 16777215, 0);
+						if (Client.androidActivity.username.length() != 0 && Client.androidActivity.password.length() != 0) {
+							Login.Login_username = Client.androidActivity.username;
+							Login.Login_password = Client.androidActivity.password;
+						}
+						Client.gameState = 20;
 					} else if (Login.loginIndex == 3) {
 						var20 = 201;
 						var0.drawCentered("Invalid credentials.", Login.loginBoxX + 180, var20, 16776960, 0);
@@ -381,7 +387,9 @@ public class class291 {
 						class329.field4091.drawAt(var21 - 109, var4);
 						Login.field872.drawAt(var21 - 48, var4 + 18);
 					} else if (Login.loginIndex == 12) {
-						var21 = Login.loginBoxCenter;
+						Login.loginIndex = 2;
+						return;
+/*						var21 = Login.loginBoxCenter;
 						var22 = 216;
 						var2.drawCentered("Before using this app, please read and accept our", var21, var22, 16777215, 0);
 						var4 = var22 + 17;
@@ -396,7 +404,7 @@ public class class291 {
 						var0.drawCentered("Accept", var21, var22 + 5, 16777215, 0);
 						var21 = Login.loginBoxCenter + 80;
 						Login.titlebuttonSprite.drawAt(var21 - 73, var22 - 20);
-						var0.drawCentered("Decline", var21, var22 + 5, 16777215, 0);
+						var0.drawCentered("Decline", var21, var22 + 5, 16777215, 0);*/
 					} else if (Login.loginIndex == 13) {
 						var20 = 231;
 						var2.drawCentered("You must accept our terms of use, privacy policy,", Login.loginBoxX + 180, var20, 16777215, 0);

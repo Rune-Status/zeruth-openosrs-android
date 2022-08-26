@@ -1,6 +1,5 @@
 package osrs;
 
-import java.applet.Applet;
 import net.runelite.mapping.Export;
 import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
@@ -14,7 +13,7 @@ public class class29 {
 	)
 	static int field172;
 	@ObfuscatedName("s")
-	public static Applet field174;
+	public static /*Applet*/ Object field174;
 	@ObfuscatedName("h")
 	public static String field167;
 	@ObfuscatedName("m")

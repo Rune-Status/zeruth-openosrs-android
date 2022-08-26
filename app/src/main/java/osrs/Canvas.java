@@ -1,7 +1,12 @@
 package osrs;
 
+import com.meteor.MainActivity;
+
 import java.awt.Component;
 import java.awt.Graphics;
+import java.awt.Image;
+import java.awt.image.ImageObserver;
+
 import net.runelite.mapping.Export;
 import net.runelite.mapping.Implements;
 import net.runelite.mapping.ObfuscatedName;
@@ -18,18 +23,18 @@ public final class Canvas extends java.awt.Canvas {
 	static SpritePixels[] crossSprites;
 	@ObfuscatedName("s")
 	@Export("component")
-	Component component;
+	GameEngine component;
 
-	Canvas(Component var1) {
+	Canvas(GameEngine var1) {
 		this.component = var1;
 	}
 
 	public final void update(Graphics var1) {
-		this.component.update(var1);
+		this.component.update(MainActivity.gameGraphics.createGraphics());
 	}
 
 	public final void paint(Graphics var1) {
-		this.component.paint(var1);
+		this.component.paint(MainActivity.gameGraphics.createGraphics());
 	}
 
 	@ObfuscatedName("fz")

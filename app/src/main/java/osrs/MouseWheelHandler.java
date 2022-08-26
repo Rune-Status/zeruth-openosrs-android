@@ -1,8 +1,6 @@
 package osrs;
 
 import java.awt.Component;
-import java.awt.event.MouseWheelEvent;
-import java.awt.event.MouseWheelListener;
 import net.runelite.mapping.Export;
 import net.runelite.mapping.Implements;
 import net.runelite.mapping.ObfuscatedGetter;
@@ -11,7 +9,7 @@ import net.runelite.mapping.ObfuscatedSignature;
 
 @ObfuscatedName("f")
 @Implements("MouseWheelHandler")
-public final class MouseWheelHandler implements class158, MouseWheelListener {
+public final class MouseWheelHandler implements class158{ //, MouseWheelListener {
 	@ObfuscatedName("s")
 	@ObfuscatedGetter(
 		intValue = -118753127
@@ -30,7 +28,7 @@ public final class MouseWheelHandler implements class158, MouseWheelListener {
 	)
 	@Export("addTo")
 	void addTo(Component var1) {
-		var1.addMouseWheelListener(this);
+/*		var1.addMouseWheelListener(this);*/
 	}
 
 	@ObfuscatedName("h")
@@ -40,7 +38,7 @@ public final class MouseWheelHandler implements class158, MouseWheelListener {
 	)
 	@Export("removeFrom")
 	void removeFrom(Component var1) {
-		var1.removeMouseWheelListener(this);
+/*		var1.removeMouseWheelListener(this);*/
 	}
 
 	@ObfuscatedName("w")
@@ -55,7 +53,7 @@ public final class MouseWheelHandler implements class158, MouseWheelListener {
 		return var1;
 	}
 
-	public synchronized void mouseWheelMoved(MouseWheelEvent var1) {
+/*	public synchronized void mouseWheelMoved(MouseWheelEvent var1) {
 		this.rotation += var1.getWheelRotation();
-	}
+	}*/
 }

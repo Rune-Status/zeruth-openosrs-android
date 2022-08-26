@@ -422,6 +422,7 @@ public class HitSplatDefinition extends DualNode {
 	public static Widget getWidget(int var0) {
 		int var1 = var0 >> 16;
 		int var2 = var0 & 65535;
+		//System.out.println("getting widget " + var0 + " parent:" + var1 + " child:" + var2);
 		if (class358.Widget_interfaceComponents[var1] == null || class358.Widget_interfaceComponents[var1][var2] == null) {
 			boolean var3 = ParamComposition.loadInterface(var1);
 			if (!var3) {

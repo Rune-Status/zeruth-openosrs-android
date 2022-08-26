@@ -917,9 +917,9 @@ public class ObjectComposition extends DualNode {
 		garbageValue = "76"
 	)
 	static void method3578(Component var0) {
-		var0.addMouseListener(MouseHandler.MouseHandler_instance);
+/*		var0.addMouseListener(MouseHandler.MouseHandler_instance);
 		var0.addMouseMotionListener(MouseHandler.MouseHandler_instance);
-		var0.addFocusListener(MouseHandler.MouseHandler_instance);
+		var0.addFocusListener(MouseHandler.MouseHandler_instance);*/
 	}
 
 	@ObfuscatedName("gi")
