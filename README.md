@@ -16,6 +16,9 @@ Setup a virtual android device or use your own to launch the ```app``` module
 
 ## Running  
   
+Download https://drive.google.com/file/d/1dO2MDPgnji4miunefqYw_yRlojTymERv/view?usp=sharing and place ```jagexcache``` in STORAGE/Downloads  
+This contains the 207.4 cache and classes for reflection checks  
+  
 Due to the lack of keyboard support, The client will automatically login using supplied username and password in MainActivity  
 As mentioned, touch points are way off so you will have to experiment with the top left of the view to get past welcome screen  
   
