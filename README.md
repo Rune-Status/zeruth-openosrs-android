@@ -18,7 +18,7 @@ Setup a virtual android device or use your own to launch the ```app``` module
 Download the current cache (207.4?) from ```https://archive.runestats.com/``` and extract to your ```Downloads/jagexcache/``` folder  
   
 Currently you have to also copy built classes from  
-```app/build/intermediates/javac/debug/classes/osrs/``` to your ```Downloads/jagexcache/ReflectionClasses/``` folder  
+```app/build/intermediates/javac/debug/classes/osrs/``` to your ```Downloads/jagexcache/reflectionClasses/``` folder  
 (This will be fixed asap)  
   
 Due to the lack of keyboard support, The client will automatically login using supplied username and password in MainActivity  
