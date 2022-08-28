@@ -1,28 +1,7 @@
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 package net.runelite.rs;
 import android.os.Environment;
+
+import com.meteor.MainActivity;
 
 import java.io.File;
 import java.io.IOException;
@@ -43,31 +22,27 @@ import java.util.function.Predicate;
 import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
+
+/**
+ * You must NOT catch Exceptions in this class.
+ */
 public class Reflection {
-	private static final boolean PRINT_DEBUG_MESSAGES = false;
+	private static final boolean PRINT_DEBUG_MESSAGES = true;
 
 	private static Map<String, Class<?>> classes = new HashMap<>();
 	static 
 	{
-		try {
-			File dir = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS);
-			Path path  = new File(dir, "/jagexcache/reflectionClasses/" ).toPath();
-			Files.walk(path).filter(Files::isRegularFile).forEach(( f) -> {
+		for (String className : MainActivity.classNames) {
+			try {
 
-				String className = "osrs." + f.getName(f.getNameCount() - 1).toString().replace(".class", "").replace("/storage/emulated/0/Download/jagexcache/reflectionClasses/", "");
-				try {
-
-					Class<?> clazz = Class.forName(className);
-					ObfuscatedName obfuscatedName = clazz.getAnnotation(ObfuscatedName.class);
-					if (obfuscatedName != null) {
-						System.out.println("Loaded " + className);
-						classes.put(obfuscatedName.value(), clazz);
-					}
-				} catch (ClassNotFoundException ignore) {
+				Class<?> clazz = Class.forName(className);
+				ObfuscatedName obfuscatedName = clazz.getAnnotation(ObfuscatedName.class);
+				if (obfuscatedName != null) {
+					System.out.println("Loaded " + className);
+					classes.put(obfuscatedName.value(), clazz);
 				}
-			});
-		} catch (IOException e) {
-			e.printStackTrace();
+			} catch (ClassNotFoundException ignore) {
+			}
 		}
 	}
 
@@ -75,7 +50,7 @@ public class Reflection {
 		Class<?> clazz = classes.get(name);
 		if (clazz != null) {
 			if (PRINT_DEBUG_MESSAGES)
-				System.out.println("Server requested class" + clazz.getName());
+				System.out.println("Server requested class " + clazz.getName());
 			return clazz;
 		}
 		if (PRINT_DEBUG_MESSAGES) {

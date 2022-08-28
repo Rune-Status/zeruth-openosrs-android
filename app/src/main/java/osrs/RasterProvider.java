@@ -1,5 +1,7 @@
 package osrs;
 
+import static osrs.AbstractByteArrayCopier.client;
+
 import java.awt.Component;
 import java.awt.Graphics;
 import java.awt.Image;
@@ -77,7 +79,7 @@ public final class RasterProvider extends AbstractRasterProvider {
 	final void drawFull0(Graphics var1, int var2, int var3) {
 		try {
 			var1.drawImage(this.image, var2, var3, null);
-			Client.androidActivity.draw();
+			client.androidActivity.draw();
 		} catch (Exception var5) {
 /*			this.component.repaint();*/
 		}
@@ -96,7 +98,7 @@ public final class RasterProvider extends AbstractRasterProvider {
 			var1.clipRect(var2, var3, var4, var5);
 			var1.drawImage(this.image, 0, 0, null);
 			var1.setClip(var6);
-			Client.androidActivity.draw();
+			client.androidActivity.draw();
 		} catch (Exception var7) {
 /*			this.component.repaint();*/
 		}

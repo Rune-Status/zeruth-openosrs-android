@@ -16,7 +16,7 @@ public abstract class AbstractByteArrayCopier {
 	@ObfuscatedSignature(
 		descriptor = "Lclient;"
 	)
-	static Client client;
+	public static Client client;
 
 	AbstractByteArrayCopier() {
 	}

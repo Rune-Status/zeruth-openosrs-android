@@ -1,5 +1,8 @@
 package osrs;
 
+import static osrs.AbstractByteArrayCopier.client;
+
+import android.content.Context;
 import android.os.Environment;
 
 import java.io.EOFException;
@@ -26,9 +29,9 @@ public final class AccessFile {
 	long offset;
 
 	public AccessFile(File var1, String var2, long var3) throws IOException {
-		if (!var1.toPath().startsWith("/storage/emulated/0/Download/"))
+		if (!var1.toPath().startsWith(client.androidActivity.getFilesDir().getPath()))
 		{
-			File path = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS);
+			File path = client.androidActivity.getFilesDir();
 			var1 = new File(path, "/jagexcache/" + var1);
 		}
 		if (-1L == var3) {
