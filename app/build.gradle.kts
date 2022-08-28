@@ -3,12 +3,12 @@ plugins {
 }
 
 android {
-    compileSdk = 28
+    compileSdk = 33
     defaultConfig {
         applicationId = "com.opscape.openosrs"
         minSdk = 26
         //We target 28 for easier access to External Storage
-        targetSdk = 28
+        targetSdk = 33
         versionCode = 1
         versionName = "1.0"
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
@@ -38,9 +38,10 @@ dependencies {
     implementation("com.github.librepdf:openpdf:1.3.24")
     implementation("ro.andob.androidawt:androidawt:1.0.4")
     implementation("org.bouncycastle:bcprov-jdk15on:1.52")
-    implementation("androidx.appcompat:appcompat:1.0.2")
-    implementation("androidx.constraintlayout:constraintlayout:1.1.3")
-    implementation("com.google.android.material:material:1.0.0")
+    implementation("androidx.appcompat:appcompat:1.5.0")
+    implementation("androidx.constraintlayout:constraintlayout:2.1.4")
+    implementation("com.google.android.material:material:1.6.1")
+    implementation("com.google.code.gson:gson:2.9.1")
     testImplementation("junit:junit:4.13.2")
     androidTestImplementation("androidx.test.ext:junit:1.1.3")
     androidTestImplementation("androidx.test.espresso:espresso-core:3.4.0")

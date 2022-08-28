@@ -27,7 +27,8 @@ import net.runelite.mapping.ObfuscatedSignature;
 @Implements("Client")
 @ObfuscatedName("client")
 public final class Client extends GameEngine implements Usernamed, OAuthApi {
-	public static MainActivity androidActivity;
+	public MainActivity androidActivity;
+	
 	@ObfuscatedName("rx")
 	@ObfuscatedSignature(
 		descriptor = "[Leh;"

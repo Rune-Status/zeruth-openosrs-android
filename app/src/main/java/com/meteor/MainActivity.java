@@ -6,6 +6,7 @@ import android.Manifest;
 import android.annotation.SuppressLint;
 import android.app.ActionBar;
 import android.app.Activity;
+import android.content.Context;
 import android.content.pm.ActivityInfo;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
@@ -17,6 +18,7 @@ import android.os.Bundle;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
+import com.google.gson.Gson;
 import com.opscape.openosrs.R;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -35,13 +37,23 @@ import android.widget.ImageView;
 import java.awt.Image;
 import java.awt.Point;
 import java.awt.image.BufferedImage;
+import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.io.Reader;
+import java.io.StringWriter;
+import java.io.UnsupportedEncodingException;
+import java.io.Writer;
+import java.nio.charset.StandardCharsets;
+import java.util.ArrayList;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
 
+import osrs.AbstractByteArrayCopier;
 import osrs.Client;
 import osrs.HitSplatDefinition;
 import osrs.Login;
@@ -57,9 +69,31 @@ public class MainActivity extends AppCompatActivity {
     boolean setupGameView = false;
     public static boolean shouldDraw = false;
     View mImg;
+    Client client;
+    public static ArrayList<String> classNames;
 
     public static String username = "";
     public static String password = "";
+    @Override
+    protected void onStart() {
+        super.onStart();
+        loadClassNames();
+        AbstractByteArrayCopier.client = new Client();
+        client = AbstractByteArrayCopier.client;
+        client.androidActivity = this;
+        client.init();
+        client.start();
+
+        Login.Login_username = username;
+        Login.Login_password = password;
+
+        ScheduledExecutorService scheduler =
+                Executors.newSingleThreadScheduledExecutor();
+
+        scheduler.scheduleAtFixedRate
+                (() -> System.out.println("Gamestate (10 is login screen): " + Client.gameState * 433143709), 0, 2, TimeUnit.SECONDS);
+
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -152,17 +186,6 @@ public class MainActivity extends AppCompatActivity {
         }
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
         updateHideUi();
-        Client client = new Client();
-        client.init();
-        client.start();
-        Login.Login_username = username;
-        Login.Login_password = password;
-        Client.androidActivity = this;
-        ScheduledExecutorService scheduler =
-                Executors.newSingleThreadScheduledExecutor();
-
-        scheduler.scheduleAtFixedRate
-                (() -> System.out.println("Gamestate (10 is login screen): " + Client.gameState * 433143709), 0, 2, TimeUnit.SECONDS);
     }
 
 
@@ -256,5 +279,31 @@ public class MainActivity extends AppCompatActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    public void loadClassNames() {
+        InputStream is = getResources().openRawResource(R.raw.class_names);
+        Writer writer = new StringWriter();
+        char[] buffer = new char[1024];
+        try {
+            Reader reader = new BufferedReader(new InputStreamReader(is, StandardCharsets.UTF_8));
+            int n;
+            while ((n = reader.read(buffer)) != -1) {
+                writer.write(buffer, 0, n);
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                is.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+
+        String classNamesGson = writer.toString();
+
+        classNames = new Gson().fromJson(classNamesGson, ArrayList.class);
+        System.out.println("Loaded " + classNames.size() + " class names");
     }
 }

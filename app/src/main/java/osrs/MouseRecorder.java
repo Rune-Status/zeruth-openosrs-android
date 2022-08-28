@@ -1,5 +1,7 @@
 package osrs;
 
+import static osrs.AbstractByteArrayCopier.client;
+
 import android.os.Environment;
 
 import java.io.File;
@@ -89,7 +91,7 @@ public class MouseRecorder implements Runnable {
 		InvDefinition.formattedOperatingSystemName = class146.operatingSystemName.toLowerCase();
 
 		try {
-			File path = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS);
+			File path = client.androidActivity.getFilesDir();
 			BufferedNetSocket.userHomeDirectory = path.getAbsolutePath();
 
 			if (BufferedNetSocket.userHomeDirectory != null) {
@@ -116,8 +118,7 @@ public class MouseRecorder implements Runnable {
 		if (BufferedNetSocket.userHomeDirectory == null) {
 			BufferedNetSocket.userHomeDirectory = "~/";
 		}
-
-		AbstractUserComparator.cacheParentPaths = new String[]{"c:/rscache/", "/rscache/", "c:/windows/", "c:/winnt/", "c:/", BufferedNetSocket.userHomeDirectory, "/tmp/", ""};
+		AbstractUserComparator.cacheParentPaths = new String[]{client.androidActivity.getFilesDir().getAbsolutePath()};
 		class19.cacheSubPaths = new String[]{".jagex_cache_" + class340.cacheGamebuild * 51853259, ".file_store_" + class340.cacheGamebuild * 51853259};
 		int var18 = 0;
 
