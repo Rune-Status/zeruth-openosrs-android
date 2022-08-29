@@ -14,6 +14,7 @@ import java.util.Map;
 import java.util.Map.Entry;
 import javax.net.ssl.HttpsURLConnection;
 import net.runelite.mapping.Export;
+import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
@@ -46,6 +47,9 @@ public class class10 {
 	@ObfuscatedName("i")
 	boolean field53;
 	@ObfuscatedName("k")
+	@ObfuscatedGetter(
+		intValue = 638517017
+	)
 	int field54;
 
 	@ObfuscatedSignature(
@@ -54,7 +58,7 @@ public class class10 {
 	public class10(URL var1, class9 var2, boolean var3) throws IOException {
 		this.field55 = false;
 		this.field53 = false;
-		this.field54 = 281153248;
+		this.field54 = 300000;
 		if (!var2.method64()) {
 			throw new UnsupportedEncodingException("Unsupported request method used " + var2.method76());
 		} else {
@@ -71,8 +75,8 @@ public class class10 {
 
 	@ObfuscatedName("s")
 	@ObfuscatedSignature(
-		descriptor = "(Ljava/lang/String;Ljava/lang/String;S)V",
-		garbageValue = "255"
+		garbageValue = "255",
+		descriptor = "(Ljava/lang/String;Ljava/lang/String;S)V"
 	)
 	public void method82(String var1, String var2) {
 		if (!this.field55) {
@@ -82,8 +86,8 @@ public class class10 {
 
 	@ObfuscatedName("h")
 	@ObfuscatedSignature(
-		descriptor = "(I)Ljava/lang/String;",
-		garbageValue = "-647888404"
+		garbageValue = "-647888404",
+		descriptor = "(I)Ljava/lang/String;"
 	)
 	String method83() {
 		ArrayList var1 = new ArrayList(this.field50.entrySet());
@@ -97,7 +101,7 @@ public class class10 {
 				var2.append(",");
 			}
 
-			var2.append(((class398)var4.getKey()).method7043());
+			var2.append(((class398)var4.getKey()).method6940());
 			float var5 = (Float)var4.getValue();
 			if (var5 < 1.0F) {
 				String var6 = Float.toString(var5).substring(0, 4);
@@ -110,8 +114,8 @@ public class class10 {
 
 	@ObfuscatedName("w")
 	@ObfuscatedSignature(
-		descriptor = "(I)V",
-		garbageValue = "626536480"
+		garbageValue = "626536480",
+		descriptor = "(I)V"
 	)
 	void method84() throws ProtocolException {
 		if (!this.field55) {
@@ -132,7 +136,7 @@ public class class10 {
 				ByteArrayOutputStream var13 = new ByteArrayOutputStream();
 
 				try {
-					var13.write(this.field49.vmethod7057());
+					var13.write(this.field49.vmethod6954());
 					var13.writeTo(this.field57.getOutputStream());
 				} catch (IOException var11) {
 					var11.printStackTrace();
@@ -148,7 +152,7 @@ public class class10 {
 				}
 			}
 
-			this.field57.setConnectTimeout(this.field54 * 638517017);
+			this.field57.setConnectTimeout(this.field54);
 			this.field57.setInstanceFollowRedirects(this.field53);
 			this.field55 = true;
 		}
@@ -156,8 +160,8 @@ public class class10 {
 
 	@ObfuscatedName("v")
 	@ObfuscatedSignature(
-		descriptor = "(I)Z",
-		garbageValue = "34538431"
+		garbageValue = "34538431",
+		descriptor = "(I)Z"
 	)
 	boolean method85() throws IOException, SocketTimeoutException {
 		if (!this.field55) {
@@ -170,8 +174,8 @@ public class class10 {
 
 	@ObfuscatedName("c")
 	@ObfuscatedSignature(
-		descriptor = "(B)Lx;",
-		garbageValue = "-19"
+		garbageValue = "-19",
+		descriptor = "(B)Lx;"
 	)
 	class21 method81() {
 		try {
@@ -200,19 +204,19 @@ public class class10 {
 
 	@ObfuscatedName("s")
 	@ObfuscatedSignature(
-		descriptor = "(Ldj;FB)F",
-		garbageValue = "-96"
+		garbageValue = "-96",
+		descriptor = "(Ldj;FB)F"
 	)
 	static float method86(class117 var0, float var1) {
-		if (var0 != null && var0.method2712() != 0) {
-			if (var1 < (float)(var0.field1441[0].field1400 * 615485545)) {
-				return var0.field1439 == class116.field1434 ? var0.field1441[0].field1399 : class352.method6436(var0, var1, true);
-			} else if (var1 > (float)(var0.field1441[var0.method2712() - 1].field1400 * 615485545)) {
-				return var0.field1449 == class116.field1434 ? var0.field1441[var0.method2712() - 1].field1399 : class352.method6436(var0, var1, false);
+		if (var0 != null && var0.method2647() != 0) {
+			if (var1 < (float)var0.field1441[0].field1400) {
+				return var0.field1439 == class116.field1434 ? var0.field1441[0].field1399 : class352.method6359(var0, var1, true);
+			} else if (var1 > (float)var0.field1441[var0.method2647() - 1].field1400) {
+				return var0.field1449 == class116.field1434 ? var0.field1441[var0.method2647() - 1].field1399 : class352.method6359(var0, var1, false);
 			} else if (var0.field1438) {
 				return var0.field1441[0].field1399;
 			} else {
-				class113 var2 = var0.method2691(var1);
+				class113 var2 = var0.method2626(var1);
 				boolean var3 = false;
 				boolean var4 = false;
 				if (var2 == null) {
@@ -227,16 +231,16 @@ public class class10 {
 						if (var0.field1448) {
 							float[] var5 = new float[4];
 							float[] var6 = new float[4];
-							var5[0] = (float)(var2.field1400 * 615485545);
+							var5[0] = (float)var2.field1400;
 							var6[0] = var2.field1399;
 							var5[1] = var5[0] + 0.33333334F * var2.field1402;
 							var6[1] = var2.field1398 * 0.33333334F + var6[0];
-							var5[3] = (float)(var2.field1404.field1400 * 615485545);
+							var5[3] = (float)var2.field1404.field1400;
 							var6[3] = var2.field1404.field1399;
 							var5[2] = var5[3] - 0.33333334F * var2.field1404.field1403;
 							var6[2] = var6[3] - var2.field1404.field1401 * 0.33333334F;
 							if (var0.field1447) {
-								RouteStrategy.method3813(var0, var5, var6);
+								RouteStrategy.method3748(var0, var5, var6);
 							} else if (var0 != null) {
 								var0.field1437 = var5[0];
 								var7 = var5[3] - var5[0];
@@ -271,40 +275,40 @@ public class class10 {
 					if (var3) {
 						return var2.field1399;
 					} else if (var4) {
-						return (float)(var2.field1400 * 615485545) != var1 && var2.field1404 != null ? var2.field1404.field1399 : var2.field1399;
+						return (float)var2.field1400 != var1 && var2.field1404 != null ? var2.field1404.field1399 : var2.field1399;
 					} else if (var0.field1447) {
-						float var18;
+						float var15;
 						if (var0 == null) {
-							var18 = 0.0F;
+							var15 = 0.0F;
 						} else {
-							float var15;
+							float var16;
 							if (var0.field1437 == var1) {
-								var15 = 0.0F;
+								var16 = 0.0F;
 							} else if (var1 == var0.field1444) {
-								var15 = 1.0F;
+								var16 = 1.0F;
 							} else {
-								var15 = (var1 - var0.field1437) / (var0.field1444 - var0.field1437);
+								var16 = (var1 - var0.field1437) / (var0.field1444 - var0.field1437);
 							}
 
 							if (var0.field1442) {
-								var7 = var15;
+								var7 = var16;
 							} else {
-								float[] var16 = new float[]{var0.field1445[0] - var15, var0.field1445[1], var0.field1445[2], var0.field1445[3]};
-								float[] var17 = new float[5];
-								int var19 = MilliClock.method3234(var16, 3, 0.0F, true, 1.0F, true, var17);
+								float[] var17 = new float[]{var0.field1445[0] - var16, var0.field1445[1], var0.field1445[2], var0.field1445[3]};
+								float[] var18 = new float[5];
+								int var19 = MilliClock.method3169(var17, 3, 0.0F, true, 1.0F, true, var18);
 								if (var19 == 1) {
-									var7 = var17[0];
+									var7 = var18[0];
 								} else {
 									var7 = 0.0F;
 								}
 							}
 
-							var18 = var7 * (var0.field1440[1] + (var7 * var0.field1440[3] + var0.field1440[2]) * var7) + var0.field1440[0];
+							var15 = var7 * (var0.field1440[1] + (var7 * var0.field1440[3] + var0.field1440[2]) * var7) + var0.field1440[0];
 						}
 
-						return var18;
+						return var15;
 					} else {
-						return class398.method7040(var0, var1);
+						return class398.method6937(var0, var1);
 					}
 				}
 			}
@@ -315,8 +319,8 @@ public class class10 {
 
 	@ObfuscatedName("s")
 	@ObfuscatedSignature(
-		descriptor = "(Lls;B)V",
-		garbageValue = "53"
+		garbageValue = "53",
+		descriptor = "(Lls;B)V"
 	)
 	public static void method89(AbstractArchive var0) {
 		class438.field4678 = var0;
@@ -324,8 +328,8 @@ public class class10 {
 
 	@ObfuscatedName("s")
 	@ObfuscatedSignature(
-		descriptor = "(II)Lbz;",
-		garbageValue = "-1734516989"
+		garbageValue = "-1734516989",
+		descriptor = "(II)Lbz;"
 	)
 	@Export("getScript")
 	static Script getScript(int var0) {
@@ -346,8 +350,8 @@ public class class10 {
 
 	@ObfuscatedName("ft")
 	@ObfuscatedSignature(
-		descriptor = "(B)V",
-		garbageValue = "8"
+		garbageValue = "8",
+		descriptor = "(B)V"
 	)
 	static final void method101() {
 		int var0;
@@ -357,30 +361,30 @@ public class class10 {
 		int var4;
 		int var5;
 		if (Client.oculusOrbState * 33319765 == 0) {
-			var0 = class56.localPlayer.x * 1627221919;
-			var1 = class56.localPlayer.y * 1229064101;
-			if (FloorOverlayDefinition.field2155 * -214209769 - var0 < -500 || FloorOverlayDefinition.field2155 * -214209769 - var0 > 500 || AbstractUserComparator.field4308 * 1435916161 - var1 < -500 || AbstractUserComparator.field4308 * 1435916161 - var1 > 500) {
-				FloorOverlayDefinition.field2155 = var0 * 424836263;
-				AbstractUserComparator.field4308 = var1 * 7465089;
+			var0 = ScriptFrame.localPlayer.x;
+			var1 = ScriptFrame.localPlayer.y;
+			if (FloorOverlayDefinition.oculusOrbFocalPointX - var0 < -500 || FloorOverlayDefinition.oculusOrbFocalPointX - var0 > 500 || AbstractUserComparator.oculusOrbFocalPointY - var1 < -500 || AbstractUserComparator.oculusOrbFocalPointY - var1 > 500) {
+				FloorOverlayDefinition.oculusOrbFocalPointX = var0;
+				AbstractUserComparator.oculusOrbFocalPointY = var1;
 			}
 
-			if (var0 != FloorOverlayDefinition.field2155 * -214209769) {
-				FloorOverlayDefinition.field2155 += (var0 - FloorOverlayDefinition.field2155 * -214209769) / 16 * 424836263;
+			if (var0 != FloorOverlayDefinition.oculusOrbFocalPointX) {
+				FloorOverlayDefinition.oculusOrbFocalPointX += (var0 - FloorOverlayDefinition.oculusOrbFocalPointX) / 16;
 			}
 
-			if (var1 != AbstractUserComparator.field4308 * 1435916161) {
-				AbstractUserComparator.field4308 += (var1 - AbstractUserComparator.field4308 * 1435916161) / 16 * 7465089;
+			if (var1 != AbstractUserComparator.oculusOrbFocalPointY) {
+				AbstractUserComparator.oculusOrbFocalPointY += (var1 - AbstractUserComparator.oculusOrbFocalPointY) / 16;
 			}
 
-			var2 = FloorOverlayDefinition.field2155 * -214209769 >> 7;
-			var3 = AbstractUserComparator.field4308 * 1435916161 >> 7;
-			var4 = ObjectComposition.getTileHeight(FloorOverlayDefinition.field2155 * -214209769, AbstractUserComparator.field4308 * 1435916161, class268.Client_plane * 1083786667);
+			var2 = FloorOverlayDefinition.oculusOrbFocalPointX >> 7;
+			var3 = AbstractUserComparator.oculusOrbFocalPointY >> 7;
+			var4 = ObjectComposition.getTileHeight(FloorOverlayDefinition.oculusOrbFocalPointX, AbstractUserComparator.oculusOrbFocalPointY, class268.Client_plane);
 			var5 = 0;
 			int var6;
 			if (var2 > 3 && var3 > 3 && var2 < 100 && var3 < 100) {
 				for (var6 = var2 - 4; var6 <= var2 + 4; ++var6) {
 					for (int var7 = var3 - 4; var7 <= var3 + 4; ++var7) {
-						int var8 = class268.Client_plane * 1083786667;
+						int var8 = class268.Client_plane;
 						if (var8 < 3 && (Tiles.Tiles_renderFlags[1][var6][var7] & 2) == 2) {
 							++var8;
 						}
@@ -402,25 +406,25 @@ public class class10 {
 				var6 = 32768;
 			}
 
-			if (var6 > Client.field658 * 1613713643) {
-				Client.field658 += (var6 - Client.field658 * 1613713643) / 24 * 1023465411;
-			} else if (var6 < Client.field658 * 1613713643) {
-				Client.field658 += (var6 - Client.field658 * 1613713643) / 80 * 1023465411;
+			if (var6 > Client.field658) {
+				Client.field658 += (var6 - Client.field658) / 24;
+			} else if (var6 < Client.field658) {
+				Client.field658 += (var6 - Client.field658) / 80;
 			}
 
-			EnumComposition.field1891 = (ObjectComposition.getTileHeight(1627221919 * class56.localPlayer.x, class56.localPlayer.y * 1229064101, 1083786667 * class268.Client_plane) - 1381521277 * Client.camFollowHeight) * 1717410279;
+			EnumComposition.field1891 = ObjectComposition.getTileHeight(ScriptFrame.localPlayer.x, ScriptFrame.localPlayer.y, class268.Client_plane) - Client.camFollowHeight;
 		} else if (Client.oculusOrbState * 33319765 == 1) {
-			if (Client.field484 && class56.localPlayer != null) {
-				var0 = class56.localPlayer.pathX[0];
-				var1 = class56.localPlayer.pathY[0];
+			if (Client.field484 && ScriptFrame.localPlayer != null) {
+				var0 = ScriptFrame.localPlayer.pathX[0];
+				var1 = ScriptFrame.localPlayer.pathY[0];
 				if (var0 >= 0 && var1 >= 0 && var0 < 104 && var1 < 104) {
-					FloorOverlayDefinition.field2155 = class56.localPlayer.x * 1330828473;
-					var2 = ObjectComposition.getTileHeight(class56.localPlayer.x * 1627221919, class56.localPlayer.y * 1229064101, class268.Client_plane * 1083786667) - Client.camFollowHeight * 1381521277;
-					if (var2 < EnumComposition.field1891 * 35416535) {
-						EnumComposition.field1891 = var2 * 1717410279;
+					FloorOverlayDefinition.oculusOrbFocalPointX = ScriptFrame.localPlayer.x;
+					var2 = ObjectComposition.getTileHeight(ScriptFrame.localPlayer.x, ScriptFrame.localPlayer.y, class268.Client_plane) - Client.camFollowHeight;
+					if (var2 < EnumComposition.field1891) {
+						EnumComposition.field1891 = var2;
 					}
 
-					AbstractUserComparator.field4308 = class56.localPlayer.y * 554197541;
+					AbstractUserComparator.oculusOrbFocalPointY = ScriptFrame.localPlayer.y;
 					Client.field484 = false;
 				}
 			}
@@ -459,111 +463,111 @@ public class class10 {
 
 			var2 = 0;
 			if (var10 >= 0 || var11 != 0) {
-				var2 = KeyHandler.KeyHandler_pressedKeys[81] ? Client.oculusOrbSlowedSpeed * -1909647629 : Client.oculusOrbNormalSpeed * 243534847;
+				var2 = KeyHandler.KeyHandler_pressedKeys[81] ? Client.oculusOrbSlowedSpeed : Client.oculusOrbNormalSpeed;
 				var2 *= 16;
-				Client.field565 = var10 * 832619329;
-				Client.field566 = var11 * 1738067723;
+				Client.field565 = var10;
+				Client.field566 = var11;
 			}
 
-			if (Client.field564 * -1535333199 < var2) {
-				Client.field564 += var2 / 8 * 1858739281;
-				if (Client.field564 * -1535333199 > var2) {
-					Client.field564 = var2 * 1858739281;
+			if (Client.field564 < var2) {
+				Client.field564 += var2 / 8;
+				if (Client.field564 > var2) {
+					Client.field564 = var2;
 				}
-			} else if (Client.field564 * -1535333199 > var2) {
-				Client.field564 = Client.field564 * -933096903 / 10 * 1858739281;
+			} else if (Client.field564 > var2) {
+				Client.field564 = Client.field564 * 9 / 10;
 			}
 
-			if (Client.field564 * -1535333199 > 0) {
-				var3 = Client.field564 * -1535333199 / 16;
-				if (Client.field565 * 1576389825 >= 0) {
-					var0 = Client.field565 * 1576389825 - ClientPreferences.field1246 * 1468675189 & 2047;
+			if (Client.field564 > 0) {
+				var3 = Client.field564 / 16;
+				if (Client.field565 >= 0) {
+					var0 = Client.field565 - ClientPreferences.cameraYaw & 2047;
 					var4 = Rasterizer3D.Rasterizer3D_sine[var0];
 					var5 = Rasterizer3D.Rasterizer3D_cosine[var0];
-					FloorOverlayDefinition.field2155 += var3 * var4 / 65536 * 424836263;
-					AbstractUserComparator.field4308 += var3 * var5 / 65536 * 7465089;
+					FloorOverlayDefinition.oculusOrbFocalPointX += var3 * var4 / 65536;
+					AbstractUserComparator.oculusOrbFocalPointY += var3 * var5 / 65536;
 				}
 
-				if (Client.field566 * -563608413 != 0) {
-					EnumComposition.field1891 += var3 * Client.field566 * 1717410279 * -563608413;
-					if (EnumComposition.field1891 * 35416535 > 0) {
+				if (Client.field566 != 0) {
+					EnumComposition.field1891 += var3 * Client.field566;
+					if (EnumComposition.field1891 > 0) {
 						EnumComposition.field1891 = 0;
 					}
 				}
 			} else {
-				Client.field565 = -832619329;
-				Client.field566 = -1738067723;
+				Client.field565 = -1;
+				Client.field566 = -1;
 			}
 
 			if (KeyHandler.KeyHandler_pressedKeys[13]) {
-				Client.packetWriter.addNode(DevicePcmPlayerProvider.method354(ClientPacket.field2929, Client.packetWriter.field1338));
+				Client.packetWriter.addNode(DevicePcmPlayerProvider.getPacketBufferNode(ClientPacket.field2929, Client.packetWriter.isaacCipher));
 				Client.oculusOrbState = 0;
 			}
 		}
 
-		if (MouseHandler.MouseHandler_currentButton * -1275162901 == 4 && Bounds.mouseCam) {
-			var0 = MouseHandler.MouseHandler_y * 805158709 - Client.mouseCamClickedY * 324817593;
-			Client.camAngleDX = var0 * -13420418;
-			Client.mouseCamClickedY = 1796477833 * (var0 != -1 && var0 != 1 ? (MouseHandler.MouseHandler_y * 805158709 + Client.mouseCamClickedY * 324817593) / 2 : 805158709 * MouseHandler.MouseHandler_y);
-			var1 = Client.mouseCamClickedX * -639686785 - MouseHandler.MouseHandler_x * -1255212161;
-			Client.camAngleDY = var1 * -231474498;
-			Client.mouseCamClickedX = (var1 != -1 && var1 != 1 ? (Client.mouseCamClickedX * -639686785 + -1255212161 * MouseHandler.MouseHandler_x) / 2 : -1255212161 * MouseHandler.MouseHandler_x) * 1093179519;
+		if (MouseHandler.MouseHandler_currentButton == 4 && Bounds.mouseCam) {
+			var0 = MouseHandler.MouseHandler_y - Client.mouseCamClickedY;
+			Client.camAngleDX = var0 * 2;
+			Client.mouseCamClickedY = var0 != -1 && var0 != 1 ? (MouseHandler.MouseHandler_y + Client.mouseCamClickedY) / 2 : MouseHandler.MouseHandler_y;
+			var1 = Client.mouseCamClickedX - MouseHandler.MouseHandler_x;
+			Client.camAngleDY = var1 * 2;
+			Client.mouseCamClickedX = var1 != -1 && var1 != 1 ? (Client.mouseCamClickedX + MouseHandler.MouseHandler_x) / 2 : MouseHandler.MouseHandler_x;
 		} else {
 			if (KeyHandler.KeyHandler_pressedKeys[96]) {
-				Client.camAngleDY += (-24 - Client.camAngleDY * -1201299809) / 2 * -115737249;
+				Client.camAngleDY += (-24 - Client.camAngleDY) / 2;
 			} else if (KeyHandler.KeyHandler_pressedKeys[97]) {
-				Client.camAngleDY += (24 - Client.camAngleDY * -1201299809) / 2 * -115737249;
+				Client.camAngleDY += (24 - Client.camAngleDY) / 2;
 			} else {
-				Client.camAngleDY = Client.camAngleDY * -1201299809 / 2 * -115737249;
+				Client.camAngleDY /= 2;
 			}
 
 			if (KeyHandler.KeyHandler_pressedKeys[98]) {
-				Client.camAngleDX += (12 - Client.camAngleDX * 38032319) / 2 * 2140773439;
+				Client.camAngleDX += (12 - Client.camAngleDX) / 2;
 			} else if (KeyHandler.KeyHandler_pressedKeys[99]) {
-				Client.camAngleDX += (-12 - Client.camAngleDX * 38032319) / 2 * 2140773439;
+				Client.camAngleDX += (-12 - Client.camAngleDX) / 2;
 			} else {
-				Client.camAngleDX = Client.camAngleDX * 38032319 / 2 * 2140773439;
+				Client.camAngleDX /= 2;
 			}
 
-			Client.mouseCamClickedY = MouseHandler.MouseHandler_y * -1692384675;
-			Client.mouseCamClickedX = MouseHandler.MouseHandler_x * 1383738369;
+			Client.mouseCamClickedY = MouseHandler.MouseHandler_y;
+			Client.mouseCamClickedX = MouseHandler.MouseHandler_x;
 		}
 
-		Client.camAngleY = (Client.camAngleDY * -1201299809 / 2 + Client.camAngleY * -531646697 & 2047) * 716632231;
-		Client.camAngleX += Client.camAngleDX * 38032319 / 2 * -506574373;
-		if (Client.camAngleX * -951416237 < 128) {
-			Client.camAngleX = -417010304;
+		Client.camAngleY = Client.camAngleDY / 2 + Client.camAngleY & 2047;
+		Client.camAngleX += Client.camAngleDX / 2;
+		if (Client.camAngleX < 128) {
+			Client.camAngleX = 128;
 		}
 
-		if (Client.camAngleX * -951416237 > 383) {
-			Client.camAngleX = -744456539;
+		if (Client.camAngleX > 383) {
+			Client.camAngleX = 383;
 		}
 
 	}
 
 	@ObfuscatedName("jd")
 	@ObfuscatedSignature(
-		descriptor = "(IB)V",
-		garbageValue = "-76"
+		garbageValue = "-76",
+		descriptor = "(IB)V"
 	)
 	static final void method100(int var0) {
 		var0 = Math.min(Math.max(var0, 0), 255);
-		if (var0 != ClanMate.clientPreferences.method2222()) {
-			if (ClanMate.clientPreferences.method2222() == 0 && Client.currentTrackGroupId * 1972973853 != -1) {
-				class118.method2713(PacketBuffer.archive6, Client.currentTrackGroupId * 1972973853, 0, var0, false);
+		if (var0 != ClanMate.clientPreferences.method2157()) {
+			if (ClanMate.clientPreferences.method2157() == 0 && Client.currentTrackGroupId != -1) {
+				class118.method2648(PacketBuffer.archive6, Client.currentTrackGroupId, 0, var0, false);
 				Client.playingJingle = false;
 			} else if (var0 == 0) {
 				ItemContainer.midiPcmStream.clear();
-				class273.musicPlayerStatus = 168497391;
+				class273.musicPlayerStatus = 1;
 				NetFileRequest.musicTrackArchive = null;
 				Client.playingJingle = false;
-			} else if (class273.musicPlayerStatus * -1132323313 != 0) {
-				class28.musicTrackVolume = var0 * -536149201;
+			} else if (class273.musicPlayerStatus != 0) {
+				class28.musicTrackVolume = var0;
 			} else {
 				ItemContainer.midiPcmStream.setPcmStreamVolume(var0);
 			}
 
-			ClanMate.clientPreferences.method2224(var0);
+			ClanMate.clientPreferences.method2159(var0);
 		}
 
 	}

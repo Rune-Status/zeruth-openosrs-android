@@ -19,8 +19,8 @@ public class class65 {
 
 	@ObfuscatedName("dk")
 	@ObfuscatedSignature(
-		descriptor = "(B)Los;",
-		garbageValue = "55"
+		garbageValue = "55",
+		descriptor = "(B)Los;"
 	)
 	@Export("getWorldMap")
 	static WorldMap getWorldMap() {

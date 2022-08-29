@@ -42,6 +42,7 @@ public class Reflection {
 					classes.put(obfuscatedName.value(), clazz);
 				}
 			} catch (ClassNotFoundException ignore) {
+				ignore.printStackTrace();
 			}
 		}
 	}

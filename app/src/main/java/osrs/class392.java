@@ -27,10 +27,10 @@ public class class392 implements class397 {
 
 	@ObfuscatedName("s")
 	@ObfuscatedSignature(
-		descriptor = "(IB)I",
-		garbageValue = "-44"
+		garbageValue = "-44",
+		descriptor = "(IB)I"
 	)
-	public int method7008(int var1) {
-		return this.field4429.vmethod7381(var1);
+	public int method6905(int var1) {
+		return this.field4429.vmethod7278(var1);
 	}
 }

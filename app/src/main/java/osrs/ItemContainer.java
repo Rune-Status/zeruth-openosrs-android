@@ -2,6 +2,7 @@ package osrs;
 
 import net.runelite.mapping.Export;
 import net.runelite.mapping.Implements;
+import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
@@ -9,6 +10,9 @@ import net.runelite.mapping.ObfuscatedSignature;
 @Implements("ItemContainer")
 public class ItemContainer extends Node {
 	@ObfuscatedName("tp")
+	@ObfuscatedGetter(
+		intValue = 1271593503
+	)
 	static int field1003;
 	@ObfuscatedName("s")
 	@ObfuscatedSignature(

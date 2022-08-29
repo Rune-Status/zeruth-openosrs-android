@@ -2,6 +2,7 @@ package osrs;
 
 import java.util.concurrent.Future;
 import net.runelite.mapping.Export;
+import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
@@ -17,11 +18,15 @@ public class class19 {
 	@ObfuscatedSignature(
 		descriptor = "Lqe;"
 	)
-	static IndexedSprite field102;
+	@Export("titleboxSprite")
+	static IndexedSprite titleboxSprite;
 	@ObfuscatedName("y")
 	@Export("cacheSubPaths")
 	static String[] cacheSubPaths;
 	@ObfuscatedName("bi")
+	@ObfuscatedGetter(
+		intValue = 585170537
+	)
 	static int field100;
 	@ObfuscatedName("s")
 	Future field99;
@@ -38,8 +43,8 @@ public class class19 {
 
 	@ObfuscatedName("s")
 	@ObfuscatedSignature(
-		descriptor = "(Ljava/lang/String;I)V",
-		garbageValue = "985457165"
+		garbageValue = "985457165",
+		descriptor = "(Ljava/lang/String;I)V"
 	)
 	void method266(String var1) {
 		if (var1 == null) {
@@ -56,8 +61,8 @@ public class class19 {
 
 	@ObfuscatedName("h")
 	@ObfuscatedSignature(
-		descriptor = "(I)Ljava/lang/String;",
-		garbageValue = "2044467520"
+		garbageValue = "2044467520",
+		descriptor = "(I)Ljava/lang/String;"
 	)
 	public final String method283() {
 		return this.field98;
@@ -65,8 +70,8 @@ public class class19 {
 
 	@ObfuscatedName("w")
 	@ObfuscatedSignature(
-		descriptor = "(S)Z",
-		garbageValue = "9139"
+		garbageValue = "9139",
+		descriptor = "(S)Z"
 	)
 	public boolean method268() {
 		return this.field98 != null || this.field99 == null;
@@ -74,8 +79,8 @@ public class class19 {
 
 	@ObfuscatedName("v")
 	@ObfuscatedSignature(
-		descriptor = "(S)Z",
-		garbageValue = "5038"
+		garbageValue = "5038",
+		descriptor = "(S)Z"
 	)
 	public final boolean method269() {
 		return this.method268() ? true : this.field99.isDone();
@@ -83,8 +88,8 @@ public class class19 {
 
 	@ObfuscatedName("c")
 	@ObfuscatedSignature(
-		descriptor = "(I)Lx;",
-		garbageValue = "-865068999"
+		garbageValue = "-865068999",
+		descriptor = "(I)Lx;"
 	)
 	public final class21 method270() {
 		if (this.method268()) {
@@ -105,15 +110,15 @@ public class class19 {
 
 	@ObfuscatedName("s")
 	@ObfuscatedSignature(
-		descriptor = "(I)V",
-		garbageValue = "-1943707241"
+		garbageValue = "-1943707241",
+		descriptor = "(I)V"
 	)
 	static void method284() {
-		Tiles.Tiles_minPlane = -52032511;
+		Tiles.Tiles_minPlane = 99;
 		Tiles.Tiles_underlays = new byte[4][104][104];
 		Tiles.Tiles_overlays = new byte[4][104][104];
 		AbstractUserComparator.Tiles_shapes = new byte[4][104][104];
-		class59.field473 = new byte[4][104][104];
+		GrandExchangeOfferOwnWorldComparator.field473 = new byte[4][104][104];
 		class17.field92 = new int[4][105][105];
 		Tiles.field975 = new byte[4][105][105];
 		class135.field1587 = new int[105][105];
@@ -126,8 +131,8 @@ public class class19 {
 
 	@ObfuscatedName("h")
 	@ObfuscatedSignature(
-		descriptor = "(IB)Lpk;",
-		garbageValue = "-36"
+		garbageValue = "-36",
+		descriptor = "(IB)Lpk;"
 	)
 	public static class433 method285(int var0) {
 		int var1 = class431.field4649[var0];
@@ -142,8 +147,8 @@ public class class19 {
 
 	@ObfuscatedName("hu")
 	@ObfuscatedSignature(
-		descriptor = "(II)Z",
-		garbageValue = "1333042229"
+		garbageValue = "1333042229",
+		descriptor = "(II)Z"
 	)
 	static final boolean method265(int var0) {
 		if (var0 < 0) {

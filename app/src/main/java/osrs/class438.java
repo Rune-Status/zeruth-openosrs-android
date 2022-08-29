@@ -1,6 +1,7 @@
 package osrs;
 
 import net.runelite.mapping.Export;
+import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
@@ -28,6 +29,9 @@ public class class438 extends DualNode {
 	@ObfuscatedName("v")
 	int[][] field4681;
 	@ObfuscatedName("c")
+	@ObfuscatedGetter(
+		intValue = 1503762807
+	)
 	public int field4677;
 
 	static {
@@ -39,35 +43,35 @@ public class class438 extends DualNode {
 
 	@ObfuscatedName("w")
 	@ObfuscatedSignature(
-		descriptor = "(Lqr;B)V",
-		garbageValue = "0"
+		garbageValue = "0",
+		descriptor = "(Lqr;B)V"
 	)
-	void method7542(Buffer var1) {
+	void method7435(Buffer var1) {
 		while (true) {
 			int var2 = var1.readUnsignedByte();
 			if (var2 == 0) {
 				return;
 			}
 
-			this.method7543(var1, var2);
+			this.method7436(var1, var2);
 		}
 	}
 
 	@ObfuscatedName("v")
 	@ObfuscatedSignature(
-		descriptor = "(II)[Ljava/lang/Object;",
-		garbageValue = "1183170979"
+		garbageValue = "1183170979",
+		descriptor = "(II)[Ljava/lang/Object;"
 	)
-	public Object[] method7548(int var1) {
+	public Object[] method7441(int var1) {
 		return this.field4679 == null ? null : this.field4679[var1];
 	}
 
 	@ObfuscatedName("c")
 	@ObfuscatedSignature(
-		descriptor = "(Lqr;II)V",
-		garbageValue = "2146701023"
+		garbageValue = "2146701023",
+		descriptor = "(Lqr;II)V"
 	)
-	void method7543(Buffer var1, int var2) {
+	void method7436(Buffer var1, int var2) {
 		if (var2 == 3) {
 			int var3 = var1.readUnsignedByte();
 			if (this.field4679 == null) {
@@ -91,7 +95,7 @@ public class class438 extends DualNode {
 					for (int var13 = 0; var13 < var6.length; ++var13) {
 						int var14 = var13 + var6.length * var12;
 						class433 var15 = class19.method285(var6[var13]);
-						var11[var14] = var15.method7493(var1);
+						var11[var14] = var15.method7386(var1);
 					}
 				}
 
@@ -99,16 +103,16 @@ public class class438 extends DualNode {
 				this.field4681[var4] = var6;
 			}
 		} else if (var2 == 4) {
-			this.field4677 = var1.method7678() * 1608585287;
+			this.field4677 = var1.method7571();
 		}
 
 	}
 
 	@ObfuscatedName("q")
 	@ObfuscatedSignature(
-		descriptor = "(B)V",
-		garbageValue = "-57"
+		garbageValue = "-57",
+		descriptor = "(B)V"
 	)
-	void method7549() {
+	void method7442() {
 	}
 }

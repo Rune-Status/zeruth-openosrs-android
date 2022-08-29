@@ -2,6 +2,7 @@ package osrs;
 
 import net.runelite.mapping.Export;
 import net.runelite.mapping.Implements;
+import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
@@ -9,22 +10,38 @@ import net.runelite.mapping.ObfuscatedSignature;
 @Implements("Tile")
 public final class Tile extends Node {
 	@ObfuscatedName("to")
+	@ObfuscatedGetter(
+		intValue = 1625689069
+	)
 	static int field2309;
 	@ObfuscatedName("ey")
 	@ObfuscatedSignature(
 		descriptor = "Lln;"
 	)
-	static Archive field2333;
+	@Export("archive19")
+	static Archive archive19;
 	@ObfuscatedName("s")
+	@ObfuscatedGetter(
+		intValue = 310315191
+	)
 	@Export("plane")
 	int plane;
 	@ObfuscatedName("h")
+	@ObfuscatedGetter(
+		intValue = -1042449253
+	)
 	@Export("x")
 	int x;
 	@ObfuscatedName("w")
+	@ObfuscatedGetter(
+		intValue = 1729743891
+	)
 	@Export("y")
 	int y;
 	@ObfuscatedName("v")
+	@ObfuscatedGetter(
+		intValue = 1166615343
+	)
 	@Export("originalPlane")
 	int originalPlane;
 	@ObfuscatedName("c")
@@ -64,6 +81,9 @@ public final class Tile extends Node {
 	@Export("itemLayer")
 	ItemLayer itemLayer;
 	@ObfuscatedName("d")
+	@ObfuscatedGetter(
+		intValue = -586782739
+	)
 	@Export("gameObjectsCount")
 	int gameObjectsCount;
 	@ObfuscatedName("a")
@@ -76,9 +96,15 @@ public final class Tile extends Node {
 	@Export("gameObjectEdgeMasks")
 	int[] gameObjectEdgeMasks;
 	@ObfuscatedName("u")
+	@ObfuscatedGetter(
+		intValue = -1285794361
+	)
 	@Export("gameObjectsEdgeMask")
 	int gameObjectsEdgeMask;
 	@ObfuscatedName("l")
+	@ObfuscatedGetter(
+		intValue = 1656859021
+	)
 	@Export("minPlane")
 	int minPlane;
 	@ObfuscatedName("z")
@@ -88,14 +114,28 @@ public final class Tile extends Node {
 	@Export("drawSecondary")
 	boolean drawSecondary;
 	@ObfuscatedName("y")
-	boolean field2326;
+	@Export("drawGameObjects")
+	boolean drawGameObjects;
 	@ObfuscatedName("p")
-	int field2327;
+	@ObfuscatedGetter(
+		intValue = -356982793
+	)
+	@Export("drawGameObjectEdges")
+	int drawGameObjectEdges;
 	@ObfuscatedName("e")
+	@ObfuscatedGetter(
+		intValue = 1340907321
+	)
 	int field2328;
 	@ObfuscatedName("b")
+	@ObfuscatedGetter(
+		intValue = 1070411147
+	)
 	int field2329;
 	@ObfuscatedName("x")
+	@ObfuscatedGetter(
+		intValue = -661116225
+	)
 	int field2330;
 	@ObfuscatedName("f")
 	@ObfuscatedSignature(
@@ -108,17 +148,17 @@ public final class Tile extends Node {
 		this.gameObjects = new GameObject[5];
 		this.gameObjectEdgeMasks = new int[5];
 		this.gameObjectsEdgeMask = 0;
-		this.originalPlane = (this.plane = var1 * -26323705) * -1980944135;
-		this.x = var2 * 475007379;
-		this.y = var3 * -447357413;
+		this.originalPlane = this.plane = var1;
+		this.x = var2;
+		this.y = var3;
 	}
 
 	@ObfuscatedName("c")
 	@ObfuscatedSignature(
-		descriptor = "(IIIB)I",
-		garbageValue = "67"
+		garbageValue = "67",
+		descriptor = "(IIIB)I"
 	)
-	public static int method3935(int var0, int var1, int var2) {
+	public static int method3870(int var0, int var1, int var2) {
 		int var3 = class14.method171(var2 - var1 + 1);
 		var3 <<= var1;
 		var0 |= var3;
@@ -127,10 +167,10 @@ public final class Tile extends Node {
 
 	@ObfuscatedName("d")
 	@ObfuscatedSignature(
-		descriptor = "(Lls;IIB)Z",
-		garbageValue = "127"
+		garbageValue = "127",
+		descriptor = "(Lls;IIB)Z"
 	)
-	public static boolean method3937(AbstractArchive var0, int var1, int var2) {
+	public static boolean method3872(AbstractArchive var0, int var1, int var2) {
 		byte[] var3 = var0.takeFile(var1, var2);
 		if (var3 == null) {
 			return false;
@@ -142,10 +182,10 @@ public final class Tile extends Node {
 
 	@ObfuscatedName("a")
 	@ObfuscatedSignature(
-		descriptor = "(I)V",
-		garbageValue = "401867522"
+		garbageValue = "401867522",
+		descriptor = "(I)V"
 	)
-	static final void method3936() {
+	static final void method3871() {
 		if (!ViewportMouse.ViewportMouse_false0) {
 			int var0 = Scene.Scene_cameraPitchSine;
 			int var1 = Scene.Scene_cameraPitchCosine;
@@ -153,30 +193,30 @@ public final class Tile extends Node {
 			int var3 = Scene.Scene_cameraYawCosine;
 			byte var4 = 50;
 			short var5 = 3500;
-			int var6 = var4 * (ViewportMouse.ViewportMouse_x * 858842197 - Rasterizer3D.Rasterizer3D_clipMidX) / Rasterizer3D.Rasterizer3D_zoom;
-			int var7 = var4 * (ViewportMouse.ViewportMouse_y * 1382738033 - Rasterizer3D.Rasterizer3D_clipMidY) / Rasterizer3D.Rasterizer3D_zoom;
-			int var8 = var5 * (ViewportMouse.ViewportMouse_x * 858842197 - Rasterizer3D.Rasterizer3D_clipMidX) / Rasterizer3D.Rasterizer3D_zoom;
-			int var9 = var5 * (ViewportMouse.ViewportMouse_y * 1382738033 - Rasterizer3D.Rasterizer3D_clipMidY) / Rasterizer3D.Rasterizer3D_zoom;
-			int var10 = Rasterizer3D.method3944(var7, var4, var1, var0);
-			int var11 = Rasterizer3D.method3965(var7, var4, var1, var0);
+			int var6 = (ViewportMouse.ViewportMouse_x - Rasterizer3D.Rasterizer3D_clipMidX) * var4 / Rasterizer3D.Rasterizer3D_zoom;
+			int var7 = (ViewportMouse.ViewportMouse_y - Rasterizer3D.Rasterizer3D_clipMidY) * var4 / Rasterizer3D.Rasterizer3D_zoom;
+			int var8 = (ViewportMouse.ViewportMouse_x - Rasterizer3D.Rasterizer3D_clipMidX) * var5 / Rasterizer3D.Rasterizer3D_zoom;
+			int var9 = (ViewportMouse.ViewportMouse_y - Rasterizer3D.Rasterizer3D_clipMidY) * var5 / Rasterizer3D.Rasterizer3D_zoom;
+			int var10 = Rasterizer3D.method3879(var7, var4, var1, var0);
+			int var11 = Rasterizer3D.method3900(var7, var4, var1, var0);
 			var7 = var10;
-			var10 = Rasterizer3D.method3944(var9, var5, var1, var0);
-			int var12 = Rasterizer3D.method3965(var9, var5, var1, var0);
+			var10 = Rasterizer3D.method3879(var9, var5, var1, var0);
+			int var12 = Rasterizer3D.method3900(var9, var5, var1, var0);
 			var9 = var10;
-			var10 = Rasterizer3D.method3945(var6, var11, var3, var2);
-			var11 = Rasterizer3D.method3963(var6, var11, var3, var2);
+			var10 = Rasterizer3D.method3880(var6, var11, var3, var2);
+			var11 = Rasterizer3D.method3898(var6, var11, var3, var2);
 			var6 = var10;
-			var10 = Rasterizer3D.method3945(var8, var12, var3, var2);
-			var12 = Rasterizer3D.method3963(var8, var12, var3, var2);
-			class141.field1634 = (var10 + var6) / 2 * -1692523841;
-			ViewportMouse.field2593 = (var7 + var9) / 2 * -484717017;
-			class143.field1639 = (var12 + var11) / 2 * 1430130909;
-			SoundCache.field322 = (var10 - var6) / 2 * -1346705549;
-			WorldMapCacheName.field2870 = (var9 - var7) / 2 * -1015910613;
-			ViewportMouse.field2599 = (var12 - var11) / 2 * 826430055;
-			UrlRequest.field1355 = Math.abs(-1871604293 * SoundCache.field322) * -540668921;
-			class123.field1517 = Math.abs(-113453181 * WorldMapCacheName.field2870) * 1291840865;
-			class150.field1677 = Math.abs(191932759 * ViewportMouse.field2599) * 737438705;
+			var10 = Rasterizer3D.method3880(var8, var12, var3, var2);
+			var12 = Rasterizer3D.method3898(var8, var12, var3, var2);
+			class141.field1634 = (var10 + var6) / 2;
+			ViewportMouse.field2593 = (var7 + var9) / 2;
+			class143.field1639 = (var12 + var11) / 2;
+			SoundCache.field322 = (var10 - var6) / 2;
+			WorldMapCacheName.field2870 = (var9 - var7) / 2;
+			ViewportMouse.field2599 = (var12 - var11) / 2;
+			UrlRequest.field1355 = Math.abs(SoundCache.field322);
+			class123.field1517 = Math.abs(WorldMapCacheName.field2870);
+			class150.field1677 = Math.abs(ViewportMouse.field2599);
 		}
 	}
 }

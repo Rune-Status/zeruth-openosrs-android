@@ -14,8 +14,8 @@ public class class220 {
 
 	@ObfuscatedName("s")
 	@ObfuscatedSignature(
-		descriptor = "(I)[Lky;",
-		garbageValue = "-305511498"
+		garbageValue = "-795155736",
+		descriptor = "(I)[Lky;"
 	)
 	@Export("PlayerType_values")
 	public static PlayerType[] PlayerType_values() {
@@ -24,14 +24,14 @@ public class class220 {
 
 	@ObfuscatedName("h")
 	@ObfuscatedSignature(
-		descriptor = "(IIB)V",
-		garbageValue = "-23"
+		garbageValue = "-23",
+		descriptor = "(IIB)V"
 	)
-	public static void method4448(int var0, int var1) {
-		VarbitComposition var2 = class118.method2721(var0);
-		int var3 = var2.baseVar * 1045443253;
-		int var4 = var2.startBit * -683508103;
-		int var5 = var2.endBit * 705581509;
+	public static void method4382(int var0, int var1) {
+		VarbitComposition var2 = class118.method2656(var0);
+		int var3 = var2.baseVar;
+		int var4 = var2.startBit;
+		int var5 = var2.endBit;
 		int var6 = Varps.Varps_masks[var5 - var4];
 		if (var1 < 0 || var1 > var6) {
 			var1 = 0;

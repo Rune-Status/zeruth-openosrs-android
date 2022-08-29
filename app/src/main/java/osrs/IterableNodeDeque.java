@@ -75,14 +75,14 @@ public class IterableNodeDeque implements Iterable, Collection {
 	)
 	@Export("last")
 	public Node last() {
-		return this.method6094((Node)null);
+		return this.method6019((Node)null);
 	}
 
 	@ObfuscatedName("q")
 	@ObfuscatedSignature(
 		descriptor = "(Lon;)Lon;"
 	)
-	Node method6094(Node var1) {
+	Node method6019(Node var1) {
 		Node var2;
 		if (var1 == null) {
 			var2 = this.sentinel.previous;
@@ -116,7 +116,7 @@ public class IterableNodeDeque implements Iterable, Collection {
 	}
 
 	@ObfuscatedName("k")
-	int method6078() {
+	int method6004() {
 		int var1 = 0;
 
 		for (Node var2 = this.sentinel.previous; var2 != this.sentinel; var2 = var2.previous) {
@@ -127,7 +127,7 @@ public class IterableNodeDeque implements Iterable, Collection {
 	}
 
 	@ObfuscatedName("o")
-	public boolean method6073() {
+	public boolean method5999() {
 		return this.sentinel.previous == this.sentinel;
 	}
 
@@ -135,8 +135,8 @@ public class IterableNodeDeque implements Iterable, Collection {
 	@ObfuscatedSignature(
 		descriptor = "()[Lon;"
 	)
-	Node[] method6080() {
-		Node[] var1 = new Node[this.method6078()];
+	Node[] method6006() {
+		Node[] var1 = new Node[this.method6004()];
 		int var2 = 0;
 
 		for (Node var3 = this.sentinel.previous; var3 != this.sentinel; var3 = var3.previous) {
@@ -150,7 +150,7 @@ public class IterableNodeDeque implements Iterable, Collection {
 	@ObfuscatedSignature(
 		descriptor = "(Lon;)Z"
 	)
-	boolean method6138(Node var1) {
+	boolean method6063(Node var1) {
 		this.addFirst(var1);
 		return true;
 	}
@@ -160,7 +160,7 @@ public class IterableNodeDeque implements Iterable, Collection {
 	}
 
 	public int size() {
-		return this.method6078();
+		return this.method6004();
 	}
 
 	public boolean contains(Object var1) {
@@ -194,7 +194,7 @@ public class IterableNodeDeque implements Iterable, Collection {
 	}
 
 	public boolean add(Object var1) {
-		return this.method6138((Node)var1);
+		return this.method6063((Node)var1);
 	}
 
 	public boolean equals(Object var1) {
@@ -205,12 +205,16 @@ public class IterableNodeDeque implements Iterable, Collection {
 		return super.hashCode();
 	}
 
+	public int aca() {
+		return super.hashCode();
+	}
+
 	public boolean isEmpty() {
-		return this.method6073();
+		return this.method5999();
 	}
 
 	public Object[] toArray() {
-		return this.method6080();
+		return this.method6006();
 	}
 
 	public boolean remove(Object var1) {

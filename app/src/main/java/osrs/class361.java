@@ -21,19 +21,19 @@ class class361 implements Comparator {
 
 	@ObfuscatedName("s")
 	@ObfuscatedSignature(
-		descriptor = "(Lmi;Lmi;I)I",
-		garbageValue = "397999183"
+		garbageValue = "397999183",
+		descriptor = "(Lmi;Lmi;I)I"
 	)
-	int method6493(class363 var1, class363 var2) {
-		if (var1.field4270 * 8385483307841793077L > 8385483307841793077L * var2.field4270) {
+	int method6415(class363 var1, class363 var2) {
+		if (var1.field4270 > var2.field4270) {
 			return 1;
 		} else {
-			return 8385483307841793077L * var1.field4270 < var2.field4270 * 8385483307841793077L ? -1 : 0;
+			return var1.field4270 < var2.field4270 ? -1 : 0;
 		}
 	}
 
 	public int compare(Object var1, Object var2) {
-		return this.method6493((class363)var1, (class363)var2);
+		return this.method6415((class363)var1, (class363)var2);
 	}
 
 	public boolean equals(Object var1) {

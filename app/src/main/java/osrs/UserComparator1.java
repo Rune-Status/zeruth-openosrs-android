@@ -3,6 +3,7 @@ package osrs;
 import java.util.Comparator;
 import net.runelite.mapping.Export;
 import net.runelite.mapping.Implements;
+import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
@@ -10,6 +11,9 @@ import net.runelite.mapping.ObfuscatedSignature;
 @Implements("UserComparator1")
 public class UserComparator1 implements Comparator {
 	@ObfuscatedName("bs")
+	@ObfuscatedGetter(
+		intValue = -1330327021
+	)
 	static int field4765;
 	@ObfuscatedName("s")
 	@Export("reversed")
@@ -21,8 +25,8 @@ public class UserComparator1 implements Comparator {
 
 	@ObfuscatedName("s")
 	@ObfuscatedSignature(
-		descriptor = "(Lnb;Lnb;B)I",
-		garbageValue = "1"
+		garbageValue = "1",
+		descriptor = "(Lnb;Lnb;B)I"
 	)
 	@Export("compare_bridged")
 	int compare_bridged(User var1, User var2) {

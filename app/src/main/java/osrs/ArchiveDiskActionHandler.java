@@ -2,6 +2,7 @@ package osrs;
 
 import net.runelite.mapping.Export;
 import net.runelite.mapping.Implements;
+import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
@@ -21,12 +22,16 @@ public class ArchiveDiskActionHandler implements Runnable {
 	@Export("ArchiveDiskActionHandler_responseQueue")
 	public static NodeDeque ArchiveDiskActionHandler_responseQueue;
 	@ObfuscatedName("w")
+	@ObfuscatedGetter(
+		intValue = -2145355515
+	)
 	public static int field3970;
 	@ObfuscatedName("v")
 	@Export("ArchiveDiskActionHandler_lock")
 	public static Object ArchiveDiskActionHandler_lock;
 	@ObfuscatedName("c")
-	static Thread field3972;
+	@Export("ArchiveDiskActionHandler_thread")
+	static Thread ArchiveDiskActionHandler_thread;
 
 	static {
 		ArchiveDiskActionHandler_requestQueue = new NodeDeque();
@@ -47,12 +52,12 @@ public class ArchiveDiskActionHandler implements Runnable {
 				}
 
 				if (var1 != null) {
-					if (var1.type * -1360611527 == 0) {
+					if (var1.type == 0) {
 						var1.archiveDisk.write((int)var1.key, var1.data, var1.data.length);
 						synchronized(ArchiveDiskActionHandler_requestQueue) {
 							var1.remove();
 						}
-					} else if (var1.type * -1360611527 == 1) {
+					} else if (var1.type == 1) {
 						var1.data = var1.archiveDisk.read((int)var1.key);
 						synchronized(ArchiveDiskActionHandler_requestQueue) {
 							ArchiveDiskActionHandler_responseQueue.addFirst(var1);
@@ -60,24 +65,24 @@ public class ArchiveDiskActionHandler implements Runnable {
 					}
 
 					synchronized(ArchiveDiskActionHandler_lock) {
-						if (field3970 * -2145355515 <= 1) {
+						if (field3970 <= 1) {
 							field3970 = 0;
 							ArchiveDiskActionHandler_lock.notifyAll();
 							return;
 						}
 
-						field3970 = -1431525256;
+						field3970 = 600;
 					}
 				} else {
-					class144.method3006(100L);
+					class144.method2941(100L);
 					synchronized(ArchiveDiskActionHandler_lock) {
-						if (field3970 * -2145355515 <= 1) {
+						if (field3970 <= 1) {
 							field3970 = 0;
 							ArchiveDiskActionHandler_lock.notifyAll();
 							return;
 						}
 
-						field3970 -= -1713214515;
+						--field3970;
 					}
 				}
 			}
@@ -88,8 +93,8 @@ public class ArchiveDiskActionHandler implements Runnable {
 
 	@ObfuscatedName("w")
 	@ObfuscatedSignature(
-		descriptor = "(II)[B",
-		garbageValue = "2006927330"
+		garbageValue = "2006927330",
+		descriptor = "(II)[B"
 	)
 	@Export("ByteArrayPool_getArray")
 	public static synchronized byte[] ByteArrayPool_getArray(int var0) {
@@ -98,10 +103,10 @@ public class ArchiveDiskActionHandler implements Runnable {
 
 	@ObfuscatedName("a")
 	@ObfuscatedSignature(
-		descriptor = "(Lls;II)Z",
-		garbageValue = "853644846"
+		garbageValue = "853644846",
+		descriptor = "(Lls;II)Z"
 	)
-	static boolean method5708(AbstractArchive var0, int var1) {
+	static boolean method5637(AbstractArchive var0, int var1) {
 		byte[] var2 = var0.takeFileFlat(var1);
 		if (var2 == null) {
 			return false;

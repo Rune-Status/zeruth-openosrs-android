@@ -1,6 +1,7 @@
 package osrs;
 
 import net.runelite.mapping.Export;
+import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
@@ -13,6 +14,9 @@ public class class137 extends class128 {
 	@Export("ItemDefinition_fontPlain11")
 	static Font ItemDefinition_fontPlain11;
 	@ObfuscatedName("ig")
+	@ObfuscatedGetter(
+		intValue = -146328941
+	)
 	static int field1593;
 	@ObfuscatedName("s")
 	String field1591;
@@ -31,27 +35,27 @@ public class class137 extends class128 {
 
 	@ObfuscatedName("s")
 	@ObfuscatedSignature(
-		descriptor = "(Lqr;I)V",
-		garbageValue = "-885940784"
+		garbageValue = "-885940784",
+		descriptor = "(Lqr;I)V"
 	)
-	void vmethod3087(Buffer var1) {
+	void vmethod3022(Buffer var1) {
 		this.field1591 = var1.readStringCp1252NullTerminated();
 		var1.readInt();
 	}
 
 	@ObfuscatedName("h")
 	@ObfuscatedSignature(
-		descriptor = "(Leh;B)V",
-		garbageValue = "0"
+		garbageValue = "0",
+		descriptor = "(Leh;B)V"
 	)
-	void vmethod3084(ClanSettings var1) {
+	void vmethod3019(ClanSettings var1) {
 		var1.name = this.field1591;
 	}
 
 	@ObfuscatedName("v")
 	@ObfuscatedSignature(
-		descriptor = "(IIIIB)V",
-		garbageValue = "-96"
+		garbageValue = "-96",
+		descriptor = "(IIIIB)V"
 	)
 	@Export("itemContainerSetItem")
 	static void itemContainerSetItem(int var0, int var1, int var2, int var3) {

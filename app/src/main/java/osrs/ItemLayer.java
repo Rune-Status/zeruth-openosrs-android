@@ -2,6 +2,7 @@ package osrs;
 
 import net.runelite.mapping.Export;
 import net.runelite.mapping.Implements;
+import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
@@ -9,12 +10,21 @@ import net.runelite.mapping.ObfuscatedSignature;
 @Implements("ItemLayer")
 public final class ItemLayer {
 	@ObfuscatedName("s")
+	@ObfuscatedGetter(
+		intValue = 1634075517
+	)
 	@Export("z")
 	int z;
 	@ObfuscatedName("h")
+	@ObfuscatedGetter(
+		intValue = -302907033
+	)
 	@Export("x")
 	int x;
 	@ObfuscatedName("w")
+	@ObfuscatedGetter(
+		intValue = 1448377563
+	)
 	@Export("y")
 	int y;
 	@ObfuscatedName("v")
@@ -36,9 +46,15 @@ public final class ItemLayer {
 	@Export("third")
 	Renderable third;
 	@ObfuscatedName("i")
+	@ObfuscatedGetter(
+		longValue = -8670153185654999153L
+	)
 	@Export("tag")
 	long tag;
 	@ObfuscatedName("k")
+	@ObfuscatedGetter(
+		intValue = 691025921
+	)
 	@Export("height")
 	int height;
 
@@ -56,6 +72,7 @@ public final class ItemLayer {
 			var2 = (RunException)var0;
 			var2.message = var2.message + ' ' + var1;
 		} else {
+			var0.printStackTrace();
 			var2 = new RunException(var0, var1);
 		}
 
@@ -64,10 +81,10 @@ public final class ItemLayer {
 
 	@ObfuscatedName("h")
 	@ObfuscatedSignature(
-		descriptor = "([FIFI)F",
-		garbageValue = "-2065416187"
+		garbageValue = "-2065416187",
+		descriptor = "([FIFI)F"
 	)
-	static float method3821(float[] var0, int var1, float var2) {
+	static float method3756(float[] var0, int var1, float var2) {
 		float var3 = var0[var1];
 
 		for (int var4 = var1 - 1; var4 >= 0; --var4) {

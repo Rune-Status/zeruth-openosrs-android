@@ -3,11 +3,12 @@ package osrs;
 import java.io.File;
 import java.io.IOException;
 import net.runelite.mapping.Export;
+import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
 @ObfuscatedName("pk")
-public class class433 implements class328 {
+public class class433 implements MouseWheel {
 	@ObfuscatedName("s")
 	@ObfuscatedSignature(
 		descriptor = "Lpk;"
@@ -30,8 +31,14 @@ public class class433 implements class328 {
 	@Export("clock")
 	static Clock clock;
 	@ObfuscatedName("v")
+	@ObfuscatedGetter(
+		intValue = -432754423
+	)
 	public final int field4657;
 	@ObfuscatedName("c")
+	@ObfuscatedGetter(
+		intValue = -132270883
+	)
 	public final int field4658;
 	@ObfuscatedName("q")
 	public final Class field4656;
@@ -51,46 +58,46 @@ public class class433 implements class328 {
 		descriptor = "(IILjava/lang/Class;Lpo;)V"
 	)
 	class433(int var1, int var2, Class var3, class429 var4) {
-		this.field4657 = var1 * 427175225;
-		this.field4658 = var2 * 298369909;
+		this.field4657 = var1;
+		this.field4658 = var2;
 		this.field4656 = var3;
 		this.field4654 = var4;
 	}
 
 	@ObfuscatedName("h")
 	@ObfuscatedSignature(
-		descriptor = "(B)I",
-		garbageValue = "104"
+		garbageValue = "104",
+		descriptor = "(B)I"
 	)
 	@Export("rsOrdinal")
 	public int rsOrdinal() {
-		return this.field4658 * -132270883;
+		return this.field4658;
 	}
 
 	@ObfuscatedName("i")
 	@ObfuscatedSignature(
-		descriptor = "(Lqr;I)Ljava/lang/Object;",
-		garbageValue = "2145801451"
+		garbageValue = "1982464134",
+		descriptor = "(Lqr;I)Ljava/lang/Object;"
 	)
-	public Object method7493(Buffer var1) {
-		return this.field4654.vmethod7514(var1);
+	public Object method7386(Buffer var1) {
+		return this.field4654.vmethod7407(var1);
 	}
 
 	@ObfuscatedName("s")
 	@ObfuscatedSignature(
-		descriptor = "(B)[Lpk;",
-		garbageValue = "56"
+		garbageValue = "103",
+		descriptor = "(B)[Lpk;"
 	)
-	public static class433[] method7494() {
+	public static class433[] method7387() {
 		return new class433[]{field4659, field4653, field4655};
 	}
 
 	@ObfuscatedName("s")
 	@ObfuscatedSignature(
-		descriptor = "(III)I",
-		garbageValue = "1615573183"
+		garbageValue = "1615573183",
+		descriptor = "(III)I"
 	)
-	static int method7491(int var0, int var1) {
+	static int method7384(int var0, int var1) {
 		ItemContainer var2 = (ItemContainer)ItemContainer.itemContainers.get((long)var0);
 		if (var2 == null) {
 			return -1;
@@ -101,11 +108,11 @@ public class class433 implements class328 {
 
 	@ObfuscatedName("w")
 	@ObfuscatedSignature(
-		descriptor = "(Ljava/lang/Class;I)Lpk;",
-		garbageValue = "855089675"
+		garbageValue = "855089675",
+		descriptor = "(Ljava/lang/Class;I)Lpk;"
 	)
-	public static class433 method7490(Class var0) {
-		class433[] var1 = method7494();
+	public static class433 method7383(Class var0) {
+		class433[] var1 = method7387();
 
 		for (int var2 = 0; var2 < var1.length; ++var2) {
 			class433 var3 = var1[var2];
@@ -119,8 +126,8 @@ public class class433 implements class328 {
 
 	@ObfuscatedName("v")
 	@ObfuscatedSignature(
-		descriptor = "(Ljava/lang/String;Ljava/lang/String;ZB)Lpn;",
-		garbageValue = "9"
+		garbageValue = "9",
+		descriptor = "(Ljava/lang/String;Ljava/lang/String;ZB)Lpn;"
 	)
 	@Export("getPreferencesFile")
 	public static AccessFile getPreferencesFile(String var0, String var1, boolean var2) {
@@ -134,9 +141,9 @@ public class class433 implements class328 {
 		}
 
 		String var4 = "";
-		if (class340.cacheGamebuild * 51853259 == 33) {
+		if (class340.cacheGamebuild == 33) {
 			var4 = "_rc";
-		} else if (class340.cacheGamebuild * 51853259 == 34) {
+		} else if (class340.cacheGamebuild == 34) {
 			var4 = "_wip";
 		}
 
@@ -160,11 +167,11 @@ public class class433 implements class328 {
 
 	@ObfuscatedName("v")
 	@ObfuscatedSignature(
-		descriptor = "(Ljava/lang/Class;I)Lpo;",
-		garbageValue = "482185445"
+		garbageValue = "482185445",
+		descriptor = "(Ljava/lang/Class;I)Lpo;"
 	)
-	public static class429 method7504(Class var0) {
-		class433 var1 = method7490(var0);
+	public static class429 method7397(Class var0) {
+		class433 var1 = method7383(var0);
 		if (var1 == null) {
 			throw new IllegalArgumentException();
 		} else {
@@ -174,11 +181,11 @@ public class class433 implements class328 {
 
 	@ObfuscatedName("u")
 	@ObfuscatedSignature(
-		descriptor = "(IIB)I",
-		garbageValue = "-68"
+		garbageValue = "-68",
+		descriptor = "(IIB)I"
 	)
-	static final int method7492(int var0, int var1) {
-		int var2 = ViewportMouse.method4395(var0 + 45365, var1 + 91923, 4) - 128 + (ViewportMouse.method4395(var0 + 10294, var1 + 37821, 2) - 128 >> 1) + (ViewportMouse.method4395(var0, var1, 1) - 128 >> 2);
+	static final int method7385(int var0, int var1) {
+		int var2 = ViewportMouse.method4330(var0 + 45365, var1 + 91923, 4) - 128 + (ViewportMouse.method4330(var0 + 10294, var1 + 37821, 2) - 128 >> 1) + (ViewportMouse.method4330(var0, var1, 1) - 128 >> 2);
 		var2 = (int)((double)var2 * 0.3D) + 35;
 		if (var2 < 10) {
 			var2 = 10;
@@ -191,28 +198,28 @@ public class class433 implements class328 {
 
 	@ObfuscatedName("ih")
 	@ObfuscatedSignature(
-		descriptor = "(IIIIIB)V",
-		garbageValue = "37"
+		garbageValue = "37",
+		descriptor = "(IIIIIB)V"
 	)
 	@Export("drawScrollBar")
 	static final void drawScrollBar(int var0, int var1, int var2, int var3, int var4) {
 		InterfaceParent.scrollBarSprites[0].drawAt(var0, var1);
 		InterfaceParent.scrollBarSprites[1].drawAt(var0, var3 + var1 - 16);
-		Rasterizer2D.Rasterizer2D_fillRectangle(var0, var1 + 16, 16, var3 - 32, Client.field667 * 1298457529);
+		Rasterizer2D.Rasterizer2D_fillRectangle(var0, var1 + 16, 16, var3 - 32, Client.field667);
 		int var5 = var3 * (var3 - 32) / var4;
 		if (var5 < 8) {
 			var5 = 8;
 		}
 
 		int var6 = (var3 - 32 - var5) * var2 / (var4 - var3);
-		Rasterizer2D.Rasterizer2D_fillRectangle(var0, var6 + var1 + 16, 16, var5, Client.field624 * 1605755819);
-		Rasterizer2D.method7975(var0, var6 + var1 + 16, var5, Client.field537 * 642170495);
-		Rasterizer2D.method7975(var0 + 1, var6 + var1 + 16, var5, Client.field537 * 642170495);
-		Rasterizer2D.method7967(var0, var6 + var1 + 16, 16, Client.field537 * 642170495);
-		Rasterizer2D.method7967(var0, var6 + var1 + 17, 16, Client.field537 * 642170495);
-		Rasterizer2D.method7975(var0 + 15, var6 + var1 + 16, var5, Client.field552 * -892944389);
-		Rasterizer2D.method7975(var0 + 14, var6 + var1 + 17, var5 - 1, Client.field552 * -892944389);
-		Rasterizer2D.method7967(var0, var5 + var6 + var1 + 15, 16, Client.field552 * -892944389);
-		Rasterizer2D.method7967(var0 + 1, var6 + var5 + var1 + 14, 15, Client.field552 * -892944389);
+		Rasterizer2D.Rasterizer2D_fillRectangle(var0, var6 + var1 + 16, 16, var5, Client.field624);
+		Rasterizer2D.method7867(var0, var6 + var1 + 16, var5, Client.field537);
+		Rasterizer2D.method7867(var0 + 1, var6 + var1 + 16, var5, Client.field537);
+		Rasterizer2D.method7859(var0, var6 + var1 + 16, 16, Client.field537);
+		Rasterizer2D.method7859(var0, var6 + var1 + 17, 16, Client.field537);
+		Rasterizer2D.method7867(var0 + 15, var6 + var1 + 16, var5, Client.field552);
+		Rasterizer2D.method7867(var0 + 14, var6 + var1 + 17, var5 - 1, Client.field552);
+		Rasterizer2D.method7859(var0, var5 + var6 + var1 + 15, 16, Client.field552);
+		Rasterizer2D.method7859(var0 + 1, var6 + var5 + var1 + 14, 15, Client.field552);
 	}
 }

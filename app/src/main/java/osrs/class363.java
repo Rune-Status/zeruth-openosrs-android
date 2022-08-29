@@ -1,5 +1,6 @@
 package osrs;
 
+import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
@@ -10,8 +11,14 @@ public final class class363 implements Comparable {
 	@ObfuscatedName("h")
 	Object field4271;
 	@ObfuscatedName("w")
+	@ObfuscatedGetter(
+		longValue = 8385483307841793077L
+	)
 	long field4270;
 	@ObfuscatedName("v")
+	@ObfuscatedGetter(
+		longValue = -6217609528511420767L
+	)
 	long field4273;
 
 	class363(Object var1, Object var2) {
@@ -21,14 +28,14 @@ public final class class363 implements Comparable {
 
 	@ObfuscatedName("s")
 	@ObfuscatedSignature(
-		descriptor = "(Lmi;S)I",
-		garbageValue = "-16641"
+		garbageValue = "-16641",
+		descriptor = "(Lmi;S)I"
 	)
-	int method6513(class363 var1) {
-		if (this.field4273 * -6217609528511420767L < -6217609528511420767L * var1.field4273) {
+	int method6435(class363 var1) {
+		if (this.field4273 < var1.field4273) {
 			return -1;
 		} else {
-			return this.field4273 * -6217609528511420767L > var1.field4273 * -6217609528511420767L ? 1 : 0;
+			return this.field4273 > var1.field4273 ? 1 : 0;
 		}
 	}
 
@@ -41,10 +48,14 @@ public final class class363 implements Comparable {
 	}
 
 	public int compareTo(Object var1) {
-		return this.method6513((class363)var1);
+		return this.method6435((class363)var1);
 	}
 
 	public int hashCode() {
+		return this.field4271.hashCode();
+	}
+
+	public int aca() {
 		return this.field4271.hashCode();
 	}
 }

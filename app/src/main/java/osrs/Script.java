@@ -3,6 +3,7 @@ package osrs;
 import java.security.SecureRandom;
 import net.runelite.mapping.Export;
 import net.runelite.mapping.Implements;
+import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
@@ -19,7 +20,8 @@ public class Script extends DualNode {
 	@ObfuscatedSignature(
 		descriptor = "Lap;"
 	)
-	public static SoundCache field955;
+	@Export("soundCache")
+	public static SoundCache soundCache;
 	@ObfuscatedName("h")
 	String field952;
 	@ObfuscatedName("w")
@@ -32,15 +34,27 @@ public class Script extends DualNode {
 	@Export("stringOperands")
 	String[] stringOperands;
 	@ObfuscatedName("q")
+	@ObfuscatedGetter(
+		intValue = -2052154599
+	)
 	@Export("localIntCount")
 	int localIntCount;
 	@ObfuscatedName("i")
+	@ObfuscatedGetter(
+		intValue = -470503423
+	)
 	@Export("localStringCount")
 	int localStringCount;
 	@ObfuscatedName("k")
+	@ObfuscatedGetter(
+		intValue = 303491303
+	)
 	@Export("intArgumentCount")
 	int intArgumentCount;
 	@ObfuscatedName("o")
+	@ObfuscatedGetter(
+		intValue = -130768209
+	)
 	@Export("stringArgumentCount")
 	int stringArgumentCount;
 	@ObfuscatedName("n")
@@ -59,8 +73,8 @@ public class Script extends DualNode {
 
 	@ObfuscatedName("c")
 	@ObfuscatedSignature(
-		descriptor = "(II)[Lpm;",
-		garbageValue = "2079737321"
+		garbageValue = "2079737321",
+		descriptor = "(II)[Lpm;"
 	)
 	@Export("newIterableNodeHashTable")
 	IterableNodeHashTable[] newIterableNodeHashTable(int var1) {
@@ -69,10 +83,10 @@ public class Script extends DualNode {
 
 	@ObfuscatedName("w")
 	@ObfuscatedSignature(
-		descriptor = "(I)Ljava/security/SecureRandom;",
-		garbageValue = "420841235"
+		garbageValue = "420841235",
+		descriptor = "(I)Ljava/security/SecureRandom;"
 	)
-	static SecureRandom method1936() {
+	static SecureRandom method1871() {
 		SecureRandom var0 = new SecureRandom();
 		var0.nextInt();
 		return var0;
@@ -80,10 +94,10 @@ public class Script extends DualNode {
 
 	@ObfuscatedName("v")
 	@ObfuscatedSignature(
-		descriptor = "([BIIII[Lgl;I)V",
-		garbageValue = "1817853304"
+		garbageValue = "1817853304",
+		descriptor = "([BIIII[Lgl;I)V"
 	)
-	static final void method1948(byte[] var0, int var1, int var2, int var3, int var4, CollisionMap[] var5) {
+	static final void method1883(byte[] var0, int var1, int var2, int var3, int var4, CollisionMap[] var5) {
 		int var7;
 		int var8;
 		for (int var6 = 0; var6 < 4; ++var6) {
@@ -111,22 +125,22 @@ public class Script extends DualNode {
 
 	@ObfuscatedName("ad")
 	@ObfuscatedSignature(
-		descriptor = "(ILbz;ZI)I",
-		garbageValue = "2024494547"
+		garbageValue = "2024494547",
+		descriptor = "(ILbz;ZI)I"
 	)
-	static int method1947(int var0, Script var1, boolean var2) {
+	static int method1882(int var0, Script var1, boolean var2) {
 		if (var0 == 5630) {
-			Client.logoutTimer = -1760852066;
+			Client.logoutTimer = 250;
 			return 1;
 		} else if (var0 != 5631 && var0 != 5633) {
 			if (var0 == 5632) {
-				Interpreter.Interpreter_intStack[(User.Interpreter_intStackSize += -312486675) * -313022235 - 1] = 26;
+				Interpreter.Interpreter_intStack[++User.Interpreter_intStackSize - 1] = 26;
 				return 1;
 			} else {
 				return 2;
 			}
 		} else {
-			UserComparator8.Interpreter_stringStackSize -= 409659618;
+			UserComparator8.Interpreter_stringStackSize -= 2;
 			return 1;
 		}
 	}

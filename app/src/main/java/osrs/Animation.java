@@ -58,11 +58,11 @@ public class Animation {
 		this.skeleton = var2;
 		Buffer var3 = new Buffer(var1);
 		Buffer var4 = new Buffer(var1);
-		var3.offset = -2113189314;
+		var3.offset = 2;
 		int var5 = var3.readUnsignedByte();
 		int var6 = -1;
 		int var7 = 0;
-		var4.offset = (var3.offset * 1795921631 + var5) * 1090888991;
+		var4.offset = var5 + var3.offset;
 
 		int var8;
 		for (var8 = 0; var8 < var5; ++var8) {
@@ -113,7 +113,7 @@ public class Animation {
 			}
 		}
 
-		if (var1.length != var4.offset * 1795921631) {
+		if (var1.length != var4.offset) {
 			throw new RuntimeException();
 		} else {
 			this.transformCount = var7;

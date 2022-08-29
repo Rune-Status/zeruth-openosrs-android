@@ -1,11 +1,12 @@
 package osrs;
 
 import net.runelite.mapping.Export;
+import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
 @ObfuscatedName("dg")
-public enum class116 implements class328 {
+public enum class116 implements MouseWheel {
 	@ObfuscatedName("s")
 	@ObfuscatedSignature(
 		descriptor = "Ldg;"
@@ -33,68 +34,74 @@ public enum class116 implements class328 {
 	field1432(4, 4);
 
 	@ObfuscatedName("q")
+	@ObfuscatedGetter(
+		intValue = -468392523
+	)
 	final int field1430;
 	@ObfuscatedName("i")
+	@ObfuscatedGetter(
+		intValue = -2081257831
+	)
 	final int field1429;
 
 	class116(int var3, int var4) {
-		this.field1430 = var3 * 1407623325;
-		this.field1429 = var4 * -1979290199;
+		this.field1430 = var3;
+		this.field1429 = var4;
 	}
 
 	@ObfuscatedName("h")
 	@ObfuscatedSignature(
-		descriptor = "(B)I",
-		garbageValue = "104"
+		garbageValue = "104",
+		descriptor = "(B)I"
 	)
 	@Export("rsOrdinal")
 	public int rsOrdinal() {
-		return this.field1429 * -2081257831;
+		return this.field1429;
 	}
 
 	@ObfuscatedName("e")
 	@ObfuscatedSignature(
-		descriptor = "(II)V",
-		garbageValue = "-500725143"
+		garbageValue = "-500725143",
+		descriptor = "(II)V"
 	)
-	static void method2683(int var0) {
-		if (Login.loginIndex * 1607677011 != var0) {
-			Login.loginIndex = var0 * 445460443;
+	static void method2618(int var0) {
+		if (var0 != Login.loginIndex) {
+			Login.loginIndex = var0;
 		}
 	}
 
 	@ObfuscatedName("ew")
 	@ObfuscatedSignature(
-		descriptor = "(I)V",
-		garbageValue = "-1765352582"
+		garbageValue = "-1765352582",
+		descriptor = "(I)V"
 	)
-	static final void method2678() {
-		VarpDefinition.method3288();
+	static final void method2613() {
+		VarpDefinition.method3223();
 		FloorUnderlayDefinition.FloorUnderlayDefinition_cached.clear();
-		UserComparator4.method2535();
-		class114.method2637();
-		class145.method3021();
-		class120.method2734();
+		UserComparator4.method2470();
+		class114.method2572();
+		class145.method2956();
+		class120.method2669();
 		SequenceDefinition.SequenceDefinition_cached.clear();
 		SequenceDefinition.SequenceDefinition_cachedFrames.clear();
 		SequenceDefinition.SequenceDefinition_cachedModel.clear();
 		SpotAnimationDefinition.SpotAnimationDefinition_cached.clear();
 		SpotAnimationDefinition.SpotAnimationDefinition_cachedModels.clear();
-		class101.method2502();
+		class101.method2437();
 		VarpDefinition.VarpDefinition_cached.clear();
-		class290.HitSplatDefinition_cachedSprites.method7444();
-		Bounds.HitSplatDefinition_cached.method7444();
-		class149.method3062();
+		class290.HitSplatDefinition_cachedSprites.method7337();
+		Bounds.HitSplatDefinition_cached.method7337();
+		class149.method2997();
 		HealthBarDefinition.HealthBarDefinition_cached.clear();
 		HealthBarDefinition.HealthBarDefinition_cachedSprites.clear();
-		Tiles.method2022();
+		Tiles.method1957();
 		ParamComposition.ParamDefinition_cached.clear();
 		WorldMapElement.WorldMapElement_cachedSprites.clear();
-		Occluder.method4237();
-		class309.method5690();
+		Occluder.method4172();
+		class309.method5619();
 		Client.Widget_cachedModels.clear();
 		Client.Widget_cachedFonts.clear();
-		VarpDefinition.method3284();
+		VarpDefinition.method3219();
 		Widget.Widget_cachedSprites.clear();
 		Widget.Widget_cachedModels.clear();
 		Widget.Widget_cachedFonts.clear();
@@ -118,133 +125,124 @@ public enum class116 implements class328 {
 
 	@ObfuscatedName("fs")
 	@ObfuscatedSignature(
-		descriptor = "(I)I",
-		garbageValue = "-2085207398"
+		garbageValue = "-2085207398",
+		descriptor = "(I)I"
 	)
-	static final int method2682() {
-		if (ClanMate.clientPreferences.method2209()) {
-			return class268.Client_plane * 1083786667;
+	static final int method2617() {
+		if (ClanMate.clientPreferences.method2144()) {
+			return class268.Client_plane;
 		} else {
 			int var0 = 3;
-			if (class82.field1068 * 363781995 < 310) {
-				label164: {
-					int var1;
-					int var2;
-					if (Client.oculusOrbState * 33319765 == 1) {
-						var1 = FloorOverlayDefinition.field2155 * -214209769 >> 7;
-						var2 = AbstractUserComparator.field4308 * 1435916161 >> 7;
-					} else {
-						var1 = class56.localPlayer.x * 1627221919 >> 7;
-						var2 = class56.localPlayer.y * 1229064101 >> 7;
-					}
+			if (class82.cameraPitch < 310) {
+				int var1;
+				int var2;
+				if (Client.oculusOrbState * 33319765 == 1) {
+					var1 = FloorOverlayDefinition.oculusOrbFocalPointX >> 7;
+					var2 = AbstractUserComparator.oculusOrbFocalPointY >> 7;
+				} else {
+					var1 = ScriptFrame.localPlayer.x >> 7;
+					var2 = ScriptFrame.localPlayer.y >> 7;
+				}
 
-					int var3 = class16.field88 * -1423106171 >> 7;
-					int var4 = class269.field3179 * -675391155 >> 7;
-					if (var3 >= 0 && var4 >= 0 && var3 < 104 && var4 < 104) {
-						if (var1 >= 0 && var2 >= 0 && var1 < 104 && var2 < 104) {
-							if ((Tiles.Tiles_renderFlags[class268.Client_plane * 1083786667][var3][var4] & 4) != 0) {
-								var0 = class268.Client_plane * 1083786667;
-							}
+				int var3 = class16.cameraX >> 7;
+				int var4 = class269.cameraZ >> 7;
+				if (var3 < 0 || var4 < 0 || var3 >= 104 || var4 >= 104) {
+					return class268.Client_plane;
+				}
 
-							int var5;
-							if (var1 > var3) {
-								var5 = var1 - var3;
-							} else {
-								var5 = var3 - var1;
-							}
+				if (var1 < 0 || var2 < 0 || var1 >= 104 || var2 >= 104) {
+					return class268.Client_plane;
+				}
 
-							int var6;
-							if (var2 > var4) {
-								var6 = var2 - var4;
-							} else {
-								var6 = var4 - var2;
-							}
+				if ((Tiles.Tiles_renderFlags[class268.Client_plane][var3][var4] & 4) != 0) {
+					var0 = class268.Client_plane;
+				}
 
-							int var7;
-							int var8;
-							if (var5 > var6) {
-								var7 = var6 * 65536 / var5;
-								var8 = 32768;
+				int var5;
+				if (var1 > var3) {
+					var5 = var1 - var3;
+				} else {
+					var5 = var3 - var1;
+				}
 
-								while (true) {
-									if (var1 == var3) {
-										break label164;
-									}
+				int var6;
+				if (var2 > var4) {
+					var6 = var2 - var4;
+				} else {
+					var6 = var4 - var2;
+				}
 
-									if (var3 < var1) {
-										++var3;
-									} else if (var3 > var1) {
-										--var3;
-									}
+				int var7;
+				int var8;
+				if (var5 > var6) {
+					var7 = var6 * 65536 / var5;
+					var8 = 32768;
 
-									if ((Tiles.Tiles_renderFlags[class268.Client_plane * 1083786667][var3][var4] & 4) != 0) {
-										var0 = class268.Client_plane * 1083786667;
-									}
-
-									var8 += var7;
-									if (var8 >= 65536) {
-										var8 -= 65536;
-										if (var4 < var2) {
-											++var4;
-										} else if (var4 > var2) {
-											--var4;
-										}
-
-										if ((Tiles.Tiles_renderFlags[class268.Client_plane * 1083786667][var3][var4] & 4) != 0) {
-											var0 = class268.Client_plane * 1083786667;
-										}
-									}
-								}
-							} else {
-								if (var6 > 0) {
-									var7 = var5 * 65536 / var6;
-									var8 = 32768;
-
-									while (var2 != var4) {
-										if (var4 < var2) {
-											++var4;
-										} else if (var4 > var2) {
-											--var4;
-										}
-
-										if ((Tiles.Tiles_renderFlags[class268.Client_plane * 1083786667][var3][var4] & 4) != 0) {
-											var0 = class268.Client_plane * 1083786667;
-										}
-
-										var8 += var7;
-										if (var8 >= 65536) {
-											var8 -= 65536;
-											if (var3 < var1) {
-												++var3;
-											} else if (var3 > var1) {
-												--var3;
-											}
-
-											if ((Tiles.Tiles_renderFlags[class268.Client_plane * 1083786667][var3][var4] & 4) != 0) {
-												var0 = class268.Client_plane * 1083786667;
-											}
-										}
-									}
-								}
-								break label164;
-							}
+					while (var1 != var3) {
+						if (var3 < var1) {
+							++var3;
+						} else if (var3 > var1) {
+							--var3;
 						}
 
-						return class268.Client_plane * 1083786667;
-					}
+						if ((Tiles.Tiles_renderFlags[class268.Client_plane][var3][var4] & 4) != 0) {
+							var0 = class268.Client_plane;
+						}
 
-					return class268.Client_plane * 1083786667;
+						var8 += var7;
+						if (var8 >= 65536) {
+							var8 -= 65536;
+							if (var4 < var2) {
+								++var4;
+							} else if (var4 > var2) {
+								--var4;
+							}
+
+							if ((Tiles.Tiles_renderFlags[class268.Client_plane][var3][var4] & 4) != 0) {
+								var0 = class268.Client_plane;
+							}
+						}
+					}
+				} else if (var6 > 0) {
+					var7 = var5 * 65536 / var6;
+					var8 = 32768;
+
+					while (var2 != var4) {
+						if (var4 < var2) {
+							++var4;
+						} else if (var4 > var2) {
+							--var4;
+						}
+
+						if ((Tiles.Tiles_renderFlags[class268.Client_plane][var3][var4] & 4) != 0) {
+							var0 = class268.Client_plane;
+						}
+
+						var8 += var7;
+						if (var8 >= 65536) {
+							var8 -= 65536;
+							if (var3 < var1) {
+								++var3;
+							} else if (var3 > var1) {
+								--var3;
+							}
+
+							if ((Tiles.Tiles_renderFlags[class268.Client_plane][var3][var4] & 4) != 0) {
+								var0 = class268.Client_plane;
+							}
+						}
+					}
 				}
 			}
 
-			if (class56.localPlayer.x * 1627221919 >= 0 && class56.localPlayer.y * 1229064101 >= 0 && class56.localPlayer.x * 1627221919 < 13312 && class56.localPlayer.y * 1229064101 < 13312) {
-				if ((Tiles.Tiles_renderFlags[class268.Client_plane * 1083786667][class56.localPlayer.x * 1627221919 >> 7][class56.localPlayer.y * 1229064101 >> 7] & 4) != 0) {
-					var0 = class268.Client_plane * 1083786667;
+			if (ScriptFrame.localPlayer.x >= 0 && ScriptFrame.localPlayer.y >= 0 && ScriptFrame.localPlayer.x < 13312 && ScriptFrame.localPlayer.y < 13312) {
+				if ((Tiles.Tiles_renderFlags[class268.Client_plane][ScriptFrame.localPlayer.x >> 7][ScriptFrame.localPlayer.y >> 7] & 4) != 0) {
+					var0 = class268.Client_plane;
 				}
 
 				return var0;
 			} else {
-				return class268.Client_plane * 1083786667;
+				return class268.Client_plane;
 			}
 		}
 	}

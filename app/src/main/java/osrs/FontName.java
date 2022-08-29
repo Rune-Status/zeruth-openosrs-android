@@ -2,6 +2,7 @@ package osrs;
 
 import net.runelite.mapping.Export;
 import net.runelite.mapping.Implements;
+import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
@@ -15,6 +16,9 @@ public class FontName {
 	@Export("guestClanSettings")
 	static ClanSettings guestClanSettings;
 	@ObfuscatedName("uj")
+	@ObfuscatedGetter(
+		longValue = -8852451714535883403L
+	)
 	static long field4587;
 	@ObfuscatedName("s")
 	@ObfuscatedSignature(
@@ -71,24 +75,24 @@ public class FontName {
 
 	@ObfuscatedName("s")
 	@ObfuscatedSignature(
-		descriptor = "(III)I",
-		garbageValue = "374763571"
+		garbageValue = "374763571",
+		descriptor = "(III)I"
 	)
-	public static int method7323(int var0, int var1) {
+	public static int method7220(int var0, int var1) {
 		return (var0 << 8) + var1;
 	}
 
 	@ObfuscatedName("k")
 	@ObfuscatedSignature(
-		descriptor = "(IB)I",
-		garbageValue = "96"
+		garbageValue = "96",
+		descriptor = "(IB)I"
 	)
-	static int method7322(int var0) {
+	static int method7219(int var0) {
 		Message var1 = (Message)Messages.Messages_hashTable.get((long)var0);
 		if (var1 == null) {
 			return -1;
 		} else {
-			return var1.nextDual == Messages.Messages_queue.sentinel ? -1 : ((Message)var1.nextDual).count * 416329001;
+			return var1.nextDual == Messages.Messages_queue.sentinel ? -1 : ((Message)var1.nextDual).count;
 		}
 	}
 }

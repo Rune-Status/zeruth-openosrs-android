@@ -16,8 +16,8 @@ public class Frames extends DualNode {
 	Animation[] frames;
 
 	@ObfuscatedSignature(
-		descriptor = "(Lls;Lls;IZ)V",
-		garbageValue = "0"
+		garbageValue = "0",
+		descriptor = "(Lls;Lls;IZ)V"
 	)
 	public Frames(AbstractArchive var1, AbstractArchive var2, int var3, boolean var4) {
 		NodeDeque var5 = new NodeDeque();
@@ -31,7 +31,7 @@ public class Frames extends DualNode {
 			int var11 = (var9[0] & 255) << 8 | var9[1] & 255;
 
 			for (Skeleton var12 = (Skeleton)var5.last(); var12 != null; var12 = (Skeleton)var5.previous()) {
-				if (var11 == var12.id * -577196497) {
+				if (var11 == var12.id) {
 					var10 = var12;
 					break;
 				}
@@ -50,8 +50,8 @@ public class Frames extends DualNode {
 
 	@ObfuscatedName("s")
 	@ObfuscatedSignature(
-		descriptor = "(II)Z",
-		garbageValue = "1979341269"
+		garbageValue = "1979341269",
+		descriptor = "(II)Z"
 	)
 	@Export("hasAlphaTransform")
 	public boolean hasAlphaTransform(int var1) {
@@ -60,13 +60,13 @@ public class Frames extends DualNode {
 
 	@ObfuscatedName("gt")
 	@ObfuscatedSignature(
-		descriptor = "(IIIIIIIB)V",
-		garbageValue = "8"
+		garbageValue = "8",
+		descriptor = "(IIIIIIIB)V"
 	)
 	@Export("addPendingSpawnToScene")
 	static final void addPendingSpawnToScene(int var0, int var1, int var2, int var3, int var4, int var5, int var6) {
 		if (var2 >= 1 && var3 >= 1 && var2 <= 102 && var3 <= 102) {
-			if (Client.isLowDetail && var0 != class268.Client_plane * 1083786667) {
+			if (Client.isLowDetail && var0 != class268.Client_plane) {
 				return;
 			}
 
@@ -100,8 +100,8 @@ public class Frames extends DualNode {
 				if (var1 == 0) {
 					class12.scene.removeBoundaryObject(var0, var2, var3);
 					var13 = FileSystem.getObjectDefinition(var14);
-					if (var13.interactType * 1112693661 != 0) {
-						Client.collisionMaps[var0].method3778(var2, var3, var15, var16, var13.boolean1);
+					if (var13.interactType != 0) {
+						Client.collisionMaps[var0].method3713(var2, var3, var15, var16, var13.boolean1);
 					}
 				}
 
@@ -112,20 +112,20 @@ public class Frames extends DualNode {
 				if (var1 == 2) {
 					class12.scene.removeGameObject(var0, var2, var3);
 					var13 = FileSystem.getObjectDefinition(var14);
-					if (var2 + var13.sizeX * 6263545 > 103 || var3 + var13.sizeX * 6263545 > 103 || var13.sizeY * -1277582079 + var2 > 103 || var3 + var13.sizeY * -1277582079 > 103) {
+					if (var2 + var13.sizeX > 103 || var3 + var13.sizeX > 103 || var2 + var13.sizeY > 103 || var3 + var13.sizeY > 103) {
 						return;
 					}
 
-					if (var13.interactType * 1112693661 != 0) {
-						Client.collisionMaps[var0].setFlagOffNonSquare(var2, var3, var13.sizeX * 6263545, var13.sizeY * -1277582079, var16, var13.boolean1);
+					if (var13.interactType != 0) {
+						Client.collisionMaps[var0].setFlagOffNonSquare(var2, var3, var13.sizeX, var13.sizeY, var16, var13.boolean1);
 					}
 				}
 
 				if (var1 == 3) {
 					class12.scene.removeFloorDecoration(var0, var2, var3);
 					var13 = FileSystem.getObjectDefinition(var14);
-					if (var13.interactType * 1112693661 == 1) {
-						Client.collisionMaps[var0].method3781(var2, var3);
+					if (var13.interactType == 1) {
+						Client.collisionMaps[var0].method3716(var2, var3);
 					}
 				}
 			}

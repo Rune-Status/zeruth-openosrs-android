@@ -5,12 +5,13 @@ import java.util.HashSet;
 import java.util.Set;
 import net.runelite.mapping.Export;
 import net.runelite.mapping.Implements;
+import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
 @ObfuscatedName("li")
 @Implements("ModeWhere")
-public enum ModeWhere implements class328 {
+public enum ModeWhere implements MouseWheel {
 	@ObfuscatedName("s")
 	@ObfuscatedSignature(
 		descriptor = "Lli;"
@@ -84,13 +85,16 @@ public enum ModeWhere implements class328 {
 	@Export("pcmStreamMixer")
 	static PcmStreamMixer pcmStreamMixer;
 	@ObfuscatedName("u")
+	@ObfuscatedGetter(
+		intValue = 476449853
+	)
 	@Export("id")
 	final int id;
 	@ObfuscatedName("l")
 	final Set field4119;
 
 	static {
-		method5999();
+		method5925();
 	}
 
 	@ObfuscatedSignature(
@@ -98,7 +102,7 @@ public enum ModeWhere implements class328 {
 	)
 	ModeWhere(String var3, int var4, class327[] var5) {
 		this.field4119 = new HashSet();
-		this.id = var4 * -1790317803;
+		this.id = var4;
 		class327[] var6 = var5;
 
 		for (int var7 = 0; var7 < var6.length; ++var7) {
@@ -110,32 +114,32 @@ public enum ModeWhere implements class328 {
 
 	ModeWhere(String var3, int var4) {
 		this.field4119 = new HashSet();
-		this.id = var4 * -1790317803;
+		this.id = var4;
 	}
 
 	@ObfuscatedName("h")
 	@ObfuscatedSignature(
-		descriptor = "(B)I",
-		garbageValue = "104"
+		garbageValue = "104",
+		descriptor = "(B)I"
 	)
 	@Export("rsOrdinal")
 	public int rsOrdinal() {
-		return this.id * 476449853;
+		return this.id;
 	}
 
 	@ObfuscatedName("s")
 	@ObfuscatedSignature(
-		descriptor = "(I)[Lli;",
-		garbageValue = "387775204"
+		garbageValue = "387775204",
+		descriptor = "(I)[Lli;"
 	)
-	static ModeWhere[] method5999() {
+	static ModeWhere[] method5925() {
 		return new ModeWhere[]{field4114, field4112, field4118, field4117, field4108, field4113, field4110, field4111, field4121, field4115, field4107, field4109, field4116};
 	}
 
 	@ObfuscatedName("w")
 	@ObfuscatedSignature(
-		descriptor = "(II)I",
-		garbageValue = "2023702715"
+		garbageValue = "1682071553",
+		descriptor = "(II)I"
 	)
 	@Export("Widget_unpackTargetMask")
 	public static int Widget_unpackTargetMask(int var0) {
@@ -144,20 +148,20 @@ public enum ModeWhere implements class328 {
 
 	@ObfuscatedName("kx")
 	@ObfuscatedSignature(
-		descriptor = "(Ljava/lang/String;ZI)Ljava/lang/String;",
-		garbageValue = "210168674"
+		garbageValue = "210168674",
+		descriptor = "(Ljava/lang/String;ZI)Ljava/lang/String;"
 	)
-	static String method6005(String var0, boolean var1) {
+	static String method5931(String var0, boolean var1) {
 		String var2 = var1 ? "https://" : "http://";
-		if (Client.gameBuild * -1552911039 == 1) {
+		if (Client.gameBuild == 1) {
 			var0 = var0 + "-wtrc";
-		} else if (Client.gameBuild * -1552911039 == 2) {
+		} else if (Client.gameBuild == 2) {
 			var0 = var0 + "-wtqa";
-		} else if (Client.gameBuild * -1552911039 == 3) {
+		} else if (Client.gameBuild == 3) {
 			var0 = var0 + "-wtwip";
-		} else if (Client.gameBuild * -1552911039 == 5) {
+		} else if (Client.gameBuild == 5) {
 			var0 = var0 + "-wti";
-		} else if (Client.gameBuild * -1552911039 == 4) {
+		} else if (Client.gameBuild == 4) {
 			var0 = "local";
 		}
 
@@ -167,15 +171,15 @@ public enum ModeWhere implements class328 {
 		}
 
 		String var4 = "runescape.com";
-		return var2 + var0 + "." + var4 + "/l=" + MilliClock.field1772 + "/a=" + UserComparator1.field4765 * -1330327021 + var3 + "/";
+		return var2 + var0 + "." + var4 + "/l=" + MilliClock.clientLanguage + "/a=" + UserComparator1.field4765 + var3 + "/";
 	}
 
 	@ObfuscatedName("ko")
 	@ObfuscatedSignature(
-		descriptor = "(Lqr;I)V",
-		garbageValue = "-148668422"
+		garbageValue = "-148668422",
+		descriptor = "(Lqr;I)V"
 	)
-	static void method6004(Buffer var0) {
+	static void method5930(Buffer var0) {
 		if (Client.randomDatData != null) {
 			var0.writeBytes(Client.randomDatData, 0, Client.randomDatData.length);
 		} else {

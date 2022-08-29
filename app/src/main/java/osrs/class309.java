@@ -1,11 +1,12 @@
 package osrs;
 
 import net.runelite.mapping.Export;
+import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
 @ObfuscatedName("kd")
-public enum class309 implements class328 {
+public enum class309 implements MouseWheel {
 	@ObfuscatedName("s")
 	@ObfuscatedSignature(
 		descriptor = "Lkd;"
@@ -30,35 +31,38 @@ public enum class309 implements class328 {
 	@ObfuscatedName("db")
 	static boolean field3942;
 	@ObfuscatedName("c")
+	@ObfuscatedGetter(
+		intValue = -1914251221
+	)
 	final int field3939;
 
 	class309(int var3) {
-		this.field3939 = var3 * -1764022653;
+		this.field3939 = var3;
 	}
 
 	@ObfuscatedName("h")
 	@ObfuscatedSignature(
-		descriptor = "(B)I",
-		garbageValue = "104"
+		garbageValue = "104",
+		descriptor = "(B)I"
 	)
 	@Export("rsOrdinal")
 	public int rsOrdinal() {
-		return this.field3939 * -1914251221;
+		return this.field3939;
 	}
 
 	@ObfuscatedName("i")
 	@ObfuscatedSignature(
-		descriptor = "(I)V",
-		garbageValue = "1868591090"
+		garbageValue = "1868591090",
+		descriptor = "(I)V"
 	)
-	public static void method5690() {
+	public static void method5619() {
 		class438.DBRowType_cache.clear();
 	}
 
 	@ObfuscatedName("bl")
 	@ObfuscatedSignature(
-		descriptor = "(Ljava/lang/String;B)I",
-		garbageValue = "110"
+		garbageValue = "110",
+		descriptor = "(Ljava/lang/String;B)I"
 	)
 	@Export("stringCp1252NullTerminatedByteSize")
 	public static int stringCp1252NullTerminatedByteSize(String var0) {

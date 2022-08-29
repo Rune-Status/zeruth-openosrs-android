@@ -2,6 +2,7 @@ package osrs;
 
 import net.runelite.mapping.Export;
 import net.runelite.mapping.Implements;
+import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
@@ -21,7 +22,11 @@ public class KitDefinition extends DualNode {
 	@Export("KitDefinition_modelsArchive")
 	static AbstractArchive KitDefinition_modelsArchive;
 	@ObfuscatedName("w")
-	public static int field1857;
+	@ObfuscatedGetter(
+		intValue = 1273507349
+	)
+	@Export("KitDefinition_fileCount")
+	public static int KitDefinition_fileCount;
 	@ObfuscatedName("v")
 	@ObfuscatedSignature(
 		descriptor = "Liz;"
@@ -35,6 +40,9 @@ public class KitDefinition extends DualNode {
 	@Export("archive10")
 	static Archive archive10;
 	@ObfuscatedName("c")
+	@ObfuscatedGetter(
+		intValue = -1346029147
+	)
 	@Export("bodypartID")
 	public int bodypartID;
 	@ObfuscatedName("q")
@@ -64,15 +72,15 @@ public class KitDefinition extends DualNode {
 	}
 
 	KitDefinition() {
-		this.bodypartID = 2145450451;
+		this.bodypartID = -1;
 		this.models = new int[]{-1, -1, -1, -1, -1};
 		this.nonSelectable = false;
 	}
 
 	@ObfuscatedName("w")
 	@ObfuscatedSignature(
-		descriptor = "(Lqr;I)V",
-		garbageValue = "113533312"
+		garbageValue = "113533312",
+		descriptor = "(Lqr;I)V"
 	)
 	@Export("decode")
 	void decode(Buffer var1) {
@@ -88,13 +96,13 @@ public class KitDefinition extends DualNode {
 
 	@ObfuscatedName("v")
 	@ObfuscatedSignature(
-		descriptor = "(Lqr;IB)V",
-		garbageValue = "4"
+		garbageValue = "4",
+		descriptor = "(Lqr;IB)V"
 	)
 	@Export("decodeNext")
 	void decodeNext(Buffer var1, int var2) {
 		if (var2 == 1) {
-			this.bodypartID = var1.readUnsignedByte() * -2145450451;
+			this.bodypartID = var1.readUnsignedByte();
 		} else {
 			int var3;
 			int var4;
@@ -134,8 +142,8 @@ public class KitDefinition extends DualNode {
 
 	@ObfuscatedName("c")
 	@ObfuscatedSignature(
-		descriptor = "(I)Z",
-		garbageValue = "-1850904854"
+		garbageValue = "-1850904854",
+		descriptor = "(I)Z"
 	)
 	@Export("ready")
 	public boolean ready() {
@@ -156,8 +164,8 @@ public class KitDefinition extends DualNode {
 
 	@ObfuscatedName("q")
 	@ObfuscatedSignature(
-		descriptor = "(B)Lgp;",
-		garbageValue = "86"
+		garbageValue = "86",
+		descriptor = "(B)Lgp;"
 	)
 	@Export("getModelData")
 	public ModelData getModelData() {
@@ -196,10 +204,10 @@ public class KitDefinition extends DualNode {
 
 	@ObfuscatedName("i")
 	@ObfuscatedSignature(
-		descriptor = "(I)Z",
-		garbageValue = "894950921"
+		garbageValue = "894950921",
+		descriptor = "(I)Z"
 	)
-	public boolean method3351() {
+	public boolean method3286() {
 		boolean var1 = true;
 
 		for (int var2 = 0; var2 < 5; ++var2) {
@@ -213,8 +221,8 @@ public class KitDefinition extends DualNode {
 
 	@ObfuscatedName("k")
 	@ObfuscatedSignature(
-		descriptor = "(I)Lgp;",
-		garbageValue = "1970122407"
+		garbageValue = "1970122407",
+		descriptor = "(I)Lgp;"
 	)
 	@Export("getKitDefinitionModels")
 	public ModelData getKitDefinitionModels() {
@@ -246,59 +254,59 @@ public class KitDefinition extends DualNode {
 
 	@ObfuscatedName("w")
 	@ObfuscatedSignature(
-		descriptor = "(I)Ljava/lang/String;",
-		garbageValue = "170123111"
+		garbageValue = "170123111",
+		descriptor = "(I)Ljava/lang/String;"
 	)
-	static String method3349() {
-		return ClanMate.clientPreferences.method2211() ? NPCComposition.method3410(Login.Login_username) : Login.Login_username;
+	static String method3284() {
+		return ClanMate.clientPreferences.method2146() ? NPCComposition.method3345(Login.Login_username) : Login.Login_username;
 	}
 
 	@ObfuscatedName("bl")
 	@ObfuscatedSignature(
-		descriptor = "(ILbz;ZI)I",
-		garbageValue = "1955170611"
+		garbageValue = "1955170611",
+		descriptor = "(ILbz;ZI)I"
 	)
-	static int method3336(int var0, Script var1, boolean var2) {
+	static int method3271(int var0, Script var1, boolean var2) {
 		if (var0 == 7400) {
-			User.Interpreter_intStackSize -= -312486675;
-			UserComparator8.Interpreter_stringStackSize -= 204829809;
+			--User.Interpreter_intStackSize;
+			--UserComparator8.Interpreter_stringStackSize;
 			return 1;
 		} else if (var0 == 7401) {
-			User.Interpreter_intStackSize -= -312486675;
-			UserComparator8.Interpreter_stringStackSize -= 204829809;
+			--User.Interpreter_intStackSize;
+			--UserComparator8.Interpreter_stringStackSize;
 			return 1;
 		} else if (var0 == 7402) {
-			User.Interpreter_intStackSize -= -624973350;
-			UserComparator8.Interpreter_stringStackSize -= 204829809;
+			User.Interpreter_intStackSize -= 2;
+			--UserComparator8.Interpreter_stringStackSize;
 			return 1;
 		} else if (var0 == 7403) {
-			User.Interpreter_intStackSize -= -624973350;
-			UserComparator8.Interpreter_stringStackSize -= 204829809;
+			User.Interpreter_intStackSize -= 2;
+			--UserComparator8.Interpreter_stringStackSize;
 			return 1;
 		} else if (var0 == 7404) {
-			User.Interpreter_intStackSize -= -312486675;
-			UserComparator8.Interpreter_stringStackSize -= 204829809;
+			--User.Interpreter_intStackSize;
+			--UserComparator8.Interpreter_stringStackSize;
 			return 1;
 		} else if (var0 == 7405) {
-			User.Interpreter_intStackSize -= -624973350;
+			User.Interpreter_intStackSize -= 2;
 			return 1;
 		} else if (var0 == 7406) {
-			User.Interpreter_intStackSize -= -312486675;
-			Interpreter.Interpreter_stringStack[(UserComparator8.Interpreter_stringStackSize += 204829809) * 929025169 - 1] = "";
+			--User.Interpreter_intStackSize;
+			Interpreter.Interpreter_stringStack[++UserComparator8.Interpreter_stringStackSize - 1] = "";
 			return 1;
 		} else if (var0 == 7407) {
-			Interpreter.Interpreter_intStack[(User.Interpreter_intStackSize += -312486675) * -313022235 - 1] = 0;
+			Interpreter.Interpreter_intStack[++User.Interpreter_intStackSize - 1] = 0;
 			return 1;
 		} else if (var0 == 7408) {
-			User.Interpreter_intStackSize -= -624973350;
-			UserComparator8.Interpreter_stringStackSize -= 204829809;
-			Interpreter.Interpreter_intStack[(User.Interpreter_intStackSize += -312486675) * -313022235 - 1] = 0;
+			User.Interpreter_intStackSize -= 2;
+			--UserComparator8.Interpreter_stringStackSize;
+			Interpreter.Interpreter_intStack[++User.Interpreter_intStackSize - 1] = 0;
 			return 1;
 		} else if (var0 == 7409) {
-			User.Interpreter_intStackSize -= -312486675;
+			--User.Interpreter_intStackSize;
 			return 1;
 		} else if (var0 == 7463) {
-			boolean var3 = Interpreter.Interpreter_intStack[(User.Interpreter_intStackSize -= -312486675) * -313022235] == 1;
+			boolean var3 = Interpreter.Interpreter_intStack[--User.Interpreter_intStackSize] == 1;
 			ApproximateRouteStrategy.method1071(var3);
 			return 1;
 		} else {

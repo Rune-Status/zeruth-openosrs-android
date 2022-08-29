@@ -2,6 +2,7 @@ package osrs;
 
 import net.runelite.mapping.Export;
 import net.runelite.mapping.Implements;
+import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
@@ -9,6 +10,9 @@ import net.runelite.mapping.ObfuscatedSignature;
 @Implements("Huffman")
 public class Huffman {
 	@ObfuscatedName("c")
+	@ObfuscatedGetter(
+		intValue = -409714973
+	)
 	public static int field3288;
 	@ObfuscatedName("bg")
 	static String field3291;
@@ -107,8 +111,8 @@ public class Huffman {
 
 	@ObfuscatedName("s")
 	@ObfuscatedSignature(
-		descriptor = "([BII[BIB)I",
-		garbageValue = "-11"
+		garbageValue = "-11",
+		descriptor = "([BII[BIB)I"
 	)
 	@Export("compress")
 	int compress(byte[] var1, int var2, int var3, byte[] var4, int var5) {
@@ -158,8 +162,8 @@ public class Huffman {
 
 	@ObfuscatedName("h")
 	@ObfuscatedSignature(
-		descriptor = "([BI[BIIB)I",
-		garbageValue = "2"
+		garbageValue = "2",
+		descriptor = "([BI[BIIB)I"
 	)
 	@Export("decompress")
 	int decompress(byte[] var1, int var2, byte[] var3, int var4, int var5) {

@@ -3,6 +3,7 @@ package osrs;
 import java.util.Date;
 import net.runelite.mapping.Export;
 import net.runelite.mapping.Implements;
+import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
@@ -10,11 +11,17 @@ import net.runelite.mapping.ObfuscatedSignature;
 @Implements("SoundCache")
 public class SoundCache {
 	@ObfuscatedName("tt")
+	@ObfuscatedGetter(
+		intValue = -350003391
+	)
 	static int field323;
 	@ObfuscatedName("i")
 	@Export("SpriteBuffer_spriteHeights")
 	public static int[] SpriteBuffer_spriteHeights;
 	@ObfuscatedName("k")
+	@ObfuscatedGetter(
+		intValue = -1871604293
+	)
 	static int field322;
 	@ObfuscatedName("s")
 	@ObfuscatedSignature(
@@ -53,8 +60,8 @@ public class SoundCache {
 
 	@ObfuscatedName("s")
 	@ObfuscatedSignature(
-		descriptor = "(II[II)Lag;",
-		garbageValue = "1853906698"
+		garbageValue = "1853906698",
+		descriptor = "(II[II)Lag;"
 	)
 	@Export("getSoundEffect0")
 	RawSound getSoundEffect0(int var1, int var2, int[] var3) {
@@ -84,8 +91,8 @@ public class SoundCache {
 
 	@ObfuscatedName("h")
 	@ObfuscatedSignature(
-		descriptor = "(II[II)Lag;",
-		garbageValue = "-2091085778"
+		garbageValue = "-2091085778",
+		descriptor = "(II[II)Lag;"
 	)
 	@Export("getMusicSample0")
 	RawSound getMusicSample0(int var1, int var2, int[] var3) {
@@ -121,8 +128,8 @@ public class SoundCache {
 
 	@ObfuscatedName("w")
 	@ObfuscatedSignature(
-		descriptor = "(I[II)Lag;",
-		garbageValue = "-1831147556"
+		garbageValue = "-1831147556",
+		descriptor = "(I[II)Lag;"
 	)
 	@Export("getSoundEffect")
 	public RawSound getSoundEffect(int var1, int[] var2) {
@@ -137,8 +144,8 @@ public class SoundCache {
 
 	@ObfuscatedName("v")
 	@ObfuscatedSignature(
-		descriptor = "(I[II)Lag;",
-		garbageValue = "-1611201037"
+		garbageValue = "-1611201037",
+		descriptor = "(I[II)Lag;"
 	)
 	@Export("getMusicSample")
 	public RawSound getMusicSample(int var1, int[] var2) {
@@ -153,175 +160,175 @@ public class SoundCache {
 
 	@ObfuscatedName("au")
 	@ObfuscatedSignature(
-		descriptor = "(ILbz;ZI)I",
-		garbageValue = "1629817495"
+		garbageValue = "1629817495",
+		descriptor = "(ILbz;ZI)I"
 	)
 	static int method744(int var0, Script var1, boolean var2) {
 		String var3;
-		int var9;
+		int var4;
 		if (var0 == 4100) {
-			var3 = Interpreter.Interpreter_stringStack[(UserComparator8.Interpreter_stringStackSize -= 204829809) * 929025169];
-			var9 = Interpreter.Interpreter_intStack[(User.Interpreter_intStackSize -= -312486675) * -313022235];
-			Interpreter.Interpreter_stringStack[(UserComparator8.Interpreter_stringStackSize += 204829809) * 929025169 - 1] = var3 + var9;
+			var3 = Interpreter.Interpreter_stringStack[--UserComparator8.Interpreter_stringStackSize];
+			var4 = Interpreter.Interpreter_intStack[--User.Interpreter_intStackSize];
+			Interpreter.Interpreter_stringStack[++UserComparator8.Interpreter_stringStackSize - 1] = var3 + var4;
 			return 1;
 		} else {
-			String var4;
+			String var9;
 			if (var0 == 4101) {
-				UserComparator8.Interpreter_stringStackSize -= 409659618;
-				var3 = Interpreter.Interpreter_stringStack[UserComparator8.Interpreter_stringStackSize * 929025169];
-				var4 = Interpreter.Interpreter_stringStack[UserComparator8.Interpreter_stringStackSize * 929025169 + 1];
-				Interpreter.Interpreter_stringStack[(UserComparator8.Interpreter_stringStackSize += 204829809) * 929025169 - 1] = var3 + var4;
+				UserComparator8.Interpreter_stringStackSize -= 2;
+				var3 = Interpreter.Interpreter_stringStack[UserComparator8.Interpreter_stringStackSize];
+				var9 = Interpreter.Interpreter_stringStack[UserComparator8.Interpreter_stringStackSize + 1];
+				Interpreter.Interpreter_stringStack[++UserComparator8.Interpreter_stringStackSize - 1] = var3 + var9;
 				return 1;
 			} else if (var0 == 4102) {
-				var3 = Interpreter.Interpreter_stringStack[(UserComparator8.Interpreter_stringStackSize -= 204829809) * 929025169];
-				var9 = Interpreter.Interpreter_intStack[(User.Interpreter_intStackSize -= -312486675) * -313022235];
-				Interpreter.Interpreter_stringStack[(UserComparator8.Interpreter_stringStackSize += 204829809) * 929025169 - 1] = var3 + Archive.intToString(var9, true);
+				var3 = Interpreter.Interpreter_stringStack[--UserComparator8.Interpreter_stringStackSize];
+				var4 = Interpreter.Interpreter_intStack[--User.Interpreter_intStackSize];
+				Interpreter.Interpreter_stringStack[++UserComparator8.Interpreter_stringStackSize - 1] = var3 + Archive.intToString(var4, true);
 				return 1;
 			} else if (var0 == 4103) {
-				var3 = Interpreter.Interpreter_stringStack[(UserComparator8.Interpreter_stringStackSize -= 204829809) * 929025169];
-				Interpreter.Interpreter_stringStack[(UserComparator8.Interpreter_stringStackSize += 204829809) * 929025169 - 1] = var3.toLowerCase();
+				var3 = Interpreter.Interpreter_stringStack[--UserComparator8.Interpreter_stringStackSize];
+				Interpreter.Interpreter_stringStack[++UserComparator8.Interpreter_stringStackSize - 1] = var3.toLowerCase();
 				return 1;
 			} else {
 				int var6;
 				int var10;
 				if (var0 == 4104) {
-					var10 = Interpreter.Interpreter_intStack[(User.Interpreter_intStackSize -= -312486675) * -313022235];
-					long var13 = 86400000L * (11745L + (long)var10);
-					Interpreter.Interpreter_calendar.setTime(new Date(var13));
+					var10 = Interpreter.Interpreter_intStack[--User.Interpreter_intStackSize];
+					long var11 = 86400000L * (11745L + (long)var10);
+					Interpreter.Interpreter_calendar.setTime(new Date(var11));
 					var6 = Interpreter.Interpreter_calendar.get(5);
-					int var17 = Interpreter.Interpreter_calendar.get(2);
+					int var16 = Interpreter.Interpreter_calendar.get(2);
 					int var8 = Interpreter.Interpreter_calendar.get(1);
-					Interpreter.Interpreter_stringStack[(UserComparator8.Interpreter_stringStackSize += 204829809) * 929025169 - 1] = var6 + "-" + Interpreter.Interpreter_MONTHS[var17] + "-" + var8;
+					Interpreter.Interpreter_stringStack[++UserComparator8.Interpreter_stringStackSize - 1] = var6 + "-" + Interpreter.Interpreter_MONTHS[var16] + "-" + var8;
 					return 1;
 				} else if (var0 != 4105) {
 					if (var0 == 4106) {
-						var10 = Interpreter.Interpreter_intStack[(User.Interpreter_intStackSize -= -312486675) * -313022235];
-						Interpreter.Interpreter_stringStack[(UserComparator8.Interpreter_stringStackSize += 204829809) * 929025169 - 1] = Integer.toString(var10);
+						var10 = Interpreter.Interpreter_intStack[--User.Interpreter_intStackSize];
+						Interpreter.Interpreter_stringStack[++UserComparator8.Interpreter_stringStackSize - 1] = Integer.toString(var10);
 						return 1;
 					} else if (var0 == 4107) {
-						UserComparator8.Interpreter_stringStackSize -= 409659618;
-						Interpreter.Interpreter_intStack[(User.Interpreter_intStackSize += -312486675) * -313022235 - 1] = ScriptEvent.method2064(WorldMapIcon_0.compareStrings(Interpreter.Interpreter_stringStack[UserComparator8.Interpreter_stringStackSize * 929025169], Interpreter.Interpreter_stringStack[UserComparator8.Interpreter_stringStackSize * 929025169 + 1], MilliClock.field1772));
+						UserComparator8.Interpreter_stringStackSize -= 2;
+						Interpreter.Interpreter_intStack[++User.Interpreter_intStackSize - 1] = ScriptEvent.method1999(WorldMapIcon_0.compareStrings(Interpreter.Interpreter_stringStack[UserComparator8.Interpreter_stringStackSize], Interpreter.Interpreter_stringStack[UserComparator8.Interpreter_stringStackSize + 1], MilliClock.clientLanguage));
 						return 1;
 					} else {
 						int var5;
-						byte[] var11;
-						Font var12;
+						byte[] var13;
+						Font var14;
 						if (var0 == 4108) {
-							var3 = Interpreter.Interpreter_stringStack[(UserComparator8.Interpreter_stringStackSize -= 204829809) * 929025169];
-							User.Interpreter_intStackSize -= -624973350;
-							var9 = Interpreter.Interpreter_intStack[User.Interpreter_intStackSize * -313022235];
-							var5 = Interpreter.Interpreter_intStack[User.Interpreter_intStackSize * -313022235 + 1];
-							var11 = MouseRecorder.field1047.takeFile(var5, 0);
-							var12 = new Font(var11);
-							Interpreter.Interpreter_intStack[(User.Interpreter_intStackSize += -312486675) * -313022235 - 1] = var12.lineCount(var3, var9);
+							var3 = Interpreter.Interpreter_stringStack[--UserComparator8.Interpreter_stringStackSize];
+							User.Interpreter_intStackSize -= 2;
+							var4 = Interpreter.Interpreter_intStack[User.Interpreter_intStackSize];
+							var5 = Interpreter.Interpreter_intStack[User.Interpreter_intStackSize + 1];
+							var13 = MouseRecorder.archive13.takeFile(var5, 0);
+							var14 = new Font(var13);
+							Interpreter.Interpreter_intStack[++User.Interpreter_intStackSize - 1] = var14.lineCount(var3, var4);
 							return 1;
 						} else if (var0 == 4109) {
-							var3 = Interpreter.Interpreter_stringStack[(UserComparator8.Interpreter_stringStackSize -= 204829809) * 929025169];
-							User.Interpreter_intStackSize -= -624973350;
-							var9 = Interpreter.Interpreter_intStack[User.Interpreter_intStackSize * -313022235];
-							var5 = Interpreter.Interpreter_intStack[User.Interpreter_intStackSize * -313022235 + 1];
-							var11 = MouseRecorder.field1047.takeFile(var5, 0);
-							var12 = new Font(var11);
-							Interpreter.Interpreter_intStack[(User.Interpreter_intStackSize += -312486675) * -313022235 - 1] = var12.lineWidth(var3, var9);
+							var3 = Interpreter.Interpreter_stringStack[--UserComparator8.Interpreter_stringStackSize];
+							User.Interpreter_intStackSize -= 2;
+							var4 = Interpreter.Interpreter_intStack[User.Interpreter_intStackSize];
+							var5 = Interpreter.Interpreter_intStack[User.Interpreter_intStackSize + 1];
+							var13 = MouseRecorder.archive13.takeFile(var5, 0);
+							var14 = new Font(var13);
+							Interpreter.Interpreter_intStack[++User.Interpreter_intStackSize - 1] = var14.lineWidth(var3, var4);
 							return 1;
 						} else if (var0 == 4110) {
-							UserComparator8.Interpreter_stringStackSize -= 409659618;
-							var3 = Interpreter.Interpreter_stringStack[UserComparator8.Interpreter_stringStackSize * 929025169];
-							var4 = Interpreter.Interpreter_stringStack[UserComparator8.Interpreter_stringStackSize * 929025169 + 1];
-							if (Interpreter.Interpreter_intStack[(User.Interpreter_intStackSize -= -312486675) * -313022235] == 1) {
-								Interpreter.Interpreter_stringStack[(UserComparator8.Interpreter_stringStackSize += 204829809) * 929025169 - 1] = var3;
+							UserComparator8.Interpreter_stringStackSize -= 2;
+							var3 = Interpreter.Interpreter_stringStack[UserComparator8.Interpreter_stringStackSize];
+							var9 = Interpreter.Interpreter_stringStack[UserComparator8.Interpreter_stringStackSize + 1];
+							if (Interpreter.Interpreter_intStack[--User.Interpreter_intStackSize] == 1) {
+								Interpreter.Interpreter_stringStack[++UserComparator8.Interpreter_stringStackSize - 1] = var3;
 							} else {
-								Interpreter.Interpreter_stringStack[(UserComparator8.Interpreter_stringStackSize += 204829809) * 929025169 - 1] = var4;
+								Interpreter.Interpreter_stringStack[++UserComparator8.Interpreter_stringStackSize - 1] = var9;
 							}
 
 							return 1;
 						} else if (var0 == 4111) {
-							var3 = Interpreter.Interpreter_stringStack[(UserComparator8.Interpreter_stringStackSize -= 204829809) * 929025169];
-							Interpreter.Interpreter_stringStack[(UserComparator8.Interpreter_stringStackSize += 204829809) * 929025169 - 1] = AbstractFont.escapeBrackets(var3);
+							var3 = Interpreter.Interpreter_stringStack[--UserComparator8.Interpreter_stringStackSize];
+							Interpreter.Interpreter_stringStack[++UserComparator8.Interpreter_stringStackSize - 1] = AbstractFont.escapeBrackets(var3);
 							return 1;
 						} else if (var0 == 4112) {
-							var3 = Interpreter.Interpreter_stringStack[(UserComparator8.Interpreter_stringStackSize -= 204829809) * 929025169];
-							var9 = Interpreter.Interpreter_intStack[(User.Interpreter_intStackSize -= -312486675) * -313022235];
-							Interpreter.Interpreter_stringStack[(UserComparator8.Interpreter_stringStackSize += 204829809) * 929025169 - 1] = var3 + (char)var9;
+							var3 = Interpreter.Interpreter_stringStack[--UserComparator8.Interpreter_stringStackSize];
+							var4 = Interpreter.Interpreter_intStack[--User.Interpreter_intStackSize];
+							Interpreter.Interpreter_stringStack[++UserComparator8.Interpreter_stringStackSize - 1] = var3 + (char)var4;
 							return 1;
 						} else if (var0 == 4113) {
-							var10 = Interpreter.Interpreter_intStack[(User.Interpreter_intStackSize -= -312486675) * -313022235];
-							Interpreter.Interpreter_intStack[(User.Interpreter_intStackSize += -312486675) * -313022235 - 1] = class124.isCharPrintable((char)var10) ? 1 : 0;
+							var10 = Interpreter.Interpreter_intStack[--User.Interpreter_intStackSize];
+							Interpreter.Interpreter_intStack[++User.Interpreter_intStackSize - 1] = class124.isCharPrintable((char)var10) ? 1 : 0;
 							return 1;
 						} else if (var0 == 4114) {
-							var10 = Interpreter.Interpreter_intStack[(User.Interpreter_intStackSize -= -312486675) * -313022235];
-							Interpreter.Interpreter_intStack[(User.Interpreter_intStackSize += -312486675) * -313022235 - 1] = class113.isAlphaNumeric((char)var10) ? 1 : 0;
+							var10 = Interpreter.Interpreter_intStack[--User.Interpreter_intStackSize];
+							Interpreter.Interpreter_intStack[++User.Interpreter_intStackSize - 1] = class113.isAlphaNumeric((char)var10) ? 1 : 0;
 							return 1;
 						} else if (var0 == 4115) {
-							var10 = Interpreter.Interpreter_intStack[(User.Interpreter_intStackSize -= -312486675) * -313022235];
-							Interpreter.Interpreter_intStack[(User.Interpreter_intStackSize += -312486675) * -313022235 - 1] = class78.isCharAlphabetic((char)var10) ? 1 : 0;
+							var10 = Interpreter.Interpreter_intStack[--User.Interpreter_intStackSize];
+							Interpreter.Interpreter_intStack[++User.Interpreter_intStackSize - 1] = class78.isCharAlphabetic((char)var10) ? 1 : 0;
 							return 1;
 						} else if (var0 == 4116) {
-							var10 = Interpreter.Interpreter_intStack[(User.Interpreter_intStackSize -= -312486675) * -313022235];
-							Interpreter.Interpreter_intStack[(User.Interpreter_intStackSize += -312486675) * -313022235 - 1] = UserComparator9.isDigit((char)var10) ? 1 : 0;
+							var10 = Interpreter.Interpreter_intStack[--User.Interpreter_intStackSize];
+							Interpreter.Interpreter_intStack[++User.Interpreter_intStackSize - 1] = UserComparator9.isDigit((char)var10) ? 1 : 0;
 							return 1;
 						} else if (var0 == 4117) {
-							var3 = Interpreter.Interpreter_stringStack[(UserComparator8.Interpreter_stringStackSize -= 204829809) * 929025169];
+							var3 = Interpreter.Interpreter_stringStack[--UserComparator8.Interpreter_stringStackSize];
 							if (var3 != null) {
-								Interpreter.Interpreter_intStack[(User.Interpreter_intStackSize += -312486675) * -313022235 - 1] = var3.length();
+								Interpreter.Interpreter_intStack[++User.Interpreter_intStackSize - 1] = var3.length();
 							} else {
-								Interpreter.Interpreter_intStack[(User.Interpreter_intStackSize += -312486675) * -313022235 - 1] = 0;
+								Interpreter.Interpreter_intStack[++User.Interpreter_intStackSize - 1] = 0;
 							}
 
 							return 1;
 						} else if (var0 == 4118) {
-							var3 = Interpreter.Interpreter_stringStack[(UserComparator8.Interpreter_stringStackSize -= 204829809) * 929025169];
-							User.Interpreter_intStackSize -= -624973350;
-							var9 = Interpreter.Interpreter_intStack[User.Interpreter_intStackSize * -313022235];
-							var5 = Interpreter.Interpreter_intStack[User.Interpreter_intStackSize * -313022235 + 1];
-							Interpreter.Interpreter_stringStack[(UserComparator8.Interpreter_stringStackSize += 204829809) * 929025169 - 1] = var3.substring(var9, var5);
+							var3 = Interpreter.Interpreter_stringStack[--UserComparator8.Interpreter_stringStackSize];
+							User.Interpreter_intStackSize -= 2;
+							var4 = Interpreter.Interpreter_intStack[User.Interpreter_intStackSize];
+							var5 = Interpreter.Interpreter_intStack[User.Interpreter_intStackSize + 1];
+							Interpreter.Interpreter_stringStack[++UserComparator8.Interpreter_stringStackSize - 1] = var3.substring(var4, var5);
 							return 1;
 						} else if (var0 == 4119) {
-							var3 = Interpreter.Interpreter_stringStack[(UserComparator8.Interpreter_stringStackSize -= 204829809) * 929025169];
-							StringBuilder var15 = new StringBuilder(var3.length());
-							boolean var16 = false;
+							var3 = Interpreter.Interpreter_stringStack[--UserComparator8.Interpreter_stringStackSize];
+							StringBuilder var17 = new StringBuilder(var3.length());
+							boolean var15 = false;
 
 							for (var6 = 0; var6 < var3.length(); ++var6) {
 								char var7 = var3.charAt(var6);
 								if (var7 == '<') {
-									var16 = true;
+									var15 = true;
 								} else if (var7 == '>') {
-									var16 = false;
-								} else if (!var16) {
-									var15.append(var7);
+									var15 = false;
+								} else if (!var15) {
+									var17.append(var7);
 								}
 							}
 
-							Interpreter.Interpreter_stringStack[(UserComparator8.Interpreter_stringStackSize += 204829809) * 929025169 - 1] = var15.toString();
+							Interpreter.Interpreter_stringStack[++UserComparator8.Interpreter_stringStackSize - 1] = var17.toString();
 							return 1;
 						} else if (var0 == 4120) {
-							var3 = Interpreter.Interpreter_stringStack[(UserComparator8.Interpreter_stringStackSize -= 204829809) * 929025169];
-							var9 = Interpreter.Interpreter_intStack[(User.Interpreter_intStackSize -= -312486675) * -313022235];
-							Interpreter.Interpreter_intStack[(User.Interpreter_intStackSize += -312486675) * -313022235 - 1] = var3.indexOf(var9);
+							var3 = Interpreter.Interpreter_stringStack[--UserComparator8.Interpreter_stringStackSize];
+							var4 = Interpreter.Interpreter_intStack[--User.Interpreter_intStackSize];
+							Interpreter.Interpreter_intStack[++User.Interpreter_intStackSize - 1] = var3.indexOf(var4);
 							return 1;
 						} else if (var0 == 4121) {
-							UserComparator8.Interpreter_stringStackSize -= 409659618;
-							var3 = Interpreter.Interpreter_stringStack[UserComparator8.Interpreter_stringStackSize * 929025169];
-							var4 = Interpreter.Interpreter_stringStack[UserComparator8.Interpreter_stringStackSize * 929025169 + 1];
-							var5 = Interpreter.Interpreter_intStack[(User.Interpreter_intStackSize -= -312486675) * -313022235];
-							Interpreter.Interpreter_intStack[(User.Interpreter_intStackSize += -312486675) * -313022235 - 1] = var3.indexOf(var4, var5);
+							UserComparator8.Interpreter_stringStackSize -= 2;
+							var3 = Interpreter.Interpreter_stringStack[UserComparator8.Interpreter_stringStackSize];
+							var9 = Interpreter.Interpreter_stringStack[UserComparator8.Interpreter_stringStackSize + 1];
+							var5 = Interpreter.Interpreter_intStack[--User.Interpreter_intStackSize];
+							Interpreter.Interpreter_intStack[++User.Interpreter_intStackSize - 1] = var3.indexOf(var9, var5);
 							return 1;
 						} else if (var0 == 4122) {
-							var3 = Interpreter.Interpreter_stringStack[(UserComparator8.Interpreter_stringStackSize -= 204829809) * 929025169];
-							Interpreter.Interpreter_stringStack[(UserComparator8.Interpreter_stringStackSize += 204829809) * 929025169 - 1] = var3.toUpperCase();
+							var3 = Interpreter.Interpreter_stringStack[--UserComparator8.Interpreter_stringStackSize];
+							Interpreter.Interpreter_stringStack[++UserComparator8.Interpreter_stringStackSize - 1] = var3.toUpperCase();
 							return 1;
 						} else {
 							return 2;
 						}
 					}
 				} else {
-					UserComparator8.Interpreter_stringStackSize -= 409659618;
-					var3 = Interpreter.Interpreter_stringStack[UserComparator8.Interpreter_stringStackSize * 929025169];
-					var4 = Interpreter.Interpreter_stringStack[UserComparator8.Interpreter_stringStackSize * 929025169 + 1];
-					if (class56.localPlayer.appearance != null && class56.localPlayer.appearance.isFemale) {
-						Interpreter.Interpreter_stringStack[(UserComparator8.Interpreter_stringStackSize += 204829809) * 929025169 - 1] = var4;
+					UserComparator8.Interpreter_stringStackSize -= 2;
+					var3 = Interpreter.Interpreter_stringStack[UserComparator8.Interpreter_stringStackSize];
+					var9 = Interpreter.Interpreter_stringStack[UserComparator8.Interpreter_stringStackSize + 1];
+					if (ScriptFrame.localPlayer.appearance != null && ScriptFrame.localPlayer.appearance.isFemale) {
+						Interpreter.Interpreter_stringStack[++UserComparator8.Interpreter_stringStackSize - 1] = var9;
 					} else {
-						Interpreter.Interpreter_stringStack[(UserComparator8.Interpreter_stringStackSize += 204829809) * 929025169 - 1] = var3;
+						Interpreter.Interpreter_stringStack[++UserComparator8.Interpreter_stringStackSize - 1] = var3;
 					}
 
 					return 1;
@@ -332,10 +339,10 @@ public class SoundCache {
 
 	@ObfuscatedName("gl")
 	@ObfuscatedSignature(
-		descriptor = "(Lcx;II)V",
-		garbageValue = "170435945"
+		garbageValue = "170435945",
+		descriptor = "(Lcx;II)V"
 	)
 	static final void method757(Actor var0, int var1) {
-		Bounds.worldToScreen(var0.x * 1627221919, var0.y * 1229064101, var1);
+		Bounds.worldToScreen(var0.x, var0.y, var1);
 	}
 }

@@ -7,40 +7,40 @@ import net.runelite.mapping.ObfuscatedSignature;
 public class class270 {
 	@ObfuscatedName("a")
 	@ObfuscatedSignature(
-		descriptor = "(I)V",
-		garbageValue = "-96821068"
+		garbageValue = "-96821068",
+		descriptor = "(I)V"
 	)
-	static final void method5154() {
+	static final void method5087() {
 		class4.method20("You can't add yourself to your own friend list");
 	}
 
 	@ObfuscatedName("gn")
 	@ObfuscatedSignature(
-		descriptor = "(B)V",
-		garbageValue = "46"
+		garbageValue = "46",
+		descriptor = "(B)V"
 	)
-	static final void method5161() {
+	static final void method5094() {
 		for (PendingSpawn var0 = (PendingSpawn)Client.pendingSpawns.last(); var0 != null; var0 = (PendingSpawn)Client.pendingSpawns.previous()) {
-			if (var0.hitpoints * -1174693975 > 0) {
-				var0.hitpoints -= -342295399;
+			if (var0.hitpoints > 0) {
+				--var0.hitpoints;
 			}
 
-			if (var0.hitpoints * -1174693975 == 0) {
-				if (var0.field1117 * -1234401291 < 0 || Client.method1576(var0.field1117 * -1234401291, var0.field1119 * 411557473)) {
-					Frames.addPendingSpawnToScene(var0.plane * -2038881543, var0.type * 1829738397, var0.x * 1805977901, var0.y * -1439978855, var0.field1117 * -1234401291, var0.field1118 * -6293433, var0.field1119 * 411557473);
+			if (var0.hitpoints == 0) {
+				if (var0.objectId < 0 || Client.method1511(var0.objectId, var0.field1119)) {
+					Frames.addPendingSpawnToScene(var0.plane, var0.type, var0.x, var0.y, var0.objectId, var0.field1118, var0.field1119);
 					var0.remove();
 				}
 			} else {
-				if (var0.delay * 1698221163 > 0) {
-					var0.delay -= -821591997;
+				if (var0.delay > 0) {
+					--var0.delay;
 				}
 
-				if (var0.delay * 1698221163 == 0 && var0.x * 1805977901 >= 1 && var0.y * -1439978855 >= 1 && var0.x * 1805977901 <= 102 && var0.y * -1439978855 <= 102 && (var0.id * -1740994599 < 0 || Client.method1576(var0.id * -1740994599, var0.field1122 * -603611573))) {
-					Frames.addPendingSpawnToScene(var0.plane * -2038881543, var0.type * 1829738397, var0.x * 1805977901, var0.y * -1439978855, var0.id * -1740994599, var0.orientation * -1726055575, var0.field1122 * -603611573);
-					var0.delay = 821591997;
-					if (var0.id * -1740994599 == var0.field1117 * -1234401291 && var0.field1117 * -1234401291 == -1) {
+				if (var0.delay == 0 && var0.x >= 1 && var0.y >= 1 && var0.x <= 102 && var0.y <= 102 && (var0.id < 0 || Client.method1511(var0.id, var0.field1122))) {
+					Frames.addPendingSpawnToScene(var0.plane, var0.type, var0.x, var0.y, var0.id, var0.orientation, var0.field1122);
+					var0.delay = -1;
+					if (var0.id == var0.objectId && var0.objectId == -1) {
 						var0.remove();
-					} else if (var0.id * -1740994599 == var0.field1117 * -1234401291 && var0.orientation * -1726055575 == var0.field1118 * -6293433 && var0.field1122 * -603611573 == var0.field1119 * 411557473) {
+					} else if (var0.id == var0.objectId && var0.field1118 == var0.orientation && var0.field1122 == var0.field1119) {
 						var0.remove();
 					}
 				}

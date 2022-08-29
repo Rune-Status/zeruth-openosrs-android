@@ -2,6 +2,7 @@ package osrs;
 
 import net.runelite.mapping.Export;
 import net.runelite.mapping.Implements;
+import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 
 @ObfuscatedName("qw")
@@ -9,16 +10,27 @@ import net.runelite.mapping.ObfuscatedName;
 public class RunException extends RuntimeException {
 	@ObfuscatedName("s")
 	@Export("RunException_applet")
-	public static /*Applet*/ Object RunException_applet;
+	public static /*Applet*/ GameEngine RunException_applet;
 	@ObfuscatedName("h")
-	public static String field4845;
+	@Export("localPlayerName")
+	public static String localPlayerName;
 	@ObfuscatedName("w")
+	@ObfuscatedGetter(
+		intValue = 1126443877
+	)
 	@Export("RunException_revision")
 	public static int RunException_revision;
 	@ObfuscatedName("v")
+	@ObfuscatedGetter(
+		intValue = 1917074983
+	)
 	public static int field4847;
 	@ObfuscatedName("c")
-	public static int field4846;
+	@ObfuscatedGetter(
+		intValue = -1784255921
+	)
+	@Export("clientType")
+	public static int clientType;
 	@ObfuscatedName("q")
 	@Export("message")
 	String message;

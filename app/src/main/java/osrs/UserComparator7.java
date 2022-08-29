@@ -7,6 +7,7 @@ import java.net.URLConnection;
 import java.util.Date;
 import net.runelite.mapping.Export;
 import net.runelite.mapping.Implements;
+import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
@@ -14,6 +15,9 @@ import net.runelite.mapping.ObfuscatedSignature;
 @Implements("UserComparator7")
 public class UserComparator7 extends AbstractUserComparator {
 	@ObfuscatedName("pa")
+	@ObfuscatedGetter(
+		intValue = -1947823007
+	)
 	static int field1374;
 	@ObfuscatedName("s")
 	@Export("reversed")
@@ -25,13 +29,13 @@ public class UserComparator7 extends AbstractUserComparator {
 
 	@ObfuscatedName("s")
 	@ObfuscatedSignature(
-		descriptor = "(Lnt;Lnt;I)I",
-		garbageValue = "1935298638"
+		garbageValue = "1935298638",
+		descriptor = "(Lnt;Lnt;I)I"
 	)
 	@Export("compareBuddy")
 	int compareBuddy(Buddy var1, Buddy var2) {
-		if (var1.world * 1881839891 != 0 && var2.world * 1881839891 != 0) {
-			return this.reversed ? var1.int2 * 547305229 - var2.int2 * 547305229 : var2.int2 * 547305229 - var1.int2 * 547305229;
+		if (var1.world != 0 && var2.world != 0) {
+			return this.reversed ? var1.int2 - var2.int2 : var2.int2 - var1.int2;
 		} else {
 			return this.compareUser(var1, var2);
 		}
@@ -43,10 +47,10 @@ public class UserComparator7 extends AbstractUserComparator {
 
 	@ObfuscatedName("i")
 	@ObfuscatedSignature(
-		descriptor = "(B)Ljava/util/Date;",
-		garbageValue = "-33"
+		garbageValue = "-33",
+		descriptor = "(B)Ljava/util/Date;"
 	)
-	static Date method2563() {
+	static Date method2498() {
 		java.util.Calendar var0 = java.util.Calendar.getInstance();
 		var0.set(2, 0);
 		var0.set(5, 1);
@@ -56,17 +60,17 @@ public class UserComparator7 extends AbstractUserComparator {
 
 	@ObfuscatedName("m")
 	@ObfuscatedSignature(
-		descriptor = "(I)V",
-		garbageValue = "1360388184"
+		garbageValue = "1360388184",
+		descriptor = "(I)V"
 	)
-	static void method2558() {
+	static void method2493() {
 		Login.Login_username = Login.Login_username.trim();
 		if (Login.Login_username.length() == 0) {
 			ItemComposition.setLoginResponseString("Please enter your username.", "If you created your account after November", "2010, this will be the creation email address.");
 		} else {
 			long var1;
 			try {
-				URL var3 = new URL(ModeWhere.method6005("services", false) + "m=accountappeal/login.ws");
+				URL var3 = new URL(ModeWhere.method5931("services", false) + "m=accountappeal/login.ws");
 				URLConnection var4 = var3.openConnection();
 				var4.setRequestProperty("connection", "close");
 				var4.setDoInput(true);
@@ -79,7 +83,7 @@ public class UserComparator7 extends AbstractUserComparator {
 				Buffer var7 = new Buffer(new byte[1000]);
 
 				while (true) {
-					int var8 = var6.read(var7.array, var7.offset * 1795921631, 1000 - var7.offset * 1795921631);
+					int var8 = var6.read(var7.array, var7.offset, 1000 - var7.offset);
 					if (var8 == -1) {
 						var7.offset = 0;
 						long var10 = var7.readLong();
@@ -87,8 +91,8 @@ public class UserComparator7 extends AbstractUserComparator {
 						break;
 					}
 
-					var7.offset += var8 * 1090888991;
-					if (var7.offset * 1795921631 >= 1000) {
+					var7.offset += var8;
+					if (var7.offset >= 1000) {
 						var1 = 0L;
 						break;
 					}
@@ -101,13 +105,13 @@ public class UserComparator7 extends AbstractUserComparator {
 			if (0L == var1) {
 				var0 = 5;
 			} else {
-				var0 = WorldMapSection0.method4852(var1, Login.Login_username);
+				var0 = WorldMapSection0.method4785(var1, Login.Login_username);
 			}
 
 			switch(var0) {
 			case 2:
 				ItemComposition.setLoginResponseString(Strings.field3894, Strings.field3687, Strings.field3762);
-				class116.method2683(6);
+				class116.method2618(6);
 				break;
 			case 3:
 				ItemComposition.setLoginResponseString("", "Error connecting to server.", "");
@@ -130,36 +134,37 @@ public class UserComparator7 extends AbstractUserComparator {
 
 	@ObfuscatedName("im")
 	@ObfuscatedSignature(
-		descriptor = "(Lkn;III)V",
-		garbageValue = "-1583696044"
+		garbageValue = "-1583696044",
+		descriptor = "(Lkn;III)V"
 	)
-	static void method2564(Widget var0, int var1, int var2) {
-		if (var0.xAlignment * -2080401453 == 0) {
-			var0.field3370 = var0.rawX * 771486611;
-		} else if (var0.xAlignment * -2080401453 == 1) {
-			var0.field3370 = (var0.rawX * -339501621 + (var1 - var0.field3372 * 1791266795) / 2) * -458536871;
-		} else if (var0.xAlignment * -2080401453 == 2) {
-			var0.field3370 = (var1 - var0.field3372 * 1791266795 - var0.rawX * -339501621) * -458536871;
-		} else if (var0.xAlignment * -2080401453 == 3) {
-			var0.field3370 = (var0.rawX * var1 * -339501621 >> 14) * -458536871;
-		} else if (var0.xAlignment * -2080401453 == 4) {
-			var0.field3370 = ((var0.rawX * var1 * -339501621 >> 14) + (var1 - var0.field3372 * 1791266795) / 2) * -458536871;
+	@Export("alignWidgetPosition")
+	static void alignWidgetPosition(Widget var0, int var1, int var2) {
+		if (var0.xAlignment == 0) {
+			var0.x = var0.rawX;
+		} else if (var0.xAlignment == 1) {
+			var0.x = var0.rawX + (var1 - var0.width) / 2;
+		} else if (var0.xAlignment == 2) {
+			var0.x = var1 - var0.width - var0.rawX;
+		} else if (var0.xAlignment == 3) {
+			var0.x = var0.rawX * var1 >> 14;
+		} else if (var0.xAlignment == 4) {
+			var0.x = (var1 - var0.width) / 2 + (var0.rawX * var1 >> 14);
 		} else {
-			var0.field3370 = (var1 - var0.field3372 * 1791266795 - (var0.rawX * var1 * -339501621 >> 14)) * -458536871;
+			var0.x = var1 - var0.width - (var0.rawX * var1 >> 14);
 		}
 
-		if (var0.yAlignment * -2086392833 == 0) {
-			var0.field3445 = var0.rawY * -1650582739;
-		} else if (var0.yAlignment * -2086392833 == 1) {
-			var0.field3445 = (var0.rawY * 1265895161 + (var2 - var0.field3426 * -1514292503) / 2) * 1149517525;
-		} else if (var0.yAlignment * -2086392833 == 2) {
-			var0.field3445 = (var2 - var0.field3426 * -1514292503 - var0.rawY * 1265895161) * 1149517525;
-		} else if (var0.yAlignment * -2086392833 == 3) {
-			var0.field3445 = (var2 * var0.rawY * 1265895161 >> 14) * 1149517525;
-		} else if (var0.yAlignment * -2086392833 == 4) {
-			var0.field3445 = ((var2 * var0.rawY * 1265895161 >> 14) + (var2 - var0.field3426 * -1514292503) / 2) * 1149517525;
+		if (var0.yAlignment == 0) {
+			var0.y = var0.rawY;
+		} else if (var0.yAlignment == 1) {
+			var0.y = (var2 - var0.height) / 2 + var0.rawY;
+		} else if (var0.yAlignment == 2) {
+			var0.y = var2 - var0.height - var0.rawY;
+		} else if (var0.yAlignment == 3) {
+			var0.y = var2 * var0.rawY >> 14;
+		} else if (var0.yAlignment == 4) {
+			var0.y = (var2 - var0.height) / 2 + (var2 * var0.rawY >> 14);
 		} else {
-			var0.field3445 = (var2 - var0.field3426 * -1514292503 - (var2 * var0.rawY * 1265895161 >> 14)) * 1149517525;
+			var0.y = var2 - var0.height - (var2 * var0.rawY >> 14);
 		}
 
 	}

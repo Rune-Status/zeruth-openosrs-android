@@ -23,49 +23,49 @@ public final class NPC extends Actor {
 
 	@ObfuscatedName("s")
 	@ObfuscatedSignature(
-		descriptor = "(Ljava/lang/String;I)V",
-		garbageValue = "1708053046"
+		garbageValue = "1708053046",
+		descriptor = "(Ljava/lang/String;I)V"
 	)
-	void method2333(String var1) {
+	void method2268(String var1) {
 		this.field1258 = var1 == null ? "" : var1;
 	}
 
 	@ObfuscatedName("h")
 	@ObfuscatedSignature(
-		descriptor = "(B)Lhp;",
-		garbageValue = "4"
+		garbageValue = "4",
+		descriptor = "(B)Lhp;"
 	)
 	@Export("getModel")
 	protected final Model getModel() {
 		if (this.definition == null) {
 			return null;
 		} else {
-			SequenceDefinition var1 = super.field1168 * 317961021 != -1 && super.field1126 * -850715395 == 0 ? ByteArrayPool.SequenceDefinition_get(super.field1168 * 317961021) : null;
-			SequenceDefinition var2 = super.field1155 * -1722266545 != -1 && (super.idleSequence * 202365461 != super.field1155 * -1722266545 || var1 == null) ? ByteArrayPool.SequenceDefinition_get(super.field1155 * -1722266545) : null;
-			Model var3 = this.definition.getModel(var1, super.field1169 * 950342315, var2, super.field1165 * -476097555);
+			SequenceDefinition var1 = super.sequence != -1 && super.sequenceDelay == 0 ? ByteArrayPool.SequenceDefinition_get(super.sequence) : null;
+			SequenceDefinition var2 = super.movementSequence != -1 && (super.idleSequence != super.movementSequence || var1 == null) ? ByteArrayPool.SequenceDefinition_get(super.movementSequence) : null;
+			Model var3 = this.definition.getModel(var1, super.sequenceFrame, var2, super.movementFrame);
 			if (var3 == null) {
 				return null;
 			} else {
 				var3.calculateBoundsCylinder();
-				super.field1186 = var3.height * 1854176371;
+				super.defaultHeight = var3.height;
 				int var4 = var3.indicesCount;
-				if (super.field1173 * -2060788623 != -1 && super.field1174 * 1267076011 != -1) {
-					Model var5 = ArchiveDisk.SpotAnimationDefinition_get(super.field1173 * -2060788623).getModel(super.field1174 * 1267076011);
+				if (super.spotAnimation != -1 && super.spotAnimationFrame != -1) {
+					Model var5 = ArchiveDisk.SpotAnimationDefinition_get(super.spotAnimation).getModel(super.spotAnimationFrame);
 					if (var5 != null) {
-						var5.offsetBy(0, -(super.field1195 * 1225658055), 0);
+						var5.offsetBy(0, -super.field1195, 0);
 						Model[] var6 = new Model[]{var3, var5};
 						var3 = new Model(var6, 2);
 					}
 				}
 
-				if (this.definition.size * 1339905335 == 1) {
+				if (this.definition.size == 1) {
 					var3.isSingleTile = true;
 				}
 
-				if (super.field1192 != 0 && Client.cycle * 2009455757 >= super.field1187 * 300576935 && Client.cycle * 2009455757 < super.field1188 * -719314241) {
-					var3.field2549 = super.field1189;
-					var3.field2524 = super.field1131;
-					var3.field2588 = super.field1191;
+				if (super.field1192 != 0 && Client.cycle >= super.field1187 && Client.cycle < super.field1188) {
+					var3.overrideHue = super.field1189;
+					var3.overrideSaturation = super.field1131;
+					var3.overrideLuminance = super.field1191;
 					var3.overrideAmount = super.field1192;
 					var3.field2527 = (short)var4;
 				} else {
@@ -79,10 +79,10 @@ public final class NPC extends Actor {
 
 	@ObfuscatedName("w")
 	@ObfuscatedSignature(
-		descriptor = "(B)Ljava/lang/String;",
-		garbageValue = "83"
+		garbageValue = "83",
+		descriptor = "(B)Ljava/lang/String;"
 	)
-	final String method2314() {
+	final String method2249() {
 		if (!this.field1258.isEmpty()) {
 			return this.field1258;
 		} else {
@@ -100,10 +100,10 @@ public final class NPC extends Actor {
 
 	@ObfuscatedName("v")
 	@ObfuscatedSignature(
-		descriptor = "(ILgi;B)V",
-		garbageValue = "64"
+		garbageValue = "64",
+		descriptor = "(ILgi;B)V"
 	)
-	final void method2315(int var1, class192 var2) {
+	final void method2250(int var1, class192 var2) {
 		int var3 = super.pathX[0];
 		int var4 = super.pathY[0];
 		if (var1 == 0) {
@@ -142,15 +142,15 @@ public final class NPC extends Actor {
 			--var4;
 		}
 
-		if (super.field1168 * 317961021 != -1 && ByteArrayPool.SequenceDefinition_get(317961021 * super.field1168).field2180 * 1316679313 == 1) {
-			super.field1168 = 469746667;
+		if (super.sequence != -1 && ByteArrayPool.SequenceDefinition_get(super.sequence).field2180 == 1) {
+			super.sequence = -1;
 		}
 
-		if (super.pathLength * -2007282911 < 9) {
-			super.pathLength += -90441503;
+		if (super.pathLength < 9) {
+			++super.pathLength;
 		}
 
-		for (int var5 = super.pathLength * -2007282911; var5 > 0; --var5) {
+		for (int var5 = super.pathLength; var5 > 0; --var5) {
 			super.pathX[var5] = super.pathX[var5 - 1];
 			super.pathY[var5] = super.pathY[var5 - 1];
 			super.pathTraversed[var5] = super.pathTraversed[var5 - 1];
@@ -163,23 +163,23 @@ public final class NPC extends Actor {
 
 	@ObfuscatedName("k")
 	@ObfuscatedSignature(
-		descriptor = "(IIZI)V",
-		garbageValue = "-1292121019"
+		garbageValue = "-1292121019",
+		descriptor = "(IIZI)V"
 	)
-	final void method2316(int var1, int var2, boolean var3) {
-		if (super.field1168 * 317961021 != -1 && ByteArrayPool.SequenceDefinition_get(super.field1168 * 317961021).field2180 * 1316679313 == 1) {
-			super.field1168 = 469746667;
+	final void method2251(int var1, int var2, boolean var3) {
+		if (super.sequence != -1 && ByteArrayPool.SequenceDefinition_get(super.sequence).field2180 == 1) {
+			super.sequence = -1;
 		}
 
 		if (!var3) {
 			int var4 = var1 - super.pathX[0];
 			int var5 = var2 - super.pathY[0];
 			if (var4 >= -8 && var4 <= 8 && var5 >= -8 && var5 <= 8) {
-				if (super.pathLength * -2007282911 < 9) {
-					super.pathLength += -90441503;
+				if (super.pathLength < 9) {
+					++super.pathLength;
 				}
 
-				for (int var6 = super.pathLength * -2007282911; var6 > 0; --var6) {
+				for (int var6 = super.pathLength; var6 > 0; --var6) {
 					super.pathX[var6] = super.pathX[var6 - 1];
 					super.pathY[var6] = super.pathY[var6 - 1];
 					super.pathTraversed[var6] = super.pathTraversed[var6 - 1];
@@ -197,14 +197,14 @@ public final class NPC extends Actor {
 		super.field1200 = 0;
 		super.pathX[0] = var1;
 		super.pathY[0] = var2;
-		super.x = super.pathX[0] * -369741952 + super.field1190 * 1151620288;
-		super.y = super.pathY[0] * -121366912 + super.field1190 * -1924861376;
+		super.x = super.field1190 * 64 + super.pathX[0] * 128;
+		super.y = super.field1190 * 64 + super.pathY[0] * 128;
 	}
 
 	@ObfuscatedName("p")
 	@ObfuscatedSignature(
-		descriptor = "(B)Z",
-		garbageValue = "-18"
+		garbageValue = "-18",
+		descriptor = "(B)Z"
 	)
 	@Export("isVisible")
 	final boolean isVisible() {
@@ -213,10 +213,10 @@ public final class NPC extends Actor {
 
 	@ObfuscatedName("v")
 	@ObfuscatedSignature(
-		descriptor = "(IIII)I",
-		garbageValue = "2056731845"
+		garbageValue = "2056731845",
+		descriptor = "(IIII)I"
 	)
-	public static int method2334(int var0, int var1, int var2) {
+	public static int method2269(int var0, int var1, int var2) {
 		int var3 = class14.method171(var2 - var1 + 1);
 		var3 <<= var1;
 		return var0 & ~var3;
@@ -224,10 +224,10 @@ public final class NPC extends Actor {
 
 	@ObfuscatedName("ky")
 	@ObfuscatedSignature(
-		descriptor = "(IB)V",
-		garbageValue = "8"
+		garbageValue = "8",
+		descriptor = "(IB)V"
 	)
-	static void method2320(int var0) {
+	static void method2255(int var0) {
 		Client.oculusOrbState = var0 * -1491846659;
 	}
 }

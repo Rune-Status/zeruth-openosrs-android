@@ -2,6 +2,7 @@ package osrs;
 
 import net.runelite.mapping.Export;
 import net.runelite.mapping.Implements;
+import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
@@ -534,9 +535,15 @@ public class ServerPacket {
 	)
 	public static final ServerPacket field3150;
 	@ObfuscatedName("di")
+	@ObfuscatedGetter(
+		intValue = -62777805
+	)
 	@Export("id")
 	public final int id;
 	@ObfuscatedName("dw")
+	@ObfuscatedGetter(
+		intValue = 1156259585
+	)
 	@Export("length")
 	public final int length;
 
@@ -649,7 +656,7 @@ public class ServerPacket {
 	}
 
 	ServerPacket(int var1, int var2) {
-		this.id = var1 * 99013883;
-		this.length = var2 * 1238753537;
+		this.id = var1;
+		this.length = var2;
 	}
 }

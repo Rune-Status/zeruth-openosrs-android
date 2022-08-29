@@ -6,6 +6,8 @@ import java.io.PrintWriter;
 import java.io.StringReader;
 import java.io.StringWriter;
 import java.net.URL;
+
+import net.oprs.Paramaters;
 import net.runelite.mapping.Export;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
@@ -25,8 +27,8 @@ public class class33 {
 
 	@ObfuscatedName("s")
 	@ObfuscatedSignature(
-		descriptor = "(Ljava/lang/String;Ljava/lang/Throwable;I)V",
-		garbageValue = "1455646027"
+		garbageValue = "1455646027",
+		descriptor = "(Ljava/lang/String;Ljava/lang/Throwable;I)V"
 	)
 	@Export("RunException_sendStackTrace")
 	public static void RunException_sendStackTrace(String var0, Throwable var1) {
@@ -103,10 +105,10 @@ public class class33 {
 					return;
 				}
 
-/*				URL var3 = new URL(RunException.RunException_applet.getCodeBase(), "clienterror.ws?cv=" + RunException.RunException_revision * 1126443877 + "&cs=" + RunException.field4847 * 1917074983 + "&u=" + RunException.field4845 + "&v1=" + TaskHandler.javaVendor + "&v2=" + TaskHandler.javaVersion + "&ct=" + RunException.field4846 * -1784255921 + "&e=" + var2);
+				URL var3 = new URL(new URL(Paramaters.getCodeBase()), "clienterror.ws?cv=" + RunException.RunException_revision + "&cs=" + RunException.field4847 + "&u=" + RunException.localPlayerName + "&v1=" + TaskHandler.javaVendor + "&v2=" + TaskHandler.javaVersion + "&ct=" + RunException.clientType + "&e=" + var2);
 				DataInputStream var17 = new DataInputStream(var3.openStream());
 				var17.read();
-				var17.close();*/
+				var17.close();
 			} catch (Exception var16) {
 			}
 
@@ -115,29 +117,29 @@ public class class33 {
 
 	@ObfuscatedName("a")
 	@ObfuscatedSignature(
-		descriptor = "(ZI)V",
-		garbageValue = "-1039613343"
+		garbageValue = "-1039613343",
+		descriptor = "(ZI)V"
 	)
 	static void method572(boolean var0) {
 		byte var1 = 0;
-		boolean var2 = ClanMate.clientPreferences.method2229() >= Client.field480 * 424143225;
+		boolean var2 = ClanMate.clientPreferences.method2164() >= Client.field480;
 		if (!var2) {
 			var1 = 12;
-		} else if (AbstractByteArrayCopier.client.method1086() || AbstractByteArrayCopier.client.method1087()) {
+		} else if (AbstractByteArrayCopier.client.method1085() || AbstractByteArrayCopier.client.method1086()) {
 			var1 = 10;
 		}
 
-		class116.method2683(var1);
+		class116.method2618(var1);
 		if (var0) {
 			Login.Login_username = "";
 			Login.Login_password = "";
 			class19.field100 = 0;
-			KeyHandler.field146 = "";
+			KeyHandler.otp = "";
 		}
 
 		if (Login.Login_username == null || Login.Login_username.length() <= 0) {
-			if (ClanMate.clientPreferences.method2227() != null) {
-				Login.Login_username = ClanMate.clientPreferences.method2227();
+			if (ClanMate.clientPreferences.method2162() != null) {
+				Login.Login_username = ClanMate.clientPreferences.method2162();
 				Client.Login_isUsernameRemembered = true;
 			} else {
 				Client.Login_isUsernameRemembered = false;
@@ -149,15 +151,15 @@ public class class33 {
 
 	@ObfuscatedName("ex")
 	@ObfuscatedSignature(
-		descriptor = "(II)V",
-		garbageValue = "-1810092240"
+		garbageValue = "-1810092240",
+		descriptor = "(II)V"
 	)
 	@Export("forceDisconnect")
 	static final void forceDisconnect(int var0) {
 		UserComparator8.logOut();
 		switch(var0) {
 		case 1:
-			class116.method2683(24);
+			class116.method2618(24);
 			ItemComposition.setLoginResponseString("", "You were disconnected from the server.", "");
 			break;
 		case 2:

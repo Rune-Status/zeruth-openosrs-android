@@ -37,8 +37,8 @@ public class class15 extends SSLSocketFactory {
 
 	@ObfuscatedName("h")
 	@ObfuscatedSignature(
-		descriptor = "(Ljava/lang/String;Lorg/bouncycastle/crypto/tls/TlsClientProtocol;B)Ljavax/net/ssl/SSLSocket;",
-		garbageValue = "76"
+		garbageValue = "76",
+		descriptor = "(Ljava/lang/String;Lorg/bouncycastle/crypto/tls/TlsClientProtocol;B)Ljavax/net/ssl/SSLSocket;"
 	)
 	SSLSocket method183(String var1, TlsClientProtocol var2) {
 		return new class12(this, var2, var1);
@@ -83,8 +83,8 @@ public class class15 extends SSLSocketFactory {
 
 	@ObfuscatedName("s")
 	@ObfuscatedSignature(
-		descriptor = "(B)Lz;",
-		garbageValue = "-53"
+		garbageValue = "-53",
+		descriptor = "(B)Lz;"
 	)
 	public static class15 method185() {
 		if (field80 == null) {

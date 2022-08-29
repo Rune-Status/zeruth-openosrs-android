@@ -3,6 +3,7 @@ package osrs;
 import java.io.File;
 import net.runelite.mapping.Export;
 import net.runelite.mapping.Implements;
+import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
@@ -28,6 +29,9 @@ public class NetFileRequest extends DualNode {
 	@Export("archive")
 	Archive archive;
 	@ObfuscatedName("h")
+	@ObfuscatedGetter(
+		intValue = -1580363083
+	)
 	@Export("crc")
 	int crc;
 	@ObfuscatedName("w")

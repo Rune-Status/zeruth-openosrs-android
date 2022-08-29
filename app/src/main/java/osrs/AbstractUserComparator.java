@@ -3,6 +3,7 @@ package osrs;
 import java.util.Comparator;
 import net.runelite.mapping.Export;
 import net.runelite.mapping.Implements;
+import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
@@ -16,7 +17,11 @@ public abstract class AbstractUserComparator implements Comparator {
 	@Export("cacheParentPaths")
 	static String[] cacheParentPaths;
 	@ObfuscatedName("ja")
-	static int field4308;
+	@ObfuscatedGetter(
+		intValue = 1435916161
+	)
+	@Export("oculusOrbFocalPointY")
+	static int oculusOrbFocalPointY;
 	@ObfuscatedName("h")
 	@Export("nextComparator")
 	Comparator nextComparator;
@@ -26,8 +31,8 @@ public abstract class AbstractUserComparator implements Comparator {
 
 	@ObfuscatedName("n")
 	@ObfuscatedSignature(
-		descriptor = "(Ljava/util/Comparator;I)V",
-		garbageValue = "-1795552245"
+		garbageValue = "-1795552245",
+		descriptor = "(Ljava/util/Comparator;I)V"
 	)
 	@Export("addComparator")
 	final void addComparator(Comparator var1) {
@@ -41,8 +46,8 @@ public abstract class AbstractUserComparator implements Comparator {
 
 	@ObfuscatedName("d")
 	@ObfuscatedSignature(
-		descriptor = "(Lnb;Lnb;B)I",
-		garbageValue = "80"
+		garbageValue = "80",
+		descriptor = "(Lnb;Lnb;B)I"
 	)
 	@Export("compareUser")
 	protected final int compareUser(User var1, User var2) {
@@ -55,14 +60,14 @@ public abstract class AbstractUserComparator implements Comparator {
 
 	@ObfuscatedName("h")
 	@ObfuscatedSignature(
-		descriptor = "(ILnk;Lln;I)V",
-		garbageValue = "-1499141243"
+		garbageValue = "-1499141243",
+		descriptor = "(ILnk;Lln;I)V"
 	)
-	static void method6637(int var0, ArchiveDisk var1, Archive var2) {
+	static void method6555(int var0, ArchiveDisk var1, Archive var2) {
 		byte[] var3 = null;
 		synchronized(ArchiveDiskActionHandler.ArchiveDiskActionHandler_requestQueue) {
 			for (ArchiveDiskAction var5 = (ArchiveDiskAction)ArchiveDiskActionHandler.ArchiveDiskActionHandler_requestQueue.last(); var5 != null; var5 = (ArchiveDiskAction)ArchiveDiskActionHandler.ArchiveDiskActionHandler_requestQueue.previous()) {
-				if ((long)var0 == var5.key && var1 == var5.archiveDisk && var5.type * -1360611527 == 0) {
+				if ((long)var0 == var5.key && var1 == var5.archiveDisk && var5.type == 0) {
 					var3 = var5.data;
 					break;
 				}
@@ -79,10 +84,10 @@ public abstract class AbstractUserComparator implements Comparator {
 
 	@ObfuscatedName("w")
 	@ObfuscatedSignature(
-		descriptor = "(Ljava/lang/CharSequence;I)I",
-		garbageValue = "-549396051"
+		garbageValue = "-549396051",
+		descriptor = "(Ljava/lang/CharSequence;I)I"
 	)
-	public static int method6644(CharSequence var0) {
-		return WorldMapIcon_0.method4838(var0, 10, true);
+	public static int method6562(CharSequence var0) {
+		return WorldMapIcon_0.method4771(var0, 10, true);
 	}
 }

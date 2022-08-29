@@ -7,6 +7,7 @@ import javax.net.ssl.SSLSession;
 import javax.net.ssl.SSLSessionContext;
 import javax.security.cert.X509Certificate;
 import net.runelite.mapping.Export;
+import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
@@ -26,6 +27,9 @@ class class17 implements SSLSession {
 	)
 	static Archive field89;
 	@ObfuscatedName("fx")
+	@ObfuscatedGetter(
+		intValue = -1132082091
+	)
 	static int field91;
 	// $FF: synthetic field
 	@ObfuscatedSignature(
@@ -126,8 +130,8 @@ class class17 implements SSLSession {
 
 	@ObfuscatedName("h")
 	@ObfuscatedSignature(
-		descriptor = "(II)Lfv;",
-		garbageValue = "2008817465"
+		garbageValue = "2008817465",
+		descriptor = "(II)Lfv;"
 	)
 	@Export("KitDefinition_get")
 	public static KitDefinition KitDefinition_get(int var0) {
@@ -148,8 +152,8 @@ class class17 implements SSLSession {
 
 	@ObfuscatedName("e")
 	@ObfuscatedSignature(
-		descriptor = "(IIIB)I",
-		garbageValue = "53"
+		garbageValue = "53",
+		descriptor = "(IIIB)I"
 	)
 	@Export("hslToRgb")
 	static final int hslToRgb(int var0, int var1, int var2) {

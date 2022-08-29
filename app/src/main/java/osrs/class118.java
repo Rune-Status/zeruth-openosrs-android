@@ -1,11 +1,12 @@
 package osrs;
 
 import net.runelite.mapping.Export;
+import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
 @ObfuscatedName("dn")
-public class class118 implements class328 {
+public class class118 implements MouseWheel {
 	@ObfuscatedName("s")
 	@ObfuscatedSignature(
 		descriptor = "Ldn;"
@@ -40,12 +41,22 @@ public class class118 implements class328 {
 	@ObfuscatedSignature(
 		descriptor = "Lfq;"
 	)
-	static Task field1456;
+	@Export("socketTask")
+	static Task socketTask;
 	@ObfuscatedName("i")
+	@ObfuscatedGetter(
+		intValue = -1949909645
+	)
 	final int field1462;
 	@ObfuscatedName("k")
+	@ObfuscatedGetter(
+		intValue = 458997395
+	)
 	final int field1463;
 	@ObfuscatedName("o")
+	@ObfuscatedGetter(
+		intValue = -278782955
+	)
 	final int field1460;
 
 	static {
@@ -58,36 +69,36 @@ public class class118 implements class328 {
 	}
 
 	class118(int var1, int var2, String var3, int var4) {
-		this.field1462 = var1 * -1746489413;
-		this.field1463 = var2 * -2009919589;
-		this.field1460 = var4 * 1662178109;
+		this.field1462 = var1;
+		this.field1463 = var2;
+		this.field1460 = var4;
 	}
 
 	@ObfuscatedName("s")
 	@ObfuscatedSignature(
-		descriptor = "(I)I",
-		garbageValue = "-121656532"
+		garbageValue = "-121656532",
+		descriptor = "(I)I"
 	)
-	int method2714() {
-		return this.field1460 * -278782955;
+	int method2649() {
+		return this.field1460;
 	}
 
 	@ObfuscatedName("h")
 	@ObfuscatedSignature(
-		descriptor = "(B)I",
-		garbageValue = "104"
+		garbageValue = "104",
+		descriptor = "(B)I"
 	)
 	@Export("rsOrdinal")
 	public int rsOrdinal() {
-		return this.field1463 * 458997395;
+		return this.field1463;
 	}
 
 	@ObfuscatedName("h")
 	@ObfuscatedSignature(
-		descriptor = "(II)Lgz;",
-		garbageValue = "-1079652854"
+		garbageValue = "-1079652854",
+		descriptor = "(II)Lgz;"
 	)
-	public static VarbitComposition method2721(int var0) {
+	public static VarbitComposition method2656(int var0) {
 		VarbitComposition var1 = (VarbitComposition)VarbitComposition.VarbitDefinition_cached.get((long)var0);
 		if (var1 != null) {
 			return var1;
@@ -105,23 +116,23 @@ public class class118 implements class328 {
 
 	@ObfuscatedName("w")
 	@ObfuscatedSignature(
-		descriptor = "(Lls;IIIZI)V",
-		garbageValue = "1367310887"
+		garbageValue = "1367310887",
+		descriptor = "(Lls;IIIZI)V"
 	)
-	public static void method2713(AbstractArchive var0, int var1, int var2, int var3, boolean var4) {
-		class273.musicPlayerStatus = 168497391;
+	public static void method2648(AbstractArchive var0, int var1, int var2, int var3, boolean var4) {
+		class273.musicPlayerStatus = 1;
 		NetFileRequest.musicTrackArchive = var0;
-		UrlRequester.musicTrackGroupId = var1 * -1733946155;
-		SceneTilePaint.musicTrackFileId = var2 * -2021054053;
-		class28.musicTrackVolume = var3 * -536149201;
+		UrlRequester.musicTrackGroupId = var1;
+		SceneTilePaint.musicTrackFileId = var2;
+		class28.musicTrackVolume = var3;
 		class273.musicTrackBoolean = var4;
-		class160.pcmSampleLength = -438070160;
+		class160.pcmSampleLength = 10000;
 	}
 
 	@ObfuscatedName("c")
 	@ObfuscatedSignature(
-		descriptor = "(Lqz;II)Z",
-		garbageValue = "721926081"
+		garbageValue = "721926081",
+		descriptor = "(Lqz;II)Z"
 	)
 	@Export("updateExternalPlayer")
 	static boolean updateExternalPlayer(PacketBuffer var0, int var1) {
@@ -141,28 +152,28 @@ public class class118 implements class328 {
 			var4 = var0.readBits(13);
 			boolean var12 = var0.readBits(1) == 1;
 			if (var12) {
-				Players.Players_pendingUpdateIndices[(Players.Players_pendingUpdateCount += 709859425) * -1903883359 - 1] = var1;
+				Players.Players_pendingUpdateIndices[++Players.Players_pendingUpdateCount - 1] = var1;
 			}
 
 			if (Client.players[var1] != null) {
 				throw new RuntimeException();
 			} else {
-				Player var11 = Client.players[var1] = new Player();
-				var11.index = var1 * 1072435695;
+				Player var6 = Client.players[var1] = new Player();
+				var6.index = var1;
 				if (Players.field1308[var1] != null) {
-					var11.read(Players.field1308[var1]);
+					var6.read(Players.field1308[var1]);
 				}
 
-				var11.orientation = Players.Players_orientations[var1] * 705267999;
-				var11.targetIndex = Players.Players_targetIndices[var1] * -296959257;
+				var6.orientation = Players.Players_orientations[var1];
+				var6.targetIndex = Players.Players_targetIndices[var1];
 				var7 = Players.Players_regions[var1];
 				var8 = var7 >> 28;
 				var9 = var7 >> 14 & 255;
 				var10 = var7 & 255;
-				var11.pathTraversed[0] = Players.field1298[var1];
-				var11.plane = (byte)var8 * -1367827023;
-				var11.resetPath((var9 << 13) + var3 - Decimator.field404 * 620670661, (var10 << 13) + var4 - class7.field30 * 542116271);
-				var11.field1111 = false;
+				var6.pathTraversed[0] = Players.field1298[var1];
+				var6.plane = (byte)var8;
+				var6.resetPath((var9 << 13) + var3 - Decimator.baseX, (var10 << 13) + var4 - class7.baseY * 542116271);
+				var6.field1111 = false;
 				return true;
 			}
 		} else if (var2 == 1) {
@@ -172,15 +183,15 @@ public class class118 implements class328 {
 			return false;
 		} else {
 			int var5;
-			int var6;
+			int var11;
 			if (var2 == 2) {
 				var3 = var0.readBits(5);
 				var4 = var3 >> 3;
 				var5 = var3 & 7;
-				var6 = Players.Players_regions[var1];
-				var7 = (var6 >> 28) + var4 & 3;
-				var8 = var6 >> 14 & 255;
-				var9 = var6 & 255;
+				var11 = Players.Players_regions[var1];
+				var7 = (var11 >> 28) + var4 & 3;
+				var8 = var11 >> 14 & 255;
+				var9 = var11 & 255;
 				if (var5 == 0) {
 					--var8;
 					--var9;
@@ -223,11 +234,11 @@ public class class118 implements class328 {
 				var3 = var0.readBits(18);
 				var4 = var3 >> 16;
 				var5 = var3 >> 8 & 255;
-				var6 = var3 & 255;
+				var11 = var3 & 255;
 				var7 = Players.Players_regions[var1];
 				var8 = (var7 >> 28) + var4 & 3;
 				var9 = var5 + (var7 >> 14) & 255;
-				var10 = var6 + var7 & 255;
+				var10 = var11 + var7 & 255;
 				Players.Players_regions[var1] = (var9 << 14) + var10 + (var8 << 28);
 				return false;
 			}

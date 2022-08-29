@@ -2,6 +2,7 @@ package osrs;
 
 import net.runelite.mapping.Export;
 import net.runelite.mapping.Implements;
+import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
@@ -9,6 +10,9 @@ import net.runelite.mapping.ObfuscatedSignature;
 @Implements("WorldMapScaleHandler")
 public class WorldMapScaleHandler {
 	@ObfuscatedName("s")
+	@ObfuscatedGetter(
+		intValue = 2146368821
+	)
 	@Export("pixelsPerTile")
 	int pixelsPerTile;
 	@ObfuscatedName("h")
@@ -16,28 +20,28 @@ public class WorldMapScaleHandler {
 	byte[][][] tileTemplates;
 
 	WorldMapScaleHandler(int var1) {
-		this.pixelsPerTile = var1 * 1042230557;
+		this.pixelsPerTile = var1;
 	}
 
 	@ObfuscatedName("s")
 	@ObfuscatedSignature(
-		descriptor = "(IIIIIIIIB)V",
-		garbageValue = "-42"
+		garbageValue = "-42",
+		descriptor = "(IIIIIIIIB)V"
 	)
-	void method5037(int var1, int var2, int var3, int var4, int var5, int var6, int var7, int var8) {
-		if (var7 != 0 && this.pixelsPerTile * 2146368821 != 0 && this.tileTemplates != null) {
-			var8 = this.method5016(var8, var7);
-			var7 = this.method5033(var7);
-			Rasterizer2D.Rasterizer2D_drawGradientPixels(var1, var2, var5, var6, var3, var4, this.tileTemplates[var7 - 1][var8], this.pixelsPerTile * 2146368821);
+	void method4970(int var1, int var2, int var3, int var4, int var5, int var6, int var7, int var8) {
+		if (var7 != 0 && this.pixelsPerTile != 0 && this.tileTemplates != null) {
+			var8 = this.method4949(var8, var7);
+			var7 = this.method4966(var7);
+			Rasterizer2D.Rasterizer2D_drawGradientPixels(var1, var2, var5, var6, var3, var4, this.tileTemplates[var7 - 1][var8], this.pixelsPerTile);
 		}
 	}
 
 	@ObfuscatedName("h")
 	@ObfuscatedSignature(
-		descriptor = "(III)I",
-		garbageValue = "-969764847"
+		garbageValue = "-969764847",
+		descriptor = "(III)I"
 	)
-	int method5016(int var1, int var2) {
+	int method4949(int var1, int var2) {
 		if (var2 == 9) {
 			var1 = var1 + 1 & 3;
 		}
@@ -55,10 +59,10 @@ public class WorldMapScaleHandler {
 
 	@ObfuscatedName("w")
 	@ObfuscatedSignature(
-		descriptor = "(II)I",
-		garbageValue = "2106538820"
+		garbageValue = "2106538820",
+		descriptor = "(II)I"
 	)
-	int method5033(int var1) {
+	int method4966(int var1) {
 		if (var1 != 9 && var1 != 10) {
 			return var1 == 11 ? 8 : var1;
 		} else {
@@ -68,8 +72,8 @@ public class WorldMapScaleHandler {
 
 	@ObfuscatedName("v")
 	@ObfuscatedSignature(
-		descriptor = "(I)V",
-		garbageValue = "-1896016077"
+		garbageValue = "-1896016077",
+		descriptor = "(I)V"
 	)
 	@Export("init")
 	void init() {
@@ -88,18 +92,18 @@ public class WorldMapScaleHandler {
 
 	@ObfuscatedName("c")
 	@ObfuscatedSignature(
-		descriptor = "(I)V",
-		garbageValue = "-317458625"
+		garbageValue = "-317458625",
+		descriptor = "(I)V"
 	)
 	@Export("init0")
 	void init0() {
-		byte[] var1 = new byte[this.pixelsPerTile * this.pixelsPerTile * 2146368821 * 2146368821];
+		byte[] var1 = new byte[this.pixelsPerTile * this.pixelsPerTile];
 		int var2 = 0;
 
 		int var3;
 		int var4;
-		for (var3 = 0; var3 < this.pixelsPerTile * 2146368821; ++var3) {
-			for (var4 = 0; var4 < this.pixelsPerTile * 2146368821; ++var4) {
+		for (var3 = 0; var3 < this.pixelsPerTile; ++var3) {
+			for (var4 = 0; var4 < this.pixelsPerTile; ++var4) {
 				if (var4 <= var3) {
 					var1[var2] = -1;
 				}
@@ -109,11 +113,11 @@ public class WorldMapScaleHandler {
 		}
 
 		this.tileTemplates[0][0] = var1;
-		var1 = new byte[this.pixelsPerTile * this.pixelsPerTile * 2146368821 * 2146368821];
+		var1 = new byte[this.pixelsPerTile * this.pixelsPerTile];
 		var2 = 0;
 
-		for (var3 = this.pixelsPerTile * 2146368821 - 1; var3 >= 0; --var3) {
-			for (var4 = 0; var4 < this.pixelsPerTile * 2146368821; ++var4) {
+		for (var3 = this.pixelsPerTile - 1; var3 >= 0; --var3) {
+			for (var4 = 0; var4 < this.pixelsPerTile; ++var4) {
 				if (var4 <= var3) {
 					var1[var2] = -1;
 				}
@@ -123,11 +127,11 @@ public class WorldMapScaleHandler {
 		}
 
 		this.tileTemplates[0][1] = var1;
-		var1 = new byte[this.pixelsPerTile * this.pixelsPerTile * 2146368821 * 2146368821];
+		var1 = new byte[this.pixelsPerTile * this.pixelsPerTile];
 		var2 = 0;
 
-		for (var3 = 0; var3 < this.pixelsPerTile * 2146368821; ++var3) {
-			for (var4 = 0; var4 < this.pixelsPerTile * 2146368821; ++var4) {
+		for (var3 = 0; var3 < this.pixelsPerTile; ++var3) {
+			for (var4 = 0; var4 < this.pixelsPerTile; ++var4) {
 				if (var4 >= var3) {
 					var1[var2] = -1;
 				}
@@ -137,11 +141,11 @@ public class WorldMapScaleHandler {
 		}
 
 		this.tileTemplates[0][2] = var1;
-		var1 = new byte[this.pixelsPerTile * this.pixelsPerTile * 2146368821 * 2146368821];
+		var1 = new byte[this.pixelsPerTile * this.pixelsPerTile];
 		var2 = 0;
 
-		for (var3 = this.pixelsPerTile * 2146368821 - 1; var3 >= 0; --var3) {
-			for (var4 = 0; var4 < this.pixelsPerTile * 2146368821; ++var4) {
+		for (var3 = this.pixelsPerTile - 1; var3 >= 0; --var3) {
+			for (var4 = 0; var4 < this.pixelsPerTile; ++var4) {
 				if (var4 >= var3) {
 					var1[var2] = -1;
 				}
@@ -155,18 +159,18 @@ public class WorldMapScaleHandler {
 
 	@ObfuscatedName("q")
 	@ObfuscatedSignature(
-		descriptor = "(I)V",
-		garbageValue = "423425230"
+		garbageValue = "423425230",
+		descriptor = "(I)V"
 	)
 	@Export("init1")
 	void init1() {
-		byte[] var1 = new byte[this.pixelsPerTile * this.pixelsPerTile * 2146368821 * 2146368821];
+		byte[] var1 = new byte[this.pixelsPerTile * this.pixelsPerTile];
 		int var2 = 0;
 
 		int var3;
 		int var4;
-		for (var3 = this.pixelsPerTile * 2146368821 - 1; var3 >= 0; --var3) {
-			for (var4 = 0; var4 < this.pixelsPerTile * 2146368821; ++var4) {
+		for (var3 = this.pixelsPerTile - 1; var3 >= 0; --var3) {
+			for (var4 = 0; var4 < this.pixelsPerTile; ++var4) {
 				if (var4 <= var3 >> 1) {
 					var1[var2] = -1;
 				}
@@ -176,11 +180,11 @@ public class WorldMapScaleHandler {
 		}
 
 		this.tileTemplates[1][0] = var1;
-		var1 = new byte[this.pixelsPerTile * this.pixelsPerTile * 2146368821 * 2146368821];
+		var1 = new byte[this.pixelsPerTile * this.pixelsPerTile];
 		var2 = 0;
 
-		for (var3 = 0; var3 < this.pixelsPerTile * 2146368821; ++var3) {
-			for (var4 = 0; var4 < this.pixelsPerTile * 2146368821; ++var4) {
+		for (var3 = 0; var3 < this.pixelsPerTile; ++var3) {
+			for (var4 = 0; var4 < this.pixelsPerTile; ++var4) {
 				if (var2 >= 0 && var2 < var1.length) {
 					if (var4 >= var3 << 1) {
 						var1[var2] = -1;
@@ -194,11 +198,11 @@ public class WorldMapScaleHandler {
 		}
 
 		this.tileTemplates[1][1] = var1;
-		var1 = new byte[this.pixelsPerTile * this.pixelsPerTile * 2146368821 * 2146368821];
+		var1 = new byte[this.pixelsPerTile * this.pixelsPerTile];
 		var2 = 0;
 
-		for (var3 = 0; var3 < this.pixelsPerTile * 2146368821; ++var3) {
-			for (var4 = this.pixelsPerTile * 2146368821 - 1; var4 >= 0; --var4) {
+		for (var3 = 0; var3 < this.pixelsPerTile; ++var3) {
+			for (var4 = this.pixelsPerTile - 1; var4 >= 0; --var4) {
 				if (var4 <= var3 >> 1) {
 					var1[var2] = -1;
 				}
@@ -208,11 +212,11 @@ public class WorldMapScaleHandler {
 		}
 
 		this.tileTemplates[1][2] = var1;
-		var1 = new byte[this.pixelsPerTile * this.pixelsPerTile * 2146368821 * 2146368821];
+		var1 = new byte[this.pixelsPerTile * this.pixelsPerTile];
 		var2 = 0;
 
-		for (var3 = this.pixelsPerTile * 2146368821 - 1; var3 >= 0; --var3) {
-			for (var4 = this.pixelsPerTile * 2146368821 - 1; var4 >= 0; --var4) {
+		for (var3 = this.pixelsPerTile - 1; var3 >= 0; --var3) {
+			for (var4 = this.pixelsPerTile - 1; var4 >= 0; --var4) {
 				if (var4 >= var3 << 1) {
 					var1[var2] = -1;
 				}
@@ -226,18 +230,18 @@ public class WorldMapScaleHandler {
 
 	@ObfuscatedName("i")
 	@ObfuscatedSignature(
-		descriptor = "(I)V",
-		garbageValue = "-276026623"
+		garbageValue = "-276026623",
+		descriptor = "(I)V"
 	)
 	@Export("init2")
 	void init2() {
-		byte[] var1 = new byte[this.pixelsPerTile * this.pixelsPerTile * 2146368821 * 2146368821];
+		byte[] var1 = new byte[this.pixelsPerTile * this.pixelsPerTile];
 		int var2 = 0;
 
 		int var3;
 		int var4;
-		for (var3 = this.pixelsPerTile * 2146368821 - 1; var3 >= 0; --var3) {
-			for (var4 = this.pixelsPerTile * 2146368821 - 1; var4 >= 0; --var4) {
+		for (var3 = this.pixelsPerTile - 1; var3 >= 0; --var3) {
+			for (var4 = this.pixelsPerTile - 1; var4 >= 0; --var4) {
 				if (var4 <= var3 >> 1) {
 					var1[var2] = -1;
 				}
@@ -247,11 +251,11 @@ public class WorldMapScaleHandler {
 		}
 
 		this.tileTemplates[2][0] = var1;
-		var1 = new byte[this.pixelsPerTile * this.pixelsPerTile * 2146368821 * 2146368821];
+		var1 = new byte[this.pixelsPerTile * this.pixelsPerTile];
 		var2 = 0;
 
-		for (var3 = this.pixelsPerTile * 2146368821 - 1; var3 >= 0; --var3) {
-			for (var4 = 0; var4 < this.pixelsPerTile * 2146368821; ++var4) {
+		for (var3 = this.pixelsPerTile - 1; var3 >= 0; --var3) {
+			for (var4 = 0; var4 < this.pixelsPerTile; ++var4) {
 				if (var4 >= var3 << 1) {
 					var1[var2] = -1;
 				}
@@ -261,11 +265,11 @@ public class WorldMapScaleHandler {
 		}
 
 		this.tileTemplates[2][1] = var1;
-		var1 = new byte[this.pixelsPerTile * this.pixelsPerTile * 2146368821 * 2146368821];
+		var1 = new byte[this.pixelsPerTile * this.pixelsPerTile];
 		var2 = 0;
 
-		for (var3 = 0; var3 < this.pixelsPerTile * 2146368821; ++var3) {
-			for (var4 = 0; var4 < this.pixelsPerTile * 2146368821; ++var4) {
+		for (var3 = 0; var3 < this.pixelsPerTile; ++var3) {
+			for (var4 = 0; var4 < this.pixelsPerTile; ++var4) {
 				if (var4 <= var3 >> 1) {
 					var1[var2] = -1;
 				}
@@ -275,11 +279,11 @@ public class WorldMapScaleHandler {
 		}
 
 		this.tileTemplates[2][2] = var1;
-		var1 = new byte[this.pixelsPerTile * this.pixelsPerTile * 2146368821 * 2146368821];
+		var1 = new byte[this.pixelsPerTile * this.pixelsPerTile];
 		var2 = 0;
 
-		for (var3 = 0; var3 < this.pixelsPerTile * 2146368821; ++var3) {
-			for (var4 = this.pixelsPerTile * 2146368821 - 1; var4 >= 0; --var4) {
+		for (var3 = 0; var3 < this.pixelsPerTile; ++var3) {
+			for (var4 = this.pixelsPerTile - 1; var4 >= 0; --var4) {
 				if (var4 >= var3 << 1) {
 					var1[var2] = -1;
 				}
@@ -293,18 +297,18 @@ public class WorldMapScaleHandler {
 
 	@ObfuscatedName("k")
 	@ObfuscatedSignature(
-		descriptor = "(I)V",
-		garbageValue = "-363813803"
+		garbageValue = "-363813803",
+		descriptor = "(I)V"
 	)
 	@Export("init3")
 	void init3() {
-		byte[] var1 = new byte[this.pixelsPerTile * this.pixelsPerTile * 2146368821 * 2146368821];
+		byte[] var1 = new byte[this.pixelsPerTile * this.pixelsPerTile];
 		int var2 = 0;
 
 		int var3;
 		int var4;
-		for (var3 = this.pixelsPerTile * 2146368821 - 1; var3 >= 0; --var3) {
-			for (var4 = 0; var4 < this.pixelsPerTile * 2146368821; ++var4) {
+		for (var3 = this.pixelsPerTile - 1; var3 >= 0; --var3) {
+			for (var4 = 0; var4 < this.pixelsPerTile; ++var4) {
 				if (var4 >= var3 >> 1) {
 					var1[var2] = -1;
 				}
@@ -314,11 +318,11 @@ public class WorldMapScaleHandler {
 		}
 
 		this.tileTemplates[3][0] = var1;
-		var1 = new byte[this.pixelsPerTile * this.pixelsPerTile * 2146368821 * 2146368821];
+		var1 = new byte[this.pixelsPerTile * this.pixelsPerTile];
 		var2 = 0;
 
-		for (var3 = 0; var3 < this.pixelsPerTile * 2146368821; ++var3) {
-			for (var4 = 0; var4 < this.pixelsPerTile * 2146368821; ++var4) {
+		for (var3 = 0; var3 < this.pixelsPerTile; ++var3) {
+			for (var4 = 0; var4 < this.pixelsPerTile; ++var4) {
 				if (var4 <= var3 << 1) {
 					var1[var2] = -1;
 				}
@@ -328,11 +332,11 @@ public class WorldMapScaleHandler {
 		}
 
 		this.tileTemplates[3][1] = var1;
-		var1 = new byte[this.pixelsPerTile * this.pixelsPerTile * 2146368821 * 2146368821];
+		var1 = new byte[this.pixelsPerTile * this.pixelsPerTile];
 		var2 = 0;
 
-		for (var3 = 0; var3 < this.pixelsPerTile * 2146368821; ++var3) {
-			for (var4 = this.pixelsPerTile * 2146368821 - 1; var4 >= 0; --var4) {
+		for (var3 = 0; var3 < this.pixelsPerTile; ++var3) {
+			for (var4 = this.pixelsPerTile - 1; var4 >= 0; --var4) {
 				if (var4 >= var3 >> 1) {
 					var1[var2] = -1;
 				}
@@ -342,11 +346,11 @@ public class WorldMapScaleHandler {
 		}
 
 		this.tileTemplates[3][2] = var1;
-		var1 = new byte[this.pixelsPerTile * this.pixelsPerTile * 2146368821 * 2146368821];
+		var1 = new byte[this.pixelsPerTile * this.pixelsPerTile];
 		var2 = 0;
 
-		for (var3 = this.pixelsPerTile * 2146368821 - 1; var3 >= 0; --var3) {
-			for (var4 = this.pixelsPerTile * 2146368821 - 1; var4 >= 0; --var4) {
+		for (var3 = this.pixelsPerTile - 1; var3 >= 0; --var3) {
+			for (var4 = this.pixelsPerTile - 1; var4 >= 0; --var4) {
 				if (var4 <= var3 << 1) {
 					var1[var2] = -1;
 				}
@@ -360,18 +364,18 @@ public class WorldMapScaleHandler {
 
 	@ObfuscatedName("o")
 	@ObfuscatedSignature(
-		descriptor = "(B)V",
-		garbageValue = "-65"
+		garbageValue = "-65",
+		descriptor = "(B)V"
 	)
 	@Export("init4")
 	void init4() {
-		byte[] var1 = new byte[this.pixelsPerTile * this.pixelsPerTile * 2146368821 * 2146368821];
+		byte[] var1 = new byte[this.pixelsPerTile * this.pixelsPerTile];
 		int var2 = 0;
 
 		int var3;
 		int var4;
-		for (var3 = this.pixelsPerTile * 2146368821 - 1; var3 >= 0; --var3) {
-			for (var4 = this.pixelsPerTile * 2146368821 - 1; var4 >= 0; --var4) {
+		for (var3 = this.pixelsPerTile - 1; var3 >= 0; --var3) {
+			for (var4 = this.pixelsPerTile - 1; var4 >= 0; --var4) {
 				if (var4 >= var3 >> 1) {
 					var1[var2] = -1;
 				}
@@ -381,11 +385,11 @@ public class WorldMapScaleHandler {
 		}
 
 		this.tileTemplates[4][0] = var1;
-		var1 = new byte[this.pixelsPerTile * this.pixelsPerTile * 2146368821 * 2146368821];
+		var1 = new byte[this.pixelsPerTile * this.pixelsPerTile];
 		var2 = 0;
 
-		for (var3 = this.pixelsPerTile * 2146368821 - 1; var3 >= 0; --var3) {
-			for (var4 = 0; var4 < this.pixelsPerTile * 2146368821; ++var4) {
+		for (var3 = this.pixelsPerTile - 1; var3 >= 0; --var3) {
+			for (var4 = 0; var4 < this.pixelsPerTile; ++var4) {
 				if (var4 <= var3 << 1) {
 					var1[var2] = -1;
 				}
@@ -395,11 +399,11 @@ public class WorldMapScaleHandler {
 		}
 
 		this.tileTemplates[4][1] = var1;
-		var1 = new byte[this.pixelsPerTile * this.pixelsPerTile * 2146368821 * 2146368821];
+		var1 = new byte[this.pixelsPerTile * this.pixelsPerTile];
 		var2 = 0;
 
-		for (var3 = 0; var3 < this.pixelsPerTile * 2146368821; ++var3) {
-			for (var4 = 0; var4 < this.pixelsPerTile * 2146368821; ++var4) {
+		for (var3 = 0; var3 < this.pixelsPerTile; ++var3) {
+			for (var4 = 0; var4 < this.pixelsPerTile; ++var4) {
 				if (var4 >= var3 >> 1) {
 					var1[var2] = -1;
 				}
@@ -409,11 +413,11 @@ public class WorldMapScaleHandler {
 		}
 
 		this.tileTemplates[4][2] = var1;
-		var1 = new byte[this.pixelsPerTile * this.pixelsPerTile * 2146368821 * 2146368821];
+		var1 = new byte[this.pixelsPerTile * this.pixelsPerTile];
 		var2 = 0;
 
-		for (var3 = 0; var3 < this.pixelsPerTile * 2146368821; ++var3) {
-			for (var4 = this.pixelsPerTile * 2146368821 - 1; var4 >= 0; --var4) {
+		for (var3 = 0; var3 < this.pixelsPerTile; ++var3) {
+			for (var4 = this.pixelsPerTile - 1; var4 >= 0; --var4) {
 				if (var4 <= var3 << 1) {
 					var1[var2] = -1;
 				}
@@ -427,21 +431,21 @@ public class WorldMapScaleHandler {
 
 	@ObfuscatedName("n")
 	@ObfuscatedSignature(
-		descriptor = "(I)V",
-		garbageValue = "401219800"
+		garbageValue = "401219800",
+		descriptor = "(I)V"
 	)
 	@Export("init5")
 	void init5() {
-		byte[] var1 = new byte[this.pixelsPerTile * this.pixelsPerTile * 2146368821 * 2146368821];
+		byte[] var1 = new byte[this.pixelsPerTile * this.pixelsPerTile];
 		boolean var2 = false;
-		var1 = new byte[this.pixelsPerTile * this.pixelsPerTile * 2146368821 * 2146368821];
+		var1 = new byte[this.pixelsPerTile * this.pixelsPerTile];
 		int var5 = 0;
 
 		int var3;
 		int var4;
-		for (var3 = 0; var3 < this.pixelsPerTile * 2146368821; ++var3) {
-			for (var4 = 0; var4 < this.pixelsPerTile * 2146368821; ++var4) {
-				if (var4 <= this.pixelsPerTile * 2146368821 / 2) {
+		for (var3 = 0; var3 < this.pixelsPerTile; ++var3) {
+			for (var4 = 0; var4 < this.pixelsPerTile; ++var4) {
+				if (var4 <= this.pixelsPerTile / 2) {
 					var1[var5] = -1;
 				}
 
@@ -450,12 +454,12 @@ public class WorldMapScaleHandler {
 		}
 
 		this.tileTemplates[5][0] = var1;
-		var1 = new byte[this.pixelsPerTile * this.pixelsPerTile * 2146368821 * 2146368821];
+		var1 = new byte[this.pixelsPerTile * this.pixelsPerTile];
 		var5 = 0;
 
-		for (var3 = 0; var3 < this.pixelsPerTile * 2146368821; ++var3) {
-			for (var4 = 0; var4 < this.pixelsPerTile * 2146368821; ++var4) {
-				if (var3 <= this.pixelsPerTile * 2146368821 / 2) {
+		for (var3 = 0; var3 < this.pixelsPerTile; ++var3) {
+			for (var4 = 0; var4 < this.pixelsPerTile; ++var4) {
+				if (var3 <= this.pixelsPerTile / 2) {
 					var1[var5] = -1;
 				}
 
@@ -464,12 +468,12 @@ public class WorldMapScaleHandler {
 		}
 
 		this.tileTemplates[5][1] = var1;
-		var1 = new byte[this.pixelsPerTile * this.pixelsPerTile * 2146368821 * 2146368821];
+		var1 = new byte[this.pixelsPerTile * this.pixelsPerTile];
 		var5 = 0;
 
-		for (var3 = 0; var3 < this.pixelsPerTile * 2146368821; ++var3) {
-			for (var4 = 0; var4 < this.pixelsPerTile * 2146368821; ++var4) {
-				if (var4 >= this.pixelsPerTile * 2146368821 / 2) {
+		for (var3 = 0; var3 < this.pixelsPerTile; ++var3) {
+			for (var4 = 0; var4 < this.pixelsPerTile; ++var4) {
+				if (var4 >= this.pixelsPerTile / 2) {
 					var1[var5] = -1;
 				}
 
@@ -478,12 +482,12 @@ public class WorldMapScaleHandler {
 		}
 
 		this.tileTemplates[5][2] = var1;
-		var1 = new byte[this.pixelsPerTile * this.pixelsPerTile * 2146368821 * 2146368821];
+		var1 = new byte[this.pixelsPerTile * this.pixelsPerTile];
 		var5 = 0;
 
-		for (var3 = 0; var3 < this.pixelsPerTile * 2146368821; ++var3) {
-			for (var4 = 0; var4 < this.pixelsPerTile * 2146368821; ++var4) {
-				if (var3 >= this.pixelsPerTile * 2146368821 / 2) {
+		for (var3 = 0; var3 < this.pixelsPerTile; ++var3) {
+			for (var4 = 0; var4 < this.pixelsPerTile; ++var4) {
+				if (var3 >= this.pixelsPerTile / 2) {
 					var1[var5] = -1;
 				}
 
@@ -496,21 +500,21 @@ public class WorldMapScaleHandler {
 
 	@ObfuscatedName("d")
 	@ObfuscatedSignature(
-		descriptor = "(I)V",
-		garbageValue = "1623373953"
+		garbageValue = "1623373953",
+		descriptor = "(I)V"
 	)
 	@Export("init6")
 	void init6() {
-		byte[] var1 = new byte[this.pixelsPerTile * this.pixelsPerTile * 2146368821 * 2146368821];
+		byte[] var1 = new byte[this.pixelsPerTile * this.pixelsPerTile];
 		boolean var2 = false;
-		var1 = new byte[this.pixelsPerTile * this.pixelsPerTile * 2146368821 * 2146368821];
+		var1 = new byte[this.pixelsPerTile * this.pixelsPerTile];
 		int var5 = 0;
 
 		int var3;
 		int var4;
-		for (var3 = 0; var3 < this.pixelsPerTile * 2146368821; ++var3) {
-			for (var4 = 0; var4 < this.pixelsPerTile * 2146368821; ++var4) {
-				if (var4 <= var3 - this.pixelsPerTile * 2146368821 / 2) {
+		for (var3 = 0; var3 < this.pixelsPerTile; ++var3) {
+			for (var4 = 0; var4 < this.pixelsPerTile; ++var4) {
+				if (var4 <= var3 - this.pixelsPerTile / 2) {
 					var1[var5] = -1;
 				}
 
@@ -519,12 +523,12 @@ public class WorldMapScaleHandler {
 		}
 
 		this.tileTemplates[6][0] = var1;
-		var1 = new byte[this.pixelsPerTile * this.pixelsPerTile * 2146368821 * 2146368821];
+		var1 = new byte[this.pixelsPerTile * this.pixelsPerTile];
 		var5 = 0;
 
-		for (var3 = this.pixelsPerTile * 2146368821 - 1; var3 >= 0; --var3) {
-			for (var4 = 0; var4 < this.pixelsPerTile * 2146368821; ++var4) {
-				if (var4 <= var3 - this.pixelsPerTile * 2146368821 / 2) {
+		for (var3 = this.pixelsPerTile - 1; var3 >= 0; --var3) {
+			for (var4 = 0; var4 < this.pixelsPerTile; ++var4) {
+				if (var4 <= var3 - this.pixelsPerTile / 2) {
 					var1[var5] = -1;
 				}
 
@@ -533,12 +537,12 @@ public class WorldMapScaleHandler {
 		}
 
 		this.tileTemplates[6][1] = var1;
-		var1 = new byte[this.pixelsPerTile * this.pixelsPerTile * 2146368821 * 2146368821];
+		var1 = new byte[this.pixelsPerTile * this.pixelsPerTile];
 		var5 = 0;
 
-		for (var3 = this.pixelsPerTile * 2146368821 - 1; var3 >= 0; --var3) {
-			for (var4 = this.pixelsPerTile * 2146368821 - 1; var4 >= 0; --var4) {
-				if (var4 <= var3 - this.pixelsPerTile * 2146368821 / 2) {
+		for (var3 = this.pixelsPerTile - 1; var3 >= 0; --var3) {
+			for (var4 = this.pixelsPerTile - 1; var4 >= 0; --var4) {
+				if (var4 <= var3 - this.pixelsPerTile / 2) {
 					var1[var5] = -1;
 				}
 
@@ -547,12 +551,12 @@ public class WorldMapScaleHandler {
 		}
 
 		this.tileTemplates[6][2] = var1;
-		var1 = new byte[this.pixelsPerTile * this.pixelsPerTile * 2146368821 * 2146368821];
+		var1 = new byte[this.pixelsPerTile * this.pixelsPerTile];
 		var5 = 0;
 
-		for (var3 = 0; var3 < this.pixelsPerTile * 2146368821; ++var3) {
-			for (var4 = this.pixelsPerTile * 2146368821 - 1; var4 >= 0; --var4) {
-				if (var4 <= var3 - this.pixelsPerTile * 2146368821 / 2) {
+		for (var3 = 0; var3 < this.pixelsPerTile; ++var3) {
+			for (var4 = this.pixelsPerTile - 1; var4 >= 0; --var4) {
+				if (var4 <= var3 - this.pixelsPerTile / 2) {
 					var1[var5] = -1;
 				}
 
@@ -565,21 +569,21 @@ public class WorldMapScaleHandler {
 
 	@ObfuscatedName("a")
 	@ObfuscatedSignature(
-		descriptor = "(I)V",
-		garbageValue = "105389277"
+		garbageValue = "105389277",
+		descriptor = "(I)V"
 	)
 	@Export("init7")
 	void init7() {
-		byte[] var1 = new byte[this.pixelsPerTile * this.pixelsPerTile * 2146368821 * 2146368821];
+		byte[] var1 = new byte[this.pixelsPerTile * this.pixelsPerTile];
 		boolean var2 = false;
-		var1 = new byte[this.pixelsPerTile * this.pixelsPerTile * 2146368821 * 2146368821];
+		var1 = new byte[this.pixelsPerTile * this.pixelsPerTile];
 		int var5 = 0;
 
 		int var3;
 		int var4;
-		for (var3 = 0; var3 < this.pixelsPerTile * 2146368821; ++var3) {
-			for (var4 = 0; var4 < this.pixelsPerTile * 2146368821; ++var4) {
-				if (var4 >= var3 - this.pixelsPerTile * 2146368821 / 2) {
+		for (var3 = 0; var3 < this.pixelsPerTile; ++var3) {
+			for (var4 = 0; var4 < this.pixelsPerTile; ++var4) {
+				if (var4 >= var3 - this.pixelsPerTile / 2) {
 					var1[var5] = -1;
 				}
 
@@ -588,12 +592,12 @@ public class WorldMapScaleHandler {
 		}
 
 		this.tileTemplates[7][0] = var1;
-		var1 = new byte[this.pixelsPerTile * this.pixelsPerTile * 2146368821 * 2146368821];
+		var1 = new byte[this.pixelsPerTile * this.pixelsPerTile];
 		var5 = 0;
 
-		for (var3 = this.pixelsPerTile * 2146368821 - 1; var3 >= 0; --var3) {
-			for (var4 = 0; var4 < this.pixelsPerTile * 2146368821; ++var4) {
-				if (var4 >= var3 - this.pixelsPerTile * 2146368821 / 2) {
+		for (var3 = this.pixelsPerTile - 1; var3 >= 0; --var3) {
+			for (var4 = 0; var4 < this.pixelsPerTile; ++var4) {
+				if (var4 >= var3 - this.pixelsPerTile / 2) {
 					var1[var5] = -1;
 				}
 
@@ -602,12 +606,12 @@ public class WorldMapScaleHandler {
 		}
 
 		this.tileTemplates[7][1] = var1;
-		var1 = new byte[this.pixelsPerTile * this.pixelsPerTile * 2146368821 * 2146368821];
+		var1 = new byte[this.pixelsPerTile * this.pixelsPerTile];
 		var5 = 0;
 
-		for (var3 = this.pixelsPerTile * 2146368821 - 1; var3 >= 0; --var3) {
-			for (var4 = this.pixelsPerTile * 2146368821 - 1; var4 >= 0; --var4) {
-				if (var4 >= var3 - this.pixelsPerTile * 2146368821 / 2) {
+		for (var3 = this.pixelsPerTile - 1; var3 >= 0; --var3) {
+			for (var4 = this.pixelsPerTile - 1; var4 >= 0; --var4) {
+				if (var4 >= var3 - this.pixelsPerTile / 2) {
 					var1[var5] = -1;
 				}
 
@@ -616,12 +620,12 @@ public class WorldMapScaleHandler {
 		}
 
 		this.tileTemplates[7][2] = var1;
-		var1 = new byte[this.pixelsPerTile * this.pixelsPerTile * 2146368821 * 2146368821];
+		var1 = new byte[this.pixelsPerTile * this.pixelsPerTile];
 		var5 = 0;
 
-		for (var3 = 0; var3 < this.pixelsPerTile * 2146368821; ++var3) {
-			for (var4 = this.pixelsPerTile * 2146368821 - 1; var4 >= 0; --var4) {
-				if (var4 >= var3 - this.pixelsPerTile * 2146368821 / 2) {
+		for (var3 = 0; var3 < this.pixelsPerTile; ++var3) {
+			for (var4 = this.pixelsPerTile - 1; var4 >= 0; --var4) {
+				if (var4 >= var3 - this.pixelsPerTile / 2) {
 					var1[var5] = -1;
 				}
 
@@ -634,11 +638,11 @@ public class WorldMapScaleHandler {
 
 	@ObfuscatedName("h")
 	@ObfuscatedSignature(
-		descriptor = "(Lqr;Ljava/lang/String;I)I",
-		garbageValue = "-25177928"
+		garbageValue = "-25177928",
+		descriptor = "(Lqr;Ljava/lang/String;I)I"
 	)
-	public static int method5045(Buffer var0, String var1) {
-		int var2 = var0.offset * 1795921631;
+	public static int method4978(Buffer var0, String var1) {
+		int var2 = var0.offset;
 		int var4 = var1.length();
 		byte[] var5 = new byte[var4];
 
@@ -706,23 +710,23 @@ public class WorldMapScaleHandler {
 		}
 
 		var0.writeSmartByteShort(var5.length);
-		var0.offset += class465.huffman.compress(var5, 0, var5.length, var0.array, var0.offset * 1795921631) * 1090888991;
-		return var0.offset * 1795921631 - var2;
+		var0.offset += class465.huffman.compress(var5, 0, var5.length, var0.array, var0.offset);
+		return var0.offset - var2;
 	}
 
 	@ObfuscatedName("v")
 	@ObfuscatedSignature(
-		descriptor = "(Lls;III)Lqn;",
-		garbageValue = "1768522363"
+		garbageValue = "1768522363",
+		descriptor = "(Lls;III)Lqn;"
 	)
 	@Export("SpriteBuffer_getSprite")
 	public static SpritePixels SpriteBuffer_getSprite(AbstractArchive var0, int var1, int var2) {
-		if (!Tile.method3937(var0, var1, var2)) {
+		if (!Tile.method3872(var0, var1, var2)) {
 			return null;
 		} else {
 			SpritePixels var4 = new SpritePixels();
-			var4.width = class457.SpriteBuffer_spriteWidth * -1667114695;
-			var4.height = class457.SpriteBuffer_spriteHeight * -614338987;
+			var4.width = class457.SpriteBuffer_spriteWidth;
+			var4.height = class457.SpriteBuffer_spriteHeight;
 			var4.xOffset = class457.SpriteBuffer_xOffsets[0];
 			var4.yOffset = InterfaceParent.SpriteBuffer_yOffsets[0];
 			var4.subWidth = class457.SpriteBuffer_spriteWidths[0];

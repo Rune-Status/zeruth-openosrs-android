@@ -1,6 +1,7 @@
 package osrs;
 
 import net.runelite.mapping.Export;
+import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 import org.osrsjson.JSONArray;
@@ -10,15 +11,18 @@ import org.osrsjson.JSONObject;
 @ObfuscatedName("ey")
 public class class149 {
 	@ObfuscatedName("nu")
+	@ObfuscatedGetter(
+		intValue = -1532835829
+	)
 	@Export("selectedSpellFlags")
 	static int selectedSpellFlags;
 
 	@ObfuscatedName("d")
 	@ObfuscatedSignature(
-		descriptor = "(I)V",
-		garbageValue = "-1391954033"
+		garbageValue = "-1391954033",
+		descriptor = "(I)V"
 	)
-	public static void method3062() {
+	public static void method2997() {
 		HitSplatDefinition.HitSplatDefinition_cached.clear();
 		HitSplatDefinition.HitSplatDefinition_cachedSprites.clear();
 		HitSplatDefinition.HitSplatDefinition_cachedFonts.clear();
@@ -26,10 +30,10 @@ public class class149 {
 
 	@ObfuscatedName("y")
 	@ObfuscatedSignature(
-		descriptor = "(Lorg/json/JSONObject;Ljava/lang/String;I)[F",
-		garbageValue = "1087479406"
+		garbageValue = "1087479406",
+		descriptor = "(Lorg/json/JSONObject;Ljava/lang/String;I)[F"
 	)
-	static float[] method3061(JSONObject var0, String var1) throws JSONException {
+	static float[] method2996(JSONObject var0, String var1) throws JSONException {
 		float[] var2 = new float[4];
 
 		try {

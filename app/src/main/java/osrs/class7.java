@@ -4,21 +4,27 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
 import net.runelite.mapping.Export;
+import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
 @ObfuscatedName("k")
 public class class7 {
 	@ObfuscatedName("t")
+	@ObfuscatedGetter(
+		intValue = -1894406353
+	)
 	@Export("canvasWidth")
 	public static int canvasWidth;
 	@ObfuscatedName("hv")
-	static int field30;
+	@Export("baseY")
+	static int baseY;
 	@ObfuscatedName("ia")
 	@ObfuscatedSignature(
 		descriptor = "[Lqn;"
 	)
-	static SpritePixels[] field24;
+	@Export("mapMarkerSprites")
+	static SpritePixels[] mapMarkerSprites;
 	@ObfuscatedName("s")
 	ExecutorService field29;
 	@ObfuscatedName("h")
@@ -46,8 +52,8 @@ public class class7 {
 
 	@ObfuscatedName("s")
 	@ObfuscatedSignature(
-		descriptor = "(B)Z",
-		garbageValue = "-50"
+		garbageValue = "-50",
+		descriptor = "(B)Z"
 	)
 	public boolean method56() {
 		return this.field25.isDone();
@@ -55,8 +61,8 @@ public class class7 {
 
 	@ObfuscatedName("h")
 	@ObfuscatedSignature(
-		descriptor = "(I)V",
-		garbageValue = "-230299666"
+		garbageValue = "-230299666",
+		descriptor = "(I)V"
 	)
 	public void method49() {
 		this.field29.shutdown();
@@ -65,8 +71,8 @@ public class class7 {
 
 	@ObfuscatedName("w")
 	@ObfuscatedSignature(
-		descriptor = "(B)Lqr;",
-		garbageValue = "-4"
+		garbageValue = "-4",
+		descriptor = "(B)Lqr;"
 	)
 	public Buffer method48() {
 		try {
@@ -78,8 +84,8 @@ public class class7 {
 
 	@ObfuscatedName("v")
 	@ObfuscatedSignature(
-		descriptor = "(I)V",
-		garbageValue = "1069539596"
+		garbageValue = "1069539596",
+		descriptor = "(I)V"
 	)
 	void method51() {
 		this.field25 = this.field29.submit(new class1(this, this.field26, this.field27));
@@ -87,12 +93,12 @@ public class class7 {
 
 	@ObfuscatedName("fa")
 	@ObfuscatedSignature(
-		descriptor = "(B)V",
-		garbageValue = "68"
+		garbageValue = "68",
+		descriptor = "(B)V"
 	)
 	static void method60() {
 		if (ClientPacket.worldMap != null) {
-			ClientPacket.worldMap.method7130(class268.Client_plane * 1083786667, (class56.localPlayer.x * 1627221919 >> 7) + Decimator.field404 * 620670661, (class56.localPlayer.y * 1229064101 >> 7) + field30 * 542116271, false);
+			ClientPacket.worldMap.method7027(class268.Client_plane, (ScriptFrame.localPlayer.x >> 7) + Decimator.baseX, baseY * 542116271 + (ScriptFrame.localPlayer.y >> 7), false);
 			ClientPacket.worldMap.loadCache();
 		}
 

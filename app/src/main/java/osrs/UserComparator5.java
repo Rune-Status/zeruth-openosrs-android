@@ -20,16 +20,16 @@ public class UserComparator5 extends AbstractUserComparator {
 
 	@ObfuscatedName("s")
 	@ObfuscatedSignature(
-		descriptor = "(Lnt;Lnt;I)I",
-		garbageValue = "1249191377"
+		garbageValue = "1249191377",
+		descriptor = "(Lnt;Lnt;I)I"
 	)
 	@Export("compareBuddy")
 	int compareBuddy(Buddy var1, Buddy var2) {
-		if (var1.world * 1881839891 != 0) {
-			if (var2.world * 1881839891 == 0) {
+		if (var1.world != 0) {
+			if (var2.world == 0) {
 				return this.reversed ? -1 : 1;
 			}
-		} else if (var2.world * 1881839891 != 0) {
+		} else if (var2.world != 0) {
 			return this.reversed ? 1 : -1;
 		}
 
@@ -42,10 +42,10 @@ public class UserComparator5 extends AbstractUserComparator {
 
 	@ObfuscatedName("s")
 	@ObfuscatedSignature(
-		descriptor = "(Ljava/net/Socket;IIB)Lnc;",
-		garbageValue = "-108"
+		garbageValue = "-108",
+		descriptor = "(Ljava/net/Socket;IIB)Lnc;"
 	)
-	public static AbstractSocket method2571(Socket var0, int var1, int var2) throws IOException {
+	public static AbstractSocket method2506(Socket var0, int var1, int var2) throws IOException {
 		return new BufferedNetSocket(var0, var1, var2);
 	}
 }

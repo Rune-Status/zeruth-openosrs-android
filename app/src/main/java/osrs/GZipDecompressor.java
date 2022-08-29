@@ -16,40 +16,41 @@ public class GZipDecompressor {
 	@Export("SequenceDefinition_skeletonsArchive")
 	static AbstractArchive SequenceDefinition_skeletonsArchive;
 	@ObfuscatedName("s")
-	Inflater field4827;
+	@Export("inflater")
+	Inflater inflater;
 
 	public GZipDecompressor() {
 		this(-1, 1000000, 1000000);
 	}
 
 	@ObfuscatedSignature(
-		descriptor = "(III)V",
-		garbageValue = "1000000"
+		garbageValue = "1000000",
+		descriptor = "(III)V"
 	)
 	GZipDecompressor(int var1, int var2, int var3) {
 	}
 
 	@ObfuscatedName("s")
 	@ObfuscatedSignature(
-		descriptor = "(Lqr;[BB)V",
-		garbageValue = "29"
+		garbageValue = "29",
+		descriptor = "(Lqr;[BB)V"
 	)
 	@Export("decompress")
 	public void decompress(Buffer var1, byte[] var2) {
-		if (var1.array[var1.offset * 1795921631] == 31 && var1.array[var1.offset * 1795921631 + 1] == -117) {
-			if (this.field4827 == null) {
-				this.field4827 = new Inflater(true);
+		if (var1.array[var1.offset] == 31 && var1.array[var1.offset + 1] == -117) {
+			if (this.inflater == null) {
+				this.inflater = new Inflater(true);
 			}
 
 			try {
-				this.field4827.setInput(var1.array, var1.offset * 1795921631 + 10, var1.array.length - (var1.offset * 1795921631 + 8 + 10));
-				this.field4827.inflate(var2);
+				this.inflater.setInput(var1.array, var1.offset + 10, var1.array.length - (var1.offset + 8 + 10));
+				this.inflater.inflate(var2);
 			} catch (Exception var4) {
-				this.field4827.reset();
+				this.inflater.reset();
 				throw new RuntimeException("");
 			}
 
-			this.field4827.reset();
+			this.inflater.reset();
 		} else {
 			throw new RuntimeException("");
 		}

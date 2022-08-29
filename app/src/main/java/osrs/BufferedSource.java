@@ -5,6 +5,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import net.runelite.mapping.Export;
 import net.runelite.mapping.Implements;
+import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
@@ -15,7 +16,8 @@ public class BufferedSource implements Runnable {
 	@ObfuscatedSignature(
 		descriptor = "[Lqn;"
 	)
-	static SpritePixels[] field4343;
+	@Export("headIconPkSprites")
+	static SpritePixels[] headIconPkSprites;
 	@ObfuscatedName("s")
 	@Export("thread")
 	Thread thread;
@@ -23,25 +25,36 @@ public class BufferedSource implements Runnable {
 	@Export("inputStream")
 	InputStream inputStream;
 	@ObfuscatedName("w")
+	@ObfuscatedGetter(
+		intValue = -1647447189
+	)
 	@Export("capacity")
 	int capacity;
 	@ObfuscatedName("v")
 	@Export("buffer")
 	byte[] buffer;
 	@ObfuscatedName("c")
-	int field4340;
+	@ObfuscatedGetter(
+		intValue = -1571074557
+	)
+	@Export("position")
+	int position;
 	@ObfuscatedName("q")
-	int field4341;
+	@ObfuscatedGetter(
+		intValue = 1029497331
+	)
+	@Export("limit")
+	int limit;
 	@ObfuscatedName("i")
 	@Export("exception")
 	IOException exception;
 
 	BufferedSource(InputStream var1, int var2) {
-		this.field4340 = 0;
-		this.field4341 = 0;
+		this.position = 0;
+		this.limit = 0;
 		this.inputStream = var1;
-		this.capacity = (var2 + 1) * -1429626557;
-		this.buffer = new byte[this.capacity * -1647447189];
+		this.capacity = var2 + 1;
+		this.buffer = new byte[this.capacity];
 		this.thread = new Thread(this);
 		this.thread.setDaemon(true);
 		this.thread.start();
@@ -49,20 +62,20 @@ public class BufferedSource implements Runnable {
 
 	@ObfuscatedName("s")
 	@ObfuscatedSignature(
-		descriptor = "(II)Z",
-		garbageValue = "-396035802"
+		garbageValue = "-396035802",
+		descriptor = "(II)Z"
 	)
 	@Export("isAvailable")
 	boolean isAvailable(int var1) throws IOException {
 		if (var1 == 0) {
 			return true;
-		} else if (var1 > 0 && var1 < this.capacity * -1647447189) {
+		} else if (var1 > 0 && var1 < this.capacity) {
 			synchronized(this) {
 				int var3;
-				if (this.field4340 * -1571074557 <= this.field4341 * 1029497331) {
-					var3 = this.field4341 * 1029497331 - this.field4340 * -1571074557;
+				if (this.position <= this.limit) {
+					var3 = this.limit - this.position;
 				} else {
-					var3 = this.capacity * -1647447189 - this.field4340 * -1571074557 + this.field4341 * 1029497331;
+					var3 = this.capacity - this.position + this.limit;
 				}
 
 				if (var3 < var1) {
@@ -83,16 +96,17 @@ public class BufferedSource implements Runnable {
 
 	@ObfuscatedName("h")
 	@ObfuscatedSignature(
-		descriptor = "(I)I",
-		garbageValue = "182656390"
+		garbageValue = "182656390",
+		descriptor = "(I)I"
 	)
-	int method6793() throws IOException {
+	@Export("available")
+	int available() throws IOException {
 		synchronized(this) {
 			int var2;
-			if (this.field4340 * -1571074557 <= this.field4341 * 1029497331) {
-				var2 = this.field4341 * 1029497331 - this.field4340 * -1571074557;
+			if (this.position <= this.limit) {
+				var2 = this.limit - this.position;
 			} else {
-				var2 = this.capacity * -1647447189 - this.field4340 * -1571074557 + this.field4341 * 1029497331;
+				var2 = this.capacity - this.position + this.limit;
 			}
 
 			if (var2 <= 0 && this.exception != null) {
@@ -106,20 +120,21 @@ public class BufferedSource implements Runnable {
 
 	@ObfuscatedName("w")
 	@ObfuscatedSignature(
-		descriptor = "(B)I",
-		garbageValue = "39"
+		garbageValue = "39",
+		descriptor = "(B)I"
 	)
-	int method6794() throws IOException {
+	@Export("readUnsignedByte")
+	int readUnsignedByte() throws IOException {
 		synchronized(this) {
-			if (this.field4340 * -1571074557 == this.field4341 * 1029497331) {
+			if (this.limit == this.position) {
 				if (this.exception != null) {
 					throw new IOException(this.exception.toString());
 				} else {
 					return -1;
 				}
 			} else {
-				int var2 = this.buffer[this.field4340 * -1571074557] & 255;
-				this.field4340 = (this.field4340 * -1571074557 + 1) % (this.capacity * -1647447189) * -996258645;
+				int var2 = this.buffer[this.position] & 255;
+				this.position = (this.position + 1) % this.capacity;
 				this.notifyAll();
 				return var2;
 			}
@@ -128,18 +143,18 @@ public class BufferedSource implements Runnable {
 
 	@ObfuscatedName("v")
 	@ObfuscatedSignature(
-		descriptor = "([BIII)I",
-		garbageValue = "-1742021300"
+		garbageValue = "-1742021300",
+		descriptor = "([BIII)I"
 	)
 	@Export("read")
 	int read(byte[] var1, int var2, int var3) throws IOException {
 		if (var3 >= 0 && var2 >= 0 && var3 + var2 <= var1.length) {
 			synchronized(this) {
 				int var5;
-				if (this.field4340 * -1571074557 <= this.field4341 * 1029497331) {
-					var5 = this.field4341 * 1029497331 - this.field4340 * -1571074557;
+				if (this.position <= this.limit) {
+					var5 = this.limit - this.position;
 				} else {
-					var5 = this.capacity * -1647447189 - this.field4340 * -1571074557 + this.field4341 * 1029497331;
+					var5 = this.capacity - this.position + this.limit;
 				}
 
 				if (var3 > var5) {
@@ -149,15 +164,15 @@ public class BufferedSource implements Runnable {
 				if (var3 == 0 && this.exception != null) {
 					throw new IOException(this.exception.toString());
 				} else {
-					if (var3 + this.field4340 * -1571074557 <= this.capacity * -1647447189) {
-						System.arraycopy(this.buffer, this.field4340 * -1571074557, var1, var2, var3);
+					if (var3 + this.position <= this.capacity) {
+						System.arraycopy(this.buffer, this.position, var1, var2, var3);
 					} else {
-						int var6 = this.capacity * -1647447189 - this.field4340 * -1571074557;
-						System.arraycopy(this.buffer, this.field4340 * -1571074557, var1, var2, var6);
+						int var6 = this.capacity - this.position;
+						System.arraycopy(this.buffer, this.position, var1, var2, var6);
 						System.arraycopy(this.buffer, 0, var1, var6 + var2, var3 - var6);
 					}
 
-					this.field4340 = (var3 + this.field4340 * -1571074557) % (this.capacity * -1647447189) * -996258645;
+					this.position = (var3 + this.position) % this.capacity;
 					this.notifyAll();
 					return var3;
 				}
@@ -169,8 +184,8 @@ public class BufferedSource implements Runnable {
 
 	@ObfuscatedName("c")
 	@ObfuscatedSignature(
-		descriptor = "(S)V",
-		garbageValue = "-10525"
+		garbageValue = "-10525",
+		descriptor = "(S)V"
 	)
 	@Export("close")
 	void close() {
@@ -198,12 +213,12 @@ public class BufferedSource implements Runnable {
 						return;
 					}
 
-					if (this.field4340 * -1571074557 == 0) {
-						var1 = this.capacity * -1647447189 - this.field4341 * 1029497331 - 1;
-					} else if (this.field4340 * -1571074557 <= this.field4341 * 1029497331) {
-						var1 = this.capacity * -1647447189 - this.field4341 * 1029497331;
+					if (this.position == 0) {
+						var1 = this.capacity - this.limit - 1;
+					} else if (this.position <= this.limit) {
+						var1 = this.capacity - this.limit;
 					} else {
-						var1 = this.field4340 * -1571074557 - this.field4341 * 1029497331 - 1;
+						var1 = this.position - this.limit - 1;
 					}
 
 					if (var1 > 0) {
@@ -219,7 +234,7 @@ public class BufferedSource implements Runnable {
 
 			int var7;
 			try {
-				var7 = this.inputStream.read(this.buffer, this.field4341 * 1029497331, var1);
+				var7 = this.inputStream.read(this.buffer, this.limit, var1);
 				if (var7 == -1) {
 					throw new EOFException();
 				}
@@ -232,7 +247,7 @@ public class BufferedSource implements Runnable {
 			}
 
 			synchronized(this) {
-				this.field4341 = (var7 + this.field4341 * 1029497331) % (this.capacity * -1647447189) * -164192453;
+				this.limit = (var7 + this.limit) % this.capacity;
 			}
 		}
 	}

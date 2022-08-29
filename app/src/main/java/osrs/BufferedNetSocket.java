@@ -41,8 +41,8 @@ public class BufferedNetSocket extends AbstractSocket {
 
 	@ObfuscatedName("h")
 	@ObfuscatedSignature(
-		descriptor = "(II)Z",
-		garbageValue = "126370664"
+		garbageValue = "126370664",
+		descriptor = "(II)Z"
 	)
 	@Export("isAvailable")
 	public boolean isAvailable(int var1) throws IOException {
@@ -51,26 +51,28 @@ public class BufferedNetSocket extends AbstractSocket {
 
 	@ObfuscatedName("w")
 	@ObfuscatedSignature(
-		descriptor = "(B)I",
-		garbageValue = "14"
+		garbageValue = "14",
+		descriptor = "(B)I"
 	)
-	public int vmethod6784() throws IOException {
-		return this.source.method6793();
+	@Export("available")
+	public int available() throws IOException {
+		return this.source.available();
 	}
 
 	@ObfuscatedName("v")
 	@ObfuscatedSignature(
-		descriptor = "(I)I",
-		garbageValue = "-660901031"
+		garbageValue = "-660901031",
+		descriptor = "(I)I"
 	)
-	public int vmethod6770() throws IOException {
-		return this.source.method6794();
+	@Export("readUnsignedByte")
+	public int readUnsignedByte() throws IOException {
+		return this.source.readUnsignedByte();
 	}
 
 	@ObfuscatedName("c")
 	@ObfuscatedSignature(
-		descriptor = "([BIIB)I",
-		garbageValue = "-6"
+		garbageValue = "-6",
+		descriptor = "([BIIB)I"
 	)
 	@Export("read")
 	public int read(byte[] var1, int var2, int var3) throws IOException {
@@ -79,8 +81,8 @@ public class BufferedNetSocket extends AbstractSocket {
 
 	@ObfuscatedName("q")
 	@ObfuscatedSignature(
-		descriptor = "([BIIS)V",
-		garbageValue = "-16011"
+		garbageValue = "-16011",
+		descriptor = "([BIIS)V"
 	)
 	@Export("write")
 	public void write(byte[] var1, int var2, int var3) throws IOException {
@@ -89,8 +91,8 @@ public class BufferedNetSocket extends AbstractSocket {
 
 	@ObfuscatedName("i")
 	@ObfuscatedSignature(
-		descriptor = "(I)V",
-		garbageValue = "-947955059"
+		garbageValue = "456190407",
+		descriptor = "(I)V"
 	)
 	@Export("close")
 	public void close() {
@@ -102,6 +104,10 @@ public class BufferedNetSocket extends AbstractSocket {
 		}
 
 		this.source.close();
+	}
+
+	protected void acg() {
+		this.close();
 	}
 
 	protected void finalize() {

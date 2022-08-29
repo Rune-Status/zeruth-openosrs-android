@@ -70,8 +70,8 @@ public class class263 {
 	}
 
 	@ObfuscatedSignature(
-		descriptor = "(I)V",
-		garbageValue = "5"
+		garbageValue = "5",
+		descriptor = "(I)V"
 	)
 	class263(int var1) {
 	}

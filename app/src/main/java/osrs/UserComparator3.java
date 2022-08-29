@@ -29,13 +29,13 @@ public class UserComparator3 extends AbstractUserComparator {
 
 	@ObfuscatedName("s")
 	@ObfuscatedSignature(
-		descriptor = "(Lnt;Lnt;I)I",
-		garbageValue = "404985625"
+		garbageValue = "404985625",
+		descriptor = "(Lnt;Lnt;I)I"
 	)
 	@Export("compareBuddy")
 	int compareBuddy(Buddy var1, Buddy var2) {
-		if (var2.world * 1881839891 != var1.world * 1881839891) {
-			return this.reversed ? var1.world * 1881839891 - var2.world * 1881839891 : var2.world * 1881839891 - var1.world * 1881839891;
+		if (var2.world != var1.world) {
+			return this.reversed ? var1.world - var2.world : var2.world - var1.world;
 		} else {
 			return this.compareUser(var1, var2);
 		}
@@ -47,20 +47,20 @@ public class UserComparator3 extends AbstractUserComparator {
 
 	@ObfuscatedName("s")
 	@ObfuscatedSignature(
-		descriptor = "(I)[Li;",
-		garbageValue = "-1307073800"
+		garbageValue = "-1307073800",
+		descriptor = "(I)[Li;"
 	)
-	public static class6[] method2583() {
+	public static class6[] method2518() {
 		return new class6[]{class6.field19};
 	}
 
 	@ObfuscatedName("y")
 	@ObfuscatedSignature(
-		descriptor = "(Ljava/lang/String;B)V",
-		garbageValue = "-97"
+		garbageValue = "-97",
+		descriptor = "(Ljava/lang/String;B)V"
 	)
-	static final void method2582(String var0) {
-		PacketBufferNode var1 = DevicePcmPlayerProvider.method354(ClientPacket.field2946, Client.packetWriter.field1338);
+	static final void method2517(String var0) {
+		PacketBufferNode var1 = DevicePcmPlayerProvider.getPacketBufferNode(ClientPacket.field2946, Client.packetWriter.isaacCipher);
 		var1.packetBuffer.writeByte(class309.stringCp1252NullTerminatedByteSize(var0));
 		var1.packetBuffer.writeStringCp1252NullTerminated(var0);
 		Client.packetWriter.addNode(var1);
@@ -68,30 +68,30 @@ public class UserComparator3 extends AbstractUserComparator {
 
 	@ObfuscatedName("bn")
 	@ObfuscatedSignature(
-		descriptor = "(ILbz;ZI)I",
-		garbageValue = "-2013251385"
+		garbageValue = "-2013251385",
+		descriptor = "(ILbz;ZI)I"
 	)
-	static int method2575(int var0, Script var1, boolean var2) {
+	static int method2510(int var0, Script var1, boolean var2) {
 		if (var0 >= 7200 && var0 < 7204) {
-			User.Interpreter_intStackSize -= -1562433375;
-			Interpreter.Interpreter_intStack[(User.Interpreter_intStackSize += -312486675) * -313022235 - 1] = -1;
+			User.Interpreter_intStackSize -= 5;
+			Interpreter.Interpreter_intStack[++User.Interpreter_intStackSize - 1] = -1;
 			return 1;
 		} else if (var0 == 7204) {
-			User.Interpreter_intStackSize -= -1874920050;
-			Interpreter.Interpreter_intStack[(User.Interpreter_intStackSize += -312486675) * -313022235 - 1] = -1;
+			User.Interpreter_intStackSize -= 6;
+			Interpreter.Interpreter_intStack[++User.Interpreter_intStackSize - 1] = -1;
 			return 1;
 		} else if (var0 >= 7205 && var0 < 7209) {
-			Interpreter.Interpreter_intStack[User.Interpreter_intStackSize * -313022235 - 1] = -1;
+			Interpreter.Interpreter_intStack[User.Interpreter_intStackSize - 1] = -1;
 			return 1;
 		} else if (var0 == 7209) {
-			User.Interpreter_intStackSize -= -624973350;
-			Interpreter.Interpreter_intStack[(User.Interpreter_intStackSize += -312486675) * -313022235 - 1] = -1;
+			User.Interpreter_intStackSize -= 2;
+			Interpreter.Interpreter_intStack[++User.Interpreter_intStackSize - 1] = -1;
 			return 1;
 		} else if (var0 >= 7210 && var0 < 7214) {
-			User.Interpreter_intStackSize -= -312486675;
+			--User.Interpreter_intStackSize;
 			return 1;
 		} else if (var0 == 7214) {
-			User.Interpreter_intStackSize -= -624973350;
+			User.Interpreter_intStackSize -= 2;
 			return 1;
 		} else {
 			return 2;

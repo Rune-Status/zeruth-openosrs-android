@@ -1,5 +1,6 @@
 package osrs;
 
+import net.runelite.mapping.Export;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
@@ -9,17 +10,18 @@ public class class259 {
 	@ObfuscatedSignature(
 		descriptor = "Lcm;"
 	)
-	static LoginScreenAnimation field2909;
+	@Export("loginScreenRunesAnimation")
+	static LoginScreenAnimation loginScreenRunesAnimation;
 
 	@ObfuscatedName("s")
 	@ObfuscatedSignature(
-		descriptor = "(ILjava/lang/String;Llv;II)Ljg;",
-		garbageValue = "1571467304"
+		garbageValue = "1571467304",
+		descriptor = "(ILjava/lang/String;Llv;II)Ljg;"
 	)
-	public static PacketBufferNode method5125(int var0, String var1, Language var2, int var3) {
-		PacketBufferNode var4 = DevicePcmPlayerProvider.method354(ClientPacket.field2985, Client.packetWriter.field1338);
+	public static PacketBufferNode method5058(int var0, String var1, Language var2, int var3) {
+		PacketBufferNode var4 = DevicePcmPlayerProvider.getPacketBufferNode(ClientPacket.field2985, Client.packetWriter.isaacCipher);
 		var4.packetBuffer.writeByte(0);
-		int var5 = var4.packetBuffer.offset * 1795921631;
+		int var5 = var4.packetBuffer.offset;
 		var4.packetBuffer.writeByte(var0);
 		String var6 = var1.toLowerCase();
 		byte var7 = 0;
@@ -137,12 +139,12 @@ public class class259 {
 
 		var4.packetBuffer.writeByte(var7);
 		var4.packetBuffer.writeByte(var8);
-		WorldMapScaleHandler.method5045(var4.packetBuffer, var1);
+		WorldMapScaleHandler.method4978(var4.packetBuffer, var1);
 		if (var0 == class296.field3514.rsOrdinal()) {
 			var4.packetBuffer.writeByte(var3);
 		}
 
-		var4.packetBuffer.method7761(var4.packetBuffer.offset * 1795921631 - var5);
+		var4.packetBuffer.method7654(var4.packetBuffer.offset - var5);
 		return var4;
 	}
 }

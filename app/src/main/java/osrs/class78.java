@@ -15,8 +15,8 @@ public class class78 {
 
 	@ObfuscatedName("h")
 	@ObfuscatedSignature(
-		descriptor = "(IB)Lfw;",
-		garbageValue = "-14"
+		garbageValue = "-14",
+		descriptor = "(IB)Lfw;"
 	)
 	@Export("VarpDefinition_get")
 	public static VarpDefinition VarpDefinition_get(int var0) {
@@ -37,17 +37,17 @@ public class class78 {
 
 	@ObfuscatedName("q")
 	@ObfuscatedSignature(
-		descriptor = "(II)Z",
-		garbageValue = "1585294077"
+		garbageValue = "1585294077",
+		descriptor = "(II)Z"
 	)
-	public static boolean method2054(int var0) {
+	public static boolean method1989(int var0) {
 		return var0 >= 0 && var0 < 112 ? KeyHandler.field126[var0] : false;
 	}
 
 	@ObfuscatedName("k")
 	@ObfuscatedSignature(
-		descriptor = "(CI)Z",
-		garbageValue = "-2035745879"
+		garbageValue = "-2035745879",
+		descriptor = "(CI)Z"
 	)
 	@Export("isCharAlphabetic")
 	public static boolean isCharAlphabetic(char var0) {

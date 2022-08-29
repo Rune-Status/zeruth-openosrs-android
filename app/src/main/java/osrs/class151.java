@@ -26,10 +26,10 @@ public class class151 extends class144 {
 
 	@ObfuscatedName("s")
 	@ObfuscatedSignature(
-		descriptor = "(Lqr;I)V",
-		garbageValue = "1539485988"
+		garbageValue = "1539485988",
+		descriptor = "(Lqr;I)V"
 	)
-	void vmethod3074(Buffer var1) {
+	void vmethod3009(Buffer var1) {
 		this.field1692 = var1.readStringCp1252NullTerminatedOrNull();
 		if (this.field1692 != null) {
 			var1.readUnsignedByte();
@@ -41,10 +41,10 @@ public class class151 extends class144 {
 
 	@ObfuscatedName("h")
 	@ObfuscatedSignature(
-		descriptor = "(Lec;I)V",
-		garbageValue = "-1270425284"
+		garbageValue = "-1270425284",
+		descriptor = "(Lec;I)V"
 	)
-	void vmethod3073(ClanChannel var1) {
+	void vmethod3008(ClanChannel var1) {
 		var1.name = this.field1692;
 		if (this.field1692 != null) {
 			var1.field1666 = this.field1688;

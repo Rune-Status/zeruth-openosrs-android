@@ -19,8 +19,8 @@ public class UserComparator2 implements Comparator {
 
 	@ObfuscatedName("s")
 	@ObfuscatedSignature(
-		descriptor = "(Lnb;Lnb;I)I",
-		garbageValue = "-1969449093"
+		garbageValue = "-1969449093",
+		descriptor = "(Lnb;Lnb;I)I"
 	)
 	@Export("compare_bridged")
 	int compare_bridged(User var1, User var2) {

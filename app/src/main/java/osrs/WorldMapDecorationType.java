@@ -2,12 +2,13 @@ package osrs;
 
 import net.runelite.mapping.Export;
 import net.runelite.mapping.Implements;
+import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
 @ObfuscatedName("kz")
 @Implements("WorldMapDecorationType")
-public enum WorldMapDecorationType implements class328 {
+public enum WorldMapDecorationType implements MouseWheel {
 	@ObfuscatedName("s")
 	@ObfuscatedSignature(
 		descriptor = "Lkz;"
@@ -125,24 +126,27 @@ public enum WorldMapDecorationType implements class328 {
 	field3526(22, 3);
 
 	@ObfuscatedName("t")
+	@ObfuscatedGetter(
+		intValue = -1322889823
+	)
 	@Export("id")
 	public final int id;
 
 	@ObfuscatedSignature(
-		descriptor = "(II)V",
-		garbageValue = "0"
+		garbageValue = "0",
+		descriptor = "(II)V"
 	)
 	WorldMapDecorationType(int var3, int var4) {
-		this.id = var3 * 1150867041;
+		this.id = var3;
 	}
 
 	@ObfuscatedName("h")
 	@ObfuscatedSignature(
-		descriptor = "(B)I",
-		garbageValue = "104"
+		garbageValue = "104",
+		descriptor = "(B)I"
 	)
 	@Export("rsOrdinal")
 	public int rsOrdinal() {
-		return this.id * -1322889823;
+		return this.id;
 	}
 }

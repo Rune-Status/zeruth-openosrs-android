@@ -2,6 +2,7 @@ package osrs;
 
 import net.runelite.mapping.Export;
 import net.runelite.mapping.Implements;
+import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
@@ -34,6 +35,9 @@ public class WorldMapCacheName {
 	)
 	public static final WorldMapCacheName field2868;
 	@ObfuscatedName("o")
+	@ObfuscatedGetter(
+		intValue = -113453181
+	)
 	static int field2870;
 	@ObfuscatedName("q")
 	@Export("name")
@@ -53,10 +57,10 @@ public class WorldMapCacheName {
 
 	@ObfuscatedName("l")
 	@ObfuscatedSignature(
-		descriptor = "(Ljava/lang/String;B)V",
-		garbageValue = "-116"
+		garbageValue = "-116",
+		descriptor = "(Ljava/lang/String;B)V"
 	)
-	static final void method4984(String var0) {
+	static final void method4917(String var0) {
 		StringBuilder var10000 = (new StringBuilder()).append(var0);
 		Object var10001 = null;
 		String var1 = var10000.append(" is already on your ignore list").toString();

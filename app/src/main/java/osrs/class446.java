@@ -9,5 +9,5 @@ public interface class446 {
 	@ObfuscatedSignature(
 		descriptor = "(Lqr;B)V"
 	)
-	void method7911(Buffer var1);
+	void method7804(Buffer var1);
 }

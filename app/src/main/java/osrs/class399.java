@@ -8,8 +8,8 @@ import net.runelite.mapping.ObfuscatedSignature;
 public interface class399 {
 	@ObfuscatedName("s")
 	@ObfuscatedSignature(
-		descriptor = "(B)[B",
-		garbageValue = "57"
+		garbageValue = "57",
+		descriptor = "(B)[B"
 	)
-	byte[] vmethod7057() throws UnsupportedEncodingException;
+	byte[] vmethod6954() throws UnsupportedEncodingException;
 }

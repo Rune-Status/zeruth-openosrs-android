@@ -8,41 +8,41 @@ import net.runelite.mapping.ObfuscatedSignature;
 final class class434 implements class429 {
 	@ObfuscatedName("s")
 	@ObfuscatedSignature(
-		descriptor = "(Ljava/lang/Object;Lqr;I)V",
-		garbageValue = "1286167930"
+		garbageValue = "1286167930",
+		descriptor = "(Ljava/lang/Object;Lqr;I)V"
 	)
-	public void vmethod7506(Object var1, Buffer var2) {
-		this.method7508((String)var1, var2);
+	public void vmethod7399(Object var1, Buffer var2) {
+		this.method7401((String)var1, var2);
 	}
 
 	@ObfuscatedName("h")
 	@ObfuscatedSignature(
-		descriptor = "(Lqr;B)Ljava/lang/Object;",
-		garbageValue = "36"
+		garbageValue = "36",
+		descriptor = "(Lqr;B)Ljava/lang/Object;"
 	)
-	public Object vmethod7514(Buffer var1) {
+	public Object vmethod7407(Buffer var1) {
 		return var1.readStringCp1252NullTerminated();
 	}
 
 	@ObfuscatedName("o")
 	@ObfuscatedSignature(
-		descriptor = "(Ljava/lang/String;Lqr;I)V",
-		garbageValue = "1029497331"
+		garbageValue = "1029497331",
+		descriptor = "(Ljava/lang/String;Lqr;I)V"
 	)
-	void method7508(String var1, Buffer var2) {
+	void method7401(String var1, Buffer var2) {
 		var2.writeStringCp1252NullTerminated(var1);
 	}
 
 	@ObfuscatedName("i")
 	@ObfuscatedSignature(
-		descriptor = "(Lbd;Lbd;IZI)I",
-		garbageValue = "1892264087"
+		garbageValue = "1892264087",
+		descriptor = "(Lbd;Lbd;IZI)I"
 	)
 	@Export("compareWorlds")
 	static int compareWorlds(World var0, World var1, int var2, boolean var3) {
 		if (var2 == 1) {
-			int var4 = var0.field781 * 519550573;
-			int var5 = var1.field781 * 519550573;
+			int var4 = var0.population;
+			int var5 = var1.population;
 			if (!var3) {
 				if (var4 == -1) {
 					var4 = 2001;
@@ -55,29 +55,29 @@ final class class434 implements class429 {
 
 			return var4 - var5;
 		} else if (var2 == 2) {
-			return var0.field784 * -192731231 - var1.field784 * -192731231;
+			return var0.location - var1.location;
 		} else if (var2 == 3) {
-			if (var0.field783.equals("-")) {
-				if (var1.field783.equals("-")) {
+			if (var0.activity.equals("-")) {
+				if (var1.activity.equals("-")) {
 					return 0;
 				} else {
 					return var3 ? -1 : 1;
 				}
-			} else if (var1.field783.equals("-")) {
+			} else if (var1.activity.equals("-")) {
 				return var3 ? 1 : -1;
 			} else {
-				return var0.field783.compareTo(var1.field783);
+				return var0.activity.compareTo(var1.activity);
 			}
 		} else if (var2 == 4) {
-			return var0.method1596() ? (var1.method1596() ? 0 : 1) : (var1.method1596() ? -1 : 0);
+			return var0.method1531() ? (var1.method1531() ? 0 : 1) : (var1.method1531() ? -1 : 0);
 		} else if (var2 == 5) {
-			return var0.method1587() ? (var1.method1587() ? 0 : 1) : (var1.method1587() ? -1 : 0);
+			return var0.method1522() ? (var1.method1522() ? 0 : 1) : (var1.method1522() ? -1 : 0);
 		} else if (var2 == 6) {
 			return var0.isPvp() ? (var1.isPvp() ? 0 : 1) : (var1.isPvp() ? -1 : 0);
 		} else if (var2 == 7) {
 			return var0.isMembersOnly() ? (var1.isMembersOnly() ? 0 : 1) : (var1.isMembersOnly() ? -1 : 0);
 		} else {
-			return var0.field779 * -1527326097 - var1.field779 * -1527326097;
+			return var0.id - var1.id;
 		}
 	}
 }

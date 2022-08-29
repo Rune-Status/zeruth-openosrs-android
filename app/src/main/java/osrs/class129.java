@@ -1,5 +1,7 @@
 package osrs;
 
+import net.runelite.mapping.Export;
+import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
@@ -9,8 +11,12 @@ public class class129 extends class128 {
 	@ObfuscatedSignature(
 		descriptor = "Lpj;"
 	)
-	static Fonts field1540;
+	@Export("WorldMapElement_fonts")
+	static Fonts WorldMapElement_fonts;
 	@ObfuscatedName("s")
+	@ObfuscatedGetter(
+		intValue = -1595981299
+	)
 	int field1539;
 	@ObfuscatedName("h")
 	boolean field1538;
@@ -25,25 +31,25 @@ public class class129 extends class128 {
 	)
 	class129(class131 var1) {
 		this.this$0 = var1;
-		this.field1539 = 1402217275;
+		this.field1539 = -1;
 	}
 
 	@ObfuscatedName("s")
 	@ObfuscatedSignature(
-		descriptor = "(Lqr;I)V",
-		garbageValue = "-885940784"
+		garbageValue = "-885940784",
+		descriptor = "(Lqr;I)V"
 	)
-	void vmethod3087(Buffer var1) {
-		this.field1539 = var1.readUnsignedShort() * -1402217275;
+	void vmethod3022(Buffer var1) {
+		this.field1539 = var1.readUnsignedShort();
 		this.field1538 = var1.readUnsignedByte() == 1;
 	}
 
 	@ObfuscatedName("h")
 	@ObfuscatedSignature(
-		descriptor = "(Leh;B)V",
-		garbageValue = "0"
+		garbageValue = "0",
+		descriptor = "(Leh;B)V"
 	)
-	void vmethod3084(ClanSettings var1) {
-		var1.method2913(this.field1539 * -1595981299, this.field1538);
+	void vmethod3019(ClanSettings var1) {
+		var1.method2848(this.field1539, this.field1538);
 	}
 }

@@ -2,6 +2,7 @@ package osrs;
 
 import net.runelite.mapping.Export;
 import net.runelite.mapping.Implements;
+import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
@@ -45,6 +46,9 @@ public class LoginPacket implements class261 {
 	@Export("LoginPacket_indexedValues")
 	static final LoginPacket[] LoginPacket_indexedValues;
 	@ObfuscatedName("i")
+	@ObfuscatedGetter(
+		intValue = 2091844323
+	)
 	@Export("id")
 	public final int id;
 
@@ -60,31 +64,31 @@ public class LoginPacket implements class261 {
 		LoginPacket[] var1 = var0;
 
 		for (int var2 = 0; var2 < var1.length; ++var2) {
-			LoginPacket_indexedValues[var1[var2].id * 2091844323] = var1[var2];
+			LoginPacket_indexedValues[var1[var2].id] = var1[var2];
 		}
 
 	}
 
 	@ObfuscatedSignature(
-		descriptor = "(II)V",
-		garbageValue = "0"
+		garbageValue = "0",
+		descriptor = "(II)V"
 	)
 	LoginPacket(int var1, int var2) {
-		this.id = var1 * -633056565;
+		this.id = var1;
 	}
 
 	@ObfuscatedName("s")
 	@ObfuscatedSignature(
-		descriptor = "(II)Lkt;",
-		garbageValue = "164800511"
+		garbageValue = "164800511",
+		descriptor = "(II)Lkt;"
 	)
-	public static GameBuild method5145(int var0) {
+	public static GameBuild method5078(int var0) {
 		GameBuild[] var1 = new GameBuild[]{GameBuild.RC, GameBuild.LIVE, GameBuild.BUILDLIVE, GameBuild.WIP};
 		GameBuild[] var2 = var1;
 
 		for (int var3 = 0; var3 < var2.length; ++var3) {
 			GameBuild var4 = var2[var3];
-			if (var0 == var4.buildId * 1346396169) {
+			if (var0 == var4.buildId) {
 				return var4;
 			}
 		}
@@ -94,10 +98,10 @@ public class LoginPacket implements class261 {
 
 	@ObfuscatedName("s")
 	@ObfuscatedSignature(
-		descriptor = "(Lls;B)V",
-		garbageValue = "101"
+		garbageValue = "101",
+		descriptor = "(Lls;B)V"
 	)
-	public static void method5144(AbstractArchive var0) {
-		FloorUnderlayDefinition.FloorOverlayDefinition_archive = var0;
+	public static void method5077(AbstractArchive var0) {
+		FloorUnderlayDefinition.FloorUnderlayDefinition_archive = var0;
 	}
 }

@@ -4,6 +4,7 @@ import java.util.HashMap;
 import java.util.Map;
 import net.runelite.mapping.Export;
 import net.runelite.mapping.Implements;
+import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
@@ -26,6 +27,9 @@ public class Messages {
 	@Export("Messages_queue")
 	static final IterableDualNodeQueue Messages_queue;
 	@ObfuscatedName("v")
+	@ObfuscatedGetter(
+		intValue = -2125602271
+	)
 	@Export("Messages_count")
 	static int Messages_count;
 	@ObfuscatedName("z")
@@ -43,10 +47,10 @@ public class Messages {
 
 	@ObfuscatedName("ks")
 	@ObfuscatedSignature(
-		descriptor = "(B)V",
-		garbageValue = "1"
+		garbageValue = "1",
+		descriptor = "(B)V"
 	)
-	static void method2451() {
+	static void method2386() {
 		if (Client.oculusOrbState * 33319765 == 1) {
 			Client.field484 = true;
 		}

@@ -1,12 +1,16 @@
 package osrs;
 
 import net.runelite.mapping.Export;
+import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
 @ObfuscatedName("jd")
 public class class271 {
 	@ObfuscatedName("ta")
+	@ObfuscatedGetter(
+		intValue = -293795815
+	)
 	static int field3186;
 	@ObfuscatedName("ud")
 	@Export("foundItemIds")
@@ -35,10 +39,10 @@ public class class271 {
 
 	@ObfuscatedName("s")
 	@ObfuscatedSignature(
-		descriptor = "(Lls;Lls;IZI)Ldk;",
-		garbageValue = "269488385"
+		garbageValue = "269488385",
+		descriptor = "(Lls;Lls;IZI)Ldk;"
 	)
-	public static class122 method5169(AbstractArchive var0, AbstractArchive var1, int var2, boolean var3) {
+	public static class122 method5102(AbstractArchive var0, AbstractArchive var1, int var2, boolean var3) {
 		boolean var4 = true;
 		byte[] var5 = var0.getFile(var2 >> 16 & 65535, var2 & 65535);
 		if (var5 == null) {
@@ -71,18 +75,18 @@ public class class271 {
 
 	@ObfuscatedName("jh")
 	@ObfuscatedSignature(
-		descriptor = "(B)V",
-		garbageValue = "112"
+		garbageValue = "112",
+		descriptor = "(B)V"
 	)
-	static final void method5170() {
-		for (int var0 = 0; var0 < Players.Players_count * -2113383221; ++var0) {
+	static final void method5103() {
+		for (int var0 = 0; var0 < Players.Players_count; ++var0) {
 			Player var1 = Client.players[Players.Players_indices[var0]];
-			var1.method2094();
+			var1.clearIsFriend();
 		}
 
-		Archive.method5750();
+		Archive.method5679();
 		if (class19.friendsChat != null) {
-			class19.friendsChat.method6557();
+			class19.friendsChat.clearFriends();
 		}
 
 	}

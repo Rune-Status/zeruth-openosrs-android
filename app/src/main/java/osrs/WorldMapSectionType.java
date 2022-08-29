@@ -2,12 +2,13 @@ package osrs;
 
 import net.runelite.mapping.Export;
 import net.runelite.mapping.Implements;
+import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
 @ObfuscatedName("hi")
 @Implements("WorldMapSectionType")
-public enum WorldMapSectionType implements class328 {
+public enum WorldMapSectionType implements MouseWheel {
 	@ObfuscatedName("s")
 	@ObfuscatedSignature(
 		descriptor = "Lhi;"
@@ -34,6 +35,9 @@ public enum WorldMapSectionType implements class328 {
 	WORLDMAPSECTIONTYPE3(3, (byte)3);
 
 	@ObfuscatedName("c")
+	@ObfuscatedGetter(
+		intValue = 189258081
+	)
 	@Export("type")
 	final int type;
 	@ObfuscatedName("q")
@@ -41,14 +45,14 @@ public enum WorldMapSectionType implements class328 {
 	final byte id;
 
 	WorldMapSectionType(int var3, byte var4) {
-		this.type = var3 * 1709345441;
+		this.type = var3;
 		this.id = var4;
 	}
 
 	@ObfuscatedName("h")
 	@ObfuscatedSignature(
-		descriptor = "(B)I",
-		garbageValue = "104"
+		garbageValue = "104",
+		descriptor = "(B)I"
 	)
 	@Export("rsOrdinal")
 	public int rsOrdinal() {
@@ -57,19 +61,19 @@ public enum WorldMapSectionType implements class328 {
 
 	@ObfuscatedName("s")
 	@ObfuscatedSignature(
-		descriptor = "(I)[Lhi;",
-		garbageValue = "387604014"
+		garbageValue = "387604014",
+		descriptor = "(I)[Lhi;"
 	)
-	static WorldMapSectionType[] method4874() {
+	static WorldMapSectionType[] method4807() {
 		return new WorldMapSectionType[]{WORLDMAPSECTIONTYPE2, WORLDMAPSECTIONTYPE3, WORLDMAPSECTIONTYPE1, WORLDMAPSECTIONTYPE0};
 	}
 
 	@ObfuscatedName("n")
 	@ObfuscatedSignature(
-		descriptor = "(CI)Z",
-		garbageValue = "-16711936"
+		garbageValue = "-16711936",
+		descriptor = "(CI)Z"
 	)
-	static boolean method4879(char var0) {
+	static boolean method4812(char var0) {
 		return "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!\"ï¿½$%^&*()-_=+[{]};:'@#~,<.>/?\\| ".indexOf(var0) != -1;
 	}
 }

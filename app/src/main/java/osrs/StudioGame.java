@@ -2,12 +2,13 @@ package osrs;
 
 import net.runelite.mapping.Export;
 import net.runelite.mapping.Implements;
+import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
 @ObfuscatedName("kp")
 @Implements("StudioGame")
-public enum StudioGame implements class328 {
+public enum StudioGame implements MouseWheel {
 	@ObfuscatedName("s")
 	@ObfuscatedSignature(
 		descriptor = "Lkp;"
@@ -49,28 +50,31 @@ public enum StudioGame implements class328 {
 	@Export("name")
 	public final String name;
 	@ObfuscatedName("k")
+	@ObfuscatedGetter(
+		intValue = -516259997
+	)
 	@Export("id")
 	final int id;
 
 	StudioGame(String var3, String var4, int var5) {
 		this.name = var3;
-		this.id = var5 * -544015797;
+		this.id = var5;
 	}
 
 	@ObfuscatedName("h")
 	@ObfuscatedSignature(
-		descriptor = "(B)I",
-		garbageValue = "104"
+		garbageValue = "104",
+		descriptor = "(B)I"
 	)
 	@Export("rsOrdinal")
 	public int rsOrdinal() {
-		return this.id * -516259997;
+		return this.id;
 	}
 
 	@ObfuscatedName("h")
 	@ObfuscatedSignature(
-		descriptor = "(Lln;IIIBZI)V",
-		garbageValue = "-416470101"
+		garbageValue = "-416470101",
+		descriptor = "(Lln;IIIBZI)V"
 	)
 	@Export("requestNetFile")
 	static void requestNetFile(Archive var0, int var1, int var2, int var3, byte var4, boolean var5) {
@@ -84,8 +88,8 @@ public enum StudioGame implements class328 {
 					if (var5) {
 						var8.removeDual();
 						NetCache.NetCache_pendingPriorityWrites.put(var8, var6);
-						NetCache.NetCache_pendingWritesCount -= 1553478697;
-						NetCache.NetCache_pendingPriorityWritesCount += -299243449;
+						--NetCache.NetCache_pendingWritesCount;
+						++NetCache.NetCache_pendingPriorityWritesCount;
 					}
 
 				} else {
@@ -98,15 +102,15 @@ public enum StudioGame implements class328 {
 
 					var8 = new NetFileRequest();
 					var8.archive = var0;
-					var8.crc = var3 * 476728221;
+					var8.crc = var3;
 					var8.padding = var4;
 					if (var5) {
 						NetCache.NetCache_pendingPriorityWrites.put(var8, var6);
-						NetCache.NetCache_pendingPriorityWritesCount += -299243449;
+						++NetCache.NetCache_pendingPriorityWritesCount;
 					} else {
 						NetCache.NetCache_pendingWritesQueue.addFirst(var8);
 						NetCache.NetCache_pendingWrites.put(var8, var6);
-						NetCache.NetCache_pendingWritesCount += 1553478697;
+						++NetCache.NetCache_pendingWritesCount;
 					}
 
 				}
@@ -116,10 +120,10 @@ public enum StudioGame implements class328 {
 
 	@ObfuscatedName("ki")
 	@ObfuscatedSignature(
-		descriptor = "(II)V",
-		garbageValue = "2087155591"
+		garbageValue = "2087155591",
+		descriptor = "(II)V"
 	)
-	static void method5676(int var0) {
+	static void method5605(int var0) {
 		for (IntegerNode var1 = (IntegerNode)Client.widgetFlags.first(); var1 != null; var1 = (IntegerNode)Client.widgetFlags.next()) {
 			if ((long)var0 == (var1.key >> 48 & 65535L)) {
 				var1.remove();

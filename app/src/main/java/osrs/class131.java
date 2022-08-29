@@ -1,13 +1,20 @@
 package osrs;
 
+import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
 @ObfuscatedName("ei")
 public class class131 {
 	@ObfuscatedName("s")
+	@ObfuscatedGetter(
+		longValue = -3274018055934261563L
+	)
 	long field1550;
 	@ObfuscatedName("h")
+	@ObfuscatedGetter(
+		intValue = 587642307
+	)
 	int field1558;
 	@ObfuscatedName("w")
 	@ObfuscatedSignature(
@@ -19,19 +26,19 @@ public class class131 {
 		descriptor = "(Lqr;)V"
 	)
 	public class131(Buffer var1) {
-		this.field1558 = 1626610965;
+		this.field1558 = -1;
 		this.field1551 = new IterableNodeDeque();
-		this.method2821(var1);
+		this.method2756(var1);
 	}
 
 	@ObfuscatedName("s")
 	@ObfuscatedSignature(
-		descriptor = "(Lqr;B)V",
-		garbageValue = "7"
+		garbageValue = "7",
+		descriptor = "(Lqr;B)V"
 	)
-	void method2821(Buffer var1) {
-		this.field1550 = var1.readLong() * -8584506895143090163L;
-		this.field1558 = var1.readInt() * -1626610965;
+	void method2756(Buffer var1) {
+		this.field1550 = var1.readLong();
+		this.field1558 = var1.readInt();
 
 		for (int var2 = var1.readUnsignedByte(); var2 != 0; var2 = var1.readUnsignedByte()) {
 			Object var3;
@@ -71,7 +78,7 @@ public class class131 {
 				var3 = new class147(this);
 			}
 
-			((class128)var3).vmethod3087(var1);
+			((class128)var3).vmethod3022(var1);
 			this.field1551.addFirst((Node)var3);
 		}
 
@@ -79,16 +86,16 @@ public class class131 {
 
 	@ObfuscatedName("h")
 	@ObfuscatedSignature(
-		descriptor = "(Leh;B)V",
-		garbageValue = "89"
+		garbageValue = "89",
+		descriptor = "(Leh;B)V"
 	)
-	public void method2822(ClanSettings var1) {
-		if (-3274018055934261563L * this.field1550 == -6876764368805247545L * var1.field1602 && this.field1558 * 587642307 == var1.field1603 * -1040141595) {
+	public void method2757(ClanSettings var1) {
+		if (this.field1550 == var1.field1602 && this.field1558 == var1.field1603) {
 			for (class128 var2 = (class128)this.field1551.last(); var2 != null; var2 = (class128)this.field1551.previous()) {
-				var2.vmethod3084(var1);
+				var2.vmethod3019(var1);
 			}
 
-			var1.field1603 += 1071692525;
+			++var1.field1603;
 		} else {
 			throw new RuntimeException("");
 		}
@@ -96,9 +103,9 @@ public class class131 {
 
 	@ObfuscatedName("s")
 	@ObfuscatedSignature(
-		descriptor = "(Lls;B)V",
-		garbageValue = "-2"
+		garbageValue = "-2",
+		descriptor = "(Lls;B)V"
 	)
-	public static void method2827(AbstractArchive var0) {
+	public static void method2762(AbstractArchive var0) {
 	}
 }

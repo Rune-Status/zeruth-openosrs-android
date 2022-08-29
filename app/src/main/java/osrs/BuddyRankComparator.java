@@ -18,13 +18,13 @@ public class BuddyRankComparator extends AbstractUserComparator {
 
 	@ObfuscatedName("s")
 	@ObfuscatedSignature(
-		descriptor = "(Lnt;Lnt;I)I",
-		garbageValue = "-1676940583"
+		garbageValue = "-1676940583",
+		descriptor = "(Lnt;Lnt;I)I"
 	)
 	@Export("compareBuddy")
 	int compareBuddy(Buddy var1, Buddy var2) {
-		if (var2.rank * 1944406411 != var1.rank * 1944406411) {
-			return this.reversed ? var1.rank * 1944406411 - var2.rank * 1944406411 : var2.rank * 1944406411 - var1.rank * 1944406411;
+		if (var2.rank != var1.rank) {
+			return this.reversed ? var1.rank - var2.rank : var2.rank - var1.rank;
 		} else {
 			return this.compareUser(var1, var2);
 		}
@@ -36,10 +36,10 @@ public class BuddyRankComparator extends AbstractUserComparator {
 
 	@ObfuscatedName("bd")
 	@ObfuscatedSignature(
-		descriptor = "(IB)Ljava/lang/Object;",
-		garbageValue = "1"
+		garbageValue = "1",
+		descriptor = "(IB)Ljava/lang/Object;"
 	)
-	static Object method2610(int var0) {
-		return UserComparator9.method2593((class433)GameEngine.findEnumerated(class433.method7494(), var0));
+	static Object method2545(int var0) {
+		return UserComparator9.method2528((class433)GameEngine.findEnumerated(class433.method7387(), var0));
 	}
 }

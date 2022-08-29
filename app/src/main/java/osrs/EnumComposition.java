@@ -2,6 +2,7 @@ package osrs;
 
 import net.runelite.mapping.Export;
 import net.runelite.mapping.Implements;
+import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
@@ -21,6 +22,9 @@ public class EnumComposition extends DualNode {
 	@Export("EnumDefinition_cached")
 	static EvictingDualNodeHashTable EnumDefinition_cached;
 	@ObfuscatedName("jk")
+	@ObfuscatedGetter(
+		intValue = 35416535
+	)
 	static int field1891;
 	@ObfuscatedName("ng")
 	@ObfuscatedSignature(
@@ -37,9 +41,15 @@ public class EnumComposition extends DualNode {
 	@Export("defaultStr")
 	public String defaultStr;
 	@ObfuscatedName("q")
+	@ObfuscatedGetter(
+		intValue = -19231955
+	)
 	@Export("defaultInt")
 	public int defaultInt;
 	@ObfuscatedName("i")
+	@ObfuscatedGetter(
+		intValue = -633508893
+	)
 	@Export("outputCount")
 	public int outputCount;
 	@ObfuscatedName("k")
@@ -63,8 +73,8 @@ public class EnumComposition extends DualNode {
 
 	@ObfuscatedName("h")
 	@ObfuscatedSignature(
-		descriptor = "(Lqr;I)V",
-		garbageValue = "-687932105"
+		garbageValue = "-687932105",
+		descriptor = "(Lqr;I)V"
 	)
 	@Export("decode")
 	void decode(Buffer var1) {
@@ -80,8 +90,8 @@ public class EnumComposition extends DualNode {
 
 	@ObfuscatedName("w")
 	@ObfuscatedSignature(
-		descriptor = "(Lqr;IB)V",
-		garbageValue = "32"
+		garbageValue = "32",
+		descriptor = "(Lqr;IB)V"
 	)
 	@Export("decodeNext")
 	void decodeNext(Buffer var1, int var2) {
@@ -92,24 +102,24 @@ public class EnumComposition extends DualNode {
 		} else if (var2 == 3) {
 			this.defaultStr = var1.readStringCp1252NullTerminated();
 		} else if (var2 == 4) {
-			this.defaultInt = var1.readInt() * 322239653;
+			this.defaultInt = var1.readInt();
 		} else {
 			int var3;
 			if (var2 == 5) {
-				this.outputCount = var1.readUnsignedShort() * 1557606859;
-				this.keys = new int[this.outputCount * -633508893];
-				this.strVals = new String[this.outputCount * -633508893];
+				this.outputCount = var1.readUnsignedShort();
+				this.keys = new int[this.outputCount];
+				this.strVals = new String[this.outputCount];
 
-				for (var3 = 0; var3 < this.outputCount * -633508893; ++var3) {
+				for (var3 = 0; var3 < this.outputCount; ++var3) {
 					this.keys[var3] = var1.readInt();
 					this.strVals[var3] = var1.readStringCp1252NullTerminated();
 				}
 			} else if (var2 == 6) {
-				this.outputCount = var1.readUnsignedShort() * 1557606859;
-				this.keys = new int[this.outputCount * -633508893];
-				this.intVals = new int[this.outputCount * -633508893];
+				this.outputCount = var1.readUnsignedShort();
+				this.keys = new int[this.outputCount];
+				this.intVals = new int[this.outputCount];
 
-				for (var3 = 0; var3 < this.outputCount * -633508893; ++var3) {
+				for (var3 = 0; var3 < this.outputCount; ++var3) {
 					this.keys[var3] = var1.readInt();
 					this.intVals[var3] = var1.readInt();
 				}
@@ -120,18 +130,18 @@ public class EnumComposition extends DualNode {
 
 	@ObfuscatedName("v")
 	@ObfuscatedSignature(
-		descriptor = "(I)I",
-		garbageValue = "-2141311437"
+		garbageValue = "-2141311437",
+		descriptor = "(I)I"
 	)
 	@Export("size")
 	public int size() {
-		return this.outputCount * -633508893;
+		return this.outputCount;
 	}
 
 	@ObfuscatedName("s")
 	@ObfuscatedSignature(
-		descriptor = "(II)Lfy;",
-		garbageValue = "1248940994"
+		garbageValue = "1248940994",
+		descriptor = "(II)Lfy;"
 	)
 	@Export("WorldMapElement_get")
 	public static WorldMapElement WorldMapElement_get(int var0) {

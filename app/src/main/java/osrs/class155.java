@@ -11,6 +11,7 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
 import javax.imageio.ImageIO;
+import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 import org.osrsjson.JSONArray;
@@ -20,6 +21,9 @@ import org.osrsjson.JSONObject;
 @ObfuscatedName("eu")
 public class class155 {
 	@ObfuscatedName("o")
+	@ObfuscatedGetter(
+		intValue = -1709164427
+	)
 	int field1704;
 	@ObfuscatedName("n")
 	String field1705;
@@ -44,7 +48,7 @@ public class class155 {
 	Map field1715;
 
 	public class155() {
-		this.field1704 = -923916253;
+		this.field1704 = -1;
 		this.field1707 = null;
 		this.field1702 = new float[4];
 		this.field1714 = new ArrayList();
@@ -56,15 +60,15 @@ public class class155 {
 
 	@ObfuscatedName("s")
 	@ObfuscatedSignature(
-		descriptor = "(Ljava/lang/String;Lcu;I)Z",
-		garbageValue = "1489180465"
+		garbageValue = "1489180465",
+		descriptor = "(Ljava/lang/String;Lcu;I)Z"
 	)
-	public boolean method3163(String var1, UrlRequester var2) {
+	public boolean method3098(String var1, UrlRequester var2) {
 		if (var1 != null && !var1.isEmpty()) {
 			if (var2 == null) {
 				return false;
 			} else {
-				this.method3116();
+				this.method3051();
 
 				try {
 					this.field1705 = var1;
@@ -72,8 +76,8 @@ public class class155 {
 					this.field1704 = 0;
 					return true;
 				} catch (MalformedURLException var4) {
-					this.method3116();
-					this.field1704 = -2097655212;
+					this.method3051();
+					this.field1704 = 100;
 					return false;
 				}
 			}
@@ -84,16 +88,16 @@ public class class155 {
 
 	@ObfuscatedName("h")
 	@ObfuscatedSignature(
-		descriptor = "(Lcu;I)V",
-		garbageValue = "631956877"
+		garbageValue = "631956877",
+		descriptor = "(Lcu;I)V"
 	)
-	public void method3138(UrlRequester var1) {
-		switch(this.field1704 * -1709164427) {
+	public void method3073(UrlRequester var1) {
+		switch(this.field1704) {
 		case 0:
-			this.method3117(var1);
+			this.method3052(var1);
 			break;
 		case 1:
-			this.method3118();
+			this.method3053();
 			break;
 		default:
 			return;
@@ -103,82 +107,82 @@ public class class155 {
 
 	@ObfuscatedName("w")
 	@ObfuscatedSignature(
-		descriptor = "(I)I",
-		garbageValue = "1528603017"
+		garbageValue = "1528603017",
+		descriptor = "(I)I"
 	)
-	public int method3108() {
-		return this.field1704 * -1709164427;
+	public int method3043() {
+		return this.field1704;
 	}
 
 	@ObfuscatedName("v")
 	@ObfuscatedSignature(
-		descriptor = "(Ljava/lang/String;I)I",
-		garbageValue = "1795659751"
+		garbageValue = "1795659751",
+		descriptor = "(Ljava/lang/String;I)I"
 	)
-	public int method3109(String var1) {
+	public int method3044(String var1) {
 		return this.field1712.containsKey(var1) ? (Integer)this.field1712.get(var1) : -1;
 	}
 
 	@ObfuscatedName("c")
 	@ObfuscatedSignature(
-		descriptor = "(Ljava/lang/String;B)Ljava/lang/String;",
-		garbageValue = "20"
+		garbageValue = "20",
+		descriptor = "(Ljava/lang/String;B)Ljava/lang/String;"
 	)
-	public String method3110(String var1) {
+	public String method3045(String var1) {
 		return (String)((String)(this.field1715.containsKey(var1) ? this.field1715.get(var1) : null));
 	}
 
 	@ObfuscatedName("q")
 	@ObfuscatedSignature(
-		descriptor = "(I)Ljava/util/ArrayList;",
-		garbageValue = "2023907808"
+		garbageValue = "2023907808",
+		descriptor = "(I)Ljava/util/ArrayList;"
 	)
-	public ArrayList method3142() {
+	public ArrayList method3077() {
 		return this.field1710;
 	}
 
 	@ObfuscatedName("i")
 	@ObfuscatedSignature(
-		descriptor = "(B)Ljava/util/ArrayList;",
-		garbageValue = "-114"
+		garbageValue = "-114",
+		descriptor = "(B)Ljava/util/ArrayList;"
 	)
-	public ArrayList method3112() {
+	public ArrayList method3047() {
 		return this.field1711;
 	}
 
 	@ObfuscatedName("k")
 	@ObfuscatedSignature(
-		descriptor = "(I)Ljava/lang/String;",
-		garbageValue = "-2023105652"
+		garbageValue = "-2023105652",
+		descriptor = "(I)Ljava/lang/String;"
 	)
-	public String method3113() {
+	public String method3048() {
 		return this.field1707;
 	}
 
 	@ObfuscatedName("o")
 	@ObfuscatedSignature(
-		descriptor = "(B)[F",
-		garbageValue = "-75"
+		garbageValue = "-75",
+		descriptor = "(B)[F"
 	)
-	public float[] method3114() {
+	public float[] method3049() {
 		return this.field1702;
 	}
 
 	@ObfuscatedName("n")
 	@ObfuscatedSignature(
-		descriptor = "(I)Ljava/util/ArrayList;",
-		garbageValue = "585836824"
+		garbageValue = "585836824",
+		descriptor = "(I)Ljava/util/ArrayList;"
 	)
-	public ArrayList method3115() {
+	public ArrayList method3050() {
 		return this.field1714;
 	}
 
 	@ObfuscatedName("d")
 	@ObfuscatedSignature(
-		descriptor = "(I)V",
-		garbageValue = "168847589"
+		garbageValue = "168847589",
+		descriptor = "(I)V"
 	)
-	void method3116() {
+	void method3051() {
 		this.field1706 = null;
 		this.field1707 = null;
 		this.field1702[0] = 0.0F;
@@ -194,41 +198,41 @@ public class class155 {
 
 	@ObfuscatedName("a")
 	@ObfuscatedSignature(
-		descriptor = "(Lcu;B)V",
-		garbageValue = "-3"
+		garbageValue = "-3",
+		descriptor = "(Lcu;B)V"
 	)
-	void method3117(UrlRequester var1) {
+	void method3052(UrlRequester var1) {
 		if (this.field1706 != null && this.field1706.isDone()) {
 			byte[] var2 = this.field1706.getResponse();
 			if (var2 == null) {
-				this.method3116();
-				this.field1704 = -2097655212;
+				this.method3051();
+				this.field1704 = 100;
 			} else {
 				JSONObject var3;
 				try {
 					class400 var4 = new class400(var2);
-					var3 = var4.method7049();
+					var3 = var4.method6946();
 					var3 = var3.getJSONObject("message");
 				} catch (Exception var9) {
-					this.method3116();
-					this.field1704 = -249822706;
+					this.method3051();
+					this.field1704 = 102;
 					return;
 				}
 
 				try {
-					this.method3119(var3.getJSONArray("images"), var1);
+					this.method3054(var3.getJSONArray("images"), var1);
 				} catch (Exception var8) {
 					this.field1710.clear();
 				}
 
 				try {
-					this.method3111(var3.getJSONArray("labels"));
+					this.method3046(var3.getJSONArray("labels"));
 				} catch (Exception var7) {
 					this.field1711.clear();
 				}
 
 				try {
-					this.method3121(var3.getJSONObject("behaviour"));
+					this.method3056(var3.getJSONObject("behaviour"));
 				} catch (Exception var6) {
 					this.field1707 = null;
 					this.field1702[0] = 0.0F;
@@ -239,13 +243,13 @@ public class class155 {
 				}
 
 				try {
-					this.method3122(var3.getJSONObject("meta"));
+					this.method3057(var3.getJSONObject("meta"));
 				} catch (Exception var5) {
 					this.field1712.clear();
 					this.field1715.clear();
 				}
 
-				this.field1704 = (this.field1710.size() > 0 ? 1 : 2) * 923916253;
+				this.field1704 = this.field1710.size() > 0 ? 1 : 2;
 				this.field1706 = null;
 			}
 		}
@@ -253,10 +257,10 @@ public class class155 {
 
 	@ObfuscatedName("m")
 	@ObfuscatedSignature(
-		descriptor = "(I)V",
-		garbageValue = "-1943134133"
+		garbageValue = "-1943134133",
+		descriptor = "(I)V"
 	)
-	void method3118() {
+	void method3053() {
 		Iterator var1 = this.field1710.iterator();
 
 		class160 var2;
@@ -269,14 +273,14 @@ public class class155 {
 					if (var2.field1749 != null) {
 						byte[] var3 = var2.field1749.getResponse();
 						if (var3 != null && var3.length > 0) {
-							this.field1704 = 1847832506;
+							this.field1704 = 2;
 							return;
 						}
 					}
 				}
 
-				this.method3116();
-				this.field1704 = -1173738959;
+				this.method3051();
+				this.field1704 = 101;
 				return;
 			}
 
@@ -287,17 +291,17 @@ public class class155 {
 
 	@ObfuscatedName("u")
 	@ObfuscatedSignature(
-		descriptor = "(Lorg/json/JSONArray;Lcu;B)V",
-		garbageValue = "1"
+		garbageValue = "1",
+		descriptor = "(Lorg/json/JSONArray;Lcu;B)V"
 	)
-	void method3119(JSONArray var1, UrlRequester var2) throws JSONException {
+	void method3054(JSONArray var1, UrlRequester var2) throws JSONException {
 		if (var1 != null) {
 			for (int var3 = 0; var3 < var1.length(); ++var3) {
 				try {
 					JSONObject var4 = var1.getJSONObject(var3);
 					class160 var5 = new class160(this);
 					var5.field1749 = var2.request(new URL(var4.getString("src")));
-					var5.field1748 = class149.method3061(var4, "placement");
+					var5.field1748 = class149.method2996(var4, "placement");
 					this.field1710.add(var5);
 				} catch (MalformedURLException var6) {
 				}
@@ -308,19 +312,19 @@ public class class155 {
 
 	@ObfuscatedName("l")
 	@ObfuscatedSignature(
-		descriptor = "(Lorg/json/JSONArray;I)V",
-		garbageValue = "2030988407"
+		garbageValue = "2030988407",
+		descriptor = "(Lorg/json/JSONArray;I)V"
 	)
-	void method3111(JSONArray var1) throws JSONException {
+	void method3046(JSONArray var1) throws JSONException {
 		if (var1 != null) {
 			for (int var2 = 0; var2 < var1.length(); ++var2) {
 				JSONObject var3 = var1.getJSONObject(var2);
 				class161 var4 = new class161(this);
 				var4.field1755 = var3.getString("text");
-				var4.field1758 = Renderable.method4228(var3.getString("align_x")) * 1738617341;
-				var4.field1757 = Renderable.method4228(var3.getString("align_y")) * -93259797;
-				var4.field1759 = var3.getInt("font") * 985061801;
-				var4.field1752 = class149.method3061(var3, "placement");
+				var4.field1758 = Renderable.method4163(var3.getString("align_x"));
+				var4.field1757 = Renderable.method4163(var3.getString("align_y"));
+				var4.field1759 = var3.getInt("font");
+				var4.field1752 = class149.method2996(var3, "placement");
 				this.field1711.add(var4);
 			}
 
@@ -329,12 +333,12 @@ public class class155 {
 
 	@ObfuscatedName("z")
 	@ObfuscatedSignature(
-		descriptor = "(Lorg/json/JSONObject;B)V",
-		garbageValue = "110"
+		garbageValue = "110",
+		descriptor = "(Lorg/json/JSONObject;B)V"
 	)
-	void method3121(JSONObject var1) throws JSONException {
+	void method3056(JSONObject var1) throws JSONException {
 		if (var1 != null) {
-			this.field1702 = class149.method3061(var1, "clickbounds");
+			this.field1702 = class149.method2996(var1, "clickbounds");
 			this.field1707 = var1.getString("endpoint");
 			String[] var2 = JSONObject.getNames(var1);
 
@@ -364,10 +368,10 @@ public class class155 {
 
 	@ObfuscatedName("r")
 	@ObfuscatedSignature(
-		descriptor = "(Lorg/json/JSONObject;I)V",
-		garbageValue = "-2113668680"
+		garbageValue = "-2113668680",
+		descriptor = "(Lorg/json/JSONObject;I)V"
 	)
-	void method3122(JSONObject var1) throws JSONException {
+	void method3057(JSONObject var1) throws JSONException {
 		String[] var2 = JSONObject.getNames(var1);
 
 		for (int var3 = 0; var3 < var1.length(); ++var3) {
@@ -393,10 +397,10 @@ public class class155 {
 
 	@ObfuscatedName("s")
 	@ObfuscatedSignature(
-		descriptor = "([BI)Lqn;",
-		garbageValue = "-928428496"
+		garbageValue = "-928428496",
+		descriptor = "([BI)Lqn;"
 	)
-	public static final SpritePixels method3172(byte[] var0) {
+	public static final SpritePixels method3107(byte[] var0) {
 		BufferedImage var1 = null;
 
 		try {
@@ -420,10 +424,10 @@ public class class155 {
 
 	@ObfuscatedName("h")
 	@ObfuscatedSignature(
-		descriptor = "([BIII)Ljava/lang/String;",
-		garbageValue = "2112007443"
+		garbageValue = "2112007443",
+		descriptor = "([BIII)Ljava/lang/String;"
 	)
-	public static String method3173(byte[] var0, int var1, int var2) {
+	public static String method3108(byte[] var0, int var1, int var2) {
 		char[] var3 = new char[var2];
 		int var4 = 0;
 		int var5 = var1;

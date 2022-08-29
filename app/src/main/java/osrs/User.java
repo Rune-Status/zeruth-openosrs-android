@@ -2,6 +2,7 @@ package osrs;
 
 import net.runelite.mapping.Export;
 import net.runelite.mapping.Implements;
+import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
@@ -9,6 +10,9 @@ import net.runelite.mapping.ObfuscatedSignature;
 @Implements("User")
 public class User implements Comparable {
 	@ObfuscatedName("o")
+	@ObfuscatedGetter(
+		intValue = -313022235
+	)
 	@Export("Interpreter_intStackSize")
 	static int Interpreter_intStackSize;
 	@ObfuscatedName("w")
@@ -29,8 +33,8 @@ public class User implements Comparable {
 
 	@ObfuscatedName("h")
 	@ObfuscatedSignature(
-		descriptor = "(Lnb;I)I",
-		garbageValue = "1550816169"
+		garbageValue = "1550816169",
+		descriptor = "(Lnb;I)I"
 	)
 	@Export("compareTo_user")
 	public int compareTo_user(User var1) {
@@ -39,8 +43,8 @@ public class User implements Comparable {
 
 	@ObfuscatedName("f")
 	@ObfuscatedSignature(
-		descriptor = "(S)Lqy;",
-		garbageValue = "1102"
+		garbageValue = "1102",
+		descriptor = "(S)Lqy;"
 	)
 	@Export("getUsername")
 	public Username getUsername() {
@@ -49,8 +53,8 @@ public class User implements Comparable {
 
 	@ObfuscatedName("t")
 	@ObfuscatedSignature(
-		descriptor = "(S)Ljava/lang/String;",
-		garbageValue = "187"
+		garbageValue = "187",
+		descriptor = "(S)Ljava/lang/String;"
 	)
 	@Export("getName")
 	public String getName() {
@@ -59,8 +63,8 @@ public class User implements Comparable {
 
 	@ObfuscatedName("j")
 	@ObfuscatedSignature(
-		descriptor = "(I)Ljava/lang/String;",
-		garbageValue = "1901319216"
+		garbageValue = "1901319216",
+		descriptor = "(I)Ljava/lang/String;"
 	)
 	@Export("getPreviousName")
 	public String getPreviousName() {
@@ -69,8 +73,8 @@ public class User implements Comparable {
 
 	@ObfuscatedName("g")
 	@ObfuscatedSignature(
-		descriptor = "(Lqy;Lqy;B)V",
-		garbageValue = "1"
+		garbageValue = "1",
+		descriptor = "(Lqy;Lqy;B)V"
 	)
 	@Export("set")
 	void set(Username var1, Username var2) {
@@ -88,10 +92,10 @@ public class User implements Comparable {
 
 	@ObfuscatedName("a")
 	@ObfuscatedSignature(
-		descriptor = "(Lgy;[Lgl;B)V",
-		garbageValue = "2"
+		garbageValue = "2",
+		descriptor = "(Lgy;[Lgl;B)V"
 	)
-	static final void method6633(Scene var0, CollisionMap[] var1) {
+	static final void method6551(Scene var0, CollisionMap[] var1) {
 		int var2;
 		int var3;
 		int var4;
@@ -113,22 +117,22 @@ public class User implements Comparable {
 			}
 		}
 
-		Tiles.rndHue += ((int)(Math.random() * 5.0D) - 2) * 1013856539;
-		if (Tiles.rndHue * 565999891 < -8) {
-			Tiles.rndHue = 479082280;
+		Tiles.rndHue += (int)(Math.random() * 5.0D) - 2;
+		if (Tiles.rndHue < -8) {
+			Tiles.rndHue = -8;
 		}
 
-		if (Tiles.rndHue * 565999891 > 8) {
-			Tiles.rndHue = -479082280;
+		if (Tiles.rndHue > 8) {
+			Tiles.rndHue = 8;
 		}
 
-		Tiles.rndLightness += ((int)(Math.random() * 5.0D) - 2) * -1502498337;
-		if (Tiles.rndLightness * -917550561 < -16) {
-			Tiles.rndLightness = -1729830384;
+		Tiles.rndLightness += (int)(Math.random() * 5.0D) - 2;
+		if (Tiles.rndLightness < -16) {
+			Tiles.rndLightness = -16;
 		}
 
-		if (Tiles.rndLightness * -917550561 > 16) {
-			Tiles.rndLightness = 1729830384;
+		if (Tiles.rndLightness > 16) {
+			Tiles.rndLightness = 16;
 		}
 
 		int var9;
@@ -183,15 +187,15 @@ public class User implements Comparable {
 					if (var13 >= 0 && var13 < 104) {
 						var14 = Tiles.Tiles_underlays[var2][var13][var12] & 255;
 						if (var14 > 0) {
-							FloorUnderlayDefinition var48 = KeyHandler.method328(var14 - 1);
+							FloorUnderlayDefinition var45 = KeyHandler.method328(var14 - 1);
 							var10000 = class121.Tiles_hue;
-							var10000[var12] += 711472625 * var48.field1978;
+							var10000[var12] += var45.hue;
 							var10000 = Login.Tiles_saturation;
-							var10000[var12] += 1601741227 * var48.saturation;
+							var10000[var12] += var45.saturation;
 							var10000 = GrandExchangeEvents.Tiles_lightness;
-							var10000[var12] += var48.lightness * -754627641;
+							var10000[var12] += var45.lightness;
 							var10000 = PcmPlayer.Tiles_hueMultiplier;
-							var10000[var12] += 42167891 * var48.field1976;
+							var10000[var12] += var45.hueMultiplier;
 							var10002 = FaceNormal.field2453[var12]++;
 						}
 					}
@@ -200,15 +204,15 @@ public class User implements Comparable {
 					if (var14 >= 0 && var14 < 104) {
 						var15 = Tiles.Tiles_underlays[var2][var14][var12] & 255;
 						if (var15 > 0) {
-							FloorUnderlayDefinition var49 = KeyHandler.method328(var15 - 1);
+							FloorUnderlayDefinition var46 = KeyHandler.method328(var15 - 1);
 							var10000 = class121.Tiles_hue;
-							var10000[var12] -= var49.field1978 * 711472625;
+							var10000[var12] -= var46.hue;
 							var10000 = Login.Tiles_saturation;
-							var10000[var12] -= var49.saturation * 1601741227;
+							var10000[var12] -= var46.saturation;
 							var10000 = GrandExchangeEvents.Tiles_lightness;
-							var10000[var12] -= var49.lightness * -754627641;
+							var10000[var12] -= var46.lightness;
 							var10000 = PcmPlayer.Tiles_hueMultiplier;
-							var10000[var12] -= var49.field1976 * 42167891;
+							var10000[var12] -= var46.hueMultiplier;
 							var10002 = FaceNormal.field2453[var12]--;
 						}
 					}
@@ -241,8 +245,8 @@ public class User implements Comparable {
 						}
 
 						if (var17 >= 1 && var17 < 103 && (!Client.isLowDetail || (Tiles.Tiles_renderFlags[0][var11][var17] & 2) != 0 || (Tiles.Tiles_renderFlags[var2][var11][var17] & 16) == 0)) {
-							if (var2 < Tiles.Tiles_minPlane * -625386397) {
-								Tiles.Tiles_minPlane = var2 * -87292597;
+							if (var2 < Tiles.Tiles_minPlane) {
+								Tiles.Tiles_minPlane = var2;
 							}
 
 							var20 = Tiles.Tiles_underlays[var2][var11][var17] & 255;
@@ -266,8 +270,8 @@ public class User implements Comparable {
 									var33 = var13 / var16;
 									var34 = var14 / var16;
 									var30 = class17.hslToRgb(var32, var33, var34);
-									var32 = var32 + Tiles.rndHue * 565999891 & 255;
-									var34 += Tiles.rndLightness * -917550561;
+									var32 = var32 + Tiles.rndHue & 255;
+									var34 += Tiles.rndLightness;
 									if (var34 < 0) {
 										var34 = 0;
 									} else if (var34 > 255) {
@@ -287,22 +291,22 @@ public class User implements Comparable {
 									if (var21 > 0) {
 										var34 = var21 - 1;
 										var35 = (FloorOverlayDefinition)FloorOverlayDefinition.FloorOverlayDefinition_cached.get((long)var34);
-										FloorOverlayDefinition var45;
+										FloorOverlayDefinition var47;
 										if (var35 != null) {
-											var45 = var35;
+											var47 = var35;
 										} else {
-											byte[] var36 = FloorOverlayDefinition.field2154.takeFile(4, var34);
+											byte[] var48 = FloorOverlayDefinition.FloorOverlayDefinition_archive.takeFile(4, var34);
 											var35 = new FloorOverlayDefinition();
-											if (var36 != null) {
-												var35.decode(new Buffer(var36), var34);
+											if (var48 != null) {
+												var35.decode(new Buffer(var48), var34);
 											}
 
 											var35.postDecode();
 											FloorOverlayDefinition.FloorOverlayDefinition_cached.put(var35, (long)var34);
-											var45 = var35;
+											var47 = var35;
 										}
 
-										if (!var45.hideUnderlay) {
+										if (!var47.hideUnderlay) {
 											var56 = false;
 										}
 									}
@@ -315,53 +319,53 @@ public class User implements Comparable {
 
 								var32 = 0;
 								if (var31 != -1) {
-									var32 = Rasterizer3D.Rasterizer3D_colorPalette[StructComposition.method3531(var31, 96)];
+									var32 = Rasterizer3D.Rasterizer3D_colorPalette[StructComposition.method3466(var31, 96)];
 								}
 
 								if (var21 == 0) {
-									var0.addTile(var2, var11, var17, 0, 0, -1, var22, var23, var24, var25, StructComposition.method3531(var30, var26), StructComposition.method3531(var30, var27), StructComposition.method3531(var30, var28), StructComposition.method3531(var30, var29), 0, 0, 0, 0, var32, 0);
+									var0.addTile(var2, var11, var17, 0, 0, -1, var22, var23, var24, var25, StructComposition.method3466(var30, var26), StructComposition.method3466(var30, var27), StructComposition.method3466(var30, var28), StructComposition.method3466(var30, var29), 0, 0, 0, 0, var32, 0);
 								} else {
 									var33 = AbstractUserComparator.Tiles_shapes[var2][var11][var17] + 1;
-									byte var57 = class59.field473[var2][var11][var17];
-									int var46 = var21 - 1;
-									FloorOverlayDefinition var37 = (FloorOverlayDefinition)FloorOverlayDefinition.FloorOverlayDefinition_cached.get((long)var46);
+									byte var57 = GrandExchangeOfferOwnWorldComparator.field473[var2][var11][var17];
+									int var36 = var21 - 1;
+									FloorOverlayDefinition var37 = (FloorOverlayDefinition)FloorOverlayDefinition.FloorOverlayDefinition_cached.get((long)var36);
 									if (var37 != null) {
 										var35 = var37;
 									} else {
-										byte[] var38 = FloorOverlayDefinition.field2154.takeFile(4, var46);
+										byte[] var49 = FloorOverlayDefinition.FloorOverlayDefinition_archive.takeFile(4, var36);
 										var37 = new FloorOverlayDefinition();
-										if (var38 != null) {
-											var37.decode(new Buffer(var38), var46);
+										if (var49 != null) {
+											var37.decode(new Buffer(var49), var36);
 										}
 
 										var37.postDecode();
-										FloorOverlayDefinition.FloorOverlayDefinition_cached.put(var37, (long)var46);
+										FloorOverlayDefinition.FloorOverlayDefinition_cached.put(var37, (long)var36);
 										var35 = var37;
 									}
 
-									int var47 = var35.texture * -180252261;
+									int var38 = var35.texture;
 									int var39;
 									int var40;
 									int var41;
 									int var42;
-									if (var47 >= 0) {
-										var40 = Rasterizer3D.Rasterizer3D_textureLoader.getAverageTextureRGB(var47);
+									if (var38 >= 0) {
+										var40 = Rasterizer3D.Rasterizer3D_textureLoader.getAverageTextureRGB(var38);
 										var39 = -1;
-									} else if (var35.primaryRgb * 444643155 == 16711935) {
+									} else if (var35.primaryRgb == 16711935) {
 										var39 = -2;
-										var47 = -1;
+										var38 = -1;
 										var40 = -2;
 									} else {
-										var39 = class17.hslToRgb(var35.hue * -2046052479, var35.saturation * 1253899879, var35.lightness * 1437897057);
-										var41 = Tiles.rndHue * 565999891 + var35.hue * -2046052479 & 255;
-										var42 = Tiles.rndLightness * -917550561 + var35.lightness * 1437897057;
+										var39 = class17.hslToRgb(var35.hue, var35.saturation, var35.lightness);
+										var41 = var35.hue + Tiles.rndHue & 255;
+										var42 = var35.lightness + Tiles.rndLightness;
 										if (var42 < 0) {
 											var42 = 0;
 										} else if (var42 > 255) {
 											var42 = 255;
 										}
 
-										var40 = class17.hslToRgb(var41, var35.saturation * 1253899879, var42);
+										var40 = class17.hslToRgb(var41, var35.saturation, var42);
 									}
 
 									var41 = 0;
@@ -369,20 +373,20 @@ public class User implements Comparable {
 										var41 = Rasterizer3D.Rasterizer3D_colorPalette[GameEngine.method430(var40, 96)];
 									}
 
-									if (var35.secondaryRgb * 1139903209 != -1) {
-										var42 = Tiles.rndHue * 565999891 + var35.field2148 * -932708741 & 255;
-										int var43 = var35.field2144 * -1561033009 + Tiles.rndLightness * -917550561;
+									if (var35.secondaryRgb != -1) {
+										var42 = var35.secondaryHue + Tiles.rndHue & 255;
+										int var43 = var35.secondaryLightness + Tiles.rndLightness;
 										if (var43 < 0) {
 											var43 = 0;
 										} else if (var43 > 255) {
 											var43 = 255;
 										}
 
-										var40 = class17.hslToRgb(var42, var35.field2150 * -1597329197, var43);
+										var40 = class17.hslToRgb(var42, var35.secondarySaturation, var43);
 										var41 = Rasterizer3D.Rasterizer3D_colorPalette[GameEngine.method430(var40, 96)];
 									}
 
-									var0.addTile(var2, var11, var17, var33, var57, var47, var22, var23, var24, var25, StructComposition.method3531(var30, var26), StructComposition.method3531(var30, var27), StructComposition.method3531(var30, var28), StructComposition.method3531(var30, var29), GameEngine.method430(var39, var26), GameEngine.method430(var39, var27), GameEngine.method430(var39, var28), GameEngine.method430(var39, var29), var32, var41);
+									var0.addTile(var2, var11, var17, var33, var57, var38, var22, var23, var24, var25, StructComposition.method3466(var30, var26), StructComposition.method3466(var30, var27), StructComposition.method3466(var30, var28), StructComposition.method3466(var30, var29), GameEngine.method430(var39, var26), GameEngine.method430(var39, var27), GameEngine.method430(var39, var28), GameEngine.method430(var39, var29), var32, var41);
 								}
 							}
 						}
@@ -392,18 +396,18 @@ public class User implements Comparable {
 
 			for (var11 = 1; var11 < 103; ++var11) {
 				for (var12 = 1; var12 < 103; ++var12) {
-					var0.setTileMinPlane(var2, var12, var11, WorldMapSection1.method4951(var2, var12, var11));
+					var0.setTileMinPlane(var2, var12, var11, WorldMapSection1.method4884(var2, var12, var11));
 				}
 			}
 
 			Tiles.Tiles_underlays[var2] = null;
 			Tiles.Tiles_overlays[var2] = null;
 			AbstractUserComparator.Tiles_shapes[var2] = null;
-			class59.field473[var2] = null;
+			GrandExchangeOfferOwnWorldComparator.field473[var2] = null;
 			Tiles.field975[var2] = null;
 		}
 
-		var0.method4082(-50, -10, -50);
+		var0.method4017(-50, -10, -50);
 
 		for (var2 = 0; var2 < 104; ++var2) {
 			for (var3 = 0; var3 < 104; ++var3) {
@@ -440,22 +444,22 @@ public class User implements Comparable {
 								++var10;
 							}
 
-							label445:
+							label492:
 							while (var11 > 0) {
 								for (var13 = var9; var13 <= var10; ++var13) {
 									if ((class17.field92[var11 - 1][var54][var13] & var2) == 0) {
-										break label445;
+										break label492;
 									}
 								}
 
 								--var11;
 							}
 
-							label434:
+							label481:
 							while (var12 < var5) {
 								for (var13 = var9; var13 <= var10; ++var13) {
 									if ((class17.field92[var12 + 1][var54][var13] & var2) == 0) {
-										break label434;
+										break label481;
 									}
 								}
 
@@ -490,22 +494,22 @@ public class User implements Comparable {
 								++var10;
 							}
 
-							label498:
+							label545:
 							while (var11 > 0) {
 								for (var13 = var9; var13 <= var10; ++var13) {
 									if ((class17.field92[var11 - 1][var13][var53] & var3) == 0) {
-										break label498;
+										break label545;
 									}
 								}
 
 								--var11;
 							}
 
-							label487:
+							label534:
 							while (var12 < var5) {
 								for (var13 = var9; var13 <= var10; ++var13) {
 									if ((class17.field92[var12 + 1][var13][var53] & var3) == 0) {
-										break label487;
+										break label534;
 									}
 								}
 
@@ -540,22 +544,22 @@ public class User implements Comparable {
 								++var12;
 							}
 
-							label551:
+							label598:
 							while (var9 > 0) {
 								for (var13 = var11; var13 <= var12; ++var13) {
 									if ((class17.field92[var52][var9 - 1][var13] & var4) == 0) {
-										break label551;
+										break label598;
 									}
 								}
 
 								--var9;
 							}
 
-							label540:
+							label587:
 							while (var10 < 104) {
 								for (var13 = var11; var13 <= var12; ++var13) {
 									if ((class17.field92[var52][var10 + 1][var13] & var4) == 0) {
-										break label540;
+										break label587;
 									}
 								}
 

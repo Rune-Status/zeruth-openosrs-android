@@ -7,15 +7,15 @@ import net.runelite.mapping.ObfuscatedSignature;
 public interface class421 extends Iterable {
 	@ObfuscatedName("s")
 	@ObfuscatedSignature(
-		descriptor = "(IB)I",
-		garbageValue = "0"
+		garbageValue = "0",
+		descriptor = "(IB)I"
 	)
-	int vmethod7381(int var1);
+	int vmethod7278(int var1);
 
 	@ObfuscatedName("h")
 	@ObfuscatedSignature(
-		descriptor = "(ILjava/lang/Object;B)V",
-		garbageValue = "62"
+		garbageValue = "62",
+		descriptor = "(ILjava/lang/Object;B)V"
 	)
-	void vmethod7377(int var1, Object var2);
+	void vmethod7274(int var1, Object var2);
 }

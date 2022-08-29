@@ -2,6 +2,7 @@ package osrs;
 
 import net.runelite.mapping.Export;
 import net.runelite.mapping.Implements;
+import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
@@ -9,6 +10,9 @@ import net.runelite.mapping.ObfuscatedSignature;
 @Implements("WorldMapIcon_1")
 public class WorldMapIcon_1 extends AbstractWorldMapIcon {
 	@ObfuscatedName("s")
+	@ObfuscatedGetter(
+		intValue = -1063677323
+	)
 	@Export("objectDefId")
 	final int objectDefId;
 	@ObfuscatedName("h")
@@ -18,6 +22,9 @@ public class WorldMapIcon_1 extends AbstractWorldMapIcon {
 	@Export("region")
 	final WorldMapRegion region;
 	@ObfuscatedName("w")
+	@ObfuscatedGetter(
+		intValue = 455108447
+	)
 	@Export("element")
 	int element;
 	@ObfuscatedName("v")
@@ -27,9 +34,15 @@ public class WorldMapIcon_1 extends AbstractWorldMapIcon {
 	@Export("label")
 	WorldMapLabel label;
 	@ObfuscatedName("c")
+	@ObfuscatedGetter(
+		intValue = -1834830989
+	)
 	@Export("subWidth")
 	int subWidth;
 	@ObfuscatedName("q")
+	@ObfuscatedGetter(
+		intValue = 1995278701
+	)
 	@Export("subHeight")
 	int subHeight;
 
@@ -38,25 +51,25 @@ public class WorldMapIcon_1 extends AbstractWorldMapIcon {
 	)
 	WorldMapIcon_1(Coord var1, Coord var2, int var3, WorldMapRegion var4) {
 		super(var1, var2);
-		this.objectDefId = var3 * 2016816605;
+		this.objectDefId = var3;
 		this.region = var4;
 		this.init();
 	}
 
 	@ObfuscatedName("s")
 	@ObfuscatedSignature(
-		descriptor = "(I)V",
-		garbageValue = "-219905867"
+		garbageValue = "-219905867",
+		descriptor = "(I)V"
 	)
 	@Export("init")
 	void init() {
-		this.element = FileSystem.getObjectDefinition(-1063677323 * this.objectDefId).transform().mapIconId * 25337305;
-		this.label = this.region.createMapLabel(EnumComposition.WorldMapElement_get(this.element * 455108447));
+		this.element = FileSystem.getObjectDefinition(this.objectDefId).transform().mapIconId;
+		this.label = this.region.createMapLabel(EnumComposition.WorldMapElement_get(this.element));
 		WorldMapElement var1 = EnumComposition.WorldMapElement_get(this.getElement());
 		SpritePixels var2 = var1.getSpriteBool(false);
 		if (var2 != null) {
-			this.subWidth = var2.subWidth * -829380165;
-			this.subHeight = var2.subHeight * 636938341;
+			this.subWidth = var2.subWidth;
+			this.subHeight = var2.subHeight;
 		} else {
 			this.subWidth = 0;
 			this.subHeight = 0;
@@ -66,18 +79,18 @@ public class WorldMapIcon_1 extends AbstractWorldMapIcon {
 
 	@ObfuscatedName("h")
 	@ObfuscatedSignature(
-		descriptor = "(B)I",
-		garbageValue = "-71"
+		garbageValue = "-71",
+		descriptor = "(B)I"
 	)
 	@Export("getElement")
 	public int getElement() {
-		return this.element * 455108447;
+		return this.element;
 	}
 
 	@ObfuscatedName("w")
 	@ObfuscatedSignature(
-		descriptor = "(B)Liw;",
-		garbageValue = "32"
+		garbageValue = "32",
+		descriptor = "(B)Liw;"
 	)
 	@Export("getLabel")
 	WorldMapLabel getLabel() {
@@ -86,28 +99,28 @@ public class WorldMapIcon_1 extends AbstractWorldMapIcon {
 
 	@ObfuscatedName("v")
 	@ObfuscatedSignature(
-		descriptor = "(I)I",
-		garbageValue = "-452679181"
+		garbageValue = "-452679181",
+		descriptor = "(I)I"
 	)
 	@Export("getSubWidth")
 	int getSubWidth() {
-		return this.subWidth * -1834830989;
+		return this.subWidth;
 	}
 
 	@ObfuscatedName("c")
 	@ObfuscatedSignature(
-		descriptor = "(I)I",
-		garbageValue = "-1451719857"
+		garbageValue = "-1451719857",
+		descriptor = "(I)I"
 	)
 	@Export("getSubHeight")
 	int getSubHeight() {
-		return this.subHeight * 1995278701;
+		return this.subHeight;
 	}
 
 	@ObfuscatedName("s")
 	@ObfuscatedSignature(
-		descriptor = "(II)Lfn;",
-		garbageValue = "-2084970850"
+		garbageValue = "-2084970850",
+		descriptor = "(II)Lfn;"
 	)
 	@Export("getEnum")
 	public static EnumComposition getEnum(int var0) {

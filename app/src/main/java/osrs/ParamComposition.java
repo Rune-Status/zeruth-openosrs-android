@@ -3,6 +3,7 @@ package osrs;
 import java.util.Iterator;
 import net.runelite.mapping.Export;
 import net.runelite.mapping.Implements;
+import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
@@ -13,7 +14,8 @@ public class ParamComposition extends DualNode {
 	@ObfuscatedSignature(
 		descriptor = "Lls;"
 	)
-	public static AbstractArchive field1997;
+	@Export("ParamDefinition_archive")
+	public static AbstractArchive ParamDefinition_archive;
 	@ObfuscatedName("h")
 	@ObfuscatedSignature(
 		descriptor = "Liz;"
@@ -24,6 +26,9 @@ public class ParamComposition extends DualNode {
 	@Export("type")
 	char type;
 	@ObfuscatedName("v")
+	@ObfuscatedGetter(
+		intValue = -1377513159
+	)
 	@Export("defaultInt")
 	public int defaultInt;
 	@ObfuscatedName("c")
@@ -43,8 +48,8 @@ public class ParamComposition extends DualNode {
 
 	@ObfuscatedName("h")
 	@ObfuscatedSignature(
-		descriptor = "(B)V",
-		garbageValue = "15"
+		garbageValue = "15",
+		descriptor = "(B)V"
 	)
 	@Export("postDecode")
 	void postDecode() {
@@ -52,8 +57,8 @@ public class ParamComposition extends DualNode {
 
 	@ObfuscatedName("w")
 	@ObfuscatedSignature(
-		descriptor = "(Lqr;I)V",
-		garbageValue = "1701434931"
+		garbageValue = "1701434931",
+		descriptor = "(Lqr;I)V"
 	)
 	@Export("decode")
 	void decode(Buffer var1) {
@@ -69,15 +74,15 @@ public class ParamComposition extends DualNode {
 
 	@ObfuscatedName("v")
 	@ObfuscatedSignature(
-		descriptor = "(Lqr;II)V",
-		garbageValue = "800980186"
+		garbageValue = "800980186",
+		descriptor = "(Lqr;II)V"
 	)
 	@Export("decodeNext")
 	void decodeNext(Buffer var1, int var2) {
 		if (var2 == 1) {
-			this.type = UrlRequest.method2530(var1.readByte());
+			this.type = UrlRequest.method2465(var1.readByte());
 		} else if (var2 == 2) {
-			this.defaultInt = var1.readInt() * -994390775;
+			this.defaultInt = var1.readInt();
 		} else if (var2 == 4) {
 			this.autoDisable = false;
 		} else if (var2 == 5) {
@@ -88,8 +93,8 @@ public class ParamComposition extends DualNode {
 
 	@ObfuscatedName("c")
 	@ObfuscatedSignature(
-		descriptor = "(I)Z",
-		garbageValue = "-2133855469"
+		garbageValue = "-2133855469",
+		descriptor = "(I)Z"
 	)
 	@Export("isString")
 	public boolean isString() {
@@ -98,8 +103,8 @@ public class ParamComposition extends DualNode {
 
 	@ObfuscatedName("w")
 	@ObfuscatedSignature(
-		descriptor = "(IB)Z",
-		garbageValue = "118"
+		garbageValue = "118",
+		descriptor = "(IB)Z"
 	)
 	@Export("loadInterface")
 	public static boolean loadInterface(int var0) {
@@ -122,7 +127,7 @@ public class ParamComposition extends DualNode {
 						byte[] var3 = class438.Widget_archive.takeFile(var0, var2);
 						if (var3 != null) {
 							class358.Widget_interfaceComponents[var0][var2] = new Widget();
-							class358.Widget_interfaceComponents[var0][var2].id = (var2 + (var0 << 16)) * -2096093449;
+							class358.Widget_interfaceComponents[var0][var2].id = var2 + (var0 << 16);
 							if (var3[0] == -1) {
 								class358.Widget_interfaceComponents[var0][var2].decode(new Buffer(var3));
 							} else {
@@ -140,17 +145,18 @@ public class ParamComposition extends DualNode {
 
 	@ObfuscatedName("w")
 	@ObfuscatedSignature(
-		descriptor = "(I)Z",
-		garbageValue = "-927717931"
+		garbageValue = "-927717931",
+		descriptor = "(I)Z"
 	)
-	public static final boolean method3517() {
+	@Export("isKeyDown")
+	public static final boolean isKeyDown() {
 		synchronized(KeyHandler.KeyHandler_instance) {
-			if (KeyHandler.field139 * 1364539797 == KeyHandler.field141 * 631010953) {
+			if (KeyHandler.field139 == KeyHandler.field141) {
 				return false;
 			} else {
-				class145.field1653 = KeyHandler.field144[KeyHandler.field139 * 1364539797] * 2091439357;
-				BoundaryObject.field2636 = KeyHandler.field125[KeyHandler.field139 * 1364539797];
-				KeyHandler.field139 = (KeyHandler.field139 * 1364539797 + 1 & 127) * 1002785213;
+				class145.field1653 = KeyHandler.field144[KeyHandler.field139];
+				BoundaryObject.field2636 = KeyHandler.field125[KeyHandler.field139];
+				KeyHandler.field139 = KeyHandler.field139 + 1 & 127;
 				return true;
 			}
 		}
@@ -158,8 +164,8 @@ public class ParamComposition extends DualNode {
 
 	@ObfuscatedName("jm")
 	@ObfuscatedSignature(
-		descriptor = "(I)V",
-		garbageValue = "2065757413"
+		garbageValue = "2065757413",
+		descriptor = "(I)V"
 	)
 	@Export("FriendSystem_invalidateIgnoreds")
 	static final void FriendSystem_invalidateIgnoreds() {
@@ -178,10 +184,10 @@ public class ParamComposition extends DualNode {
 
 	@ObfuscatedName("kl")
 	@ObfuscatedSignature(
-		descriptor = "(I)V",
-		garbageValue = "-1050807698"
+		garbageValue = "-1050807698",
+		descriptor = "(I)V"
 	)
-	static final void method3508() {
-		Client.field710 = Client.field674 * -2055096163;
+	static final void method3443() {
+		Client.field710 = Client.cycleCntr;
 	}
 }

@@ -1,11 +1,12 @@
 package osrs;
 
 import net.runelite.mapping.Export;
+import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
 @ObfuscatedName("qk")
-public class class447 implements class328 {
+public class class447 implements MouseWheel {
 	@ObfuscatedName("s")
 	@ObfuscatedSignature(
 		descriptor = "Lqk;"
@@ -37,8 +38,14 @@ public class class447 implements class328 {
 	)
 	static final class447 field4761;
 	@ObfuscatedName("i")
+	@ObfuscatedGetter(
+		intValue = -720584093
+	)
 	final int field4762;
 	@ObfuscatedName("k")
+	@ObfuscatedGetter(
+		intValue = 1393275291
+	)
 	final int field4763;
 
 	static {
@@ -51,26 +58,26 @@ public class class447 implements class328 {
 	}
 
 	class447(int var1, int var2) {
-		this.field4762 = var1 * -316158133;
-		this.field4763 = var2 * 991775891;
+		this.field4762 = var1;
+		this.field4763 = var2;
 	}
 
 	@ObfuscatedName("s")
 	@ObfuscatedSignature(
-		descriptor = "(I)Z",
-		garbageValue = "-453738003"
+		garbageValue = "-453738003",
+		descriptor = "(I)Z"
 	)
-	public boolean method7914() {
+	public boolean method7807() {
 		return this == field4757;
 	}
 
 	@ObfuscatedName("h")
 	@ObfuscatedSignature(
-		descriptor = "(B)I",
-		garbageValue = "104"
+		garbageValue = "104",
+		descriptor = "(B)I"
 	)
 	@Export("rsOrdinal")
 	public int rsOrdinal() {
-		return this.field4763 * 1393275291;
+		return this.field4763;
 	}
 }

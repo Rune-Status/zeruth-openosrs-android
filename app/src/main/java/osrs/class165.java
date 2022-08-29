@@ -23,62 +23,62 @@ public abstract class class165 {
 
 	@ObfuscatedName("s")
 	@ObfuscatedSignature(
-		descriptor = "(I)I",
-		garbageValue = "-2051475580"
+		garbageValue = "-2051475580",
+		descriptor = "(I)I"
 	)
-	public abstract int vmethod3237();
+	public abstract int vmethod3172();
 
 	@ObfuscatedName("h")
 	@ObfuscatedSignature(
-		descriptor = "(B)Ljava/lang/String;",
-		garbageValue = "-91"
+		garbageValue = "-91",
+		descriptor = "(B)Ljava/lang/String;"
 	)
-	public String vmethod3250() {
+	public String vmethod3185() {
 		return null;
 	}
 
 	@ObfuscatedName("d")
 	@ObfuscatedSignature(
-		descriptor = "(I)I",
-		garbageValue = "1570944667"
+		garbageValue = "1570944667",
+		descriptor = "(I)I"
 	)
-	public int vmethod3239() {
+	public int vmethod3174() {
 		return -1;
 	}
 
 	@ObfuscatedName("m")
 	@ObfuscatedSignature(
-		descriptor = "(I)Ljava/lang/String;",
-		garbageValue = "293520700"
+		garbageValue = "293520700",
+		descriptor = "(I)Ljava/lang/String;"
 	)
-	public String method3238() {
+	public String method3173() {
 		return this.field1783;
 	}
 
 	@ObfuscatedName("e")
 	@ObfuscatedSignature(
-		descriptor = "(ILbz;ZI)I",
-		garbageValue = "-389831112"
+		garbageValue = "-389831112",
+		descriptor = "(ILbz;ZI)I"
 	)
-	static int method3253(int var0, Script var1, boolean var2) {
-		Widget var3 = HitSplatDefinition.getWidget(Interpreter.Interpreter_intStack[(User.Interpreter_intStackSize -= -312486675) * -313022235]);
+	static int method3188(int var0, Script var1, boolean var2) {
+		Widget var3 = HitSplatDefinition.getWidget(Interpreter.Interpreter_intStack[--User.Interpreter_intStackSize]);
 		if (var0 == 2500) {
-			Interpreter.Interpreter_intStack[(User.Interpreter_intStackSize += -312486675) * -313022235 - 1] = var3.field3370 * -1173389335;
+			Interpreter.Interpreter_intStack[++User.Interpreter_intStackSize - 1] = var3.x;
 			return 1;
 		} else if (var0 == 2501) {
-			Interpreter.Interpreter_intStack[(User.Interpreter_intStackSize += -312486675) * -313022235 - 1] = var3.field3445 * 328534653;
+			Interpreter.Interpreter_intStack[++User.Interpreter_intStackSize - 1] = var3.y;
 			return 1;
 		} else if (var0 == 2502) {
-			Interpreter.Interpreter_intStack[(User.Interpreter_intStackSize += -312486675) * -313022235 - 1] = var3.field3372 * 1791266795;
+			Interpreter.Interpreter_intStack[++User.Interpreter_intStackSize - 1] = var3.width;
 			return 1;
 		} else if (var0 == 2503) {
-			Interpreter.Interpreter_intStack[(User.Interpreter_intStackSize += -312486675) * -313022235 - 1] = var3.field3426 * -1514292503;
+			Interpreter.Interpreter_intStack[++User.Interpreter_intStackSize - 1] = var3.height;
 			return 1;
 		} else if (var0 == 2504) {
-			Interpreter.Interpreter_intStack[(User.Interpreter_intStackSize += -312486675) * -313022235 - 1] = var3.isHidden ? 1 : 0;
+			Interpreter.Interpreter_intStack[++User.Interpreter_intStackSize - 1] = var3.isHidden ? 1 : 0;
 			return 1;
 		} else if (var0 == 2505) {
-			Interpreter.Interpreter_intStack[(User.Interpreter_intStackSize += -312486675) * -313022235 - 1] = var3.parentId * -1386189839;
+			Interpreter.Interpreter_intStack[++User.Interpreter_intStackSize - 1] = var3.parentId;
 			return 1;
 		} else {
 			return 2;

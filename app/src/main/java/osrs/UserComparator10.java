@@ -18,13 +18,13 @@ public class UserComparator10 extends AbstractUserComparator {
 
 	@ObfuscatedName("s")
 	@ObfuscatedSignature(
-		descriptor = "(Lnt;Lnt;I)I",
-		garbageValue = "-1766049214"
+		garbageValue = "-1766049214",
+		descriptor = "(Lnt;Lnt;I)I"
 	)
 	@Export("compareBuddy")
 	int compareBuddy(Buddy var1, Buddy var2) {
-		if (Client.worldId * -1074720787 == var1.world * 1881839891 && Client.worldId * -1074720787 == var2.world * 1881839891) {
-			return this.reversed ? var1.int2 * 547305229 - var2.int2 * 547305229 : var2.int2 * 547305229 - var1.int2 * 547305229;
+		if (Client.worldId == var1.world && var2.world == Client.worldId) {
+			return this.reversed ? var1.int2 - var2.int2 : var2.int2 - var1.int2;
 		} else {
 			return this.compareUser(var1, var2);
 		}
@@ -36,10 +36,10 @@ public class UserComparator10 extends AbstractUserComparator {
 
 	@ObfuscatedName("h")
 	@ObfuscatedSignature(
-		descriptor = "(IB)Lfr;",
-		garbageValue = "1"
+		garbageValue = "1",
+		descriptor = "(IB)Lfr;"
 	)
-	public static VarcInt method2598(int var0) {
+	public static VarcInt method2533(int var0) {
 		VarcInt var1 = (VarcInt)VarcInt.VarcInt_cached.get((long)var0);
 		if (var1 != null) {
 			return var1;
@@ -47,7 +47,7 @@ public class UserComparator10 extends AbstractUserComparator {
 			byte[] var2 = VarcInt.VarcInt_archive.takeFile(19, var0);
 			var1 = new VarcInt();
 			if (var2 != null) {
-				var1.method3318(new Buffer(var2));
+				var1.method3253(new Buffer(var2));
 			}
 
 			VarcInt.VarcInt_cached.put(var1, (long)var0);

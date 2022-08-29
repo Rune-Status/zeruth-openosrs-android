@@ -2,6 +2,7 @@ package osrs;
 
 import net.runelite.mapping.Export;
 import net.runelite.mapping.Implements;
+import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
@@ -9,15 +10,27 @@ import net.runelite.mapping.ObfuscatedSignature;
 @Implements("VertexNormal")
 public class VertexNormal {
 	@ObfuscatedName("s")
+	@ObfuscatedGetter(
+		intValue = -1709363353
+	)
 	@Export("x")
 	int x;
 	@ObfuscatedName("h")
+	@ObfuscatedGetter(
+		intValue = -333188113
+	)
 	@Export("y")
 	int y;
 	@ObfuscatedName("w")
+	@ObfuscatedGetter(
+		intValue = -810751955
+	)
 	@Export("z")
 	int z;
 	@ObfuscatedName("v")
+	@ObfuscatedGetter(
+		intValue = -773180697
+	)
 	@Export("magnitude")
 	int magnitude;
 
@@ -28,19 +41,19 @@ public class VertexNormal {
 		descriptor = "(Lho;)V"
 	)
 	VertexNormal(VertexNormal var1) {
-		this.x = var1.x * 1;
-		this.y = var1.y * 1;
-		this.z = var1.z * 1;
-		this.magnitude = var1.magnitude * 1;
+		this.x = var1.x;
+		this.y = var1.y;
+		this.z = var1.z;
+		this.magnitude = var1.magnitude;
 	}
 
 	@ObfuscatedName("ku")
 	@ObfuscatedSignature(
-		descriptor = "(I)V",
-		garbageValue = "1152311367"
+		garbageValue = "1152311367",
+		descriptor = "(I)V"
 	)
-	static final void method4415() {
-		Client.field477 = Client.field674 * -1883499301;
+	static final void method4350() {
+		Client.field477 = Client.cycleCntr;
 		class4.field13 = true;
 	}
 }
