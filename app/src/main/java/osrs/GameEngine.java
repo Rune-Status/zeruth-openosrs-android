@@ -12,7 +12,6 @@ import java.awt.Graphics2D;
 import java.awt.Insets;
 /*import java.awt.LayoutManager;*/
 import java.awt.Rectangle;
-import java.awt.Toolkit;
 /*import java.awt.datatransfer.Clipboard;
 import java.awt.datatransfer.ClipboardOwner;
 import java.awt.datatransfer.StringSelection;
@@ -23,7 +22,7 @@ import java.awt.event.WindowEvent;
 import java.awt.event.WindowListener;*/
 import java.awt.image.BufferedImage;
 import java.awt.image.ImageObserver;
-import java.net.URL;
+
 import net.runelite.mapping.Export;
 import net.runelite.mapping.Implements;
 import net.runelite.mapping.ObfuscatedName;
@@ -108,7 +107,7 @@ public abstract class GameEngine extends BufferedImage /*extends Applet*/ implem
 	Frame frame;*/
 	@ObfuscatedName("ak")
 	@Export("canvas")
-	java.awt.Canvas canvas;
+	Canvas canvas;
 	@ObfuscatedName("au")
 	@Export("fullRedraw")
 	volatile boolean fullRedraw;
@@ -150,7 +149,7 @@ public abstract class GameEngine extends BufferedImage /*extends Applet*/ implem
 	}
 
 	protected GameEngine() {
-		super(MainActivity.gameGraphics.getWidth(), MainActivity.gameGraphics.getHeight(), 1);
+		super(MainActivity.gameImage.getWidth(), MainActivity.gameImage.getHeight(), 1);
 		this.hasErrored = false;
 		this.field190 = 0;
 		this.field193 = 0;
@@ -348,7 +347,7 @@ public abstract class GameEngine extends BufferedImage /*extends Applet*/ implem
 					var7 = var8.top;
 				}*/
 
-				Graphics var10 = MainActivity.gameGraphics.createGraphics();
+				Graphics var10 = MainActivity.gameImage.createGraphics();
 				var10.setColor(Color.black);
 				if (var1 > 0) {
 					var10.fillRect(var6, var7, var1, this.contentHeight * 2124934131);
@@ -445,7 +444,7 @@ public abstract class GameEngine extends BufferedImage /*extends Applet*/ implem
 	)
 	@Export("addCanvas")
 	final synchronized void addCanvas() {
-		BufferedImage var0 = MainActivity.gameGraphics;
+		BufferedImage var0 = MainActivity.gameImage;
 		Graphics2D var1 = var0.createGraphics();
 /*		if (this.canvas != null) {
 			this.canvas.removeFocusListener(this);

@@ -4,29 +4,21 @@ import static android.view.WindowManager.LayoutParams.LAYOUT_IN_DISPLAY_CUTOUT_M
 
 import android.Manifest;
 import android.annotation.SuppressLint;
-import android.app.ActionBar;
-import android.app.Activity;
-import android.content.Context;
 import android.content.pm.ActivityInfo;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
-import android.graphics.Canvas;
 import android.graphics.Color;
-import android.graphics.Paint;
 import android.os.Bundle;
 
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.google.android.material.snackbar.Snackbar;
 import com.google.gson.Gson;
+import com.jaredrummler.android.device.DeviceName;
 import com.opscape.openosrs.R;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 
-import android.os.Environment;
+import android.util.DisplayMetrics;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.Menu;
@@ -34,18 +26,14 @@ import android.view.MenuItem;
 import android.view.WindowManager;
 import android.widget.ImageView;
 
-import java.awt.Image;
 import java.awt.Point;
 import java.awt.image.BufferedImage;
 import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.Reader;
 import java.io.StringWriter;
-import java.io.UnsupportedEncodingException;
 import java.io.Writer;
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
@@ -55,16 +43,16 @@ import java.util.concurrent.TimeUnit;
 
 import osrs.AbstractByteArrayCopier;
 import osrs.Client;
-import osrs.HitSplatDefinition;
 import osrs.Login;
 import osrs.MouseHandler;
-import osrs.Widget;
 import osrs.class119;
 
 public class MainActivity extends AppCompatActivity {
-
-    final Bitmap gameImage = Bitmap.createBitmap(new int[765 * 512], 765, 512, Bitmap.Config.RGB_565).copy(Bitmap.Config.RGB_565, true);
-    public static BufferedImage gameGraphics = new BufferedImage(765, 512, BufferedImage.TYPE_INT_RGB);
+    /**
+     * This is the actual drawing surface for OSRS
+     */
+    public static BufferedImage gameImage;
+    Bitmap gameBitmap;
 
     boolean setupGameView = false;
     public static boolean shouldDraw = false;
@@ -74,10 +62,24 @@ public class MainActivity extends AppCompatActivity {
 
     public static String username = "";
     public static String password = "";
+
+    public int width;
+    public int height;
     @Override
     protected void onStart() {
         super.onStart();
+        DisplayMetrics displayMetrics = new DisplayMetrics();
+        getWindowManager().getDefaultDisplay().getMetrics(displayMetrics);
+        height = displayMetrics.heightPixels + 10;
+        width = displayMetrics.widthPixels;
+        String deviceName = DeviceName.getDeviceName();
+        System.out.println("Device: " + deviceName);
+        if (deviceName.equals("b0q")) {
+            width += 150;
+        }
         loadClassNames();
+        gameBitmap = Bitmap.createBitmap(new int[width * height], width, height, Bitmap.Config.RGB_565).copy(Bitmap.Config.RGB_565, true);
+        gameImage = new BufferedImage(width, height, BufferedImage.TYPE_INT_RGB);
         AbstractByteArrayCopier.client = new Client();
         client = AbstractByteArrayCopier.client;
         client.androidActivity = this;
@@ -98,6 +100,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        DeviceName.init(this);
         setContentView(R.layout.activity_main);
         getWindow().getDecorView().setBackgroundColor(Color.BLACK);
         // Here, thisActivity is the current activity
@@ -206,6 +209,15 @@ public class MainActivity extends AppCompatActivity {
                         | View.SYSTEM_UI_FLAG_FULLSCREEN
                         | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY
                         | LAYOUT_IN_DISPLAY_CUTOUT_MODE_SHORT_EDGES);
+        if (mImg != null)
+        mImg.setSystemUiVisibility(
+                View.SYSTEM_UI_FLAG_LAYOUT_STABLE
+                        | View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
+                        | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
+                        | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
+                        | View.SYSTEM_UI_FLAG_FULLSCREEN
+                        | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY
+                        | LAYOUT_IN_DISPLAY_CUTOUT_MODE_SHORT_EDGES);
         getWindow().getAttributes().layoutInDisplayCutoutMode = WindowManager.LayoutParams.LAYOUT_IN_DISPLAY_CUTOUT_MODE_SHORT_EDGES;
     }
 
@@ -221,13 +233,8 @@ public class MainActivity extends AppCompatActivity {
                 return;
             }
 
-/*                                Paint paint = new Paint();
-                                paint.setStyle(Paint.Style.FILL);
-                                paint.setColor(Color.BLACK);*/
-            gameImage.setPixels(class119.rasterProvider.pixels, 0, 765 , 0, 0, 765, 503);
-            //System.out.println(class119.rasterProvider.width + ":" + class119.rasterProvider.height);
-/*                                Canvas gameImageCanvas = new Canvas(gameImage.copy(Bitmap.Config.ARGB_8888, true));
-                                gameImageCanvas.drawText("OSRS Android Port 207.4", 0F, 0F, paint);*/
+            gameBitmap.setPixels(class119.rasterProvider.pixels, 0, class119.rasterProvider.width * -1447914741 , 0, 0, class119.rasterProvider.width * -1447914741, class119.rasterProvider.height * -1901266975);
+
             runOnUiThread(() -> {
                 if (!setupGameView) {
                     mImg = findViewById(R.id.imageView);
@@ -235,24 +242,29 @@ public class MainActivity extends AppCompatActivity {
                     mImg.setOnTouchListener(new View.OnTouchListener() {
                         @Override
                         public boolean onTouch(View view, MotionEvent event) {
-                            int[] posXY = new int[2];
-                            mImg.getLocationOnScreen(posXY);
+                            int touchX = (int) event.getX();
+                            int touchY = (int) event.getY();
+                            if (event.getAction() == android.view.MotionEvent.ACTION_DOWN) {
+                                MouseHandler.mousePressed(new Point(touchX, touchY));
+                                System.out.println("Touch down x:" + touchX + " y:" + touchY);
+                            } else if (event.getAction() == android.view.MotionEvent.ACTION_UP) {
+                                MouseHandler.mouseReleased();
+                                System.out.println("Touch up x:" + touchX + " y:" + touchY);
+                            }
 
-                            int touchX = (int) event.getX() / 10;
-                            int touchY = (int) event.getY() / 2;
-
-/*                            int imageX = touchX - posXY[0]; // posXY[0] is the X coordinate
-                            int imageY = touchY - posXY[1]; // posXY[1] is the y coordinate*/
-
-                            MouseHandler.mousePressed(new Point(touchX, touchY));
-                            System.out.println("Should click x:" + touchX + " y:" + touchY);
                             return false;
+                        }
+                    });
+                    mImg.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View view) {
+
                         }
                     });
                     setupGameView = true;
                 }
 
-                ((ImageView) mImg).setImageBitmap(gameImage);
+                ((ImageView) mImg).setImageBitmap(gameBitmap);
             });
         } catch (Exception e) {
             e.printStackTrace();

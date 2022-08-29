@@ -376,10 +376,11 @@ public class Message extends DualNode {
 			var16 = MouseHandler.MouseHandler_lastPressedX * 1804877833;
 			var17 = MouseHandler.MouseHandler_lastPressedY * 1565070067;
 		}
-
+		System.out.println("Canvas width : " + var0);
 		if (var16 >= var0 && var16 < var0 + var2 && var17 >= var1 && var17 < var3 + var1) {
 			class342.method6200(var16 - var0, var17 - var1);
 		} else {
+			System.out.println("not in viewport");
 			ViewportMouse.ViewportMouse_isInViewport = false;
 			ViewportMouse.ViewportMouse_entityCount = 0;
 		}

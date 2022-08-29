@@ -2,7 +2,6 @@ package osrs;
 
 import com.meteor.MainActivity;
 
-import java.awt.Component;
 import java.awt.Graphics;
 import java.awt.image.BufferedImage;
 
@@ -28,12 +27,12 @@ public final class Canvas extends java.awt.Canvas {
 	}
 
 	public final void update(Graphics var1) {
-		MainActivity.gameGraphics.createGraphics().drawImage(this.component, 0, 0, null);
+		MainActivity.gameImage.createGraphics().drawImage(this.component, 0, 0, null);
 /*		this.component.update(var1);*/
 	}
 
 	public final void paint(Graphics var1) {
-		MainActivity.gameGraphics.createGraphics().drawImage(this.component, 0, 0, null);
+		MainActivity.gameImage.createGraphics().drawImage(this.component, 0, 0, null);
 /*		this.component.paint(var1);*/
 	}
 

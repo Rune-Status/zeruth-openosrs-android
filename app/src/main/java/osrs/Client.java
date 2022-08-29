@@ -1,5 +1,7 @@
 package osrs;
 
+import static osrs.AbstractByteArrayCopier.client;
+
 import com.jagex.oldscape.pub.OtlTokenRequester;
 import com.jagex.oldscape.pub.OtlTokenResponse;
 import com.jagex.oldscape.pub.RefreshAccessTokenResponse;
@@ -3321,7 +3323,7 @@ public final class Client extends GameEngine implements Usernamed, OAuthApi {
 
 		if (ClanMate.clientPreferences != null) {
 			try {
-				Client var3 = AbstractByteArrayCopier.client;
+				Client var3 = client;
 				Object[] var4 = new Object[]{Canvas.getWindowedMode()};
 				//JSObject.getWindow(var3).call("resize", var4);
 			} catch (Throwable var5) {
@@ -3439,7 +3441,7 @@ public final class Client extends GameEngine implements Usernamed, OAuthApi {
 			class19.friendsChat = null;
 		} else {
 			if (class19.friendsChat == null) {
-				class19.friendsChat = new FriendsChat(StructComposition.loginType, AbstractByteArrayCopier.client);
+				class19.friendsChat = new FriendsChat(StructComposition.loginType, client);
 			}
 
 			class19.friendsChat.method6553(var1.packetBuffer, var2);
@@ -5684,7 +5686,7 @@ public final class Client extends GameEngine implements Usernamed, OAuthApi {
 					class33.RunException_sendStackTrace((String)null, var8);
 				}
 
-				AbstractByteArrayCopier.client = this;
+				client = this;
 				RunException.field4846 = clientType * 1231114027;
 				if (field482 * -1874858369 == -1) {
 					field482 = 0;
@@ -5696,7 +5698,7 @@ public final class Client extends GameEngine implements Usernamed, OAuthApi {
 					this.field488 = true;
 				}
 
-				this.startThread(765, 503, 207, 1);
+				this.startThread(client.androidActivity.width, client.androidActivity.height, 207, 1);
 			}
 		} catch (RuntimeException var9) {
 			var9.printStackTrace();

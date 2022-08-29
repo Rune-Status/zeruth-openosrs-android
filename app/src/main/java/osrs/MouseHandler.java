@@ -189,13 +189,31 @@ public class MouseHandler { //implements MouseListener, MouseMotionListener, Foc
 
 	}*/
 
+	static int lastMousePress = 2;
+
+	public static synchronized void mouseMoved(Point var1) {
+		if (MouseHandler_instance != null) {
+			MouseHandler_idleCycles = 0;
+			MouseHandler_xVolatile = (int) (var1.getX() * 1072389339);
+			MouseHandler_yVolatile = (int) (var1.getY() * -744265981);
+			MouseHandler_lastMovedVolatile = System.currentTimeMillis() * 1968788701757541125L;
+		}
+
+	}
+
 	public static synchronized void mousePressed(Point var1) {
 		if (MouseHandler_instance != null) {
+			mouseMoved(var1);
+			if (lastMousePress == 2) {
+				lastMousePress = 1;
+			} else {
+				lastMousePress = 2;
+			}
 			MouseHandler_idleCycles = 0;
 			MouseHandler_lastPressedXVolatile = ( (int)var1.getX() * 1785933971);
 			MouseHandler_lastPressedYVolatile = ( (int)var1.getY() * -37592821);
 			MouseHandler_lastPressedTimeMillisVolatile = class181.method3483() * 7104252358568678571L;
-			MouseHandler_lastButtonVolatile = /*this.getButton(var1)*/ 1 * 178359669;
+			MouseHandler_lastButtonVolatile = /*this.getButton(var1)*/ lastMousePress * 178359669;
 			System.out.println(MouseHandler_lastButtonVolatile * 85924573);
 			System.out.println("x:" + MouseHandler_lastPressedXVolatile * -1717067389);
 			System.out.println("y:" + MouseHandler_lastPressedYVolatile * 1688894865);
@@ -203,11 +221,13 @@ public class MouseHandler { //implements MouseListener, MouseMotionListener, Foc
 				MouseHandler_currentButtonVolatile = MouseHandler_lastButtonVolatile * -732303501;
 			}
 		}
+	}
 
-/*		if (var1.isPopupTrigger()) {
-			var1.consume();
-		}*/
-
+	public static synchronized void mouseReleased() {
+		if (MouseHandler_instance != null) {
+			MouseHandler_idleCycles = 0;
+			MouseHandler_currentButtonVolatile = 0;
+		}
 	}
 
 	@ObfuscatedName("ah")
