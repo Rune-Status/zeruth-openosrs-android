@@ -3,10 +3,10 @@ Android Studio project with the intentions of replicating necessary java.awt usa
   
 Current features:  
   
-Full AWT software rendering (50 fps unless your resolution is absurd)
-Logging in / world interacting   
+Full AWT software rendering (50 fps unless your resolution is absurd)  
+Logging in / world interacting  
 Reflection checks (required for jagex to not input block you)  
-Touch Support (some issues still but usable)
+Touch Support (some issues still but usable)  
   
 ## Building  
   
