@@ -8,8 +8,8 @@ import net.runelite.mapping.ObfuscatedSignature;
 public final class class300 {
 	@ObfuscatedName("s")
 	@ObfuscatedSignature(
-		descriptor = "(CI)B",
-		garbageValue = "726344746"
+		garbageValue = "726344746",
+		descriptor = "(CI)B"
 	)
 	@Export("charToByteCp1252")
 	public static byte charToByteCp1252(char var0) {
@@ -79,31 +79,31 @@ public final class class300 {
 
 	@ObfuscatedName("je")
 	@ObfuscatedSignature(
-		descriptor = "(IB)V",
-		garbageValue = "9"
+		garbageValue = "9",
+		descriptor = "(IB)V"
 	)
 	@Export("changeGameOptions")
 	static final void changeGameOptions(int var0) {
-		class327.method5979();
-		UserComparator6.method2616();
-		int var1 = class78.VarpDefinition_get(var0).type * -953256093;
+		class327.method5908();
+		UserComparator6.method2551();
+		int var1 = class78.VarpDefinition_get(var0).type;
 		if (var1 != 0) {
 			int var2 = Varps.Varps_main[var0];
 			if (var1 == 1) {
 				if (var2 == 1) {
-					RouteStrategy.method3811(0.9D);
+					RouteStrategy.method3746(0.9D);
 				}
 
 				if (var2 == 2) {
-					RouteStrategy.method3811(0.8D);
+					RouteStrategy.method3746(0.8D);
 				}
 
 				if (var2 == 3) {
-					RouteStrategy.method3811(0.7D);
+					RouteStrategy.method3746(0.7D);
 				}
 
 				if (var2 == 4) {
-					RouteStrategy.method3811(0.6D);
+					RouteStrategy.method3746(0.6D);
 				}
 			}
 
@@ -131,23 +131,23 @@ public final class class300 {
 
 			if (var1 == 4) {
 				if (var2 == 0) {
-					class181.method3480(127);
+					class181.method3415(127);
 				}
 
 				if (var2 == 1) {
-					class181.method3480(96);
+					class181.method3415(96);
 				}
 
 				if (var2 == 2) {
-					class181.method3480(64);
+					class181.method3415(64);
 				}
 
 				if (var2 == 3) {
-					class181.method3480(32);
+					class181.method3415(32);
 				}
 
 				if (var2 == 4) {
-					class181.method3480(0);
+					class181.method3415(0);
 				}
 			}
 
@@ -156,61 +156,61 @@ public final class class300 {
 			}
 
 			if (var1 == 6) {
-				Client.field572 = var2 * -1212744201;
+				Client.chatEffects = var2;
 			}
 
 			if (var1 == 9) {
-				Client.field635 = var2 * 824946337;
+				Client.field635 = var2;
 			}
 
 			if (var1 == 10) {
 				if (var2 == 0) {
-					class132.method2838(127);
+					class132.method2773(127);
 				}
 
 				if (var2 == 1) {
-					class132.method2838(96);
+					class132.method2773(96);
 				}
 
 				if (var2 == 2) {
-					class132.method2838(64);
+					class132.method2773(64);
 				}
 
 				if (var2 == 3) {
-					class132.method2838(32);
+					class132.method2773(32);
 				}
 
 				if (var2 == 4) {
-					class132.method2838(0);
+					class132.method2773(0);
 				}
 			}
 
 			if (var1 == 17) {
-				Client.field659 = (var2 & 65535) * -1608622021;
+				Client.followerIndex = var2 & 65535;
 			}
 
 			AttackOption[] var3;
 			if (var1 == 18) {
-				var3 = new AttackOption[]{AttackOption.field1284, AttackOption.AttackOption_hidden, AttackOption.field1283, AttackOption.field1287, AttackOption.field1286};
+				var3 = new AttackOption[]{AttackOption.field1284, AttackOption.AttackOption_hidden, AttackOption.AttackOption_dependsOnCombatLevels, AttackOption.field1287, AttackOption.AttackOption_alwaysRightClick};
 				Client.playerAttackOption = (AttackOption)GameEngine.findEnumerated(var3, var2);
 				if (Client.playerAttackOption == null) {
-					Client.playerAttackOption = AttackOption.field1283;
+					Client.playerAttackOption = AttackOption.AttackOption_dependsOnCombatLevels;
 				}
 			}
 
 			if (var1 == 19) {
 				if (var2 == -1) {
-					Client.combatTargetPlayerIndex = 1565805565;
+					Client.combatTargetPlayerIndex = -1;
 				} else {
-					Client.combatTargetPlayerIndex = (var2 & 2047) * -1565805565;
+					Client.combatTargetPlayerIndex = var2 & 2047;
 				}
 			}
 
 			if (var1 == 22) {
-				var3 = new AttackOption[]{AttackOption.field1284, AttackOption.AttackOption_hidden, AttackOption.field1283, AttackOption.field1287, AttackOption.field1286};
+				var3 = new AttackOption[]{AttackOption.field1284, AttackOption.AttackOption_hidden, AttackOption.AttackOption_dependsOnCombatLevels, AttackOption.field1287, AttackOption.AttackOption_alwaysRightClick};
 				Client.npcAttackOption = (AttackOption)GameEngine.findEnumerated(var3, var2);
 				if (Client.npcAttackOption == null) {
-					Client.npcAttackOption = AttackOption.field1283;
+					Client.npcAttackOption = AttackOption.AttackOption_dependsOnCombatLevels;
 				}
 			}
 

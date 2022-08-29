@@ -25,8 +25,8 @@ public class IgnoreList extends UserList {
 
 	@ObfuscatedName("s")
 	@ObfuscatedSignature(
-		descriptor = "(I)Lnb;",
-		garbageValue = "1043377845"
+		garbageValue = "1043377845",
+		descriptor = "(I)Lnb;"
 	)
 	@Export("newInstance")
 	User newInstance() {
@@ -35,8 +35,8 @@ public class IgnoreList extends UserList {
 
 	@ObfuscatedName("h")
 	@ObfuscatedSignature(
-		descriptor = "(II)[Lnb;",
-		garbageValue = "46467081"
+		garbageValue = "46467081",
+		descriptor = "(II)[Lnb;"
 	)
 	@Export("newTypedArray")
 	User[] newTypedArray(int var1) {
@@ -45,13 +45,13 @@ public class IgnoreList extends UserList {
 
 	@ObfuscatedName("w")
 	@ObfuscatedSignature(
-		descriptor = "(Lqr;IB)V",
-		garbageValue = "1"
+		garbageValue = "1",
+		descriptor = "(Lqr;IB)V"
 	)
 	@Export("read")
 	public void read(Buffer var1, int var2) {
 		while (true) {
-			if (var1.offset * 1795921631 < var2) {
+			if (var1.offset < var2) {
 				int var3 = var1.readUnsignedByte();
 				boolean var4 = (var3 & 1) == 1;
 				Username var5 = new Username(var1.readStringCp1252NullTerminated(), this.loginType);
@@ -78,7 +78,7 @@ public class IgnoreList extends UserList {
 					if (this.getSize() < 400) {
 						int var9 = this.getSize();
 						var7 = (Ignored)this.addLast(var5, var6);
-						var7.field4322 = var9 * 32369315;
+						var7.id = var9;
 					}
 					continue;
 				}

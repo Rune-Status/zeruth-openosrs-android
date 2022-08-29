@@ -32,10 +32,10 @@ public class class327 {
 
 	@ObfuscatedName("s")
 	@ObfuscatedSignature(
-		descriptor = "(I)V",
-		garbageValue = "1442599873"
+		garbageValue = "1442599873",
+		descriptor = "(I)V"
 	)
-	public static void method5978() {
+	public static void method5907() {
 		ByteArrayPool.field4218.clear();
 		ByteArrayPool.field4218.add(100);
 		ByteArrayPool.field4218.add(5000);
@@ -45,12 +45,12 @@ public class class327 {
 
 	@ObfuscatedName("jg")
 	@ObfuscatedSignature(
-		descriptor = "(I)V",
-		garbageValue = "-869460521"
+		garbageValue = "-869460521",
+		descriptor = "(I)V"
 	)
-	static void method5979() {
+	static void method5908() {
 		for (InterfaceParent var0 = (InterfaceParent)Client.interfaceParents.first(); var0 != null; var0 = (InterfaceParent)Client.interfaceParents.next()) {
-			int var1 = var0.group * 1124857953;
+			int var1 = var0.group;
 			if (ParamComposition.loadInterface(var1)) {
 				boolean var2 = true;
 				Widget[] var3 = class358.Widget_interfaceComponents[var1];
@@ -67,7 +67,7 @@ public class class327 {
 					var4 = (int)var0.key;
 					Widget var5 = HitSplatDefinition.getWidget(var4);
 					if (var5 != null) {
-						class125.method2770(var5);
+						class125.invalidateWidget(var5);
 					}
 				}
 			}

@@ -22,12 +22,12 @@ public class UserComparator4 implements Comparator {
 
 	@ObfuscatedName("s")
 	@ObfuscatedSignature(
-		descriptor = "(Lnt;Lnt;I)I",
-		garbageValue = "-668032566"
+		garbageValue = "-668032566",
+		descriptor = "(Lnt;Lnt;I)I"
 	)
 	@Export("compare_bridged")
 	int compare_bridged(Buddy var1, Buddy var2) {
-		return this.reversed ? var1.int2 * 547305229 - var2.int2 * 547305229 : var2.int2 * 547305229 - var1.int2 * 547305229;
+		return this.reversed ? var1.int2 - var2.int2 : var2.int2 - var1.int2;
 	}
 
 	public int compare(Object var1, Object var2) {
@@ -40,17 +40,17 @@ public class UserComparator4 implements Comparator {
 
 	@ObfuscatedName("o")
 	@ObfuscatedSignature(
-		descriptor = "(I)V",
-		garbageValue = "-1201413197"
+		garbageValue = "-1201413197",
+		descriptor = "(I)V"
 	)
-	public static void method2535() {
+	public static void method2470() {
 		KitDefinition.KitDefinition_cached.clear();
 	}
 
 	@ObfuscatedName("ea")
 	@ObfuscatedSignature(
-		descriptor = "(IZZZZI)Lln;",
-		garbageValue = "1667153978"
+		garbageValue = "1667153978",
+		descriptor = "(IZZZZI)Lln;"
 	)
 	@Export("newArchive")
 	static Archive newArchive(int var0, boolean var1, boolean var2, boolean var3, boolean var4) {

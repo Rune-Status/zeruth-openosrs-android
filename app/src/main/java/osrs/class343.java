@@ -7,10 +7,10 @@ import net.runelite.mapping.ObfuscatedSignature;
 public final class class343 {
 	@ObfuscatedName("h")
 	@ObfuscatedSignature(
-		descriptor = "(III)I",
-		garbageValue = "-2096710104"
+		garbageValue = "-2096710104",
+		descriptor = "(III)I"
 	)
-	public static int method6236(int var0, int var1) {
+	public static int method6161(int var0, int var1) {
 		return (int)Math.round(Math.atan2((double)var0, (double)var1) * 2607.5945876176133D) & 16383;
 	}
 }

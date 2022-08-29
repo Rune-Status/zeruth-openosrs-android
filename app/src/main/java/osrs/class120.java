@@ -16,23 +16,24 @@ public class class120 implements class112 {
 	@ObfuscatedSignature(
 		descriptor = "[Lqe;"
 	)
-	static IndexedSprite[] field1494;
+	@Export("mapSceneSprites")
+	static IndexedSprite[] mapSceneSprites;
 
 	@ObfuscatedName("c")
 	@ObfuscatedSignature(
-		descriptor = "(II)I",
-		garbageValue = "1513821552"
+		garbageValue = "1513821552",
+		descriptor = "(II)I"
 	)
-	public static int method2735(int var0) {
+	public static int method2670(int var0) {
 		return WorldMapSection2.Entity_unpackID(ViewportMouse.ViewportMouse_entityTags[var0]);
 	}
 
 	@ObfuscatedName("e")
 	@ObfuscatedSignature(
-		descriptor = "(I)V",
-		garbageValue = "433143709"
+		garbageValue = "433143709",
+		descriptor = "(I)V"
 	)
-	public static void method2734() {
+	public static void method2669() {
 		ItemComposition.ItemDefinition_cached.clear();
 		ItemComposition.ItemDefinition_cachedModels.clear();
 		ItemComposition.ItemDefinition_cachedSprites.clear();

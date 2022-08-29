@@ -1,5 +1,7 @@
 package osrs;
 
+/*import java.awt.Desktop;
+import java.awt.Desktop.Action;*/
 import java.io.UnsupportedEncodingException;
 import java.net.URI;
 import net.runelite.mapping.Export;
@@ -15,38 +17,38 @@ public class class400 implements class399 {
 	JSONObject field4439;
 
 	public class400(byte[] var1) throws UnsupportedEncodingException {
-		this.method7047(var1);
+		this.method6944(var1);
 	}
 
 	public class400(String var1) throws UnsupportedEncodingException {
-		this.method7050(var1);
+		this.method6947(var1);
 	}
 
 	@ObfuscatedName("s")
 	@ObfuscatedSignature(
-		descriptor = "(B)[B",
-		garbageValue = "57"
+		garbageValue = "57",
+		descriptor = "(B)[B"
 	)
-	public byte[] vmethod7057() throws UnsupportedEncodingException {
+	public byte[] vmethod6954() throws UnsupportedEncodingException {
 		return this.field4439 == null ? new byte[0] : this.field4439.toString().getBytes("UTF-8");
 	}
 
 	@ObfuscatedName("w")
 	@ObfuscatedSignature(
-		descriptor = "([BI)V",
-		garbageValue = "1703144575"
+		garbageValue = "1703144575",
+		descriptor = "([BI)V"
 	)
-	void method7047(byte[] var1) throws UnsupportedEncodingException {
+	void method6944(byte[] var1) throws UnsupportedEncodingException {
 		String var2 = new String(var1, "UTF-8");
-		this.method7050(var2);
+		this.method6947(var2);
 	}
 
 	@ObfuscatedName("v")
 	@ObfuscatedSignature(
-		descriptor = "(Ljava/lang/String;I)V",
-		garbageValue = "-1297162396"
+		garbageValue = "-1297162396",
+		descriptor = "(Ljava/lang/String;I)V"
 	)
-	void method7050(String var1) throws UnsupportedEncodingException {
+	void method6947(String var1) throws UnsupportedEncodingException {
 		try {
 			if (var1.charAt(0) == '{') {
 				this.field4439 = new JSONObject(var1);
@@ -57,7 +59,7 @@ public class class400 implements class399 {
 
 				JSONArray var2 = new JSONArray(var1);
 				this.field4439 = new JSONObject();
-				this.field4439.method8265("arrayValues", var2);
+				this.field4439.method8265("arrayValues", (Object)var2);
 			}
 
 		} catch (JSONException var3) {
@@ -67,19 +69,19 @@ public class class400 implements class399 {
 
 	@ObfuscatedName("c")
 	@ObfuscatedSignature(
-		descriptor = "(B)Lorg/json/JSONObject;",
-		garbageValue = "-108"
+		garbageValue = "-108",
+		descriptor = "(B)Lorg/json/JSONObject;"
 	)
-	public JSONObject method7049() {
+	public JSONObject method6946() {
 		return this.field4439;
 	}
 
 	@ObfuscatedName("s")
 	@ObfuscatedSignature(
-		descriptor = "(CI)Z",
-		garbageValue = "-1656748026"
+		garbageValue = "-1656748026",
+		descriptor = "(CI)Z"
 	)
-	public static final boolean method7055(char var0) {
+	public static final boolean method6952(char var0) {
 		if (Character.isISOControl(var0)) {
 			return false;
 		} else if (class113.isAlphaNumeric(var0)) {
@@ -111,8 +113,8 @@ public class class400 implements class399 {
 
 	@ObfuscatedName("s")
 	@ObfuscatedSignature(
-		descriptor = "(Ljava/lang/String;ZZI)V",
-		garbageValue = "348489361"
+		garbageValue = "348489361",
+		descriptor = "(Ljava/lang/String;ZZI)V"
 	)
 	@Export("openURL")
 	public static void openURL(String var0, boolean var1, boolean var2) {
@@ -126,15 +128,12 @@ public class class400 implements class399 {
 			}*/
 
 			if (class29.field167.startsWith("win")) {
-				class369.method6597(var0, 0, "openjs");
+				FriendLoginUpdate.method6515(var0, 0, "openjs");
 			} else if (class29.field167.startsWith("mac")) {
-				class369.method6597(var0, 1, "openjs");
+				FriendLoginUpdate.method6515(var0, 1, "openjs");
 			} else {
-				class369.method6597(var0, 2, "openjs");
+				FriendLoginUpdate.method6515(var0, 2, "openjs");
 			}
-		} else {
-			class369.method6597(var0, 3, "openjs");
 		}
-
 	}
 }

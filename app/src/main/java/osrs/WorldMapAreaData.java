@@ -26,8 +26,8 @@ public class WorldMapAreaData extends WorldMapArea {
 
 	@ObfuscatedName("bf")
 	@ObfuscatedSignature(
-		descriptor = "(Lqr;Lqr;IZI)V",
-		garbageValue = "255529643"
+		garbageValue = "255529643",
+		descriptor = "(Lqr;Lqr;IZI)V"
 	)
 	@Export("init")
 	void init(Buffer var1, Buffer var2, int var3, boolean var4) {
@@ -68,8 +68,8 @@ public class WorldMapAreaData extends WorldMapArea {
 
 	@ObfuscatedName("ce")
 	@ObfuscatedSignature(
-		descriptor = "(Lqr;ZB)V",
-		garbageValue = "-86"
+		garbageValue = "-86",
+		descriptor = "(Lqr;ZB)V"
 	)
 	@Export("initIconsList")
 	void initIconsList(Buffer var1, boolean var2) {
@@ -77,7 +77,7 @@ public class WorldMapAreaData extends WorldMapArea {
 		int var3 = var1.readUnsignedShort();
 
 		for (int var4 = 0; var4 < var3; ++var4) {
-			int var5 = var1.method7652();
+			int var5 = var1.method7545();
 			Coord var6 = new Coord(var1.readInt());
 			boolean var7 = var1.readUnsignedByte() == 1;
 			if (var2 || !var7) {

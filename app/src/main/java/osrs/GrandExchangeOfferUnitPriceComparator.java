@@ -11,12 +11,12 @@ import net.runelite.mapping.ObfuscatedSignature;
 final class GrandExchangeOfferUnitPriceComparator implements Comparator {
 	@ObfuscatedName("s")
 	@ObfuscatedSignature(
-		descriptor = "(Llh;Llh;I)I",
-		garbageValue = "-1485770675"
+		garbageValue = "-1485770675",
+		descriptor = "(Llh;Llh;I)I"
 	)
 	@Export("compare_bridged")
 	int compare_bridged(GrandExchangeEvent var1, GrandExchangeEvent var2) {
-		return var1.grandExchangeOffer.unitPrice * 1524422837 < var2.grandExchangeOffer.unitPrice * 1524422837 ? -1 : (var1.grandExchangeOffer.unitPrice * 1524422837 == var2.grandExchangeOffer.unitPrice * 1524422837 ? 0 : 1);
+		return var1.grandExchangeOffer.unitPrice < var2.grandExchangeOffer.unitPrice ? -1 : (var2.grandExchangeOffer.unitPrice == var1.grandExchangeOffer.unitPrice ? 0 : 1);
 	}
 
 	public boolean equals(Object var1) {
@@ -29,15 +29,15 @@ final class GrandExchangeOfferUnitPriceComparator implements Comparator {
 
 	@ObfuscatedName("fp")
 	@ObfuscatedSignature(
-		descriptor = "(B)V",
-		garbageValue = "29"
+		garbageValue = "29",
+		descriptor = "(B)V"
 	)
-	static final void method5960() {
-		for (int var0 = 0; var0 < Client.npcCount * -140634995; ++var0) {
+	static final void method5889() {
+		for (int var0 = 0; var0 < Client.npcCount; ++var0) {
 			int var1 = Client.npcIndices[var0];
 			NPC var2 = Client.npcs[var1];
 			if (var2 != null) {
-				WorldMapSection2.method4510(var2, var2.definition.size * 1339905335);
+				WorldMapSection2.updateActorSequence(var2, var2.definition.size);
 			}
 		}
 

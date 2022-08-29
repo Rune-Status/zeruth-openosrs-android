@@ -52,7 +52,7 @@ public class MidiFileReader {
 	@Export("parse")
 	void parse(byte[] var1) {
 		this.buffer.array = var1;
-		this.buffer.offset = -1976011978;
+		this.buffer.offset = 10;
 		int var2 = this.buffer.readUnsignedShort();
 		this.division = this.buffer.readUnsignedShort();
 		this.field3239 = 500000;
@@ -61,11 +61,11 @@ public class MidiFileReader {
 		Buffer var10000;
 		int var3;
 		int var5;
-		for (var3 = 0; var3 < var2; var10000.offset += var5 * 1090888991) {
+		for (var3 = 0; var3 < var2; var10000.offset += var5) {
 			int var4 = this.buffer.readInt();
 			var5 = this.buffer.readInt();
 			if (var4 == 1297379947) {
-				this.trackStarts[var3] = this.buffer.offset * 1795921631;
+				this.trackStarts[var3] = this.buffer.offset;
 				++var3;
 			}
 
@@ -108,19 +108,19 @@ public class MidiFileReader {
 	@ObfuscatedName("c")
 	@Export("gotoTrack")
 	void gotoTrack(int var1) {
-		this.buffer.offset = this.trackPositions[var1] * 1090888991;
+		this.buffer.offset = this.trackPositions[var1];
 	}
 
 	@ObfuscatedName("q")
 	@Export("markTrackPosition")
 	void markTrackPosition(int var1) {
-		this.trackPositions[var1] = this.buffer.offset * 1795921631;
+		this.trackPositions[var1] = this.buffer.offset;
 	}
 
 	@ObfuscatedName("i")
 	@Export("setTrackDone")
 	void setTrackDone() {
-		this.buffer.offset = -1090888991;
+		this.buffer.offset = -1;
 	}
 
 	@ObfuscatedName("k")
@@ -141,40 +141,37 @@ public class MidiFileReader {
 	@ObfuscatedName("n")
 	@Export("readMessage0")
 	int readMessage0(int var1) {
-		byte var2 = this.buffer.array[this.buffer.offset * 1795921631];
-		Buffer var10000;
+		byte var2 = this.buffer.array[this.buffer.offset];
 		int var5;
 		if (var2 < 0) {
 			var5 = var2 & 255;
 			this.field3238[var1] = var5;
-			var10000 = this.buffer;
-			var10000.offset += 1090888991;
+			++this.buffer.offset;
 		} else {
 			var5 = this.field3238[var1];
 		}
 
 		if (var5 != 240 && var5 != 247) {
-			return this.method5357(var1, var5);
+			return this.method5290(var1, var5);
 		} else {
 			int var3 = this.buffer.readVarInt();
 			if (var5 == 247 && var3 > 0) {
-				int var4 = this.buffer.array[this.buffer.offset * 1795921631] & 255;
+				int var4 = this.buffer.array[this.buffer.offset] & 255;
 				if (var4 >= 241 && var4 <= 243 || var4 == 246 || var4 == 248 || var4 >= 250 && var4 <= 252 || var4 == 254) {
-					var10000 = this.buffer;
-					var10000.offset += 1090888991;
+					++this.buffer.offset;
 					this.field3238[var1] = var4;
-					return this.method5357(var1, var4);
+					return this.method5290(var1, var4);
 				}
 			}
 
-			var10000 = this.buffer;
-			var10000.offset += var3 * 1090888991;
+			Buffer var10000 = this.buffer;
+			var10000.offset += var3;
 			return 0;
 		}
 	}
 
 	@ObfuscatedName("d")
-	int method5357(int var1, int var2) {
+	int method5290(int var1, int var2) {
 		int var4;
 		if (var2 == 255) {
 			int var7 = this.buffer.readUnsignedByte();
@@ -182,7 +179,7 @@ public class MidiFileReader {
 			Buffer var10000;
 			if (var7 == 47) {
 				var10000 = this.buffer;
-				var10000.offset += var4 * 1090888991;
+				var10000.offset += var4;
 				return 1;
 			} else if (var7 == 81) {
 				int var5 = this.buffer.readMedium();
@@ -191,11 +188,11 @@ public class MidiFileReader {
 				this.field3241 += (long)var6 * (long)(this.field3239 - var5);
 				this.field3239 = var5;
 				var10000 = this.buffer;
-				var10000.offset += var4 * 1090888991;
+				var10000.offset += var4;
 				return 2;
 			} else {
 				var10000 = this.buffer;
-				var10000.offset += var4 * 1090888991;
+				var10000.offset += var4;
 				return 3;
 			}
 		} else {
@@ -214,7 +211,7 @@ public class MidiFileReader {
 	}
 
 	@ObfuscatedName("a")
-	long method5330(int var1) {
+	long method5263(int var1) {
 		return this.field3241 + (long)var1 * (long)this.field3239;
 	}
 
@@ -258,9 +255,9 @@ public class MidiFileReader {
 		for (int var4 = 0; var4 < var3; ++var4) {
 			this.trackLengths[var4] = 0;
 			this.field3238[var4] = 0;
-			this.buffer.offset = this.trackStarts[var4] * 1090888991;
+			this.buffer.offset = this.trackStarts[var4];
 			this.readTrackLength(var4);
-			this.trackPositions[var4] = this.buffer.offset * 1795921631;
+			this.trackPositions[var4] = this.buffer.offset;
 		}
 
 	}

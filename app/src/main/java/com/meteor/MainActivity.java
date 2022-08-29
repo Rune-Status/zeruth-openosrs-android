@@ -48,6 +48,12 @@ import osrs.MouseHandler;
 import osrs.class119;
 
 public class MainActivity extends AppCompatActivity {
+
+    //We draw pixels using native. It is much faster.
+    static {
+        System.loadLibrary("drawpixels");
+    }
+
     /**
      * This is the actual drawing surface for OSRS
      */
@@ -70,12 +76,15 @@ public class MainActivity extends AppCompatActivity {
         super.onStart();
         DisplayMetrics displayMetrics = new DisplayMetrics();
         getWindowManager().getDefaultDisplay().getMetrics(displayMetrics);
-        height = displayMetrics.heightPixels + 10;
+        height = displayMetrics.heightPixels;
         width = displayMetrics.widthPixels;
         String deviceName = DeviceName.getDeviceName();
         System.out.println("Device: " + deviceName);
+
+        //Notches
+        //S22 Ultra
         if (deviceName.equals("b0q")) {
-            width += 150;
+            width += 125;
         }
         loadClassNames();
         gameBitmap = Bitmap.createBitmap(new int[width * height], width, height, Bitmap.Config.RGB_565).copy(Bitmap.Config.RGB_565, true);
@@ -89,11 +98,11 @@ public class MainActivity extends AppCompatActivity {
         Login.Login_username = username;
         Login.Login_password = password;
 
-        ScheduledExecutorService scheduler =
+/*        ScheduledExecutorService scheduler =
                 Executors.newSingleThreadScheduledExecutor();
 
         scheduler.scheduleAtFixedRate
-                (() -> System.out.println("Gamestate (10 is login screen): " + Client.gameState * 433143709), 0, 2, TimeUnit.SECONDS);
+                (() -> System.out.println("Gamestate (10 is login screen): " + Client.gameState), 0, 2, TimeUnit.SECONDS);*/
 
     }
 
@@ -221,6 +230,7 @@ public class MainActivity extends AppCompatActivity {
         getWindow().getAttributes().layoutInDisplayCutoutMode = WindowManager.LayoutParams.LAYOUT_IN_DISPLAY_CUTOUT_MODE_SHORT_EDGES;
     }
 
+    boolean drawing = false;
 
     public void draw() {
         try {
@@ -233,10 +243,12 @@ public class MainActivity extends AppCompatActivity {
                 return;
             }
 
-            gameBitmap.setPixels(class119.rasterProvider.pixels, 0, class119.rasterProvider.width * -1447914741 , 0, 0, class119.rasterProvider.width * -1447914741, class119.rasterProvider.height * -1901266975);
+            gameBitmap.setPixels(class119.rasterProvider.pixels, 0, class119.rasterProvider.width, 0, 0, class119.rasterProvider.width, class119.rasterProvider.height);
 
             runOnUiThread(() -> {
                 if (!setupGameView) {
+
+
                     mImg = findViewById(R.id.imageView);
                     ((ImageView) mImg).setBackgroundColor(Color.BLACK);
                     mImg.setOnTouchListener(new View.OnTouchListener() {

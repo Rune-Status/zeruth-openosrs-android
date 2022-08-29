@@ -2,6 +2,7 @@ package osrs;
 
 import net.runelite.mapping.Export;
 import net.runelite.mapping.Implements;
+import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
@@ -15,8 +16,12 @@ public class Task {
 	@Export("next")
 	Task next;
 	@ObfuscatedName("v")
-	public volatile int field1778;
+	@Export("status")
+	public volatile int status;
 	@ObfuscatedName("c")
+	@ObfuscatedGetter(
+		intValue = 329615287
+	)
 	@Export("type")
 	int type;
 	@ObfuscatedName("q")
@@ -26,9 +31,10 @@ public class Task {
 	@Export("objectArgument")
 	Object objectArgument;
 	@ObfuscatedName("k")
-	public volatile Object field1777;
+	@Export("result")
+	public volatile Object result;
 
 	Task() {
-		this.field1778 = 0;
+		this.status = 0;
 	}
 }

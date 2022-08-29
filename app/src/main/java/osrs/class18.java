@@ -2,12 +2,16 @@ package osrs;
 
 import java.util.Comparator;
 import java.util.Map.Entry;
+import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
 @ObfuscatedName("p")
 class class18 implements Comparator {
 	@ObfuscatedName("tb")
+	@ObfuscatedGetter(
+		intValue = -389618459
+	)
 	static int field96;
 	// $FF: synthetic field
 	@ObfuscatedSignature(
@@ -24,8 +28,8 @@ class class18 implements Comparator {
 
 	@ObfuscatedName("s")
 	@ObfuscatedSignature(
-		descriptor = "(Ljava/util/Map$Entry;Ljava/util/Map$Entry;I)I",
-		garbageValue = "-1460972605"
+		garbageValue = "-1460972605",
+		descriptor = "(Ljava/util/Map$Entry;Ljava/util/Map$Entry;I)I"
 	)
 	int method253(Entry var1, Entry var2) {
 		return ((Float)var2.getValue()).compareTo((Float)var1.getValue());
@@ -41,27 +45,27 @@ class class18 implements Comparator {
 
 	@ObfuscatedName("bt")
 	@ObfuscatedSignature(
-		descriptor = "(ILku;ZI)V",
-		garbageValue = "1859410588"
+		garbageValue = "1859410588",
+		descriptor = "(ILku;ZI)V"
 	)
 	static void method264(int var0, Coord var1, boolean var2) {
 		WorldMapArea var3 = class65.getWorldMap().getMapArea(var0);
-		int var4 = class56.localPlayer.plane * -1670935727;
-		int var5 = (class56.localPlayer.x * 1627221919 >> 7) + Decimator.field404 * 620670661;
-		int var6 = (class56.localPlayer.y * 1229064101 >> 7) + class7.field30 * 542116271;
+		int var4 = ScriptFrame.localPlayer.plane;
+		int var5 = (ScriptFrame.localPlayer.x >> 7) + Decimator.baseX;
+		int var6 = class7.baseY * 542116271 + (ScriptFrame.localPlayer.y >> 7);
 		Coord var7 = new Coord(var4, var5, var6);
-		class65.getWorldMap().method7279(var3, var7, var1, var2);
+		class65.getWorldMap().method7176(var3, var7, var1, var2);
 	}
 
 	@ObfuscatedName("jl")
 	@ObfuscatedSignature(
-		descriptor = "(Lkn;I)Z",
-		garbageValue = "-2080011839"
+		garbageValue = "-2080011839",
+		descriptor = "(Lkn;I)Z"
 	)
 	static final boolean method263(Widget var0) {
-		int var1 = var0.contentType * -869460521;
+		int var1 = var0.contentType;
 		if (var1 == 205) {
-			Client.logoutTimer = -1760852066;
+			Client.logoutTimer = 250;
 			return true;
 		} else {
 			int var2;
@@ -69,26 +73,26 @@ class class18 implements Comparator {
 			if (var1 >= 300 && var1 <= 313) {
 				var2 = (var1 - 300) / 2;
 				var3 = var1 & 1;
-				Client.field694.changeAppearance(var2, var3 == 1);
+				Client.playerAppearance.changeAppearance(var2, var3 == 1);
 			}
 
 			if (var1 >= 314 && var1 <= 323) {
 				var2 = (var1 - 314) / 2;
 				var3 = var1 & 1;
-				Client.field694.method5497(var2, var3 == 1);
+				Client.playerAppearance.method5426(var2, var3 == 1);
 			}
 
 			if (var1 == 324) {
-				Client.field694.changeSex(false);
+				Client.playerAppearance.changeSex(false);
 			}
 
 			if (var1 == 325) {
-				Client.field694.changeSex(true);
+				Client.playerAppearance.changeSex(true);
 			}
 
 			if (var1 == 326) {
-				PacketBufferNode var4 = DevicePcmPlayerProvider.method354(ClientPacket.field2932, Client.packetWriter.field1338);
-				Client.field694.write(var4.packetBuffer);
+				PacketBufferNode var4 = DevicePcmPlayerProvider.getPacketBufferNode(ClientPacket.field2932, Client.packetWriter.isaacCipher);
+				Client.playerAppearance.write(var4.packetBuffer);
 				Client.packetWriter.addNode(var4);
 				return true;
 			} else {

@@ -2,6 +2,7 @@ package osrs;
 
 import net.runelite.mapping.Export;
 import net.runelite.mapping.Implements;
+import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
@@ -12,7 +13,8 @@ public class MilliClock extends Clock {
 	@ObfuscatedSignature(
 		descriptor = "Llv;"
 	)
-	static Language field1772;
+	@Export("clientLanguage")
+	static Language clientLanguage;
 	@ObfuscatedName("hg")
 	@ObfuscatedSignature(
 		descriptor = "Lcu;"
@@ -20,37 +22,56 @@ public class MilliClock extends Clock {
 	@Export("urlRequester")
 	static UrlRequester urlRequester;
 	@ObfuscatedName("mm")
-	static int field1774;
+	@ObfuscatedGetter(
+		intValue = -1343126979
+	)
+	@Export("menuX")
+	static int menuX;
 	@ObfuscatedName("s")
 	long[] field1773;
 	@ObfuscatedName("h")
+	@ObfuscatedGetter(
+		intValue = 1285875583
+	)
 	int field1765;
 	@ObfuscatedName("w")
+	@ObfuscatedGetter(
+		intValue = 562169751
+	)
 	int field1766;
 	@ObfuscatedName("v")
+	@ObfuscatedGetter(
+		longValue = -4438674116526982773L
+	)
 	long field1769;
 	@ObfuscatedName("c")
+	@ObfuscatedGetter(
+		intValue = 1693537029
+	)
 	int field1768;
 	@ObfuscatedName("q")
+	@ObfuscatedGetter(
+		intValue = 760665211
+	)
 	int field1767;
 
 	MilliClock() {
 		this.field1773 = new long[10];
-		this.field1765 = 584613632;
-		this.field1766 = -1372526553;
+		this.field1765 = 256;
+		this.field1766 = 1;
 		this.field1768 = 0;
-		this.field1769 = class181.method3483() * -3468387491113294301L;
+		this.field1769 = class181.method3418();
 
 		for (int var1 = 0; var1 < 10; ++var1) {
-			this.field1773[var1] = -4438674116526982773L * this.field1769;
+			this.field1773[var1] = this.field1769;
 		}
 
 	}
 
 	@ObfuscatedName("s")
 	@ObfuscatedSignature(
-		descriptor = "(I)V",
-		garbageValue = "1571265211"
+		garbageValue = "1571265211",
+		descriptor = "(I)V"
 	)
 	@Export("mark")
 	public void mark() {
@@ -62,67 +83,67 @@ public class MilliClock extends Clock {
 
 	@ObfuscatedName("h")
 	@ObfuscatedSignature(
-		descriptor = "(IIB)I",
-		garbageValue = "56"
+		garbageValue = "56",
+		descriptor = "(IIB)I"
 	)
 	@Export("wait")
 	public int wait(int var1, int var2) {
-		int var3 = this.field1765 * 1285875583;
-		int var4 = this.field1766 * 562169751;
-		this.field1765 = 148223188;
-		this.field1766 = -1372526553;
-		this.field1769 = class181.method3483() * -3468387491113294301L;
-		if (this.field1773[this.field1767 * 760665211] == 0L) {
-			this.field1765 = var3 * -400369537;
-			this.field1766 = var4 * -1372526553;
-		} else if (-4438674116526982773L * this.field1769 > this.field1773[this.field1767 * 760665211]) {
-			this.field1765 = (int)((long)(var1 * 2560) / (-4438674116526982773L * this.field1769 - this.field1773[this.field1767 * 760665211])) * -400369537;
+		int var3 = this.field1765;
+		int var4 = this.field1766;
+		this.field1765 = 300;
+		this.field1766 = 1;
+		this.field1769 = class181.method3418();
+		if (this.field1773[this.field1767] == 0L) {
+			this.field1765 = var3;
+			this.field1766 = var4;
+		} else if (this.field1769 > this.field1773[this.field1767]) {
+			this.field1765 = (int)((long)(var1 * 2560) / (this.field1769 - this.field1773[this.field1767]));
 		}
 
-		if (this.field1765 * 1285875583 < 25) {
-			this.field1765 = -1419303833;
+		if (this.field1765 < 25) {
+			this.field1765 = 25;
 		}
 
-		if (this.field1765 * 1285875583 > 256) {
-			this.field1765 = 584613632;
-			this.field1766 = (int)((long)var1 - (-4438674116526982773L * this.field1769 - this.field1773[this.field1767 * 760665211]) / 10L) * -1372526553;
+		if (this.field1765 > 256) {
+			this.field1765 = 256;
+			this.field1766 = (int)((long)var1 - (this.field1769 - this.field1773[this.field1767]) / 10L);
 		}
 
-		if (this.field1766 * 562169751 > var1) {
-			this.field1766 = var1 * -1372526553;
+		if (this.field1766 > var1) {
+			this.field1766 = var1;
 		}
 
-		this.field1773[this.field1767 * 760665211] = this.field1769 * -4438674116526982773L;
-		this.field1767 = (this.field1767 * 760665211 + 1) % 10 * -1840461;
+		this.field1773[this.field1767] = this.field1769;
+		this.field1767 = (this.field1767 + 1) % 10;
 		int var5;
-		if (this.field1766 * 562169751 > 1) {
+		if (this.field1766 > 1) {
 			for (var5 = 0; var5 < 10; ++var5) {
 				if (0L != this.field1773[var5]) {
-					this.field1773[var5] += (long)(this.field1766 * 562169751);
+					this.field1773[var5] += (long)this.field1766;
 				}
 			}
 		}
 
-		if (this.field1766 * 562169751 < var2) {
-			this.field1766 = var2 * -1372526553;
+		if (this.field1766 < var2) {
+			this.field1766 = var2;
 		}
 
-		class144.method3006((long)(this.field1766 * 562169751));
+		class144.method2941((long)this.field1766);
 
-		for (var5 = 0; this.field1768 * 1693537029 < 256; this.field1768 += 1325752243 * this.field1765) {
+		for (var5 = 0; this.field1768 < 256; this.field1768 += this.field1765) {
 			++var5;
 		}
 
-		this.field1768 = (this.field1768 * 1693537029 & 255) * -1439727155;
+		this.field1768 &= 255;
 		return var5;
 	}
 
 	@ObfuscatedName("s")
 	@ObfuscatedSignature(
-		descriptor = "([FIFZFZ[FI)I",
-		garbageValue = "-133561254"
+		garbageValue = "-133561254",
+		descriptor = "([FIFZFZ[FI)I"
 	)
-	public static int method3234(float[] var0, int var1, float var2, boolean var3, float var4, boolean var5, float[] var6) {
+	public static int method3169(float[] var0, int var1, float var2, boolean var3, float var4, boolean var5, float[] var6) {
 		float var7 = 0.0F;
 
 		for (int var8 = 0; var8 < var1 + 1; ++var8) {
@@ -149,9 +170,9 @@ public class MilliClock extends Clock {
 				return var10;
 			} else if (var1 == 1) {
 				var6[0] = -var9[0] / var9[1];
-				boolean var42 = var3 ? var2 < var6[0] + var44 : var2 < var6[0] - var44;
-				boolean var43 = var5 ? var4 > var6[0] - var44 : var4 > var44 + var6[0];
-				var10 = var42 && var43 ? 1 : 0;
+				boolean var11 = var3 ? var2 < var6[0] + var44 : var2 < var6[0] - var44;
+				boolean var12 = var5 ? var4 > var6[0] - var44 : var4 > var44 + var6[0];
+				var10 = var11 && var12 ? 1 : 0;
 				if (var10 > 0) {
 					if (var3 && var6[0] < var2) {
 						var6[0] = var2;
@@ -162,15 +183,15 @@ public class MilliClock extends Clock {
 
 				return var10;
 			} else {
-				class390 var11 = new class390(var9, var1);
-				float[] var12 = new float[var1 + 1];
+				class390 var41 = new class390(var9, var1);
+				float[] var42 = new float[var1 + 1];
 
 				for (int var13 = 1; var13 <= var1; ++var13) {
-					var12[var13 - 1] = var9[var13] * (float)var13;
+					var42[var13 - 1] = var9[var13] * (float)var13;
 				}
 
-				float[] var41 = new float[var1 + 1];
-				int var14 = method3234(var12, var1 - 1, var2, false, var4, false, var41);
+				float[] var43 = new float[var1 + 1];
+				int var14 = method3169(var42, var1 - 1, var2, false, var4, false, var43);
 				if (var14 == -1) {
 					return 0;
 				} else {
@@ -187,7 +208,7 @@ public class MilliClock extends Clock {
 						float var16;
 						if (var20 == 0) {
 							var16 = var2;
-							var18 = ItemLayer.method3821(var9, var1, var2);
+							var18 = ItemLayer.method3756(var9, var1, var2);
 							if (Math.abs(var18) <= var44 && var3) {
 								var6[var10++] = var2;
 							}
@@ -200,10 +221,10 @@ public class MilliClock extends Clock {
 							var19 = var4;
 							var15 = false;
 						} else {
-							var19 = var41[var20];
+							var19 = var43[var20];
 						}
 
-						var17 = ItemLayer.method3821(var9, var1, var19);
+						var17 = ItemLayer.method3756(var9, var1, var19);
 						if (var15) {
 							var15 = false;
 						} else if (Math.abs(var17) < var44) {
@@ -215,12 +236,12 @@ public class MilliClock extends Clock {
 							int var22 = var10++;
 							float var24 = var16;
 							float var25 = var19;
-							float var26 = ItemLayer.method3821(var11.field4417, var11.field4418 * -2118302765, var16);
+							float var26 = ItemLayer.method3756(var41.field4417, var41.field4418, var16);
 							float var23;
 							if (Math.abs(var26) < class114.field1410) {
 								var23 = var16;
 							} else {
-								float var27 = ItemLayer.method3821(var11.field4417, var11.field4418 * -2118302765, var19);
+								float var27 = ItemLayer.method3756(var41.field4417, var41.field4418, var19);
 								if (Math.abs(var27) < class114.field1410) {
 									var23 = var19;
 								} else {
@@ -297,7 +318,7 @@ public class MilliClock extends Clock {
 												var25 -= var38;
 											}
 
-											var27 = ItemLayer.method3821(var11.field4417, var11.field4418 * -2118302765, var25);
+											var27 = ItemLayer.method3756(var41.field4417, var41.field4418, var25);
 											if ((double)(var27 * (var35 / Math.abs(var35))) > 0.0D) {
 												var36 = true;
 												var37 = true;

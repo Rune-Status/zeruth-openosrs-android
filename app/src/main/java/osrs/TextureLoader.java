@@ -10,31 +10,31 @@ import net.runelite.mapping.ObfuscatedSignature;
 public interface TextureLoader {
 	@ObfuscatedName("w")
 	@ObfuscatedSignature(
-		descriptor = "(II)[I",
-		garbageValue = "897870696"
+		garbageValue = "897870696",
+		descriptor = "(II)[I"
 	)
 	@Export("getTexturePixels")
 	int[] getTexturePixels(int var1);
 
 	@ObfuscatedName("v")
 	@ObfuscatedSignature(
-		descriptor = "(II)I",
-		garbageValue = "1656237054"
+		garbageValue = "1656237054",
+		descriptor = "(II)I"
 	)
 	@Export("getAverageTextureRGB")
 	int getAverageTextureRGB(int var1);
 
 	@ObfuscatedName("c")
 	@ObfuscatedSignature(
-		descriptor = "(IB)Z",
-		garbageValue = "-73"
+		garbageValue = "-73",
+		descriptor = "(IB)Z"
 	)
-	boolean vmethod4431(int var1);
+	boolean vmethod4366(int var1);
 
 	@ObfuscatedName("q")
 	@ObfuscatedSignature(
-		descriptor = "(II)Z",
-		garbageValue = "1049958917"
+		garbageValue = "1049958917",
+		descriptor = "(II)Z"
 	)
 	@Export("isLowDetail")
 	boolean isLowDetail(int var1);

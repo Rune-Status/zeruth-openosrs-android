@@ -2,6 +2,7 @@ package osrs;
 
 import net.runelite.mapping.Export;
 import net.runelite.mapping.Implements;
+import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
@@ -21,9 +22,15 @@ public class InterfaceParent extends Node {
 	@Export("scrollBarSprites")
 	static IndexedSprite[] scrollBarSprites;
 	@ObfuscatedName("s")
+	@ObfuscatedGetter(
+		intValue = 1124857953
+	)
 	@Export("group")
 	int group;
 	@ObfuscatedName("h")
+	@ObfuscatedGetter(
+		intValue = 67717225
+	)
 	@Export("type")
 	int type;
 	@ObfuscatedName("w")
@@ -35,17 +42,17 @@ public class InterfaceParent extends Node {
 
 	@ObfuscatedName("s")
 	@ObfuscatedSignature(
-		descriptor = "(I)[Lkc;",
-		garbageValue = "1265149283"
+		garbageValue = "1265149283",
+		descriptor = "(I)[Lkc;"
 	)
-	static class302[] method2058() {
+	static class302[] method1993() {
 		return new class302[]{class302.field3577, class302.field3578};
 	}
 
 	@ObfuscatedName("v")
 	@ObfuscatedSignature(
-		descriptor = "(IZIZB)V",
-		garbageValue = "1"
+		garbageValue = "1",
+		descriptor = "(IZIZB)V"
 	)
 	@Export("sortWorldList")
 	static void sortWorldList(int var0, boolean var1, int var2, boolean var3) {
@@ -57,10 +64,10 @@ public class InterfaceParent extends Node {
 
 	@ObfuscatedName("i")
 	@ObfuscatedSignature(
-		descriptor = "(B)Lfa;",
-		garbageValue = "59"
+		garbageValue = "59",
+		descriptor = "(B)Lfa;"
 	)
-	public static Clock method2057() {
+	public static Clock method1992() {
 		try {
 			return new NanoClock();
 		} catch (Throwable var1) {

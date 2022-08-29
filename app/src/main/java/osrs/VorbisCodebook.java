@@ -134,33 +134,33 @@ public class VorbisCodebook {
 				var5 = 1 << 32 - var4;
 				var6 = var2[var4];
 				var1[var3] = var6;
-				int var12;
+				int var9;
 				if ((var6 & var5) != 0) {
 					var7 = var2[var4 - 1];
 				} else {
 					var7 = var6 | var5;
 
 					for (var8 = var4 - 1; var8 >= 1; --var8) {
-						var12 = var2[var8];
-						if (var12 != var6) {
+						var9 = var2[var8];
+						if (var9 != var6) {
 							break;
 						}
 
 						var10 = 1 << 32 - var8;
-						if ((var12 & var10) != 0) {
+						if ((var9 & var10) != 0) {
 							var2[var8] = var2[var8 - 1];
 							break;
 						}
 
-						var2[var8] = var12 | var10;
+						var2[var8] = var9 | var10;
 					}
 				}
 
 				var2[var4] = var7;
 
 				for (var8 = var4 + 1; var8 <= 32; ++var8) {
-					var12 = var2[var8];
-					if (var12 == var6) {
+					var9 = var2[var8];
+					if (var9 == var6) {
 						var2[var8] = var7;
 					}
 				}
@@ -189,13 +189,13 @@ public class VorbisCodebook {
 					}
 
 					if (var6 >= this.keys.length) {
-						int[] var9 = new int[this.keys.length * 2];
+						int[] var12 = new int[this.keys.length * 2];
 
 						for (var10 = 0; var10 < this.keys.length; ++var10) {
-							var9[var10] = this.keys[var10];
+							var12[var10] = this.keys[var10];
 						}
 
-						this.keys = var9;
+						this.keys = var12;
 					}
 
 					var8 >>>= 1;

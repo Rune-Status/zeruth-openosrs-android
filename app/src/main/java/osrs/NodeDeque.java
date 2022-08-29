@@ -92,7 +92,8 @@ public class NodeDeque {
 	@ObfuscatedSignature(
 		descriptor = "()Lon;"
 	)
-	public Node method6023() {
+	@Export("removeFirst")
+	public Node removeFirst() {
 		Node var1 = this.sentinel.next;
 		if (var1 == this.sentinel) {
 			return null;
@@ -154,7 +155,8 @@ public class NodeDeque {
 	@ObfuscatedSignature(
 		descriptor = "()Lon;"
 	)
-	public Node method6027() {
+	@Export("next")
+	public Node next() {
 		Node var1 = this.current;
 		if (var1 == this.sentinel) {
 			this.current = null;

@@ -7,10 +7,10 @@ import net.runelite.mapping.ObfuscatedSignature;
 public class class385 {
 	@ObfuscatedName("s")
 	@ObfuscatedSignature(
-		descriptor = "(IS)Z",
-		garbageValue = "-12844"
+		garbageValue = "-12844",
+		descriptor = "(IS)Z"
 	)
-	public static boolean method6873(int var0) {
+	public static boolean method6784(int var0) {
 		return (var0 & 1) != 0;
 	}
 }

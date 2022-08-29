@@ -28,14 +28,26 @@ public class class386 {
 
 	@ObfuscatedName("s")
 	@ObfuscatedSignature(
-		descriptor = "(I)F",
-		garbageValue = "-181887763"
+		garbageValue = "-181887763",
+		descriptor = "(I)F"
 	)
-	final float method6874() {
+	final float method6785() {
 		return (float)Math.sqrt((double)(this.field4386 * this.field4386 + this.field4387 * this.field4387 + this.field4388 * this.field4388));
 	}
 
 	public String toString() {
+		return this.field4387 + ", " + this.field4386 + ", " + this.field4388;
+	}
+
+	public String acy() {
+		return this.field4387 + ", " + this.field4386 + ", " + this.field4388;
+	}
+
+	public String acq() {
+		return this.field4387 + ", " + this.field4386 + ", " + this.field4388;
+	}
+
+	public String acz() {
 		return this.field4387 + ", " + this.field4386 + ", " + this.field4388;
 	}
 }

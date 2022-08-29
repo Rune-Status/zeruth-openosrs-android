@@ -1,5 +1,6 @@
 package osrs;
 
+import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
@@ -16,6 +17,9 @@ public class class398 {
 	)
 	static final class398 field4436;
 	@ObfuscatedName("l")
+	@ObfuscatedGetter(
+		intValue = -1308304145
+	)
 	static int field4437;
 	@ObfuscatedName("w")
 	String field4435;
@@ -31,19 +35,19 @@ public class class398 {
 
 	@ObfuscatedName("s")
 	@ObfuscatedSignature(
-		descriptor = "(I)Ljava/lang/String;",
-		garbageValue = "1972973853"
+		garbageValue = "1972973853",
+		descriptor = "(I)Ljava/lang/String;"
 	)
-	public String method7043() {
+	public String method6940() {
 		return this.field4435;
 	}
 
 	@ObfuscatedName("h")
 	@ObfuscatedSignature(
-		descriptor = "(Ldj;FB)F",
-		garbageValue = "-80"
+		garbageValue = "-80",
+		descriptor = "(Ldj;FB)F"
 	)
-	static float method7040(class117 var0, float var1) {
+	static float method6937(class117 var0, float var1) {
 		if (var0 == null) {
 			return 0.0F;
 		} else {

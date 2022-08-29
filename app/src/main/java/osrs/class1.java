@@ -1,13 +1,10 @@
 package osrs;
 
-import static osrs.AbstractByteArrayCopier.client;
-
-import android.os.Environment;
-
 import java.io.File;
 import java.io.RandomAccessFile;
 import java.util.concurrent.Callable;
 import net.runelite.mapping.Export;
+import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
@@ -17,9 +14,14 @@ public class class1 implements Callable {
 	@ObfuscatedSignature(
 		descriptor = "Lqn;"
 	)
-	static SpritePixels field4;
+	@Export("sceneMinimapSprite")
+	static SpritePixels sceneMinimapSprite;
 	@ObfuscatedName("mz")
-	static int field1;
+	@ObfuscatedGetter(
+		intValue = -1008403491
+	)
+	@Export("menuY")
+	static int menuY;
 	@ObfuscatedName("s")
 	@ObfuscatedSignature(
 		descriptor = "Lqr;"
@@ -51,24 +53,54 @@ public class class1 implements Callable {
 
 	@ObfuscatedName("s")
 	@ObfuscatedSignature(
-		descriptor = "(Ljava/lang/String;I)Ljava/io/File;",
-		garbageValue = "-1454847961"
+		garbageValue = "-1454847961",
+		descriptor = "(Ljava/lang/String;I)Ljava/io/File;"
 	)
 	@Export("getFile")
 	static File getFile(String var0) {
 		if (!FileSystem.FileSystem_hasPermissions) {
 			throw new RuntimeException("");
 		} else {
-			File path = client.androidActivity.getFilesDir();
+			File var1 = (File)FileSystem.FileSystem_cacheFiles.get(var0);
+			if (var1 != null) {
+				return var1;
+			} else {
+				File var2 = new File(FileSystem.FileSystem_cacheDir, var0);
+				RandomAccessFile var3 = null;
 
-			return new File(path, "/jagexcache/" + var0);
+				try {
+					File var4 = new File(var2.getParent());
+					if (!var4.exists()) {
+						throw new RuntimeException("");
+					} else {
+						var3 = new RandomAccessFile(var2, "rw");
+						int var5 = var3.read();
+						var3.seek(0L);
+						var3.write(var5);
+						var3.seek(0L);
+						var3.close();
+						FileSystem.FileSystem_cacheFiles.put(var0, var2);
+						return var2;
+					}
+				} catch (Exception var8) {
+					try {
+						if (var3 != null) {
+							var3.close();
+							var3 = null;
+						}
+					} catch (Exception var7) {
+					}
+
+					throw new RuntimeException();
+				}
+			}
 		}
 	}
 
 	@ObfuscatedName("v")
 	@ObfuscatedSignature(
-		descriptor = "(B)V",
-		garbageValue = "-43"
+		garbageValue = "-43",
+		descriptor = "(B)V"
 	)
 	public static void method7() {
 		if (NetCache.NetCache_socket != null) {
@@ -79,10 +111,10 @@ public class class1 implements Callable {
 
 	@ObfuscatedName("la")
 	@ObfuscatedSignature(
-		descriptor = "(I)V",
-		garbageValue = "-1880349412"
+		garbageValue = "-1880349412",
+		descriptor = "(I)V"
 	)
 	static void method10() {
-		ClanMate.clientPreferences.method2228(Client.field480 * 424143225);
+		ClanMate.clientPreferences.method2163(Client.field480);
 	}
 }

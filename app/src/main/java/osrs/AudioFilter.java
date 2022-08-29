@@ -118,7 +118,7 @@ public class AudioFilter {
 		if (var3 != 0) {
 			this.field409[0] = var1.readUnsignedShort();
 			this.field409[1] = var1.readUnsignedShort();
-			int var7 = var1.readUnsignedByte();
+			int var4 = var1.readUnsignedByte();
 
 			int var5;
 			int var6;
@@ -131,7 +131,7 @@ public class AudioFilter {
 
 			for (var5 = 0; var5 < 2; ++var5) {
 				for (var6 = 0; var6 < this.pairs[var5]; ++var6) {
-					if ((var7 & 1 << var5 * 4 << var6) != 0) {
+					if ((var4 & 1 << var5 * 4 << var6) != 0) {
 						this.field410[var5][1][var6] = var1.readUnsignedShort();
 						this.field411[var5][1][var6] = var1.readUnsignedShort();
 					} else {
@@ -141,13 +141,13 @@ public class AudioFilter {
 				}
 			}
 
-			if (var7 != 0 || this.field409[1] != this.field409[0]) {
+			if (var4 != 0 || this.field409[1] != this.field409[0]) {
 				var2.decodeSegments(var1);
 			}
 		} else {
-			int[] var4 = this.field409;
+			int[] var7 = this.field409;
 			this.field409[1] = 0;
-			var4[0] = 0;
+			var7[0] = 0;
 		}
 
 	}

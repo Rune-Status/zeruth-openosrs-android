@@ -2,12 +2,13 @@ package osrs;
 
 import net.runelite.mapping.Export;
 import net.runelite.mapping.Implements;
+import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
 @ObfuscatedName("ky")
 @Implements("PlayerType")
-public enum PlayerType implements class328 {
+public enum PlayerType implements MouseWheel {
 	@ObfuscatedName("s")
 	@ObfuscatedSignature(
 		descriptor = "Lky;"
@@ -96,6 +97,9 @@ public enum PlayerType implements class328 {
 	field3961(15, 49, false, false, true);
 
 	@ObfuscatedName("r")
+	@ObfuscatedGetter(
+		intValue = -835440721
+	)
 	@Export("id")
 	final int id;
 	@ObfuscatedName("y")
@@ -109,7 +113,7 @@ public enum PlayerType implements class328 {
 	public final boolean isUser;
 
 	PlayerType(int var3, int var4, boolean var5, boolean var6, boolean var7) {
-		this.id = var3 * 591431503;
+		this.id = var3;
 		this.modIcon = var4 * 1888377459;
 		this.isPrivileged = var6;
 		this.isUser = var7;
@@ -117,20 +121,20 @@ public enum PlayerType implements class328 {
 
 	@ObfuscatedName("h")
 	@ObfuscatedSignature(
-		descriptor = "(B)I",
-		garbageValue = "104"
+		garbageValue = "104",
+		descriptor = "(B)I"
 	)
 	@Export("rsOrdinal")
 	public int rsOrdinal() {
-		return this.id * -835440721;
+		return this.id;
 	}
 
 	@ObfuscatedName("h")
 	@ObfuscatedSignature(
-		descriptor = "([Ljava/lang/String;[IIIB)V",
-		garbageValue = "107"
+		garbageValue = "107",
+		descriptor = "([Ljava/lang/String;[IIIB)V"
 	)
-	public static void method5694(String[] var0, int[] var1, int var2, int var3) {
+	public static void method5623(String[] var0, int[] var1, int var2, int var3) {
 		if (var2 < var3) {
 			int var4 = (var3 + var2) / 2;
 			int var5 = var2;
@@ -156,8 +160,8 @@ public enum PlayerType implements class328 {
 			var0[var5] = var6;
 			var1[var3] = var1[var5];
 			var1[var5] = var7;
-			method5694(var0, var1, var2, var5 - 1);
-			method5694(var0, var1, var5 + 1, var3);
+			method5623(var0, var1, var2, var5 - 1);
+			method5623(var0, var1, var5 + 1, var3);
 		}
 
 	}

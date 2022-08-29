@@ -3,6 +3,7 @@ package osrs;
 import java.net.URL;
 import net.runelite.mapping.Export;
 import net.runelite.mapping.Implements;
+import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
@@ -10,6 +11,9 @@ import net.runelite.mapping.ObfuscatedSignature;
 @Implements("UrlRequest")
 public class UrlRequest {
 	@ObfuscatedName("d")
+	@ObfuscatedGetter(
+		intValue = -2013552201
+	)
 	static int field1355;
 	@ObfuscatedName("s")
 	@Export("url")
@@ -27,8 +31,8 @@ public class UrlRequest {
 
 	@ObfuscatedName("s")
 	@ObfuscatedSignature(
-		descriptor = "(B)Z",
-		garbageValue = "-104"
+		garbageValue = "-104",
+		descriptor = "(B)Z"
 	)
 	@Export("isDone")
 	public boolean isDone() {
@@ -37,8 +41,8 @@ public class UrlRequest {
 
 	@ObfuscatedName("h")
 	@ObfuscatedSignature(
-		descriptor = "(B)[B",
-		garbageValue = "49"
+		garbageValue = "49",
+		descriptor = "(B)[B"
 	)
 	@Export("getResponse")
 	public byte[] getResponse() {
@@ -47,32 +51,32 @@ public class UrlRequest {
 
 	@ObfuscatedName("w")
 	@ObfuscatedSignature(
-		descriptor = "(B)Ljava/lang/String;",
-		garbageValue = "14"
+		garbageValue = "14",
+		descriptor = "(B)Ljava/lang/String;"
 	)
-	public String method2528() {
+	public String method2463() {
 		return this.url.toString();
 	}
 
 	@ObfuscatedName("s")
 	@ObfuscatedSignature(
-		descriptor = "(Lls;Lls;Lls;Lje;I)Z",
-		garbageValue = "1932536931"
+		garbageValue = "1932536931",
+		descriptor = "(Lls;Lls;Lls;Lje;I)Z"
 	)
-	public static boolean method2520(AbstractArchive var0, AbstractArchive var1, AbstractArchive var2, MidiPcmStream var3) {
-		class273.field3201 = var0;
-		class273.field3199 = var1;
-		class273.field3203 = var2;
+	public static boolean method2455(AbstractArchive var0, AbstractArchive var1, AbstractArchive var2, MidiPcmStream var3) {
+		class273.musicPatchesArchive = var0;
+		class273.musicSamplesArchive = var1;
+		class273.soundEffectsArchive = var2;
 		ItemContainer.midiPcmStream = var3;
 		return true;
 	}
 
 	@ObfuscatedName("v")
 	@ObfuscatedSignature(
-		descriptor = "(BI)C",
-		garbageValue = "2101377039"
+		garbageValue = "2101377039",
+		descriptor = "(BI)C"
 	)
-	public static char method2530(byte var0) {
+	public static char method2465(byte var0) {
 		int var1 = var0 & 255;
 		if (var1 == 0) {
 			throw new IllegalArgumentException("" + Integer.toString(var1, 16));
@@ -92,10 +96,10 @@ public class UrlRequest {
 
 	@ObfuscatedName("kd")
 	@ObfuscatedSignature(
-		descriptor = "(I)Z",
-		garbageValue = "-137524219"
+		garbageValue = "-137524219",
+		descriptor = "(I)Z"
 	)
-	public static boolean method2525() {
-		return Client.field756 * -1044925517 >= 2;
+	public static boolean method2460() {
+		return Client.staffModLevel >= 2;
 	}
 }

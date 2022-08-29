@@ -2,6 +2,7 @@ package osrs;
 
 import net.runelite.mapping.Export;
 import net.runelite.mapping.Implements;
+import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
@@ -555,9 +556,15 @@ public class ClientPacket implements class261 {
 	)
 	public static final ClientPacket field3022;
 	@ObfuscatedName("dv")
+	@ObfuscatedGetter(
+		intValue = 164940899
+	)
 	@Export("id")
 	final int id;
 	@ObfuscatedName("dd")
+	@ObfuscatedGetter(
+		intValue = -114749835
+	)
 	@Export("length")
 	final int length;
 
@@ -673,25 +680,25 @@ public class ClientPacket implements class261 {
 	}
 
 	ClientPacket(int var1, int var2) {
-		this.id = var1 * 2043417931;
-		this.length = var2 * -778186275;
+		this.id = var1;
+		this.length = var2;
 	}
 
 	@ObfuscatedName("s")
 	@ObfuscatedSignature(
-		descriptor = "(I)[Lkp;",
-		garbageValue = "902941339"
+		garbageValue = "902941339",
+		descriptor = "(I)[Lkp;"
 	)
-	public static StudioGame[] method5129() {
+	public static StudioGame[] method5062() {
 		return new StudioGame[]{StudioGame.game5, StudioGame.stellardawn, StudioGame.runescape, StudioGame.game3, StudioGame.oldscape, StudioGame.game4};
 	}
 
 	@ObfuscatedName("hb")
 	@ObfuscatedSignature(
-		descriptor = "(Ljava/lang/String;Ljava/lang/String;IIIIIB)V",
-		garbageValue = "91"
+		garbageValue = "91",
+		descriptor = "(Ljava/lang/String;Ljava/lang/String;IIIIIB)V"
 	)
-	static final void method5130(String var0, String var1, int var2, int var3, int var4, int var5, int var6) {
-		CollisionMap.method3809(var0, var1, var2, var3, var4, var5, var6, false);
+	static final void method5063(String var0, String var1, int var2, int var3, int var4, int var5, int var6) {
+		CollisionMap.method3744(var0, var1, var2, var3, var4, var5, var6, false);
 	}
 }

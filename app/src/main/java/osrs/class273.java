@@ -1,6 +1,7 @@
 package osrs;
 
 import net.runelite.mapping.Export;
+import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
@@ -10,18 +11,24 @@ public class class273 {
 	@ObfuscatedSignature(
 		descriptor = "Lls;"
 	)
-	public static AbstractArchive field3201;
+	@Export("musicPatchesArchive")
+	public static AbstractArchive musicPatchesArchive;
 	@ObfuscatedName("h")
 	@ObfuscatedSignature(
 		descriptor = "Lls;"
 	)
-	public static AbstractArchive field3199;
+	@Export("musicSamplesArchive")
+	public static AbstractArchive musicSamplesArchive;
 	@ObfuscatedName("w")
 	@ObfuscatedSignature(
 		descriptor = "Lls;"
 	)
-	public static AbstractArchive field3203;
+	@Export("soundEffectsArchive")
+	public static AbstractArchive soundEffectsArchive;
 	@ObfuscatedName("c")
+	@ObfuscatedGetter(
+		intValue = -1132323313
+	)
 	@Export("musicPlayerStatus")
 	public static int musicPlayerStatus;
 	@ObfuscatedName("d")
@@ -34,10 +41,10 @@ public class class273 {
 
 	@ObfuscatedName("w")
 	@ObfuscatedSignature(
-		descriptor = "(I)I",
-		garbageValue = "577365723"
+		garbageValue = "577365723",
+		descriptor = "(I)I"
 	)
-	public static int method5188() {
-		return (MouseHandler.MouseHandler_idleCycles += 1123926391) * 1827760199 - 1;
+	public static int method5121() {
+		return ++MouseHandler.MouseHandler_idleCycles - 1;
 	}
 }

@@ -2,6 +2,7 @@ package osrs;
 
 import net.runelite.mapping.Export;
 import net.runelite.mapping.Implements;
+import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
@@ -9,6 +10,9 @@ import net.runelite.mapping.ObfuscatedSignature;
 @Implements("WorldMapIcon_0")
 public class WorldMapIcon_0 extends AbstractWorldMapIcon {
 	@ObfuscatedName("s")
+	@ObfuscatedGetter(
+		intValue = 1919114089
+	)
 	@Export("element")
 	final int element;
 	@ObfuscatedName("h")
@@ -18,9 +22,15 @@ public class WorldMapIcon_0 extends AbstractWorldMapIcon {
 	@Export("label")
 	final WorldMapLabel label;
 	@ObfuscatedName("w")
+	@ObfuscatedGetter(
+		intValue = 1211617279
+	)
 	@Export("subWidth")
 	final int subWidth;
 	@ObfuscatedName("v")
+	@ObfuscatedGetter(
+		intValue = -1879968737
+	)
 	@Export("subHeight")
 	final int subHeight;
 
@@ -29,13 +39,13 @@ public class WorldMapIcon_0 extends AbstractWorldMapIcon {
 	)
 	WorldMapIcon_0(Coord var1, Coord var2, int var3, WorldMapLabel var4) {
 		super(var1, var2);
-		this.element = var3 * -1280383783;
+		this.element = var3;
 		this.label = var4;
 		WorldMapElement var5 = EnumComposition.WorldMapElement_get(this.getElement());
 		SpritePixels var6 = var5.getSpriteBool(false);
 		if (var6 != null) {
-			this.subWidth = var6.subWidth * -1362612225;
-			this.subHeight = var6.subHeight * 1803585503;
+			this.subWidth = var6.subWidth;
+			this.subHeight = var6.subHeight;
 		} else {
 			this.subWidth = 0;
 			this.subHeight = 0;
@@ -45,18 +55,18 @@ public class WorldMapIcon_0 extends AbstractWorldMapIcon {
 
 	@ObfuscatedName("h")
 	@ObfuscatedSignature(
-		descriptor = "(B)I",
-		garbageValue = "-71"
+		garbageValue = "-71",
+		descriptor = "(B)I"
 	)
 	@Export("getElement")
 	public int getElement() {
-		return this.element * 1919114089;
+		return this.element;
 	}
 
 	@ObfuscatedName("w")
 	@ObfuscatedSignature(
-		descriptor = "(B)Liw;",
-		garbageValue = "32"
+		garbageValue = "32",
+		descriptor = "(B)Liw;"
 	)
 	@Export("getLabel")
 	WorldMapLabel getLabel() {
@@ -65,46 +75,46 @@ public class WorldMapIcon_0 extends AbstractWorldMapIcon {
 
 	@ObfuscatedName("v")
 	@ObfuscatedSignature(
-		descriptor = "(I)I",
-		garbageValue = "-452679181"
+		garbageValue = "-452679181",
+		descriptor = "(I)I"
 	)
 	@Export("getSubWidth")
 	int getSubWidth() {
-		return this.subWidth * 1211617279;
+		return this.subWidth;
 	}
 
 	@ObfuscatedName("c")
 	@ObfuscatedSignature(
-		descriptor = "(I)I",
-		garbageValue = "-1451719857"
+		garbageValue = "-1451719857",
+		descriptor = "(I)I"
 	)
 	@Export("getSubHeight")
 	int getSubHeight() {
-		return this.subHeight * -1879968737;
+		return this.subHeight;
 	}
 
 	@ObfuscatedName("s")
 	@ObfuscatedSignature(
-		descriptor = "(IIII)J",
-		garbageValue = "-1588909853"
+		garbageValue = "-1588909853",
+		descriptor = "(IIII)J"
 	)
-	static long method4840(int var0, int var1, int var2) {
+	static long method4773(int var0, int var1, int var2) {
 		return (long)(var2 << 16 | var0 << 8 | var1);
 	}
 
 	@ObfuscatedName("s")
 	@ObfuscatedSignature(
-		descriptor = "(Ljp;S)V",
-		garbageValue = "255"
+		garbageValue = "255",
+		descriptor = "(Ljp;S)V"
 	)
-	public static void method4843(Huffman var0) {
+	public static void method4776(Huffman var0) {
 		class465.huffman = var0;
 	}
 
 	@ObfuscatedName("s")
 	@ObfuscatedSignature(
-		descriptor = "(Ljava/lang/CharSequence;Ljava/lang/CharSequence;Llv;B)I",
-		garbageValue = "1"
+		garbageValue = "1",
+		descriptor = "(Ljava/lang/CharSequence;Ljava/lang/CharSequence;Llv;B)I"
 	)
 	@Export("compareStrings")
 	public static int compareStrings(CharSequence var0, CharSequence var1, Language var2) {
@@ -225,10 +235,10 @@ public class WorldMapIcon_0 extends AbstractWorldMapIcon {
 
 	@ObfuscatedName("c")
 	@ObfuscatedSignature(
-		descriptor = "(Ljava/lang/CharSequence;IZB)I",
-		garbageValue = "6"
+		garbageValue = "6",
+		descriptor = "(Ljava/lang/CharSequence;IZB)I"
 	)
-	public static int method4838(CharSequence var0, int var1, boolean var2) {
+	public static int method4771(CharSequence var0, int var1, boolean var2) {
 		if (var1 >= 2 && var1 <= 36) {
 			boolean var3 = false;
 			boolean var4 = false;
@@ -290,15 +300,15 @@ public class WorldMapIcon_0 extends AbstractWorldMapIcon {
 
 	@ObfuscatedName("gy")
 	@ObfuscatedSignature(
-		descriptor = "(IIIIIIIIII)V",
-		garbageValue = "516151824"
+		garbageValue = "516151824",
+		descriptor = "(IIIIIIIIII)V"
 	)
 	@Export("updatePendingSpawn")
 	static final void updatePendingSpawn(int var0, int var1, int var2, int var3, int var4, int var5, int var6, int var7, int var8) {
 		PendingSpawn var9 = null;
 
 		for (PendingSpawn var10 = (PendingSpawn)Client.pendingSpawns.last(); var10 != null; var10 = (PendingSpawn)Client.pendingSpawns.previous()) {
-			if (var0 == var10.plane * -2038881543 && var10.x * 1805977901 == var1 && var10.y * -1439978855 == var2 && var3 == var10.type * 1829738397) {
+			if (var0 == var10.plane && var10.x == var1 && var2 == var10.y && var3 == var10.type) {
 				var9 = var10;
 				break;
 			}
@@ -306,18 +316,18 @@ public class WorldMapIcon_0 extends AbstractWorldMapIcon {
 
 		if (var9 == null) {
 			var9 = new PendingSpawn();
-			var9.plane = var0 * -1286078647;
-			var9.type = var3 * 1731372725;
-			var9.x = var1 * 1237790373;
-			var9.y = var2 * -759887447;
-			WorldMap.method7319(var9);
+			var9.plane = var0;
+			var9.type = var3;
+			var9.x = var1;
+			var9.y = var2;
+			WorldMap.method7216(var9);
 			Client.pendingSpawns.addFirst(var9);
 		}
 
-		var9.id = var4 * 1032554601;
-		var9.field1122 = var5 * 1639562083;
-		var9.orientation = var6 * 883279065;
-		var9.delay = var7 * -821591997;
-		var9.hitpoints = var8 * -342295399;
+		var9.id = var4;
+		var9.field1122 = var5;
+		var9.orientation = var6;
+		var9.delay = var7;
+		var9.hitpoints = var8;
 	}
 }

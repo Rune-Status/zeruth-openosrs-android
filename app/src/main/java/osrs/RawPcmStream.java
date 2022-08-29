@@ -98,7 +98,7 @@ public class RawPcmStream extends PcmStream {
 	}
 
 	@ObfuscatedName("k")
-	protected int vmethod5396() {
+	protected int vmethod5329() {
 		return this.field336 == 0 && this.field344 == 0 ? 0 : 1;
 	}
 
@@ -189,7 +189,7 @@ public class RawPcmStream extends PcmStream {
 			} else {
 				if (this.numLoops > 0) {
 					if (this.field333) {
-						label127: {
+						label147: {
 							if (this.field334 < 0) {
 								var9 = this.method772(var1, var2, var5, var3, var4.samples[this.start]);
 								if (this.field347 >= var5) {
@@ -199,7 +199,7 @@ public class RawPcmStream extends PcmStream {
 								this.field347 = var5 + var5 - 1 - this.field347;
 								this.field334 = -this.field334;
 								if (--this.numLoops == 0) {
-									break label127;
+									break label147;
 								}
 							}
 
@@ -385,7 +385,7 @@ public class RawPcmStream extends PcmStream {
 		} else {
 			if (this.numLoops > 0) {
 				if (this.field333) {
-					label129: {
+					label126: {
 						if (this.field334 < 0) {
 							if (this.field347 >= var3) {
 								return;
@@ -394,7 +394,7 @@ public class RawPcmStream extends PcmStream {
 							this.field347 = var3 + var3 - 1 - this.field347;
 							this.field334 = -this.field334;
 							if (--this.numLoops == 0) {
-								break label129;
+								break label126;
 							}
 						}
 
@@ -418,7 +418,7 @@ public class RawPcmStream extends PcmStream {
 						} while(--this.numLoops != 0);
 					}
 				} else {
-					label161: {
+					label158: {
 						int var7;
 						if (this.field334 < 0) {
 							if (this.field347 >= var3) {
@@ -429,7 +429,7 @@ public class RawPcmStream extends PcmStream {
 							if (var7 >= this.numLoops) {
 								this.field347 += var6 * this.numLoops;
 								this.numLoops = 0;
-								break label161;
+								break label158;
 							}
 
 							this.field347 += var6 * var7;
@@ -443,7 +443,7 @@ public class RawPcmStream extends PcmStream {
 							if (var7 >= this.numLoops) {
 								this.field347 -= var6 * this.numLoops;
 								this.numLoops = 0;
-								break label161;
+								break label158;
 							}
 
 							this.field347 -= var6 * var7;
@@ -514,8 +514,8 @@ public class RawPcmStream extends PcmStream {
 
 	@ObfuscatedName("y")
 	@ObfuscatedSignature(
-		descriptor = "(Z)V",
-		garbageValue = "1"
+		garbageValue = "1",
+		descriptor = "(Z)V"
 	)
 	public synchronized void method778() {
 		this.field334 = (this.field334 ^ this.field334 >> 31) + (this.field334 >>> 31);
@@ -852,7 +852,7 @@ public class RawPcmStream extends PcmStream {
 	)
 	@Export("createRawPcmStream")
 	public static RawPcmStream createRawPcmStream(RawSound var0, int var1, int var2) {
-		return var0.samples != null && var0.samples.length != 0 ? new RawPcmStream(var0, (int)((long)var0.sampleRate * 256L * (long)var1 / (long)(class344.field4152 * -2042134140)), var2 << 6) : null;
+		return var0.samples != null && var0.samples.length != 0 ? new RawPcmStream(var0, (int)((long)var0.sampleRate * 256L * (long)var1 / (long)(class344.field4152 * 100)), var2 << 6) : null;
 	}
 
 	@ObfuscatedName("v")

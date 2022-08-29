@@ -35,17 +35,18 @@ public class ClanMate extends Buddy {
 
 	@ObfuscatedName("s")
 	@ObfuscatedSignature(
-		descriptor = "(B)V",
-		garbageValue = "62"
+		garbageValue = "62",
+		descriptor = "(B)V"
 	)
-	void method6599() {
+	@Export("clearIsFriend")
+	void clearIsFriend() {
 		this.friend = TriBool.TriBool_unknown;
 	}
 
 	@ObfuscatedName("w")
 	@ObfuscatedSignature(
-		descriptor = "(I)Z",
-		garbageValue = "-353480072"
+		garbageValue = "-353480072",
+		descriptor = "(I)Z"
 	)
 	@Export("isFriend")
 	public final boolean isFriend() {
@@ -58,8 +59,8 @@ public class ClanMate extends Buddy {
 
 	@ObfuscatedName("i")
 	@ObfuscatedSignature(
-		descriptor = "(B)V",
-		garbageValue = "88"
+		garbageValue = "88",
+		descriptor = "(B)V"
 	)
 	@Export("fillIsFriend")
 	void fillIsFriend() {
@@ -68,8 +69,8 @@ public class ClanMate extends Buddy {
 
 	@ObfuscatedName("k")
 	@ObfuscatedSignature(
-		descriptor = "(I)V",
-		garbageValue = "1391337815"
+		garbageValue = "1391337815",
+		descriptor = "(I)V"
 	)
 	@Export("clearIsIgnored")
 	void clearIsIgnored() {
@@ -78,8 +79,8 @@ public class ClanMate extends Buddy {
 
 	@ObfuscatedName("a")
 	@ObfuscatedSignature(
-		descriptor = "(I)Z",
-		garbageValue = "2136358949"
+		garbageValue = "2136358949",
+		descriptor = "(I)Z"
 	)
 	@Export("isIgnored")
 	public final boolean isIgnored() {
@@ -92,8 +93,8 @@ public class ClanMate extends Buddy {
 
 	@ObfuscatedName("m")
 	@ObfuscatedSignature(
-		descriptor = "(I)V",
-		garbageValue = "-789416039"
+		garbageValue = "-789416039",
+		descriptor = "(I)V"
 	)
 	@Export("fillIsIgnored")
 	void fillIsIgnored() {
@@ -102,27 +103,27 @@ public class ClanMate extends Buddy {
 
 	@ObfuscatedName("s")
 	@ObfuscatedSignature(
-		descriptor = "(Lls;Lls;ZII)V",
-		garbageValue = "332086000"
+		garbageValue = "332086000",
+		descriptor = "(Lls;Lls;ZII)V"
 	)
-	static void method6613(AbstractArchive var0, AbstractArchive var1, boolean var2, int var3) {
+	static void method6531(AbstractArchive var0, AbstractArchive var1, boolean var2, int var3) {
 		if (Login.clearLoginScreen) {
 			if (var3 == 4) {
-				class116.method2683(4);
+				class116.method2618(4);
 			}
 
 		} else {
 			if (var3 == 0) {
 				class33.method572(var2);
 			} else {
-				class116.method2683(var3);
+				class116.method2618(var3);
 			}
 
 			Rasterizer2D.Rasterizer2D_clear();
 			byte[] var4 = var0.takeFileByNames("title.jpg", "");
-			class10.leftTitleSprite = class155.method3172(var4);
+			class10.leftTitleSprite = class155.method3107(var4);
 			Login.rightTitleSprite = class10.leftTitleSprite.mirrorHorizontally();
-			int var5 = Client.worldProperties * 1848339051;
+			int var5 = Client.worldProperties;
 			if ((var5 & 536870912) != 0) {
 				MusicPatchPcmStream.logoSprite = class150.SpriteBuffer_getIndexedSpriteByName(var1, "logo_deadman_mode", "");
 			} else if ((var5 & 1073741824) != 0) {
@@ -131,20 +132,20 @@ public class ClanMate extends Buddy {
 				MusicPatchPcmStream.logoSprite = class150.SpriteBuffer_getIndexedSpriteByName(var1, "logo", "");
 			}
 
-			class19.field102 = class150.SpriteBuffer_getIndexedSpriteByName(var1, "titlebox", "");
-			Login.field871 = class150.SpriteBuffer_getIndexedSpriteByName(var1, "titlebutton", "");
+			class19.titleboxSprite = class150.SpriteBuffer_getIndexedSpriteByName(var1, "titlebox", "");
+			Login.titlebuttonSprite = class150.SpriteBuffer_getIndexedSpriteByName(var1, "titlebutton", "");
 			class329.field4091 = class150.SpriteBuffer_getIndexedSpriteByName(var1, "titlebutton_large", "");
 			Login.field872 = class150.SpriteBuffer_getIndexedSpriteByName(var1, "play_now_text", "");
 			class150.SpriteBuffer_getIndexedSpriteByName(var1, "titlebutton_wide42,1", "");
-			Login.field870 = Bounds.method6868(var1, "runes", "");
-			class161.field1760 = Bounds.method6868(var1, "title_mute", "");
-			class29.field168 = class150.SpriteBuffer_getIndexedSpriteByName(var1, "options_radio_buttons,0", "");
+			Login.runesSprite = Bounds.method6779(var1, "runes", "");
+			class161.title_muteSprite = Bounds.method6779(var1, "title_mute", "");
+			class29.options_buttons_0Sprite = class150.SpriteBuffer_getIndexedSpriteByName(var1, "options_radio_buttons,0", "");
 			Login.field874 = class150.SpriteBuffer_getIndexedSpriteByName(var1, "options_radio_buttons,4", "");
-			VerticalAlignment.field1952 = class150.SpriteBuffer_getIndexedSpriteByName(var1, "options_radio_buttons,2", "");
+			VerticalAlignment.options_buttons_2Sprite = class150.SpriteBuffer_getIndexedSpriteByName(var1, "options_radio_buttons,2", "");
 			KeyHandler.field127 = class150.SpriteBuffer_getIndexedSpriteByName(var1, "options_radio_buttons,6", "");
-			ClientPreferences.field1245 = class29.field168.subWidth * -911438665;
-			class141.field1635 = class29.field168.subHeight * -426094061;
-			class259.field2909 = new LoginScreenAnimation(Login.field870);
+			ClientPreferences.field1245 = class29.options_buttons_0Sprite.subWidth;
+			class141.field1635 = class29.options_buttons_0Sprite.subHeight;
+			class259.loginScreenRunesAnimation = new LoginScreenAnimation(Login.runesSprite);
 			if (var2) {
 				Login.Login_username = "";
 				Login.Login_password = "";
@@ -153,28 +154,28 @@ public class ClanMate extends Buddy {
 			}
 
 			class19.field100 = 0;
-			KeyHandler.field146 = "";
+			KeyHandler.otp = "";
 			Login.field895 = true;
 			Login.worldSelectOpen = false;
-			if (!clientPreferences.method2213()) {
+			if (!clientPreferences.method2148()) {
 				Archive var6 = PacketBuffer.archive6;
 				int var7 = var6.getGroupId("scape main");
 				int var8 = var6.getFileId(var7, "");
-				class273.musicPlayerStatus = 168497391;
+				class273.musicPlayerStatus = 1;
 				NetFileRequest.musicTrackArchive = var6;
-				UrlRequester.musicTrackGroupId = var7 * -1733946155;
-				SceneTilePaint.musicTrackFileId = var8 * -2021054053;
-				class28.musicTrackVolume = 720907217;
+				UrlRequester.musicTrackGroupId = var7;
+				SceneTilePaint.musicTrackFileId = var8;
+				class28.musicTrackVolume = 255;
 				class273.musicTrackBoolean = false;
-				class160.pcmSampleLength = -2074556818;
+				class160.pcmSampleLength = 2;
 			} else {
-				class273.musicPlayerStatus = 168497391;
+				class273.musicPlayerStatus = 1;
 				NetFileRequest.musicTrackArchive = null;
-				UrlRequester.musicTrackGroupId = 1733946155;
-				SceneTilePaint.musicTrackFileId = 2021054053;
+				UrlRequester.musicTrackGroupId = -1;
+				SceneTilePaint.musicTrackFileId = -1;
 				class28.musicTrackVolume = 0;
 				class273.musicTrackBoolean = false;
-				class160.pcmSampleLength = -2074556818;
+				class160.pcmSampleLength = 2;
 			}
 
 			if (NetCache.NetCache_socket != null) {
@@ -189,18 +190,18 @@ public class ClanMate extends Buddy {
 					} catch (Exception var10) {
 					}
 
-					NetCache.NetCache_ioExceptions += 1082841761;
+					++NetCache.NetCache_ioExceptions;
 					NetCache.NetCache_socket = null;
 				}
 			}
 
 			Login.clearLoginScreen = true;
-			Login.xPadding = (class7.canvasWidth * -1894406353 - 765) / 2 * 313405081;
-			Login.loginBoxX = Login.xPadding * 1296541717 + 217068354;
-			Login.loginBoxCenter = Login.loginBoxX * 613358233 + 329019524;
-			class10.leftTitleSprite.drawAt(Login.xPadding * 143934889, 0);
-			Login.rightTitleSprite.drawAt(Login.xPadding * 143934889 + 382, 0);
-			MusicPatchPcmStream.logoSprite.drawAt(Login.xPadding * 143934889 + 382 - MusicPatchPcmStream.logoSprite.subWidth / 2, 18);
+			Login.xPadding = (class7.canvasWidth - 765) / 2;
+			Login.loginBoxX = Login.xPadding + 202;
+			Login.loginBoxCenter = Login.loginBoxX + 180;
+			class10.leftTitleSprite.drawAt(Login.xPadding, 0);
+			Login.rightTitleSprite.drawAt(Login.xPadding + 382, 0);
+			MusicPatchPcmStream.logoSprite.drawAt(Login.xPadding + 382 - MusicPatchPcmStream.logoSprite.subWidth / 2, 18);
 		}
 	}
 }

@@ -16,7 +16,8 @@ public class Friend extends Buddy {
 	@ObfuscatedSignature(
 		descriptor = "Lln;"
 	)
-	static Archive field4295;
+	@Export("archive20")
+	static Archive archive20;
 	@ObfuscatedName("s")
 	boolean field4294;
 	@ObfuscatedName("h")
@@ -27,18 +28,18 @@ public class Friend extends Buddy {
 
 	@ObfuscatedName("s")
 	@ObfuscatedSignature(
-		descriptor = "(Lnl;I)I",
-		garbageValue = "-1549435031"
+		garbageValue = "-1549435031",
+		descriptor = "(Lnl;I)I"
 	)
 	@Export("compareToFriend")
 	int compareToFriend(Friend var1) {
-		if (super.world * 1881839891 == Client.worldId * -1074720787 && Client.worldId * -1074720787 != var1.world * 1881839891) {
+		if (super.world == Client.worldId && Client.worldId != var1.world) {
 			return -1;
-		} else if (Client.worldId * -1074720787 == var1.world * 1881839891 && Client.worldId * -1074720787 != super.world * 1881839891) {
+		} else if (Client.worldId == var1.world && super.world != Client.worldId) {
 			return 1;
-		} else if (super.world * 1881839891 != 0 && var1.world * 1881839891 == 0) {
+		} else if (super.world != 0 && var1.world == 0) {
 			return -1;
-		} else if (var1.world * 1881839891 != 0 && super.world * 1881839891 == 0) {
+		} else if (var1.world != 0 && super.world == 0) {
 			return 1;
 		} else if (this.field4294 && !var1.field4294) {
 			return -1;
@@ -49,14 +50,14 @@ public class Friend extends Buddy {
 		} else if (!this.field4293 && var1.field4293) {
 			return 1;
 		} else {
-			return super.world * 1881839891 != 0 ? super.int2 * 547305229 - var1.int2 * 547305229 : var1.int2 * 547305229 - super.int2 * 547305229;
+			return super.world != 0 ? super.int2 - var1.int2 : var1.int2 - super.int2;
 		}
 	}
 
 	@ObfuscatedName("h")
 	@ObfuscatedSignature(
-		descriptor = "(Lnb;I)I",
-		garbageValue = "1550816169"
+		garbageValue = "1550816169",
+		descriptor = "(Lnb;I)I"
 	)
 	@Export("compareTo_user")
 	public int compareTo_user(User var1) {
@@ -69,10 +70,10 @@ public class Friend extends Buddy {
 
 	@ObfuscatedName("k")
 	@ObfuscatedSignature(
-		descriptor = "(B)Ljava/util/Date;",
-		garbageValue = "-16"
+		garbageValue = "-16",
+		descriptor = "(B)Ljava/util/Date;"
 	)
-	static Date method6595() throws ParseException {
+	static Date method6513() throws ParseException {
 		SimpleDateFormat var0 = new SimpleDateFormat("ddMMyyyyHH", Locale.ENGLISH);
 		var0.setLenient(false);
 		StringBuilder var1 = new StringBuilder();
@@ -81,7 +82,7 @@ public class Friend extends Buddy {
 		for (int var3 = 0; var3 < var2.length; ++var3) {
 			String var4 = var2[var3];
 			if (var4 == null) {
-				class116.method2683(7);
+				class116.method2618(7);
 				ItemComposition.setLoginResponseString("Date not valid.", "Please ensure all characters are populated.", "");
 				return null;
 			}

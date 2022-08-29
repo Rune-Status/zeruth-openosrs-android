@@ -24,35 +24,35 @@ public class class154 extends class165 {
 
 	@ObfuscatedName("s")
 	@ObfuscatedSignature(
-		descriptor = "(I)I",
-		garbageValue = "-2051475580"
+		garbageValue = "-2051475580",
+		descriptor = "(I)I"
 	)
-	public int vmethod3237() {
+	public int vmethod3172() {
 		return 1;
 	}
 
 	@ObfuscatedName("h")
 	@ObfuscatedSignature(
-		descriptor = "(B)Ljava/lang/String;",
-		garbageValue = "-91"
+		garbageValue = "-91",
+		descriptor = "(B)Ljava/lang/String;"
 	)
-	public String vmethod3250() {
+	public String vmethod3185() {
 		return this.field1699;
 	}
 
 	@ObfuscatedName("z")
 	@ObfuscatedSignature(
-		descriptor = "(Lkn;I)I",
-		garbageValue = "1587324314"
+		garbageValue = "1587324314",
+		descriptor = "(Lkn;I)I"
 	)
-	static int method3103(Widget var0) {
-		if (var0.type * 1201269859 != 11) {
-			UserComparator8.Interpreter_stringStackSize -= 204829809;
-			Interpreter.Interpreter_intStack[(User.Interpreter_intStackSize += -312486675) * -313022235 - 1] = -1;
+	static int method3038(Widget var0) {
+		if (var0.type != 11) {
+			--UserComparator8.Interpreter_stringStackSize;
+			Interpreter.Interpreter_intStack[++User.Interpreter_intStackSize - 1] = -1;
 			return 1;
 		} else {
-			String var1 = Interpreter.Interpreter_stringStack[(UserComparator8.Interpreter_stringStackSize -= 204829809) * 929025169];
-			Interpreter.Interpreter_intStack[(User.Interpreter_intStackSize += -312486675) * -313022235 - 1] = var0.method5552(var1);
+			String var1 = Interpreter.Interpreter_stringStack[--UserComparator8.Interpreter_stringStackSize];
+			Interpreter.Interpreter_intStack[++User.Interpreter_intStackSize - 1] = var0.method5481(var1);
 			return 1;
 		}
 	}

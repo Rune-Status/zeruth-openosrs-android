@@ -2,6 +2,7 @@ package osrs;
 
 import net.runelite.mapping.Export;
 import net.runelite.mapping.Implements;
+import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
@@ -9,6 +10,9 @@ import net.runelite.mapping.ObfuscatedSignature;
 @Implements("VarpDefinition")
 public class VarpDefinition extends DualNode {
 	@ObfuscatedName("tf")
+	@ObfuscatedGetter(
+		intValue = -1358941939
+	)
 	static int field1805;
 	@ObfuscatedName("s")
 	@ObfuscatedSignature(
@@ -17,6 +21,9 @@ public class VarpDefinition extends DualNode {
 	@Export("VarpDefinition_archive")
 	static AbstractArchive VarpDefinition_archive;
 	@ObfuscatedName("h")
+	@ObfuscatedGetter(
+		intValue = -1767580571
+	)
 	public static int field1809;
 	@ObfuscatedName("w")
 	@ObfuscatedSignature(
@@ -28,8 +35,12 @@ public class VarpDefinition extends DualNode {
 	@ObfuscatedSignature(
 		descriptor = "[Lqe;"
 	)
-	static IndexedSprite[] field1803;
+	@Export("modIconSprites")
+	static IndexedSprite[] modIconSprites;
 	@ObfuscatedName("v")
+	@ObfuscatedGetter(
+		intValue = -953256093
+	)
 	@Export("type")
 	public int type;
 
@@ -43,8 +54,8 @@ public class VarpDefinition extends DualNode {
 
 	@ObfuscatedName("w")
 	@ObfuscatedSignature(
-		descriptor = "(Lqr;I)V",
-		garbageValue = "1926258442"
+		garbageValue = "1926258442",
+		descriptor = "(Lqr;I)V"
 	)
 	@Export("decode")
 	void decode(Buffer var1) {
@@ -60,32 +71,32 @@ public class VarpDefinition extends DualNode {
 
 	@ObfuscatedName("v")
 	@ObfuscatedSignature(
-		descriptor = "(Lqr;IB)V",
-		garbageValue = "-21"
+		garbageValue = "-21",
+		descriptor = "(Lqr;IB)V"
 	)
 	@Export("decodeNext")
 	void decodeNext(Buffer var1, int var2) {
 		if (var2 == 5) {
-			this.type = var1.readUnsignedShort() * -762396085;
+			this.type = var1.readUnsignedShort();
 		}
 
 	}
 
 	@ObfuscatedName("q")
 	@ObfuscatedSignature(
-		descriptor = "(I)V",
-		garbageValue = "284353290"
+		garbageValue = "284353290",
+		descriptor = "(I)V"
 	)
-	public static void method3288() {
+	public static void method3223() {
 		FloorOverlayDefinition.FloorOverlayDefinition_cached.clear();
 	}
 
 	@ObfuscatedName("d")
 	@ObfuscatedSignature(
-		descriptor = "(I)V",
-		garbageValue = "-252579017"
+		garbageValue = "-252579017",
+		descriptor = "(I)V"
 	)
-	public static void method3284() {
+	public static void method3219() {
 		PlayerComposition.PlayerAppearance_cachedModels.clear();
 	}
 }

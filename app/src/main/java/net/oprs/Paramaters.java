@@ -83,7 +83,7 @@ public class Paramaters {
 
     }
 
-    public static String getHost()
+    public static String getCodeBase()
     {
         return "oldschool9.runescape.com";
     }

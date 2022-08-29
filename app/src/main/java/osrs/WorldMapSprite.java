@@ -28,8 +28,8 @@ public final class WorldMapSprite {
 
 	@ObfuscatedName("h")
 	@ObfuscatedSignature(
-		descriptor = "(III)I",
-		garbageValue = "83994940"
+		garbageValue = "83994940",
+		descriptor = "(III)I"
 	)
 	@Export("getTileColor")
 	final int getTileColor(int var1, int var2) {

@@ -18,8 +18,8 @@ public class DirectByteArrayCopier extends AbstractByteArrayCopier {
 
 	@ObfuscatedName("h")
 	@ObfuscatedSignature(
-		descriptor = "(I)[B",
-		garbageValue = "-946242295"
+		garbageValue = "-946242295",
+		descriptor = "(I)[B"
 	)
 	@Export("get")
 	byte[] get() {
@@ -31,8 +31,8 @@ public class DirectByteArrayCopier extends AbstractByteArrayCopier {
 
 	@ObfuscatedName("w")
 	@ObfuscatedSignature(
-		descriptor = "([BI)V",
-		garbageValue = "1451224319"
+		garbageValue = "1451224319",
+		descriptor = "([BI)V"
 	)
 	@Export("set")
 	public void set(byte[] var1) {

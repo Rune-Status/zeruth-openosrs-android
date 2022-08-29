@@ -8,8 +8,8 @@ import net.runelite.mapping.ObfuscatedSignature;
 public interface class158 {
 	@ObfuscatedName("w")
 	@ObfuscatedSignature(
-		descriptor = "(I)I",
-		garbageValue = "-1460661928"
+		garbageValue = "-1460661928",
+		descriptor = "(I)I"
 	)
 	@Export("useRotation")
 	int useRotation();

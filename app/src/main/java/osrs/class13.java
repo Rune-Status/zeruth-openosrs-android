@@ -25,6 +25,10 @@ class class13 extends DefaultTlsClient {
 		this.this$1 = var1;
 	}
 
+	public TlsAuthentication getAuthentication() throws IOException {
+		return new class11(this);
+	}
+
 	public Hashtable getClientExtensions() throws IOException {
 		Hashtable var1 = super.getClientExtensions();
 		if (var1 == null) {
@@ -43,20 +47,16 @@ class class13 extends DefaultTlsClient {
 		return var1;
 	}
 
-	public TlsAuthentication getAuthentication() throws IOException {
-		return new class11(this);
-	}
-
 	@ObfuscatedName("v")
 	@ObfuscatedSignature(
-		descriptor = "(Lqz;II)V",
-		garbageValue = "-751482834"
+		garbageValue = "-751482834",
+		descriptor = "(Lqz;II)V"
 	)
 	@Export("readPlayerUpdate")
 	static void readPlayerUpdate(PacketBuffer var0, int var1) {
 		boolean var2 = var0.readBits(1) == 1;
 		if (var2) {
-			Players.Players_pendingUpdateIndices[(Players.Players_pendingUpdateCount += 709859425) * -1903883359 - 1] = var1;
+			Players.Players_pendingUpdateIndices[++Players.Players_pendingUpdateCount - 1] = var1;
 		}
 
 		int var3 = var0.readBits(2);
@@ -64,17 +64,17 @@ class class13 extends DefaultTlsClient {
 		if (var3 == 0) {
 			if (var2) {
 				var4.field1111 = false;
-			} else if (Client.localPlayerIndex * 729075111 == var1) {
+			} else if (Client.localPlayerIndex == var1) {
 				throw new RuntimeException();
 			} else {
-				Players.Players_regions[var1] = (var4.pathX[0] + Decimator.field404 * 620670661 >> 13 << 14) + (class7.field30 * 542116271 + var4.pathY[0] >> 13) + (var4.plane * -1670935727 << 28);
-				if (var4.field1162 * 1111975469 != -1) {
-					Players.Players_orientations[var1] = var4.field1162 * 1111975469;
+				Players.Players_regions[var1] = (var4.plane << 28) + (Decimator.baseX + var4.pathX[0] >> 13 << 14) + (class7.baseY * 542116271 + var4.pathY[0] >> 13);
+				if (var4.field1162 != -1) {
+					Players.Players_orientations[var1] = var4.field1162;
 				} else {
-					Players.Players_orientations[var1] = var4.orientation * 577155807;
+					Players.Players_orientations[var1] = var4.orientation;
 				}
 
-				Players.Players_targetIndices[var1] = var4.targetIndex * 209400023;
+				Players.Players_targetIndices[var1] = var4.targetIndex;
 				Client.players[var1] = null;
 				if (var0.readBits(1) != 0) {
 					class118.updateExternalPlayer(var0, var1);
@@ -111,16 +111,18 @@ class class13 extends DefaultTlsClient {
 					++var7;
 				}
 
-				if (Client.localPlayerIndex * 729075111 == var1 && (var4.x * 1627221919 < 1536 || var4.y * 1229064101 < 1536 || var4.x * 1627221919 >= 11776 || var4.y * 1229064101 >= 11776)) {
+				if (Client.localPlayerIndex != var1 || var4.x >= 1536 && var4.y >= 1536 && var4.x < 11776 && var4.y < 11776) {
+					if (var2) {
+						var4.field1111 = true;
+						var4.tileX = var6;
+						var4.tileY = var7;
+					} else {
+						var4.field1111 = false;
+						var4.method2066(var6, var7, Players.field1298[var1]);
+					}
+				} else {
 					var4.resetPath(var6, var7);
 					var4.field1111 = false;
-				} else if (var2) {
-					var4.field1111 = true;
-					var4.field1110 = var6 * 984539507;
-					var4.field1095 = var7 * -1555585113;
-				} else {
-					var4.field1111 = false;
-					var4.method2131(var6, var7, Players.field1298[var1]);
 				}
 
 			} else if (var3 == 2) {
@@ -173,18 +175,16 @@ class class13 extends DefaultTlsClient {
 					var7 += 2;
 				}
 
-				if (Client.localPlayerIndex * 729075111 != var1 || var4.x * 1627221919 >= 1536 && var4.y * 1229064101 >= 1536 && var4.x * 1627221919 < 11776 && var4.y * 1229064101 < 11776) {
-					if (var2) {
-						var4.field1111 = true;
-						var4.field1110 = var6 * 984539507;
-						var4.field1095 = var7 * -1555585113;
-					} else {
-						var4.field1111 = false;
-						var4.method2131(var6, var7, Players.field1298[var1]);
-					}
-				} else {
+				if (Client.localPlayerIndex == var1 && (var4.x < 1536 || var4.y < 1536 || var4.x >= 11776 || var4.y >= 11776)) {
 					var4.resetPath(var6, var7);
 					var4.field1111 = false;
+				} else if (var2) {
+					var4.field1111 = true;
+					var4.tileX = var6;
+					var4.tileY = var7;
+				} else {
+					var4.field1111 = false;
+					var4.method2066(var6, var7, Players.field1298[var1]);
 				}
 
 			} else {
@@ -208,23 +208,23 @@ class class13 extends DefaultTlsClient {
 
 					var10 = var8 + var4.pathX[0];
 					var11 = var9 + var4.pathY[0];
-					if (Client.localPlayerIndex * 729075111 != var1 || var4.x * 1627221919 >= 1536 && var4.y * 1229064101 >= 1536 && var4.x * 1627221919 < 11776 && var4.y * 1229064101 < 11776) {
+					if (Client.localPlayerIndex != var1 || var4.x >= 1536 && var4.y >= 1536 && var4.x < 11776 && var4.y < 11776) {
 						if (var2) {
 							var4.field1111 = true;
-							var4.field1110 = var10 * 984539507;
-							var4.field1095 = var11 * -1555585113;
+							var4.tileX = var10;
+							var4.tileY = var11;
 						} else {
 							var4.field1111 = false;
-							var4.method2131(var10, var11, Players.field1298[var1]);
+							var4.method2066(var10, var11, Players.field1298[var1]);
 						}
 					} else {
 						var4.resetPath(var10, var11);
 						var4.field1111 = false;
 					}
 
-					var4.plane = (byte)(var7 + var4.plane * -1670935727 & 3) * -1367827023;
-					if (Client.localPlayerIndex * 729075111 == var1) {
-						class268.Client_plane = var4.plane * -1826537741;
+					var4.plane = (byte)(var7 + var4.plane & 3);
+					if (Client.localPlayerIndex == var1) {
+						class268.Client_plane = var4.plane;
 					}
 
 				} else {
@@ -232,23 +232,25 @@ class class13 extends DefaultTlsClient {
 					var7 = var6 >> 28;
 					var8 = var6 >> 14 & 16383;
 					var9 = var6 & 16383;
-					var10 = (var8 + var4.pathX[0] + Decimator.field404 * 620670661 & 16383) - Decimator.field404 * 620670661;
-					var11 = (var9 + class7.field30 * 542116271 + var4.pathY[0] & 16383) - class7.field30 * 542116271;
-					if (Client.localPlayerIndex * 729075111 == var1 && (var4.x * 1627221919 < 1536 || var4.y * 1229064101 < 1536 || var4.x * 1627221919 >= 11776 || var4.y * 1229064101 >= 11776)) {
+					var10 = (var8 + Decimator.baseX + var4.pathX[0] & 16383) - Decimator.baseX;
+					var11 = (var9 + class7.baseY * 542116271 + var4.pathY[0] & 16383) - class7.baseY * 542116271;
+					if (Client.localPlayerIndex != var1 || var4.x >= 1536 && var4.y >= 1536 && var4.x < 11776 && var4.y < 11776) {
+						if (var2) {
+							var4.field1111 = true;
+							var4.tileX = var10;
+							var4.tileY = var11;
+						} else {
+							var4.field1111 = false;
+							var4.method2066(var10, var11, Players.field1298[var1]);
+						}
+					} else {
 						var4.resetPath(var10, var11);
 						var4.field1111 = false;
-					} else if (var2) {
-						var4.field1111 = true;
-						var4.field1110 = var10 * 984539507;
-						var4.field1095 = var11 * -1555585113;
-					} else {
-						var4.field1111 = false;
-						var4.method2131(var10, var11, Players.field1298[var1]);
 					}
 
-					var4.plane = (byte)(var7 + var4.plane * -1670935727 & 3) * -1367827023;
-					if (Client.localPlayerIndex * 729075111 == var1) {
-						class268.Client_plane = var4.plane * -1826537741;
+					var4.plane = (byte)(var7 + var4.plane & 3);
+					if (Client.localPlayerIndex == var1) {
+						class268.Client_plane = var4.plane;
 					}
 
 				}
@@ -258,24 +260,24 @@ class class13 extends DefaultTlsClient {
 
 	@ObfuscatedName("p")
 	@ObfuscatedSignature(
-		descriptor = "(I)V",
-		garbageValue = "-1238151208"
+		garbageValue = "-1238151208",
+		descriptor = "(I)V"
 	)
 	static void method165() {
-		class116.method2683(24);
+		class116.method2618(24);
 		ItemComposition.setLoginResponseString("The game servers are currently being updated.", "Please wait a few minutes and try again.", "");
 	}
 
 	@ObfuscatedName("hp")
 	@ObfuscatedSignature(
-		descriptor = "(III)Lgr;",
-		garbageValue = "-1254170840"
+		garbageValue = "-1254170840",
+		descriptor = "(III)Lgr;"
 	)
 	static RouteStrategy method164(int var0, int var1) {
-		Client.field691.approxDestinationX = var0 * 1691485979;
-		Client.field691.approxDestinationY = var1 * 1570080571;
-		Client.field691.approxDestinationSizeX = 1777132407;
-		Client.field691.approxDestinationSizeY = 1172946413;
+		Client.field691.approxDestinationX = var0;
+		Client.field691.approxDestinationY = var1;
+		Client.field691.approxDestinationSizeX = 1;
+		Client.field691.approxDestinationSizeY = 1;
 		return Client.field691;
 	}
 }

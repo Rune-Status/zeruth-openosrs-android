@@ -2,6 +2,7 @@ package osrs;
 
 import java.util.Date;
 import net.runelite.mapping.Export;
+import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
@@ -11,16 +12,26 @@ public class class161 {
 	@ObfuscatedSignature(
 		descriptor = "[Lqe;"
 	)
-	static IndexedSprite[] field1760;
+	@Export("title_muteSprite")
+	static IndexedSprite[] title_muteSprite;
 	@ObfuscatedName("v")
 	public String field1755;
 	@ObfuscatedName("c")
 	public float[] field1752;
 	@ObfuscatedName("q")
+	@ObfuscatedGetter(
+		intValue = 757674837
+	)
 	public int field1758;
 	@ObfuscatedName("i")
+	@ObfuscatedGetter(
+		intValue = 1022851267
+	)
 	public int field1757;
 	@ObfuscatedName("k")
+	@ObfuscatedGetter(
+		intValue = -1087448423
+	)
 	public int field1759;
 	// $FF: synthetic field
 	@ObfuscatedSignature(
@@ -34,13 +45,13 @@ public class class161 {
 	class161(class155 var1) {
 		this.this$0 = var1;
 		this.field1752 = new float[4];
-		this.field1758 = 1738617341;
-		this.field1757 = -93259797;
+		this.field1758 = 1;
+		this.field1757 = 1;
 		this.field1759 = 0;
 	}
 
 	@ObfuscatedName("s")
-	public static String method3219(long var0) {
+	public static String method3154(long var0) {
 		Calendar.Calendar_calendar.setTime(new Date(var0));
 		int var2 = Calendar.Calendar_calendar.get(7);
 		int var3 = Calendar.Calendar_calendar.get(5);
@@ -54,10 +65,11 @@ public class class161 {
 
 	@ObfuscatedName("h")
 	@ObfuscatedSignature(
-		descriptor = "(III)I",
-		garbageValue = "-1772681891"
+		garbageValue = "-1772681891",
+		descriptor = "(III)I"
 	)
-	static int method3218(int var0, int var1) {
+	@Export("ItemContainer_getCount")
+	static int ItemContainer_getCount(int var0, int var1) {
 		ItemContainer var2 = (ItemContainer)ItemContainer.itemContainers.get((long)var0);
 		if (var2 == null) {
 			return 0;
@@ -68,8 +80,8 @@ public class class161 {
 
 	@ObfuscatedName("w")
 	@ObfuscatedSignature(
-		descriptor = "(ILjava/lang/String;Ljava/lang/String;Ljava/lang/String;B)V",
-		garbageValue = "0"
+		garbageValue = "0",
+		descriptor = "(ILjava/lang/String;Ljava/lang/String;Ljava/lang/String;B)V"
 	)
 	@Export("addChatMessage")
 	static void addChatMessage(int var0, String var1, String var2, String var3) {
@@ -80,17 +92,17 @@ public class class161 {
 		}
 
 		Message var5 = var4.addMessage(var0, var1, var2, var3);
-		Messages.Messages_hashTable.put(var5, (long)(var5.count * 416329001));
+		Messages.Messages_hashTable.put(var5, (long)var5.count);
 		Messages.Messages_queue.add(var5);
-		Client.chatCycle = Client.field674 * -675168095;
+		Client.chatCycle = Client.cycleCntr;
 	}
 
 	@ObfuscatedName("q")
 	@ObfuscatedSignature(
-		descriptor = "(Lbd;Lbd;IZIZS)I",
-		garbageValue = "-14807"
+		garbageValue = "-14807",
+		descriptor = "(Lbd;Lbd;IZIZS)I"
 	)
-	static int method3220(World var0, World var1, int var2, boolean var3, int var4, boolean var5) {
+	static int method3155(World var0, World var1, int var2, boolean var3, int var4, boolean var5) {
 		int var6 = class434.compareWorlds(var0, var1, var2, var3);
 		if (var6 != 0) {
 			return var3 ? -var6 : var6;

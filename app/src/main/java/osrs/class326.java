@@ -2,6 +2,7 @@ package osrs;
 
 import java.util.HashMap;
 import net.runelite.mapping.Export;
+import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
@@ -23,6 +24,9 @@ public class class326 {
 	@ObfuscatedName("v")
 	int[] field4081;
 	@ObfuscatedName("c")
+	@ObfuscatedGetter(
+		intValue = -307734671
+	)
 	int field4085;
 
 	public class326() {
@@ -56,12 +60,12 @@ public class class326 {
 
 	@ObfuscatedName("s")
 	@ObfuscatedSignature(
-		descriptor = "(IS)V",
-		garbageValue = "14191"
+		garbageValue = "14191",
+		descriptor = "(IS)V"
 	)
-	void method5976(int var1) {
+	void method5905(int var1) {
 		int var2 = var1 * 2 + 1;
-		double[] var3 = Occluder.method4235(0.0D, (double)((float)var1 / 3.0F), var1);
+		double[] var3 = Occluder.method4170(0.0D, (double)((float)var1 / 3.0F), var1);
 		double var4 = var3[var1] * var3[var1];
 		int[] var6 = new int[var2 * var2];
 		boolean var7 = false;
@@ -81,12 +85,12 @@ public class class326 {
 
 	@ObfuscatedName("h")
 	@ObfuscatedSignature(
-		descriptor = "(IS)Lqn;",
-		garbageValue = "-23513"
+		garbageValue = "-23513",
+		descriptor = "(IS)Lqn;"
 	)
-	SpritePixels method5962(int var1) {
+	SpritePixels method5891(int var1) {
 		if (!this.spriteMap.containsKey(var1)) {
-			this.method5976(var1);
+			this.method5905(var1);
 		}
 
 		return (SpritePixels)this.spriteMap.get(var1);
@@ -94,34 +98,34 @@ public class class326 {
 
 	@ObfuscatedName("w")
 	@ObfuscatedSignature(
-		descriptor = "(III)V",
-		garbageValue = "1758451771"
+		garbageValue = "1550470493",
+		descriptor = "(III)V"
 	)
-	public final void method5964(int var1, int var2) {
-		if (this.field4085 * -307734671 < this.field4080.length) {
-			this.field4080[this.field4085 * -307734671] = var1;
-			this.field4081[this.field4085 * -307734671] = var2;
-			this.field4085 += -1156871791;
+	public final void method5893(int var1, int var2) {
+		if (this.field4085 < this.field4080.length) {
+			this.field4080[this.field4085] = var1;
+			this.field4081[this.field4085] = var2;
+			++this.field4085;
 		}
 	}
 
 	@ObfuscatedName("v")
 	@ObfuscatedSignature(
-		descriptor = "(B)V",
-		garbageValue = "109"
+		garbageValue = "47",
+		descriptor = "(B)V"
 	)
-	public final void method5977() {
+	public final void method5906() {
 		this.field4085 = 0;
 	}
 
 	@ObfuscatedName("c")
 	@ObfuscatedSignature(
-		descriptor = "(IILqn;FI)V",
-		garbageValue = "575666917"
+		garbageValue = "575666917",
+		descriptor = "(IILqn;FI)V"
 	)
-	public final void method5965(int var1, int var2, SpritePixels var3, float var4) {
+	public final void method5894(int var1, int var2, SpritePixels var3, float var4) {
 		int var5 = (int)(var4 * 18.0F);
-		SpritePixels var6 = this.method5962(var5);
+		SpritePixels var6 = this.method5891(var5);
 		int var7 = var5 * 2 + 1;
 		Bounds var8 = new Bounds(0, 0, var3.subWidth, var3.subHeight);
 		Bounds var9 = new Bounds(0, 0);
@@ -131,14 +135,14 @@ public class class326 {
 		int var10;
 		int var11;
 		int var12;
-		for (var10 = 0; var10 < this.field4085 * -307734671; ++var10) {
+		for (var10 = 0; var10 < this.field4085; ++var10) {
 			var11 = this.field4080[var10];
 			var12 = this.field4081[var10];
 			int var13 = (int)(var4 * (float)(var11 - var1)) - var5;
 			int var14 = (int)((float)var3.subHeight - var4 * (float)(var12 - var2)) - var5;
 			this.bounds.setLow(var13, var14);
-			this.bounds.method6848(var8, var9);
-			this.method5967(var6, var3, var9);
+			this.bounds.method6761(var8, var9);
+			this.method5896(var6, var3, var9);
 		}
 
 		System.nanoTime();
@@ -167,33 +171,33 @@ public class class326 {
 
 	@ObfuscatedName("q")
 	@ObfuscatedSignature(
-		descriptor = "(Lqn;Lqn;Lnh;I)V",
-		garbageValue = "-1601570159"
+		garbageValue = "-1601570159",
+		descriptor = "(Lqn;Lqn;Lnh;I)V"
 	)
-	void method5967(SpritePixels var1, SpritePixels var2, Bounds var3) {
-		if (var3.highX * -1180177163 != 0 && var3.highY * -1058256337 != 0) {
+	void method5896(SpritePixels var1, SpritePixels var2, Bounds var3) {
+		if (var3.highX != 0 && var3.highY != 0) {
 			int var4 = 0;
 			int var5 = 0;
-			if (var3.lowX * -1706987485 == 0) {
-				var4 = var1.subWidth - var3.highX * -1180177163;
+			if (var3.lowX == 0) {
+				var4 = var1.subWidth - var3.highX;
 			}
 
-			if (var3.lowY * 600654443 == 0) {
-				var5 = var1.subHeight - var3.highY * -1058256337;
+			if (var3.lowY == 0) {
+				var5 = var1.subHeight - var3.highY;
 			}
 
 			int var6 = var4 + var5 * var1.subWidth;
-			int var7 = var3.lowX * -1706987485 + var2.subWidth * var3.lowY * 600654443;
+			int var7 = var2.subWidth * var3.lowY + var3.lowX;
 
-			for (int var8 = 0; var8 < var3.highY * -1058256337; ++var8) {
-				for (int var9 = 0; var9 < var3.highX * -1180177163; ++var9) {
+			for (int var8 = 0; var8 < var3.highY; ++var8) {
+				for (int var9 = 0; var9 < var3.highX; ++var9) {
 					int[] var10000 = var2.pixels;
 					int var10001 = var7++;
 					var10000[var10001] += var1.pixels[var6++];
 				}
 
-				var6 += var1.subWidth - var3.highX * -1180177163;
-				var7 += var2.subWidth - var3.highX * -1180177163;
+				var6 += var1.subWidth - var3.highX;
+				var7 += var2.subWidth - var3.highX;
 			}
 
 		}
@@ -201,10 +205,10 @@ public class class326 {
 
 	@ObfuscatedName("s")
 	@ObfuscatedSignature(
-		descriptor = "([BIIS)Ljava/lang/String;",
-		garbageValue = "-3634"
+		garbageValue = "-3634",
+		descriptor = "([BIIS)Ljava/lang/String;"
 	)
-	public static String method5963(byte[] var0, int var1, int var2) {
+	public static String method5892(byte[] var0, int var1, int var2) {
 		StringBuilder var3 = new StringBuilder();
 
 		for (int var4 = var1; var4 < var2 + var1; var4 += 3) {

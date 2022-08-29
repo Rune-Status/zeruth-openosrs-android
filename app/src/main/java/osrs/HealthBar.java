@@ -2,6 +2,7 @@ package osrs;
 
 import net.runelite.mapping.Export;
 import net.runelite.mapping.Implements;
+import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
@@ -9,6 +10,9 @@ import net.runelite.mapping.ObfuscatedSignature;
 @Implements("HealthBar")
 public class HealthBar extends Node {
 	@ObfuscatedName("pm")
+	@ObfuscatedGetter(
+		intValue = 1643162371
+	)
 	static int field1249;
 	@ObfuscatedName("w")
 	@ObfuscatedSignature(
@@ -33,8 +37,8 @@ public class HealthBar extends Node {
 
 	@ObfuscatedName("s")
 	@ObfuscatedSignature(
-		descriptor = "(IIIIB)V",
-		garbageValue = "106"
+		garbageValue = "106",
+		descriptor = "(IIIIB)V"
 	)
 	@Export("put")
 	void put(int var1, int var2, int var3, int var4) {
@@ -43,12 +47,12 @@ public class HealthBar extends Node {
 
 		for (HealthBarUpdate var7 = (HealthBarUpdate)this.updates.last(); var7 != null; var7 = (HealthBarUpdate)this.updates.previous()) {
 			++var6;
-			if (var7.cycle * 767819071 == var1) {
+			if (var7.cycle == var1) {
 				var7.set(var1, var2, var3, var4);
 				return;
 			}
 
-			if (var7.cycle * 767819071 <= var1) {
+			if (var7.cycle <= var1) {
 				var5 = var7;
 			}
 		}
@@ -69,19 +73,19 @@ public class HealthBar extends Node {
 
 	@ObfuscatedName("h")
 	@ObfuscatedSignature(
-		descriptor = "(II)Lcc;",
-		garbageValue = "-741230363"
+		garbageValue = "-741230363",
+		descriptor = "(II)Lcc;"
 	)
 	@Export("get")
 	HealthBarUpdate get(int var1) {
 		HealthBarUpdate var2 = (HealthBarUpdate)this.updates.last();
-		if (var2 != null && var2.cycle * 767819071 <= var1) {
-			for (HealthBarUpdate var3 = (HealthBarUpdate)this.updates.previous(); var3 != null && var3.cycle * 767819071 <= var1; var3 = (HealthBarUpdate)this.updates.previous()) {
+		if (var2 != null && var2.cycle <= var1) {
+			for (HealthBarUpdate var3 = (HealthBarUpdate)this.updates.previous(); var3 != null && var3.cycle <= var1; var3 = (HealthBarUpdate)this.updates.previous()) {
 				var2.remove();
 				var2 = var3;
 			}
 
-			if (this.definition.int5 * 1905605681 + var2.cycleOffset * -226595329 + var2.cycle * 767819071 > var1) {
+			if (this.definition.int5 + var2.cycle + var2.cycleOffset > var1) {
 				return var2;
 			} else {
 				var2.remove();
@@ -94,20 +98,20 @@ public class HealthBar extends Node {
 
 	@ObfuscatedName("w")
 	@ObfuscatedSignature(
-		descriptor = "(I)Z",
-		garbageValue = "1803012983"
+		garbageValue = "1803012983",
+		descriptor = "(I)Z"
 	)
 	@Export("isEmpty")
 	boolean isEmpty() {
-		return this.updates.method6073();
+		return this.updates.method5999();
 	}
 
 	@ObfuscatedName("s")
 	@ObfuscatedSignature(
-		descriptor = "(II)Lgu;",
-		garbageValue = "-1068428838"
+		garbageValue = "-1068428838",
+		descriptor = "(II)Lgu;"
 	)
-	public static HitSplatDefinition method2311(int var0) {
+	public static HitSplatDefinition method2246(int var0) {
 		HitSplatDefinition var1 = (HitSplatDefinition)HitSplatDefinition.HitSplatDefinition_cached.get((long)var0);
 		if (var1 != null) {
 			return var1;

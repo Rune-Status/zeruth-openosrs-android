@@ -7,8 +7,8 @@ import net.runelite.mapping.ObfuscatedSignature;
 public interface class450 {
 	@ObfuscatedName("w")
 	@ObfuscatedSignature(
-		descriptor = "(II)Ljava/lang/Object;",
-		garbageValue = "-1730553793"
+		garbageValue = "-1730553793",
+		descriptor = "(II)Ljava/lang/Object;"
 	)
-	Object vmethod7942(int var1);
+	Object vmethod7835(int var1);
 }

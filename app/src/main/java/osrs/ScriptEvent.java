@@ -2,6 +2,7 @@ package osrs;
 
 import net.runelite.mapping.Export;
 import net.runelite.mapping.Implements;
+import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
@@ -12,14 +13,20 @@ public class ScriptEvent extends Node {
 	@ObfuscatedSignature(
 		descriptor = "Lbq;"
 	)
-	static Decimator field1046;
+	@Export("decimator")
+	static Decimator decimator;
 	@ObfuscatedName("vx")
-	static int field1044;
+	@ObfuscatedGetter(
+		intValue = -1961432799
+	)
+	@Export("foundItemIdCount")
+	static int foundItemIdCount;
 	@ObfuscatedName("s")
 	@Export("args")
 	Object[] args;
 	@ObfuscatedName("h")
-	boolean field1040;
+	@Export("isMouseInputEvent")
+	boolean isMouseInputEvent;
 	@ObfuscatedName("w")
 	@ObfuscatedSignature(
 		descriptor = "Lkn;"
@@ -27,38 +34,64 @@ public class ScriptEvent extends Node {
 	@Export("widget")
 	Widget widget;
 	@ObfuscatedName("v")
-	int field1032;
+	@ObfuscatedGetter(
+		intValue = 1908546929
+	)
+	@Export("mouseX")
+	int mouseX;
 	@ObfuscatedName("c")
-	int field1030;
+	@ObfuscatedGetter(
+		intValue = 2078605609
+	)
+	@Export("mouseY")
+	int mouseY;
 	@ObfuscatedName("q")
+	@ObfuscatedGetter(
+		intValue = 292390885
+	)
 	@Export("opIndex")
 	int opIndex;
 	@ObfuscatedName("i")
 	@ObfuscatedSignature(
 		descriptor = "Lkn;"
 	)
-	Widget field1035;
+	@Export("dragTarget")
+	Widget dragTarget;
 	@ObfuscatedName("k")
-	int field1037;
+	@ObfuscatedGetter(
+		intValue = 358587025
+	)
+	@Export("keyTyped")
+	int keyTyped;
 	@ObfuscatedName("o")
-	int field1033;
+	@ObfuscatedGetter(
+		intValue = 474745929
+	)
+	@Export("keyPressed")
+	int keyPressed;
 	@ObfuscatedName("n")
 	@Export("targetName")
 	String targetName;
 	@ObfuscatedName("d")
+	@ObfuscatedGetter(
+		intValue = -327885641
+	)
 	int field1039;
 	@ObfuscatedName("a")
+	@ObfuscatedGetter(
+		intValue = 736580663
+	)
 	@Export("type")
 	int type;
 
 	public ScriptEvent() {
-		this.type = -1256197100;
+		this.type = 76;
 	}
 
 	@ObfuscatedName("s")
 	@ObfuscatedSignature(
-		descriptor = "([Ljava/lang/Object;I)V",
-		garbageValue = "1390308076"
+		garbageValue = "1390308076",
+		descriptor = "([Ljava/lang/Object;I)V"
 	)
 	@Export("setArgs")
 	public void setArgs(Object[] var1) {
@@ -67,18 +100,18 @@ public class ScriptEvent extends Node {
 
 	@ObfuscatedName("h")
 	@ObfuscatedSignature(
-		descriptor = "(II)V",
-		garbageValue = "-1431944361"
+		garbageValue = "-1431944361",
+		descriptor = "(II)V"
 	)
 	@Export("setType")
 	public void setType(int var1) {
-		this.type = var1 * -1655398009;
+		this.type = var1;
 	}
 
 	@ObfuscatedName("s")
 	@ObfuscatedSignature(
-		descriptor = "(I)[Ljy;",
-		garbageValue = "331732172"
+		garbageValue = "331732172",
+		descriptor = "(I)[Ljy;"
 	)
 	@Export("ServerPacket_values")
 	public static ServerPacket[] ServerPacket_values() {
@@ -87,19 +120,19 @@ public class ScriptEvent extends Node {
 
 	@ObfuscatedName("s")
 	@ObfuscatedSignature(
-		descriptor = "([BI)Lii;",
-		garbageValue = "1858757744"
+		garbageValue = "1858757744",
+		descriptor = "([BI)Lii;"
 	)
-	static WorldMapSprite method2063(byte[] var0) {
-		return var0 == null ? new WorldMapSprite() : new WorldMapSprite(class155.method3172(var0).pixels);
+	static WorldMapSprite method1998(byte[] var0) {
+		return var0 == null ? new WorldMapSprite() : new WorldMapSprite(class155.method3107(var0).pixels);
 	}
 
 	@ObfuscatedName("l")
 	@ObfuscatedSignature(
-		descriptor = "(II)I",
-		garbageValue = "1186851078"
+		garbageValue = "1186851078",
+		descriptor = "(II)I"
 	)
-	public static int method2064(int var0) {
+	public static int method1999(int var0) {
 		if (var0 > 0) {
 			return 1;
 		} else {

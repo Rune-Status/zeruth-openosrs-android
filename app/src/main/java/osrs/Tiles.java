@@ -2,6 +2,7 @@ package osrs;
 
 import net.runelite.mapping.Export;
 import net.runelite.mapping.Implements;
+import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
@@ -15,6 +16,9 @@ public final class Tiles {
 	@Export("Tiles_renderFlags")
 	static byte[][][] Tiles_renderFlags;
 	@ObfuscatedName("w")
+	@ObfuscatedGetter(
+		intValue = -625386397
+	)
 	@Export("Tiles_minPlane")
 	static int Tiles_minPlane;
 	@ObfuscatedName("v")
@@ -38,50 +42,56 @@ public final class Tiles {
 	@ObfuscatedName("t")
 	static final int[] field970;
 	@ObfuscatedName("j")
+	@ObfuscatedGetter(
+		intValue = 565999891
+	)
 	@Export("rndHue")
 	static int rndHue;
 	@ObfuscatedName("g")
+	@ObfuscatedGetter(
+		intValue = -917550561
+	)
 	@Export("rndLightness")
 	static int rndLightness;
 
 	static {
 		Tiles_heights = new int[4][105][105];
 		Tiles_renderFlags = new byte[4][104][104];
-		Tiles_minPlane = -52032511;
+		Tiles_minPlane = 99;
 		field977 = new int[]{1, 2, 4, 8};
 		field978 = new int[]{16, 32, 64, 128};
 		field979 = new int[]{1, 0, -1, 0};
 		field982 = new int[]{0, -1, 0, 1};
 		field981 = new int[]{1, -1, -1, 1};
 		field970 = new int[]{-1, -1, 1, 1};
-		rndHue = ((int)(Math.random() * 17.0D) - 8) * 1013856539;
-		rndLightness = ((int)(Math.random() * 33.0D) - 16) * -1502498337;
+		rndHue = (int)(Math.random() * 17.0D) - 8;
+		rndLightness = (int)(Math.random() * 33.0D) - 16;
 	}
 
 	@ObfuscatedName("s")
 	@ObfuscatedSignature(
-		descriptor = "(S)I",
-		garbageValue = "-9992"
+		garbageValue = "-9992",
+		descriptor = "(S)I"
 	)
-	static int method1973() {
-		return (Messages.Messages_count += -811195935) * -2125602271 - 1;
+	static int method1908() {
+		return ++Messages.Messages_count - 1;
 	}
 
 	@ObfuscatedName("w")
 	@ObfuscatedSignature(
-		descriptor = "(Lls;III)[Lqn;",
-		garbageValue = "-2043818816"
+		garbageValue = "-2043818816",
+		descriptor = "(Lls;III)[Lqn;"
 	)
-	public static SpritePixels[] method2024(AbstractArchive var0, int var1, int var2) {
-		if (!Tile.method3937(var0, var1, var2)) {
+	public static SpritePixels[] method1959(AbstractArchive var0, int var1, int var2) {
+		if (!Tile.method3872(var0, var1, var2)) {
 			return null;
 		} else {
-			SpritePixels[] var4 = new SpritePixels[class457.SpriteBuffer_spriteCount * 1326236295];
+			SpritePixels[] var4 = new SpritePixels[class457.SpriteBuffer_spriteCount];
 
-			for (int var5 = 0; var5 < class457.SpriteBuffer_spriteCount * 1326236295; ++var5) {
+			for (int var5 = 0; var5 < class457.SpriteBuffer_spriteCount; ++var5) {
 				SpritePixels var6 = var4[var5] = new SpritePixels();
-				var6.width = class457.SpriteBuffer_spriteWidth * -1667114695;
-				var6.height = class457.SpriteBuffer_spriteHeight * -614338987;
+				var6.width = class457.SpriteBuffer_spriteWidth;
+				var6.height = class457.SpriteBuffer_spriteHeight;
 				var6.xOffset = class457.SpriteBuffer_xOffsets[var5];
 				var6.yOffset = InterfaceParent.SpriteBuffer_yOffsets[var5];
 				var6.subWidth = class457.SpriteBuffer_spriteWidths[var5];
@@ -107,10 +117,10 @@ public final class Tiles {
 
 	@ObfuscatedName("i")
 	@ObfuscatedSignature(
-		descriptor = "(B)V",
-		garbageValue = "5"
+		garbageValue = "5",
+		descriptor = "(B)V"
 	)
-	public static void method2022() {
+	public static void method1957() {
 		StructComposition.StructDefinition_cached.clear();
 	}
 
@@ -118,12 +128,12 @@ public final class Tiles {
 	@ObfuscatedSignature(
 		descriptor = "([BIIIIIIILgy;[Lgl;)V"
 	)
-	static final void method2011(byte[] var0, int var1, int var2, int var3, int var4, int var5, int var6, int var7, Scene var8, CollisionMap[] var9) {
+	static final void method1946(byte[] var0, int var1, int var2, int var3, int var4, int var5, int var6, int var7, Scene var8, CollisionMap[] var9) {
 		Buffer var10 = new Buffer(var0);
 		int var11 = -1;
 
 		while (true) {
-			int var12 = var10.method7881();
+			int var12 = var10.method7774();
 			if (var12 == 0) {
 				return;
 			}
@@ -148,8 +158,8 @@ public final class Tiles {
 					ObjectComposition var21 = FileSystem.getObjectDefinition(var11);
 					int var24 = var16 & 7;
 					int var25 = var15 & 7;
-					int var27 = var21.sizeX * 6263545;
-					int var28 = var21.sizeY * -1277582079;
+					int var27 = var21.sizeX;
+					int var28 = var21.sizeY;
 					int var29;
 					if ((var20 & 1) == 1) {
 						var29 = var27;
@@ -172,8 +182,8 @@ public final class Tiles {
 					var29 = var23 + var2;
 					int var32 = var16 & 7;
 					int var33 = var15 & 7;
-					int var35 = var21.sizeX * 6263545;
-					int var36 = var21.sizeY * -1277582079;
+					int var35 = var21.sizeX;
+					int var36 = var21.sizeY;
 					int var37;
 					if ((var20 & 1) == 1) {
 						var37 = var35;
@@ -214,10 +224,11 @@ public final class Tiles {
 
 	@ObfuscatedName("kw")
 	@ObfuscatedSignature(
-		descriptor = "(Lkn;B)Z",
-		garbageValue = "3"
+		garbageValue = "3",
+		descriptor = "(Lkn;B)Z"
 	)
-	static boolean method2023(Widget var0) {
+	@Export("isComponentHidden")
+	static boolean isComponentHidden(Widget var0) {
 		return var0.isHidden;
 	}
 }

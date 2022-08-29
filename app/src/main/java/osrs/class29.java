@@ -1,22 +1,27 @@
 package osrs;
 
 import net.runelite.mapping.Export;
+import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
 @ObfuscatedName("aj")
 public class class29 {
 	@ObfuscatedName("td")
+	@ObfuscatedGetter(
+		intValue = -2045339783
+	)
 	static int field172;
 	@ObfuscatedName("s")
-	public static Object field174;
+	public static GameEngine field174;
 	@ObfuscatedName("h")
 	public static String field167;
 	@ObfuscatedName("m")
 	@ObfuscatedSignature(
 		descriptor = "Lqe;"
 	)
-	static IndexedSprite field168;
+	@Export("options_buttons_0Sprite")
+	static IndexedSprite options_buttons_0Sprite;
 
 	static {
 		field174 = null;
@@ -25,8 +30,8 @@ public class class29 {
 
 	@ObfuscatedName("s")
 	@ObfuscatedSignature(
-		descriptor = "(IB)F",
-		garbageValue = "-43"
+		garbageValue = "-43",
+		descriptor = "(IB)F"
 	)
 	public static float method388(int var0) {
 		var0 &= 16383;
@@ -35,8 +40,8 @@ public class class29 {
 
 	@ObfuscatedName("q")
 	@ObfuscatedSignature(
-		descriptor = "(IB)V",
-		garbageValue = "31"
+		garbageValue = "31",
+		descriptor = "(IB)V"
 	)
 	static void method391(int var0) {
 		ItemContainer var1 = (ItemContainer)ItemContainer.itemContainers.get((long)var0);
@@ -47,30 +52,30 @@ public class class29 {
 
 	@ObfuscatedName("ja")
 	@ObfuscatedSignature(
-		descriptor = "(Lcb;ZB)V",
-		garbageValue = "4"
+		garbageValue = "4",
+		descriptor = "(Lcb;ZB)V"
 	)
 	@Export("closeInterface")
 	static final void closeInterface(InterfaceParent var0, boolean var1) {
-		int var2 = var0.group * 1124857953;
+		int var2 = var0.group;
 		int var3 = (int)var0.key;
 		var0.remove();
 		if (var1 && var2 != -1 && Widget.Widget_loadedInterfaces[var2]) {
 			class438.Widget_archive.clearFilesGroup(var2);
 			if (class358.Widget_interfaceComponents[var2] != null) {
-				boolean var4 = true;
+				boolean var6 = true;
 
 				for (int var5 = 0; var5 < class358.Widget_interfaceComponents[var2].length; ++var5) {
 					if (class358.Widget_interfaceComponents[var2][var5] != null) {
-						if (class358.Widget_interfaceComponents[var2][var5].type * 1201269859 != 2) {
+						if (class358.Widget_interfaceComponents[var2][var5].type != 2) {
 							class358.Widget_interfaceComponents[var2][var5] = null;
 						} else {
-							var4 = false;
+							var6 = false;
 						}
 					}
 				}
 
-				if (var4) {
+				if (var6) {
 					class358.Widget_interfaceComponents[var2] = null;
 				}
 
@@ -78,14 +83,14 @@ public class class29 {
 			}
 		}
 
-		StudioGame.method5676(var2);
-		Widget var6 = HitSplatDefinition.getWidget(var3);
-		if (var6 != null) {
-			class125.method2770(var6);
+		StudioGame.method5605(var2);
+		Widget var4 = HitSplatDefinition.getWidget(var3);
+		if (var4 != null) {
+			class125.invalidateWidget(var4);
 		}
 
-		if (Client.field649 * 1440668979 != -1) {
-			ModelData0.runIntfCloseListeners(Client.field649 * 1440668979, 1);
+		if (Client.rootInterface != -1) {
+			ModelData0.runIntfCloseListeners(Client.rootInterface, 1);
 		}
 
 	}

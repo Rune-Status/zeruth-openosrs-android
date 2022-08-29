@@ -33,10 +33,10 @@ public class Varps {
 
 	@ObfuscatedName("w")
 	@ObfuscatedSignature(
-		descriptor = "(IIB)Lbz;",
-		garbageValue = "8"
+		garbageValue = "8",
+		descriptor = "(IIB)Lbz;"
 	)
-	static Script method5465(int var0, int var1) {
+	static Script method5398(int var0, int var1) {
 		Script var2 = (Script)Script.Script_cached.get((long)(var0 << 16));
 		if (var2 != null) {
 			return var2;

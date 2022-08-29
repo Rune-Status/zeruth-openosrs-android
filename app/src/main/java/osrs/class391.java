@@ -1,11 +1,12 @@
 package osrs;
 
 import net.runelite.mapping.Export;
+import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
 @ObfuscatedName("op")
-public enum class391 implements class328 {
+public enum class391 implements MouseWheel {
 	@ObfuscatedName("s")
 	@ObfuscatedSignature(
 		descriptor = "Lop;"
@@ -28,24 +29,31 @@ public enum class391 implements class328 {
 	field4421(1, 10);
 
 	@ObfuscatedName("ah")
-	protected static boolean field4425;
+	@Export("hasFocus")
+	protected static boolean hasFocus;
 	@ObfuscatedName("c")
+	@ObfuscatedGetter(
+		intValue = 638529671
+	)
 	final int field4424;
 	@ObfuscatedName("q")
+	@ObfuscatedGetter(
+		intValue = -127163675
+	)
 	final int field4426;
 
 	class391(int var3, int var4) {
-		this.field4424 = var3 * 1578276151;
-		this.field4426 = var4 * -1040954643;
+		this.field4424 = var3;
+		this.field4426 = var4;
 	}
 
 	@ObfuscatedName("h")
 	@ObfuscatedSignature(
-		descriptor = "(B)I",
-		garbageValue = "104"
+		garbageValue = "104",
+		descriptor = "(B)I"
 	)
 	@Export("rsOrdinal")
 	public int rsOrdinal() {
-		return this.field4426 * -127163675;
+		return this.field4426;
 	}
 }

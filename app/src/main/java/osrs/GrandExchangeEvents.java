@@ -46,8 +46,8 @@ public class GrandExchangeEvents {
 	}
 
 	@ObfuscatedSignature(
-		descriptor = "(Lqr;Z)V",
-		garbageValue = "1"
+		garbageValue = "1",
+		descriptor = "(Lqr;Z)V"
 	)
 	public GrandExchangeEvents(Buffer var1, boolean var2) {
 		int var3 = var1.readUnsignedShort();
@@ -70,8 +70,8 @@ public class GrandExchangeEvents {
 
 	@ObfuscatedName("s")
 	@ObfuscatedSignature(
-		descriptor = "(Ljava/util/Comparator;ZI)V",
-		garbageValue = "-189002153"
+		garbageValue = "-189002153",
+		descriptor = "(Ljava/util/Comparator;ZI)V"
 	)
 	@Export("sort")
 	public void sort(Comparator var1, boolean var2) {
@@ -85,10 +85,10 @@ public class GrandExchangeEvents {
 
 	@ObfuscatedName("iq")
 	@ObfuscatedSignature(
-		descriptor = "(Lkn;II)I",
-		garbageValue = "-2032315248"
+		garbageValue = "-2032315248",
+		descriptor = "(Lkn;II)I"
 	)
-	static final int method5876(Widget var0, int var1) {
+	static final int method5805(Widget var0, int var1) {
 		if (var0.cs1Instructions != null && var1 < var0.cs1Instructions.length) {
 			try {
 				int[] var2 = var0.cs1Instructions[var1];
@@ -147,7 +147,7 @@ public class GrandExchangeEvents {
 					}
 
 					if (var6 == 8) {
-						var7 = class56.localPlayer.field1088 * 295884031;
+						var7 = ScriptFrame.localPlayer.combatLevel;
 					}
 
 					if (var6 == 9) {
@@ -174,11 +174,11 @@ public class GrandExchangeEvents {
 					}
 
 					if (var6 == 11) {
-						var7 = Client.field656 * 169360043;
+						var7 = Client.runEnergy;
 					}
 
 					if (var6 == 12) {
-						var7 = Client.field657 * 1767446111;
+						var7 = Client.weight;
 					}
 
 					if (var6 == 13) {
@@ -205,11 +205,11 @@ public class GrandExchangeEvents {
 					}
 
 					if (var6 == 18) {
-						var7 = (class56.localPlayer.x * 1627221919 >> 7) + Decimator.field404 * 620670661;
+						var7 = (ScriptFrame.localPlayer.x >> 7) + Decimator.baseX;
 					}
 
 					if (var6 == 19) {
-						var7 = (class56.localPlayer.y * 1229064101 >> 7) + class7.field30 * 542116271;
+						var7 = class7.baseY * 542116271 + (ScriptFrame.localPlayer.y >> 7);
 					}
 
 					if (var6 == 20) {

@@ -19,19 +19,19 @@ public class class401 implements class399 {
 
 	@ObfuscatedName("s")
 	@ObfuscatedSignature(
-		descriptor = "(B)[B",
-		garbageValue = "57"
+		garbageValue = "57",
+		descriptor = "(B)[B"
 	)
-	public byte[] vmethod7057() throws UnsupportedEncodingException {
-		return this.method7058().getBytes("UTF-8");
+	public byte[] vmethod6954() throws UnsupportedEncodingException {
+		return this.method6955().getBytes("UTF-8");
 	}
 
 	@ObfuscatedName("w")
 	@ObfuscatedSignature(
-		descriptor = "(B)Ljava/lang/String;",
-		garbageValue = "8"
+		garbageValue = "8",
+		descriptor = "(B)Ljava/lang/String;"
 	)
-	public String method7058() throws UnsupportedEncodingException {
+	public String method6955() throws UnsupportedEncodingException {
 		StringBuilder var1 = new StringBuilder();
 		Iterator var2 = this.field4440.entrySet().iterator();
 
@@ -53,10 +53,10 @@ public class class401 implements class399 {
 
 	@ObfuscatedName("s")
 	@ObfuscatedSignature(
-		descriptor = "(Ljava/lang/Object;ZI)[B",
-		garbageValue = "-906139153"
+		garbageValue = "-906139153",
+		descriptor = "(Ljava/lang/Object;ZI)[B"
 	)
-	public static byte[] method7060(Object var0, boolean var1) {
+	public static byte[] method6957(Object var0, boolean var1) {
 		if (var0 == null) {
 			return null;
 		} else if (var0 instanceof byte[]) {

@@ -15,10 +15,10 @@ public class class290 {
 
 	@ObfuscatedName("w")
 	@ObfuscatedSignature(
-		descriptor = "(II)I",
-		garbageValue = "-548587979"
+		garbageValue = "-548587979",
+		descriptor = "(II)I"
 	)
-	public static int method5488(int var0) {
-		return (var0 & class439.field4689 * 812509895) - 1;
+	public static int method5417(int var0) {
+		return (var0 & class439.field4689) - 1;
 	}
 }

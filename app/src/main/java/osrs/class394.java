@@ -16,9 +16,9 @@ public class class394 extends class395 {
 
 	@ObfuscatedName("s")
 	@ObfuscatedSignature(
-		descriptor = "(Lqr;IS)V",
-		garbageValue = "4362"
+		garbageValue = "4362",
+		descriptor = "(Lqr;IS)V"
 	)
-	void vmethod7027(Buffer var1, int var2) {
+	void vmethod6924(Buffer var1, int var2) {
 	}
 }

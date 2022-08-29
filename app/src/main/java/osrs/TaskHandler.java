@@ -68,8 +68,8 @@ public class TaskHandler implements Runnable {
 
 	@ObfuscatedName("s")
 	@ObfuscatedSignature(
-		descriptor = "(I)V",
-		garbageValue = "-1651178951"
+		garbageValue = "-1651178951",
+		descriptor = "(I)V"
 	)
 	@Export("close")
 	public final void close() {
@@ -87,13 +87,13 @@ public class TaskHandler implements Runnable {
 
 	@ObfuscatedName("h")
 	@ObfuscatedSignature(
-		descriptor = "(IIILjava/lang/Object;B)Lfq;",
-		garbageValue = "-53"
+		garbageValue = "-53",
+		descriptor = "(IIILjava/lang/Object;B)Lfq;"
 	)
 	@Export("newTask")
 	final Task newTask(int var1, int var2, int var3, Object var4) {
 		Task var5 = new Task();
-		var5.type = var1 * -687012345;
+		var5.type = var1;
 		var5.intArgument = var2;
 		var5.objectArgument = var4;
 		synchronized(this) {
@@ -111,17 +111,18 @@ public class TaskHandler implements Runnable {
 
 	@ObfuscatedName("w")
 	@ObfuscatedSignature(
-		descriptor = "(Ljava/lang/String;II)Lfq;",
-		garbageValue = "-248279803"
+		garbageValue = "-248279803",
+		descriptor = "(Ljava/lang/String;II)Lfq;"
 	)
-	public final Task method3176(String var1, int var2) {
+	@Export("newSocketTask")
+	public final Task newSocketTask(String var1, int var2) {
 		return this.newTask(1, var2, 0, var1);
 	}
 
 	@ObfuscatedName("v")
 	@ObfuscatedSignature(
-		descriptor = "(Ljava/lang/Runnable;II)Lfq;",
-		garbageValue = "-1999660909"
+		garbageValue = "-1999660909",
+		descriptor = "(Ljava/lang/Runnable;II)Lfq;"
 	)
 	@Export("newThreadTask")
 	public final Task newThreadTask(Runnable var1, int var2) {
@@ -154,43 +155,43 @@ public class TaskHandler implements Runnable {
 			}
 
 			try {
-				int var5 = var1.type * 329615287;
+				int var5 = var1.type;
 				if (var5 == 1) {
-					var1.field1777 = new Socket(InetAddress.getByName((String)var1.objectArgument), var1.intArgument);
+					var1.result = new Socket(InetAddress.getByName((String)var1.objectArgument), var1.intArgument);
 				} else if (var5 == 2) {
 					Thread var3 = new Thread((Runnable)var1.objectArgument);
 					var3.setDaemon(true);
 					var3.start();
 					var3.setPriority(var1.intArgument);
-					var1.field1777 = var3;
+					var1.result = var3;
 				} else if (var5 == 4) {
-					var1.field1777 = new DataInputStream(((URL)var1.objectArgument).openStream());
+					var1.result = new DataInputStream(((URL)var1.objectArgument).openStream());
 				}
 
-				var1.field1778 = 1;
+				var1.status = 1;
 			} catch (ThreadDeath var6) {
 				throw var6;
 			} catch (Throwable var7) {
-				var1.field1778 = 2;
+				var1.status = 2;
 			}
 		}
 	}
 
 	@ObfuscatedName("h")
 	@ObfuscatedSignature(
-		descriptor = "(IIB)Z",
-		garbageValue = "3"
+		garbageValue = "3",
+		descriptor = "(IIB)Z"
 	)
-	public static boolean method3189(int var0, int var1) {
+	public static boolean method3124(int var0, int var1) {
 		return (var0 >> var1 + 1 & 1) != 0;
 	}
 
 	@ObfuscatedName("ha")
 	@ObfuscatedSignature(
-		descriptor = "(I)Z",
-		garbageValue = "2140154660"
+		garbageValue = "2140154660",
+		descriptor = "(I)Z"
 	)
-	static final boolean method3190() {
+	static final boolean method3125() {
 		return Client.isMenuOpen;
 	}
 }

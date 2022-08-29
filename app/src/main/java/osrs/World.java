@@ -2,6 +2,7 @@ package osrs;
 
 import net.runelite.mapping.Export;
 import net.runelite.mapping.Implements;
+import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
@@ -15,9 +16,15 @@ public class World {
 	@Export("World_worlds")
 	static World[] World_worlds;
 	@ObfuscatedName("q")
+	@ObfuscatedGetter(
+		intValue = -898146975
+	)
 	@Export("World_count")
 	static int World_count;
 	@ObfuscatedName("i")
+	@ObfuscatedGetter(
+		intValue = -68555585
+	)
 	@Export("World_listCount")
 	static int World_listCount;
 	@ObfuscatedName("k")
@@ -27,19 +34,41 @@ public class World {
 	@Export("World_sortOption1")
 	static int[] World_sortOption1;
 	@ObfuscatedName("d")
-	int field779;
+	@ObfuscatedGetter(
+		intValue = -1527326097
+	)
+	@Export("id")
+	int id;
 	@ObfuscatedName("a")
-	int field780;
+	@ObfuscatedGetter(
+		intValue = -224086541
+	)
+	@Export("properties")
+	int properties;
 	@ObfuscatedName("m")
-	int field781;
+	@ObfuscatedGetter(
+		intValue = 519550573
+	)
+	@Export("population")
+	int population;
 	@ObfuscatedName("u")
-	String field782;
+	@Export("host")
+	String host;
 	@ObfuscatedName("l")
-	String field783;
+	@Export("activity")
+	String activity;
 	@ObfuscatedName("z")
-	int field784;
+	@ObfuscatedGetter(
+		intValue = -192731231
+	)
+	@Export("location")
+	int location;
 	@ObfuscatedName("r")
-	int field775;
+	@ObfuscatedGetter(
+		intValue = -1040647153
+	)
+	@Export("index")
+	int index;
 
 	static {
 		World_count = 0;
@@ -53,80 +82,82 @@ public class World {
 
 	@ObfuscatedName("n")
 	@ObfuscatedSignature(
-		descriptor = "(I)Z",
-		garbageValue = "1827716988"
+		garbageValue = "1827716988",
+		descriptor = "(I)Z"
 	)
 	@Export("isMembersOnly")
 	boolean isMembersOnly() {
-		return (1 & this.field780 * -224086541) != 0;
+		return (1 & this.properties) != 0;
 	}
 
 	@ObfuscatedName("d")
 	@ObfuscatedSignature(
-		descriptor = "(I)Z",
-		garbageValue = "-1456709211"
+		garbageValue = "-1456709211",
+		descriptor = "(I)Z"
 	)
-	boolean method1587() {
-		return (2 & this.field780 * -224086541) != 0;
+	boolean method1522() {
+		return (2 & this.properties) != 0;
 	}
 
 	@ObfuscatedName("a")
 	@ObfuscatedSignature(
-		descriptor = "(B)Z",
-		garbageValue = "-20"
+		garbageValue = "-20",
+		descriptor = "(B)Z"
 	)
 	@Export("isPvp")
 	boolean isPvp() {
-		return (4 & this.field780 * -224086541) != 0;
+		return (4 & this.properties) != 0;
 	}
 
 	@ObfuscatedName("m")
 	@ObfuscatedSignature(
-		descriptor = "(I)Z",
-		garbageValue = "1495382243"
+		garbageValue = "1495382243",
+		descriptor = "(I)Z"
 	)
-	boolean method1596() {
-		return (8 & this.field780 * -224086541) != 0;
+	boolean method1531() {
+		return (8 & this.properties) != 0;
 	}
 
 	@ObfuscatedName("u")
 	@ObfuscatedSignature(
-		descriptor = "(B)Z",
-		garbageValue = "-113"
+		garbageValue = "-113",
+		descriptor = "(B)Z"
 	)
-	boolean method1584() {
-		return (536870912 & this.field780 * -224086541) != 0;
+	@Export("isDeadman")
+	boolean isDeadman() {
+		return (536870912 & this.properties) != 0;
 	}
 
 	@ObfuscatedName("l")
 	@ObfuscatedSignature(
-		descriptor = "(B)Z",
-		garbageValue = "10"
+		garbageValue = "10",
+		descriptor = "(B)Z"
 	)
-	boolean method1600() {
-		return (33554432 & this.field780 * -224086541) != 0;
+	@Export("isBeta")
+	boolean isBeta() {
+		return (33554432 & this.properties) != 0;
 	}
 
 	@ObfuscatedName("z")
 	@ObfuscatedSignature(
-		descriptor = "(I)Z",
-		garbageValue = "1404429891"
+		garbageValue = "1404429891",
+		descriptor = "(I)Z"
 	)
-	boolean method1586() {
-		return (1073741824 & this.field780 * -224086541) != 0;
+	boolean method1521() {
+		return (1073741824 & this.properties) != 0;
 	}
 
 	@ObfuscatedName("s")
 	@ObfuscatedSignature(
-		descriptor = "(Lqr;Lpm;I)Lpm;",
-		garbageValue = "-1783565282"
+		garbageValue = "-1783565282",
+		descriptor = "(Lqr;Lpm;I)Lpm;"
 	)
 	@Export("readStringIntParameters")
 	static final IterableNodeHashTable readStringIntParameters(Buffer var0, IterableNodeHashTable var1) {
 		int var2 = var0.readUnsignedByte();
 		int var3;
 		if (var1 == null) {
-			var3 = WorldMapDecoration.method4914(var2);
+			var3 = WorldMapDecoration.method4847(var2);
 			var1 = new IterableNodeHashTable(var3);
 		}
 
@@ -148,8 +179,8 @@ public class World {
 
 	@ObfuscatedName("o")
 	@ObfuscatedSignature(
-		descriptor = "(Lkn;I[B[BB)V",
-		garbageValue = "45"
+		garbageValue = "45",
+		descriptor = "(Lkn;I[B[BB)V"
 	)
 	@Export("Widget_setKey")
 	static final void Widget_setKey(Widget var0, int var1, byte[] var2, byte[] var3) {
@@ -183,22 +214,22 @@ public class World {
 
 	@ObfuscatedName("z")
 	@ObfuscatedSignature(
-		descriptor = "(III)I",
-		garbageValue = "2140498958"
+		garbageValue = "2140498958",
+		descriptor = "(III)I"
 	)
-	static final int method1623(int var0, int var1) {
-		int var2 = class228.method4802(var0 - 1, var1 - 1) + class228.method4802(var0 + 1, var1 - 1) + class228.method4802(var0 - 1, 1 + var1) + class228.method4802(var0 + 1, 1 + var1);
-		int var3 = class228.method4802(var0 - 1, var1) + class228.method4802(var0 + 1, var1) + class228.method4802(var0, var1 - 1) + class228.method4802(var0, 1 + var1);
-		int var4 = class228.method4802(var0, var1);
+	static final int method1558(int var0, int var1) {
+		int var2 = class228.method4735(var0 - 1, var1 - 1) + class228.method4735(var0 + 1, var1 - 1) + class228.method4735(var0 - 1, 1 + var1) + class228.method4735(var0 + 1, 1 + var1);
+		int var3 = class228.method4735(var0 - 1, var1) + class228.method4735(var0 + 1, var1) + class228.method4735(var0, var1 - 1) + class228.method4735(var0, 1 + var1);
+		int var4 = class228.method4735(var0, var1);
 		return var2 / 16 + var3 / 8 + var4 / 4;
 	}
 
 	@ObfuscatedName("gs")
 	@ObfuscatedSignature(
-		descriptor = "(III)I",
-		garbageValue = "-1723832052"
+		garbageValue = "-1723832052",
+		descriptor = "(III)I"
 	)
-	static int method1624(int var0, int var1) {
+	static int method1559(int var0, int var1) {
 		int var2 = var1 - 334;
 		if (var2 < 0) {
 			var2 = 0;

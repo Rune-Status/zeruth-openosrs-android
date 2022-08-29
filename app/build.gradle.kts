@@ -12,6 +12,11 @@ android {
         versionCode = 1
         versionName = "1.0"
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+        externalNativeBuild {
+            cmake {
+                cppFlags += ""
+            }
+        }
     }
     buildTypes {
         getByName("release") {
@@ -26,6 +31,13 @@ android {
         disable.add("ExpiredTargetSdkVersion")
     }
     buildToolsVersion = "29.0.2"
+    externalNativeBuild {
+        cmake {
+            path = file("src/main/cpp/CMakeLists.txt")
+            version = "3.18.1"
+        }
+    }
+    ndkVersion = "25.1.8937393"
 }
 
 repositories {

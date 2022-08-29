@@ -5,7 +5,7 @@ import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
 @ObfuscatedName("gi")
-public enum class192 implements class328 {
+public enum class192 implements MouseWheel {
 	@ObfuscatedName("s")
 	@ObfuscatedSignature(
 		descriptor = "Lgi;"
@@ -36,8 +36,8 @@ public enum class192 implements class328 {
 
 	@ObfuscatedName("h")
 	@ObfuscatedSignature(
-		descriptor = "(B)I",
-		garbageValue = "104"
+		garbageValue = "104",
+		descriptor = "(B)I"
 	)
 	@Export("rsOrdinal")
 	public int rsOrdinal() {

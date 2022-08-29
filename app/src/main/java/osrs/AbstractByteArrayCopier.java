@@ -23,16 +23,16 @@ public abstract class AbstractByteArrayCopier {
 
 	@ObfuscatedName("h")
 	@ObfuscatedSignature(
-		descriptor = "(I)[B",
-		garbageValue = "-946242295"
+		garbageValue = "-946242295",
+		descriptor = "(I)[B"
 	)
 	@Export("get")
 	abstract byte[] get();
 
 	@ObfuscatedName("w")
 	@ObfuscatedSignature(
-		descriptor = "([BI)V",
-		garbageValue = "1451224319"
+		garbageValue = "1451224319",
+		descriptor = "([BI)V"
 	)
 	@Export("set")
 	public abstract void set(byte[] var1);

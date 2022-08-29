@@ -1,5 +1,6 @@
 package osrs;
 
+import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
@@ -8,6 +9,9 @@ public class class140 extends class144 {
 	@ObfuscatedName("s")
 	String field1627;
 	@ObfuscatedName("h")
+	@ObfuscatedGetter(
+		intValue = -1156811659
+	)
 	int field1628;
 	@ObfuscatedName("w")
 	byte field1626;
@@ -27,47 +31,47 @@ public class class140 extends class144 {
 
 	@ObfuscatedName("s")
 	@ObfuscatedSignature(
-		descriptor = "(Lqr;I)V",
-		garbageValue = "1539485988"
+		garbageValue = "1539485988",
+		descriptor = "(Lqr;I)V"
 	)
-	void vmethod3074(Buffer var1) {
+	void vmethod3009(Buffer var1) {
 		if (var1.readUnsignedByte() != 255) {
-			var1.offset -= 1090888991;
+			--var1.offset;
 			var1.readLong();
 		}
 
 		this.field1627 = var1.readStringCp1252NullTerminatedOrNull();
-		this.field1628 = var1.readUnsignedShort() * -625558563;
+		this.field1628 = var1.readUnsignedShort();
 		this.field1626 = var1.readByte();
 		var1.readLong();
 	}
 
 	@ObfuscatedName("h")
 	@ObfuscatedSignature(
-		descriptor = "(Lec;I)V",
-		garbageValue = "-1270425284"
+		garbageValue = "-1270425284",
+		descriptor = "(Lec;I)V"
 	)
-	void vmethod3073(ClanChannel var1) {
+	void vmethod3008(ClanChannel var1) {
 		ClanChannelMember var2 = new ClanChannelMember();
 		var2.username = new Username(this.field1627);
-		var2.world = this.field1628 * -19482535;
+		var2.world = this.field1628;
 		var2.rank = this.field1626;
 		var1.addMember(var2);
 	}
 
 	@ObfuscatedName("k")
 	@ObfuscatedSignature(
-		descriptor = "([BIII)Z",
-		garbageValue = "-487769404"
+		garbageValue = "-487769404",
+		descriptor = "([BIII)Z"
 	)
-	static final boolean method2968(byte[] var0, int var1, int var2) {
+	static final boolean method2903(byte[] var0, int var1, int var2) {
 		boolean var3 = true;
 		Buffer var4 = new Buffer(var0);
 		int var5 = -1;
 
-		label70:
+		label69:
 		while (true) {
-			int var6 = var4.method7881();
+			int var6 = var4.method7774();
 			if (var6 == 0) {
 				return var3;
 			}
@@ -81,7 +85,7 @@ public class class140 extends class144 {
 				while (!var8) {
 					var9 = var4.readUShortSmart();
 					if (var9 == 0) {
-						continue label70;
+						continue label69;
 					}
 
 					var7 += var9 - 1;
@@ -92,9 +96,9 @@ public class class140 extends class144 {
 					int var14 = var10 + var2;
 					if (var13 > 0 && var14 > 0 && var13 < 103 && var14 < 103) {
 						ObjectComposition var15 = FileSystem.getObjectDefinition(var5);
-						if (var12 != 22 || !Client.isLowDetail || var15.int1 * 1193889907 != 0 || var15.interactType * 1112693661 == 1 || var15.boolean2) {
+						if (var12 != 22 || !Client.isLowDetail || var15.int1 != 0 || var15.interactType == 1 || var15.boolean2) {
 							if (!var15.needsModelFiles()) {
-								Client.field644 += 1605735773;
+								++Client.field644;
 								var3 = false;
 							}
 

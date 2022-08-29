@@ -110,7 +110,7 @@ public class PcmStreamMixer extends PcmStream {
 	}
 
 	@ObfuscatedName("k")
-	protected int vmethod5396() {
+	protected int vmethod5329() {
 		return 0;
 	}
 

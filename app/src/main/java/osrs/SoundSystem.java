@@ -41,8 +41,8 @@ public class SoundSystem implements Runnable {
 
 	@ObfuscatedName("s")
 	@ObfuscatedSignature(
-		descriptor = "(IB)Ljava/lang/String;",
-		garbageValue = "1"
+		garbageValue = "1",
+		descriptor = "(IB)Ljava/lang/String;"
 	)
 	static String method740(int var0) {
 		return "<img=" + var0 + ">";
@@ -50,8 +50,8 @@ public class SoundSystem implements Runnable {
 
 	@ObfuscatedName("ia")
 	@ObfuscatedSignature(
-		descriptor = "(Lkn;Lgb;IIZB)V",
-		garbageValue = "8"
+		garbageValue = "8",
+		descriptor = "(Lkn;Lgb;IIZB)V"
 	)
 	@Export("addWidgetItemMenuItem")
 	static final void addWidgetItemMenuItem(Widget var0, ItemComposition var1, int var2, int var3, boolean var4) {
@@ -78,7 +78,7 @@ public class SoundSystem implements Runnable {
 		}
 
 		if (var6 != -1 && var7 != null) {
-			CollisionMap.method3809(var7, Clock.colorStartTag(16748608) + var1.name, var6, 0, var2, var0.id * -1692370233, var1.id * -1571483579, var4);
+			CollisionMap.method3744(var7, Clock.colorStartTag(16748608) + var1.name, var6, 0, var2, var0.id, var1.id, var4);
 		}
 
 	}

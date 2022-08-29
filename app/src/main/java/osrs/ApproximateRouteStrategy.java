@@ -13,44 +13,44 @@ public class ApproximateRouteStrategy extends RouteStrategy {
 
 	@ObfuscatedName("s")
 	@ObfuscatedSignature(
-		descriptor = "(IIILgl;B)Z",
-		garbageValue = "57"
+		garbageValue = "57",
+		descriptor = "(IIILgl;B)Z"
 	)
 	@Export("hasArrived")
 	public boolean hasArrived(int var1, int var2, int var3, CollisionMap var4) {
-		return super.approxDestinationX * 58129171 == var2 && var3 == super.approxDestinationY * -980043277;
+		return var2 == super.approxDestinationX && var3 == super.approxDestinationY;
 	}
 
 	@ObfuscatedName("ek")
 	@ObfuscatedSignature(
-		descriptor = "(Lln;Ljava/lang/String;B)V",
-		garbageValue = "0"
+		garbageValue = "0",
+		descriptor = "(Lln;Ljava/lang/String;B)V"
 	)
 	static void method1070(Archive var0, String var1) {
 		ArchiveLoader var2 = new ArchiveLoader(var0, var1);
 		Client.archiveLoaders.add(var2);
-		Client.field509 += var2.groupCount * 43054337;
+		Client.field509 += var2.groupCount;
 	}
 
 	@ObfuscatedName("fq")
 	@ObfuscatedSignature(
-		descriptor = "(Lcx;I)V",
-		garbageValue = "574817710"
+		garbageValue = "574817710",
+		descriptor = "(Lcx;I)V"
 	)
 	static final void method1068(Actor var0) {
-		int var1 = Math.max(1, var0.field1182 * -1885865357 - Client.cycle * 2009455757);
-		int var2 = var0.field1190 * -1534074048 + var0.field1178 * -1188330112;
-		int var3 = var0.field1127 * -1467674752 + var0.field1190 * -1534074048;
-		var0.x += (var2 - var0.x * 1627221919) / var1 * 1104407647;
-		var0.y += (var3 - var0.y * 1229064101) / var1 * 636586029;
+		int var1 = Math.max(1, var0.field1182 - Client.cycle);
+		int var2 = var0.field1178 * 128 + var0.field1190 * 64;
+		int var3 = var0.field1127 * 128 + var0.field1190 * 64;
+		var0.x += (var2 - var0.x) / var1;
+		var0.y += (var3 - var0.y) / var1;
 		var0.field1200 = 0;
-		var0.orientation = var0.field1136 * -1094363775;
+		var0.orientation = var0.field1136;
 	}
 
 	@ObfuscatedName("hv")
 	@ObfuscatedSignature(
-		descriptor = "(II)V",
-		garbageValue = "1922987723"
+		garbageValue = "1922987723",
+		descriptor = "(II)V"
 	)
 	static final void method1065(int var0) {
 		if (var0 >= 0) {
@@ -61,25 +61,25 @@ public class ApproximateRouteStrategy extends RouteStrategy {
 			int var5 = Client.field630[var0];
 			String var6 = Client.menuActions[var0];
 			String var7 = Client.menuTargets[var0];
-			class352.method6432(var1, var2, var3, var4, var5, var6, var7, MouseHandler.MouseHandler_lastPressedX * 1804877833, MouseHandler.MouseHandler_lastPressedY * 1565070067);
+			class352.method6357(var1, var2, var3, var4, var5, var6, var7, MouseHandler.MouseHandler_lastPressedX, MouseHandler.MouseHandler_lastPressedY);
 		}
 	}
 
 	@ObfuscatedName("ls")
 	@ObfuscatedSignature(
-		descriptor = "(IB)V",
-		garbageValue = "-33"
+		garbageValue = "-33",
+		descriptor = "(IB)V"
 	)
 	static void method1069(int var0) {
-		if (Client.loginState * 456325949 != var0) {
-			Client.loginState = var0 * -2122501099;
+		if (var0 != Client.loginState) {
+			Client.loginState = var0;
 		}
 	}
 
 	@ObfuscatedName("lr")
 	@ObfuscatedSignature(
-		descriptor = "(ZB)V",
-		garbageValue = "55"
+		garbageValue = "55",
+		descriptor = "(ZB)V"
 	)
 	static void method1071(boolean var0) {
 		Client.field623 = var0;

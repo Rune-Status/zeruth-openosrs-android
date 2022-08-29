@@ -2,6 +2,7 @@ package osrs;
 
 import net.runelite.mapping.Export;
 import net.runelite.mapping.Implements;
+import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
@@ -14,29 +15,56 @@ public class Timer {
 	)
 	static Archive field4232;
 	@ObfuscatedName("s")
+	@ObfuscatedGetter(
+		longValue = -8735945118853386879L
+	)
 	long field4228;
 	@ObfuscatedName("h")
+	@ObfuscatedGetter(
+		longValue = -6918330546120993273L
+	)
 	long field4229;
 	@ObfuscatedName("w")
 	public boolean field4223;
 	@ObfuscatedName("v")
+	@ObfuscatedGetter(
+		longValue = -1503783176874321879L
+	)
 	long field4225;
 	@ObfuscatedName("c")
+	@ObfuscatedGetter(
+		longValue = -8793047518533873903L
+	)
 	long field4230;
 	@ObfuscatedName("q")
+	@ObfuscatedGetter(
+		longValue = -5274063944958508639L
+	)
 	long field4227;
 	@ObfuscatedName("i")
+	@ObfuscatedGetter(
+		intValue = 1005291763
+	)
 	int field4224;
 	@ObfuscatedName("k")
+	@ObfuscatedGetter(
+		intValue = -1630081649
+	)
 	int field4226;
 	@ObfuscatedName("o")
+	@ObfuscatedGetter(
+		intValue = 1043172727
+	)
 	int field4222;
 	@ObfuscatedName("n")
+	@ObfuscatedGetter(
+		intValue = -690606115
+	)
 	int field4231;
 
 	public Timer() {
-		this.field4228 = -3061124588936532609L;
-		this.field4229 = 3258630315795007561L;
+		this.field4228 = -1L;
+		this.field4229 = -1L;
 		this.field4223 = false;
 		this.field4225 = 0L;
 		this.field4230 = 0L;
@@ -49,90 +77,90 @@ public class Timer {
 
 	@ObfuscatedName("s")
 	@ObfuscatedSignature(
-		descriptor = "(I)V",
-		garbageValue = "-312486675"
+		garbageValue = "-312486675",
+		descriptor = "(I)V"
 	)
-	public void method6457() {
-		this.field4228 = class181.method3483() * 3061124588936532609L;
+	public void method6379() {
+		this.field4228 = class181.method3418();
 	}
 
 	@ObfuscatedName("h")
 	@ObfuscatedSignature(
-		descriptor = "(I)V",
-		garbageValue = "1669178431"
+		garbageValue = "1669178431",
+		descriptor = "(I)V"
 	)
-	public void method6468() {
-		if (-1L != this.field4228 * -8735945118853386879L) {
-			this.field4230 = (class181.method3483() - this.field4228 * -8735945118853386879L) * 648747906657829361L;
-			this.field4228 = -3061124588936532609L;
+	public void method6390() {
+		if (-1L != this.field4228) {
+			this.field4230 = class181.method3418() - this.field4228;
+			this.field4228 = -1L;
 		}
 
 	}
 
 	@ObfuscatedName("w")
 	@ObfuscatedSignature(
-		descriptor = "(IB)V",
-		garbageValue = "100"
+		garbageValue = "100",
+		descriptor = "(IB)V"
 	)
-	public void method6458(int var1) {
-		this.field4229 = class181.method3483() * -3258630315795007561L;
-		this.field4224 = var1 * -448344005;
+	public void method6380(int var1) {
+		this.field4229 = class181.method3418();
+		this.field4224 = var1;
 	}
 
 	@ObfuscatedName("v")
 	@ObfuscatedSignature(
-		descriptor = "(B)V",
-		garbageValue = "3"
+		garbageValue = "3",
+		descriptor = "(B)V"
 	)
-	public void method6459() {
-		if (-1L != this.field4229 * -6918330546120993273L) {
-			this.field4225 = (class181.method3483() - this.field4229 * -6918330546120993273L) * -8343081052859104231L;
-			this.field4229 = 3258630315795007561L;
+	public void method6381() {
+		if (-1L != this.field4229) {
+			this.field4225 = class181.method3418() - this.field4229;
+			this.field4229 = -1L;
 		}
 
-		this.field4222 += -680436665;
+		++this.field4222;
 		this.field4223 = true;
 	}
 
 	@ObfuscatedName("c")
 	@ObfuscatedSignature(
-		descriptor = "(I)V",
-		garbageValue = "-2084155545"
+		garbageValue = "-2084155545",
+		descriptor = "(I)V"
 	)
-	public void method6461() {
+	public void method6383() {
 		this.field4223 = false;
 		this.field4226 = 0;
 	}
 
 	@ObfuscatedName("q")
 	@ObfuscatedSignature(
-		descriptor = "(I)V",
-		garbageValue = "-494089145"
+		garbageValue = "-494089145",
+		descriptor = "(I)V"
 	)
-	public void method6478() {
-		this.method6459();
+	public void method6400() {
+		this.method6381();
 	}
 
 	@ObfuscatedName("i")
 	@ObfuscatedSignature(
-		descriptor = "(Lqr;I)V",
-		garbageValue = "37914891"
+		garbageValue = "37914891",
+		descriptor = "(Lqr;I)V"
 	)
 	@Export("write")
 	public void write(Buffer var1) {
-		TextureProvider.method4269(var1, -8793047518533873903L * this.field4230);
-		TextureProvider.method4269(var1, this.field4225 * -1503783176874321879L);
-		TextureProvider.method4269(var1, -5274063944958508639L * this.field4227);
-		var1.writeShort(this.field4224 * 1005291763);
-		var1.writeShort(this.field4226 * -1630081649);
-		var1.writeShort(this.field4222 * 1043172727);
-		var1.writeShort(this.field4231 * -690606115);
+		TextureProvider.method4204(var1, this.field4230);
+		TextureProvider.method4204(var1, this.field4225);
+		TextureProvider.method4204(var1, this.field4227);
+		var1.writeShort(this.field4224);
+		var1.writeShort(this.field4226);
+		var1.writeShort(this.field4222);
+		var1.writeShort(this.field4231);
 	}
 
 	@ObfuscatedName("h")
 	@ObfuscatedSignature(
-		descriptor = "(CLlv;B)C",
-		garbageValue = "0"
+		garbageValue = "0",
+		descriptor = "(CLlv;B)C"
 	)
 	@Export("standardizeChar")
 	static char standardizeChar(char var0, Language var1) {

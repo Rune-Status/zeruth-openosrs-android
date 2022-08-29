@@ -4,6 +4,7 @@ import java.io.File;
 import java.io.RandomAccessFile;
 import net.runelite.mapping.Export;
 import net.runelite.mapping.Implements;
+import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
@@ -17,17 +18,20 @@ public abstract class Renderable extends DualNode {
 	@Export("archive2")
 	static Archive archive2;
 	@ObfuscatedName("dv")
+	@ObfuscatedGetter(
+		intValue = 417479049
+	)
 	@Export("height")
 	public int height;
 
 	protected Renderable() {
-		this.height = 1979822760;
+		this.height = 1000;
 	}
 
 	@ObfuscatedName("h")
 	@ObfuscatedSignature(
-		descriptor = "(B)Lhp;",
-		garbageValue = "4"
+		garbageValue = "4",
+		descriptor = "(B)Lhp;"
 	)
 	@Export("getModel")
 	protected Model getModel() {
@@ -39,7 +43,7 @@ public abstract class Renderable extends DualNode {
 	void draw(int var1, int var2, int var3, int var4, int var5, int var6, int var7, int var8, long var9) {
 		Model var11 = this.getModel();
 		if (var11 != null) {
-			this.height = var11.height * 1;
+			this.height = var11.height;
 			var11.draw(var1, var2, var3, var4, var5, var6, var7, var8, var9);
 		}
 
@@ -47,21 +51,21 @@ public abstract class Renderable extends DualNode {
 
 	@ObfuscatedName("h")
 	@ObfuscatedSignature(
-		descriptor = "(Lls;Ljava/lang/String;Ljava/lang/String;IZB)V",
-		garbageValue = "-108"
+		garbageValue = "-108",
+		descriptor = "(Lls;Ljava/lang/String;Ljava/lang/String;IZB)V"
 	)
-	public static void method4229(AbstractArchive var0, String var1, String var2, int var3, boolean var4) {
+	public static void method4164(AbstractArchive var0, String var1, String var2, int var3, boolean var4) {
 		int var5 = var0.getGroupId(var1);
 		int var6 = var0.getFileId(var5, var2);
-		class118.method2713(var0, var5, var6, var3, var4);
+		class118.method2648(var0, var5, var6, var3, var4);
 	}
 
 	@ObfuscatedName("w")
 	@ObfuscatedSignature(
-		descriptor = "(Ljava/io/File;ZI)Z",
-		garbageValue = "1510342619"
+		garbageValue = "1510342619",
+		descriptor = "(Ljava/io/File;ZI)Z"
 	)
-	static boolean method4227(File var0, boolean var1) {
+	static boolean method4162(File var0, boolean var1) {
 		try {
 			RandomAccessFile var2 = new RandomAccessFile(var0, "rw");
 			int var3 = var2.read();
@@ -81,10 +85,10 @@ public abstract class Renderable extends DualNode {
 
 	@ObfuscatedName("p")
 	@ObfuscatedSignature(
-		descriptor = "(Ljava/lang/String;I)I",
-		garbageValue = "1654436589"
+		garbageValue = "1654436589",
+		descriptor = "(Ljava/lang/String;I)I"
 	)
-	static int method4228(String var0) {
+	static int method4163(String var0) {
 		if (var0.equals("centre")) {
 			return 1;
 		} else {
@@ -94,21 +98,22 @@ public abstract class Renderable extends DualNode {
 
 	@ObfuscatedName("ij")
 	@ObfuscatedSignature(
-		descriptor = "([Lkn;II)V",
-		garbageValue = "-313022235"
+		garbageValue = "-313022235",
+		descriptor = "([Lkn;II)V"
 	)
-	static final void method4230(Widget[] var0, int var1) {
+	@Export("runComponentCloseListeners")
+	static final void runComponentCloseListeners(Widget[] var0, int var1) {
 		for (int var2 = 0; var2 < var0.length; ++var2) {
 			Widget var3 = var0[var2];
 			if (var3 != null) {
-				if (var3.type * 1201269859 == 0) {
+				if (var3.type == 0) {
 					if (var3.children != null) {
-						method4230(var3.children, var1);
+						runComponentCloseListeners(var3.children, var1);
 					}
 
-					InterfaceParent var4 = (InterfaceParent)Client.interfaceParents.get((long)(var3.id * -1692370233));
+					InterfaceParent var4 = (InterfaceParent)Client.interfaceParents.get((long)var3.id);
 					if (var4 != null) {
-						ModelData0.runIntfCloseListeners(var4.group * 1124857953, var1);
+						ModelData0.runIntfCloseListeners(var4.group, var1);
 					}
 				}
 
@@ -121,9 +126,9 @@ public abstract class Renderable extends DualNode {
 				}
 
 				if (var1 == 1 && var3.onSubChange != null) {
-					if (var3.childIndex * 1985146419 >= 0) {
-						Widget var6 = HitSplatDefinition.getWidget(var3.id * -1692370233);
-						if (var6 == null || var6.children == null || var3.childIndex * 1985146419 >= var6.children.length || var3 != var6.children[var3.childIndex * 1985146419]) {
+					if (var3.childIndex >= 0) {
+						Widget var6 = HitSplatDefinition.getWidget(var3.id);
+						if (var6 == null || var6.children == null || var3.childIndex >= var6.children.length || var3 != var6.children[var3.childIndex]) {
 							continue;
 						}
 					}

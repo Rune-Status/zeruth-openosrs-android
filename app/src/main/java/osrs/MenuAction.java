@@ -1,8 +1,11 @@
 package osrs;
 
 import java.awt.Component;
+import java.awt.image.BufferedImage;
+
 import net.runelite.mapping.Export;
 import net.runelite.mapping.Implements;
+import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
@@ -16,33 +19,49 @@ public class MenuAction {
 	@Export("NetCache_currentResponse")
 	public static NetFileRequest NetCache_currentResponse;
 	@ObfuscatedName("s")
+	@ObfuscatedGetter(
+		intValue = 1475359853
+	)
 	@Export("param0")
 	int param0;
 	@ObfuscatedName("h")
+	@ObfuscatedGetter(
+		intValue = -1675827347
+	)
 	@Export("param1")
 	int param1;
 	@ObfuscatedName("w")
+	@ObfuscatedGetter(
+		intValue = -1345081717
+	)
 	@Export("opcode")
 	int opcode;
 	@ObfuscatedName("v")
+	@ObfuscatedGetter(
+		intValue = -1260640699
+	)
 	@Export("identifier")
 	int identifier;
 	@ObfuscatedName("c")
+	@ObfuscatedGetter(
+		intValue = -852648483
+	)
 	int field859;
 	@ObfuscatedName("q")
 	String field857;
 	@ObfuscatedName("i")
-	String field860;
+	@Export("action")
+	String action;
 
 	MenuAction() {
 	}
 
 	@ObfuscatedName("s")
 	@ObfuscatedSignature(
-		descriptor = "(Ljava/awt/Component;B)V",
-		garbageValue = "52"
+		garbageValue = "52",
+		descriptor = "(Ljava/awt/Component;B)V"
 	)
-	static void method1859(Component var0) {
+	static void method1794(BufferedImage var0) {
 /*		var0.setFocusTraversalKeysEnabled(false);
 		var0.addKeyListener(KeyHandler.KeyHandler_instance);
 		var0.addFocusListener(KeyHandler.KeyHandler_instance);*/
@@ -50,8 +69,8 @@ public class MenuAction {
 
 	@ObfuscatedName("c")
 	@ObfuscatedSignature(
-		descriptor = "(Ljava/lang/CharSequence;II[BIB)I",
-		garbageValue = "-15"
+		garbageValue = "-15",
+		descriptor = "(Ljava/lang/CharSequence;II[BIB)I"
 	)
 	@Export("encodeStringCp1252")
 	public static int encodeStringCp1252(CharSequence var0, int var1, int var2, byte[] var3, int var4) {

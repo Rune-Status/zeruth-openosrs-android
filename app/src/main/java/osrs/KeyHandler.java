@@ -1,14 +1,18 @@
 package osrs;
 
-
+/*import java.awt.event.FocusEvent;
+import java.awt.event.FocusListener;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;*/
 import net.runelite.mapping.Export;
 import net.runelite.mapping.Implements;
+import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
 @ObfuscatedName("t")
 @Implements("KeyHandler")
-public final class KeyHandler { //mplements KeyListener, FocusListener {
+public final class KeyHandler {// implements KeyListener, FocusListener {
 	@ObfuscatedName("s")
 	@ObfuscatedSignature(
 		descriptor = "Lt;"
@@ -21,7 +25,8 @@ public final class KeyHandler { //mplements KeyListener, FocusListener {
 	)
 	static IndexedSprite field127;
 	@ObfuscatedName("bj")
-	static String field146;
+	@Export("otp")
+	static String otp;
 	@ObfuscatedName("cc")
 	@Export("KeyHandler_pressedKeys")
 	public static boolean[] KeyHandler_pressedKeys;
@@ -32,8 +37,14 @@ public final class KeyHandler { //mplements KeyListener, FocusListener {
 	@ObfuscatedName("cp")
 	static int[] field130;
 	@ObfuscatedName("cr")
+	@ObfuscatedGetter(
+		intValue = 1304611641
+	)
 	static int field149;
 	@ObfuscatedName("cs")
+	@ObfuscatedGetter(
+		intValue = 624097121
+	)
 	static int field132;
 	@ObfuscatedName("cy")
 	static char[] field125;
@@ -42,18 +53,36 @@ public final class KeyHandler { //mplements KeyListener, FocusListener {
 	@ObfuscatedName("cg")
 	public static int[] field135;
 	@ObfuscatedName("cd")
+	@ObfuscatedGetter(
+		intValue = -693924747
+	)
 	public static int field136;
 	@ObfuscatedName("cz")
 	static int[] field137;
 	@ObfuscatedName("cu")
+	@ObfuscatedGetter(
+		intValue = -162929509
+	)
 	static int field138;
 	@ObfuscatedName("ca")
+	@ObfuscatedGetter(
+		intValue = 1364539797
+	)
 	static int field139;
 	@ObfuscatedName("cv")
+	@ObfuscatedGetter(
+		intValue = -256078627
+	)
 	static int field133;
 	@ObfuscatedName("ck")
+	@ObfuscatedGetter(
+		intValue = 631010953
+	)
 	static int field141;
 	@ObfuscatedName("du")
+	@ObfuscatedGetter(
+		intValue = -878878681
+	)
 	@Export("KeyHandler_idleCycles")
 	public static volatile int KeyHandler_idleCycles;
 	@ObfuscatedName("di")
@@ -88,11 +117,11 @@ public final class KeyHandler { //mplements KeyListener, FocusListener {
 		if (KeyHandler_instance != null) {
 			char var2 = var1.getKeyChar();
 			if (var2 != 0 && var2 != '\uffff' && class16.method204(var2)) {
-				int var3 = field133 * -256078627 + 1 & 127;
-				if (field139 * 1364539797 != var3) {
-					field144[field133 * -256078627] = -1;
-					field125[field133 * -256078627] = var2;
-					field133 = var3 * 485272437;
+				int var3 = field133 + 1 & 127;
+				if (var3 != field139) {
+					field144[field133] = -1;
+					field125[field133] = var2;
+					field133 = var3;
 				}
 			}
 		}
@@ -109,11 +138,11 @@ public final class KeyHandler { //mplements KeyListener, FocusListener {
 				var2 = -1;
 			}
 
-			if (field132 * 624097121 >= 0 && var2 >= 0) {
-				field130[field132 * 624097121] = ~var2;
-				field132 = (field132 * 624097121 + 1 & 127) * 168160417;
-				if (field132 * 624097121 == field149 * 1304611641) {
-					field132 = -168160417;
+			if (field132 >= 0 && var2 >= 0) {
+				field130[field132] = ~var2;
+				field132 = field132 + 1 & 127;
+				if (field132 == field149) {
+					field132 = -1;
 				}
 			}
 		}
@@ -123,7 +152,7 @@ public final class KeyHandler { //mplements KeyListener, FocusListener {
 
 	public final synchronized void focusLost(FocusEvent var1) {
 		if (KeyHandler_instance != null) {
-			field132 = -168160417;
+			field132 = -1;
 		}
 
 	}
@@ -140,21 +169,21 @@ public final class KeyHandler { //mplements KeyListener, FocusListener {
 				var2 = -1;
 			}
 
-			if (field132 * 624097121 >= 0 && var2 >= 0) {
-				field130[field132 * 624097121] = var2;
-				field132 = (field132 * 624097121 + 1 & 127) * 168160417;
-				if (field132 * 624097121 == field149 * 1304611641) {
-					field132 = -168160417;
+			if (field132 >= 0 && var2 >= 0) {
+				field130[field132] = var2;
+				field132 = field132 + 1 & 127;
+				if (field149 == field132) {
+					field132 = -1;
 				}
 			}
 
 			int var3;
 			if (var2 >= 0) {
-				var3 = field133 * -256078627 + 1 & 127;
-				if (field139 * 1364539797 != var3) {
-					field144[field133 * -256078627] = var2;
-					field125[field133 * -256078627] = 0;
-					field133 = var3 * 485272437;
+				var3 = field133 + 1 & 127;
+				if (var3 != field139) {
+					field144[field133] = var2;
+					field125[field133] = 0;
+					field133 = var3;
 				}
 			}
 
@@ -171,15 +200,15 @@ public final class KeyHandler { //mplements KeyListener, FocusListener {
 
 	@ObfuscatedName("h")
 	@ObfuscatedSignature(
-		descriptor = "(II)Lfs;",
-		garbageValue = "488353523"
+		garbageValue = "488353523",
+		descriptor = "(II)Lfs;"
 	)
 	public static FloorUnderlayDefinition method328(int var0) {
 		FloorUnderlayDefinition var1 = (FloorUnderlayDefinition)FloorUnderlayDefinition.FloorUnderlayDefinition_cached.get((long)var0);
 		if (var1 != null) {
 			return var1;
 		} else {
-			byte[] var2 = FloorUnderlayDefinition.FloorOverlayDefinition_archive.takeFile(1, var0);
+			byte[] var2 = FloorUnderlayDefinition.FloorUnderlayDefinition_archive.takeFile(1, var0);
 			var1 = new FloorUnderlayDefinition();
 			if (var2 != null) {
 				var1.decode(new Buffer(var2), var0);
@@ -193,8 +222,8 @@ public final class KeyHandler { //mplements KeyListener, FocusListener {
 
 	@ObfuscatedName("n")
 	@ObfuscatedSignature(
-		descriptor = "(Lkn;IIII)V",
-		garbageValue = "-107406302"
+		garbageValue = "-107406302",
+		descriptor = "(Lkn;IIII)V"
 	)
 	@Export("Widget_setKeyRate")
 	static final void Widget_setKeyRate(Widget var0, int var1, int var2, int var3) {
@@ -208,8 +237,8 @@ public final class KeyHandler { //mplements KeyListener, FocusListener {
 
 	@ObfuscatedName("in")
 	@ObfuscatedSignature(
-		descriptor = "(ZI)V",
-		garbageValue = "1819714481"
+		garbageValue = "1819714481",
+		descriptor = "(ZI)V"
 	)
 	@Export("setTapToDrop")
 	static void setTapToDrop(boolean var0) {

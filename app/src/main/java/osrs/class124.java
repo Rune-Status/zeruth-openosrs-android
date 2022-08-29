@@ -1,11 +1,12 @@
 package osrs;
 
 import net.runelite.mapping.Export;
+import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
 @ObfuscatedName("df")
-public enum class124 implements class328 {
+public enum class124 implements MouseWheel {
 	@ObfuscatedName("s")
 	@ObfuscatedSignature(
 		descriptor = "Ldf;"
@@ -33,30 +34,36 @@ public enum class124 implements class328 {
 	field1523(2, 4);
 
 	@ObfuscatedName("q")
+	@ObfuscatedGetter(
+		intValue = 1199083661
+	)
 	public final int field1524;
 	@ObfuscatedName("i")
+	@ObfuscatedGetter(
+		intValue = -2124972105
+	)
 	@Export("id")
 	final int id;
 
 	class124(int var3, int var4) {
-		this.field1524 = var3 * -709119419;
-		this.id = var4 * 945589767;
+		this.field1524 = var3;
+		this.id = var4;
 	}
 
 	@ObfuscatedName("h")
 	@ObfuscatedSignature(
-		descriptor = "(B)I",
-		garbageValue = "104"
+		garbageValue = "104",
+		descriptor = "(B)I"
 	)
 	@Export("rsOrdinal")
 	public int rsOrdinal() {
-		return this.id * -2124972105;
+		return this.id;
 	}
 
 	@ObfuscatedName("u")
 	@ObfuscatedSignature(
-		descriptor = "(CB)Z",
-		garbageValue = "123"
+		garbageValue = "123",
+		descriptor = "(CB)Z"
 	)
 	@Export("isCharPrintable")
 	public static boolean isCharPrintable(char var0) {
@@ -71,57 +78,57 @@ public enum class124 implements class328 {
 
 	@ObfuscatedName("ar")
 	@ObfuscatedSignature(
-		descriptor = "(ILbz;ZI)I",
-		garbageValue = "-1560947837"
+		garbageValue = "-1560947837",
+		descriptor = "(ILbz;ZI)I"
 	)
-	static int method2768(int var0, Script var1, boolean var2) {
+	static int method2703(int var0, Script var1, boolean var2) {
 		int var3;
+		int var4;
 		int var6;
-		int var9;
 		if (var0 == 3400) {
-			User.Interpreter_intStackSize -= -624973350;
-			var3 = Interpreter.Interpreter_intStack[User.Interpreter_intStackSize * -313022235];
-			var9 = Interpreter.Interpreter_intStack[User.Interpreter_intStackSize * -313022235 + 1];
-			EnumComposition var10 = WorldMapIcon_1.getEnum(var3);
-			if (var10.outputType != 's') {
+			User.Interpreter_intStackSize -= 2;
+			var3 = Interpreter.Interpreter_intStack[User.Interpreter_intStackSize];
+			var4 = Interpreter.Interpreter_intStack[User.Interpreter_intStackSize + 1];
+			EnumComposition var5 = WorldMapIcon_1.getEnum(var3);
+			if (var5.outputType != 's') {
 			}
 
-			for (var6 = 0; var6 < var10.outputCount * -633508893; ++var6) {
-				if (var9 == var10.keys[var6]) {
-					Interpreter.Interpreter_stringStack[(UserComparator8.Interpreter_stringStackSize += 204829809) * 929025169 - 1] = var10.strVals[var6];
-					var10 = null;
+			for (var6 = 0; var6 < var5.outputCount; ++var6) {
+				if (var4 == var5.keys[var6]) {
+					Interpreter.Interpreter_stringStack[++UserComparator8.Interpreter_stringStackSize - 1] = var5.strVals[var6];
+					var5 = null;
 					break;
 				}
 			}
 
-			if (var10 != null) {
-				Interpreter.Interpreter_stringStack[(UserComparator8.Interpreter_stringStackSize += 204829809) * 929025169 - 1] = var10.defaultStr;
+			if (var5 != null) {
+				Interpreter.Interpreter_stringStack[++UserComparator8.Interpreter_stringStackSize - 1] = var5.defaultStr;
 			}
 
 			return 1;
 		} else if (var0 != 3408) {
 			if (var0 == 3411) {
-				var3 = Interpreter.Interpreter_intStack[(User.Interpreter_intStackSize -= -312486675) * -313022235];
-				EnumComposition var4 = WorldMapIcon_1.getEnum(var3);
-				Interpreter.Interpreter_intStack[(User.Interpreter_intStackSize += -312486675) * -313022235 - 1] = var4.size();
+				var3 = Interpreter.Interpreter_intStack[--User.Interpreter_intStackSize];
+				EnumComposition var10 = WorldMapIcon_1.getEnum(var3);
+				Interpreter.Interpreter_intStack[++User.Interpreter_intStackSize - 1] = var10.size();
 				return 1;
 			} else {
 				return 2;
 			}
 		} else {
-			User.Interpreter_intStackSize -= -1249946700;
-			var3 = Interpreter.Interpreter_intStack[User.Interpreter_intStackSize * -313022235];
-			var9 = Interpreter.Interpreter_intStack[User.Interpreter_intStackSize * -313022235 + 1];
-			int var5 = Interpreter.Interpreter_intStack[User.Interpreter_intStackSize * -313022235 + 2];
-			var6 = Interpreter.Interpreter_intStack[User.Interpreter_intStackSize * -313022235 + 3];
-			EnumComposition var7 = WorldMapIcon_1.getEnum(var5);
-			if (var3 == var7.inputType && var9 == var7.outputType) {
-				for (int var8 = 0; var8 < var7.outputCount * -633508893; ++var8) {
+			User.Interpreter_intStackSize -= 4;
+			var3 = Interpreter.Interpreter_intStack[User.Interpreter_intStackSize];
+			var4 = Interpreter.Interpreter_intStack[User.Interpreter_intStackSize + 1];
+			int var9 = Interpreter.Interpreter_intStack[User.Interpreter_intStackSize + 2];
+			var6 = Interpreter.Interpreter_intStack[User.Interpreter_intStackSize + 3];
+			EnumComposition var7 = WorldMapIcon_1.getEnum(var9);
+			if (var3 == var7.inputType && var4 == var7.outputType) {
+				for (int var8 = 0; var8 < var7.outputCount; ++var8) {
 					if (var6 == var7.keys[var8]) {
-						if (var9 == 115) {
-							Interpreter.Interpreter_stringStack[(UserComparator8.Interpreter_stringStackSize += 204829809) * 929025169 - 1] = var7.strVals[var8];
+						if (var4 == 115) {
+							Interpreter.Interpreter_stringStack[++UserComparator8.Interpreter_stringStackSize - 1] = var7.strVals[var8];
 						} else {
-							Interpreter.Interpreter_intStack[(User.Interpreter_intStackSize += -312486675) * -313022235 - 1] = var7.intVals[var8];
+							Interpreter.Interpreter_intStack[++User.Interpreter_intStackSize - 1] = var7.intVals[var8];
 						}
 
 						var7 = null;
@@ -130,19 +137,19 @@ public enum class124 implements class328 {
 				}
 
 				if (var7 != null) {
-					if (var9 == 115) {
-						Interpreter.Interpreter_stringStack[(UserComparator8.Interpreter_stringStackSize += 204829809) * 929025169 - 1] = var7.defaultStr;
+					if (var4 == 115) {
+						Interpreter.Interpreter_stringStack[++UserComparator8.Interpreter_stringStackSize - 1] = var7.defaultStr;
 					} else {
-						Interpreter.Interpreter_intStack[(User.Interpreter_intStackSize += -312486675) * -313022235 - 1] = var7.defaultInt * -19231955;
+						Interpreter.Interpreter_intStack[++User.Interpreter_intStackSize - 1] = var7.defaultInt;
 					}
 				}
 
 				return 1;
 			} else {
-				if (var9 == 115) {
-					Interpreter.Interpreter_stringStack[(UserComparator8.Interpreter_stringStackSize += 204829809) * 929025169 - 1] = "null";
+				if (var4 == 115) {
+					Interpreter.Interpreter_stringStack[++UserComparator8.Interpreter_stringStackSize - 1] = "null";
 				} else {
-					Interpreter.Interpreter_intStack[(User.Interpreter_intStackSize += -312486675) * -313022235 - 1] = 0;
+					Interpreter.Interpreter_intStack[++User.Interpreter_intStackSize - 1] = 0;
 				}
 
 				return 1;

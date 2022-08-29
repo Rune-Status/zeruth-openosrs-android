@@ -2,6 +2,7 @@ package osrs;
 
 import net.runelite.mapping.Export;
 import net.runelite.mapping.Implements;
+import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
@@ -14,11 +15,21 @@ public class Decimator {
 	)
 	static Archive field403;
 	@ObfuscatedName("hu")
-	static int field404;
+	@ObfuscatedGetter(
+		intValue = 620670661
+	)
+	@Export("baseX")
+	static int baseX;
 	@ObfuscatedName("v")
+	@ObfuscatedGetter(
+		intValue = 1580600363
+	)
 	@Export("inputRate")
 	int inputRate;
 	@ObfuscatedName("c")
+	@ObfuscatedGetter(
+		intValue = -135318399
+	)
 	@Export("outputRate")
 	int outputRate;
 	@ObfuscatedName("q")
@@ -30,8 +41,8 @@ public class Decimator {
 			int var3 = method1005(var1, var2);
 			var1 /= var3;
 			var2 /= var3;
-			this.inputRate = var1 * 743854723;
-			this.outputRate = var2 * -1430975615;
+			this.inputRate = var1;
+			this.outputRate = var2;
 			this.table = new int[var1][14];
 
 			for (int var4 = 0; var4 < var1; ++var4) {
@@ -64,13 +75,13 @@ public class Decimator {
 
 	@ObfuscatedName("s")
 	@ObfuscatedSignature(
-		descriptor = "([BI)[B",
-		garbageValue = "1902066376"
+		garbageValue = "1902066376",
+		descriptor = "([BI)[B"
 	)
 	@Export("resample")
 	byte[] resample(byte[] var1) {
 		if (this.table != null) {
-			int var2 = (int)((long)(this.outputRate * -135318399) * (long)var1.length / (long)(this.inputRate * 1580600363)) + 14;
+			int var2 = (int)((long)this.outputRate * (long)var1.length / (long)this.inputRate) + 14;
 			int[] var3 = new int[var2];
 			int var4 = 0;
 			int var5 = 0;
@@ -85,10 +96,10 @@ public class Decimator {
 					var3[var4 + var9] += var7 * var8[var9];
 				}
 
-				var5 += this.outputRate * -135318399;
-				var9 = var5 / (this.inputRate * 1580600363);
+				var5 += this.outputRate;
+				var9 = var5 / this.inputRate;
 				var4 += var9;
-				var5 -= var9 * this.inputRate * 1580600363;
+				var5 -= var9 * this.inputRate;
 			}
 
 			var1 = new byte[var2];
@@ -110,13 +121,13 @@ public class Decimator {
 
 	@ObfuscatedName("h")
 	@ObfuscatedSignature(
-		descriptor = "(II)I",
-		garbageValue = "2068008362"
+		garbageValue = "2068008362",
+		descriptor = "(II)I"
 	)
 	@Export("scaleRate")
 	int scaleRate(int var1) {
 		if (this.table != null) {
-			var1 = (int)((long)var1 * (long)(this.outputRate * -135318399) / (long)(this.inputRate * 1580600363));
+			var1 = (int)((long)var1 * (long)this.outputRate / (long)this.inputRate);
 		}
 
 		return var1;
@@ -124,13 +135,13 @@ public class Decimator {
 
 	@ObfuscatedName("w")
 	@ObfuscatedSignature(
-		descriptor = "(II)I",
-		garbageValue = "-945066766"
+		garbageValue = "-945066766",
+		descriptor = "(II)I"
 	)
 	@Export("scalePosition")
 	int scalePosition(int var1) {
 		if (this.table != null) {
-			var1 = (int)((long)(this.outputRate * -135318399) * (long)var1 / (long)(this.inputRate * 1580600363)) + 6;
+			var1 = (int)((long)this.outputRate * (long)var1 / (long)this.inputRate) + 6;
 		}
 
 		return var1;
@@ -138,8 +149,8 @@ public class Decimator {
 
 	@ObfuscatedName("s")
 	@ObfuscatedSignature(
-		descriptor = "(III)I",
-		garbageValue = "1674028137"
+		garbageValue = "1674028137",
+		descriptor = "(III)I"
 	)
 	public static int method1005(int var0, int var1) {
 		int var2;
@@ -160,8 +171,8 @@ public class Decimator {
 
 	@ObfuscatedName("s")
 	@ObfuscatedSignature(
-		descriptor = "(Lls;I)V",
-		garbageValue = "-762396085"
+		garbageValue = "-762396085",
+		descriptor = "(Lls;I)V"
 	)
 	public static void method994(AbstractArchive var0) {
 		VarbitComposition.VarbitDefinition_archive = var0;
@@ -169,8 +180,8 @@ public class Decimator {
 
 	@ObfuscatedName("iw")
 	@ObfuscatedSignature(
-		descriptor = "(Ljava/lang/String;Lkn;B)Ljava/lang/String;",
-		garbageValue = "-38"
+		garbageValue = "-38",
+		descriptor = "(Ljava/lang/String;Lkn;B)Ljava/lang/String;"
 	)
 	static String method1006(String var0, Widget var1) {
 		if (var0.indexOf("%") != -1) {
@@ -182,7 +193,7 @@ public class Decimator {
 					}
 
 					String var4 = var0.substring(0, var3);
-					int var6 = GrandExchangeEvents.method5876(var1, var2 - 1);
+					int var6 = GrandExchangeEvents.method5805(var1, var2 - 1);
 					String var5;
 					if (var6 < 999999999) {
 						var5 = Integer.toString(var6);
@@ -200,26 +211,26 @@ public class Decimator {
 
 	@ObfuscatedName("jk")
 	@ObfuscatedSignature(
-		descriptor = "(IIII)Lcb;",
-		garbageValue = "-2111411796"
+		garbageValue = "-2111411796",
+		descriptor = "(IIII)Lcb;"
 	)
 	static final InterfaceParent method1001(int var0, int var1, int var2) {
 		InterfaceParent var3 = new InterfaceParent();
-		var3.group = var1 * 546352033;
-		var3.type = var2 * -1692874791;
+		var3.group = var1;
+		var3.type = var2;
 		Client.interfaceParents.put(var3, (long)var0);
 		PacketWriter.Widget_resetModelFrames(var1);
 		Widget var4 = HitSplatDefinition.getWidget(var0);
-		class125.method2770(var4);
+		class125.invalidateWidget(var4);
 		if (Client.meslayerContinueWidget != null) {
-			class125.method2770(Client.meslayerContinueWidget);
+			class125.invalidateWidget(Client.meslayerContinueWidget);
 			Client.meslayerContinueWidget = null;
 		}
 
 		class181.revalidateWidgetScroll(class358.Widget_interfaceComponents[var0 >> 16], var4, false);
 		class282.runWidgetOnLoadListener(var1);
-		if (Client.field649 * 1440668979 != -1) {
-			ModelData0.runIntfCloseListeners(Client.field649 * 1440668979, 1);
+		if (Client.rootInterface != -1) {
+			ModelData0.runIntfCloseListeners(Client.rootInterface, 1);
 		}
 
 		return var3;

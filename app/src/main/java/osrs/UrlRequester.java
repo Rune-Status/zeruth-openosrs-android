@@ -16,14 +16,17 @@ import java.util.LinkedList;
 import java.util.Queue;
 import net.runelite.mapping.Export;
 import net.runelite.mapping.Implements;
+import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
-import net.runelite.rs.Reflection;
 
 @ObfuscatedName("cu")
 @Implements("UrlRequester")
 public abstract class UrlRequester implements Runnable {
 	@ObfuscatedName("i")
+	@ObfuscatedGetter(
+		intValue = 1082295421
+	)
 	@Export("musicTrackGroupId")
 	public static int musicTrackGroupId;
 	@ObfuscatedName("al")
@@ -40,6 +43,9 @@ public abstract class UrlRequester implements Runnable {
 	@Export("requests")
 	Queue requests;
 	@ObfuscatedName("v")
+	@ObfuscatedGetter(
+		intValue = -1681223407
+	)
 	int field1349;
 
 	UrlRequester(int var1) {
@@ -47,35 +53,35 @@ public abstract class UrlRequester implements Runnable {
 		this.field1344 = new Thread(this);
 		this.field1344.setPriority(1);
 		this.field1344.start();
-		this.field1349 = var1 * 1391886321;
+		this.field1349 = var1;
 	}
 
 	@ObfuscatedName("s")
 	@ObfuscatedSignature(
-		descriptor = "(Lcv;B)V",
-		garbageValue = "38"
+		garbageValue = "38",
+		descriptor = "(Lcv;B)V"
 	)
-	abstract void vmethod2504(UrlRequest var1) throws IOException;
+	abstract void vmethod2439(UrlRequest var1) throws IOException;
 
 	@ObfuscatedName("h")
 	@ObfuscatedSignature(
-		descriptor = "(Ljava/net/URLConnection;I)V",
-		garbageValue = "-1248048325"
+		garbageValue = "-1248048325",
+		descriptor = "(Ljava/net/URLConnection;I)V"
 	)
-	void method2483(URLConnection var1) {
+	void method2418(URLConnection var1) {
 		var1.setConnectTimeout(5000);
 		var1.setReadTimeout(5000);
 		var1.setUseCaches(false);
 		var1.setRequestProperty("Connection", "close");
-		var1.setRequestProperty("User-Agent", "OldSchoolRuneScape/" + this.field1349 * -1681223407);
+		var1.setRequestProperty("User-Agent", "OldSchoolRuneScape/" + this.field1349);
 	}
 
 	@ObfuscatedName("w")
 	@ObfuscatedSignature(
-		descriptor = "(Ljava/net/URLConnection;Lcv;I)V",
-		garbageValue = "-1807298626"
+		garbageValue = "-1807298626",
+		descriptor = "(Ljava/net/URLConnection;Lcv;I)V"
 	)
-	void method2484(URLConnection var1, UrlRequest var2) {
+	void method2419(URLConnection var1, UrlRequest var2) {
 		DataInputStream var3 = null;
 
 		try {
@@ -114,8 +120,8 @@ public abstract class UrlRequester implements Runnable {
 
 	@ObfuscatedName("v")
 	@ObfuscatedSignature(
-		descriptor = "(Ljava/net/URL;I)Lcv;",
-		garbageValue = "-1152781459"
+		garbageValue = "-1152781459",
+		descriptor = "(Ljava/net/URL;I)Lcv;"
 	)
 	@Export("request")
 	public UrlRequest request(URL var1) {
@@ -129,8 +135,8 @@ public abstract class UrlRequester implements Runnable {
 
 	@ObfuscatedName("c")
 	@ObfuscatedSignature(
-		descriptor = "(S)V",
-		garbageValue = "11038"
+		garbageValue = "11038",
+		descriptor = "(S)V"
 	)
 	@Export("close")
 	public void close() {
@@ -162,7 +168,7 @@ public abstract class UrlRequester implements Runnable {
 					}
 				}
 
-				this.vmethod2504(var1);
+				this.vmethod2439(var1);
 			} catch (Exception var7) {
 				class33.RunException_sendStackTrace((String)null, var7);
 			}
@@ -172,17 +178,17 @@ public abstract class UrlRequester implements Runnable {
 
 	@ObfuscatedName("s")
 	@ObfuscatedSignature(
-		descriptor = "(Lqz;I)V",
-		garbageValue = "-776067812"
+		garbageValue = "-776067812",
+		descriptor = "(Lqz;I)V"
 	)
 	@Export("performReflectionCheck")
 	public static void performReflectionCheck(PacketBuffer var0) {
 		ReflectionCheck var1 = (ReflectionCheck)class33.reflectionChecks.last();
 		if (var1 != null) {
-			int var2 = var0.offset * 1795921631;
-			var0.writeInt(var1.id * -899581373);
+			int var2 = var0.offset;
+			var0.writeInt(var1.id);
 
-			for (int var3 = 0; var3 < var1.size * 1174030445; ++var3) {
+			for (int var3 = 0; var3 < var1.size; ++var3) {
 				if (var1.creationErrors[var3] != 0) {
 					var0.writeByte(var1.creationErrors[var3]);
 				} else {
@@ -192,12 +198,12 @@ public abstract class UrlRequester implements Runnable {
 						int var6;
 						if (var4 == 0) {
 							var5 = var1.fields[var3];
-							var6 = Reflection.getInt(var5, (Object)null);
+							var6 = var5.getInt((Object)null);
 							var0.writeByte(0);
 							var0.writeInt(var6);
 						} else if (var4 == 1) {
 							var5 = var1.fields[var3];
-							Reflection.setInt(var5, (Object)null, var1.intReplaceValues[var3]);
+							var5.setInt((Object)null, var1.intReplaceValues[var3]);
 							var0.writeByte(0);
 						} else if (var4 == 2) {
 							var5 = var1.fields[var3];
@@ -224,7 +230,7 @@ public abstract class UrlRequester implements Runnable {
 								var7[var8] = var9.readObject();
 							}
 
-							Object var11 = Reflection.invoke(var25, (Object)null, var7);
+							Object var11 = var25.invoke((Object)null, var7);
 							if (var11 == null) {
 								var0.writeByte(0);
 							} else if (var11 instanceof Number) {

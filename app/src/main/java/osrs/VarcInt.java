@@ -38,26 +38,26 @@ public class VarcInt extends DualNode {
 
 	@ObfuscatedName("w")
 	@ObfuscatedSignature(
-		descriptor = "(Lqr;I)V",
-		garbageValue = "-148027464"
+		garbageValue = "-148027464",
+		descriptor = "(Lqr;I)V"
 	)
-	void method3318(Buffer var1) {
+	void method3253(Buffer var1) {
 		while (true) {
 			int var2 = var1.readUnsignedByte();
 			if (var2 == 0) {
 				return;
 			}
 
-			this.method3325(var1, var2);
+			this.method3260(var1, var2);
 		}
 	}
 
 	@ObfuscatedName("v")
 	@ObfuscatedSignature(
-		descriptor = "(Lqr;II)V",
-		garbageValue = "189989470"
+		garbageValue = "189989470",
+		descriptor = "(Lqr;II)V"
 	)
-	void method3325(Buffer var1, int var2) {
+	void method3260(Buffer var1, int var2) {
 		if (var2 == 2) {
 			this.persist = true;
 		}
@@ -66,8 +66,8 @@ public class VarcInt extends DualNode {
 
 	@ObfuscatedName("h")
 	@ObfuscatedSignature(
-		descriptor = "(ILjava/lang/String;Ljava/lang/String;I)V",
-		garbageValue = "710867325"
+		garbageValue = "710867325",
+		descriptor = "(ILjava/lang/String;Ljava/lang/String;I)V"
 	)
 	@Export("addGameMessage")
 	static void addGameMessage(int var0, String var1, String var2) {
@@ -76,12 +76,12 @@ public class VarcInt extends DualNode {
 
 	@ObfuscatedName("v")
 	@ObfuscatedSignature(
-		descriptor = "(I)V",
-		garbageValue = "-1849403941"
+		garbageValue = "-1849403941",
+		descriptor = "(I)V"
 	)
-	public static void method3328() {
+	public static void method3263() {
 		ItemContainer.midiPcmStream.clear();
-		class273.musicPlayerStatus = 168497391;
+		class273.musicPlayerStatus = 1;
 		NetFileRequest.musicTrackArchive = null;
 	}
 }

@@ -2,6 +2,7 @@ package osrs;
 
 import net.runelite.mapping.Export;
 import net.runelite.mapping.Implements;
+import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
@@ -12,19 +13,34 @@ public class ViewportMouse {
 	@Export("ViewportMouse_isInViewport")
 	public static boolean ViewportMouse_isInViewport;
 	@ObfuscatedName("h")
+	@ObfuscatedGetter(
+		intValue = 858842197
+	)
 	@Export("ViewportMouse_x")
 	static int ViewportMouse_x;
 	@ObfuscatedName("w")
+	@ObfuscatedGetter(
+		intValue = 1382738033
+	)
 	@Export("ViewportMouse_y")
 	static int ViewportMouse_y;
 	@ObfuscatedName("v")
 	@Export("ViewportMouse_false0")
 	static boolean ViewportMouse_false0;
 	@ObfuscatedName("q")
+	@ObfuscatedGetter(
+		intValue = -1792884329
+	)
 	static int field2593;
 	@ObfuscatedName("n")
+	@ObfuscatedGetter(
+		intValue = 191932759
+	)
 	static int field2599;
 	@ObfuscatedName("u")
+	@ObfuscatedGetter(
+		intValue = -834575933
+	)
 	@Export("ViewportMouse_entityCount")
 	public static int ViewportMouse_entityCount;
 	@ObfuscatedName("l")
@@ -42,8 +58,8 @@ public class ViewportMouse {
 
 	@ObfuscatedName("i")
 	@ObfuscatedSignature(
-		descriptor = "(II)I",
-		garbageValue = "2086292027"
+		garbageValue = "2086292027",
+		descriptor = "(II)I"
 	)
 	@Export("iLog")
 	public static int iLog(int var0) {
@@ -78,18 +94,18 @@ public class ViewportMouse {
 
 	@ObfuscatedName("l")
 	@ObfuscatedSignature(
-		descriptor = "(IIII)I",
-		garbageValue = "971084928"
+		garbageValue = "971084928",
+		descriptor = "(IIII)I"
 	)
-	static final int method4395(int var0, int var1, int var2) {
+	static final int method4330(int var0, int var1, int var2) {
 		int var3 = var0 / var2;
 		int var4 = var0 & var2 - 1;
 		int var5 = var1 / var2;
 		int var6 = var1 & var2 - 1;
-		int var7 = World.method1623(var3, var5);
-		int var8 = World.method1623(var3 + 1, var5);
-		int var9 = World.method1623(var3, var5 + 1);
-		int var10 = World.method1623(var3 + 1, var5 + 1);
+		int var7 = World.method1558(var3, var5);
+		int var8 = World.method1558(var3 + 1, var5);
+		int var9 = World.method1558(var3, var5 + 1);
+		int var10 = World.method1558(var3 + 1, var5 + 1);
 		int var12 = 65536 - Rasterizer3D.Rasterizer3D_cosine[var4 * 1024 / var2] >> 1;
 		int var11 = ((65536 - var12) * var7 >> 16) + (var12 * var8 >> 16);
 		int var14 = 65536 - Rasterizer3D.Rasterizer3D_cosine[var4 * 1024 / var2] >> 1;
@@ -101,10 +117,10 @@ public class ViewportMouse {
 
 	@ObfuscatedName("gw")
 	@ObfuscatedSignature(
-		descriptor = "(I)Z",
-		garbageValue = "1744172239"
+		garbageValue = "1744172239",
+		descriptor = "(I)Z"
 	)
-	static boolean method4413() {
-		return (Client.drawPlayerNames * 141826713 & 4) != 0;
+	static boolean method4348() {
+		return (Client.drawPlayerNames & 4) != 0;
 	}
 }

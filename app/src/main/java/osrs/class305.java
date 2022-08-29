@@ -8,26 +8,26 @@ import net.runelite.mapping.ObfuscatedSignature;
 public class class305 {
 	@ObfuscatedName("bm")
 	@ObfuscatedSignature(
-		descriptor = "([BI)[B",
-		garbageValue = "-1495812528"
+		garbageValue = "-1495812528",
+		descriptor = "([BI)[B"
 	)
 	@Export("decompressBytes")
 	static final byte[] decompressBytes(byte[] var0) {
 		Buffer var1 = new Buffer(var0);
 		int var2 = var1.readUnsignedByte();
 		int var3 = var1.readInt();
-		if (var3 < 0 || AbstractArchive.field4014 * 398177169 != 0 && var3 > AbstractArchive.field4014 * 398177169) {
+		if (var3 < 0 || AbstractArchive.field4014 != 0 && var3 > AbstractArchive.field4014) {
 			throw new RuntimeException();
 		} else if (var2 == 0) {
-			byte[] var6 = new byte[var3];
-			var1.readBytes(var6, 0, var3);
-			return var6;
+			byte[] var4 = new byte[var3];
+			var1.readBytes(var4, 0, var3);
+			return var4;
 		} else {
-			int var4 = var1.readInt();
-			if (var4 >= 0 && (AbstractArchive.field4014 * 398177169 == 0 || var4 <= AbstractArchive.field4014 * 398177169)) {
-				byte[] var5 = new byte[var4];
+			int var6 = var1.readInt();
+			if (var6 >= 0 && (AbstractArchive.field4014 == 0 || var6 <= AbstractArchive.field4014)) {
+				byte[] var5 = new byte[var6];
 				if (var2 == 1) {
-					BZip2Decompressor.BZip2Decompressor_decompress(var5, var4, var0, var3, 9);
+					BZip2Decompressor.BZip2Decompressor_decompress(var5, var6, var0, var3, 9);
 				} else {
 					AbstractArchive.gzipDecompressor.decompress(var1, var5);
 				}

@@ -1,6 +1,7 @@
 package osrs;
 
 import net.runelite.mapping.Export;
+import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
@@ -13,6 +14,9 @@ public class class115 {
 	@Export("JagexCache_idxFiles")
 	public static BufferedFile[] JagexCache_idxFiles;
 	@ObfuscatedName("s")
+	@ObfuscatedGetter(
+		intValue = -1293518941
+	)
 	public final int field1421;
 	@ObfuscatedName("h")
 	@ObfuscatedSignature(
@@ -71,7 +75,7 @@ public class class115 {
 		this.field1420 = new class388();
 		this.field1424 = true;
 		this.field1422 = new class388();
-		this.field1421 = var2.readShort() * -1866370037;
+		this.field1421 = var2.readShort();
 		this.field1415 = new class388[var1];
 		this.field1416 = new class388[this.field1415.length];
 		this.field1417 = new class388[this.field1415.length];
@@ -79,60 +83,60 @@ public class class115 {
 
 		for (int var4 = 0; var4 < this.field1415.length; ++var4) {
 			this.field1415[var4] = new class388(var2, var3);
-			this.field1414[var4][0] = var2.method7824();
-			this.field1414[var4][1] = var2.method7824();
-			this.field1414[var4][2] = var2.method7824();
+			this.field1414[var4][0] = var2.method7717();
+			this.field1414[var4][1] = var2.method7717();
+			this.field1414[var4][2] = var2.method7717();
 		}
 
-		this.method2640();
+		this.method2575();
 	}
 
 	@ObfuscatedName("s")
 	@ObfuscatedSignature(
-		descriptor = "(I)V",
-		garbageValue = "-2120202783"
+		garbageValue = "-2120202783",
+		descriptor = "(I)V"
 	)
-	void method2640() {
+	void method2575() {
 		this.field1425 = new float[this.field1415.length][3];
 		this.field1419 = new float[this.field1415.length][3];
 		this.field1418 = new float[this.field1415.length][3];
-		class388 var1 = Language.method5989();
+		class388 var1 = Language.method5918();
 
 		for (int var2 = 0; var2 < this.field1415.length; ++var2) {
-			class388 var3 = this.method2641(var2);
-			var1.method6915(var3);
-			var1.method6922();
-			this.field1425[var2] = var1.method6913();
+			class388 var3 = this.method2576(var2);
+			var1.method6818(var3);
+			var1.method6825();
+			this.field1425[var2] = var1.method6816();
 			this.field1419[var2][0] = var3.field4398[12];
 			this.field1419[var2][1] = var3.field4398[13];
 			this.field1419[var2][2] = var3.field4398[14];
-			this.field1418[var2] = var3.method6924();
+			this.field1418[var2] = var3.method6827();
 		}
 
-		var1.method6946();
+		var1.method6846();
 	}
 
 	@ObfuscatedName("h")
 	@ObfuscatedSignature(
-		descriptor = "(II)Lny;",
-		garbageValue = "2027623451"
+		garbageValue = "2027623451",
+		descriptor = "(II)Lny;"
 	)
-	class388 method2641(int var1) {
+	class388 method2576(int var1) {
 		return this.field1415[var1];
 	}
 
 	@ObfuscatedName("w")
 	@ObfuscatedSignature(
-		descriptor = "(IB)Lny;",
-		garbageValue = "50"
+		garbageValue = "50",
+		descriptor = "(IB)Lny;"
 	)
-	class388 method2642(int var1) {
+	class388 method2577(int var1) {
 		if (this.field1416[var1] == null) {
-			this.field1416[var1] = new class388(this.method2641(var1));
+			this.field1416[var1] = new class388(this.method2576(var1));
 			if (this.field1413 != null) {
-				this.field1416[var1].method6954(this.field1413.method2642(var1));
+				this.field1416[var1].method6854(this.field1413.method2577(var1));
 			} else {
-				this.field1416[var1].method6954(class388.field4402);
+				this.field1416[var1].method6854(class388.field4402);
 			}
 		}
 
@@ -141,13 +145,13 @@ public class class115 {
 
 	@ObfuscatedName("v")
 	@ObfuscatedSignature(
-		descriptor = "(II)Lny;",
-		garbageValue = "190115070"
+		garbageValue = "190115070",
+		descriptor = "(II)Lny;"
 	)
-	class388 method2643(int var1) {
+	class388 method2578(int var1) {
 		if (this.field1417[var1] == null) {
-			this.field1417[var1] = new class388(this.method2642(var1));
-			this.field1417[var1].method6922();
+			this.field1417[var1] = new class388(this.method2577(var1));
+			this.field1417[var1].method6825();
 		}
 
 		return this.field1417[var1];
@@ -155,34 +159,34 @@ public class class115 {
 
 	@ObfuscatedName("c")
 	@ObfuscatedSignature(
-		descriptor = "(Lny;I)V",
-		garbageValue = "1296926186"
+		garbageValue = "1296926186",
+		descriptor = "(Lny;I)V"
 	)
-	void method2664(class388 var1) {
-		this.field1412.method6915(var1);
+	void method2599(class388 var1) {
+		this.field1412.method6818(var1);
 		this.field1423 = true;
 		this.field1424 = true;
 	}
 
 	@ObfuscatedName("q")
 	@ObfuscatedSignature(
-		descriptor = "(I)Lny;",
-		garbageValue = "-531609518"
+		garbageValue = "-531609518",
+		descriptor = "(I)Lny;"
 	)
-	class388 method2645() {
+	class388 method2580() {
 		return this.field1412;
 	}
 
 	@ObfuscatedName("i")
 	@ObfuscatedSignature(
-		descriptor = "(B)Lny;",
-		garbageValue = "-12"
+		garbageValue = "-12",
+		descriptor = "(B)Lny;"
 	)
-	class388 method2644() {
+	class388 method2579() {
 		if (this.field1423) {
-			this.field1420.method6915(this.method2645());
+			this.field1420.method6818(this.method2580());
 			if (this.field1413 != null) {
-				this.field1420.method6954(this.field1413.method2644());
+				this.field1420.method6854(this.field1413.method2579());
 			}
 
 			this.field1423 = false;
@@ -193,13 +197,13 @@ public class class115 {
 
 	@ObfuscatedName("k")
 	@ObfuscatedSignature(
-		descriptor = "(II)Lny;",
-		garbageValue = "785138004"
+		garbageValue = "785138004",
+		descriptor = "(II)Lny;"
 	)
-	public class388 method2675(int var1) {
+	public class388 method2610(int var1) {
 		if (this.field1424) {
-			this.field1422.method6915(this.method2643(var1));
-			this.field1422.method6954(this.method2644());
+			this.field1422.method6818(this.method2578(var1));
+			this.field1422.method6854(this.method2579());
 			this.field1424 = false;
 		}
 
@@ -208,37 +212,37 @@ public class class115 {
 
 	@ObfuscatedName("o")
 	@ObfuscatedSignature(
-		descriptor = "(II)[F",
-		garbageValue = "-1778236825"
+		garbageValue = "-1778236825",
+		descriptor = "(II)[F"
 	)
-	float[] method2648(int var1) {
+	float[] method2583(int var1) {
 		return this.field1425[var1];
 	}
 
 	@ObfuscatedName("n")
 	@ObfuscatedSignature(
-		descriptor = "(II)[F",
-		garbageValue = "797986666"
+		garbageValue = "797986666",
+		descriptor = "(II)[F"
 	)
-	float[] method2649(int var1) {
+	float[] method2584(int var1) {
 		return this.field1419[var1];
 	}
 
 	@ObfuscatedName("d")
 	@ObfuscatedSignature(
-		descriptor = "(II)[F",
-		garbageValue = "-2138178918"
+		garbageValue = "-2138178918",
+		descriptor = "(II)[F"
 	)
-	float[] method2647(int var1) {
+	float[] method2582(int var1) {
 		return this.field1418[var1];
 	}
 
 	@ObfuscatedName("ll")
 	@ObfuscatedSignature(
-		descriptor = "(II)Lpz;",
-		garbageValue = "1795921631"
+		garbageValue = "1795921631",
+		descriptor = "(II)Lpz;"
 	)
-	static class437 method2650(int var0) {
+	static class437 method2585(int var0) {
 		class437 var1 = (class437)Client.Widget_cachedFonts.get((long)var0);
 		if (var1 == null) {
 			var1 = new class437(Timer.field4232, var0);

@@ -2,6 +2,7 @@ package osrs;
 
 import net.runelite.mapping.Export;
 import net.runelite.mapping.Implements;
+import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
@@ -12,8 +13,8 @@ public class FloorUnderlayDefinition extends DualNode {
 	@ObfuscatedSignature(
 		descriptor = "Lls;"
 	)
-	@Export("FloorOverlayDefinition_archive")
-	static AbstractArchive FloorOverlayDefinition_archive;
+	@Export("FloorUnderlayDefinition_archive")
+	static AbstractArchive FloorUnderlayDefinition_archive;
 	@ObfuscatedName("h")
 	@ObfuscatedSignature(
 		descriptor = "Liz;"
@@ -27,40 +28,58 @@ public class FloorUnderlayDefinition extends DualNode {
 	@Export("archive11")
 	static Archive archive11;
 	@ObfuscatedName("w")
-	int field1973;
+	@ObfuscatedGetter(
+		intValue = 1415861081
+	)
+	@Export("rgb")
+	int rgb;
 	@ObfuscatedName("v")
-	public int field1978;
+	@ObfuscatedGetter(
+		intValue = 711472625
+	)
+	@Export("hue")
+	public int hue;
 	@ObfuscatedName("c")
+	@ObfuscatedGetter(
+		intValue = 1601741227
+	)
 	@Export("saturation")
 	public int saturation;
 	@ObfuscatedName("q")
+	@ObfuscatedGetter(
+		intValue = -754627641
+	)
 	@Export("lightness")
 	public int lightness;
 	@ObfuscatedName("i")
-	public int field1976;
+	@ObfuscatedGetter(
+		intValue = 42167891
+	)
+	@Export("hueMultiplier")
+	public int hueMultiplier;
 
 	static {
 		FloorUnderlayDefinition_cached = new EvictingDualNodeHashTable(64);
 	}
 
 	FloorUnderlayDefinition() {
-		this.field1973 = 0;
+		this.rgb = 0;
 	}
 
 	@ObfuscatedName("w")
 	@ObfuscatedSignature(
-		descriptor = "(B)V",
-		garbageValue = "7"
+		garbageValue = "7",
+		descriptor = "(B)V"
 	)
 	@Export("postDecode")
 	void postDecode() {
-		this.setHsl(this.field1973 * 1415861081);
+		this.setHsl(this.rgb);
 	}
 
 	@ObfuscatedName("v")
 	@ObfuscatedSignature(
-		descriptor = "(Lqr;II)V",
-		garbageValue = "-2144301665"
+		garbageValue = "-2144301665",
+		descriptor = "(Lqr;II)V"
 	)
 	@Export("decode")
 	void decode(Buffer var1, int var2) {
@@ -76,21 +95,21 @@ public class FloorUnderlayDefinition extends DualNode {
 
 	@ObfuscatedName("c")
 	@ObfuscatedSignature(
-		descriptor = "(Lqr;IIB)V",
-		garbageValue = "6"
+		garbageValue = "6",
+		descriptor = "(Lqr;IIB)V"
 	)
 	@Export("decodeNext")
 	void decodeNext(Buffer var1, int var2, int var3) {
 		if (var2 == 1) {
-			this.field1973 = var1.readMedium() * -1411332887;
+			this.rgb = var1.readMedium();
 		}
 
 	}
 
 	@ObfuscatedName("q")
 	@ObfuscatedSignature(
-		descriptor = "(II)V",
-		garbageValue = "1992701527"
+		garbageValue = "1992701527",
+		descriptor = "(II)V"
 	)
 	@Export("setHsl")
 	void setHsl(int var1) {
@@ -137,30 +156,30 @@ public class FloorUnderlayDefinition extends DualNode {
 		}
 
 		var12 /= 6.0D;
-		this.saturation = (int)(var14 * 256.0D) * 1112363267;
-		this.lightness = (int)(256.0D * var16) * -816904713;
-		if (this.saturation * 1601741227 < 0) {
+		this.saturation = (int)(var14 * 256.0D);
+		this.lightness = (int)(256.0D * var16);
+		if (this.saturation < 0) {
 			this.saturation = 0;
-		} else if (this.saturation * 1601741227 > 255) {
-			this.saturation = 184791549;
+		} else if (this.saturation > 255) {
+			this.saturation = 255;
 		}
 
-		if (this.lightness * -754627641 < 0) {
+		if (this.lightness < 0) {
 			this.lightness = 0;
-		} else if (this.lightness * -754627641 > 255) {
-			this.lightness = 2142695689;
+		} else if (this.lightness > 255) {
+			this.lightness = 255;
 		}
 
 		if (var16 > 0.5D) {
-			this.field1976 = (int)(var14 * (1.0D - var16) * 512.0D) * -19724837;
+			this.hueMultiplier = (int)(var14 * (1.0D - var16) * 512.0D);
 		} else {
-			this.field1976 = (int)(512.0D * var16 * var14) * -19724837;
+			this.hueMultiplier = (int)(512.0D * var16 * var14);
 		}
 
-		if (this.field1976 * 42167891 < 1) {
-			this.field1976 = -19724837;
+		if (this.hueMultiplier < 1) {
+			this.hueMultiplier = 1;
 		}
 
-		this.field1978 = (int)(var12 * (double)(this.field1976 * 42167891)) * -744219887;
+		this.hue = (int)(var12 * (double)this.hueMultiplier);
 	}
 }

@@ -45,7 +45,7 @@ public abstract class PcmStream extends Node {
 	protected abstract PcmStream nextSubStream();
 
 	@ObfuscatedName("k")
-	protected abstract int vmethod5396();
+	protected abstract int vmethod5329();
 
 	@ObfuscatedName("o")
 	@Export("fill")

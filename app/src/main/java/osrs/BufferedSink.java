@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.io.OutputStream;
 import net.runelite.mapping.Export;
 import net.runelite.mapping.Implements;
+import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
@@ -17,15 +18,26 @@ public class BufferedSink implements Runnable {
 	@Export("outputStream")
 	OutputStream outputStream;
 	@ObfuscatedName("w")
+	@ObfuscatedGetter(
+		intValue = -190248117
+	)
 	@Export("capacity")
 	int capacity;
 	@ObfuscatedName("v")
 	@Export("buffer")
 	byte[] buffer;
 	@ObfuscatedName("c")
-	int field4350;
+	@ObfuscatedGetter(
+		intValue = 688533941
+	)
+	@Export("position")
+	int position;
 	@ObfuscatedName("q")
-	int field4351;
+	@ObfuscatedGetter(
+		intValue = -1584772581
+	)
+	@Export("limit")
+	int limit;
 	@ObfuscatedName("i")
 	@Export("exception")
 	IOException exception;
@@ -34,11 +46,11 @@ public class BufferedSink implements Runnable {
 	boolean closed;
 
 	BufferedSink(OutputStream var1, int var2) {
-		this.field4350 = 0;
-		this.field4351 = 0;
+		this.position = 0;
+		this.limit = 0;
 		this.outputStream = var1;
-		this.capacity = (var2 + 1) * -517298589;
-		this.buffer = new byte[this.capacity * -190248117];
+		this.capacity = var2 + 1;
+		this.buffer = new byte[this.capacity];
 		this.thread = new Thread(this);
 		this.thread.setDaemon(true);
 		this.thread.start();
@@ -46,8 +58,8 @@ public class BufferedSink implements Runnable {
 
 	@ObfuscatedName("s")
 	@ObfuscatedSignature(
-		descriptor = "(B)Z",
-		garbageValue = "-72"
+		garbageValue = "-72",
+		descriptor = "(B)Z"
 	)
 	@Export("isClosed")
 	boolean isClosed() {
@@ -71,8 +83,8 @@ public class BufferedSink implements Runnable {
 
 	@ObfuscatedName("h")
 	@ObfuscatedSignature(
-		descriptor = "([BIII)V",
-		garbageValue = "-22498213"
+		garbageValue = "-22498213",
+		descriptor = "([BIII)V"
 	)
 	@Export("write")
 	void write(byte[] var1, int var2, int var3) throws IOException {
@@ -82,24 +94,24 @@ public class BufferedSink implements Runnable {
 					throw new IOException(this.exception.toString());
 				} else {
 					int var5;
-					if (this.field4350 * 688533941 <= this.field4351 * -1584772581) {
-						var5 = this.field4350 * 688533941 + (this.capacity * -190248117 - this.field4351 * -1584772581) - 1;
+					if (this.position <= this.limit) {
+						var5 = this.capacity - this.limit + this.position - 1;
 					} else {
-						var5 = this.field4350 * 688533941 - this.field4351 * -1584772581 - 1;
+						var5 = this.position - this.limit - 1;
 					}
 
 					if (var5 < var3) {
 						throw new IOException("");
 					} else {
-						if (var3 + this.field4351 * -1584772581 <= this.capacity * -190248117) {
-							System.arraycopy(var1, var2, this.buffer, this.field4351 * -1584772581, var3);
+						if (var3 + this.limit <= this.capacity) {
+							System.arraycopy(var1, var2, this.buffer, this.limit, var3);
 						} else {
-							int var6 = this.capacity * -190248117 - this.field4351 * -1584772581;
-							System.arraycopy(var1, var2, this.buffer, this.field4351 * -1584772581, var6);
+							int var6 = this.capacity - this.limit;
+							System.arraycopy(var1, var2, this.buffer, this.limit, var6);
 							System.arraycopy(var1, var6 + var2, this.buffer, 0, var3 - var6);
 						}
 
-						this.field4351 = (var3 + this.field4351 * -1584772581) % (this.capacity * -190248117) * -201490413;
+						this.limit = (var3 + this.limit) % this.capacity;
 						this.notifyAll();
 					}
 				}
@@ -111,8 +123,8 @@ public class BufferedSink implements Runnable {
 
 	@ObfuscatedName("w")
 	@ObfuscatedSignature(
-		descriptor = "(B)V",
-		garbageValue = "-35"
+		garbageValue = "-35",
+		descriptor = "(B)V"
 	)
 	@Export("close")
 	void close() {
@@ -137,10 +149,10 @@ public class BufferedSink implements Runnable {
 						return;
 					}
 
-					if (this.field4350 * 688533941 <= this.field4351 * -1584772581) {
-						var1 = this.field4351 * -1584772581 - this.field4350 * 688533941;
+					if (this.position <= this.limit) {
+						var1 = this.limit - this.position;
 					} else {
-						var1 = this.field4351 * -1584772581 + (this.capacity * -190248117 - this.field4350 * 688533941);
+						var1 = this.capacity - this.position + this.limit;
 					}
 
 					if (var1 > 0) {
@@ -166,11 +178,11 @@ public class BufferedSink implements Runnable {
 			}
 
 			try {
-				if (var1 + this.field4350 * 688533941 <= this.capacity * -190248117) {
-					this.outputStream.write(this.buffer, this.field4350 * 688533941, var1);
+				if (var1 + this.position <= this.capacity) {
+					this.outputStream.write(this.buffer, this.position, var1);
 				} else {
-					int var7 = this.capacity * -190248117 - this.field4350 * 688533941;
-					this.outputStream.write(this.buffer, this.field4350 * 688533941, var7);
+					int var7 = this.capacity - this.position;
+					this.outputStream.write(this.buffer, this.position, var7);
 					this.outputStream.write(this.buffer, 0, var1 - var7);
 				}
 			} catch (IOException var10) {
@@ -182,7 +194,7 @@ public class BufferedSink implements Runnable {
 			}
 
 			synchronized(this) {
-				this.field4350 = (var1 + this.field4350 * 688533941) % (this.capacity * -190248117) * -1891371875;
+				this.position = (var1 + this.position) % this.capacity;
 			}
 		} while(!this.isClosed());
 

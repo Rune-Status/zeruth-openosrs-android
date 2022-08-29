@@ -22,13 +22,13 @@ public class class341 {
 
 	@ObfuscatedName("i")
 	@ObfuscatedSignature(
-		descriptor = "(B)[I",
-		garbageValue = "1"
+		garbageValue = "1",
+		descriptor = "(B)[I"
 	)
-	public static int[] method6185() {
-		int[] var0 = new int[KeyHandler.field136 * -693924747];
+	public static int[] method6110() {
+		int[] var0 = new int[KeyHandler.field136];
 
-		for (int var1 = 0; var1 < KeyHandler.field136 * -693924747; ++var1) {
+		for (int var1 = 0; var1 < KeyHandler.field136; ++var1) {
 			var0[var1] = KeyHandler.field135[var1];
 		}
 

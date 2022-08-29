@@ -1,6 +1,7 @@
 package osrs;
 
 import net.runelite.mapping.Export;
+import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
@@ -10,8 +11,12 @@ public class class113 {
 	@ObfuscatedSignature(
 		descriptor = "Lkn;"
 	)
-	static Widget field1405;
+	@Export("mousedOverWidgetIf1")
+	static Widget mousedOverWidgetIf1;
 	@ObfuscatedName("s")
+	@ObfuscatedGetter(
+		intValue = 615485545
+	)
 	int field1400;
 	@ObfuscatedName("h")
 	float field1399;
@@ -38,22 +43,22 @@ public class class113 {
 
 	@ObfuscatedName("s")
 	@ObfuscatedSignature(
-		descriptor = "(Lqr;II)V",
-		garbageValue = "439402435"
+		garbageValue = "439402435",
+		descriptor = "(Lqr;II)V"
 	)
-	void method2621(Buffer var1, int var2) {
-		this.field1400 = var1.readShort() * 149356505;
-		this.field1399 = var1.method7824();
-		this.field1403 = var1.method7824();
-		this.field1401 = var1.method7824();
-		this.field1402 = var1.method7824();
-		this.field1398 = var1.method7824();
+	void method2556(Buffer var1, int var2) {
+		this.field1400 = var1.readShort();
+		this.field1399 = var1.method7717();
+		this.field1403 = var1.method7717();
+		this.field1401 = var1.method7717();
+		this.field1402 = var1.method7717();
+		this.field1398 = var1.method7717();
 	}
 
 	@ObfuscatedName("n")
 	@ObfuscatedSignature(
-		descriptor = "(CI)Z",
-		garbageValue = "-1599367221"
+		garbageValue = "-1599367221",
+		descriptor = "(CI)Z"
 	)
 	@Export("isAlphaNumeric")
 	public static boolean isAlphaNumeric(char var0) {

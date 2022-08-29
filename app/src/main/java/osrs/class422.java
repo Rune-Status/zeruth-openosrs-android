@@ -26,10 +26,10 @@ public class class422 implements class421 {
 
 	@ObfuscatedName("s")
 	@ObfuscatedSignature(
-		descriptor = "(IB)I",
-		garbageValue = "0"
+		garbageValue = "0",
+		descriptor = "(IB)I"
 	)
-	public int vmethod7381(int var1) {
+	public int vmethod7278(int var1) {
 		if (this.field4606 != null) {
 			class451 var2 = (class451)this.field4606.get(var1);
 			if (var2 != null) {
@@ -37,15 +37,15 @@ public class class422 implements class421 {
 			}
 		}
 
-		return (Integer)this.field4605.vmethod7942(var1);
+		return (Integer)this.field4605.vmethod7835(var1);
 	}
 
 	@ObfuscatedName("h")
 	@ObfuscatedSignature(
-		descriptor = "(ILjava/lang/Object;B)V",
-		garbageValue = "62"
+		garbageValue = "62",
+		descriptor = "(ILjava/lang/Object;B)V"
 	)
-	public void vmethod7377(int var1, Object var2) {
+	public void vmethod7274(int var1, Object var2) {
 		if (this.field4606 == null) {
 			this.field4606 = new HashMap();
 			this.field4606.put(var1, new class451(var1, var2));
@@ -65,7 +65,7 @@ public class class422 implements class421 {
 	}
 
 	@ObfuscatedName("h")
-	static final void method7384(long var0) {
+	static final void method7281(long var0) {
 		try {
 			Thread.sleep(var0);
 		} catch (InterruptedException var3) {

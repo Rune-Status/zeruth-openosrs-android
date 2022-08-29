@@ -92,12 +92,12 @@ public class class342 {
 
 	@ObfuscatedName("k")
 	@ObfuscatedSignature(
-		descriptor = "(III)V",
-		garbageValue = "-21882073"
+		garbageValue = "-21882073",
+		descriptor = "(III)V"
 	)
-	public static final void method6200(int var0, int var1) {
-		ViewportMouse.ViewportMouse_x = var0 * 2039281917;
-		ViewportMouse.ViewportMouse_y = var1 * -1543251823;
+	public static final void method6125(int var0, int var1) {
+		ViewportMouse.ViewportMouse_x = var0;
+		ViewportMouse.ViewportMouse_y = var1;
 		ViewportMouse.ViewportMouse_isInViewport = true;
 		ViewportMouse.ViewportMouse_entityCount = 0;
 		ViewportMouse.ViewportMouse_false0 = false;
@@ -105,10 +105,10 @@ public class class342 {
 
 	@ObfuscatedName("f")
 	@ObfuscatedSignature(
-		descriptor = "(Lam;I)V",
-		garbageValue = "-1744938892"
+		garbageValue = "-1744938892",
+		descriptor = "(Lam;I)V"
 	)
-	public static final void method6201(class47 var0) {
+	public static final void method6126(class47 var0) {
 		GrandExchangeOfferTotalQuantityComparator.pcmPlayerProvider = var0;
 	}
 }

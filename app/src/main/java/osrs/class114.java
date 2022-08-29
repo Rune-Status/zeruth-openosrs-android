@@ -17,10 +17,10 @@ public class class114 {
 
 	@ObfuscatedName("u")
 	@ObfuscatedSignature(
-		descriptor = "(I)V",
-		garbageValue = "-1923556377"
+		garbageValue = "-1923556377",
+		descriptor = "(I)V"
 	)
-	public static void method2637() {
+	public static void method2572() {
 		ObjectComposition.ObjectDefinition_cached.clear();
 		ObjectComposition.ObjectDefinition_cachedModelData.clear();
 		ObjectComposition.ObjectDefinition_cachedEntities.clear();
@@ -29,11 +29,11 @@ public class class114 {
 
 	@ObfuscatedName("kk")
 	@ObfuscatedSignature(
-		descriptor = "(I)V",
-		garbageValue = "1368697061"
+		garbageValue = "1368697061",
+		descriptor = "(I)V"
 	)
-	static final void method2638() {
-		PacketBufferNode var0 = DevicePcmPlayerProvider.method354(ClientPacket.field2989, Client.packetWriter.field1338);
+	static final void method2573() {
+		PacketBufferNode var0 = DevicePcmPlayerProvider.getPacketBufferNode(ClientPacket.field2989, Client.packetWriter.isaacCipher);
 		var0.packetBuffer.writeByte(0);
 		Client.packetWriter.addNode(var0);
 	}

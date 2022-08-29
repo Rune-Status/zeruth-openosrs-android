@@ -2,6 +2,7 @@ package osrs;
 
 import net.runelite.mapping.Export;
 import net.runelite.mapping.Implements;
+import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
@@ -15,25 +16,29 @@ public class Ignored extends User {
 	@Export("scriptActiveWidget")
 	static Widget scriptActiveWidget;
 	@ObfuscatedName("s")
-	int field4322;
+	@ObfuscatedGetter(
+		intValue = 410982667
+	)
+	@Export("id")
+	int id;
 
 	Ignored() {
 	}
 
 	@ObfuscatedName("s")
 	@ObfuscatedSignature(
-		descriptor = "(Lnv;I)I",
-		garbageValue = "2045269019"
+		garbageValue = "2045269019",
+		descriptor = "(Lnv;I)I"
 	)
 	@Export("compareTo_ignored")
 	int compareTo_ignored(Ignored var1) {
-		return this.field4322 * 410982667 - var1.field4322 * 410982667;
+		return this.id - var1.id;
 	}
 
 	@ObfuscatedName("h")
 	@ObfuscatedSignature(
-		descriptor = "(Lnb;I)I",
-		garbageValue = "1550816169"
+		garbageValue = "1550816169",
+		descriptor = "(Lnb;I)I"
 	)
 	@Export("compareTo_user")
 	public int compareTo_user(User var1) {
@@ -46,8 +51,8 @@ public class Ignored extends User {
 
 	@ObfuscatedName("hg")
 	@ObfuscatedSignature(
-		descriptor = "(I)V",
-		garbageValue = "1092263394"
+		garbageValue = "1092263394",
+		descriptor = "(I)V"
 	)
 	@Export("addCancelMenuEntry")
 	static void addCancelMenuEntry() {
@@ -57,6 +62,6 @@ public class Ignored extends User {
 		Client.menuTargets[0] = "";
 		Client.menuOpcodes[0] = 1006;
 		Client.menuShiftClick[0] = false;
-		Client.menuOptionsCount = -1192880671;
+		Client.menuOptionsCount = 1;
 	}
 }

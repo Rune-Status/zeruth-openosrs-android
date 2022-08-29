@@ -15,28 +15,28 @@ final class class430 implements class429 {
 
 	@ObfuscatedName("s")
 	@ObfuscatedSignature(
-		descriptor = "(Ljava/lang/Object;Lqr;I)V",
-		garbageValue = "1286167930"
+		garbageValue = "1286167930",
+		descriptor = "(Ljava/lang/Object;Lqr;I)V"
 	)
-	public void vmethod7506(Object var1, Buffer var2) {
-		this.method7465((Integer)var1, var2);
+	public void vmethod7399(Object var1, Buffer var2) {
+		this.method7358((Integer)var1, var2);
 	}
 
 	@ObfuscatedName("h")
 	@ObfuscatedSignature(
-		descriptor = "(Lqr;B)Ljava/lang/Object;",
-		garbageValue = "36"
+		garbageValue = "36",
+		descriptor = "(Lqr;B)Ljava/lang/Object;"
 	)
-	public Object vmethod7514(Buffer var1) {
+	public Object vmethod7407(Buffer var1) {
 		return var1.readInt();
 	}
 
 	@ObfuscatedName("o")
 	@ObfuscatedSignature(
-		descriptor = "(Ljava/lang/Integer;Lqr;B)V",
-		garbageValue = "99"
+		garbageValue = "99",
+		descriptor = "(Ljava/lang/Integer;Lqr;B)V"
 	)
-	void method7465(Integer var1, Buffer var2) {
+	void method7358(Integer var1, Buffer var2) {
 		var2.writeInt(var1);
 	}
 }

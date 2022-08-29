@@ -101,7 +101,7 @@ public final class DemotingHashTable {
 	}
 
 	@ObfuscatedName("v")
-	public void method5073(Object var1, long var2) {
+	public void method5006(Object var1, long var2) {
 		this.put(var1, var2, 1);
 	}
 
@@ -125,7 +125,7 @@ public final class DemotingHashTable {
 
 				this.removeWrapper(var5);
 				if (this.field2895 != null) {
-					this.field2895.method5068(var5.get());
+					this.field2895.method5001(var5.get());
 				}
 			}
 

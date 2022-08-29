@@ -3,6 +3,7 @@ package osrs;
 import java.io.IOException;
 import java.util.concurrent.Callable;
 import net.runelite.mapping.Export;
+import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
@@ -20,6 +21,9 @@ public class class20 implements Callable {
 	)
 	static StudioGame field111;
 	@ObfuscatedName("hh")
+	@ObfuscatedGetter(
+		intValue = 798548671
+	)
 	static int field105;
 	@ObfuscatedName("s")
 	@ObfuscatedSignature(
@@ -43,7 +47,7 @@ public class class20 implements Callable {
 	public Object call() throws Exception {
 		try {
 			while (this.field106.method85()) {
-				class144.method3006(10L);
+				class144.method2941(10L);
 			}
 		} catch (IOException var2) {
 			return new class21("Error servicing REST query: " + var2.getMessage());
@@ -54,8 +58,8 @@ public class class20 implements Callable {
 
 	@ObfuscatedName("s")
 	@ObfuscatedSignature(
-		descriptor = "(II)Lfz;",
-		garbageValue = "2075055341"
+		garbageValue = "2075055341",
+		descriptor = "(II)Lfz;"
 	)
 	@Export("getInvDefinition")
 	public static InvDefinition getInvDefinition(int var0) {
@@ -76,14 +80,14 @@ public class class20 implements Callable {
 
 	@ObfuscatedName("k")
 	@ObfuscatedSignature(
-		descriptor = "(Lls;Lls;Ljava/lang/String;Ljava/lang/String;I)Lmg;",
-		garbageValue = "1704456305"
+		garbageValue = "1704456305",
+		descriptor = "(Lls;Lls;Ljava/lang/String;Ljava/lang/String;I)Lmg;"
 	)
 	public static Font method289(AbstractArchive var0, AbstractArchive var1, String var2, String var3) {
 		int var4 = var0.getGroupId(var2);
 		int var5 = var0.getFileId(var4, var3);
 		Font var6;
-		if (!Tile.method3937(var0, var4, var5)) {
+		if (!Tile.method3872(var0, var4, var5)) {
 			var6 = null;
 		} else {
 			byte[] var8 = var1.takeFile(var4, var5);
@@ -109,8 +113,8 @@ public class class20 implements Callable {
 
 	@ObfuscatedName("fv")
 	@ObfuscatedSignature(
-		descriptor = "(Ljava/lang/String;ZI)V",
-		garbageValue = "-2115547996"
+		garbageValue = "-2115547996",
+		descriptor = "(Ljava/lang/String;ZI)V"
 	)
 	@Export("drawLoadingMessage")
 	static final void drawLoadingMessage(String var0, boolean var1) {
@@ -132,8 +136,8 @@ public class class20 implements Callable {
 				int var9 = var5;
 				int var10 = var6;
 
-				for (int var11 = 0; var11 < Client.field696 * -1456709211; ++var11) {
-					if (Client.field703[var11] + Client.field701[var11] > var7 && Client.field701[var11] < var9 + var7 && Client.field746[var11] + Client.field508[var11] > var8 && Client.field508[var11] < var10 + var8) {
+				for (int var11 = 0; var11 < Client.rootWidgetCount; ++var11) {
+					if (Client.rootWidgetWidths[var11] + Client.rootWidgetXs[var11] > var7 && Client.rootWidgetXs[var11] < var9 + var7 && Client.rootWidgetHeights[var11] + Client.rootWidgetYs[var11] > var8 && Client.rootWidgetYs[var11] < var10 + var8) {
 						Client.field753[var11] = true;
 					}
 				}
@@ -144,10 +148,10 @@ public class class20 implements Callable {
 
 	@ObfuscatedName("gu")
 	@ObfuscatedSignature(
-		descriptor = "(B)Z",
-		garbageValue = "-28"
+		garbageValue = "-28",
+		descriptor = "(B)Z"
 	)
 	static boolean method286() {
-		return (Client.drawPlayerNames * 141826713 & 2) != 0;
+		return (Client.drawPlayerNames & 2) != 0;
 	}
 }

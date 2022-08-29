@@ -12,7 +12,8 @@ public class Username implements Comparable {
 	@ObfuscatedSignature(
 		descriptor = "Lja;"
 	)
-	public static MusicTrack field4838;
+	@Export("musicTrack")
+	public static MusicTrack musicTrack;
 	@ObfuscatedName("s")
 	@Export("name")
 	String name;
@@ -29,14 +30,14 @@ public class Username implements Comparable {
 		if (var1 == null) {
 			var4 = null;
 		} else {
-			label86: {
+			label81: {
 				int var5 = 0;
 
 				int var6;
-				for (var6 = var1.length(); var5 < var6 && SceneTilePaint.method4416(var1.charAt(var5)); ++var5) {
+				for (var6 = var1.length(); var5 < var6 && SceneTilePaint.method4351(var1.charAt(var5)); ++var5) {
 				}
 
-				while (var6 > var5 && SceneTilePaint.method4416(var1.charAt(var6 - 1))) {
+				while (var6 > var5 && SceneTilePaint.method4351(var1.charAt(var6 - 1))) {
 					--var6;
 				}
 
@@ -46,7 +47,7 @@ public class Username implements Comparable {
 					if (var2 == null) {
 						var9 = 12;
 					} else {
-						switch(var2.field4616 * -14950581) {
+						switch(var2.field4616) {
 						case 1:
 							var9 = 20;
 							break;
@@ -60,7 +61,7 @@ public class Username implements Comparable {
 
 						for (int var14 = var5; var14 < var6; ++var14) {
 							char var10 = var1.charAt(var14);
-							if (class400.method7055(var10)) {
+							if (class400.method6952(var10)) {
 								char var11;
 								switch(var10) {
 								case ' ':
@@ -156,7 +157,7 @@ public class Username implements Comparable {
 						} else {
 							var4 = var13.toString();
 						}
-						break label86;
+						break label81;
 					}
 				}
 
@@ -174,14 +175,14 @@ public class Username implements Comparable {
 		if (var1 == null) {
 			var3 = null;
 		} else {
-			label86: {
+			label81: {
 				int var5 = 0;
 
 				int var6;
-				for (var6 = var1.length(); var5 < var6 && SceneTilePaint.method4416(var1.charAt(var5)); ++var5) {
+				for (var6 = var1.length(); var5 < var6 && SceneTilePaint.method4351(var1.charAt(var5)); ++var5) {
 				}
 
-				while (var6 > var5 && SceneTilePaint.method4416(var1.charAt(var6 - 1))) {
+				while (var6 > var5 && SceneTilePaint.method4351(var1.charAt(var6 - 1))) {
 					--var6;
 				}
 
@@ -191,7 +192,7 @@ public class Username implements Comparable {
 					if (var4 == null) {
 						var9 = 12;
 					} else {
-						switch(var4.field4616 * -14950581) {
+						switch(var4.field4616) {
 						case 1:
 							var9 = 20;
 							break;
@@ -205,7 +206,7 @@ public class Username implements Comparable {
 
 						for (int var14 = var5; var14 < var6; ++var14) {
 							char var10 = var1.charAt(var14);
-							if (class400.method7055(var10)) {
+							if (class400.method6952(var10)) {
 								char var11;
 								switch(var10) {
 								case ' ':
@@ -301,7 +302,7 @@ public class Username implements Comparable {
 						} else {
 							var3 = var13.toString();
 						}
-						break label86;
+						break label81;
 					}
 				}
 
@@ -314,8 +315,8 @@ public class Username implements Comparable {
 
 	@ObfuscatedName("s")
 	@ObfuscatedSignature(
-		descriptor = "(B)Ljava/lang/String;",
-		garbageValue = "0"
+		garbageValue = "0",
+		descriptor = "(B)Ljava/lang/String;"
 	)
 	@Export("getName")
 	public String getName() {
@@ -324,17 +325,17 @@ public class Username implements Comparable {
 
 	@ObfuscatedName("h")
 	@ObfuscatedSignature(
-		descriptor = "(I)Ljava/lang/String;",
-		garbageValue = "557448197"
+		garbageValue = "557448197",
+		descriptor = "(I)Ljava/lang/String;"
 	)
-	public String method8215() {
+	public String method8107() {
 		return this.cleanName;
 	}
 
 	@ObfuscatedName("w")
 	@ObfuscatedSignature(
-		descriptor = "(B)Z",
-		garbageValue = "21"
+		garbageValue = "21",
+		descriptor = "(B)Z"
 	)
 	@Export("hasCleanName")
 	public boolean hasCleanName() {
@@ -343,8 +344,8 @@ public class Username implements Comparable {
 
 	@ObfuscatedName("i")
 	@ObfuscatedSignature(
-		descriptor = "(Lqy;I)I",
-		garbageValue = "392159043"
+		garbageValue = "392159043",
+		descriptor = "(Lqy;I)I"
 	)
 	@Export("compareToTyped")
 	public int compareToTyped(Username var1) {
@@ -376,6 +377,22 @@ public class Username implements Comparable {
 
 	public int compareTo(Object var1) {
 		return this.compareToTyped((Username)var1);
+	}
+
+	public int aca() {
+		return this.cleanName == null ? 0 : this.cleanName.hashCode();
+	}
+
+	public String acz() {
+		return this.getName();
+	}
+
+	public String acy() {
+		return this.getName();
+	}
+
+	public String acq() {
+		return this.getName();
 	}
 
 	public String toString() {

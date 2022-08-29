@@ -13,13 +13,13 @@ public class ModelData0 {
 
 	@ObfuscatedName("ie")
 	@ObfuscatedSignature(
-		descriptor = "(IIB)V",
-		garbageValue = "53"
+		garbageValue = "53",
+		descriptor = "(IIB)V"
 	)
 	@Export("runIntfCloseListeners")
 	static final void runIntfCloseListeners(int var0, int var1) {
 		if (ParamComposition.loadInterface(var0)) {
-			Renderable.method4230(class358.Widget_interfaceComponents[var0], var1);
+			Renderable.runComponentCloseListeners(class358.Widget_interfaceComponents[var0], var1);
 		}
 	}
 }

@@ -35,15 +35,15 @@ public class class389 {
 	}
 
 	class389() {
-		this.method6980();
+		this.method6880();
 	}
 
 	@ObfuscatedName("s")
 	@ObfuscatedSignature(
-		descriptor = "(I)V",
-		garbageValue = "-2002114783"
+		garbageValue = "-2002114783",
+		descriptor = "(I)V"
 	)
-	void method6980() {
+	void method6880() {
 		this.field4415 = 0.0F;
 		this.field4414 = 0.0F;
 		this.field4412 = 0.0F;
@@ -60,10 +60,10 @@ public class class389 {
 
 	@ObfuscatedName("h")
 	@ObfuscatedSignature(
-		descriptor = "(FB)V",
-		garbageValue = "24"
+		garbageValue = "24",
+		descriptor = "(FB)V"
 	)
-	void method6989(float var1) {
+	void method6887(float var1) {
 		float var2 = (float)Math.cos((double)var1);
 		float var3 = (float)Math.sin((double)var1);
 		float var4 = this.field4405;
@@ -82,10 +82,10 @@ public class class389 {
 
 	@ObfuscatedName("w")
 	@ObfuscatedSignature(
-		descriptor = "(FI)V",
-		garbageValue = "-1288376233"
+		garbageValue = "-1288376233",
+		descriptor = "(FI)V"
 	)
-	void method6982(float var1) {
+	void method6882(float var1) {
 		float var2 = (float)Math.cos((double)var1);
 		float var3 = (float)Math.sin((double)var1);
 		float var4 = this.field4404;
@@ -104,10 +104,10 @@ public class class389 {
 
 	@ObfuscatedName("v")
 	@ObfuscatedSignature(
-		descriptor = "(FI)V",
-		garbageValue = "-1978648332"
+		garbageValue = "-1978648332",
+		descriptor = "(FI)V"
 	)
-	void method6983(float var1) {
+	void method6883(float var1) {
 		float var2 = (float)Math.cos((double)var1);
 		float var3 = (float)Math.sin((double)var1);
 		float var4 = this.field4404;
@@ -126,13 +126,25 @@ public class class389 {
 
 	@ObfuscatedName("c")
 	@ObfuscatedSignature(
-		descriptor = "(FFFI)V",
-		garbageValue = "1253181465"
+		garbageValue = "1253181465",
+		descriptor = "(FFFI)V"
 	)
-	void method6998(float var1, float var2, float var3) {
+	void method6895(float var1, float var2, float var3) {
 		this.field4412 += var1;
 		this.field4414 += var2;
 		this.field4415 += var3;
+	}
+
+	public String acz() {
+		return this.field4404 + "," + this.field4407 + "," + this.field4410 + "," + this.field4412 + "\n" + this.field4405 + "," + this.field4413 + "," + this.field4411 + "," + this.field4414 + "\n" + this.field4406 + "," + this.field4409 + "," + this.field4416 + "," + this.field4415;
+	}
+
+	public String acy() {
+		return this.field4404 + "," + this.field4407 + "," + this.field4410 + "," + this.field4412 + "\n" + this.field4405 + "," + this.field4413 + "," + this.field4411 + "," + this.field4414 + "\n" + this.field4406 + "," + this.field4409 + "," + this.field4416 + "," + this.field4415;
+	}
+
+	public String acq() {
+		return this.field4404 + "," + this.field4407 + "," + this.field4410 + "," + this.field4412 + "\n" + this.field4405 + "," + this.field4413 + "," + this.field4411 + "," + this.field4414 + "\n" + this.field4406 + "," + this.field4409 + "," + this.field4416 + "," + this.field4415;
 	}
 
 	public String toString() {

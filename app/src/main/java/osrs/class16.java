@@ -3,6 +3,7 @@ package osrs;
 import java.util.concurrent.ThreadFactory;
 import java.util.concurrent.atomic.AtomicInteger;
 import net.runelite.mapping.Export;
+import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
 
@@ -12,9 +13,14 @@ public class class16 implements ThreadFactory {
 	@ObfuscatedSignature(
 		descriptor = "Lqn;"
 	)
-	static SpritePixels field86;
+	@Export("compass")
+	static SpritePixels compass;
 	@ObfuscatedName("jq")
-	static int field88;
+	@ObfuscatedGetter(
+		intValue = -1423106171
+	)
+	@Export("cameraX")
+	static int cameraX;
 	@ObfuscatedName("lk")
 	@ObfuscatedSignature(
 		descriptor = "Lkn;"
@@ -50,8 +56,8 @@ public class class16 implements ThreadFactory {
 
 	@ObfuscatedName("h")
 	@ObfuscatedSignature(
-		descriptor = "(CI)Z",
-		garbageValue = "-1187318424"
+		garbageValue = "-1187318424",
+		descriptor = "(CI)Z"
 	)
 	public static boolean method204(char var0) {
 		if ((var0 <= 0 || var0 >= 128) && (var0 < 160 || var0 > 255)) {
@@ -74,8 +80,8 @@ public class class16 implements ThreadFactory {
 
 	@ObfuscatedName("h")
 	@ObfuscatedSignature(
-		descriptor = "(III)I",
-		garbageValue = "1866345097"
+		garbageValue = "1866345097",
+		descriptor = "(III)I"
 	)
 	static int method203(int var0, int var1) {
 		if (var0 == -2) {
@@ -103,8 +109,8 @@ public class class16 implements ThreadFactory {
 
 	@ObfuscatedName("w")
 	@ObfuscatedSignature(
-		descriptor = "(II)I",
-		garbageValue = "-476601149"
+		garbageValue = "-476601149",
+		descriptor = "(II)I"
 	)
 	public static int method205(int var0) {
 		return class402.field4444[var0 & 16383];
@@ -112,8 +118,8 @@ public class class16 implements ThreadFactory {
 
 	@ObfuscatedName("o")
 	@ObfuscatedSignature(
-		descriptor = "(II)I",
-		garbageValue = "1785411411"
+		garbageValue = "1785411411",
+		descriptor = "(II)I"
 	)
 	@Export("Messages_getLastChatID")
 	static int Messages_getLastChatID(int var0) {
@@ -121,7 +127,7 @@ public class class16 implements ThreadFactory {
 		if (var1 == null) {
 			return -1;
 		} else {
-			return var1.previousDual == Messages.Messages_queue.sentinel ? -1 : ((Message)var1.previousDual).count * 416329001;
+			return var1.previousDual == Messages.Messages_queue.sentinel ? -1 : ((Message)var1.previousDual).count;
 		}
 	}
 }

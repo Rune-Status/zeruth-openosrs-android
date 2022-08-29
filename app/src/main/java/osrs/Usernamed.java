@@ -10,9 +10,24 @@ import net.runelite.mapping.ObfuscatedSignature;
 public interface Usernamed {
 	@ObfuscatedName("kq")
 	@ObfuscatedSignature(
-		descriptor = "(I)Lqy;",
-		garbageValue = "-655340942"
+		garbageValue = "-655340942",
+		descriptor = "(I)Lqy;"
 	)
 	@Export("username")
 	Username username();
+
+	@ObfuscatedSignature(
+		descriptor = "()Lqy;"
+	)
+	Username abm();
+
+	@ObfuscatedSignature(
+		descriptor = "()Lqy;"
+	)
+	Username abc();
+
+	@ObfuscatedSignature(
+		descriptor = "()Lqy;"
+	)
+	Username abd();
 }
