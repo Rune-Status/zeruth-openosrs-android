@@ -4,6 +4,8 @@ package osrs;
 import java.awt.event.FocusListener;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;*/
+import android.view.KeyEvent;
+
 import net.runelite.mapping.Export;
 import net.runelite.mapping.Implements;
 import net.runelite.mapping.ObfuscatedGetter;
@@ -13,6 +15,8 @@ import net.runelite.mapping.ObfuscatedSignature;
 @ObfuscatedName("t")
 @Implements("KeyHandler")
 public final class KeyHandler {// implements KeyListener, FocusListener {
+	public static boolean shiftPressed = false;
+
 	@ObfuscatedName("s")
 	@ObfuscatedSignature(
 		descriptor = "Lt;"
@@ -197,6 +201,84 @@ public final class KeyHandler {// implements KeyListener, FocusListener {
 
 	public final void focusGained(FocusEvent var1) {
 	}*/
+
+	public static synchronized void keyPressed(int var1) {
+		int var2 = Character.toLowerCase((char) var1);
+		if (KeyHandler_instance != null) {
+			if (var2 >= 0 && var2 < KeyHandler_keyCodes.length) {
+				var2 = KeyHandler_keyCodes[var2];
+				if ((var2 & 128) != 0) {
+					System.out.println("invalid keycode");
+					var2 = -1;
+				}
+			} else {
+				System.out.println("invalid keycode");
+				var2 = -1;
+			}
+
+			if (field132 >= 0 && var2 >= 0) {
+				field130[field132] = var2;
+				field132 = field132 + 1 & 127;
+				if (field149 == field132) {
+					field132 = -1;
+				}
+			}
+
+			int var3;
+			if (var2 >= 0) {
+				var3 = field133 + 1 & 127;
+				if (var3 != field139) {
+					field144[field133] = var2;
+					field125[field133] = 0;
+					field133 = var3;
+				}
+			}
+
+/*			var3 = var1.getModifiers();
+			if ((var3 & 10) != 0 || var2 == 85 || var2 == 10) {
+				var1.consume();
+			}*/
+		}
+
+	}
+
+	public static synchronized void keyReleased(int var1) {
+		int var2 = Character.toLowerCase((char) var1);
+		if (KeyHandler_instance != null) {
+			if (var2 >= 0 && var2 < KeyHandler_keyCodes.length) {
+				var2 = KeyHandler_keyCodes[var2] & -129;
+			} else {
+				var2 = -1;
+			}
+
+			if (field132 >= 0 && var2 >= 0) {
+				field130[field132] = ~var2;
+				field132 = field132 + 1 & 127;
+				if (field132 == field149) {
+					field132 = -1;
+				}
+			}
+		}
+
+/*		var1.consume();*/
+	}
+
+	public static void keyTyped(KeyEvent event) {
+		int keycode = event.getUnicodeChar(event.getMetaState());
+		if (KeyHandler_instance != null) {
+			char var2 = (char) keycode;
+			if (var2 != 0 && var2 != '\uffff' && class16.method204(var2)) {
+				int var3 = field133 + 1 & 127;
+				if (var3 != field139) {
+					field144[field133] = -1;
+					field125[field133] = var2;
+					field133 = var3;
+				}
+			}
+		}
+
+/*		var1.consume();*/
+	}
 
 	@ObfuscatedName("h")
 	@ObfuscatedSignature(

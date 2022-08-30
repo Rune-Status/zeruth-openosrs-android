@@ -1,6 +1,7 @@
 #include <jni.h>
-#include <stdlib.h>
+#include <cstdlib>
 #include <android/bitmap.h>
+#include "iostream"
 
 void draw_color(u_int32_t *pixel, u_int32_t color) {
     uint32_t alpha = (color & 0xFF000000) >> 24;
@@ -17,8 +18,8 @@ void draw(jint stride, void *pixels, u_short x, u_short y, u_int32_t color) {
 }
 
 extern "C" JNIEXPORT void JNICALL
-Java_com_meteor_MainActivity_drawPixels(JNIEnv *env, jclass instance, jobject bmp,
-                                        jint width, jint height, jintArray in_pixels){
+Java_com_meteor_MainActivity_00024Companion_drawPixel(JNIEnv *env, jobject instance, jobject bmp,
+                                        jint x, jint y, jint color){
 
     AndroidBitmapInfo info;
     void *pixels;
@@ -35,13 +36,7 @@ Java_com_meteor_MainActivity_drawPixels(JNIEnv *env, jclass instance, jobject bm
         return;
     }
 
-    int x, y;
-    uint32_t* line;
+    draw(1, pixels, x, y, color);
 
-    for(y = 0; y < height; y++){
-        line = (uint32_t*)in_pixels;
-        for(x =0; x < width; x++){
-            draw(1, pixels, x, y, line[x]);
-        }
-    }
+    AndroidBitmap_unlockPixels(env, bmp);
 }

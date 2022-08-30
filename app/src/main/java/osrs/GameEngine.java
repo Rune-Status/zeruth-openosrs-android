@@ -645,7 +645,6 @@ public abstract class GameEngine /*extends Applet*/ implements Runnable{ //, Foc
 /*		if (this.fullRedraw) {
 			this.clearBackground();
 		}*/
-		System.out.println("fps: " + fps);
 		this.fullRedraw = false;
 	}
 
@@ -942,7 +941,7 @@ public abstract class GameEngine /*extends Applet*/ implements Runnable{ //, Foc
 				long graphicsTickFinishTime = System.currentTimeMillis();
 				long graphicsTickProcessingTime = graphicsTickFinishTime - graphicsTickStartTime;
 
-				System.out.println("clientTick: " + clientTickProcessingTime + " graphicsTick: " + graphicsTickProcessingTime);
+				//System.out.println("clientTick: " + clientTickProcessingTime + " graphicsTick: " + graphicsTickProcessingTime);
 				AbstractByteArrayCopier.client.androidActivity.draw();
 				this.post(this.canvas);
 			}

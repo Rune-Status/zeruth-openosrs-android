@@ -1,5 +1,5 @@
 # osrs-android-port  
-Android Studio project with the intentions of replicating necessary java.awt usage in the android environment.  
+Android Studio project that implements OSRS on Android using AWT 
   
 Current features:  
   
@@ -7,15 +7,17 @@ Full AWT software rendering (50 fps unless your resolution is absurd)
 Logging in / world interacting  
 Reflection checks (required for jagex to not input block you)  
 Touch Support (some issues still but usable)  
+Keyboard Support (for login, in-game coming soon)  
+NDK (not used yet but is supported)  
   
 ## Building  
   
-Setup a virtual android device or use your own to launch the ```app``` module  
+Install Android Studio/NDK and import the project.  
 (minimum api 26)  
   
-## Running
+## Running  
   
-Due to the lack of keyboard support, The client will automatically login using supplied username and password in MainActivity
+Plug in you android device, or use the emulator, and run the app task
   
 ## Why tho  
   
