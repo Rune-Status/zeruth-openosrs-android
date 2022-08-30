@@ -1,5 +1,6 @@
 plugins {
     id("com.android.application")
+    kotlin("multiplatform") version "1.7.10"
 }
 
 android {
@@ -38,6 +39,10 @@ android {
         }
     }
     ndkVersion = "25.1.8937393"
+}
+
+kotlin {
+    android()
 }
 
 repositories {

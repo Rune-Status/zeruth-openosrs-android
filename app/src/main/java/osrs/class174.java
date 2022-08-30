@@ -1,5 +1,7 @@
 package osrs;
 
+import static osrs.AbstractByteArrayCopier.client;
+
 import com.meteor.MainActivity;
 
 import java.awt.Toolkit;
@@ -272,17 +274,17 @@ public class class174 {
 							short var43;
 							boolean var46;
 							if (Login.loginIndex == 2) {
-								Login.Login_username = MainActivity.username;
-								Login.Login_password = MainActivity.password;
 								var43 = 201;
 								var42 = var43 + 52;
 								if (var5 == 1 && var41 >= var42 - 12 && var41 < var42 + 2) {
 									Login.currentLoginField = 0;
+									client.androidActivity.showKeyboard();
 								}
 
 								var42 += 15;
 								if (var5 == 1 && var41 >= var42 - 12 && var41 < var42 + 2) {
 									Login.currentLoginField = 1;
+									client.androidActivity.showKeyboard();
 								}
 
 								var42 += 15;
