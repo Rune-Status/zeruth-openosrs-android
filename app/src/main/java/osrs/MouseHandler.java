@@ -250,13 +250,23 @@ public class MouseHandler { //implements MouseListener, MouseMotionListener, Foc
 
 	}*/
 
-	public static synchronized void mousePressed(Point var1) {
+	public static synchronized void mouseMoved(Point var1) {
+		if (MouseHandler_instance != null) {
+			MouseHandler_idleCycles = 0;
+			MouseHandler_xVolatile = (int) var1.getX();
+			MouseHandler_yVolatile = (int) var1.getY();
+			MouseHandler_lastMovedVolatile = System.currentTimeMillis();
+		}
+
+	}
+
+	public static synchronized void mousePressed(Point var1, int buttonId) {
 		if (MouseHandler_instance != null) {
 			MouseHandler_idleCycles = 0;
 			MouseHandler_lastPressedXVolatile = (int) var1.getX();
 			MouseHandler_lastPressedYVolatile = (int) var1.getY();
 			MouseHandler_lastPressedTimeMillisVolatile = class181.method3418();
-			MouseHandler_lastButtonVolatile = 1; //this.getButton(var1);
+			MouseHandler_lastButtonVolatile = buttonId; //this.getButton(var1);
 			if (MouseHandler_lastButtonVolatile != 0) {
 				MouseHandler_currentButtonVolatile = MouseHandler_lastButtonVolatile;
 			}

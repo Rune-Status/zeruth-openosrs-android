@@ -5,6 +5,7 @@ import java.lang.reflect.Method;
 import net.runelite.mapping.Export;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
+import net.runelite.rs.Reflection;
 
 @ObfuscatedName("jn")
 public class class267 {
@@ -105,7 +106,7 @@ public class class267 {
 						throw new SecurityException();
 					}
 
-					var2.fields[var3] = AbstractWorldMapIcon.loadClassFromDescriptor(var5).getDeclaredField(var6);
+					var2.fields[var3] = Reflection.findField(AbstractWorldMapIcon.loadClassFromDescriptor(var5), var6);
 				}
 			} catch (ClassNotFoundException var24) {
 				var2.creationErrors[var3] = -1;

@@ -1,4 +1,4 @@
-package net.oprs;
+package com.meteor;
 
 public class Paramaters {
 

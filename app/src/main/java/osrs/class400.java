@@ -3,13 +3,13 @@ package osrs;
 /*import java.awt.Desktop;
 import java.awt.Desktop.Action;*/
 import java.io.UnsupportedEncodingException;
-import java.net.URI;
+
 import net.runelite.mapping.Export;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
-import org.osrsjson.JSONArray;
-import org.osrsjson.JSONException;
-import org.osrsjson.JSONObject;
+import osrs.json.JSONArray;
+import osrs.json.JSONException;
+import osrs.json.JSONObject;
 
 @ObfuscatedName("oz")
 public class class400 implements class399 {

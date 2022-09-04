@@ -1,4 +1,4 @@
-package org.osrsjson;
+package osrs.json;
 
 import java.io.IOException;
 import java.io.Writer;
@@ -28,11 +28,11 @@ public class JSONObject {
 		this.field4849 = new HashMap();
 	}
 
-	public JSONObject(String var1) throws org.osrsjson.JSONException {
-		this(new org.osrsjson.JSONTokener(var1));
+	public JSONObject(String var1) throws JSONException {
+		this(new JSONTokener(var1));
 	}
 
-	public JSONObject(JSONTokener var1) throws org.osrsjson.JSONException {
+	public JSONObject(JSONTokener var1) throws JSONException {
 		this();
 		if (var1.nextClean() != '{') {
 			throw var1.syntaxError("A JSONObject text must begin with '{'");
@@ -104,19 +104,19 @@ public class JSONObject {
 	}
 
 	@ObfuscatedName("get")
-	public Object method8257(String var1) throws org.osrsjson.JSONException {
+	public Object method8257(String var1) throws JSONException {
 		Object var2 = this.method8261(var1);
 		if (var2 == null) {
-			throw new org.osrsjson.JSONException("JSONObject[" + quote(var1) + "] not found.");
+			throw new JSONException("JSONObject[" + quote(var1) + "] not found.");
 		} else {
 			return var2;
 		}
 	}
 
 	@ObfuscatedName("put")
-	public JSONObject method8265(String var1, Object var2) throws org.osrsjson.JSONException {
+	public JSONObject method8265(String var1, Object var2) throws JSONException {
 		if (var1 == null) {
-			throw new org.osrsjson.JSONException("Null key.");
+			throw new JSONException("Null key.");
 		} else {
 			if (var2 != null) {
 				testValidity(var2);
@@ -167,19 +167,19 @@ public class JSONObject {
 		}
 	}
 
-	public long getLong(String var1) throws org.osrsjson.JSONException {
+	public long getLong(String var1) throws JSONException {
 		Object var2 = this.method8257(var1);
 		return var2 instanceof Number ? ((Number)var2).longValue() : (long)this.getDouble(var1);
 	}
 
-	public boolean getBoolean(String var1) throws org.osrsjson.JSONException {
+	public boolean getBoolean(String var1) throws JSONException {
 		Object var2 = this.method8257(var1);
 		if (var2.equals(Boolean.FALSE) || var2 instanceof String && ((String)var2).equalsIgnoreCase("false")) {
 			return false;
 		} else if (var2.equals(Boolean.TRUE) || var2 instanceof String && ((String)var2).equalsIgnoreCase("true")) {
 			return true;
 		} else {
-			throw new org.osrsjson.JSONException("JSONObject[" + quote(var1) + "] is not a Boolean.");
+			throw new JSONException("JSONObject[" + quote(var1) + "] is not a Boolean.");
 		}
 	}
 
@@ -187,7 +187,7 @@ public class JSONObject {
 		return this.field4849.keySet().iterator();
 	}
 
-	String toString(int var1, int var2) throws org.osrsjson.JSONException {
+	String toString(int var1, int var2) throws JSONException {
 		int var4 = this.length();
 		if (var4 == 0) {
 			return "{}";
@@ -237,7 +237,7 @@ public class JSONObject {
 		}
 	}
 
-	public int getInt(String var1) throws org.osrsjson.JSONException {
+	public int getInt(String var1) throws JSONException {
 		Object var2 = this.method8257(var1);
 		return var2 instanceof Number ? ((Number)var2).intValue() : (int)this.getDouble(var1);
 	}
@@ -246,12 +246,12 @@ public class JSONObject {
 		return this.field4849.size();
 	}
 
-	public org.osrsjson.JSONArray getJSONArray(String var1) throws org.osrsjson.JSONException {
+	public JSONArray getJSONArray(String var1) throws JSONException {
 		Object var2 = this.method8257(var1);
-		if (var2 instanceof org.osrsjson.JSONArray) {
-			return (org.osrsjson.JSONArray)var2;
+		if (var2 instanceof JSONArray) {
+			return (JSONArray)var2;
 		} else {
-			throw new org.osrsjson.JSONException("JSONObject[" + quote(var1) + "] is not a JSONArray.");
+			throw new JSONException("JSONObject[" + quote(var1) + "] is not a JSONArray.");
 		}
 	}
 
@@ -285,9 +285,9 @@ public class JSONObject {
 					if (var9 == null) {
 						this.field4849.put(var8, NULL);
 					} else if (var9.getClass().isArray()) {
-						this.field4849.put(var8, new org.osrsjson.JSONArray(var9, var2));
+						this.field4849.put(var8, new JSONArray(var9, var2));
 					} else if (var9 instanceof Collection) {
-						this.field4849.put(var8, new org.osrsjson.JSONArray((Collection)var9, var2));
+						this.field4849.put(var8, new JSONArray((Collection)var9, var2));
 					} else if (var9 instanceof Map) {
 						this.field4849.put(var8, new JSONObject((Map)var9, var2));
 					} else if (this.isStandardProperty(var9.getClass())) {
@@ -313,21 +313,21 @@ public class JSONObject {
 		return (new TreeSet(this.field4849.keySet())).iterator();
 	}
 
-	public double getDouble(String var1) throws org.osrsjson.JSONException {
+	public double getDouble(String var1) throws JSONException {
 		Object var2 = this.method8257(var1);
 
 		try {
 			return var2 instanceof Number ? ((Number)var2).doubleValue() : Double.valueOf((String)var2);
 		} catch (Exception var4) {
-			throw new org.osrsjson.JSONException("JSONObject[" + quote(var1) + "] is not a number.");
+			throw new JSONException("JSONObject[" + quote(var1) + "] is not a number.");
 		}
 	}
 
-	public String getString(String var1) throws org.osrsjson.JSONException {
+	public String getString(String var1) throws JSONException {
 		return this.method8257(var1).toString();
 	}
 
-	public Writer write(Writer var1) throws org.osrsjson.JSONException {
+	public Writer write(Writer var1) throws JSONException {
 		try {
 			boolean var2 = false;
 			Iterator var3 = this.keys();
@@ -344,8 +344,8 @@ public class JSONObject {
 				Object var5 = this.field4849.get(var4);
 				if (var5 instanceof JSONObject) {
 					((JSONObject)var5).write(var1);
-				} else if (var5 instanceof org.osrsjson.JSONArray) {
-					((org.osrsjson.JSONArray)var5).write(var1);
+				} else if (var5 instanceof JSONArray) {
+					((JSONArray)var5).write(var1);
 				} else {
 					var1.write(valueToString(var5));
 				}
@@ -354,7 +354,7 @@ public class JSONObject {
 			var1.write(125);
 			return var1;
 		} catch (IOException var7) {
-			throw new org.osrsjson.JSONException(var7);
+			throw new JSONException(var7);
 		}
 	}
 
@@ -381,19 +381,19 @@ public class JSONObject {
 		}
 	}
 
-	public JSONObject getJSONObject(String var1) throws org.osrsjson.JSONException {
+	public JSONObject getJSONObject(String var1) throws JSONException {
 		Object var2 = this.method8257(var1);
 		if (var2 instanceof JSONObject) {
 			return (JSONObject)var2;
 		} else {
-			throw new org.osrsjson.JSONException("JSONObject[" + quote(var1) + "] is not a JSONObject.");
+			throw new JSONException("JSONObject[" + quote(var1) + "] is not a JSONObject.");
 		}
 	}
 
-	public JSONObject putOnce(String var1, Object var2) throws org.osrsjson.JSONException {
+	public JSONObject putOnce(String var1, Object var2) throws JSONException {
 		if (var1 != null && var2 != null) {
 			if (this.method8261(var1) != null) {
-				throw new org.osrsjson.JSONException("Duplicate key \"" + var1 + "\"");
+				throw new JSONException("Duplicate key \"" + var1 + "\"");
 			}
 
 			this.method8265(var1, var2);
@@ -410,7 +410,7 @@ public class JSONObject {
 		return this.optString(var1, "");
 	}
 
-	public JSONObject putOpt(String var1, Object var2) throws org.osrsjson.JSONException {
+	public JSONObject putOpt(String var1, Object var2) throws JSONException {
 		if (var1 != null && var2 != null) {
 			this.method8265(var1, var2);
 		}
@@ -418,9 +418,9 @@ public class JSONObject {
 		return this;
 	}
 
-	public org.osrsjson.JSONArray toJSONArray(org.osrsjson.JSONArray var1) throws org.osrsjson.JSONException {
+	public JSONArray toJSONArray(JSONArray var1) throws JSONException {
 		if (var1 != null && var1.length() != 0) {
-			org.osrsjson.JSONArray var2 = new org.osrsjson.JSONArray();
+			JSONArray var2 = new JSONArray();
 
 			for (int var3 = 0; var3 < var1.length(); ++var3) {
 				var2.method8284(this.method8261(var1.getString(var3)));
@@ -432,31 +432,31 @@ public class JSONObject {
 		}
 	}
 
-	public JSONObject accumulate(String var1, Object var2) throws org.osrsjson.JSONException {
+	public JSONObject accumulate(String var1, Object var2) throws JSONException {
 		testValidity(var2);
 		Object var3 = this.method8261(var1);
 		if (var3 == null) {
-			this.method8265(var1, var2 instanceof org.osrsjson.JSONArray ? (new org.osrsjson.JSONArray()).method8284(var2) : var2);
-		} else if (var3 instanceof org.osrsjson.JSONArray) {
-			((org.osrsjson.JSONArray)var3).method8284(var2);
+			this.method8265(var1, var2 instanceof JSONArray ? (new JSONArray()).method8284(var2) : var2);
+		} else if (var3 instanceof JSONArray) {
+			((JSONArray)var3).method8284(var2);
 		} else {
-			this.method8265(var1, (new org.osrsjson.JSONArray()).method8284(var3).method8284(var2));
+			this.method8265(var1, (new JSONArray()).method8284(var3).method8284(var2));
 		}
 
 		return this;
 	}
 
-	public JSONObject append(String var1, Object var2) throws org.osrsjson.JSONException {
+	public JSONObject append(String var1, Object var2) throws JSONException {
 		testValidity(var2);
 		Object var3 = this.method8261(var1);
 		if (var3 == null) {
-			this.method8265(var1, (new org.osrsjson.JSONArray()).method8284(var2));
+			this.method8265(var1, (new JSONArray()).method8284(var2));
 		} else {
-			if (!(var3 instanceof org.osrsjson.JSONArray)) {
-				throw new org.osrsjson.JSONException("JSONObject[" + var1 + "] is not a JSONArray.");
+			if (!(var3 instanceof JSONArray)) {
+				throw new JSONException("JSONObject[" + var1 + "] is not a JSONArray.");
 			}
 
-			this.method8265(var1, ((org.osrsjson.JSONArray)var3).method8284(var2));
+			this.method8265(var1, ((JSONArray)var3).method8284(var2));
 		}
 
 		return this;
@@ -487,8 +487,8 @@ public class JSONObject {
 		return this.optBoolean(var1, false);
 	}
 
-	public org.osrsjson.JSONArray names() {
-		org.osrsjson.JSONArray var1 = new org.osrsjson.JSONArray();
+	public JSONArray names() {
+		JSONArray var1 = new JSONArray();
 		Iterator var2 = this.keys();
 
 		while (var2.hasNext()) {
@@ -498,12 +498,12 @@ public class JSONObject {
 		return var1.length() == 0 ? null : var1;
 	}
 
-	public org.osrsjson.JSONArray optJSONArray(String var1) {
+	public JSONArray optJSONArray(String var1) {
 		Object var2 = this.method8261(var1);
-		return var2 instanceof org.osrsjson.JSONArray ? (org.osrsjson.JSONArray)var2 : null;
+		return var2 instanceof JSONArray ? (JSONArray)var2 : null;
 	}
 
-	public String toString(int var1) throws org.osrsjson.JSONException {
+	public String toString(int var1) throws JSONException {
 		return this.toString(var1, 0);
 	}
 
@@ -523,22 +523,22 @@ public class JSONObject {
 		}
 	}
 
-	static void testValidity(Object var0) throws org.osrsjson.JSONException {
+	static void testValidity(Object var0) throws JSONException {
 		if (var0 != null) {
 			if (var0 instanceof Double) {
 				if (((Double)var0).isInfinite() || ((Double)var0).isNaN()) {
-					throw new org.osrsjson.JSONException("JSON does not allow non-finite numbers.");
+					throw new JSONException("JSON does not allow non-finite numbers.");
 				}
 			} else if (var0 instanceof Float && (((Float)var0).isInfinite() || ((Float)var0).isNaN())) {
-				throw new org.osrsjson.JSONException("JSON does not allow non-finite numbers.");
+				throw new JSONException("JSON does not allow non-finite numbers.");
 			}
 		}
 
 	}
 
-	public static String numberToString(Number var0) throws org.osrsjson.JSONException {
+	public static String numberToString(Number var0) throws JSONException {
 		if (var0 == null) {
-			throw new org.osrsjson.JSONException("Null pointer");
+			throw new JSONException("Null pointer");
 		} else {
 			testValidity(var0);
 			String var1 = var0.toString();
@@ -611,30 +611,30 @@ public class JSONObject {
 		}
 	}
 
-	static String valueToString(Object var0) throws org.osrsjson.JSONException {
+	static String valueToString(Object var0) throws JSONException {
 		if (var0 != null && !var0.equals((Object)null)) {
 			if (var0 instanceof JSONString) {
 				String var1;
 				try {
 					var1 = ((JSONString)var0).toJSONString();
 				} catch (Exception var3) {
-					throw new org.osrsjson.JSONException(var3);
+					throw new JSONException(var3);
 				}
 
 				if (var1 instanceof String) {
 					return (String)var1;
 				} else {
-					throw new org.osrsjson.JSONException("Bad value from toJSONString: " + var1);
+					throw new JSONException("Bad value from toJSONString: " + var1);
 				}
 			} else if (var0 instanceof Number) {
 				return numberToString((Number)var0);
-			} else if (!(var0 instanceof Boolean) && !(var0 instanceof JSONObject) && !(var0 instanceof org.osrsjson.JSONArray)) {
+			} else if (!(var0 instanceof Boolean) && !(var0 instanceof JSONObject) && !(var0 instanceof JSONArray)) {
 				if (var0 instanceof Map) {
 					return (new JSONObject((Map)var0)).toString();
 				} else if (var0 instanceof Collection) {
-					return (new org.osrsjson.JSONArray((Collection)var0)).toString();
+					return (new JSONArray((Collection)var0)).toString();
 				} else {
-					return var0.getClass().isArray() ? (new org.osrsjson.JSONArray(var0)).toString() : quote(var0.toString());
+					return var0.getClass().isArray() ? (new JSONArray(var0)).toString() : quote(var0.toString());
 				}
 			} else {
 				return var0.toString();
@@ -662,12 +662,12 @@ public class JSONObject {
 				return var0.toString();
 			} else if (var0 instanceof JSONObject) {
 				return ((JSONObject)var0).toString(var1, var2);
-			} else if (var0 instanceof org.osrsjson.JSONArray) {
-				return ((org.osrsjson.JSONArray)var0).toString(var1, var2);
+			} else if (var0 instanceof JSONArray) {
+				return ((JSONArray)var0).toString(var1, var2);
 			} else if (var0 instanceof Map) {
 				return (new JSONObject((Map)var0)).toString(var1, var2);
 			} else if (var0 instanceof Collection) {
-				return (new org.osrsjson.JSONArray((Collection)var0)).toString(var1, var2);
+				return (new JSONArray((Collection)var0)).toString(var1, var2);
 			} else {
 				return var0.getClass().isArray() ? (new JSONArray(var0)).toString(var1, var2) : quote(var0.toString());
 			}
