@@ -7,7 +7,7 @@ import java.io.StringReader;
 import java.io.StringWriter;
 import java.net.URL;
 
-import net.oprs.Paramaters;
+import com.meteor.Paramaters;
 import net.runelite.mapping.Export;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;

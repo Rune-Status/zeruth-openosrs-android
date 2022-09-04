@@ -1,5 +1,7 @@
 package osrs;
 
+import com.meteor.MainActivity;
+
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
@@ -505,7 +507,7 @@ public class class10 {
 			}
 		}
 
-		if (MouseHandler.MouseHandler_currentButton == 4 && Bounds.mouseCam) {
+		if (/*MouseHandler.MouseHandler_currentButton == 4 */MainActivity.movingCamera && Bounds.mouseCam) {
 			var0 = MouseHandler.MouseHandler_y - Client.mouseCamClickedY;
 			Client.camAngleDX = var0 * 2;
 			Client.mouseCamClickedY = var0 != -1 && var0 != 1 ? (MouseHandler.MouseHandler_y + Client.mouseCamClickedY) / 2 : MouseHandler.MouseHandler_y;

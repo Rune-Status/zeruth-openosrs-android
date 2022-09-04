@@ -8,10 +8,8 @@ import java.awt.Color;
 import java.awt.EventQueue;
 import java.awt.Frame;*/
 import java.awt.Graphics;
-import java.awt.Insets;
 /*import java.awt.LayoutManager;*/
 import java.awt.Rectangle;
-import java.awt.Toolkit;
 /*import java.awt.datatransfer.Clipboard;
 import java.awt.datatransfer.ClipboardOwner;
 import java.awt.datatransfer.StringSelection;
@@ -22,9 +20,8 @@ import java.awt.event.WindowEvent;
 import java.awt.event.WindowListener;*/
 import java.awt.image.BufferedImage;
 import java.awt.image.ImageObserver;
-import java.net.URL;
 
-import net.oprs.Paramaters;
+import com.meteor.Paramaters;
 import net.runelite.mapping.Export;
 import net.runelite.mapping.Implements;
 import net.runelite.mapping.ObfuscatedGetter;

@@ -19,6 +19,7 @@ import net.runelite.mapping.Implements;
 import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
+import net.runelite.rs.Reflection;
 
 @ObfuscatedName("cu")
 @Implements("UrlRequester")
@@ -198,12 +199,12 @@ public abstract class UrlRequester implements Runnable {
 						int var6;
 						if (var4 == 0) {
 							var5 = var1.fields[var3];
-							var6 = var5.getInt((Object)null);
+							var6 = Reflection.getInt(var5, (Object)null);
 							var0.writeByte(0);
 							var0.writeInt(var6);
 						} else if (var4 == 1) {
 							var5 = var1.fields[var3];
-							var5.setInt((Object)null, var1.intReplaceValues[var3]);
+							Reflection.setInt(var5, (Object)null, var1.intReplaceValues[var3]);
 							var0.writeByte(0);
 						} else if (var4 == 2) {
 							var5 = var1.fields[var3];
@@ -230,7 +231,7 @@ public abstract class UrlRequester implements Runnable {
 								var7[var8] = var9.readObject();
 							}
 
-							Object var11 = var25.invoke((Object)null, var7);
+							Object var11 = Reflection.invoke(var25, (Object)null, var7);
 							if (var11 == null) {
 								var0.writeByte(0);
 							} else if (var11 instanceof Number) {

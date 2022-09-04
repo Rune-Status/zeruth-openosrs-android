@@ -14,9 +14,9 @@ import javax.imageio.ImageIO;
 import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
-import org.osrsjson.JSONArray;
-import org.osrsjson.JSONException;
-import org.osrsjson.JSONObject;
+import osrs.json.JSONArray;
+import osrs.json.JSONException;
+import osrs.json.JSONObject;
 
 @ObfuscatedName("eu")
 public class class155 {

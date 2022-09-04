@@ -7,7 +7,6 @@ import android.graphics.Color
 import android.os.Bundle
 import android.util.DisplayMetrics
 import android.view.KeyEvent
-import android.view.KeyEvent.META_SHIFT_ON
 import android.view.MotionEvent
 import android.view.View
 import android.view.WindowManager
@@ -16,12 +15,16 @@ import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
 import com.google.gson.Gson
 import com.jaredrummler.android.device.DeviceName
+import com.meteor.eventbus.Events
+import com.meteor.eventbus.KEvent
+import com.meteor.eventbus.events.ClientTick
 import com.opscape.openosrs.R
 import osrs.*
 import java.awt.Point
 import java.awt.image.BufferedImage
 import java.io.*
 import java.nio.charset.StandardCharsets
+import kotlin.math.abs
 
 class MainActivity : AppCompatActivity() {
     companion object {
@@ -30,10 +33,13 @@ class MainActivity : AppCompatActivity() {
          */
         @JvmField
         var gameImage: BufferedImage? = null
-        var shouldDraw = false
+        @JvmField
+        var movingCamera = false
         @JvmField
         var classNames: ArrayList<String>? = null
         external fun drawPixel(bitmap: Bitmap, x: Int, y: Int, color: Int)
+
+        val eventBus = KEvent("main")
 
         //We draw pixels using native. It is much faster.
         init {
@@ -49,6 +55,12 @@ class MainActivity : AppCompatActivity() {
     var width = 0
     @JvmField
     var height = 0
+
+    var downStartPosition : Point? = null
+    var pendingLeftClick : Point? = null
+    var pendingRightClick : Point? = null
+    var mouseDown : Long = -1
+
     override fun onStart() {
         super.onStart()
         val displayMetrics = DisplayMetrics()
@@ -73,6 +85,17 @@ class MainActivity : AppCompatActivity() {
         client!!.androidActivity = this
         client!!.init()
         client!!.start()
+
+        eventBus.subscribe<ClientTick>(Events.CLIENT_TICK) {
+            pendingLeftClick?.let {
+                MouseHandler.mousePressed(it, 1)
+                pendingLeftClick = null
+            }
+            pendingRightClick?.let {
+                MouseHandler.mousePressed(it, 2)
+                pendingRightClick = null
+            }
+        }
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -143,12 +166,31 @@ class MainActivity : AppCompatActivity() {
                     mImg!!.setOnTouchListener { _, event ->
                         val touchX = event.x.toInt()
                         val touchY = event.y.toInt()
+                        val point = Point(touchX, touchY)
                         if (event.action == MotionEvent.ACTION_DOWN) {
-                            MouseHandler.mousePressed(Point(touchX, touchY))
+                            downStartPosition = point
+                            mouseDown = System.currentTimeMillis()
+                            MouseHandler.mouseMoved(point)
+                            pendingLeftClick = point
                             println("Touch down x:$touchX y:$touchY")
                         } else if (event.action == MotionEvent.ACTION_UP) {
-                            MouseHandler.mouseReleased()
+                            if (System.currentTimeMillis() > (mouseDown + 500)
+                                && abs(downStartPosition!!.x - point.x) < 30
+                                && abs(downStartPosition!!.y - point.y) < 30) {
+                                    pendingRightClick = point
+                                    pendingLeftClick = null
+                            } else {
+                                mouseDown = -1
+                            }
+                            downStartPosition = null
+                            movingCamera = false
                             println("Touch up x:$touchX y:$touchY")
+                            MouseHandler.mouseReleased()
+                        } else if (event.action == MotionEvent.ACTION_MOVE) {
+                            if (System.currentTimeMillis() > (mouseDown + 500)) {
+                                movingCamera = true
+                            }
+                            MouseHandler.mouseMoved(point)
                         }
                         return@setOnTouchListener true
                     }

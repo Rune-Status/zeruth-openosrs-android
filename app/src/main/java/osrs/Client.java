@@ -16,7 +16,11 @@ import java.util.LinkedHashMap;
 import java.util.Map.Entry;
 import java.util.concurrent.Future;
 
-import net.oprs.Paramaters;
+import com.meteor.Paramaters;
+import com.meteor.eventbus.EventDispatchMode;
+import com.meteor.eventbus.Events;
+import com.meteor.eventbus.events.ClientTick;
+
 import net.runelite.mapping.Export;
 import net.runelite.mapping.Implements;
 import net.runelite.mapping.ObfuscatedGetter;
@@ -1832,6 +1836,7 @@ public final class Client extends GameEngine implements Usernamed, OAuthApi {
 					this.doCycleLoggedOut();
 				}
 
+				MainActivity.Companion.getEventBus().post(Events.CLIENT_TICK, ClientTick.INSTANCE);
 				return;
 			}
 

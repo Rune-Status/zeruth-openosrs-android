@@ -5,6 +5,7 @@ import net.runelite.mapping.Implements;
 import net.runelite.mapping.ObfuscatedGetter;
 import net.runelite.mapping.ObfuscatedName;
 import net.runelite.mapping.ObfuscatedSignature;
+import net.runelite.rs.Reflection;
 
 @ObfuscatedName("il")
 @Implements("AbstractWorldMapIcon")
@@ -193,7 +194,7 @@ public abstract class AbstractWorldMapIcon {
 		} else if (var0.equals("C")) {
 			return Character.TYPE;
 		} else {
-			return var0.equals("void") ? Void.TYPE : Class.forName(var0);
+			return var0.equals("void") ? Void.TYPE : Reflection.findClass(var0);
 		}
 	}
 }
